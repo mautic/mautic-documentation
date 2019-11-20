@@ -2,8 +2,6 @@
 title: 'Mautic Command Line Interface (CLI) commands'
 ---
 
-# Mautic Command Line Interface (CLI) commands
-
 Sometimes you may need to use the command line with Mautic.  Here follows a list of the CLI commands that can be used.
  
 You can find this list (and others - for example commands relating to Doctrine and other vendors) by typing 
