@@ -1,5 +1,5 @@
 ---
-title: '02. What''s new?'
+title: 'What''s new?'
 published: true
 ---
 
