@@ -1,3 +1,7 @@
+---
+title: 'Update Failed'
+---
+
 # Mautic update failed
 Sometimes when updating Mautic, the process might stall or fail part way through.  This can cause a problem, because it can cause Mautic to be in-between two versions and often this can make the system unusable.
 
