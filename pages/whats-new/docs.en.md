@@ -1,3 +1,8 @@
+---
+title: '02. What''s new?'
+published: true
+---
+
 #What's New
 In this section we'll highlight the new features for each major release of Mautic.  They are in version order beginning with the latest.
 
