@@ -1,3 +1,7 @@
+---
+title: Categories
+---
+
 # Categories Overview
 
 Categories are a way to organize Mautic elements. They are available for assets, campaigns, emails, focus items, forms, pages, points, social monitoring and stages. There are two ways to use categories:
