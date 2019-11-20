@@ -50,7 +50,7 @@ Actions attached to the red point of a decision are considered non-action points
 
 Use an action's delay settings to define at what point the campaign should send the contact down this path.
 
-To trigger these events, see [Executing Campaign Actions](https://mautic.org/docs/en/campaigns/manage_campaigns.html#executing-campaign-actions).
+To trigger these events, see [Executing Campaign Actions](../../../index.php.org/docs/en/campaigns/manage_campaigns.html#executing-campaign-actions).
 
 #### Example
 

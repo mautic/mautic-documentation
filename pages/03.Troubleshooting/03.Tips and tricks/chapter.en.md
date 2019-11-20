@@ -1,3 +1,7 @@
+---
+title: 'Tips and Tricks'
+---
+
 # Tips & Tricks
 
 ### Keyboard Shortcuts
