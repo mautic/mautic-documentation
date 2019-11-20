@@ -1,9 +1,5 @@
 ---
-title: ''
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
+title: 'Managing Assets'
 ---
 
 # Manage Assets
