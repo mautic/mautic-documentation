@@ -1,8 +1,6 @@
 ---
-title: Home
+title: 'Mautic Documentation'
 ---
-
-# Mautic Documentation
 
 ## Introduction
 
