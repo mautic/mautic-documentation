@@ -2,8 +2,6 @@
 title: Troubleshooting
 ---
 
-# General troubleshooting
-
 Follow these steps to solve your issue as fast as possible.
 
 ## My Mautic is acting weird
