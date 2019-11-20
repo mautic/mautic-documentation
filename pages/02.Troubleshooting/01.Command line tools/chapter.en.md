@@ -1,3 +1,7 @@
+---
+title: 'Mautic Command Line Interface (CLI) commands'
+---
+
 # Mautic Command Line Interface (CLI) commands
 
 Sometimes you may need to use the command line with Mautic.  Here follows a list of the CLI commands that can be used.
