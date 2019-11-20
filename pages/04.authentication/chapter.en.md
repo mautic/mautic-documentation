@@ -1,3 +1,7 @@
+---
+title: Authentication
+---
+
 # SAML Single Sign On
 
 SAML is a single sign on protocol that allows single sign on and user creation in Mautic using a 3rd party user source called an identity provider (IDP).
