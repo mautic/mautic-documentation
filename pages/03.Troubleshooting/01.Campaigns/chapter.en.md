@@ -2,6 +2,7 @@
 title: 'Campaign Troubleshooting'
 ---
 
+# Campaign Troubleshooting
 ## Page visits are not recognized
 
 There can be a few reasons for this:
