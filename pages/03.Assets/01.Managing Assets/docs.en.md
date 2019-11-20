@@ -5,7 +5,7 @@ title: 'Managing Assets'
 ## Categories
 Assets can be organized in categories, which allows you to easily locate resources.  To create a new category, browse to the Categories section in the admin menu.
 
-![](../media/settings-categories.jpg-categories.jpg)
+![](../../media/settings-categories.jpg-categories.jpg)
 
 ### Creating categories
 
