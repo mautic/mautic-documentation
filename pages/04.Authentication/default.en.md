@@ -1,5 +1,5 @@
 ---
-title: 'SAML Authentication'
+title: Authentication
 published: true
 ---
 
