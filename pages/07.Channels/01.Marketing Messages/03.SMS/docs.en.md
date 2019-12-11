@@ -1,3 +1,11 @@
+---
+title: ''
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
+---
+
 # Text Messages
 
 This new channel was added in Mautic 1.4.0. It allows Mautic to send text messages from campaigns.
