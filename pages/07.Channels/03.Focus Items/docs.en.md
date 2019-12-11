@@ -1,3 +1,11 @@
+---
+title: ''
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
+---
+
 # Focus
 
 Focus allows you to engage users on your site through bars, modals, notifications and full page takeovers. These can be initiated at different times and with different actions such as exit intent.
