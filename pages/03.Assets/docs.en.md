@@ -2,8 +2,6 @@
 title: Assets
 ---
 
-# Assets
-
 Assets are those items which you will provide to your contacts typically upon completion of a form. These assets are trackable items and can carry their own point values, history, and tracking statistics.
 
 ### Example Assets
