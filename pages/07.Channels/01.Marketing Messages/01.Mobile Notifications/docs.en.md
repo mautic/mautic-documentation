@@ -1,3 +1,11 @@
+---
+title: ''
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
+---
+
 # Mobile Notifications
 
 Mobile notifications integrate your iOS and Android app with [One Signal](https://onesignal.com/). Using your own OneSignal accounts, you can now push a notification to your contacts's mobile device (with their permission). Enable these in Mautic's configuration to see them listed under Channels in the menu.
