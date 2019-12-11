@@ -12,7 +12,7 @@ A form can contain as many fields as needed. These fields can be laid out dynami
 
 ![new-form][new-form]
 
-[new-form]: <media/new-form.png>
+[new-form]: <../../../../index.php.png>
 
 #### Page Breaks
 
@@ -20,13 +20,13 @@ Page breaks is a new feature in [Mautic 2.2.0][release-2.2.0] that allows multi-
 
 Each page break will add a customizable continue/back button that will navigate to the next or previous page. If a page break is added after the submit button, the continue button will be replaced with the submit button itself when the form is generated.
 
-![page-break](media/page-break.png)
+![page-break](../../../../index.phpak.png)
 
 ### Form Actions
 
 Form actions are items to be handled on the submission of the form. You can define multiple actions to be performed on each submission. As of [Mautic 2.2.0][release-2.2.0], different actions are available based on form type.
 
-![form actions](media/form-actions.jpg)
+![form actions](../../../../index.phpions.jpg)
 
 #### Form Re-Post Action
 
@@ -38,18 +38,18 @@ Each form field can be have it's name customized to match that of the recipient 
 
 In addition to the form data, an array of `mautic_form` with details like ID, name, and the URL the form was submitted to (if available) along with `mautic_contact` with the details of the contact that submitted.
 
-![repost](media/repost.png)
+![repost](../../../../index.phpng)
 
 ### Creating and Updating Contacts and Companies with Forms
 
 To have your form create or update contacts (in order to update, there must be a matching unique identifier). Each form field can be mapped to a custom contact field through the form's Contact Field tab. Some fields result in automatic matching such as email and country.
 
 As of [Mautic 2.10.0][release-2.10.0] you are now able to match form fields with company fields in order to create a company and link it to the contact created through the form. You will only be able to create a company if the company name field is populated. It will update the company if it can identify it through Company Name and Country, City and State.
-![forms - field matching](media/forms-field-matching.png)
+![forms - field matching](../../../../index.phpeld-matching.png)
 
 As of [Mautic 2.2.0][release-2.2.0], for fields that include select lists (select, radio, checkboxes), options can be synced with the contact field itself. No more having to manually keep them in sync! If a custom field's list is updated, simply rebuild the form's HTML.
 
-![rebuild](media/rebuild.png)
+![rebuild](../../../../index.phppng)
 
 #### Kiosk mode
 
@@ -65,7 +65,7 @@ There are three ways you can use the form. You can copy the entire output or you
 
 ![form injection][injection]
 
-[injection]: <media/injection.png>
+[injection]: <../../../../index.phpn.png>
 
 > **ProTip**
 >
@@ -124,7 +124,7 @@ So, what happened is `{pagelink=1}` was converted into the landing page URL and 
 
 [Mautic 2.3][release-2.3.0] added new action **Remove Contact from Do Not Contact**. If a contact unsubscribes from your email marketing, you can't send another emails.  Use action **Remove Contact from Do Not Contact** in your forms and the contact will receive email again.
 
-[release-2.2.0]: <https://github.com/mautic/mautic/releases/tag/2.2.0>
-[release-2.3.0]: <https://github.com/mautic/mautic/releases/tag/2.3.0>
-[release-2.10.0]: <https://github.com/mautic/mautic/releases/tag/2.10.0>
-[release-2.15.0]: <https://github.com/mautic/mautic/releases/tag/2.15.0>
+[release-2.2.0]: <../../../../index.php.com/mautic/mautic/releases/tag/2.2.0>
+[release-2.3.0]: <../../../../index.php.com/mautic/mautic/releases/tag/2.3.0>
+[release-2.10.0]: <../../../../index.php.com/mautic/mautic/releases/tag/2.10.0>
+[release-2.15.0]: <../../../../index.php.com/mautic/mautic/releases/tag/2.15.0>

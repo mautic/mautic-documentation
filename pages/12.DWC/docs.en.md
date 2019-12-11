@@ -1,3 +1,10 @@
+---
+title: ''
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
+---
 # Dynamic Web Content
 
 [Mautic 2.0][release-2.0.0] introduced the ability to embed content on a web page dynamically for both anonymous visitors and known contacts.

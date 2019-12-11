@@ -1,3 +1,10 @@
+---
+title: ''
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
+---
 # Dashboard
 
 Mautic 1.4.0 brought a customizable dashboard where each user can compose widgets with information they want to track.  Mautic 2.0 brought a number of enhancements to the Dashboard.
