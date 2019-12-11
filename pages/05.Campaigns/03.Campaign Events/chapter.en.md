@@ -1,3 +1,11 @@
+---
+title: ''
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
+---
+
 ## Campaign Events
 
 Below are notes on some of the specific campaign events.
