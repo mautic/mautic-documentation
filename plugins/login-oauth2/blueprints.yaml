@@ -1,0 +1,679 @@
+name: Login OAuth2
+version: 2.0.2
+description: OAuth2 Client Plugin to integrate with Grav's Login
+icon: plug
+author:
+  name: Trilby Media, LLC
+  email: hello@trilby.media
+homepage: https://trilby.media
+keywords: grav, plugin, oauth2, login, social
+bugs: https://github.com/trilbymedia/grav-plugin-login-oauth2/issues
+docs: https://github.com/trilbymedia/grav-plugin-login-oauth2/blob/develop/README.md
+license: MIT
+dependencies:
+  - { name: login, version: '~3.0' }
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin Status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    site_callback_url:
+      type: text
+      disabled: true
+      label: PLUGIN_LOGIN_OAUTH2.SITE_CALLBACK_URI
+      help: PLUGIN_LOGIN_OAUTH2.SITE_CALLBACK_URI_HELP
+      data-default@: ['Grav\Plugin\Login\OAuth2\Providers\BaseProvider::getCallbackUri', false]
+
+    admin_callback_url:
+      type: text
+      disabled: true
+      label: PLUGIN_LOGIN_OAUTH2.ADMIN_CALLBACK_URI
+      help: PLUGIN_LOGIN_OAUTH2.ADMIN_CALLBACK_URI_HELP
+      data-default@: ['Grav\Plugin\Login\OAuth2\Providers\BaseProvider::getCallbackUri', true]
+
+    oauth2_tabs:
+      type: tabs
+
+      fields:
+
+        tab_1:
+          type: tab
+          title: PLUGIN_LOGIN_OAUTH2.CONFIGURATION
+          fields:
+
+            built_in_css:
+              type: toggle
+              label: PLUGIN_LOGIN_OAUTH2.BUILTIN_CSS
+              highlight: 1
+              default: 1
+              help: PLUGIN_LOGIN_OAUTH2.BUILTIN_CSS_HELP
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+
+            button_style:
+              type: select
+              label: PLUGIN_LOGIN_OAUTH2.BUTTON_STYLE
+              default: row
+              size: medium
+              help: PLUGIN_LOGIN_OAUTH2.BUTTON_STYLE_HELP
+              options:
+                row: Horizontal Row
+                square: Square Block
+
+            save_grav_user:
+              type: toggle
+              label: PLUGIN_LOGIN_OAUTH2.SAVE_GRAV_USER
+              help: Get up shitSAVE_GRAV_USER_DESC
+              highlight: 0
+              default: 0
+              options:
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+
+            store_provider_data:
+              type: toggle
+              label: PLUGIN_LOGIN_OAUTH2.STORE_OAUTH2_USER
+              help: PLUGIN_LOGIN_OAUTH2.STORE_OAUTH2_USER_DESC
+              highlight: 1
+              default: 1
+              options:
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+
+            default_access_levels.access:
+              type: textarea
+              label: PLUGIN_LOGIN_OAUTH2.DEFAULT_ACCESS_LEVELS
+              yaml: true
+              size: large
+              validate:
+                required: true
+
+            default_groups:
+              type: selectize
+              size: large
+              placeholder: "e.g. administrators, publishers"
+              label: PLUGIN_LOGIN_OAUTH2.DEFAULT_GROUPS
+              help: PLUGIN_LOGIN_OAUTH2.DEFAULT_GROUPS_HELP
+              markdown: true
+              description: PLUGIN_LOGIN_OAUTH2.DEFAULT_ACCESS_LEVELS_DESC
+              classes: fancy
+              validate:
+                type: commalist
+
+        tab_admin:
+          type: tab
+          title: PLUGIN_LOGIN_OAUTH2.ADMIN
+
+          fields:
+
+            admin.enabled:
+              type: toggle
+              label: PLUGIN_LOGIN_OAUTH2.ADMIN_ENABLED
+              highlight: 0
+              default: 0
+              options:
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+
+            admin.built_in_css:
+              type: toggle
+              label: PLUGIN_LOGIN_OAUTH2.BUILTIN_CSS
+              highlight: 1
+              default: 1
+              help: PLUGIN_LOGIN_OAUTH2.BUILTIN_CSS_HELP
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+
+            admin.button_style:
+              type: select
+              label: PLUGIN_LOGIN_OAUTH2.BUTTON_STYLE
+              default: row
+              size: medium
+              help: PLUGIN_LOGIN_OAUTH2.BUTTON_STYLE_HELP
+              options:
+                row: Horizontal Row
+                square: Square Block
+
+        tab_2:
+          type: tab
+          title: PLUGIN_LOGIN_OAUTH2.PROVIDERS
+
+          fields:
+
+            github:
+              type: fieldset
+              title: GitHub
+              collapsible: true
+
+              fields:
+
+                github_columns:
+                  type: columns
+
+                  fields:
+
+                    github_column_left:
+                      type: column
+
+                      fields:
+
+                        github.site:
+                          type: display
+                          style: vertical
+                          content: '<h3>Site</h3>'
+
+                        providers.github.enabled:
+                          type: toggle
+                          label: Enabled
+                          highlight: 1
+                          default: 0
+                          options:
+                            1: Enabled
+                            0: Disabled
+                          validate:
+                            type: bool
+
+                        providers.github.client_id:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_ID
+
+                        providers.github.client_secret:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_SECRET
+
+                        providers.github.options.scope:
+                          type: selectize
+                          size: large
+                          label: PLUGIN_LOGIN_OAUTH2.SCOPE
+                          classes: fancy
+                          validate:
+                            type: commalist
+
+                    github_column_right:
+                      type: column
+
+                      fields:
+
+                        github.admin:
+                          type: display
+                          style: vertical
+                          content: '<h3>Admin</h3>'
+
+                        admin.providers.github.enabled:
+                          type: toggle
+                          label: Enabled
+                          highlight: 1
+                          default: 0
+                          options:
+                            1: Enabled
+                            0: Disabled
+                          validate:
+                            type: bool
+
+                        admin.providers.github.client_id:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_ID
+
+                        admin.providers.github.client_secret:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_SECRET
+
+                        admin.providers.github.options.scope:
+                          type: selectize
+                          size: large
+                          label: PLUGIN_LOGIN_OAUTH2.SCOPE
+                          classes: fancy
+                          validate:
+                            type: commalist
+
+                providers.github.description:
+                  type: display
+                  style: vertical
+                  content: '[<i class="fa fa-book"></i> GitHub OAuth2 from the official documentation](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/?target=_blank)'
+                  markdown: true
+
+
+            instagram:
+              type: fieldset
+              title: Instagram
+              collapsible: true
+
+              fields:
+
+                instagram_columns:
+                  type: columns
+
+                  fields:
+
+                    instagram_column_left:
+                      type: column
+
+                      fields:
+
+                        instagram.site:
+                          type: display
+                          style: vertical
+                          content: '<h3>Site</h3>'
+
+                        providers.instagram.enabled:
+                          type: toggle
+                          label: Enabled
+                          highlight: 1
+                          default: 0
+                          options:
+                            1: Enabled
+                            0: Disabled
+                          validate:
+                            type: bool
+
+                        providers.instagram.client_id:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_ID
+
+                        providers.instagram.client_secret:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_SECRET
+
+                        providers.instagram.options.scope:
+                          type: selectize
+                          size: large
+                          label: PLUGIN_LOGIN_OAUTH2.SCOPE
+                          classes: fancy
+                          validate:
+                            type: commalist
+
+                        providers.instagram.options.host:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.HOST
+
+
+                    instagram_column_right:
+                      type: column
+
+                      fields:
+
+                        instagram.admin:
+                          type: display
+                          style: vertical
+                          content: '<h3>Admin</h3>'
+
+                        admin.providers.instagram.enabled:
+                          type: toggle
+                          label: Enabled
+                          highlight: 1
+                          default: 0
+                          options:
+                            1: Enabled
+                            0: Disabled
+                          validate:
+                            type: bool
+
+                        admin.providers.instagram.client_id:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_ID
+
+                        admin.providers.instagram.client_secret:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_SECRET
+
+                        admin.providers.instagram.options.scope:
+                          type: selectize
+                          size: large
+                          label: PLUGIN_LOGIN_OAUTH2.SCOPE
+                          classes: fancy
+                          validate:
+                            type: commalist
+
+                        admin.providers.instagram.options.host:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.HOST
+
+                providers.instagram.description:
+                  type: display
+                  style: vertical
+                  content: '[<i class="fa fa-book"></i> Instagram OAuth2 from the official documentation](https://www.instagram.com/developer/authentication/?target=_blank)'
+                  markdown: true
+
+            facebook:
+              type: fieldset
+              title: Facebook
+              collapsible: true
+
+              fields:
+
+                facebook_columns:
+                  type: columns
+
+                  fields:
+
+                    facebook_column_left:
+                      type: column
+
+                      fields:
+
+                        facebook.site:
+                          type: display
+                          style: vertical
+                          content: '<h3>Site</h3>'
+
+                        providers.facebook.enabled:
+                          type: toggle
+                          label: Enabled
+                          highlight: 1
+                          default: 0
+                          options:
+                            1: Enabled
+                            0: Disabled
+                          validate:
+                            type: bool
+
+                        providers.facebook.app_id:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.APP_ID
+
+                        providers.facebook.app_secret:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.APP_SECRET
+
+                        providers.facebook.options.scope:
+                          type: selectize
+                          size: large
+                          label: PLUGIN_LOGIN_OAUTH2.SCOPE
+                          classes: fancy
+                          validate:
+                            type: commalist
+
+                        providers.facebook.options.graph_api_version:
+                          type: text
+                          size: x-small
+                          label: PLUGIN_LOGIN_OAUTH2.GRAPH_API_VERSION
+
+                    facebook_column_right:
+                      type: column
+
+                      fields:
+
+                        facebook.admin:
+                          type: display
+                          style: vertical
+                          content: '<h3>Admin</h3>'
+
+                        admin.providers.facebook.enabled:
+                          type: toggle
+                          label: Enabled
+                          highlight: 1
+                          default: 0
+                          options:
+                            1: Enabled
+                            0: Disabled
+                          validate:
+                            type: bool
+
+                        admin.providers.facebook.app_id:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.APP_ID
+
+                        admin.providers.facebook.app_secret:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.APP_SECRET
+
+                        admin.providers.facebook.options.scope:
+                          type: selectize
+                          size: large
+                          label: PLUGIN_LOGIN_OAUTH2.SCOPE
+                          classes: fancy
+                          validate:
+                            type: commalist
+
+                        admin.providers.facebook.options.graph_api_version:
+                          type: text
+                          size: x-small
+                          label: PLUGIN_LOGIN_OAUTH2.GRAPH_API_VERSION
+
+                providers.facebook.description:
+                  type: display
+                  style: vertical
+                  content: '[<i class="fa fa-book"></i> Facebook OAuth2 from the official documentation](https://developers.facebook.com/docs/facebook-login/web?target=_blank)'
+                  markdown: true
+
+            google:
+              type: fieldset
+              title: Google
+              collapsible: true
+
+              fields:
+
+                google_columns:
+                  type: columns
+
+                  fields:
+
+                    google_column_left:
+                      type: column
+
+                      fields:
+
+                        google.site:
+                          type: display
+                          style: vertical
+                          content: '<h3>Site</h3>'
+
+                        providers.google.enabled:
+                          type: toggle
+                          label: Enabled
+                          highlight: 1
+                          default: 0
+                          options:
+                            1: Enabled
+                            0: Disabled
+                          validate:
+                            type: bool
+
+                        providers.google.client_id:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_ID
+
+                        providers.google.client_secret:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_SECRET
+
+                        providers.google.options.scope:
+                          type: selectize
+                          size: large
+                          label: PLUGIN_LOGIN_OAUTH2.SCOPE
+                          classes: fancy
+                          validate:
+                            type: commalist
+
+                        providers.google.options.hd:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.RESTRICT_DOMAIN
+                          placeholder: domain.com
+
+                        providers.google.options.avatar_size:
+                          type: number
+                          size: x-small
+                          append: px
+                          label: PLUGIN_LOGIN_OAUTH2.AVATAR_SIZE
+
+
+                    google_column_right:
+                      type: column
+
+                      fields:
+
+                        google.admin:
+                          type: display
+                          style: vertical
+                          content: '<h3>Admin</h3>'
+
+                        admin.providers.google.enabled:
+                          type: toggle
+                          label: Enabled
+                          highlight: 1
+                          default: 0
+                          options:
+                            1: Enabled
+                            0: Disabled
+                          validate:
+                            type: bool
+
+                        admin.providers.google.client_id:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_ID
+
+                        admin.providers.google.client_secret:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_SECRET
+
+                        admin.providers.google.options.scope:
+                          type: selectize
+                          size: large
+                          label: PLUGIN_LOGIN_OAUTH2.SCOPE
+                          classes: fancy
+                          validate:
+                            type: commalist
+
+                        admin.providers.google.options.hd:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.RESTRICT_DOMAIN
+                          placeholder: domain.com
+
+                        admin.providers.google.options.avatar_size:
+                          type: number
+                          size: x-small
+                          append: px
+                          label: PLUGIN_LOGIN_OAUTH2.AVATAR_SIZE
+
+                providers.google.description:
+                  type: display
+                  style: vertical
+                  content: '[<i class="fa fa-book"></i> Google OAuth2 from the official documentation](https://developers.google.com/identity/protocols/OpenIDConnect?target=_blank)'
+                  markdown: true
+
+            linkedin:
+              type: fieldset
+              title: LinkedIn
+              collapsible: true
+
+              fields:
+
+                linkedin_columns:
+                  type: columns
+
+                  fields:
+
+                    linkedin_column_left:
+                      type: column
+
+                      fields:
+
+                        linkedin.site:
+                          type: display
+                          style: vertical
+                          content: '<h3>Site</h3>'
+
+                        providers.linkedin.enabled:
+                          type: toggle
+                          label: Enabled
+                          highlight: 1
+                          default: 0
+                          options:
+                            1: Enabled
+                            0: Disabled
+                          validate:
+                            type: bool
+
+                        providers.linkedin.client_id:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_ID
+
+                        providers.linkedin.client_secret:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_SECRET
+
+                        providers.linkedin.options.scope:
+                          type: selectize
+                          size: large
+                          label: PLUGIN_LOGIN_OAUTH2.SCOPE
+                          classes: fancy
+                          validate:
+                            type: commalist
+
+                    linkedin_column_right:
+                      type: column
+
+                      fields:
+
+                        linkedin.admin:
+                          type: display
+                          style: vertical
+                          content: '<h3>Admin</h3>'
+
+                        admin.providers.linkedin.enabled:
+                          type: toggle
+                          label: Enabled
+                          highlight: 1
+                          default: 0
+                          options:
+                            1: Enabled
+                            0: Disabled
+                          validate:
+                            type: bool
+
+                        admin.providers.linkedin.client_id:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_ID
+
+                        admin.providers.linkedin.client_secret:
+                          type: text
+                          label: PLUGIN_LOGIN_OAUTH2.CLIENT_SECRET
+
+                        admin.providers.linkedin.options.scope:
+                          type: selectize
+                          size: large
+                          label: PLUGIN_LOGIN_OAUTH2.SCOPE
+                          classes: fancy
+                          validate:
+                            type: commalist
+
+
+                providers.linkedin.description:
+                  type: display
+                  style: vertical
+                  content: '[<i class="fa fa-book"></i> LinkedIn OAuth2 from the official documentation](https://developer.linkedin.com/docs/oauth2?target=_blank)'
+                  markdown: true
+
+        tab_3:
+          type: tab
+          title: PLUGIN_LOGIN_OAUTH2.DOCUMENTATION
+
+          fields:
+
+            oauth2_instructions:
+              type: display
+              markdown: true
+              style: vertical
+              file: 'plugins://login-oauth2/README.md'

@@ -1,0 +1,97 @@
+enabled: true
+
+built_in_css: true
+button_style: row
+save_grav_user: false
+store_provider_data: true
+default_access_levels:
+  access:
+    site:
+      login: 'true'
+default_groups:
+providers:
+  github:
+    enabled: true
+    client_id: ''
+    client_secret: ''
+    options:
+      scope: ['user', 'user:email']
+
+  instagram:
+    enabled: true
+    client_id: ''
+    client_secret: ''
+    options:
+      scope: ['basic', 'likes', 'comments']
+      host: 'https://api.instagram.com'
+
+  facebook:
+    enabled: true
+    app_id: ''
+    app_secret: ''
+    options:
+      scope: ['email', 'public_profile', 'user_hometown']
+      graph_api_version: 'v2.10'
+
+  google:
+    enabled: true
+    client_id: ''
+    client_secret: ''
+    hd: '*'
+    options:
+      scope: ['email', 'profile']
+      avatar_size: 200
+
+  linkedin:
+    enabled: true
+    client_id: ''
+    client_secret: ''
+    options:
+      scope: ['r_basicprofile','r_emailaddress']
+
+
+
+admin:
+  enabled: false
+  built_in_css: true
+  button_style: row
+
+  providers:
+    github:
+      enabled: false
+      client_id: ''
+      client_secret: ''
+      options:
+        scope: ['user', 'user:email']
+
+    instagram:
+      enabled: false
+      client_id: ''
+      client_secret: ''
+      options:
+        scope: ['basic', 'likes', 'comments']
+        host: 'https://api.instagram.com'
+
+    facebook:
+      enabled: false
+      app_id: ''
+      app_secret: ''
+      options:
+        scope: ['email', 'public_profile', 'user_hometown']
+        graph_api_version: 'v2.10'
+
+    google:
+      enabled: false
+      client_id: ''
+      client_secret: ''
+      hd: '*'
+      options:
+        scope: ['email', 'profile']
+        avatar_size: 200
+
+    linkedin:
+      enabled: false
+      client_id: ''
+      client_secret: ''
+      options:
+        scope: ['r_basicprofile','r_emailaddress']

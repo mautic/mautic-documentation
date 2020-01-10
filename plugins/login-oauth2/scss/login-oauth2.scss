@@ -1,0 +1,155 @@
+$facebook_color: #3B5998;
+$github_color: #181717;
+$google_color: #4285F4;
+$instagram_color: #E4405F;
+$linkedin_color: #0077B5;
+$label_color: #fff;
+
+.form-oauth2 {
+
+  p {
+    font-size: inherit !important;
+  }
+
+  button {
+    background: none;
+    color: $label_color;
+    border: 0;
+    font-family: inherit;
+    cursor: pointer;
+    outline: inherit;
+    text-align: center;
+    margin-bottom: 4px;
+
+    svg {
+      fill: $label_color;
+    }
+
+  }
+
+  button.facebook {
+    background: $facebook_color;
+    &:hover {
+      background: darken($facebook_color, 10%);
+    }
+  }
+
+  button.github {
+    background: $github_color;
+    &:hover {
+      background: lighten($github_color, 10%);
+    }
+  }
+
+  button.google {
+    background: $google_color;
+    &:hover {
+      background: darken($google_color, 10%);
+    }
+  }
+
+  button.instagram {
+    background: $instagram_color;
+    &:hover {
+      background: darken($instagram_color, 10%);
+    }
+  }
+
+  button.linkedin {
+    background: $linkedin_color;
+    &:hover {
+      background: darken($linkedin_color, 10%);
+    }
+  }
+
+  &.square-style {
+    button {
+      padding: 10px;
+      min-width: 100px;
+    }
+
+    svg {
+      width: 48px;
+      height: 48px;
+    }
+
+    span {
+      display: block;
+      font-size: 110%;
+      margin: 0.5rem 0 0;
+    }
+  }
+
+  &.button-style, &.row-style {
+    button {
+      min-width: 150px;
+      padding: 10px;
+    }
+    svg {
+      width: 32px;
+      height: 32px;
+      vertical-align: middle;
+    }
+
+    span {
+      display: inline-block;
+      font-size: 110%;
+      margin: 0 0 0 10px;
+      vertical-align: middle;
+      min-width: 100px;
+      text-align: left;
+    }
+  }
+
+  &.row-style {
+    button {
+      min-width: 350px;
+    }
+  }
+
+  .oauth2-or {
+    display: flex;
+    margin: 1rem 0;
+
+    span {
+      display: block;
+      margin: 0;
+
+
+      &.line {
+        border-bottom: 2px solid #eee;
+        flex-grow: 1;
+      }
+
+      &.or {
+        padding: 0 15px;
+        margin-bottom: -15px;
+        font-size: 150%;
+        color: #999;
+        text-align: center;
+      }
+    }
+  }
+
+
+}
+
+#admin-login .form-oauth2 {
+  text-align: center;
+
+  padding-top: 1rem;
+
+  > p:first-child {
+    display: none;
+  }
+
+  .oauth2-or {
+    opacity: 0.6;
+    margin-bottom: -0.5rem;
+
+    span.line {
+      opacity: 0.2;
+      border-bottom-width: 1px;
+    }
+  }
+}

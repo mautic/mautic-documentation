@@ -1,0 +1,170 @@
+{% extends 'partials/base.html.twig' %}
+{% import 'user-manager-macros.html.twig' as macros %}
+
+{% set title = "PLUGIN_ADMIN_ADDON_USER_MANAGER.GROUP_MANAGER"|tu %}
+
+{% if group %}
+{% set group_name = group.readableName ?: group.groupname %}
+{% set title = "PLUGIN_ADMIN_ADDON_USER_MANAGER.GROUP"|tu ~ ": " ~ group_name|e %}
+{% endif %}
+
+{% set ps = config.system.param_sep %}
+
+{% block titlebar %}
+  {% if not group %}
+  <div class="button-bar">
+    <a class="button" href="#modal-admin-addon-user-manager-new" data-remodal-target="modal-admin-addon-user-manager-new"><i class="fa fa-plus"></i> {{ "PLUGIN_ADMIN.ADD"|tu }}</a>
+  </div>
+
+  <h1><i class="fa fa-fw fa-user-o"></i> {{ "PLUGIN_ADMIN_ADDON_USER_MANAGER.GROUP_MANAGER"|tu }}</h1>
+  {% else %}
+  <div class="button-bar">
+    <a class="button" href="{{ base_url }}/group-manager"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
+    {% if exists %}
+    <a class="button disable-after-click" href="{{ uri.addNonce(uri.route(true) ~ '/name' ~ ps ~ group.groupname ~ '/task' ~ ps ~ 'groupDelete', 'admin-form', 'admin-nonce') }}" class="page-delete" ><i class="fa fa-close"></i> {{ "PLUGIN_ADMIN.DELETE"|tu }}</a>
+    {% endif %}
+    <button class="button" type="submit" name="task" value="save" form="blueprints"><i class="fa fa-check"></i> {{ "PLUGIN_ADMIN.SAVE"|tu }}</button>
+  </div>
+  <h1><i class="fa fa-fw fa-user"></i> {{ "PLUGIN_ADMIN_ADDON_USER_MANAGER.GROUP"|tu }}: {{ group.groupname|e }}</h1>
+  {% endif %}
+{% endblock %}
+
+{% set appendUrl = '?filter=' ~ filter|url_encode %}
+
+{% block content %}
+  {% if not group %}
+  <h1>{{ "PLUGIN_ADMIN_ADDON_USER_MANAGER.GROUPS"|tu }}</h1>
+
+  {% if filterException %}
+  <div class="notices red"><h2>{{ "PLUGIN_ADMIN_ADDON_USER_MANAGER.FILTER_ERROR"|tu }}</h2><p>{{ filterException.message }}</p></div>
+  {% endif %}
+
+  <div class="admin-addon-user-manager-filter">
+    <div class="admin-addon-user-manager-filter__input">
+      <form method="get">
+        <div class="block block-text">
+          <div class="form-field vertical">
+            <div class="form-data" data-grav-default="{{ filter }}">
+              <div class="form-input-wrapper">
+                <input name="filter" value="{{ filter }}" type="text" placeholder="{{ "PLUGIN_ADMIN_ADDON_USER_MANAGER.FILTER_GROUPS"|tu }}">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="admin-addon-user-manager-filter__help">
+      <a href="https://github.com/david-szabo97/grav-plugin-admin-addon-user-manager/blob/master/docs/filter.md#groups" class="button" target="_new"><i class="fa fa-question"></i> {{ "PLUGIN_ADMIN_ADDON_USER_MANAGER.HELP"|tu }}</a>
+    </div>
+  </div>
+
+  <form method="post">
+    <div class="admin-addon-user-manager admin-addon-user-manager--list admin-addon-user-manager--group">
+      {% if groups is empty %}
+        <h2>{{ "PLUGIN_ADMIN_ADDON_USER_MANAGER.NO_RESULTS"|tu }}</h2>
+      {% else %}
+        <div class="cell cell--header">
+          <div class="user">
+            <div class="user__checkbox"><input type="checkbox" id="selectAll" /></div>
+            <div class="user__username">{{ "PLUGIN_ADMIN.NAME"|tu }}</div>
+            <div class="user__actions">{{ "PLUGIN_ADMIN_ADDON_USER_MANAGER.ACTIONS"|tu }}</div>
+          </div>
+        </div>
+
+        {% for groupName, group in groups %}
+        <div class="cell">
+          <div class="user">
+            <div class="user__checkbox"><input type="checkbox" name="selected[]" value="{{ groupName }}" /></div>
+            <div class="user__username"><a href="{{ uri.route(true) ~ '/name' ~ ps ~ group.groupname }}">({{ group.users }}) <i class="fa fa-{{ group.icon}}"></i> {{ group.readableName ?: groupName }}</a></div>
+            <div class="user__actions">
+              <a href="{{ uri.addNonce(uri.route(true)  ~ '/name' ~ ps ~ group.groupname ~ '/task' ~ ps ~ 'groupDelete', 'admin-form', 'admin-nonce') }}" class="delete">{{ "PLUGIN_ADMIN.DELETE"|tu }}</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <div class="admin-addon-user-manager-bulk-action">
+      <a data-remodal-target="modal-admin-addon-user-manager-bulk" class="button">{{ "PLUGIN_ADMIN_ADDON_USER_MANAGER.BULK_ACTION"|tu }}</a>
+    </div>
+  </form>
+
+  {{ macros.pagination(pagination, uri.route(true), ps, appendUrl) }}
+
+  <div class="remodal" data-remodal-id="modal-admin-addon-user-manager-new" data-remodal-options="hashTracking: false">
+    <form onsubmit='handleAdminAddonUserManagerSubmit(this); return false;'>
+      {% for field in fields %}
+        {% if field.type %}
+          {% set value = data.value(field.name) %}
+          <div class="block block-{{field.type}}">
+            {% include ["forms/fields/#{field.type}/#{field.type}.html.twig", 'forms/fields/text/text.html.twig'] %}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      <div class="button-bar">
+        <button class="button primary" >{{ "PLUGIN_ADMIN.CONTINUE"|tu }}</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="remodal" data-remodal-id="modal-admin-addon-user-manager-bulk" data-remodal-options="hashTracking: false">
+    <form method="post" onsubmit='handleAdminAddonUserManagerBulkSubmit(this);'>
+      {% for field in bulkFields %}
+        {% if field.type %}
+          <div class="block block-{{field.type}}">
+            {% include ["forms/fields/#{field.type}/#{field.type}.html.twig", 'forms/fields/text/text.html.twig'] %}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      <div class="button-bar">
+        <button class="button primary" >{{ "PLUGIN_ADMIN.CONTINUE"|tu }}</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function handleAdminAddonUserManagerSubmit(form) {
+      var name = form.querySelector('[name=name]').value;
+      window.location = '{{ base_url }}/group-manager/name{{ ps }}' + name;
+    }
+
+    var selectAllEle = document.getElementById('selectAll');
+    var selectEles = document.querySelectorAll('input[name="selected[]"]');
+    if (selectAllEle) {
+      selectAllEle.addEventListener('change', function(e) {
+        for (var i = 0; i < selectEles.length; i++) {
+          selectEles[i].checked = this.checked;
+        }
+      });
+    }
+
+    function handleAdminAddonUserManagerBulkSubmit(form) {
+      for (var i = 0; i < selectEles.length; i++) {
+        form.appendChild(selectEles[i]);
+      }
+    }
+  </script>
+  {% else %}
+  <h1>{{ group.readableName ?: group.groupname }}</h1>
+
+  {% include 'partials/blueprints.html.twig' with { data: group, blueprints: group.blueprints } %}
+
+  <div class="remodal" data-remodal-id="changes">
+    <form>
+      <h1>{{ "PLUGIN_ADMIN.MODAL_CHANGED_DETECTED_TITLE"|tu }}</h1>
+      <p class="bigger">
+        {{ "PLUGIN_ADMIN.MODAL_CHANGED_DETECTED_DESC"|tu }}
+      </p>
+      <br>
+      <div class="button-bar">
+        <a class="button secondary" data-leave-action="cancel" href="#"><i class="fa fa-fw fa-close"></i> {{ "PLUGIN_ADMIN.CANCEL"|tu }}</a>
+        <a class="button" data-leave-action="continue" href="#"><i class="fa fa-fw fa-check"></i> {{ "PLUGIN_ADMIN.CONTINUE"|tu }}</a>
+      </div>
+    </form>
+  </div>
+  {% endif %}
+{% endblock %}

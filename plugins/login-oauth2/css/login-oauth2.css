@@ -1,0 +1,100 @@
+.form-oauth2 p {
+  font-size: inherit !important; }
+
+.form-oauth2 button {
+  background: none;
+  color: #fff;
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-align: center;
+  margin-bottom: 4px; }
+  .form-oauth2 button svg {
+    fill: #fff; }
+
+.form-oauth2 button.facebook {
+  background: #3B5998; }
+  .form-oauth2 button.facebook:hover {
+    background: #2d4373; }
+
+.form-oauth2 button.github {
+  background: #181717; }
+  .form-oauth2 button.github:hover {
+    background: #323030; }
+
+.form-oauth2 button.google {
+  background: #4285F4; }
+  .form-oauth2 button.google:hover {
+    background: #1266f1; }
+
+.form-oauth2 button.instagram {
+  background: #E4405F; }
+  .form-oauth2 button.instagram:hover {
+    background: #d31e40; }
+
+.form-oauth2 button.linkedin {
+  background: #0077B5; }
+  .form-oauth2 button.linkedin:hover {
+    background: #005582; }
+
+.form-oauth2.square-style button {
+  padding: 10px;
+  min-width: 100px; }
+
+.form-oauth2.square-style svg {
+  width: 48px;
+  height: 48px; }
+
+.form-oauth2.square-style span {
+  display: block;
+  font-size: 110%;
+  margin: 0.5rem 0 0; }
+
+.form-oauth2.button-style button, .form-oauth2.row-style button {
+  min-width: 150px;
+  padding: 10px; }
+
+.form-oauth2.button-style svg, .form-oauth2.row-style svg {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle; }
+
+.form-oauth2.button-style span, .form-oauth2.row-style span {
+  display: inline-block;
+  font-size: 110%;
+  margin: 0 0 0 10px;
+  vertical-align: middle;
+  min-width: 100px;
+  text-align: left; }
+
+.form-oauth2.row-style button {
+  min-width: 350px; }
+
+.form-oauth2 .oauth2-or {
+  display: flex;
+  margin: 1rem 0; }
+  .form-oauth2 .oauth2-or span {
+    display: block;
+    margin: 0; }
+    .form-oauth2 .oauth2-or span.line {
+      border-bottom: 2px solid #eee;
+      flex-grow: 1; }
+    .form-oauth2 .oauth2-or span.or {
+      padding: 0 15px;
+      margin-bottom: -15px;
+      font-size: 150%;
+      color: #999;
+      text-align: center; }
+
+#admin-login .form-oauth2 {
+  text-align: center;
+  padding-top: 1rem; }
+  #admin-login .form-oauth2 > p:first-child {
+    display: none; }
+  #admin-login .form-oauth2 .oauth2-or {
+    opacity: 0.6;
+    margin-bottom: -0.5rem; }
+    #admin-login .form-oauth2 .oauth2-or span.line {
+      opacity: 0.2;
+      border-bottom-width: 1px; }
