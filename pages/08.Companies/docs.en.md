@@ -5,6 +5,7 @@ body_classes: ''
 order_by: ''
 order_manual: ''
 ---
+
 # Companies
 
 Companies are a way to group contacts based on the company(ies) the contact works or has worked for.
