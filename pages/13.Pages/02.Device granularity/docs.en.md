@@ -1,3 +1,11 @@
+---
+title: ''
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
+---
+
 # Mautic - Device Granularity
 
 Mautic records devices used to visit pages and open emails.
