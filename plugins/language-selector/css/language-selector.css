@@ -1,5 +1,4 @@
 .language-selector {
-		float: right;
 		position: relative;
 	  top: 50%;
 		vertical-align: middle;
@@ -10,6 +9,7 @@
 	  transform: translateY(-50%);
 	  margin: 0 1rem !important;
 	  display: inline-block;
+	padding-top:30px;
 }
 
 .language-selector>.btn:first-child {
