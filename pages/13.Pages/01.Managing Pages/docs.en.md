@@ -1,3 +1,11 @@
+---
+title: ''
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
+---
+
 # Manage Pages
 
 ### Page Details
