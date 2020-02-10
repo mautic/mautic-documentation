@@ -1,9 +1,5 @@
 ---
-title: ''
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
+title: SMS
 ---
 
 # Text Messages
@@ -58,6 +54,6 @@ You can validate that Alphanumeric Sender is enabled on your account by followin
 
 Just setup your alias in plugin settings:
 
-![](media/alphanumeric-id.png)
+![](alphanumeric-id.png)
 
 Read more info about [Alphanumeric Sender ID](https://support.twilio.com/hc/en-us/articles/223181348-Getting-started-with-Alphanumeric-Sender-ID) on Twillio site.
