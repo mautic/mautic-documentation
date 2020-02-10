@@ -10,7 +10,7 @@ Below are notes on some of the specific campaign events.
 
 #### Send Email - Marketing vs Transactional
 
-![](send-email-delay.png)
+![](send-email-delay%20(1).png)
 
 In the send email action, there is an option to select Transaction or Marketing. A transactional email is one that can be sent to the contact multiple times. A marketing email is one that can only be sent to the contact once across multiple sources (e.g. another campaign). If the contact has already received this email from another source or the current campaign, the email will not be sent again and the contact simply progresses on through the campaign.
 
