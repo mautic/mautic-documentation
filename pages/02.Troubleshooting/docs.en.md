@@ -48,7 +48,7 @@ If your Mautic administration doesn't work, open the logs in via the file system
 
 I don't have experience with all operating systems and servers. I can tell you that Apache2 saves the server logs at Ubuntu in `/var/log/apache2/error.log`. If you don't know where the server logs are stored, contact your sysadmin or try to google it.
 
-#### MySql logs
+#### MySQL logs
 
 If your Mautic says it is not able to connect to MySql for some reason, you can check what information is stored in the MySql log. Again, I can only advise where the log is in Ubuntu: `/var/log/mysql/error.log`. But to be honest, the database connection error is in 90% of cases caused by wrong credentials.
 
