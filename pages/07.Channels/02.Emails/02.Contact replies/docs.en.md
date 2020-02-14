@@ -1,9 +1,5 @@
 ---
 title: 'Contact replies'
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
 ---
 
 # Contact Replies
@@ -19,7 +15,7 @@ Note that it is best to create an email specifically for this purpose, as Mautic
 
 Then go to the Mautic configuration and setup the inbox to monitor replies.
 
-![Contact Replies IMAP folder](../../../../../index.phpreplies-imap-folder.png "Contact Replies IMAP folder")
+![Contact Replies IMAP folder](contact-replies-imap-folder.png "Contact Replies IMAP folder")
 
 To fetch and process the read messages reply, run the following command:
 ```
@@ -30,5 +26,5 @@ php /path/to/mautic/app/console mautic:email:fetch
 
 Contact replies use with campaigns as decision after send email. Mautic tried read inbox, parse messages and find reply from contact. Then go to positive path immediately after reply exist. 
 
-![Contact Replies campaign decision](../../../../../index.phpreplies-campaign-decision.png)
+![Contact Replies campaign decision](contact-replies-campaign-decision.png)
 
