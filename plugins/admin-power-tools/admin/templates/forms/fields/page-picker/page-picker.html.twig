@@ -1,0 +1,109 @@
+{% extends "forms/field.html.twig" %}
+
+{% set pages = getPages() %}
+{% set pages_j = pages | json_encode %}
+
+{% block label %}
+    Page
+{% endblock %}
+
+{% block input %}
+    <dom-module id="my-search">
+        <template>
+            <style>
+
+            </style>
+            <paper-autocomplete
+                    class="autocomplete-states"
+                    label="Select a page..."
+                    id="input-local" no-label-float
+                    source="{{ pages_j }}"
+                    text-property='label'
+                    value-property='value'
+                    show-results-on-focus="true"
+                    min-length="0"
+                    query-fn="[[queryFn]]"
+                    {#oninput="{{ field.id|e }}_output.value = {{ field.id|e }}.value"#}
+                    on-value-changed="onValueChanged"
+            >
+            </paper-autocomplete>
+        </template>
+
+        <script>
+            class MySearch extends Polymer.Element {
+                static get is() {
+                    return "my-search"
+                }
+
+                static get properties() {
+                    return {}
+                }
+
+                onValueChanged(e) {
+                    $('#data\\[{{ field.name }}\\]').val(e.detail.value);
+                    {#{{ field.id|e }}_output.value = e.detail.value;#}
+                }
+
+                queryFn(items, query) {
+                    const rx = new RegExp(query, 'i');
+                    return items.filter(it => rx.test(it.label));
+                };
+
+                focus() {
+                    this.$['input-local'].shadowRoot.querySelector('paper-input').focus();
+                }
+            }
+
+            window.customElements.define(MySearch.is, MySearch)
+        </script>
+    </dom-module>
+    <my-search></my-search>
+    <input type="hidden" id="data[{{ field.name }}]" name="data[{{ field.name }}]"/>
+    {#<dom-bind>#}
+    {#<template>#}
+    {#<paper-autocomplete#}
+    {#class="autocomplete-states"#}
+    {#label="Select a page..."#}
+    {#id="input-local" no-label-float#}
+    {#source="{{ pages_j }}"#}
+    {#text-property='label'#}
+    {#value-property='value'#}
+    {#show-results-on-focus="true"#}
+    {#min-length="0"#}
+    {#query-fn="_paperQuery"#}
+    {#oninput="{{ field.id|e }}_output.value = {{ field.id|e }}.value"#}
+    {#on-value-changed="_onValue"#}
+    {#>#}
+    {#</paper-autocomplete>#}
+    {#</template>#}
+    {#</dom-bind>#}
+    {# make sure this is outside shadow #}
+    {#<input type="hidden" id="data[{{ field.name }}]" name="data[{{ field.name }}]"/>#}
+    {#<script>#}
+    {#const bind = $('dom-bind')[0];#}
+
+    {#//TODO how to do this from html binding#}
+    {#const p = $(bind.$['input-local']);#}
+    {#p.on('value-changed', (e) => {#}
+    {#$('#data\\[{{ field.name }}\\]').val(e.detail.value);#}
+    {#{{ field.id|e }}_output.value = e.detail.value;#}
+    {#});#}
+    {#p[0].queryFn = function (items, query) {#}
+    {#const rx = new RegExp(query, 'i');#}
+    {#return items.filter(it => rx.test(it.label));#}
+    {#};#}
+
+    {#</script>#}
+{% endblock %}
+
+{% block append %}
+    {% if field.id is defined %}
+        <output
+                name="{{ (scope ~ field.name)|fieldName }}"
+                id="{{ field.id|e }}_output"
+                style="display: inline-block;vertical-align: baseline;padding: 0 0.5em 5px 0.5em;"
+        >
+            {{ value|join(', ')|e('html_attr') }}
+        </output>
+    {% endif %}
+{% endblock append %}

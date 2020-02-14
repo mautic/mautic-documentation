@@ -1,0 +1,158 @@
+<style>
+    #admin-menu button {
+        background: transparent;
+        border: 0;
+    }
+
+    #admin-menu ul.dropdown-menu {
+        left: initial;
+        right: 0;
+        position: relative;
+        width: 100%;
+    }
+
+    #admin-menu ul.dropdown-menu,
+    #admin-menu ul.dropdown-menu * {
+        background-color: transparent;
+    }
+
+    .ga-theme-16x #admin-menu .nav-drop .button {
+        color: rgba(209, 222, 231, 0.9);
+    }
+
+    .ga-theme-16x #admin-menu .nav-drop .button:hover {
+        color: #fff;
+    }
+
+    #admin-menu > li > div {
+        /*display: inline-block;*/
+        position: relative;
+        /*tt tweak to line up with others */
+        margin-left: 2px;
+    }
+
+    .ga-theme-16x #admin-menu > li > div {
+        display: block;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        position: relative;
+    }
+
+    .ga-theme-16x #admin-menu > li.nav-drop .button .fa {
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        margin-right: 8px;
+    }
+
+    .ga-theme-17x #admin-menu > li > div {
+        display: block;
+        position: relative;
+    }
+
+    /* #admin-menu from li > a of admin theme */
+    .ga-theme-17x #admin-menu li > div {
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        /*display: block;*/
+        /*padding-left: 25px;*/
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+        /*position: relative;*/
+    }
+
+    .ga-theme-17x #admin-menu > li.nav-drop .button .fa {
+        margin-right: 8px;
+    }
+
+    /* Only show the dropdown toggle */
+    @media only all and (max-width: 74.938em) and (min-width: 47.938em) {
+        #admin-menu > li.nav-drop > a {
+            display: none;
+        }
+
+        .ga-theme-17x #admin-menu > li.nav-drop .button .fa {
+            margin-right: 0px;
+        }
+
+        #admin-menu .dropdown-menu em {
+            display: block;
+        }
+
+        #admin-menu .dropdown-menu .button {
+            padding-left: 8px;
+        }
+    }
+
+    /* This is to match the li > a settings of the nav */
+    .ga-theme-16x #admin-menu li > div:hover {
+        background: #1e333e;
+        color: #fff;
+    }
+
+    .ga-theme-16x #admin-menu li div:hover .fa {
+        font-size: 1.2rem;
+    }
+
+    .ga-theme-17x #admin-menu li div.button-group:hover {
+        background: #434753;
+        color: #fff;
+    }
+
+    .ga-theme-17x #admin-menu li.selected div {
+        background: #323640;
+        color: #fff;
+        border-left: 9px solid #007ab8;
+    }
+
+    /* Override parent rule if under the dropdown div */
+    #admin-menu li.selected .dropdown-menu li a {
+        /*background: #323640;*/
+        /*color: #fff;*/
+        border-left: initial;
+    }
+    #admin-menu li.selected .dropdown-menu li.selected a {
+        /*background: #323640;*/
+        /*color: #fff;*/
+        border-left: 9px solid #007ab8;
+    }
+
+    /* TODO not sure what this was set to */
+    .ga-theme-16x #admin-menu li.selected div {
+        background: #323640;
+        color: #fff;
+        border-left: 9px solid #007ab8;
+    }
+
+</style>
+<li class="nav-drop {{ selected ? 'selected' : '' }}">
+    {#<a href="#">#}
+    {#<i class="fa {{ icon }}"></i><em>{{ caption }}</em>#}
+    {#</a>#}
+    {#<a href="#">#}
+    <div class="button-group">
+        <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-fw {{ icon }}"></i> <em>{{ caption }}</em> <i class="fa fa-fw fa-caret-down"></i>
+        </button>
+        <ul class="dropdown-menu">
+            {% for item in items %}
+                <li>
+                    <a class="button" href="{{ item.href }}"
+                       onclick='{{ item.onclick }}'>
+                        {% if item.icon %}
+{#                        <i class="{{ item.iconstyle ?: 'fa' }} fa-fw {{ item.icon }}"></i>#}
+                        <i class="fa {{ item.icon }}"></i>
+                        {% endif %}
+                        <em>{{ item.caption }}</em>
+                    </a>
+                </li>
+                {#<li><a class="button" {{  "onclick='#{item.onclick}'" }} href="#modal" data-remodal-target="modal">{{ item.caption }}</a></li>#}
+            {% endfor %}
+        </ul>
+        {#<button type="button" class="button disabled" href="#modal" data-remodal-target="modal">#}
+        {#</button>#}
+    </div>
+    {#</a>#}
+</li>

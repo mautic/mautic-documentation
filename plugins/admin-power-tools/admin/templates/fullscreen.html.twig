@@ -1,0 +1,47 @@
+{% do assets.addJs("plugin://admin-power-tools/assets/fullscreen_util.js") %}
+{% do assets.addCss('plugin://admin-power-tools/assets/fullscreen.css') %}
+
+<style>
+    .fullscreen-enable {
+        display: inline-block;
+    }
+
+    .fullscreen-disable {
+        display: none;
+    }
+
+    *:-webkit-full-screen .fullscreen-disable {
+        display: inline-block;
+    }
+
+    *:-webkit-full-screen .fullscreen-enable {
+        display: none;
+    }
+
+    .fullscreen-menu {
+        display: none;
+    }
+
+    *:-webkit-full-screen .fullscreen-menu {
+        display: block;
+    }
+
+    /* Match button element's align */
+    /* TODO the action service should render a BUTTON and not an A for the move-section-to-child page action*/
+    *:-webkit-full-screen a.button {
+        margin-bottom: 6px;
+    }
+
+
+</style>
+
+<button class="button fullscreen-enable"
+        onclick='_doFullScreen("{{ targetSelector }}"); return false;'>
+    <i class="fa fa-expand"></i>
+    Fullscreen
+</button>
+<button class="button fullscreen-disable"
+        onclick='_doFullScreenRestore(); return false;'>
+    <i class="fa fa-compress"></i>
+    Exit Fullscreen
+</button>

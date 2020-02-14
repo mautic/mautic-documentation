@@ -1,0 +1,30 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set scope = scope ? scope : 'no_scope' %}
+{% set service = service ? service : 'no_service' %}
+{% set context = context ? context : "no_context" %}
+
+{% do assets.addJs('plugin://core-service-manager/assets/ajax_action.js') %}
+
+{% block content %}
+    {{ page.content | raw }}
+{% endblock %}
+
+
+{% block titlebar %}
+    <div class="button-bar">
+        {{ service_render(service, scope, 'first') | raw }}
+        {{ service_render("action", scope, 'first') | raw }}
+
+        {{ service_render(service, scope, 'before:parent') | raw }}
+        {{ service_render("action", scope, 'before:parent') | raw }}
+        
+        {{ service_render(service, scope, 'after:parent') | raw }}
+        {{ service_render("action", scope, 'after:parent') | raw }}
+
+        {{ service_render(service, scope, 'last') | raw }}
+        {{ service_render("action", scope, 'last') | raw }}
+    </div>
+
+    <h1><i class="fa fa-fw {{ icon ? icon : 'fa-list' }}"></i> {{ page.title }}</h1>
+{% endblock %}

@@ -1,0 +1,21 @@
+plugins {
+    id("com.github.hierynomus.license").version("0.14.0")
+}
+
+apply plugin:'java'
+
+sourceSets {
+    grav {
+        resources {
+            srcDirs += "."
+            include  "**/*.php"
+            include  "**/*.css"
+            include  "**/*.js"
+            
+            exclude ".gradle/**"
+            exclude  "**/*.yaml"
+            exclude  "**/*.twig"
+            exclude "classes/Net/**"
+        }
+    }
+}

@@ -1,0 +1,843 @@
+{
+  "schema_version": "1.0.0",
+  "namespaces": [
+    {
+      "name": "Vaadin",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "vaadin-overlay.html",
+        "start": {
+          "line": 531,
+          "column": 4
+        },
+        "end": {
+          "line": 531,
+          "column": 40
+        }
+      },
+      "elements": [
+        {
+          "description": "`<vaadin-overlay>` is a Polymer 2 element for creating overlays.\n\n### Styling\n\nThe following Shadow DOM parts are available for styling:\n\nPart name  | Description\n-----------|---------------------------------------------------------|\n`backdrop` | Backdrop of the overlay\n`overlay`  | Container for position/sizing/alignment of the content\n`content`  | Content of the overlay",
+          "summary": "",
+          "path": "vaadin-overlay.html",
+          "properties": [
+            {
+              "name": "opened",
+              "type": "boolean",
+              "description": "",
+              "privacy": "public",
+              "sourceRange": {
+                "start": {
+                  "line": 136,
+                  "column": 10
+                },
+                "end": {
+                  "line": 140,
+                  "column": 11
+                }
+              },
+              "metadata": {
+                "polymer": {
+                  "notify": true
+                }
+              }
+            },
+            {
+              "name": "template",
+              "type": "Object",
+              "description": "",
+              "privacy": "public",
+              "sourceRange": {
+                "start": {
+                  "line": 142,
+                  "column": 10
+                },
+                "end": {
+                  "line": 145,
+                  "column": 11
+                }
+              },
+              "metadata": {
+                "polymer": {
+                  "notify": true
+                }
+              }
+            },
+            {
+              "name": "content",
+              "type": "Object",
+              "description": "",
+              "privacy": "public",
+              "sourceRange": {
+                "start": {
+                  "line": 147,
+                  "column": 10
+                },
+                "end": {
+                  "line": 150,
+                  "column": 11
+                }
+              },
+              "metadata": {
+                "polymer": {
+                  "notify": true
+                }
+              }
+            },
+            {
+              "name": "withBackdrop",
+              "type": "boolean",
+              "description": "",
+              "privacy": "public",
+              "sourceRange": {
+                "start": {
+                  "line": 152,
+                  "column": 10
+                },
+                "end": {
+                  "line": 156,
+                  "column": 11
+                }
+              },
+              "metadata": {
+                "polymer": {}
+              },
+              "defaultValue": "false"
+            },
+            {
+              "name": "modeless",
+              "type": "boolean",
+              "description": "When true the overlay won't disable the main content, showing\nit doesn’t change the functionality of the user interface.",
+              "privacy": "public",
+              "sourceRange": {
+                "start": {
+                  "line": 162,
+                  "column": 10
+                },
+                "end": {
+                  "line": 167,
+                  "column": 11
+                }
+              },
+              "metadata": {
+                "polymer": {
+                  "observer": "\"_modelessChanged\""
+                }
+              },
+              "defaultValue": "false"
+            },
+            {
+              "name": "focusTrap",
+              "type": "boolean",
+              "description": "When true move focus to the first focusable element in the overlay,\nor to the overlay if there are no focusable elements.",
+              "privacy": "public",
+              "sourceRange": {
+                "start": {
+                  "line": 173,
+                  "column": 10
+                },
+                "end": {
+                  "line": 176,
+                  "column": 11
+                }
+              },
+              "metadata": {
+                "polymer": {}
+              },
+              "defaultValue": "false"
+            },
+            {
+              "name": "_focusedElement",
+              "type": "Object",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 178,
+                  "column": 10
+                },
+                "end": {
+                  "line": 180,
+                  "column": 11
+                }
+              },
+              "metadata": {
+                "polymer": {}
+              }
+            },
+            {
+              "name": "_mouseDownInside",
+              "type": "boolean",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 182,
+                  "column": 10
+                },
+                "end": {
+                  "line": 184,
+                  "column": 11
+                }
+              },
+              "metadata": {
+                "polymer": {}
+              }
+            },
+            {
+              "name": "_mouseUpInside",
+              "type": "boolean",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 186,
+                  "column": 10
+                },
+                "end": {
+                  "line": 188,
+                  "column": 11
+                }
+              },
+              "metadata": {
+                "polymer": {}
+              }
+            },
+            {
+              "name": "_instance",
+              "type": "Object",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 190,
+                  "column": 10
+                },
+                "end": {
+                  "line": 192,
+                  "column": 11
+                }
+              },
+              "metadata": {
+                "polymer": {}
+              }
+            },
+            {
+              "name": "_boundIronOverlayCanceledListener",
+              "type": "Object",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 194,
+                  "column": 10
+                },
+                "end": {
+                  "line": 196,
+                  "column": 11
+                }
+              },
+              "metadata": {
+                "polymer": {}
+              }
+            }
+          ],
+          "methods": [
+            {
+              "name": "ready",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 226,
+                  "column": 6
+                },
+                "end": {
+                  "line": 237,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": []
+            },
+            {
+              "name": "_detectIosNavbar",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 239,
+                  "column": 6
+                },
+                "end": {
+                  "line": 256,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": []
+            },
+            {
+              "name": "_setTemplateFromNodes",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 258,
+                  "column": 6
+                },
+                "end": {
+                  "line": 260,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "nodes"
+                }
+              ]
+            },
+            {
+              "name": "close",
+              "description": "",
+              "privacy": "public",
+              "sourceRange": {
+                "start": {
+                  "line": 266,
+                  "column": 6
+                },
+                "end": {
+                  "line": 272,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "sourceEvent"
+                }
+              ]
+            },
+            {
+              "name": "connectedCallback",
+              "description": "",
+              "privacy": "public",
+              "sourceRange": {
+                "start": {
+                  "line": 274,
+                  "column": 6
+                },
+                "end": {
+                  "line": 285,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": []
+            },
+            {
+              "name": "disconnectedCallback",
+              "description": "",
+              "privacy": "public",
+              "sourceRange": {
+                "start": {
+                  "line": 287,
+                  "column": 6
+                },
+                "end": {
+                  "line": 303,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": []
+            },
+            {
+              "name": "_mouseDownListener",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 305,
+                  "column": 6
+                },
+                "end": {
+                  "line": 307,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "event"
+                }
+              ]
+            },
+            {
+              "name": "_mouseUpListener",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 309,
+                  "column": 6
+                },
+                "end": {
+                  "line": 311,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "event"
+                }
+              ]
+            },
+            {
+              "name": "_outsideClickListener",
+              "description": "We need to listen on 'click' / 'tap' event and capture it and close the overlay before\npropagating the event to the listener in the button. Otherwise, if the clicked button would call\nopen(), this would happen: https://www.youtube.com/watch?v=Z86V_ICUCD4",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 321,
+                  "column": 6
+                },
+                "end": {
+                  "line": 335,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "event"
+                }
+              ]
+            },
+            {
+              "name": "_keydownListener",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 341,
+                  "column": 6
+                },
+                "end": {
+                  "line": 367,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "event"
+                }
+              ]
+            },
+            {
+              "name": "_openedChanged",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 373,
+                  "column": 6
+                },
+                "end": {
+                  "line": 403,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "opened"
+                }
+              ]
+            },
+            {
+              "name": "_modelessChanged",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 405,
+                  "column": 6
+                },
+                "end": {
+                  "line": 413,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "modeless"
+                }
+              ]
+            },
+            {
+              "name": "_enterModalState",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 415,
+                  "column": 6
+                },
+                "end": {
+                  "line": 425,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": []
+            },
+            {
+              "name": "_exitModalState",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 427,
+                  "column": 6
+                },
+                "end": {
+                  "line": 436,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": []
+            },
+            {
+              "name": "_templateChanged",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 438,
+                  "column": 6
+                },
+                "end": {
+                  "line": 449,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "template"
+                }
+              ]
+            },
+            {
+              "name": "_contentChanged",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 451,
+                  "column": 6
+                },
+                "end": {
+                  "line": 453,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "content"
+                }
+              ]
+            },
+            {
+              "name": "_setFocus",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 455,
+                  "column": 6
+                },
+                "end": {
+                  "line": 486,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "index"
+                },
+                {
+                  "name": "increment"
+                }
+              ]
+            },
+            {
+              "name": "_isVisible",
+              "description": "borrowed from jqeury $(elem).is(':visible') implementation",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 489,
+                  "column": 6
+                },
+                "end": {
+                  "line": 491,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "elem"
+                }
+              ]
+            },
+            {
+              "name": "_getFocusableElements",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 493,
+                  "column": 6
+                },
+                "end": {
+                  "line": 517,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": []
+            },
+            {
+              "name": "_processPendingMutationObserversFor",
+              "description": "",
+              "privacy": "protected",
+              "sourceRange": {
+                "start": {
+                  "line": 519,
+                  "column": 6
+                },
+                "end": {
+                  "line": 523,
+                  "column": 7
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "node"
+                }
+              ]
+            }
+          ],
+          "staticMethods": [
+            {
+              "name": "includeStyle",
+              "description": "",
+              "privacy": "public",
+              "sourceRange": {
+                "file": "bower_components/vaadin-themable-mixin/vaadin-themable-mixin.html",
+                "start": {
+                  "line": 37,
+                  "column": 4
+                },
+                "end": {
+                  "line": 41,
+                  "column": 5
+                }
+              },
+              "metadata": {},
+              "params": [
+                {
+                  "name": "moduleName"
+                }
+              ],
+              "inheritedFrom": "Vaadin.ThemableMixin"
+            }
+          ],
+          "demos": [
+            {
+              "url": "demo/index.html",
+              "description": ""
+            }
+          ],
+          "metadata": {},
+          "sourceRange": {
+            "start": {
+              "line": 129,
+              "column": 4
+            },
+            "end": {
+              "line": 524,
+              "column": 5
+            }
+          },
+          "privacy": "public",
+          "superclass": "HTMLElement",
+          "name": "Vaadin.OverlayElement",
+          "attributes": [
+            {
+              "name": "opened",
+              "description": "",
+              "sourceRange": {
+                "start": {
+                  "line": 136,
+                  "column": 10
+                },
+                "end": {
+                  "line": 140,
+                  "column": 11
+                }
+              },
+              "metadata": {},
+              "type": "boolean"
+            },
+            {
+              "name": "template",
+              "description": "",
+              "sourceRange": {
+                "start": {
+                  "line": 142,
+                  "column": 10
+                },
+                "end": {
+                  "line": 145,
+                  "column": 11
+                }
+              },
+              "metadata": {},
+              "type": "Object"
+            },
+            {
+              "name": "content",
+              "description": "",
+              "sourceRange": {
+                "start": {
+                  "line": 147,
+                  "column": 10
+                },
+                "end": {
+                  "line": 150,
+                  "column": 11
+                }
+              },
+              "metadata": {},
+              "type": "Object"
+            },
+            {
+              "name": "with-backdrop",
+              "description": "",
+              "sourceRange": {
+                "start": {
+                  "line": 152,
+                  "column": 10
+                },
+                "end": {
+                  "line": 156,
+                  "column": 11
+                }
+              },
+              "metadata": {},
+              "type": "boolean"
+            },
+            {
+              "name": "modeless",
+              "description": "When true the overlay won't disable the main content, showing\nit doesn’t change the functionality of the user interface.",
+              "sourceRange": {
+                "start": {
+                  "line": 162,
+                  "column": 10
+                },
+                "end": {
+                  "line": 167,
+                  "column": 11
+                }
+              },
+              "metadata": {},
+              "type": "boolean"
+            },
+            {
+              "name": "focus-trap",
+              "description": "When true move focus to the first focusable element in the overlay,\nor to the overlay if there are no focusable elements.",
+              "sourceRange": {
+                "start": {
+                  "line": 173,
+                  "column": 10
+                },
+                "end": {
+                  "line": 176,
+                  "column": 11
+                }
+              },
+              "metadata": {},
+              "type": "boolean"
+            }
+          ],
+          "events": [
+            {
+              "type": "CustomEvent",
+              "name": "vaadin-overlay-close",
+              "description": "vaadin-overlay-close\nfired before the `vaadin-overlay` will be closed. If canceled the closing of the overlay is canceled as well.",
+              "metadata": {}
+            },
+            {
+              "type": "CustomEvent",
+              "name": "vaadin-overlay-escape-press",
+              "description": "vaadin-overlay-escape-press\nfired before the `vaadin-overlay` will be closed on ESC button press. If canceled the closing of the overlay is canceled as well.",
+              "metadata": {}
+            },
+            {
+              "type": "CustomEvent",
+              "name": "vaadin-overlay-open",
+              "description": "vaadin-overlay-open\nfired after the `vaadin-overlay` is opened.",
+              "metadata": {}
+            },
+            {
+              "type": "CustomEvent",
+              "name": "vaadin-overlay-outside-click",
+              "description": "vaadin-overlay-outside-click\nfired before the `vaadin-overlay` will be closed on outside click. If canceled the closing of the overlay is canceled as well.",
+              "metadata": {}
+            },
+            {
+              "type": "CustomEvent",
+              "name": "opened-changed",
+              "description": "Fired when the `opened` property changes.",
+              "metadata": {}
+            },
+            {
+              "type": "CustomEvent",
+              "name": "template-changed",
+              "description": "Fired when the `template` property changes.",
+              "metadata": {}
+            },
+            {
+              "type": "CustomEvent",
+              "name": "content-changed",
+              "description": "Fired when the `content` property changes.",
+              "metadata": {}
+            }
+          ],
+          "styling": {
+            "cssVariables": [],
+            "selectors": []
+          },
+          "slots": [],
+          "tagname": "vaadin-overlay",
+          "mixins": [
+            "Vaadin.ThemableMixin"
+          ]
+        }
+      ]
+    }
+  ]
+}

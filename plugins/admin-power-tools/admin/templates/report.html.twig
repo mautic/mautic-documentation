@@ -1,0 +1,54 @@
+{% extends 'default-admin.html.twig' %}
+{% set scope = 'report' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .report-container {
+            margin: 1em;
+        }
+
+        .report-section {
+            font-size: 1.4em;
+        }
+
+        .report-usedby {
+            margin-left: 1em;
+        }
+
+        .report-item {
+            font-size: 1.1em;
+        }
+
+        .page-title {
+            display: inline;
+            padding: 2px 5px;
+            border-radius: 4px;
+            background-color: #c6d9db;
+        }
+
+        #admin-main .admin-block {
+            overflow: auto;
+        }
+    </style>
+{% endblock %}
+
+{% do assets.addJs('plugin://admin-power-tools/assets/fast-filter.js') %}
+
+{% block content %}
+
+    <div style='padding:0 1em'>
+        <input
+                type='text'
+                style='width:100%;'
+                placeholder='Search...'
+                class='fast-filter'
+                onkeyup='FastFilter.element_text_filter(".report-item", $(this).val()); FastFilter.visible_children_filter(".report-section-container", ".report-item");'
+                autofocus
+        />
+    </div>
+
+    <div class="report-container">
+        {{ parent() }}
+    </div>
+{% endblock %}

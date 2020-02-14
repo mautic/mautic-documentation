@@ -1,0 +1,33 @@
+.fullscreen-container {
+  #admin-main .admin-block {
+    padding: 1em 0;
+  }
+
+  #footer {
+    display: none;
+  }
+
+  #messages {
+    display: none;
+  }
+
+  /* git hub message */
+  .notice-alert {
+    display: none;
+  }
+
+  /* for next version admin? */
+  .content-wrapper > div {
+    height: 100%;
+  }
+
+  #admin-main .titlebar .button-bar .button.active {
+    background: #abbf41;
+  }
+
+  @media (max-width: 74.938em) and (min-width: 47.938em) {
+    #admin-menu .dropdown-menu em {
+      display: block;
+    }
+  }
+}

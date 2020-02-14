@@ -1,0 +1,198 @@
+{% extends 'default-admin.html.twig' %}
+{% set service ='renderer' %}
+{% set scope = 'edit:section' %}
+
+{% set _route = grav.session.getFlashObject('route') %}
+{% set _section = grav.session.getFlashObject('section') %}
+{% set _section_name = grav.session.getFlashObject('section_name') %}
+{% set _level = grav.session.getFlashObject('section_level') %}
+
+{% do assets.addJs('plugin://admin-power-tools/assets/ajax_util.js') %}
+{% do assets.addJs('plugin://admin-power-tools/assets/fullscreen_util.js') %}
+
+{% if config.plugins['admin-power-tools'].edit_section_syntax_enabled and config.plugins['editor'] and config.plugins['editor'].enabled %}
+    {# enable CodeMirror if the editor plugin is installed #}
+    {% do assets.addCss('plugin://editor/lib/codemirror/codemirror.css') %}
+    {% do assets.addJs('plugin://editor/lib/codemirror/codemirror.js') %}
+
+    {% for service in service_list('language') %}
+        {% if service['id'] == 'md' %}
+            {% for dep in service.dependencies %}
+                {% do assets.add(dep) %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% block content %}
+    {{ page.content }}
+
+    <style>
+        button {
+            margin-bottom: 6px;
+        }
+
+        h1, h2, hr {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        #editor {
+            /*height: 5in;*/
+            flex: 1;
+        }
+
+        #container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper > * {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper > * .default-box-shadow:not(#messages),
+        .content-wrapper > * .admin-block,
+        .content-wrapper > * .CodeMirror {
+            display: flex;
+            flex-direction: column;
+            flex: 1
+        }
+
+        /* for next version admin? */
+        .content-wrapper > div {
+            height: 100%;
+        }
+
+        #edit-area {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #edit-area:-webkit-full-screen {
+            padding: 1em !important;
+        }
+
+        .buttons {
+            display: none;
+        }
+
+        .buttons:-webkit-full-screen,
+        .buttons:-moz-full-screen,
+        .buttons:fullscreen {
+            display: block;
+        }
+
+        *:-webkit-full-screen .buttons {
+            display: block;
+        }
+
+        .edit-head {
+            display: flex;
+            white-space: nowrap;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        #heading {
+            width: 100%;
+            border: 1px solid #505050;
+            /*margin-bottom: 6px;*/
+            font-size: 1.3em;
+            padding: 4px
+        }
+
+        .edit-level {
+            margin-right: 6px;
+            font-size: 1.3em;
+        }
+    </style>
+
+
+    <div id="container" class="fullscreen-container" style='padding:0 1em;'>
+        {#Route: {{ _route }} <br/>#}
+        {#Section: {{ _section }}#}
+
+        {#<h1>{{ _section_name }}</h1>#}
+
+        <script>
+          function _doSave(options) {
+            let $editor = $('#editor');
+            let content
+            if ($editor[0].codeMirror) {
+              content = $editor[0].codeMirror.getValue()
+            } else {
+              content = $editor.val();
+            }
+            const section_name = $('#heading').val();
+            _ajaxPost(window.GravAdmin.config.base_url_relative + "/powertools/save-section", {
+              route: '{{ _route }}',
+              section: '{{ _section }}',
+              section_name,
+              content
+            }).then(value => {
+              if (options && options.goBack) {
+                window.history.back();
+              }
+            })
+          }
+
+          function _doMoveSectionToChildPage() {
+            const newContent = $('#editor').val();
+            const newSection = $('#heading').val();
+
+            const context = {
+              "section": "{{ _section }}",
+              "route": "{{ _route }}",
+              "new_section": newSection,
+              "new_content": newContent
+            };
+            _nonAjaxAction('move-to-child', JSON.stringify(context), 'Move this section to a new child page?');
+          }
+
+          function _doDelete() {
+            if (confirm("Delete this section from the page?")) {
+              _ajaxPost(window.GravAdmin.config.base_url_relative + "/powertools/delete-section", {
+                route: '{{ _route }}',
+                section: '{{ _section }}'
+              })
+            }
+          }
+        </script>
+
+        <div id="edit-area">
+            <div class="buttons">
+                {{ service_render('action', 'edit:section', 'first') | raw }}
+                {{ service_render('action', 'edit:section', 'before:parent') | raw }}
+                <button class="button" onclick='_doSave(); return false;'><i class='fa fa-save'></i>Save</button>
+                <button class="button" onclick='_doDelete(); return false;'><i class='fa fa-trash'></i>Delete</button>
+                {{ service_render('action', 'edit:section', 'after:parent') | raw }}
+                {% include 'fullscreen.html.twig' with {"targetSelector": "#edit-area" } %}
+                {{ service_render('action', 'edit:section', 'last') | raw }}
+            </div>
+            <div class="edit-head">
+                <span class="edit-level">{{ _level }}</span>
+                <input id="heading" value="{{ _section_name }}"/>
+            </div>
+            <textarea id="editor">{{ get_page_section(_route, _section) }}</textarea>
+        </div>
+
+        <script>
+          if (window.CodeMirror) {
+            var textarea = document.getElementById("editor");
+            var editor = CodeMirror.fromTextArea(textarea, {
+              lineNumbers: false,
+              mode: "markdown"
+            });
+            // This is used in save() to flag the textarea as CodeMirror enabled
+            textarea.codeMirror = editor;
+          }
+        </script>
+
+    </div>
+{% endblock %}

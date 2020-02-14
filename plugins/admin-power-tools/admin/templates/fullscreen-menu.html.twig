@@ -1,0 +1,6 @@
+<div class="fullscreen-menu">
+    {{ service_render('renderer', scope, 'first') | raw }}
+    {{ service_render('renderer', scope, 'before:parent') | raw }}
+    {{ service_render('renderer', scope, 'after:parent') | raw }}
+    {{ service_render('renderer', scope, 'last') | raw }}
+</div>

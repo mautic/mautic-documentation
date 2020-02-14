@@ -1,0 +1,147 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set title = "PLUGIN_ADMIN.DASHBOARD"|tu %}
+
+{% set clear_cache_url = base_url_relative ~ '/cache.json/task' ~ config.system.param_sep ~ 'clearCache'|e('html_attr') %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    {#tt#}
+    {% for asset in service_list('asset', 'dashboard', 'any') %}
+        {% if asset.type == 'css' %}
+            {% do assets.addJs("#{asset.url}") %}
+        {% endif %}
+    {% endfor %}
+    {#tt end#}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {#tt#}
+    {% for asset in service_list('asset', 'dashboard', 'any') %}
+        {% if asset.type == 'link' %}
+            <link rel="{{ asset.rel }}" href="{{ asset.url }}" />
+        {% endif %}
+        {% if asset.type == 'twig' %}
+            {% include "#{asset.url}" %}
+        {% endif %}
+        {% if asset.type == 'javascript' %}
+            {% do assets.addJs("#{asset.url}") %}
+        {% endif %}
+    {% endfor %}
+    {#tt end#}
+{% endblock %}
+
+
+{% block titlebar %}
+    <div class="button-bar">
+        {#tt#}
+        {{ service_render('renderer', 'dashboard', 'first', context) | raw }}
+        {#tt end#}
+        {#tt#}
+        {{ service_render('renderer', 'dashboard', 'before:parent', context) | raw }}
+        {#tt end#}
+
+        {#tt#}
+        {% set pageadd_items = service_list_filter("(&(objectClass=action)(menu=page:add)(scope=dashboard))", context) %}
+        {% if pageadd_items|count > 0 %}
+        <div class="button-group">
+            {#<button type="button" class="button disabled" href="#modal" data-remodal-target="modal">#}
+                {#<i class="fa fa-plus"></i> {{ "PLUGIN_ADMIN.ADD"|tu }}#}
+            {#</button>#}
+            <button type="button" class="button disabled" href="#">
+                <i class="fa fa-plus"></i> {{ "PLUGIN_ADMIN.ADD"|tu }}
+            </button>
+            <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <ul class="dropdown-menu">
+                {% for item in pageadd_items %}
+                    {% set key = item.form_id ? "href=##{item.form_id} data-remodal-target=#{item.form_id}" : "" %}
+                    <li><a class="button" {{ key }}>{{ item.caption }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {#tt end#}
+        
+        {% if authorize(['admin.maintenance', 'admin.super', 'admin.cache']) %}
+            <div class="button-group">
+                <button data-clear-cache-type="" data-clear-cache="{{ uri.addNonce(clear_cache_url, 'admin-form', 'admin-nonce') }}" class="button"><i class="fa fa-trash"></i> {{ "PLUGIN_ADMIN.CLEAR_CACHE"|tu }}</button>
+                <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a data-clear-cache-type="all" data-clear-cache="{{  uri.addNonce(clear_cache_url ~'/cleartype' ~ config.system.param_sep ~ 'all', 'admin-form', 'admin-nonce') }}" href="#">{{ "PLUGIN_ADMIN.CLEAR_CACHE_ALL_CACHE"|tu }}</a></li>
+                    <li><a data-clear-cache-type="assets-only" data-clear-cache="{{ uri.addNonce(clear_cache_url ~'/cleartype' ~ config.system.param_sep ~ 'assets-only', 'admin-form', 'admin-nonce') }}" href="#">{{ "PLUGIN_ADMIN.CLEAR_CACHE_ASSETS_ONLY"|tu }}</a></li>
+                    <li><a data-clear-cache-type="images-only" data-clear-cache="{{ uri.addNonce(clear_cache_url ~'/cleartype' ~ config.system.param_sep ~ 'images-only', 'admin-form', 'admin-nonce') }}" href="#">{{ "PLUGIN_ADMIN.CLEAR_CACHE_IMAGES_ONLY"|tu }}</a></li>
+                    <li><a data-clear-cache-type="cache-only" data-clear-cache="{{ uri.addNonce(clear_cache_url ~'/cleartype' ~ config.system.param_sep ~ 'cache-only', 'admin-form', 'admin-nonce') }}" href="#">{{ "PLUGIN_ADMIN.CLEAR_CACHE_CACHE_ONLY"|tu }}</a></li>
+                    <li><a data-clear-cache-type="tmp-only" data-clear-cache="{{ uri.addNonce(clear_cache_url ~'/cleartype' ~ config.system.param_sep ~ 'tmp-only', 'admin-form', 'admin-nonce') }}" href="#">{{ "PLUGIN_ADMIN.CLEAR_CACHE_TMP_ONLY"|tu }}</a></li>
+                </ul>
+            </div>
+        {% endif %}
+        {#tt#}
+        {{ service_render('renderer', 'dashboard', 'after:parent') | raw }}
+        {#tt end#}
+        {% if authorize(['admin.maintenance', 'admin.super']) %}
+            <button data-gpm-checkupdates="" class="button"><i class="fa fa-refresh"></i> {{ "PLUGIN_ADMIN.CHECK_FOR_UPDATES"|tu }}</button>
+        {% endif %}
+        {#tt#}
+        {{ service_render('renderer', 'dashboard', 'last') | raw }}
+        {#tt end#}
+    </div>
+    <h1><i class="fa fa-fw fa-th"></i> {{ "PLUGIN_ADMIN.DASHBOARD"|tu }}</h1>
+{% endblock %}
+
+{% block widgets %}
+    {% if config.plugins.admin.notifications.dashboard %}
+    <div class="dashboard-notifications-container"></div>
+    {% endif %}
+
+    <div id="admin-dashboard">
+        {% if grav.twig.plugins_hooked_dashboard_widgets_top %}
+            {% for widget in grav.twig.plugins_hooked_dashboard_widgets_top %}
+                {% if attribute(config.plugins.admin.widgets, widget.template) == true %}
+                    <div class="dashboard-item-flex">
+                        {% include 'partials/' ~ widget.template ~ '.html.twig' %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block content %}
+    {%- if grav.twig.plugins_hooked_dashboard_widgets_main -%}
+        {%- for widget in grav.twig.plugins_hooked_dashboard_widgets_main -%}
+            {%- if attribute(config.plugins.admin.widgets, widget.template) == true %}
+                {% include 'partials/' ~ widget.template ~ '.html.twig' %}
+            {% endif -%}
+        {%- endfor -%}
+    {%- endif -%}
+
+    {#tt#}
+    {% for item in service_list_filter("(&(objectClass=action)(menu=page:add)(scope=dashboard))", context) %}
+        {% if item.form_id %}
+            {% set form_data = item.form_data(context) %}
+            <div class="remodal" data-remodal-id="{{ item.form_id }}" data-remodal-options="hashTracking: false">
+                {% include "partials/blueprints-new-custom.html.twig" with { blueprints:  item.form_blueprint, data: obj_data, form_data:form_data, form_id:"#{item.form_id}" } %}
+            </div>
+        {% endif %}
+    {% endfor %}
+    {#tt end#}
+    
+{% endblock %}
+
+{% block content_bottom %}
+    <div id="admin-dashboard">
+        {%- if grav.twig.plugins_hooked_dashboard_widgets_bottom -%}
+            {%- for widget in grav.twig.plugins_hooked_dashboard_widgets_bottom -%}
+                {%- if attribute(config.plugins.admin.widgets, widget.template) == true %}
+                    {% include 'partials/' ~ widget.template ~ '.html.twig' %}
+                {% endif -%}
+            {%- endfor -%}
+        {%- endif -%}
+    </div>
+{% endblock %}

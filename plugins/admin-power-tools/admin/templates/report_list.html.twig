@@ -1,0 +1,11 @@
+{% extends 'default-admin.html.twig' %}
+{% set scope = 'reportlist' %}
+
+{% block content %}
+    {{ page.content }}
+    {% for item in service_list("report") %}
+        {% set icon = item.icon ?: 'fa-list' %}
+        <a href="{{ 'report/' ~ item.caption|hyphenize|lower }}"><h1><i class="fa {{ icon }}"></i> {{ item.caption }}</h1>
+        </a>
+    {% endfor %}
+{% endblock %}

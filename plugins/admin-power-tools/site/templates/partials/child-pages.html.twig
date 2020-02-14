@@ -1,0 +1,12 @@
+{#
+    page: The page this twig appears in.
+#}
+{% set childPages = page.collection({items:'@self.children'}) %}
+{% if childPages|length > 0 %}
+    <p class="child-pages-list">
+        Child Pages <br/>
+        {% for p in page.collection({items:'@self.children'}) %}
+            <a href='{{ base_url ~ p.route }}'>{{ p.title }}</a><br/>
+        {% endfor %}
+    </p>
+{% endif %}

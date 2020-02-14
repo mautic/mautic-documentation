@@ -1,0 +1,22 @@
+@mixin level($indent) {
+  .h#{$indent} {
+    margin-left: #{1*($indent - 1)}em;
+  }
+}
+
+.report-tree {
+  @include level(1);
+  @include level(2);
+  @include level(3);
+  @include level(4);
+  @include level(5);
+  @include level(6);
+  @include level(7);
+  @include level(8);
+  @include level(9);
+  
+}
+
+.admin-block {
+  overflow: auto;
+}

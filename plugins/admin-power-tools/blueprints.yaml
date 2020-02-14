@@ -1,0 +1,160 @@
+#
+# The MIT License (MIT)
+#
+# Copyright (c) 2018 TwelveTone LLC
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+
+name: Admin Power Tools
+version: 0.1.12
+description: Power tools for Grav.
+icon: plug
+author:
+  name: TwelveTone LLC
+  email: info@twelvetone.tv
+homepage: https://www.twelvetone.tv/docs/developer-tools/grav-plugins/grav-admin-power-tools
+xdemo: http://demo.yoursite.com
+keywords: grav, plugin, page, add, tools, admin, create, add page, report, edit
+bugs: https://www.twelvetone.tv/docs/developer-tools/grav-plugins/grav-admin-power-tools
+docs: https://www.twelvetone.tv/docs/developer-tools/grav-plugins/grav-admin-power-tools
+license: MIT
+
+dependencies:
+    - { name: grav, version: '>=1.0.0' }
+    - { name: admin, version: '>=1.0.0' }
+    - { name: core-service-manager, version: '>=1.0.7' }
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    edit_page_enabled:
+      type: toggle
+      label: Edit this page
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    edit_section_enabled:
+      type: toggle
+      label: Edit this section
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    edit_section_syntax_enabled:
+      type: toggle
+      label: Use CodeMirror if available
+      description: Enables syntax highlighing for the section editor. The editor plugin must be installed.
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    add_page_enabled:
+      type: toggle
+      label: Additional <strong>Add Page</strong> options
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    reports_enabled:
+      type: toggle
+      label: Reports
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    rename_page_enabled:
+      type: toggle
+      label: Rename Page
+      help: Rename a page and modify all page-name and page-slug references.
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    move_page_enabled:
+      type: toggle
+      label: Move Page
+      help: Move a page and modify all page-route references.
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    child_reordering_enabled:
+      type: toggle
+      label: Child Reordering
+      help: Enables child reordering on the edit-page form.
+      highlight: 1
+      default: 1
+      options:
+        1: Show
+        0: Hide
+      validate:
+        type: bool
+
+    child_reordering_immediate:
+      type: toggle
+      label: Child Reordering Immediate
+      help: Save child order without requiring a 'Save'.
+      highlight: 1
+      default: 1
+      options:
+        1: Show
+        0: Hide
+      validate:
+        type: bool
