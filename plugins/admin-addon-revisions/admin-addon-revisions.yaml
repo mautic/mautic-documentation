@@ -1,0 +1,6 @@
+enabled: true
+debug: false
+directory: .revs
+limit:
+  maximum: 50
+  older: 1 year

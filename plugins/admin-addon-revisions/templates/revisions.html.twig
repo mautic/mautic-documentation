@@ -1,0 +1,122 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block titlebar %}
+  <div class="button-bar">
+    {% if action == 'list-revisions' %}
+      <a class="button" href="{{ base_url }}/revisions"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
+    {% endif %}
+
+    {% if action == 'diff' %}
+      <a class="button" href="{{base_url}}/revisions{{ context.route }}"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
+      <a class="button disable-after-click" href="{{ uri.addNonce(uri.route(true) ~ '/task' ~ config.system.param_sep ~ 'revRevert' ~ '/rev' ~ config.system.param_sep ~ revision.name, 'admin-form', 'admin-nonce') }}" ><i class="fa fa-reply"></i> Revert</a>
+      <a class="button disable-after-click" href="{{ uri.addNonce(uri.route(true) ~ '/task' ~ config.system.param_sep ~ 'revDelete' ~ '/rev' ~ config.system.param_sep ~ revision.name, 'admin-form', 'admin-nonce') }}" ><i class="fa fa-close"></i> Delete</a>
+    {% endif %}
+
+    {% if action == 'list-pages' %}
+      <a class="button" href="#delete" data-remodal-target="delete" data-delete-url="{{ uri.addNonce(uri.route(true) ~ '/task' ~ config.system.param_sep ~ 'revDeleteAll', 'admin-form', 'admin-nonce') }}"><i class="fa fa-close"></i> Delete All</a>
+    {% endif %}
+  </div>
+
+  {% if action == 'list-pages' or action == 'list-revisions' %}<h1><i class="fa fa-fw fa-file-text-o"></i> Manage Revisions</h1>{% endif %}
+  {% if action == 'diff' %}<h1><i class="fa fa-fw fa-file-text-o"></i> Manage Revision</h1>{% endif %}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ context.title ?: 'Pages' }}</h1>
+  <div class="revision-container">
+    {% if action == 'list-pages' %}
+      <div class="revision-list">
+        {% for page in revPages %}
+          {% if page.revisions > 0 %}
+            <div><a href="{{base_url}}{{ page.revisions > 0 ? '/revisions' ~ page.route : '#' }}">{{ page.title }}</a> ({{ page.revisions }}) ({{ page.lastRevision|nicetime(true) }})</div>
+          {% else %}
+            <div>{{ page.title }} ({{ page.revisions }})</div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if action == 'list-revisions' %}
+      <h2>Revisions</h2>
+      <div class="revision-list">
+        {% for revision in revisions.instances|reverse %}
+          {% if loop.first %}
+            <div>{{ revision.name }} (Current)</div>
+          {% else %}
+            <div><a href="{{base_url}}/revisions{{ context.route }}/action:diff/rev:{{ revision.name }}">{{ revision.name }}</a> ({{ revision.createdAt|nicetime(true) }})</div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if action == 'diff' %}
+      <p>All changes since the <strong>{{ revision.name }}</strong> revision (Comparing <strong>{{ revision.name }}</strong> to current content)</p>
+      {% if added is not empty %}
+        <h2>Added</h2>
+        <ul>
+        {% for file in added %}
+          <li>{{ file }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if removed is not empty %}
+        <h2>Removed</h2>
+        <ul>
+        {% for file in removed %}
+          <li>{{ file }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if renamed is not empty %}
+        <h2>Renamed</h2>
+        <ul>
+        {% for file in renamed %}
+          <li>{{ file.from }} -> {{ file.to }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if changed is not empty %}
+        <h2>Changes</h2>
+        <div>
+        {% for file in changed %}
+          <div class="revision-change revision-change--type-{{ file.type }}">
+            {{ file.filename }}
+            {% if file.type == 'text' %}
+            <pre class="revision-change__changes">{{ file.diff|raw }}</pre>
+            {% elseif file.type == 'image' %}
+            <div class="revision-change__changes">
+                <div><img src="{{ file.oldUrl }}" /></div>
+                <span></span>
+                <div><img src="{{ file.newUrl }}" /></div>
+            </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if equal is not empty %}
+        <h2>No changes</h2>
+        <ul>
+        {% for file in equal %}
+          <li>{{ file }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endif %}
+  </div>
+
+  <div class="remodal" data-remodal-id="delete" data-remodal-options="hashTracking: false">
+    <form>
+      <h1>{{ "PLUGIN_ADMIN.MODAL_DELETE_PAGE_CONFIRMATION_REQUIRED_TITLE"|tu }}</h1>
+      <br>
+      <div class="button-bar">
+        <button data-remodal-action="cancel" class="button secondary remodal-cancel"><i class="fa fa-fw fa-close"></i> {{ "PLUGIN_ADMIN.CANCEL"|tu }}</button>
+        <a class="button disable-after-click" data-delete-action href="#"><i class="fa fa-fw fa-check"></i> {{ "PLUGIN_ADMIN.CONTINUE"|tu }}</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}
