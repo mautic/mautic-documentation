@@ -2,7 +2,7 @@
 title: 'Managing Assets'
 ---
 
-## Categories
+## Asset Categories
 Assets can be organized in categories, which allows you to easily locate resources.  To create a new category, browse to the Categories section in the admin menu.
 
 ![](settings-categories.jpg)
@@ -40,6 +40,7 @@ At the bottom of the page, a dropdown allows control over the number of categori
 Categories can be deleted by clicking on the arrow beside the checkbox and selecting delete.  If any assets are currently assigned to the category being deleted, they will not be removed, but will instead display as 'Unassigned'.  A warning will be displayed which alerts you to this fact when deleting a category.
 
 ![](delete-categories.jpg)
+
 
 ## Assets
 

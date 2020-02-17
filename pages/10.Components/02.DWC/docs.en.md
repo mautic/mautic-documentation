@@ -16,15 +16,15 @@ This feature allows you to configure filters (like in segments) so a Landing Pag
 
 1. Create or edit a Dynamic Web Content item.
 
-![](media/form.png)
+![](form.png)
 
 2. Toggle the "*Is campaign based*" button to **No** (Notice how when No is selected, the "*Slot Name*" field is available and the filters tab is displayed so new filters can be created.
 
-![](media/filters.png)
+![](filters.png)
 
 3. On a landing page, add a token or a slot for the new dynamic web content you just created.
 
-![](media/builder.png)
+![](builder.png)
 
 4. When using DWC slots, you need to provide the requested slot name.
 
@@ -44,7 +44,7 @@ This feature allows you to configure filters (like in segments) so a Landing Pag
 
 7. Again, when someone visits the page the DWC slot will be replaced if the filters match:
 
-![](media/third.png)
+![](third.png)
 
 ## Campaign based
 
@@ -52,7 +52,7 @@ There are several steps involved in setting this up.
 
 ### Add the default content
 
-![](media/dwc-default.jpg)
+![](dwc-default.jpg)
 
 ### Add alternative content if desired
 
@@ -62,7 +62,7 @@ You can set up as many items as you need.  The default will be delivered via the
 
 The key to this step is naming the "slot".  This can be anything you want as long as it's unique across your dynamic content campaigns.  The pull request is processed and determines if the person on the landing page is a known contact.
 
-![](media/dwc-pull-request.jpg)
+![](dwc-pull-request.jpg)
 
 ### Add the push request in the campaign
 
@@ -72,7 +72,7 @@ If you want to serve up different information based on certain criteria, you can
 2. If they meet the criteria (in the example below - if they are from Canada), a different set of content can be delivered to the browser.
 3. If they are unknown, they will see the information embedded in the dynamic web content div from the page (see below).
 
-![](media/dwc-push.jpg)
+![](dwc-push.jpg)
 
 ### Finally, include the dynamic web content shortcode in your web page
 
