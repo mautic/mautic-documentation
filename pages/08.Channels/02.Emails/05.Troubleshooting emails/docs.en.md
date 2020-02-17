@@ -1,7 +1,9 @@
 ---
 title: 'Troubleshooting emails'
+slug: troubleshooting-emails
 ---
 
+---
 ## Open email tracking doesn't get tracked
 
 Emails are being tracked by a tracking pixel. This is simply a 1 pixel GIF image in the source code of email messages sent by Mautic. When an email is opened by an email client like Outlook, Thunderbird or GMail, the client tries to load the images in it. The image load request is what Mautic uses to track the email open action.
