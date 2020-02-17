@@ -1,9 +1,5 @@
 ---
 title: 'Getting Started'
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
 ---
 
 Awesome! You've downloaded a marketing automation tool. That's a great first step, but now you wonder where to go from here. Follow this very simple guide to get started using your shiny new toy!
@@ -18,7 +14,7 @@ As an example, if your domain is `example.com` and you have unzipped the file in
 
 If you see errors when you try to access the installation as below:
 
-![permissions error](media/permissions-error.png)
+![permissions error](permissions-error.png)
 
 the problem is likely to be due to the permissions on your files and folders.
 
@@ -72,7 +68,7 @@ Critical issues will be displayed in red and will not allow you to proceed until
 
 Advisory issues will be displayed in orange.  These issues are 'should fix', however you will be able to proceed with the installation without resolving them.
 
-![advisory notices](media/advisory-notices.png)
+![advisory notices](advisory-notices.png)
 
 In the example below, you can see that we are being _advised_ that we should secure our Mautic instance with an SSL certificate.  You might see other warnings relating to PHP extensions that are necessary to provide certain non-essential features such as IMAP email inbox checking and internationalisation - you should determine whether these are important to you, and fix them as appropriate.
 
@@ -82,7 +78,7 @@ Refreshing this screen after fixing the issues (and, where appropriate, restarti
 
 In the next step you will be asked to provide the details for a database that Mautic will use.  The database needs to be MySQL with InnoDB support, at a minimum version of 5.5.3.
 
-![database setup](/setup/media/database-setup.png)
+![database setup](database-setup.png)
 
 The host will often be localhost and the port 3306, but check this with your hosting provider if you experience problems.  Ideally you will have already created the database for Mautic to use, but if you haven't, ensure that the user has permission to create new databases.
 
@@ -96,7 +92,7 @@ This step may take a few minutes to complete, as the database is created and pop
 
 The next step after creating the database is to set up your administrator account.  This will be the account you use to log into Mautic for the first time.
 
-![admin user](/setup/media/admin-user.png)
+![admin user](admin-user.png)
 
 Enter a username, password, first and last name and an email address, and the account will be created for you.
 
@@ -104,7 +100,7 @@ Enter a username, password, first and last name and an email address, and the ac
 
 The next step allows you to configure the way in which email is sent from your Mautic instance.
 
-![email config](/setup/media/email-config.png)
+![email config](email-config.png)
 
 If you are testing, whether locally or on a live server, it is highly recommended to make use of [Mailhog](https://github.com/mailhog/MailHog) or similar to capture all outgoing emails, until you are ready to send to real recipients. Otherwise, in a production environment you will need to choose whether you want to send email immediately, or queue email (and process it when the Cron job runs), and provide the appropriate server, port, encryption type, credentials and authentication mode for the systems you wish to use.
 
@@ -134,11 +130,11 @@ Review [Cron Jobs][cron] for more information on these and other optional cron j
 
 By default, Mautic is configured to use MaxMind's free GeoLite2 IP lookup database. Due to the licensing of the database, it cannot be included with Mautic's installation package and thus must be downloaded. Click on the cogwheel in the upper right hand of Mautic to view the Admin menu then click Configuration. This is where most of the configuration takes place.
 
-![config menu](/setup/media/config-menu.png)
+![config menu](config-menu.png)
 
 On the System Settings tab, scroll down to find the IP lookup service option and click the "Fetch IP Lookup Data Store."
 
-![get maxmind](/setup/media/get-maxmind.png)
+![get maxmind](get-maxmind.png)
 
 You could also choose another supported IP lookup service if you prefer.
 
