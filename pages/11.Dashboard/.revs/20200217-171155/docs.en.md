@@ -1,6 +1,5 @@
 ---
 title: Dashboard
-media_order: dashboard-date-filters.png
 ---
 
 ---
