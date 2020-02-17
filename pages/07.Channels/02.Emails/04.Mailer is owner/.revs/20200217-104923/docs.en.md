@@ -1,5 +1,9 @@
 ---
 title: 'Mailer is owner'
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
 ---
 
 # Emails sent from owner email and name
