@@ -1,6 +1,5 @@
 ---
 title: 'Progressive profiling'
-slug: progressive-profiling
 ---
 
 ---
