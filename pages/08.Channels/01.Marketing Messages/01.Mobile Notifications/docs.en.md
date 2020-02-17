@@ -1,5 +1,6 @@
 ---
 title: 'Mobile notifications'
+slug: mobile-notifications
 ---
 
 ---------------------
