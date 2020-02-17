@@ -3,7 +3,7 @@ title: Companies
 media_order: primary-company.png
 ---
 
-# Companies
+---
 
 Companies are a way to group contacts based on the company(ies) the contact works or has worked for.
 
