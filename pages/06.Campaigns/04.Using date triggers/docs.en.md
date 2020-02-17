@@ -1,12 +1,9 @@
 ---
 title: 'Using date triggers'
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
 ---
 
-# Custom date field to trigger a campaign
+---------------------
+## Using a custom date field to trigger a campaign
 
 In the condition based on a contact field value, select the required date field. After selecting it, select "date" as operator.
 Then select the required value from drop-down.
