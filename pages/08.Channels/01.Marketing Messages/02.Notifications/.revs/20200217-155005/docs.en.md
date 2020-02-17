@@ -4,7 +4,7 @@ slug: web-notifications
 ---
 
 ---------------------
-Web notifications in Mautic are provided by integrating with [One Signal](https://onesignal.com/). Using your own OneSignal accounts, you can now push a notification to your contacts's browser (with their permission). Enable these in Mautic's Configuration to see them listed under Channels in the menu.
+Web notifications integrate [One Signal](https://onesignal.com/). Using your own OneSignal accounts, you can now push a notification to your contacts's browser (with their permission). Enable these in Mautic's Configuration to see them listed under Channels in the menu.
 
 For more information see [One Signal documentation](https//documentation.onesignal.com/docs/web-push-setup)
 
