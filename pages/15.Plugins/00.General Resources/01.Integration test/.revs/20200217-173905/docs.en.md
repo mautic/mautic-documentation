@@ -6,7 +6,6 @@ order_by: ''
 order_manual: ''
 ---
 
----
 ## How to test an integration
 
 If you want to test an integration plugin to ensure that it is configured properly, you have three options how to do that. A contact can be pushed to an integration via these actions:
