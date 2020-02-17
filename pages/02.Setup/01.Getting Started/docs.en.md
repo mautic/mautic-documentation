@@ -141,15 +141,15 @@ You could also choose another supported IP lookup service if you prefer.
 ## Step 4: Install the Tracking Javascript
 
 After installation and setup of the cron jobs you're ready to begin tracking contacts. You will need to add a simple javascript to the websites for each site you wish to track via Mautic. This is a very simple process and you can add this tracking script to your website template file, or install a Mautic integration for the more common CMS platforms. Here is an example of the tracking javascript which you can access by clicking on 'Tracking Settings':
-``` <script>
+
+    <script>
     (function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
         w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
         m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://example.com/mautic/mtc.js','mt');
 
     mt('send', 'pageview');
-</script>
-```
+    </script>
 
 You will need to change the site URL (replace example.com/mautic with the URL to your Mautic instance) in the above script.
 
