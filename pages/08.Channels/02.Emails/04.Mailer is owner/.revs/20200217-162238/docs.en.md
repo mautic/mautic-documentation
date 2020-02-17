@@ -3,7 +3,6 @@ title: 'Mailer is owner'
 slug: mailer-is-owner
 ---
 
----
 # Emails sent from owner email and name
 
 It allows to automatically personalize emails sent to a user who has an owner (mautic user) assigned to it. This feature changes *from email*, *from name* and *signature* from the default setting to the user setting.
