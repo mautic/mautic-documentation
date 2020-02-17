@@ -35,24 +35,17 @@ Signature is also a new feature in the Mautic 1.3.0. There are two places where 
 
 2. Every user can configure their own signature in the profile edit page. This signature will be used **if the contact owner is known**.
 
-	The signature can be placed into an email text using the `{signature}` token.
+The signature can be placed into an email text using the `{signature}` token.
 
-	There is one exception where the contact owner's signature won't be used. 
+There is one exception where the contact owner's signature won't be used. 
 
-	When a user sends an email **directly from a contact** , the currently logged in user's signature will be used and **not the lead owner**. 
-    
-    It doesn't matter if the contact has another owner assigned or if it doesn't have an owner at all.
+When a user sends an email **directly from a contact** , the currently logged in user's signature will be used and **not the lead owner**. It doesn't matter if the contact has another owner assigned or if it doesn't have an owner at all.
 
 ## FAQ
 
 ### Does it work for all emails?
 
 There are exceptions:
-* The email has to be sent to a contact. 
-	If Mautic doesn't have a contact assigned with the email, it doesn't know its owner and therefore cannot know what user name, email and signature to choose. 
-    
-    This happens when you send the test emails.
-    
-* If you send an email directly from the contact detail, the *from name* and *from email* will be used from the form, not from the user settings. 
-	Those values are pre-filled by currently logged in user name and email.
+- The email has to be sent to a contact. If Mautic doesn't have a contact assigned with the email, it doesn't know its owner and therefore cannot know what user name, email and signature to choose. This happens when you send the test emails.
+- If you send an email directly from the contact detail, the *from name* and *from email* will be used from the form, not from the user settings. Those values are pre-filled by currently logged in user name and email.
 
