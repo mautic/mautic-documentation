@@ -16,7 +16,7 @@ It's recommended to use the email field in each form. From Mautic 2.9 email can 
 
 1. Display field only if the value is not known yet
 
-	Mautic will search for a value in 2 places before the form is rendered for the current contact:
+Mautic will search for a value in 2 places before the form is rendered for the current contact:
 
 1.1 Former form submissions
 
