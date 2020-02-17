@@ -1,5 +1,6 @@
 ---
 title: 'Troubleshooting campaigns'
+slug: troubleshooting-campaigns
 ---
 
 ---------------------
