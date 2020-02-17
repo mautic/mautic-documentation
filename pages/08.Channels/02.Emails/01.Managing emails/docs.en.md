@@ -3,6 +3,7 @@ title: 'Managing emails'
 media_order: 'email-segments.jpg,base64-images.jpg'
 ---
 
+---------------------
 ## Email Overview
 
 The email overview allows at-a-glance information regarding the success or failure of a particular email. You can quickly see relevant information in regards to opens, bounces, successful click-throughs and other important statistics.
