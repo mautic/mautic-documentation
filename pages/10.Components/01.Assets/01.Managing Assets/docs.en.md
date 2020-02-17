@@ -1,5 +1,6 @@
 ---
 title: 'Managing Assets'
+slug: managing-assets
 ---
 
 ## Asset Categories
