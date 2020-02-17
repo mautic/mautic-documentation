@@ -8,11 +8,11 @@ Web notifications in Mautic are provided by integrating with [One Signal](https:
 
 For more information see [One Signal documentation](https//documentation.onesignal.com/docs/web-push-setup)
 
-## Setup
+### Setup
 
-1. Create [One Signal](https://onesignal.com/) account and app
+##### 1. Create [One Signal](https://onesignal.com/) account and app
 
-2. Setup app Website Push Platforms in you app
+##### 2. Setup app Website Push Platforms in you app
 
 ![](notification-setup1.PNG)
 
@@ -24,7 +24,7 @@ Apple Safari (macOS) configuration example
 
 ![](notification-setup3.PNG)
 
-3. Configure Mautic
+##### 3. Setup Mautic
 
 Enable Web Notification and copy keys from OneSignal to your Mautic > Settings > Configuration - Web Notification Settings tab
 
@@ -32,23 +32,23 @@ Enable Web Notification and copy keys from OneSignal to your Mautic > Settings >
 
 ![](notification-setup5.PNG)
 
-4. Test
+##### 4. Test
 
 All visitors with supported browser will be ask receive notification on all you Mautic landing pages. Create campaign and use Push Website notification action.
 
-## Options
+### Options
 
-### Welcome Notifications
+##### Welcome Notifications
 
 Option to allow disable welcome notifications.
 For more informations see [One Signal documentation](https://documentation.onesignal.com/docs/welcome-notifications)
 
-### gcm_sender_id
+##### gcm_sender_id
 
 Option gcm_sender_id is a shared key used for push notifications.
 Use default value 482941778795. Previously it required your own key. Due backwards compatibility is editable (for older Mautic).
 
-## HTTPS and HTTP support
+### HTTPS and HTTP support
 
 HTTP support was added  in Mautic 2.6. 
 
@@ -60,7 +60,7 @@ We recommend use https of your websites. But http suport for onesignal.com  is v
 
 For more informations about http notification support read  [One Signal documentation](https://documentation.onesignal.com/docs/web-push-sdk-setup-http)
 
-## Support for Mautic landing pages and tracking pages
+### Support for Mautic landing pages and tracking pages
 
 Support for tracking pages was added  in Mautic 2.6. 
 
