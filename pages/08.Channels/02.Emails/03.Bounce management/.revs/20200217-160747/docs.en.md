@@ -118,11 +118,11 @@ Mautic supports a few of Mandrill's webhooks for bounces.
 
 ![Add Webhook](mandrill_webhook_2.png "Add webhook")
 
-Mautic 1.2.2 supports the following webhooks: Message is Bounced, Message is Soft-Bounced, Message is Rejected.  As of 1.2.3, Message is Marked as Spam and Message Recipient Unsubscribes will be supported.
+3. Mautic 1.2.2 supports the following webhooks: Message is Bounced, Message is Soft-Bounced, Message is Rejected.  As of 1.2.3, Message is Marked as Spam and Message Recipient Unsubscribes will be supported.
 
-3. Fill in the Post To Url as `http://your-mautic.com/mailer/mandrill/callback` then click Create Webhook.
+4. Fill in the Post To Url as `http://your-mautic.com/mailer/mandrill/callback` then click Create Webhook.
 
-4. Click Custom Metadata and create two new metadata fields: `hashId` and `contactId`
+5. Click Custom Metadata and create two new metadata fields: `hashId` and `contactId`
 
 ![Add metadata](mandrill_webhook_5.png "Add metadata")
 
@@ -140,9 +140,9 @@ Mautic supports Mailjet's webhooks for bounces, spam and blocked. Before any con
 
 ![Add Webhook](mailjet_webhook_2.png "Add webhook")
 
-Mautic 2.2.0 supports the following webhooks: Message is Bounced, Message is Blocked, Message is Spam.
+3. Mautic 2.2.0 supports the following webhooks: Message is Bounced, Message is Blocked, Message is Spam.
 
-3. Fill in the URL boxes as `http://your-mautic.com/mailer/mailjet/callback`.
+4. Fill in the URL boxes as `http://your-mautic.com/mailer/mailjet/callback`.
 
 ## Sparkpost Webhook
 
