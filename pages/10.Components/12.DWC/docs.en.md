@@ -1,9 +1,5 @@
 ---
 title: 'Dynamic Web Content (DWC)'
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
 ---
 
 # Dynamic Web Content
