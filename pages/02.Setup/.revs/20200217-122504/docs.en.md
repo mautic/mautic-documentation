@@ -1,6 +1,13 @@
 ---
-title: Variables
+title: 'Variables'
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
 ------------------------
+
+
+# Variables
 
 - [Contact fields](#contact-fields)
 - [Company Contact fields](#company-contact-fields)

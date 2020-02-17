@@ -1,5 +1,5 @@
 ---
-title: 'Using Campaign Builder'
+title: 'Managing Campaigns'
 published: true
 slug: using-campaign-builder
 media_order: 'contact-sources.png,events.png,send-email-delay.png,send-email-delay-nonaction.png,decision-anchors.gif'

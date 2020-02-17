@@ -1,4 +1,8 @@
 ---
+title: Variables
+---
+
+---
 title: Setup 
 ------------
 

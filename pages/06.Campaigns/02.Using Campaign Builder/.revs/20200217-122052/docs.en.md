@@ -1,9 +1,9 @@
 ---
-title: 'Using Campaign Builder'
+title: 'Managing Campaigns'
 published: true
 slug: using-campaign-builder
 media_order: 'contact-sources.png,events.png,send-email-delay.png,send-email-delay-nonaction.png,decision-anchors.gif'
-------------------------
+---
 
 The Mautic campaign builder gives you a blank canvas upon which to build your campaign workflow. The overall interface is clean and simple with easy to use events. These actions, decisions, or conditions can be added through clicking the "anchors" of events.
 

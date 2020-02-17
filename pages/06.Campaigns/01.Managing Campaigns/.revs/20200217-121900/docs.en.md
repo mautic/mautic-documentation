@@ -1,8 +1,7 @@
 ---
 title: 'Managing Campaigns'
 published: true
-slug: managing-campaigns
-------------------------
+---
 
 ## Campaign Overview
 
