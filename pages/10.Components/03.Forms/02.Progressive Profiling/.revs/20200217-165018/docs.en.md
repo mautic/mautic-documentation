@@ -20,11 +20,11 @@ It's recommended to use the email field in each form. From Mautic 2.9 email can 
 
   1.1.Former form submissions
   
-  Mautic will search for the field value in the former form submissions of the current contact. If a value is found, the field might be hidden if configured so. There are limitations of the search history. Read about them below.   
+  Mautic will search for the field value in the former form submissions of the current contact. If a value is found, the field might be hidden if configured so. There are limitations of the search history. Read about them below.
 
-  1.2 Contact profile values
-  
-   If the form field is linked with a contact field, Mautic will check if there is a value in the contact's profile and hides the field if configured so.
+      1.2 Contact profile values
+
+If the form field is linked with a contact field, Mautic will check if there is a value in the contact's profile and hides the field if configured so.
 
 2. Display field only after X submissions.
 
