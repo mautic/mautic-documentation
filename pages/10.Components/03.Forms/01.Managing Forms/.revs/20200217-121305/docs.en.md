@@ -70,7 +70,7 @@ There are three ways you can use the form. You can copy the entire output or you
 
 > **ProTip**
 >
-> **It is recommended NOT to paste the injection code twice, it risks creating problems on the submit form action when mandatory fields are submitted empty.**
+> **It is recommended NOT to paste the injection code twice, it risks creating troubles on the submit form action when mandatory fields are submitted empty.**
 
 
     <script>
