@@ -1,5 +1,6 @@
 ---
 title: 'Using date triggers'
+slug: using-date-triggers
 ---
 
 ---------------------
