@@ -1,5 +1,6 @@
 ---
 title: 'Dynamic Web Content (DWC)'
+slug: dynamic-web-content
 ---
 
 [Mautic 2.0][release-2.0.0] introduced the ability to embed content on a web page dynamically for both anonymous visitors and known contacts.
