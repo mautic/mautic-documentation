@@ -1,5 +1,5 @@
 ---
-title: 'SMS Text Messages'
+title: SMS
 ---
 
 ---------------------
