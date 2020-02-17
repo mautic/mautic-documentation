@@ -1,9 +1,6 @@
 ---
 title: 'Web notifications'
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
+slug: web-notifications
 ---
 
 # Web Notifications
