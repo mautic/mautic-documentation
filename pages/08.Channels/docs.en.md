@@ -1,11 +1,8 @@
 ---
 title: Channels
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
 ---
 
+---------------------
 The **Channels** Dropdown contains:
 
 * [Emails](./../emails/index.html)
