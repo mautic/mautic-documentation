@@ -1,12 +1,8 @@
 ---
 title: 'Troubleshooting campaigns'
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
 ---
 
-# Campaign Troubleshooting
+---------------------
 
 ## Page visits are not recognized
 
