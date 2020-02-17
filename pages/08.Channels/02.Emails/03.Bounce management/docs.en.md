@@ -1,8 +1,11 @@
 ---
 title: 'Bounce management'
+slug: bounce-management
 ---
 
-# Monitored Email
+---------------------
+
+## Monitored Email
 Since version 1.2.0 Mautic has provided a feature which allows monitoring of IMAP accounts to detect bounced emails and unsubscribe requests.
 
 Note that Mautic makes use of "append" email addresses. The return-path or the list-unsubscribe header will use something like `youremail+bounce_abc123@your-domain.com`. The `bounce` or `unsubscribe` let's Mautic note what type of email it is when it examines the inbox through IMAP. The `abc123` gives Mautic information about the email itself, i.e. what contact it was it sent to, what Mautic email used, etc. 
