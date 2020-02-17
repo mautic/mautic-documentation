@@ -1,6 +1,6 @@
 ---
 title: Setup
-------------------------
+---
 
 There are some basic tasks you will need to do in order to get started with using Mautic.
 

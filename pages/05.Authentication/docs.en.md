@@ -4,11 +4,13 @@ media_order: saml.png
 published: true
 ---
 
-# SAML Single Sign On
+Mautic uses basic authentication for users, however there is the ability to integrate with a SAML SSO provider.
+
+## SAML Single Sign On
 
 SAML is a single sign on protocol that allows single sign on and user creation in Mautic using a 3rd party user source called an identity provider (IDP).
 
-## Enabling SAML 
+### Enabling SAML 
 
 To enable SAML support in Mautic, you first need the IDP's metadata xml. This will be provided to you by the IDP. If it is a URL, browse to the URL then save the content into an xml file. 
 
@@ -16,7 +18,7 @@ Go to Configuration -> User/Authentication Settings. Then upload this file as th
 
 It is recommended that a non-admin role be created to use as the default role for created users. Select this role in the `Default role for created users` dropdown.
 
-## Configuring the IDP
+### Configuring the IDP
 
 The IDP may ask for the following settings:
 
@@ -32,12 +34,12 @@ The IDP may ask for the following settings:
 
 6) `Custom attributes` - Mautic requires 3 custom attributes that must be included in the IDP responses for the user email, first name and last name. Username is also supported but is optional. Configure the attribute names used by the IDP in Mautic's Configuration ->  User/Authentication Settings under the `Enter the names of the attributes the configured IDP uses for the following Mautic user fields.` section.
 
-## Logging In
+### Logging In
 Once Mautic is configured with the IDP and the IDP with Mautic, Mautic will by default redirect logins to the IDP's login page. `/s/login` is still available for direct logins but will need to be browsed to directly.
 
 Login to the IDP where you'll be redirected back to Mautic. If the exchange is successful, the user will be created, if it does not already exist, and logged in.
 
-## Disable SAML
+### Disable SAML
 To disable SAML, simply click the `Remove` link to the right of the `Identity provider metadata file` label.  
 
 ![](saml.png)

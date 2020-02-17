@@ -16,15 +16,17 @@ Usage:
 
 Options:
 
-| Option | Description |
+| Option &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Description &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
 |---|---|
 |  -h, --help    |           Display this help message |
 |  -q, --quiet   |           Do not output any message |
 |  -V, --version<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--ansi <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--no-ansi|           Display this application version<br />Force ANSI output<br />Disable ANSI output |
 |  -n, --no-interaction |    Do not ask any interactive question |
 |  -s, --shell<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--process-isolation | Launch the shell.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Launch commands from shell as a separate process. |
-|  -e, --env=ENV<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--no-debug |           The Environment name. [default: "prod"] <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Switches off debug mode. |
-| -v<br /> -vv<br /> -vvv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --verbose  |    Increase the verbosity of messages: <br />1 for normal output, <br />2 for more verbose output and <br/>3 for debug |
+|       |  |
+|  -e, --env=ENV |           The Environment name. [default: "prod"] |
+|      --no-debug |          Switches off debug mode. |
+|  -v|vv|vvv, --verbose |    Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug |
 
 ## Mautic commands
 

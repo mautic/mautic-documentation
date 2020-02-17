@@ -24,7 +24,7 @@ Options:
 |  -n, --no-interaction |    Do not ask any interactive question |
 |  -s, --shell<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--process-isolation | Launch the shell.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Launch commands from shell as a separate process. |
 |  -e, --env=ENV<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--no-debug |           The Environment name. [default: "prod"] <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Switches off debug mode. |
-| -v<br /> -vv<br /> -vvv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --verbose  |    Increase the verbosity of messages: <br />1 for normal output, <br />2 for more verbose output and <br/>3 for debug |
+|  -v<br /> vv<br /> vvv<br /> --verbose |    Increase the verbosity of messages: 1 for normal output, <br />2 for more verbose output and <br/>3 for debug |
 
 ## Mautic commands
 
