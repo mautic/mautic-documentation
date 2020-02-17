@@ -1,7 +1,9 @@
 ---
 title: 'Focus items'
+slug: focus-items
 ---
 
+---
 Focus items allow you to engage users on your site through bars, modals, notifications and full page takeovers. These can be initiated at different times and with different actions such as exit intent.
 
 Focus Items are listed under the Channels menu.
