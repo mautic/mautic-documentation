@@ -51,9 +51,8 @@ There are exceptions:
 * The email has to be sent to a contact. 
 	If Mautic doesn't have a contact assigned with the email, it doesn't know its owner and therefore cannot know what user name, email and signature to choose. 
     
-    This also happens when you send test emails.
+    This happens when you send the test emails.
     
-* If you send an email directly from the contact detail, the *from name* and *from email* will be used from the form where you create the email to send, and not from the user settings of the lead owner. 
-
-	The values used are pre-filled with those of the currently logged in user.
+* If you send an email directly from the contact detail, the *from name* and *from email* will be used from the form, not from the user settings. 
+	Those values are pre-filled by currently logged in user name and email.
 
