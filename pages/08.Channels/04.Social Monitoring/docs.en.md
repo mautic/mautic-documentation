@@ -1,5 +1,6 @@
 ---
 title: 'Social monitoring'
+slug: social-monitoring
 ---
 
 It's possible to add contacts to Mautic through monitoring Twitter for mentions and hashtags.
