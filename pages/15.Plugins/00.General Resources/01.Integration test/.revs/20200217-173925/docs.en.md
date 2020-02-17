@@ -1,6 +1,5 @@
 ---
 title: 'Testing integrations'
-slug: testing-integrations
 ---
 
 ---
