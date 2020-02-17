@@ -22,7 +22,7 @@ If you have access to the command line, you can run the following commands to re
 
 #### Finding your website root directory
 
-Depending on your server configuration, the default path to a _website_ is usually something similar to `/var/www/website` or `/var/www/website/public_html`. For [Apache](https://httpd.apache.org/docs/current/) this is the [DocumentRoot](https://httpd.apache.org/docs/current/mod/core.html#documentroot) path and for [nginx](https://nginx.org/en/docs/) it is the [`root`](https://nginx.org/en/docs/http/ngx_http_core_module.html#root) path.
+Depending on your server configuration, the default path to a _website_ is usually something similar to `/var/www/website` or `/var/www/website/public_html`. For [Apache][Apache docs] this is the [`DocumentRoot`][DocumentRoot] path and for [nginx][nginx docs] it is the [`root`][nginxroot] path.
 
 > NB: the _website_ is also known as _site_, _vhost_, _virtualhost_ or _server block_.
 
@@ -159,5 +159,7 @@ Checkout [Contact Monitoring][contact monitoring] for more details.
 [cron]: <cron_jobs.html>
 [contact monitoring]: <./../contacts/contact_monitoring.html>
 
-
-
+[Apache docs]: <https://httpd.apache.org/docs/current/>
+[DocumentRoot]: <https://httpd.apache.org/docs/current/mod/core.html#documentroot>
+[nginx docs]: <https://nginx.org/en/docs/>
+[nginxroot]: <https://nginx.org/en/docs/http/ngx_http_core_module.html#root>
