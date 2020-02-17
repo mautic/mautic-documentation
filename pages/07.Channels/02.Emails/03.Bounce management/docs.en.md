@@ -12,7 +12,7 @@ Some email services overwrite the return-path header with that of the account's 
 ## Monitored Inbox Settings
 To use the Monitored email feature you must have the PHP IMAP extension enabled (most shared hosts will already have this turned on).  Simply go to the Mautic configuration and fill in the account details for the inbox(es) you wish to monitor.
 
-![Monitored inbox settings](monitored-inbox-settings.png "Monitored inbox settings")
+![Monitored inbox settings](asset-monitored-inbox-settings.png "Monitored inbox settings")
 
 It is possible to use a single inbox, or to configure a unique inbox per monitor.
 
