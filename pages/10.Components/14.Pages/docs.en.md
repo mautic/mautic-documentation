@@ -1,3 +1,11 @@
+---
+title: ''
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
+---
+
 # Landing Pages
 
 Pages within Mautic are a powerful tool for quickly creating compelling content with a single focus. Use pages for directing contacts through a form or providing a way to download an asset, or merely tracking interest in a particular subject.
