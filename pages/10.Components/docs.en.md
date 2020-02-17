@@ -1,9 +1,5 @@
 ---
 title: Components
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
 ---
 
 The **Components** menu contains the following items:
@@ -15,4 +11,4 @@ The **Components** menu contains the following items:
 
 These items must be created before you can use them in a campaign.
 
-![](media/components-dropdown.jpg)
+![](components-dropdown.jpg)
