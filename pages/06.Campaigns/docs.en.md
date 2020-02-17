@@ -3,6 +3,8 @@ title: Campaigns
 published: true
 ---
 
+---------------------
+
 Campaigns are central to creating an automated workflow to assist with your marketing efforts. Campaigns consist of various external points of contact which will engage your contacts. These engagements can be created to occur on predefined time intervals or in response to specific contact actions.
 
 ### Time Driven Campaigns
