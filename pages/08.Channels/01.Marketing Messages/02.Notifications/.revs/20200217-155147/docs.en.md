@@ -46,7 +46,7 @@ For more informations see [One Signal documentation](https://documentation.onesi
 ### gcm_sender_id
 
 Option gcm_sender_id is a shared key used for push notifications.
-Use default value 482941778795. Previously it required your own key. Due backwards compatibility is editable (for older versions of Mautic).
+Use default value 482941778795. Previously it required your own key. Due backwards compatibility is editable (for older Mautic).
 
 ## HTTPS and HTTP support
 
