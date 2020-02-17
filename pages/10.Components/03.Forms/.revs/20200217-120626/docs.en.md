@@ -1,5 +1,9 @@
 ---
-title: Forms
+title: 'Forms'
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
 ---
 
 Forms are a special part of the marketing automation system. A form is used to collect user information often in exchange for providing access to a download, an event registration, or an email newsletter. Forms allow you to collect contact data and add additional information to their profile.
@@ -34,13 +38,15 @@ The 404 error should disappear after refres of the form preview page and the for
 Often you need to show not an embedded form but a form that is showing up in a modal when a trigger button is clicked. 
 Here is a short example how you can do that:
 
-    <html>
-    <script type="text/javascript" src="https://example.com/form/generate.js?id=2"></script>
+```html
+<html>
+  <script type="text/javascript" src="https://example.com/form/generate.js?id=2"></script>
 
-    <body>
-    {mauticform id=2 style=modal element=.call-to-action-btn} <!-- setup modal form -->
+  <body>
+  {mauticform id=2 style=modal element=.call-to-action-btn} <!-- setup modal form -->
 
-    <a class="btn btn-default call-to-action-btn" href="#">Click me</a> <!-- trigger button -->
+  <a class="btn btn-default call-to-action-btn" href="#">Click me</a> <!-- trigger button -->
 
-    </body>
-    </html>
+  </body>
+</html>
+```
