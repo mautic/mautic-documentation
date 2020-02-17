@@ -1,13 +1,8 @@
 ---
 title: 'Progressive profiling'
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
 ---
 
-# Progressive Profiling
-
+---
 This feature was added in Mautic 2.1.0.
 
 Progressive profiling makes your forms smarter by asking for the most important information that you don't have yet. This way your contacts won't feel overwhelmed by long forms and saves time by answering questions Mautic already knows the answer to. Progressive Profiling lets you improve the form conversion rate.
@@ -18,19 +13,19 @@ There are 2 possible ways that you can configure a form field to display only wh
 
 It's recommended to use the email field in each form. From Mautic 2.9 email can be hidden, but be aware of that. Email as identifier of a contact could be unusable if same PC is used by more people (public library, schools...).
 
-### 1. Display field only if the value is not known yet
+1. Display field only if the value is not known yet
 
 Mautic will search for a value in 2 places before the form is rendered for the current contact:
 
-#### 1.1 Former form submissions
+1.1 Former form submissions
 
 Mautic will search for the field value in the former form submissions of the current contact. If a value is found, the field might be hidden if configured so. There are limitations of the search history. Read about them below.
 
-#### 1.2 Contact profile values
+1.2 Contact profile values
 
 If the form field is linked with a contact field, Mautic will check if there is a value in the contact's profile and hides the field if configured so.
 
-### 2. Display field only after X submissions.
+2. Display field only after X submissions.
 
 If you want to ask a contact additional questions on the second form load, you can specify so for each lead. It works nicely with hiding fields which you already know the answer to. For the first submission, the contact can be asked to fill in the First and the Last name. When she comes the second time, the First and the Last name fields will be hidden and instead she'll be asked to fill in her Company and Phone.
 
