@@ -2,6 +2,7 @@
 title: Components
 ---
 
+---
 The **Components** menu contains the following items:
 
 * Assets
