@@ -1,5 +1,6 @@
 ---
 title: 'Mailer is owner'
+slug: mailer-is-owner
 ---
 
 # Emails sent from owner email and name
