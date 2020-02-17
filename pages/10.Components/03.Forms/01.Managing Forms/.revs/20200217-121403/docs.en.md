@@ -1,7 +1,6 @@
 ---
 title: 'Managing forms'
 media_order: 'new-form.png,page-break.png,form-actions.jpg,repost.png,forms-field-matching.png,rebuild.png,injection.png'
-slug: managing-forms
 ---
 
 The new form view lets you create a form and attach any fields you want to collect from your users. After you've created the fields you can then define what actions you want to perform after the user submits the information.
