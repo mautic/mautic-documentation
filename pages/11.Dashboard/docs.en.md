@@ -1,20 +1,16 @@
 ---
 title: Dashboard
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
 ---
 
-# Dashboard
+---
 
-Mautic 1.4.0 brought a customizable dashboard where each user can compose widgets with information they want to track.  Mautic 2.0 brought a number of enhancements to the Dashboard.
+Mautic 1.4.0 introduced a customizable dashboard where each user can compose widgets with information they want to track.  Mautic 2.0 brought a number of enhancements to the Dashboard.
 
 ## Date range filter
 
 All the widgets will display data in the selected global date range filter at the top of the widget list. The default date range is set from 30 days ago to today. 
 
-![](media/dashboard-date-filters.png)
+![](dashboard-date-filters.png)
 
 Line charts will change the time unit automatically depending on the day count selected in the date range filter like this:
 
@@ -28,7 +24,7 @@ The only widget exceptions which display the same information independent on the
 
 ## Widgets
 
-*Warning: Do not create too many widgets. It can slow the dashboard page load down. If you have performance issues, decrease the amount of widgets.*
+> Warning: Do not create too many widgets. It can slow the dashboard page load down. If you have performance issues, decrease the amount of widgets.
 
 A new widget can be added to your dashboard when you click on the "Add widget" button. The "Add widget" form which appears after each widget will let you define:
 
