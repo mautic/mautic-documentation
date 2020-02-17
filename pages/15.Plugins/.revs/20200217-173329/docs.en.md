@@ -6,7 +6,7 @@ Mautic plugins are installable packages which can extend Mautic functionality or
 
 You can find the Plugins in the right Admin menu.
 
-![Plugins are found in the admin menu - click on the gear icon](plugins-settings.jpg "Plugins are found on the Admin Menu")
+![Plugins are found in the admin menu - click on the gear icon](media/plugins-settings.jpg "Plugins are found on the Admin Menu")
 
 ## Install plugins
 
