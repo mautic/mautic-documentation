@@ -1,7 +1,6 @@
 ---
 title: 'Managing emails'
 media_order: 'email-segments.jpg,base64-images.jpg'
-slug: managing-emails
 ---
 
 ---------------------
