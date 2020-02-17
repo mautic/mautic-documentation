@@ -1,4 +1,10 @@
-# Cron Jobs #
+---
+title: ''
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
+---
 
 Mautic requires a few [cron jobs](https://en.wikipedia.org/wiki/Cron) to handle some maintenance tasks. Most web hosts provide a means to add cron jobs either through SSH, cPanel, or another custom panel. Please consult your host's documentation/support if you are unsure on how to setup cron jobs.
 
@@ -13,9 +19,9 @@ For instance:
 - 5,20,35,50 <— mautic:campaigns:update
 - 10,25,40,55 <— mautic:campaigns:trigger
 
-## Required ##
+## Required
 
-### Segments ###
+### Segments
 **To keep the segments current:**
 
 ```
@@ -26,7 +32,7 @@ By default, the script will process contacts in batches of 300. If this is too m
 
 You can also limit the number of contacts to process per script execution using `--max-contacts` to further limit resources used.
 
-### Campaigns ###
+### Campaigns
 **To keep campaigns updated with applicable contacts:**
 
 ```
@@ -53,9 +59,10 @@ Messages that are marked as [_Marketing Messages_](./../contacts/message_queue.m
 `mautic:messages:send`
 
 **NOTE** that these messages will only be added to the queue if frequency rules are applied either systemwide or per contact.
-## Optional ##
 
-### Process Email Queue ###
+## Optional
+
+### Process Email Queue
 
 If the system is configured to queue emails to the filesystem, a cron job is required to process them.
 
@@ -63,7 +70,7 @@ If the system is configured to queue emails to the filesystem, a cron job is req
 php /path/to/mautic/app/console mautic:emails:send
 ```
 
-### Fetch and Process Monitored Email ###
+### Fetch and Process Monitored Email
 
 If using the [Bounce Management](./../emails/bounce_management.html),
 
@@ -71,7 +78,7 @@ If using the [Bounce Management](./../emails/bounce_management.html),
 php /path/to/mautic/app/console mautic:email:fetch
 ```
 
-### Social Monitoring ###
+### Social Monitoring
 
 If using the [Social Monitoring](./../social-monitoring/index.html),
 
@@ -135,11 +142,11 @@ Starting with Mautic 2.12.0, it is now possible to use cron to send scheduled re
 php /path/to/mautic/app/console mautic:reports:scheduler [--report=ID]
 ```
 
-## Note ##
+## Note
 
 For releases prior to 1.1.3, it is required to append ` --env=prod` to the cron job command to ensure commands execute correctly.
 
-## Tips & Troubleshooting ##
+## Tips & Troubleshooting
 
 If your environment provides a command-line specific build of php, often called `php-cli`, you may want to use that instead of `php` as it will have a cleaner output.  On BlueHost and probably some other PHP hosts, the `php` command might be setup to discard the command-line parameters to `console`, in which case you must use `php-cli` to make the cron jobs work.
 
