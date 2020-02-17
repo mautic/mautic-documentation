@@ -109,7 +109,7 @@ You can create new contact activities in Connectwise through a Campaign action. 
 ### In Mautic Segments
 
 You can create a Mautic Segment composed of contacts that are in a Connectwise campaign group. To do this create a segment filter _**Integration Campaign Member**_ option, then in the filter properties select the name of the campaign group you wish to get group members from.
- ![Connectwise CRM segment filter](segment-integration-campaign-members.png "Connectwise CRM segment filter")
+ ![Connectwise CRM segment filter](media/segment-integration-campaign-members.png "Connectwise CRM segment filter")
  ![Connectwise CRM campaign groups](connectwise-campaign-segment.png "Connectwise CRM campaign filters")
 
 [mautic]: <https://mautic.org>
