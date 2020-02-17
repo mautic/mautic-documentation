@@ -1,6 +1,9 @@
 ---
 title: Companies
-media_order: primary-company.png
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
 ---
 
 # Companies
@@ -74,7 +77,7 @@ A companies score can be changed through a campaign action or a form action. Whe
 
 As of [Mautic 2.3.0][release-2.3.0], it is now possible to set primary company through the Contact details page.
 
-![primary company](primary-company.png)
+![primary company](./../contacts/media/primary-company.png)
 
 <!-- Page Links -->
 
