@@ -1,5 +1,6 @@
 ---
 media_order: 'send-email-delay (1).png,vists-a-page.png'
+slug: campaign-events
 ---
 
 ---------------------
