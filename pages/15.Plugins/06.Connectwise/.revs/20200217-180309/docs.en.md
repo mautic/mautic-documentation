@@ -30,7 +30,7 @@ Use the thick client to create a new API member.  Dowload think client from [her
 1. Copy the public and private keys.
 
 1. Insert the keys to the Mautic Connectwise plugin and authorize it.
-![Connectwise CRM Authorize](connectwiseauth.png "Connectwise CRM Authorize")
+![Connectwise CRM Authorize](media/connectwiseauth.png "Connectwise CRM Authorize")
 
 1. Configure the [field mapping][field mapping].
 
@@ -95,7 +95,7 @@ Follow [these steps](./../plugins/integration_test.html) to test the integration
 
 ## Connectwise Contact Activities
 
-![Connectwise CRM Activites](connectwise-activities.png "Connectwise CRM activities")
+![Connectwise CRM Activites](media/connectwise-activities.png "Connectwise CRM activities")
 
 You can create new contact activities in Connectwise through a Campaign action. To do so follow these steps.
 
@@ -104,13 +104,13 @@ You can create new contact activities in Connectwise through a Campaign action. 
 1. Select No if you only wish to push campaign contacts to your Connectwise integration.
 1. Select Yes and fill in required fields if you wish to push contacts and ativities related to each campaign contact. Activity name and member owner are required fields.
 
-![Connectwise CRM Action](connectwise-action.png "Connectwise CRM campaign action")
+![Connectwise CRM Action](media/connectwise-action.png "Connectwise CRM campaign action")
 
 ### In Mautic Segments
 
 You can create a Mautic Segment composed of contacts that are in a Connectwise campaign group. To do this create a segment filter _**Integration Campaign Member**_ option, then in the filter properties select the name of the campaign group you wish to get group members from.
  ![Connectwise CRM segment filter](media/segment-integration-campaign-members.png "Connectwise CRM segment filter")
- ![Connectwise CRM campaign groups](connectwise-campaign-segment.png "Connectwise CRM campaign filters")
+ ![Connectwise CRM campaign groups](media/connectwise-campaign-segment.png "Connectwise CRM campaign filters")
 
 [mautic]: <https://mautic.org>
 [Mautic]: <https://mautic.org>
