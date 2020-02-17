@@ -2,8 +2,6 @@
 title: Variables
 ---
 
-# Variables
-
 - [Contact fields](#contact-fields)
 - [Company Contact fields](#company-contact-fields)
 - [Mautic Component tokens](#mautic-component-tokens)
