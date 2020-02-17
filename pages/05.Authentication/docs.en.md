@@ -4,6 +4,8 @@ media_order: saml.png
 published: true
 ---
 
+---------------------
+
 Mautic uses basic authentication for users, however there is the ability to integrate with a SAML SSO provider.
 
 ## SAML Single Sign On
