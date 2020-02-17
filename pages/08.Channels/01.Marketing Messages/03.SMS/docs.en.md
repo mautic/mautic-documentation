@@ -2,8 +2,7 @@
 title: SMS
 ---
 
-# Text Messages
-
+---------------------
 This new channel was added in Mautic 1.4.0. It allows Mautic to send text messages from campaigns.
 
 ## Configure Text Messages
@@ -39,7 +38,7 @@ Instead of using an E.164 formatted Twilio Phone number for the "From" value, yo
 
 **Note:** Additionally, messages sent out using an **Alphanumeric Sender ID can not be replied to directly**.
 
-####  Alphanumeric Sender ID requirements
+###  Alphanumeric Sender ID requirements
 
 Alphanumeric Sender ID is automatically supported on all new [upgraded (paid) Twilio accounts](https://support.twilio.com/hc/en-us/articles/223183208-Upgrading-to-a-paid-Twilio-Account). It is not supported for Free Trial accounts.
 
@@ -50,7 +49,7 @@ You can validate that Alphanumeric Sender is enabled on your account by followin
 3.  Click Settings.
 4.  Verify that "Alphanumeric Sender ID" is set to Enabled.
 
-#### Send SMS Messages using an Alphanumeric Sender ID with Mautic
+### Send SMS Messages using an Alphanumeric Sender ID with Mautic
 
 Just setup your alias in plugin settings:
 
