@@ -1,6 +1,5 @@
 ---
 title: 'Import contacts'
-media_order: 'import-history-button.png,import-publish.png,notifications.png'
 ---
 
 ---
