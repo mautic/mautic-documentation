@@ -1,10 +1,12 @@
 ---
-title: 'Queue'
+title: Queue
 media_order: ''
 body_classes: ''
 order_by: ''
 order_manual: ''
---------------
+---
+
+-----------
 
 Improved scalability can be achieved by activating the queuing mechanism for email and page opens.  Use this if you
 are getting too much traffic at once from people opening pages or opening emails.

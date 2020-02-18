@@ -5,7 +5,9 @@ body_classes: ''
 order_by: ''
 order_manual: ''
 slug: features-by-major-release
--------------------------------
+---
+
+----------------------------
 In this section we'll highlight the new features for each major release of Mautic.  They are in version order beginning with the latest.
 
 ##Version 2.0

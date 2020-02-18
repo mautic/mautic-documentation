@@ -1,10 +1,12 @@
 ---
-title: 'Reports'
+title: Reports
 media_order: ''
 body_classes: ''
 order_by: ''
 order_manual: ''
---------------
+---
+
+-----------
 
 Highly customizable reports can be generated through Mautic's Report menu.
 

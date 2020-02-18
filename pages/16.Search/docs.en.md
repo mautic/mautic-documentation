@@ -1,10 +1,12 @@
 ---
-title: 'Search'
+title: Search
 media_order: ''
 body_classes: ''
 order_by: ''
 order_manual: ''
---------------
+---
+
+-----------
 
 ## Search operators and filters
 

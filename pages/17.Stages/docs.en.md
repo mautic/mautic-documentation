@@ -1,10 +1,12 @@
 ---
-title: 'Stages'
+title: Stages
 media_order: ''
 body_classes: ''
 order_by: ''
 order_manual: ''
---------------
+---
+
+-----------
 ## Stages Overview
 
 Stages is a way to define the lifecycle of a contact. Create stages based on your marketing stages, and move your contacts from stage to stage.

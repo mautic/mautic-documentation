@@ -4,8 +4,10 @@ media_order: ''
 body_classes: ''
 order_by: ''
 order_manual: ''
-slug: Tips and tricks
----------------------
+slug: 'Tips and tricks'
+---
+
+------------------
 
 ## Keyboard Shortcuts
 **Global Shortcuts**

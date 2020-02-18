@@ -5,7 +5,9 @@ body_classes: ''
 order_by: ''
 order_manual: ''
 slug: use-cases
----------------
+---
+
+------------
 
 There are many compelling and exciting ways to implement marketing automation. Some of these use cases are more easily understood and regularly implemented while others are more unique.
 

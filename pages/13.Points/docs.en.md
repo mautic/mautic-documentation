@@ -1,10 +1,12 @@
 ---
-title: 'Points'
+title: Points
 media_order: ''
 body_classes: ''
 order_by: ''
 order_manual: ''
-----------------
+---
+
+-------------
 
 Points provide a way for contacts to be properly weighted. These points have both triggers and actions. Each term will be properly defined and a thorough understanding of how points function will ensure that your overall marketing automation process is successful.
 

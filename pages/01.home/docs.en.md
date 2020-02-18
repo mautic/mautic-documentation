@@ -1,6 +1,8 @@
 ---
 title: 'Mautic Documentation'
-------------------------
+---
+
+---------------------
 
 ## Introduction
 

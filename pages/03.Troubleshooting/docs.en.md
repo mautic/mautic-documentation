@@ -1,6 +1,8 @@
 ---
 title: Troubleshooting
-------------------------
+---
+
+---------------------
 
 Follow these steps to solve your issue as fast as **possible**.
 

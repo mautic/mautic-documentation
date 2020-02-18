@@ -5,7 +5,9 @@ body_classes: ''
 order_by: ''
 order_manual: ''
 slug: gated-video
------------------
+---
+
+--------------
 
 This new inbound channel was added in Mautic 2.1. It allows Mautic users to embed gated
 videos in their websites, landing pages, and anywhere else the mautic tracking javascript

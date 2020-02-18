@@ -1,10 +1,12 @@
 ---
-title: 'Translations'
+title: Translations
 media_order: ''
 body_classes: ''
 order_by: ''
 order_manual: ''
-------------------
+---
+
+---------------
 
 Mautic is used by a world-wide community and therefore it can be localized to any language. If you cannot find your language yet, take a look to the section about how to translate Mautic.
 
