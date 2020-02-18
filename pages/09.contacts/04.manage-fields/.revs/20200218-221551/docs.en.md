@@ -36,7 +36,7 @@ This type of switch is used throughout the Mautic UI to publish and unpublish it
 
 You can create additional custom fields and define the data type you want that field to hold. In addition to the data type you will also select the group for that particular field. This will define where the field displays on the Contact edit and detail view.
 
-![new custom field](new-custom-field.jpg)
+![new custom field](new-custom-field.png)
 
 [contact monitoring]: <contact_monitoring.html>
 [variables]: <./../setup/VARIABLES.html>
