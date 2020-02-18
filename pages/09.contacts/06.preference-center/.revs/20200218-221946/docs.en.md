@@ -1,6 +1,5 @@
 ---
 title: 'Preference center'
-media_order: 'preferences.png,categories.png,segments.png,email-unsubscribe-settings.png,unsubscribe.png'
 ---
 
 # Manage Contact Preferences
