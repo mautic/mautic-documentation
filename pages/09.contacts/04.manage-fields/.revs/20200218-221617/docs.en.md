@@ -4,7 +4,6 @@ media_order: 'access-admin-menu.png,admin-menu.png,custom-fields.jpg'
 slug: manage-custom-fields
 ---
 
----
 You can manage Custom Fields through the _Admin_ menu (click the cogwheel upper right hand side of Mautic).
 
 ![access admin menu](access-admin-menu.png)
