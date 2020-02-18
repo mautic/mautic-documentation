@@ -3,6 +3,7 @@ title: 'Manage contacts'
 media_order: 'contacts-search.jpg,mautic-contact-batch-delete.png'
 ---
 
+---
 The manage contacts page is the main interface through which you can view and interact with your contacts - both visitors and standard contacts.
 
 ## Segments
