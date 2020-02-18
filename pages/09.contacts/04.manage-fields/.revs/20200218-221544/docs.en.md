@@ -18,7 +18,7 @@ The _Custom Fields_ page will let you view all existing Contact fields as well a
 
 You will notice the group column which will show you where the specific field will be shown on the _Contact profile_. In the last column, you may see several icons which signify various properties of the field:
 
-![custom field icons](custom-field-icons.png)
+![custom field icons](custom-field-icons.jpg)
 
 1. Lock icon - These fields are unable to be removed as they are used by the core installation.
 2. List icon - These fields can be used as filters of segments.
