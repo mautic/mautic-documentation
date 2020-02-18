@@ -2,20 +2,19 @@
 title: Contacts
 ---
 
-# Contacts
-
+---
 Leads were renamed to contacts in Mautic 1.4.0.
 
 Contacts are the central factor of a marketing automation platform. These are all the individuals who have visited your websites or interacted with you in some way.
 
-### Contact Types
+## Contact Types
 
 There are two types of contacts:
 * **Visitors** (formerly anonymous leads) — visitors to your site who have not yet been identified by a form or other interaction.
   * These contacts are tracked by Mautic but typically remain hidden so as not to clutter your segment.
 * **Standard contacts** — contacts which have identified themselves via a form or some other source. As a result, these contacts typically have a name, email, and other identifying fields.
 
-#### Visitors (formerly anonymous leads)
+### Visitors (formerly anonymous leads)
 
 Anonymous leads were renamed to visitors in Mautic 1.4.0.
 
@@ -23,19 +22,19 @@ You can view visitors by using the 'table view' (use the "t" keyboard shortcut t
 
 Visitors are worth tracking, because these could be future customers. By tracking them before they have any interaction, you can retain a log of when they visited your site, which allows you to get a picture of their activity prior to engaging with you.
 
-##### Search Text
+#### Search Text
 You can use the filter in the Contacts screen to display only visitors by using the following command in the search bar above the contacts list:
 
 ```
 is:anonymous
 ```
-##### Screenshot
+#### Screenshot
 
 ![](media/contacts-anonymous.jpg)
 
 The resulting list will display those IP addresses which have not yet provided identifying information.
 
-#### Standard Contacts
+### Standard Contacts
 
 The second type of contact is a standard - or known - contact. These contacts have identified themselves via a form or other source. You may also have more information about them from previous interactions, or from a third-party system such as a Customer Relationship Management (CRM) tool. As a result, these contacts typically have a name, email, and other identifying information which can be associated with the contact.
 
