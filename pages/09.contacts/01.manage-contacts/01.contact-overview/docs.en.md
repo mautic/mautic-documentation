@@ -2,6 +2,7 @@
 title: 'Contact overview'
 ---
 
+---
 Each contact has a detail page where you can see what Mautic knows about them.
 
 ## Engagements/Points chart
