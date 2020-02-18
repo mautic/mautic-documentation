@@ -3,8 +3,7 @@ title: 'Preference center'
 media_order: 'preferences.png,categories.png,segments.png,email-unsubscribe-settings.png,unsubscribe.png'
 ---
 
----
-## Manage Contact Preferences
+# Manage Contact Preferences
 
 When managing a contact you can set the contacts preference of communication. You can access the contact's preference center when viewing a contact's profile. From the dropdown menu click on the preference menu. A new modal window should appear with a tab to set the preferred channels and frequency of contact, as well as the option to pause communication within a given period of time. The second tab will give the option to add or remove the contact from global categories used in emails or categories. The third tab will allow to add or remove the contact from segments it belongs to.
 
