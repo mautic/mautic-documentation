@@ -1,6 +1,5 @@
 ---
 title: 'Manage segments'
-media_order: 'contact-segments.jpg,segment-filters.jpg,multiple-segment-filters.jpg,segment-filters-dropdown.jpg,common-leads-in-segments.jpg,segment-filters-datepicker.png,mautic-contact-batch-delete.png'
 ---
 
 ---
