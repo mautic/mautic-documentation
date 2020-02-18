@@ -1,6 +1,5 @@
 ---
 title: 'Manage custom fields'
-media_order: 'access-admin-menu.png,admin-menu.png,custom-fields.jpg'
 slug: manage-custom-fields
 ---
 
