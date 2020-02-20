@@ -2,11 +2,11 @@
 title: Authentication
 ---
 
-## SAML Single Sign On
+# SAML Single Sign On
 
 SAML est un protocole d'authentification automatique en une fois et qui permet la création d'utilisateurs dans Mautic en utilisant un service tiers appelée fournisseur d'identité (IDP).
 
-### Activer le SAML
+## Activer le SAML
 
 Pour activer le SAML dans Mautic, vous devez d'abord obtenir les metadatas XML de l'IDP. Cela vous sera communiqué par l'IDP. Si c'est une URL, affichez cette URL dans votre navigateur et sauvegardez le contenu dans un fichier XML.
 
@@ -14,7 +14,7 @@ Dans Mautic, allez dans Configuration -> Utilisateurs/Paramètres d'authentifica
 
 Il est recommandé de sélectionner une rôle non administrateur comme rôle par défaut lors de la création d'utilisateurs. Sélectionnez ce rôle dans dans la liste déroulante `Rôle par défaut pour les utilisateurs créés`.
 
-### Configuration de l'IDP
+## Configuration de l'IDP
 
 Il vous sera nécessaire de configurer dans l'IDP les paramètres suivants :
 
@@ -30,12 +30,12 @@ Il vous sera nécessaire de configurer dans l'IDP les paramètres suivants :
 
 6) `Custom attributes` - Mautic requière 3 attributs personnalisés qui doivent être inclus dans les réponses de l'IDP pour l'utilisateur : l'email, le prénom et le nom. Le nom d'utilisateur est également supporté mais optionnel. Configurez le nom des attributs utilisés par l'IDP dans la configuration de Mautic : Configuration ->  Paramètres d'utilisateurs/Authentication dans la section `Entrer les noms des attributs configurés dans l'IDP pour les champs Mautic.`.
 
-### Connexion
+## Connexion
 Une fois Mautic configuré avec l'IDP (et réciproquement), Mautic sera redirigé par défaut vers la page d'authentification de l'IDP. `/s/login` est toujours disponible pour un login direct mais devra être directement saisi dans votre navigateur.
 
 Connectez-vous à l'IDP et vous serez redirigé vers Mautic. Si le transfert est un succès, l'utilisateur sera créé s'il n'existe pas déjà, et vous serez connecté.
 
-### Désactivation du SAML
+## Désactivation du SAML
 Pour désactiver le SAML, cliquez simplement sur le lien `Supprimer` à droite de l'étiquette du `Identity provider metadata file`.  
 
 ![](saml.png)
