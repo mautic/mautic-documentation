@@ -1,6 +1,8 @@
 ---
 title: 'Documentation Mautic'
 ---
+
+---
 ## Introduction
 Ce guide fait office de [documentation pour Mautic](https://www.mautic.org/docs/index.html), le logiciel de marketing automation open source. Le code étant libre d'accès à chacun, en voici sa documentation. Chacun peut contribuer à rendre ces informations de meilleure qualité.
 
