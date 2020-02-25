@@ -1,0 +1,37 @@
+{
+    "name": "riskio/oauth2-auth0",
+    "description": "Auth0 OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicolas Eeckeloo",
+            "email": "neeckeloo@gmail.com",
+            "homepage": "https://github.com/neeckeloo"
+        }
+    ],
+    "keywords": [
+        "oauth",
+        "oauth2",
+        "client",
+        "authorization",
+        "authorisation",
+        "auth0"
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "league/oauth2-client": "^2.2.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7.21"
+    },
+    "autoload": {
+        "psr-4": {
+            "Riskio\\OAuth2\\Client\\Provider\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Riskio\\OAuth2\\Client\\Test\\Provider\\": "tests/"
+        }
+    }
+}

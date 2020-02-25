@@ -182,9 +182,16 @@ class LoginOauth2Plugin extends Plugin
         /** @var Message $messages */
         $messages = $this->grav['messages'];
 
+
+
         if ($oauth2->isValidProvider($provider_name)) {
 
             $state = filter_input(INPUT_GET, 'state', FILTER_SANITIZE_STRING, !FILTER_FLAG_STRIP_LOW);
+
+            // try POST
+            if (empty($state)) {
+                $state = filter_input(INPUT_POST, 'state', FILTER_SANITIZE_STRING, !FILTER_FLAG_STRIP_LOW);
+            }
 
             if (empty($state) || ($state !== $session->oauth2_state)) {
                 unset($session->oauth2_state);
@@ -242,6 +249,11 @@ class LoginOauth2Plugin extends Plugin
         if (isset($options['oauth2'])) {
 
             $code = filter_input(INPUT_GET, 'code', FILTER_SANITIZE_STRING, !FILTER_FLAG_STRIP_LOW);
+
+            // try POST
+            if (!$code) {
+                $code = filter_input(INPUT_POST, 'code', FILTER_SANITIZE_STRING, !FILTER_FLAG_STRIP_LOW);
+            }
             $provider_name = $options['provider'];
             $provider = ProviderFactory::create($provider_name, $options);
 

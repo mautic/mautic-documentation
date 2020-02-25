@@ -1,5 +1,5 @@
 name: Login OAuth2
-version: 2.0.2
+version: 2.0.3
 description: OAuth2 Client Plugin to integrate with Grav's Login
 icon: plug
 author:
@@ -30,6 +30,7 @@ form:
     site_callback_url:
       type: text
       disabled: true
+      copy_to_clipboard: true
       label: PLUGIN_LOGIN_OAUTH2.SITE_CALLBACK_URI
       help: PLUGIN_LOGIN_OAUTH2.SITE_CALLBACK_URI_HELP
       data-default@: ['Grav\Plugin\Login\OAuth2\Providers\BaseProvider::getCallbackUri', false]
@@ -37,6 +38,7 @@ form:
     admin_callback_url:
       type: text
       disabled: true
+      copy_to_clipboard: true
       label: PLUGIN_LOGIN_OAUTH2.ADMIN_CALLBACK_URI
       help: PLUGIN_LOGIN_OAUTH2.ADMIN_CALLBACK_URI_HELP
       data-default@: ['Grav\Plugin\Login\OAuth2\Providers\BaseProvider::getCallbackUri', true]

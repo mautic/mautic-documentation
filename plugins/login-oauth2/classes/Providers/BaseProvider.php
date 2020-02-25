@@ -90,7 +90,7 @@ abstract class BaseProvider implements ProviderInterface
 
         $callback_uri = ((bool) $admin ? Grav::instance()['config']->get('plugins.admin.route', '') : '') . static::CALLBACK_URI;
 
-        $base_url = Grav::instance()['base_url_absolute'];
+        $base_url = rtrim(Grav::instance()['uri']->rootUrl(true), '/');
 
         return $base_url . '/' . ltrim($callback_uri, '/');
     }

@@ -1,3 +1,11 @@
+# v2.0.3
+## 02/24/2019
+
+1. [](#improved)
+    * Added `copy-to-clipboard` support for Callback URIs
+    * Added support for providers that callback via POST (ie, Apple)
+    * Fixed issues with saving in Admin 1.7 with strict form validation
+
 # v2.0.2
 ## 04/28/2019
 

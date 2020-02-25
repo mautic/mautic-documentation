@@ -1,0 +1,50 @@
+name: Login OAuth2 Auth0
+version: 1.0.7
+description: OAuth2 Provider for Auth0
+icon: plug
+author:
+  name: Tanay Sai (sponsored by Acquia/Mautic)
+  email: saitanay@gmail.com
+homepage: https://github.com/saitanay/grav-plugin-login-oauth2-auth0
+demo: https://github.com/saitanay/grav-plugin-login-oauth2-auth0
+keywords: grav, plugin, auth0, mautic, acquia
+bugs: https://github.com/saitanay/grav-plugin-login-oauth2-auth0/issues
+docs: https://github.com/saitanay/grav-plugin-login-oauth2-auth0/README.md
+license: MIT
+dependencies:
+  - { name: login-oauth2, version: '>=2.0.2' }
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    domain:
+      type: text
+      label: Domain
+
+    client_id:
+      type: text
+      label: Client Id
+
+    client_secret:
+      type: text
+      label: Client Secret
+
+    scope:
+      type: selectize
+      size: large
+      label: Scope
+      classes: fancy
+      validate:
+        type: commalist
+
