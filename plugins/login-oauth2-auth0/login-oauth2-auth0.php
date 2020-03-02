@@ -38,6 +38,11 @@ class LoginOAuth2Auth0Plugin extends Plugin
      */
     public function onPluginsInitialized()
     {
+        // Don't proceed if we are in the admin plugin
+        if ($this->isAdmin()) {
+            return;
+        }
+
         if (isset($this->grav['oauth2'])) {
             $this->grav['oauth2']->addProvider('auth0');
         } else {

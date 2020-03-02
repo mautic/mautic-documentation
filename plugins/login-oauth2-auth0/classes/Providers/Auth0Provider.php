@@ -11,10 +11,11 @@ class Auth0Provider extends BaseProvider
 
     public function initProvider(array $options)
     {
+        $this->config = Grav::instance()['config'];
         $options += [
-            'clientId' => $this->config->get('providers.auth0.client_id'),
-            'clientSecret' => $this->config->get('providers.auth0.client_secret'),
-            'customDomain' => $this->config->get('providers.auth0.domain'),
+            'clientId' => $this->config->get('plugins.login-oauth2-auth0.client_id'),
+            'clientSecret' => $this->config->get('plugins.login-oauth2-auth0.client_secret'),
+            'customDomain' => $this->config->get('plugins.login-oauth2-auth0.domain'),
         ];
 
         parent::initProvider($options);
@@ -22,8 +23,9 @@ class Auth0Provider extends BaseProvider
 
     public function getAuthorizationUrl()
     {
+        $this->config = Grav::instance()['config'];
         $options = ['state' => $this->state];
-        $options['scope'] = $this->config->get('providers.auth0.options.scope');
+        $options['scope'] = $this->config->get('plugins.login-oauth2-auth0.scope');
 
         return $this->provider->getAuthorizationUrl($options);
     }
