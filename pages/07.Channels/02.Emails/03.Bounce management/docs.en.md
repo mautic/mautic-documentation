@@ -3,7 +3,7 @@ title: 'Bounce management'
 slug: bounce-management
 ---
 
----------------------
+---
 
 ## Monitored Email
 Since version 1.2.0 Mautic has provided a feature which allows monitoring of IMAP accounts to detect bounced emails and unsubscribe requests.
@@ -73,7 +73,7 @@ Mautic supports the bounce and complaint management from Amazon Simple Email Ser
 
 ![Topic](amazon_webhook_4.png "New subscriber")
 
-3. Enter the url to the Amazon webhook on your Mautic installation
+3. Enter the url to the Amazon webhook on your Mautic installation. It should usually be your Mautic URL followed by `/mailer/amazon/callback`.
 
 ![Topic](amazon_webhook_5.png "Enter url to Mautic")
 
