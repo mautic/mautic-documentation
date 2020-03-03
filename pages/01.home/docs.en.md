@@ -31,7 +31,7 @@ Links below
 [mautic-docs]: <https://mautic.org/docs/>
 [mautic-docs-github]: <https://github.com/mautic/documentation>
 [mautic-docs-fork]: <https://github.com/mautic/documentation#fork-destination-box>
-[mautic-doc-license]: <https://github.com/mautic/documentation/blob/master/LICENSE>
+[mautic-doc-license]: </home/license>
 [doc-issues]: <https://github.com/mautic/documentation/issues>
 
 [developer-docs]: <https://developer.mautic.org>
