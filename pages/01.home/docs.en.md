@@ -6,7 +6,7 @@ title: 'Mautic Documentation'
 
 ## Introduction
 
-This [Gitbook][gitbook] [repository][mautic-docs-github] serves as the [documentation][mautic-docs] for [Mautic][mautic], the open source marketing automation system.
+This serves as the [documentation][mautic-docs] for [Mautic][mautic], the open source marketing automation system.
 
 Everyone is [welcome to contribute][CONTRIBUTING] to improve this information as needed.
 
