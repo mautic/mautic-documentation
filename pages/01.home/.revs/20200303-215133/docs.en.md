@@ -10,6 +10,14 @@ This serves as the [documentation][mautic-docs] for [Mautic][mautic], the open s
 
 Everyone is [welcome to contribute][CONTRIBUTING] to improve this information as needed.
 
+### Download documentation as a PDF
+
+Download the official Mautic documentation as a PDF in:
+
+* [English][docs-eng]
+* [French][docs-fr]
+* [Japanese][docs-jp]
+
 ## Mautic Developer documentation
 
 If you are looking for details about the Mautic API, webhooks, theme or plugin development, please see the [developer documentation][developer-docs].
@@ -26,7 +34,11 @@ The Mautic official end user documentation is licensed under the **Apache 2.0**,
 Links below
 -->
 
-[CONTRIBUTING]: </home/contributing>
+[CONTRIBUTING]: <https://github.com/mautic/documentation/blob/master/CONTRIBUTING.md>
+
+[docs-eng]: <https://mautic.org/docs/mautic_docs_en.pdf>
+[docs-fr]: <https://mautic.org/docs/mautic_docs_fr.pdf>
+[docs-jp]: <https://mautic.org/docs/mautic_docs_jp.pdf>
 
 [mautic-docs]: <https://mautic.org/docs/>
 [mautic-docs-github]: <https://github.com/mautic/documentation>
