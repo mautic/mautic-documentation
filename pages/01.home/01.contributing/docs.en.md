@@ -67,7 +67,7 @@ Previously Gitbook was used to manage the Mautic documentation, however this bec
 
 ### Using Grav
 1. Create a Mautic Community login, or log in with your existing forum/website account at [the login page][mautic-docs-login]
-1. Send a message in the [Documentation slack channel][mautic-docs-slack] to have your account raised to 'editor'
+1. Send a message in the [Documentation slack channel][mautic-docs-slack] to have your account raised to 'editor' - get a Slack invite [here][mautic-slack-invite]
 1. When logged in, click on the 'Edit page in Grav' link on the relevant page and make your changes
 
 ### Using Github
@@ -559,6 +559,7 @@ Include this **Note** if there are references to outdated terminology that canno
 [mautic]: <https://mautic.org/>
 [mautic-github]: <https://github.com/mautic/mautic>
 [mautic-docs-slack]: <https://mautic.slack.com/archives/C02HV781U>
+[mautic-slack-invite]: <https://mautic.org/slack>
 
 [semver]: <https://semver.org/spec/v2.0.0.html>
 [gitbook]: <https://www.gitbook.com/>
