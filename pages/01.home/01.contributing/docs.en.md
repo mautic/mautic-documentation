@@ -20,6 +20,7 @@ remove the first two lines
 -->
 
 - [Why `git`](#why-git)
+- [Why Grav](#why-grav)
 - [How to contribute](#how-to-contribute)
   - [Editing documentation using the command line](#editing-documentation-using-the-command-line)
   - [Editing documents in the GitHub browser interface](#editing-documents-in-the-github-browser-interface)
@@ -59,7 +60,17 @@ Why is `git` used for the documentation
 
 Although some `git` knowledge is required to clone, modify, commit and push changes, there is a way to avoid that and edit the files directly in the GitHub web interface or via our web-based interface using the Grav CMS. If you know `git`, use the workflow you like. If not, the following guide will show you how to contribute easily.
 
+## Why Grav
+Previously Gitbook was used to manage the Mautic documentation, however this became cumbersome to maintain, and difficult for those who were not familiar with Git.  The Education Team looked into various solutions and decided that Grav would best meet the needs of the Community.
+
 ## How to contribute
+
+### Using Grav
+1. Create a Mautic Community login, or log in with your existing forum/website account at [the login page][mautic-docs-login]
+1. Send a message in the [Documentation slack channel][mautic-docs-slack] to have your account raised to 'editor'
+1. When logged in, click on the 'Edit page in Grav' link on the relevant page and make your changes
+
+### Using Github
 
 1. Fork this repository at [GitHub][mautic-docs-github]
 1. Select a file to edit on your fork
@@ -67,7 +78,7 @@ Although some `git` knowledge is required to clone, modify, commit and push chan
 1. Open a pull request to `base fork: mautic/documentation` with `base: master`
 1. Include and reference any [Issues][doc-issues] your Pull Request addresses
 
-### Editing documentation using the command line
+#### Editing documentation using the command line
 
 1. In the command line `cd` to where you want the documentation repository located
 1. Clone this repository
@@ -114,7 +125,7 @@ Although some `git` knowledge is required to clone, modify, commit and push chan
     hub pull-request
     ````
 
-### Editing documents in the GitHub browser interface
+#### Editing documents in the GitHub browser interface
 
 > **Note**\
 > **If you're unfamiliar with the command line but still want to contribute to the Mautic documentation**
@@ -534,7 +545,8 @@ Include this **Note** if there are references to outdated terminology that canno
 [docs-fr]: <https://mautic.org/docs/mautic_docs_fr.pdf>
 [docs-jp]: <https://mautic.org/docs/mautic_docs_jp.pdf>
 
-[mautic-docs]: <https://mautic.org/docs/>
+[mautic-docs]: <https://docs.mautic.org>
+[mautic-docs-login]: <https://docs.mautic.org/login>
 [mautic-docs-github]: <https://github.com/mautic/documentation>
 [mautic-docs-fork]: <https://github.com/mautic/documentation#fork-destination-box>
 [mautic-doc-license]: <https://github.com/mautic/documentation/blob/master/LICENSE>
@@ -546,6 +558,7 @@ Include this **Note** if there are references to outdated terminology that canno
 [Mautic]: <https://mautic.org/>
 [mautic]: <https://mautic.org/>
 [mautic-github]: <https://github.com/mautic/mautic>
+[mautic-docs-slack]: <https://mautic.slack.com/archives/C02HV781U>
 
 [semver]: <https://semver.org/spec/v2.0.0.html>
 [gitbook]: <https://www.gitbook.com/>
