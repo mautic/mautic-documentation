@@ -1,5 +1,8 @@
 ---
 title: Contributing
+taxonomy:
+    category:
+        - docs
 ---
 
 ## Contributing to the Mautic documentation
