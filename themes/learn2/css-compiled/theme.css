@@ -26,10 +26,12 @@ body {
 }
 
 a {
-  color: #4e5e9ecd;
+  color: #414f8a;
+  font-weight: bold;
 }
 a:hover {
   color: rgba(53, 64, 107, 0.8039215686);
+  font-weight: bold;
 }
 
 pre {

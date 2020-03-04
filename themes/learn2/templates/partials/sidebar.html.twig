@@ -58,9 +58,9 @@
         {% endif %}
         <hr />
         {% if config.plugins.login.enabled and grav.user.username %}
-            <li><i class="fa fa-lock" style="color:#bbbbbb"></i> {% include 'partials/login-status.html.twig' %}</li>
+            <div style="padding: 0 1rem"><i class="fa fa-fw fa-lock" style="color:#bbbbbb"></i> {% include 'partials/login-status.html.twig' %}</div>
         {% else %}
-            <li> <i class="fa fa-key" style="color:#bbbbbb"></i><span class="login-status">  <a href="login">Login</a></span></li>
+            <div style="padding: 0 1rem"><i class="fa fa-fw fa-key" style="color:#bbbbbb"></i><span class="login-status">  <a href="login"> Login</a></span></div>
         {% endif %}
         <a class="padding" href="#" data-clear-history-toggle><i
                     class="fa fa-fw fa-history"></i> {{ 'THEME_LEARN2_CLEAR_HISTORY'|t }}</a><br/>

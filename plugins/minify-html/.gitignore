@@ -1,0 +1,23 @@
+# OS Generated
+# ––––––––––––––––––––––
+
+.DS_Store*
+ehthumbs.db
+Thumbs.db
+*.swp
+
+# Log
+# ––––––––––––––––––––––
+
+*.log
+
+# Composer
+# ––––––––––––––––––––––
+.composer
+
+# Npm
+# ––––––––––––––––––––––
+
+node_modules/
+yarn.lock
+package-lock.json

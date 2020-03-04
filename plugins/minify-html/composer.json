@@ -1,0 +1,21 @@
+{
+  "name": "grav-plugin-minify-html",
+  "description": "plugin to minify HTML output",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jim Blue"
+    }
+  ],
+  "keywords": ["html", "compress"],
+  "require": {
+    "php": "^7.0",
+    "wyrihaximus/html-compress": "^1.4"
+  },
+  "config": {
+    "sort-packages": true,
+    "platform": {
+      "php": "7.0"
+    }
+  }
+}
