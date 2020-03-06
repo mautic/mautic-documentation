@@ -1,11 +1,22 @@
 ---
 title: 'Managing Campaigns'
 published: true
-slug: managing-campaigns
 taxonomy:
     category:
         - docs
-------------------------
+slug: managing-campaigns
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
+---
+
+---------------------
 
 ## Campaign Overview
 
@@ -27,7 +38,7 @@ The basics of campaign creation are handled easily by the initial screen but the
 
 ## Executing Campaign Actions
 
-Executing starting actions for contacts newly added to the campaign, scheduled actions and the actions on the "non-action" decision paths, must be triggered by the system. To do so, create a cron job that executes the following command at the desired interval:
+Executing starting actions for contacts newly added to the campaign, scheduled actions and the actions on the "non-action" decision paths, must be triggered by the system. To do so, create a [cron job][cron-jobs] that executes the following command at the desired interval:
 
 ```
 php /path/to/mautic/app/console mautic:campaigns:trigger --env=prod
@@ -42,3 +53,7 @@ Batch adding/removing contacts for campaigns is done by using the following comm
 ```
 php /path/to/mautic/app/console mautic:campaigns:update --env=prod
 ```
+
+See documentation on [cron jobs][cron-jobs] for further detail.
+
+[cron-jobs]: </setup/cron-jobs>
