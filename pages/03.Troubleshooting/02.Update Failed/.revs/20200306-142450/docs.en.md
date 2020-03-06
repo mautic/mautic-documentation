@@ -87,22 +87,22 @@ If this hasn't resolved your problem, proceed to the next step.
 This step requires some manual intervention - there is no command for this part.
 
 To update the files manually, you will have to:
-1. Back up (download) all Mautic files from your server to your local computer, using FTP or the [scp command][scp-command] which is much faster.
-2. Delete all Mautic files and folders.  Use FTP or the [rm command][rm-command] (use the latter with extreme caution)
-3. Download the latest Mautic package from [https://www.mautic.org/download][mautic-download]
-4. Upload the zip package to the server, to the Mautic folder, using FTP or the [scp command][scp-command] which is much faster.
-5. Unzip the package with unzip 2.16.zip (change the filename to match the one you have uploaded).  You can then remove the zip file using the command         rm 2.16.zip
+1. Back up (download) all Mautic files from your server to your local computer, using FTP or the [scp command](http://manpages.ubuntu.com/manpages/precise/en/man1/scp.1.html) which is much faster.
+2. Delete all Mautic files and folders.  Use FTP or the [rm command](http://manpages.ubuntu.com/manpages/precise/en/man1/rm.1.html) (use the latter with extreme caution)
+3. Download the latest Mautic package from [https://www.mautic.org/download](https://www.mautic.org/download)
+4. Upload the zip package to the server, to the Mautic folder, using FTP or the [scp command](http://manpages.ubuntu.com/manpages/precise/en/man1/scp.1.html) which is much faster.
+5. Unzip the package with unzip 1.2.0.zip (change the filename to match the one you have uploaded).  You can then remove the zip file using the command         rm 1.2.0.zip
 6. Upload app/config/local.php from your backup on your local machine to the fresh Mautic folder on the server (Mautic should now run)
 7. Upload your custom data if you have some. Custom fields may be found in the following folders: media/files; plugins; themes; translations
 
 ## I don't have SSH access
 
-There is a PHP script which can do almost all steps from the section above.  You can find this script [in this Gist][commands-gist].
+There is a PHP script which can do almost all steps from the section above.  You can find this script at [https://gist.github.com/escopecz/9a1a0b10861941a457f4](https://gist.github.com/escopecz/9a1a0b10861941a457f4).
 
 The description about how to use the script can be found below the script itself.  There are some details you will need to do differently, so please read these instructions carefully.  For example, you will need to use FTP to upload and download the files.  You will have to unzip the files on your local computer and upload those files, which will take a lot longer.
 
 ## There is a PHP error when I execute a command
-The best thing to do is read the error, and search for the error in your preferred search engine.  You can also search the [Mautic Forums][support-forums] to see if others have reported and resolved the same problem.
+The best thing to do is read the error, and search for the error in your preferred search engine.  You can also search the [Mautic Forums](https://forum.mautic.org) to see if others have reported and resolved the same problem.
 
 ### Allowed memory size exhausted
 This error will usually be reported as:
@@ -121,9 +121,9 @@ This means that PHP cannot work with Zip packages - changes need to be made to y
 
 If you are stuck and need help, there are several places you can go to ask for assistance.  Remember that most people who use the Community Forums, Chat and Github are volunteers.
 
-If you think your configuration is causing the problem, ask on the [Mautic Community Forums][support-forums]. Search before you post, as it is likely someone might have already answered your question in the past.
+If you think your configuration is causing the problem, ask on the [Mautic Community Forums](https://forum.mautic.org). Search before you post, as it is likely someone might have already answered your question in the past.
 
-You can also chat with someone in the live [Community Chat][mautic-slack].
+You can also chat with someone in the live [Community Chat](https://www.mautic.org/slack).
 
 In all cases, it is important that you describe the problem, and all steps you have followed to resolve the problem, in detail.  At a minimum, include the following:
 
@@ -133,13 +133,4 @@ In all cases, it is important that you describe the problem, and all steps you h
 
 If you don't provide the information above as a minimum, the person who might try to help you will have to ask you for it, so please save them the trouble and provide the information upfront.  Also, importantly, please be polite.  Mautic is an Open Source project, and people are giving their free time to help you.
 
-If you are sure that you have discovered a bug and you want to report it to developers, you can do so on [Github][mautic-github]
-
-[update-failed]: </troubleshooting/update-failed>
-[rm-command]: <http://manpages.ubuntu.com/manpages/precise/en/man1/rm.1.html>
-[mautic-download]: <https://www.mautic.org/download>
-[scp-command]: <http://manpages.ubuntu.com/manpages/precise/en/man1/scp.1.html>
-[commands-gist]: <https://gist.github.com/escopecz/9a1a0b10861941a457f4>
-[support-forums]: <https://forum.mautic.org/support>
-[mautic-slack]: <https://mautic.org/slack>
-[mautic-github]: <https://github.com/mautic/mautic/issues/new>
+If you are sure that you have discovered a bug and you want to report it to developers, you can do so on [Github](https://github.com/mautic/mautic/issues)
