@@ -3,10 +3,19 @@ title: Contacts
 taxonomy:
     category:
         - docs
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---
-Leads were renamed to contacts in Mautic 1.4.0.
+Leads were renamed to contacts in [Mautic 1.4.0[[mautic-140].
 
 Contacts are the central factor of a marketing automation platform. These are all the individuals who have visited your websites or interacted with you in some way.
 
@@ -19,7 +28,7 @@ There are two types of contacts:
 
 ### Visitors (formerly anonymous leads)
 
-Anonymous leads were renamed to visitors in Mautic 1.4.0.
+Anonymous leads were renamed to visitors in [Mautic 1.4.0][mautic-140].
 
 You can view visitors by using the 'table view' (use the "t" keyboard shortcut to view contacts in a table or "c" as cards) within the contacts section.
 
@@ -43,4 +52,7 @@ The second type of contact is a standard - or known - contact. These contacts ha
 
 The standard contact is the preferred contact within Mautic. These are contacts which may have started as a visitor, but at some point provided additional information such as a name, email address, social network handle, or other identifying characteristics which have enabled you to connect up the activity on your website with a known person. You can nurture these contacts through the Mautic marketing automation platform, learn more about their behaviour, and take specific actions as a result of this information.
 
-The [Manage Contacts](https://www.mautic.org/docs/en/contacts/managing_contacts.html) section provides more information on how you can work with contacts in Mautic.
+The [Manage Contacts][manage-contacts] section provides more information on how you can work with contacts in Mautic.
+
+[mautic-140]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
+[manage-contacts]: </contacts/manage-contacts>
