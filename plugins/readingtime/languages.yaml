@@ -4,6 +4,7 @@ en:
     SECONDS: seconds
     MINUTE: minute
     MINUTES: minutes
+    TAG_TITLE: Reading time
 
 cs:
   PLUGIN_READINGTIME:

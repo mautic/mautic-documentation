@@ -1,6 +1,12 @@
 <div id="body-inner">
     <h1>{{ page.title }}</h1>
+    {% if config.plugins.readingtime.enabled %}
+        {% set readingtime = page.content|readingtime({'format': '{minutes_short_count} {minutes_text}'}) %}
+        <span title="{{ 'PLUGIN_READINGTIME.TAG_TITLE'|t }}">Reading time: {{ readingtime != '0 minutos' ? ' <i class="fa fa-clock-o"></i> '~readingtime : '' }}</span>
+    {% endif %}
     <p>
     	{{ page.content }}
     </p>
 </div>
+
+
