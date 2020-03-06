@@ -16,13 +16,9 @@ facebookenable: true
 ---
 
 ---------------------
-## What are Web Notifications?
-
-Web Notifications can be an extremely powerful tool for the marketer. Mautic integrated with OneSignal allows you to push information to a contact as they browse through web resources (Mautic landing pages, or [with some configuration][onesignal-docs-https], on your own website), giving you one more channel that you can use to build a relationship with them.
-
 Web notifications in Mautic are provided by integrating with [One Signal][onesignal]. Using your own OneSignal accounts, you can now push a notification to your contacts's browser (with their permission). Enable these in Mautic's Configuration to see them listed under Channels in the menu.
 
-For more information see [One Signal documentation][onesignal-docs].
+For more information see [One Signal documentation][onesignal-docs]
 
 ## Setup
 
@@ -74,13 +70,15 @@ We recommend using https for your websites and Mautic instances.
 
 ![](notifications-setup6.PNG)
 
-For more informations about http notification support read  [One Signal documentation][onesignal-docs-https]
+For more informations about http notification support read  [One Signal documentation][onesignal-docs-http]
 
 ## Support for Mautic landing pages and tracking pages
 
-Support for tracking Mautic landing pages was added in Mautic 2.6. This works out of the box with OneSignal integration, however using Web Notifications on your main website requires some [further configuration][onesignal-docs-https].
+Support for tracking pages was added in Mautic 2.6. 
 
-Don't forget to copy the three files from the SDK to the root directory of your website, otherwise your notifications will not work!
+Tracking page is your web page where you paste Mautic tracking code.
+
+Don't forget copy these files to root directory of your tracking page:
 
 https://mautic.example.com/manifest.json
 https://mautic.example.com/OneSignalSDKWorker.js
@@ -89,4 +87,4 @@ https://mautic.example.com/OneSignalSDKUpdaterWorker.js
 [onesignal]: <https://onesignal.com>
 [onesignal-docs]: <https//documentation.onesignal.com/docs/web-push-setup>
 [onesignal-docs-welcome]: <https://documentation.onesignal.com/docs/welcome-notifications>
-[onesignal-docs-https]: <https://documentation.onesignal.com/docs/web-push-http-vs-https>
+[onesignal-docs-http]: <https://documentation.onesignal.com/docs/web-push-sdk-setup-http>
