@@ -4,6 +4,15 @@ media_order: 'contacts-search.jpg,mautic-contact-batch-delete.png'
 taxonomy:
     category:
         - docs
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---
@@ -19,7 +28,7 @@ A segment can be searched using the box at the top of the list, and can be order
 
 ![](contacts-search.jpg)
 
-The search box allows many different search types and follows the same search process and variables as found in all other search layouts. You can learn more about the powerful search options available on the [search documentation page](/search/README.md).
+The search box allows many different search types and follows the same search process and variables as found in all other search layouts. You can learn more about the powerful search options available on the [search documentation page][search].
 
 ## Adding contacts quickly
 
@@ -29,7 +38,7 @@ You can of course also add them through the New Contact form and add much more d
 
 ## Adding contacts normally
 
-Note: Before you start adding contacts, you may need to add [custom fields](/contacts/manage_fields.md) to capture all the information you require.
+Note: Before you start adding contacts, you may need to add [custom fields][custom-fields] to capture all the information you require.
 
 If you have contacts to import and you have time to add all the information, click on the dropdown arrow to the right of 'Quick Add Contact' and select 'New'.  This opens the new contact screen, where you can enter all the information you have about the contact.  Use the tabs at the top to populate existing custom fields and social network profiles.
 
@@ -37,7 +46,7 @@ If you have contacts to import and you have time to add all the information, cli
 
 Mautic offers the ability to import contacts from other sources via CSV file - this is a great way to get up and running quickly if you need to import a lot of contacts at once.
 
-To use the import facility, make sure that you first have all the fields set up under 'Manage fields' which correspond to the information you are importing - you don't want to lose any data if at all possible.  You may need to add custom fields using the steps detailed [here](/contacts/manage_fields.md).
+To use the import facility, make sure that you first have all the fields set up under 'Manage fields' which correspond to the information you are importing - you don't want to lose any data if at all possible.  You may need to add custom fields using the steps detailed [here][custom-fields].
 
 Once you have created all the contact fields, click on the dropdown arrow to the right of the Quick Add Contact button, and select 'Import'.
 
@@ -110,4 +119,8 @@ This action will set all selected contacts as DNC for the email channel, and it 
 
 The batch delete action in the contact table allows the deletion of up to 100 contacts at a time. This limit is there as a performance precaution, since deleting more contacts at a time could cause performance degredation issues. 
 
-If you need to delete large numbers of contacts, visit the [segment docs](./../contacts/managing_contacts.html#delete-all-contacts-in-a-segment) awhich explains how to delete thousands of contacts easily.
+If you need to delete large numbers of contacts, visit the [segment docs][delete-contacts-in-segment] which explains how to delete thousands of contacts easily.
+
+[search]: </search>
+[custom-fields]: </contacts/manage-custom-fields>
+[delete-contacts-in-segment]: </contacts/manage-segments#delete-all-contacts-in-a-segment>
