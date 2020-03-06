@@ -1,6 +1,6 @@
 ---
 title: 'Using Campaign Builder'
-media_order: 'contact-sources.png,events.png,send-email-delay.png,send-email-delay-nonaction.png,campaign-decisions.gif'
+media_order: 'contact-sources.png,events.png,send-email-delay.png,send-email-delay-nonaction.png,Edit Campaign _ Mautic.gif'
 published: true
 taxonomy:
     category:
@@ -51,7 +51,7 @@ Decisions are actions which are initiated by the contact. These decisions can be
 
 Decisions are taken in response to an action and as such a decision has two outcomes.
 
-![](campaign-decisions.gif)
+![](Edit%20Campaign%20_%20Mautic.gif)
 
 These two options are demonstrated by the green and red decision points on the decision. Each path can then be handled by your campaign. This process is typically referred to as a **decision tree**.
 
