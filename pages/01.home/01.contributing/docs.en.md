@@ -3,6 +3,15 @@ title: Contributing
 taxonomy:
     category:
         - docs
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ## Contributing to the Mautic documentation
@@ -22,7 +31,7 @@ Use this site to generate the TOC list elements:
 remove the first two lines
 -->
 
-- [Why `git`](#why-git)
+- [Why Git](#why-git)
 - [Why Grav](#why-grav)
 - [How to contribute](#how-to-contribute)
   - [Editing documentation using the command line](#editing-documentation-using-the-command-line)
@@ -53,15 +62,15 @@ remove the first two lines
   - [References to _leads_ and _lead lists_](#references-to-_leads_-and-_lead-lists_)
       - [reference note](#reference-note)
 
-## Why `git`
+## Why Git
 
-Why is `git` used for the documentation
+Why is Git used for the documentation?
 
 - *versions* - anyone can go back and look at what the text looked like.
 - *authorship* - not only every file, but every line has its author.
 - *community contributions* - no need to worry about deleting someone else's work while working on the same document.
 
-Although some `git` knowledge is required to clone, modify, commit and push changes, there is a way to avoid that and edit the files directly in the GitHub web interface or via our web-based interface using the Grav CMS. If you know `git`, use the workflow you like. If not, the following guide will show you how to contribute easily.
+Although some Git knowledge is required to clone, modify, commit and push changes, there is a way to avoid that and edit the files directly in the GitHub web interface or via our web-based interface using the Grav CMS. If you know Git, use the workflow you like. If not, the following guide will show you how to contribute easily.
 
 ## Why Grav
 Previously Gitbook was used to manage the Mautic documentation, however this became cumbersome to maintain, and difficult for those who were not familiar with Git.  The Education Team looked into various solutions and decided that Grav would best meet the needs of the Community.
@@ -537,23 +546,19 @@ Include this **Note** if there are references to outdated terminology that canno
 
 <!-- markdown style links -->
 
-[CONTRIBUTING]: <https://github.com/mautic/documentation/CONTRIBUTING.md>
+[CONTRIBUTING]: <https://github.com/mautic/mautic-documentation/CONTRIBUTING.md>
 [release-list]: <https://github.com/mautic/mautic/releases>
 [release-latest]: <https://github.com/mautic/mautic/releases/latest>
 [release-2.15.3]: <https://github.com/mautic/mautic/releases/tag/2.15.3>
 [release-2.9.0]: <https://github.com/mautic/mautic/releases/tag/2.9.0>
 [release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
 
-[docs-eng]: <https://mautic.org/docs/mautic_docs_en.pdf>
-[docs-fr]: <https://mautic.org/docs/mautic_docs_fr.pdf>
-[docs-jp]: <https://mautic.org/docs/mautic_docs_jp.pdf>
-
 [mautic-docs]: <https://docs.mautic.org>
 [mautic-docs-login]: <https://docs.mautic.org/login>
-[mautic-docs-github]: <https://github.com/mautic/documentation>
-[mautic-docs-fork]: <https://github.com/mautic/documentation#fork-destination-box>
-[mautic-doc-license]: <https://github.com/mautic/documentation/blob/master/LICENSE>
-[doc-issues]: <https://github.com/mautic/documentation/issues>
+[mautic-docs-github]: <https://github.com/mautic/mautic-documentation>
+[mautic-docs-fork]: <https://github.com/mautic/mautic-documentation#fork-destination-box>
+[mautic-doc-license]: <https://github.com/mautic/mautic-documentation/blob/master/LICENSE>
+[doc-issues]: <https://github.com/mautic/mautic-documentation/issues>
 
 [developer-docs]: <https://developer.mautic.org>
 [developer-docs-github]: <https://github.com/mautic/developer-documentation>
