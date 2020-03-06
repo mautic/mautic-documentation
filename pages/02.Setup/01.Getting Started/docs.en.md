@@ -3,7 +3,19 @@ title: 'Getting Started'
 taxonomy:
     category:
         - docs
-------------------------
+slug: getting-started
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
+---
+
+---------------------
 
 Awesome! You've downloaded a marketing automation tool. That's a great first step, but now you wonder where to go from here. Follow this very simple guide to get started using your shiny new toy!
 
