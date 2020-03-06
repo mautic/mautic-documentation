@@ -30,8 +30,6 @@ When using the 'Send Marketing Message' action in a campaign, the message can be
 
 It is also possible for a contact to specify their own frequency rules and pause communication all together on a channel - if these have been reached when a marketing message is scheduled, Mautic will use another channel which has available frequency.
 
-## Creating a new marketing message
-
 To create a new marketing message, navigate to the Channels section and click on Marketing Messages.  Click on +New.
 
 Provide a name and description for the marketing message, then choose the channels you wish to use.  Note that you must set up and configure the channels before they become available - if you have not set up mobile notifications or SMS, you won't see it as an option when creating a marketing message.
