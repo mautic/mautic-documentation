@@ -1,19 +1,28 @@
 ---
 title: 'Web notifications'
-slug: web-notifications
 taxonomy:
     category:
         - docs
+slug: web-notifications
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---------------------
-Web notifications in Mautic are provided by integrating with [One Signal](https://onesignal.com/). Using your own OneSignal accounts, you can now push a notification to your contacts's browser (with their permission). Enable these in Mautic's Configuration to see them listed under Channels in the menu.
+Web notifications in Mautic are provided by integrating with [One Signal][onesignal]. Using your own OneSignal accounts, you can now push a notification to your contacts's browser (with their permission). Enable these in Mautic's Configuration to see them listed under Channels in the menu.
 
-For more information see [One Signal documentation](https//documentation.onesignal.com/docs/web-push-setup)
+For more information see [One Signal documentation][onesignal-docs]
 
 ## Setup
 
-1. Create [One Signal](https://onesignal.com/) account and app
+1. Create [One Signal][onesignal] account and app
 
 2. Setup app Website Push Platforms in you app
 
@@ -44,7 +53,7 @@ All visitors with supported browser will be ask receive notification on all you 
 ### Welcome Notifications
 
 Option to allow disable welcome notifications.
-For more informations see [One Signal documentation](https://documentation.onesignal.com/docs/welcome-notifications)
+For more informations see [One Signal documentation][onesignal-docs-welcome]
 
 ### gcm_sender_id
 
@@ -53,24 +62,29 @@ Use default value 482941778795. Previously it required your own key. Due backwar
 
 ## HTTPS and HTTP support
 
-HTTP support was added  in Mautic 2.6. 
+HTTP support was added in Mautic 2.6. 
 
-We recommend use https of your websites. But http suport for onesignal.com  is very similar to https, nowdays.  Just user subdomain options on onesignal.com and in your Mautic.
+We recommend using https for your websites and Mautic instances.
 
 ![](notifications-setup7.PNG)
 
 ![](notifications-setup6.PNG)
 
-For more informations about http notification support read  [One Signal documentation](https://documentation.onesignal.com/docs/web-push-sdk-setup-http)
+For more informations about http notification support read  [One Signal documentation][onesignal-docs-http]
 
 ## Support for Mautic landing pages and tracking pages
 
-Support for tracking pages was added  in Mautic 2.6. 
+Support for tracking pages was added in Mautic 2.6. 
 
 Tracking page is your web page where you paste Mautic tracking code.
 
-Don't forget copy these files to root dir of your tracking page:
+Don't forget copy these files to root directory of your tracking page:
 
-https://yourmauticurl.tld/manifest.json
-https://yourmauticurl.tld/OneSignalSDKWorker.js
-https://yourmauticurl.tld/OneSignalSDKUpdaterWorker.js
+https://mautic.example.com/manifest.json
+https://mautic.example.com/OneSignalSDKWorker.js
+https://mautic.example.com/OneSignalSDKUpdaterWorker.js
+
+[onesignal]: <https://onesignal.com>
+[onesignal-docs]: <https//documentation.onesignal.com/docs/web-push-setup>
+[onesignal-docs-welcome]: <https://documentation.onesignal.com/docs/welcome-notifications>
+[onesignal-docs-http]: <https://documentation.onesignal.com/docs/web-push-sdk-setup-http>
