@@ -4,7 +4,9 @@ slug: command-line-tools-cli
 taxonomy:
     category:
         - docs
-----------------------------
+---
+
+-------------------------
 
 Sometimes you may need to use the command line with Mautic.  Here follows a list of the CLI commands that can be used.
  
