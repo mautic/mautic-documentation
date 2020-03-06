@@ -3,6 +3,7 @@ title: 'Getting Started'
 taxonomy:
     category:
         - docs
+slug: getting-started
 twitterenable: true
 twittercardoptions: summary
 articleenabled: false
@@ -169,11 +170,5 @@ You will need to change the site URL (replace example.com/mautic with the URL to
 
 Checkout [Contact Monitoring](./../contacts/contact_monitoring.html) for more details.
 
-[cron]: </setup/cron-jobs>
-[contact monitoring]: <./../contacts/contact_monitoring.html>
 
-[Apache docs]: <https://httpd.apache.org/docs/current/>
-[DocumentRoot]: <https://httpd.apache.org/docs/current/mod/core.html#documentroot>
-[nginx docs]: <https://nginx.org/en/docs/>
-[nginxroot]: <https://nginx.org/en/docs/http/ngx_http_core_module.html#root>
 
