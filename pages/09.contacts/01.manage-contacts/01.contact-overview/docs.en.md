@@ -3,6 +3,15 @@ title: 'Contact overview'
 taxonomy:
     category:
         - docs
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---
@@ -14,7 +23,7 @@ The Engagements line chart display how active the contact was in the past 6 mont
 
 ## Avatar
 
-Mautic will try to download the contact's avatar image based on their email address from the [Gravatar](https://en.gravatar.com/) service. But it can be loaded also from some social networks.
+Mautic will try to download the contact's avatar image based on their email address from the [Gravatar][gravatar] service. But it can be loaded also from some social networks.
 
 ## History
 
@@ -48,3 +57,5 @@ If you have 2 contacts in the Mautic database who are physically one person, you
 ## Send email to contact
 
 The drop down menu in the top right corner of the contact detail page also lets you send an email directly to the contact. You can fill in *From Name*, *From* (email address), *Subject* and the *Body* message. You can also *Import from an existing template*. If you select some email from this select box, the Subject and the Body textarea will be prefilled from that pre-defined email template. Emails sent by this method are not tracked by Mautic.
+
+[gravatar]: <https://en.gravatar.com/>
