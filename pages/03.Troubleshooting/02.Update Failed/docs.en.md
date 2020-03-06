@@ -95,7 +95,7 @@ To update the files manually, you will have to:
 6. Upload app/config/local.php from your backup on your local machine to the fresh Mautic folder on the server (Mautic should now run)
 7. Upload your custom data if you have some. Custom fields may be found in the following folders: media/files; plugins; themes; translations
 
-##[I don't have SSH access](#nossh)
+## [I don't have SSH access](#nossh)
 
 There is a PHP script which can do almost all steps from the section above.  You can find this script at [https://gist.github.com/escopecz/9a1a0b10861941a457f4](https://gist.github.com/escopecz/9a1a0b10861941a457f4).
 
