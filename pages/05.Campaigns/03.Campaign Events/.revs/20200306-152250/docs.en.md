@@ -59,7 +59,7 @@ This action will **permanently delete the contact** who will trigger this action
 
 ### Focus items
 
-See the documentation on [Focus items][focus-items] for an in-depth walk through
+See in the **[Focus docs]**
 
 ### Update contact's primary company
 
@@ -80,5 +80,3 @@ The opens email decision can only be attached to a send email action. Whatever e
 Note: The decision uses the OR operator between fields (Limit to Pages, URL, Referrer).
 
 ![](visits-a-page.png)
-
-[focus-items]: <channels/focus-items>
