@@ -1,17 +1,26 @@
 ---
 title: 'Social monitoring'
-slug: social-monitoring
 taxonomy:
     category:
         - docs
+slug: social-monitoring
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 It's possible to add contacts to Mautic through monitoring Twitter for mentions and hashtags.
 
 ## Requirements
 
-- [Twitter plugin](../plugins/twitter.md) must be configured.
-- `app/console mautic:social:monitoring` command must be triggered periodically. Add it to your [cron configuration](../setup/cron_jobs.md).
+- The [Twitter plugin][twitter-plugin] must be configured.
+- `app/console mautic:social:monitoring` command must be triggered periodically. Add it to your [cron configuration][cron-jobs].
 
 ![](social-monitor.jpg)
 
@@ -29,3 +38,6 @@ The process is the same for Twitter mentions.
 ![](social-mention.jpg)
 
 As people use the hashtag or mention that you're monitoring, you'll see them being added to your contact list.  From there you can use that information in a Campaign.
+
+[twitter-plugin]: </plugins/twitter>
+[cron-jobs]: </setup/cron-jobs>
