@@ -43,13 +43,13 @@ The email tokens will get populated with the real values including contact field
 
 ### Send a Webhook
 
-Action Send a Webhook with GET, POST, PUT, PATCH, DELETE, TRACE request support (curl). It was created based on [GitHub discussion][webhook-discussion-github]. Return true if page status code is 200/201. Data and headers values support contact field tokens (`{contactfield=firstname}` etc.).
+Action Send a Webhook with GET, POST, PUT, PATCH, DELETE, TRACE request support (curl). It was created based on [GitHub discussion](https://www.github.com/mautic/mautic/issues/854). Return true if page status code is 200/201. Data and headers values support contact field tokens (`{contactfield=firstname}` etc.).
 
-Mautic 2.15.0 [adds][215-ip-as-token] possibility to use contact's IP address as a token `{contactfield=ipAddress}`.
+Mautic 2.15.0 [adds](https://www.github.com/mautic/mautic/pull/6539) possibility to use contact's IP address as a token `{contactfield=ipAddress}`.
 
 ### Delete contact
 
-This action will **permanently delete the contact** who will trigger this action in your campaign flow, together with all the information Mautic knows about that contact. See in the [segment docs][segments] about how to use this action to delete all contacts in a segment.
+This action will **permanently delete the contact** who will trigger this action in your campaign flow, together with all the information Mautic knows about that contact. See in the [segment docs](/managing_contacts.html#delete-all-contacts-in-a-segment) about how to use this action to delete all contacts in a segment.
 
 ##### The Delete contact action is special for 2 reasons:
 
@@ -63,7 +63,7 @@ See the documentation on [Focus items][focus-items] for an in-depth walk through
 
 ### Update contact's primary company
 
-Action added in Mautic 2.14 and allow edit contact's primary company via campaign. Read also about [Mautic's companies support][companies].
+Action added in Mautic 2.14 and allow edit contact's primary company via campaign. Read also about **[Mautic's companies support](../../../../index.php/index.html).**
 
 Action update contact's primary company based on company custom fields. 
 
@@ -81,8 +81,4 @@ Note: The decision uses the OR operator between fields (Limit to Pages, URL, Ref
 
 ![](visits-a-page.png)
 
-[webhook-discussion-github]: <https://www.github.com/mautic/mautic/issues/854>
-[215-ip-as-token]: <https://www.github.com/mautic/mautic/pull/6539>
-[segments]: </contacts/manage-segments>
 [focus-items]: </channels/focus-items>
-[companies]: <contacts/companies>
