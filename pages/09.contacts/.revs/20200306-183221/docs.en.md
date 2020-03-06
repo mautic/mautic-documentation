@@ -1,6 +1,5 @@
 ---
 title: Contacts
-media_order: contacts-anonymous.jpg
 taxonomy:
     category:
         - docs
@@ -43,7 +42,7 @@ is:anonymous
 ```
 #### Screenshot
 
-![](contacts-anonymous.jpg)
+![](media/contacts-anonymous.jpg)
 
 The resulting list will display those IP addresses which have not yet provided identifying information.
 
