@@ -81,4 +81,4 @@ Note: The decision uses the OR operator between fields (Limit to Pages, URL, Ref
 
 ![](visits-a-page.png)
 
-[focus-items]: </channels/focus-items>
+[focus-items]: <channels/focus-items>
