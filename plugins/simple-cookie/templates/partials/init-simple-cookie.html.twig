@@ -1,0 +1,95 @@
+{# Add listener to window load to initialize the cookie banner correct. #}
+window.addEventListener("load", function() {
+
+	var pluginConfig = {{ config.plugins["simple-cookie"]|json_encode|raw }};
+	var cookieconsentInitialse = {
+		"position": pluginConfig.position,
+		"theme": pluginConfig.layout,
+		"type": pluginConfig.compliance,
+
+		"content": createCookieContent(pluginConfig),
+		"palette": createCookiePalette(pluginConfig.palette)
+	}
+
+	{# Check if we need the custom configuration. #}
+	if (pluginConfig.custom)
+	{
+		var customInitialise = JSON.parse(
+			pluginConfig.custom_config.replace(/\r?\n|\r/g,'')
+		);
+		cookieconsentInitialse = Object.assign({}, cookieconsentInitialse, customInitialise);
+	}
+
+	{# Initialize cookie consent banner #}
+	window.cookieconsent.initialise(cookieconsentInitialse);
+});
+
+{# Creates the cookie consent palette/color config. #}
+function createCookiePalette(configPalette)
+{
+	var palette = {
+		"popup": {},
+		"button": {}
+	};
+
+	if (configPalette === "black")
+	{
+		palette.popup.background = "#000";
+		palette.button.background = "#f1d600";
+	}
+
+	if (configPalette === "white")
+	{
+		palette.popup.background = "#eaf7f7";
+		palette.popup.text = "#5c7291";
+
+		palette.button.background = "#56cbdb";
+		palette.button.text = "#ffffff";
+	}
+
+	if (configPalette === "gray")
+	{
+		palette.popup.background = "#252e39";
+		palette.button.background = "#14a7d0";
+	}
+
+	return palette;
+}
+
+{# Creates the cookie consent content config. #}
+function createCookieContent(config)
+{
+	var cookieContent = {};
+
+	cookieContent.message = "{{ 'PLUGINS.SIMPLE_COOKIE.BANNER_MESSAGE'|t }}";
+	if (config.banner_message)
+	{
+		cookieContent.message = config.banner_message;
+	}
+
+	cookieContent.dismiss = "{{ 'PLUGINS.SIMPLE_COOKIE.BANNER_DISMISS'|t }}";
+	if (config.banner_dismiss)
+	{
+		cookieContent.dismiss = config.banner_dismiss;
+	}
+
+	cookieContent.allow = "{{ 'PLUGINS.SIMPLE_COOKIE.BANNER_ACCEPT'|t }}";
+	if (config.banner_accept)
+	{
+		cookieContent.allow = config.banner_accept;
+	}
+
+	cookieContent.link = "{{ 'PLUGINS.SIMPLE_COOKIE.BANNER_ACCEPT'|t }}";
+	if (config.banner_policy)
+	{
+		cookieContent.link = config.banner_policy;
+	}
+
+	cookieContent.href = "{{ 'PLUGINS.SIMPLE_COOKIE.BANNER_POLICY'|t }}";
+	if (config.informations)
+	{
+		cookieContent.href = config.informations;
+	}
+
+	return cookieContent;
+}
