@@ -23,6 +23,6 @@ Follow these steps to configure your Mautic instance to use the license key.
 1. Click "Fetch IP Lookup Data Store". This will download the IP lookup database to your Mautic instance.
 1. Set up the [cron job][cron-jobs] to periodically download a fresh copy.
 
-[216-release]: <https://github.com/mautic/mautic/releases/tag/2.16.0>
+[216-release][https://github.com/mautic/mautic/releases/tag/2.16.0]
 [maxmind-signup]: <https://www.maxmind.com/en/geolite2/signup>
 [cron-jobs]: </setup/cron-jobs>
