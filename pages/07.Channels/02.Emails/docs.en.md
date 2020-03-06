@@ -3,6 +3,15 @@ title: Emails
 taxonomy:
     category:
         - docs
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---------------------
@@ -22,7 +31,7 @@ Template emails are transactional by default and can be used in campaigns, form 
   
 These are marketing emails by default. Segments are assigned to the email which will determine which contacts receive the communication. Note that each contact can only receive the email once - it's like a mailing list.
 
-Initiating these emails can be done in one of two ways. Prior 2.2.0, sending had to be manually initiated through the UI as an ajax process batched over the contacts. As of 2.2.0, a new cron job is available to do this for you! See [Send Scheduled Broadcasts (e.g. segment emails)](./../setup/cron_jobs.html#send-scheduled-broadcasts-e-g-segment-emails) for more details on this.
+Initiating these emails can be done in one of two ways. Prior 2.2.0, sending had to be manually initiated through the UI as an ajax process batched over the contacts. As of 2.2.0, a new cron job is available to do this for you! See [Send Scheduled Broadcasts (e.g. segment emails)][cron-send-broadcast] for more details on this.
 
 ## Email Formats
 
@@ -30,7 +39,7 @@ Emails can be created in both full HTML as well as basic text format to be deliv
 
 ## Email Delivery
 
-Emails are delivered using the method defined by the system administrator. If you are the system administrator for your company, then you will need to add the email protocol for your company to use. Mautic integrates with any email service provider which offers SMTP mail servers as well as several distinct services such as [Mandrill](http://mandrill.com/), [Gmail](http://gmail.com) [Sendgrid](https://sendgrid.com), [Mailjet](https://app.mailjet.com/signup?utm_source=mautic), [Postmark](https://postmarkapp.com/), [Sendmail](https://www.sendmail.com/) and [Amazon SES](https://aws.amazon.com/ses/).
+Emails are delivered using the method defined by the system administrator. If you are the system administrator for your company, then you will need to add the email protocol for your company to use. Mautic integrates with any email service provider which offers SMTP mail servers as well as several distinct services such as [Mandrill][mandrill], [Gmail][gmail], [Sendgrid][sendgrid], [Mailjet][mailjet], [Postmark][postmark], [Sendmail][sendmail] and [Amazon SES][amazon-ses].
 
 The system can either send emails immediately or queue them to be processed in batches by a cron job.
 
@@ -69,3 +78,12 @@ Mautic has a built in means of allowing a contact to unsubscribe from email comm
 ## Online version 
 
 Mautic manages also the hosting of an online version of the email sent. To use that feature, simply add the following as URL on text to generate the online version link `{webview_url}`.
+
+[cron-send-broadcast]: </setup/cron-jobs#send-scheduled-broadcasts-e-g-segment-emails>
+[mandrill]: <https://mandrill.com/>
+[gmail]: <https://gmail.com>
+[sendgrid]: <https://sendgrid.com>
+[mailjet]: <https://app.mailjet.com/signup?utm_source=mautic>
+[postmark]: <https://postmarkapp.com/>
+[sendmail]: <https://www.sendmail.com/>
+[amazon-ses]: <https://aws.amazon.com/ses/>
