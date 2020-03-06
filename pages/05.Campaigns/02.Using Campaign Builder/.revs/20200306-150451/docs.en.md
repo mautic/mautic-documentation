@@ -69,7 +69,7 @@ Actions attached to the red point of a decision are considered non-action points
 
 Use an action's delay settings to define at what point the campaign should send the contact down this path.
 
-To trigger these events, see [executing campaign actions][executing-campaign-actions].
+To trigger these events, see [executing campaign actions](#executing-campaign-actions).
 
 #### Example
 
@@ -94,5 +94,3 @@ The status condition path is taken as a result of the condition at the end of th
 #### Negative status Condition Path (Red Points)
 
 Actions attached to the red point of a condition are considered as negative status points. This path is taken as a result of negative status for the condition at the end of the delay set (trigger, delay or specific date).
-
-[executing-campaign-actions]: </campaigns/managing-campaigns>
