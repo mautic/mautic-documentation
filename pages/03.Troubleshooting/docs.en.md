@@ -3,6 +3,15 @@ title: Troubleshooting
 taxonomy:
     category:
         - docs
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---------------------
@@ -131,10 +140,12 @@ Usually means a bug.
 
 ### How and where to report a bug
 
-Help your fellow developers and report the bug correctly the first time. Go to [GitHub issue tracker](../../../../index.php.com/mautic/mautic/issues) and answer at least the following 3 questions:
+Help your fellow developers and report the bug correctly the first time. Go to the [Github issue tracker][github-issues] and answer at least the following 3 questions:
 
-Mautic version:
-PHP version:
-Steps to reproduce the error:
+* Mautic version:
+* PHP version:
+* Steps to reproduce the error:
 
-And paste in the error message(s) obviously.
+And paste in the error message(s) in the section on the post template.
+
+[github-issues]: <https://github.com/mautic/mautic/issues/new>
