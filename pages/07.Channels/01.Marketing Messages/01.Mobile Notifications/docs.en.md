@@ -1,16 +1,25 @@
 ---
 title: 'Mobile notifications'
-slug: mobile-notifications
 taxonomy:
     category:
         - docs
+slug: mobile-notifications
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---------------------
 
-Mobile notifications integrate your iOS and Android app with [One Signal](https://onesignal.com/). Using your own OneSignal accounts, you can now push a notification to your contacts's mobile device (with their permission). Enable these in Mautic's configuration to see them listed under Channels in the menu.
+Mobile notifications integrate your iOS and Android app with [One Signal][onesignal]. Using your own OneSignal accounts, you can now push a notification to your contacts's mobile device (with their permission). Enable these in Mautic's configuration to see them listed under Channels in the menu.
 
-For more information see [One Signal iOS documentation](https://documentation.onesignal.com/docs/ios-native-sdk) and [One Signal Android documentation](https://documentation.onesignal.com/docs/android-native-sdk)
+For more information see [One Signal iOS documentation][onesignal-docs] and [One Signal Android documentation][onesignal-android-docs]
 
 ## Setup
 
@@ -98,3 +107,6 @@ Coming soon...
 In addition to the UserData that gets pushed to Mautic, you can push open / interaction stats
 to Mautic by sending the UserData struct, with an appended `stat` JSON key.
  
+[onesignal]: <https://www.onesignal.com>
+[onesignal-docs]: <https://documentation.onesignal.com/docs/ios-native-sdk>
+[onesignal-android-docs]: <https://documentation.onesignal.com/docs/android-native-sdk>
