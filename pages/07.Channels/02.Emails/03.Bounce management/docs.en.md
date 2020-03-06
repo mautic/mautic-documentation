@@ -1,15 +1,24 @@
 ---
 title: 'Bounce management'
-slug: bounce-management
 taxonomy:
     category:
         - docs
+slug: bounce-management
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---
 
 ## Monitored Email
-Since version 1.2.0 Mautic has provided a feature which allows monitoring of IMAP accounts to detect bounced emails and unsubscribe requests.
+Since version [1.2.0][mautic-120] Mautic has provided a feature which allows monitoring of IMAP accounts to detect bounced emails and unsubscribe requests.
 
 Note that Mautic makes use of "append" email addresses. The return-path or the list-unsubscribe header will use something like `youremail+bounce_abc123@your-domain.com`. The `bounce` or `unsubscribe` allows Mautic to determine what type of email it is when it examines the inbox through IMAP. The `abc123` gives Mautic information about the email itself, i.e. which contact it was it sent to, what Mautic email was used, etc. 
 
@@ -50,7 +59,7 @@ All contacts with bounced emails should appear in this segment.
 
 1. Login to your Elastic Email account and go to Settings -> Notification.
 
-2. Fill in the Notification URL as http://your-mautic-url.tld/mailer/elasticemail/callback
+2. Fill in the Notification URL as https://mautic.example.com/mailer/elasticemail/callback
 
 3. Check  these actions:  Unsubscribed, Complaints, Bounce/Error
 
@@ -58,8 +67,8 @@ All contacts with bounced emails should appear in this segment.
 
 ### Links
 
-[Elastic Email Help & Support](https://www.elasticemail.com/support)
-[Support via email](https://support.elasticemail.com/)
+[Elastic Email Help & Support][elasticemail-help]
+[Support via email][elasticemail-support]
 
 ## Amazon Webhook
 Mautic supports the bounce and complaint management from Amazon Simple Email Service (Amazon SES).
@@ -93,7 +102,7 @@ appearing in the CloudWatch logs:
         },
         "delivery": {
             "deliveryId": "a5dab35d-83f9-53c3-8ca6-e636c82668d4",
-            "destination": "https://my.mautic.site/mailer/amazon/callback",
+            "destination": "https://mautic.example.com/mailer/amazon/callback",
             "providerResponse": "SSLPeerUnverifiedException in HttpClient",
             "dwellTimeMs": 42266,
             "attempts": 3
@@ -123,7 +132,7 @@ Mautic supports a few of Mandrill's webhooks for bounces.
 
 Mautic 1.2.2 supports the following webhooks: Message is Bounced, Message is Soft-Bounced, Message is Rejected.  As of 1.2.3, Message is Marked as Spam and Message Recipient Unsubscribes will be supported.
 
-3. Fill in the Post To Url as `http://your-mautic.com/mailer/mandrill/callback` then click Create Webhook.
+3. Fill in the Post To Url as `https://mautic.example.com/mailer/mandrill/callback` then click Create Webhook.
 
 4. Click Custom Metadata and create two new metadata fields: `hashId` and `contactId`
 
@@ -133,7 +142,7 @@ Mautic 1.2.2 supports the following webhooks: Message is Bounced, Message is Sof
 
 ## Mailjet Webhook
 
-Mautic supports Mailjet's webhooks for bounces, spam and blocked. Before any configuration, you'll need to create an account on [Mailjet](../../../../../index.phpljet.com/).
+Mautic supports Mailjet's webhooks for bounces, spam and blocked. Before any configuration, you'll need to create an account on [Mailjet][mailjet].
 
 1. Login to your Mailjet account and go to My Account -> Event tracking (triggers)
 
@@ -145,7 +154,7 @@ Mautic supports Mailjet's webhooks for bounces, spam and blocked. Before any con
 
 Mautic 2.2.0 supports the following webhooks: Message is Bounced, Message is Blocked, Message is Spam.
 
-3. Fill in the URL boxes as `http://your-mautic.com/mailer/mailjet/callback`.
+3. Fill in the URL boxes as `https://mautic.example.com/mailer/mailjet/callback`.
 
 ## Sparkpost Webhook
 
@@ -157,7 +166,7 @@ Mautic 2.2.0 supports the following webhooks: Message is Bounced, Message is Blo
 
 ![New Webhook](sparkpost_webhook_2.png "New webhook")
 
-3. Fill in the Target URL as `http://your-mautic.com/mailer/sparkpost/callback`
+3. Fill in the Target URL as `https://mautic.example.com/mailer/sparkpost/callback`
 
 4. Select the following Events
 
@@ -169,7 +178,7 @@ Mautic 2.2.0 supports the following webhooks: Message is Bounced, Message is Blo
 
 ![Webhooks](sendgrid_webhook_1.png "SendGrid webhooks")
 
-2. Fill in the Target URL as `http://your-mautic.com/mailer/sendgrid_api/callback`
+2. Fill in the Target URL as `https://mautic.example.com/mailer/sendgrid_api/callback`
 
 3. Select the following Events
 
@@ -178,3 +187,7 @@ Mautic 2.2.0 supports the following webhooks: Message is Bounced, Message is Blo
 4. Save setting (on the right side of "Event Notification" row:
 
 ![Save](sendgrid_webhook_3.png "Save")
+
+[mautic-120]: <https://github.com/mautic/mautic/releases/tag/1.2.0>
+[elasticemail-help]: <https://www.elasticemail.com/support>
+[elasticemail-support]: <https://support.elasticemail.com/>
