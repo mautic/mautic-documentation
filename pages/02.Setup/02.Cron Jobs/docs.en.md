@@ -3,7 +3,19 @@ title: 'Cron jobs'
 taxonomy:
     category:
         - docs
-------------------------
+slug: cron-jobs
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
+---
+
+---------------------
 
 Mautic requires a few [cron jobs](https://en.wikipedia.org/wiki/Cron) to handle some maintenance tasks. Most web hosts provide a means to add cron jobs either through SSH, cPanel, or another custom panel. Please consult your host's documentation/support if you are unsure on how to setup cron jobs.
 
