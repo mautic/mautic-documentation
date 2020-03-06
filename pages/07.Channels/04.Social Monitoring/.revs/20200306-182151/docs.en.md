@@ -20,7 +20,7 @@ It's possible to add contacts to Mautic through monitoring Twitter for mentions 
 ## Requirements
 
 - The [Twitter plugin][twitter-plugin] must be configured.
-- The `app/console mautic:social:monitoring` command must be triggered periodically. Add it to your [cron configuration][cron-jobs].
+- `app/console mautic:social:monitoring` command must be triggered periodically. Add it to your [cron configuration][cron-jobs].
 
 ![](social-monitor.jpg)
 
