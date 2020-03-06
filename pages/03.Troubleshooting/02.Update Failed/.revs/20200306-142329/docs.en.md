@@ -28,7 +28,7 @@ Mautic has a built-in tool which enables you to check the database and identify 
 
 If this is not possible, or your Mautic instance is down completely, follow the next tips.
 
-If you don't have SSH access, skip down to ['I don't have SSH access'](#I don't have SSH access).
+If you don't have SSH access, skip down to ['I don't have SSH access'](#nossh).
 
 ## I have SSH access
 
@@ -36,7 +36,7 @@ Having SSH access to your server makes things much easier. Log in via command li
 
     cd /your/mautic/directory
 
-### 1.  Try to clear the cache
+###1.  Try to clear the cache
 
 When an upgrade attempt fails in the final step, it may be only the outdated cache that is causing a problem.  Use the following command to clear it manually:
 
@@ -48,7 +48,7 @@ If this command throws a PHP error, you can try to remove the cache folder using
 
 If clearing the cache has not resolved your problems, continue with the next step.
 
-### 2. Trigger an update manually
+###2. Trigger an update manually
 
 The first step is to find out if there are any updates available using the following command:
 
@@ -60,7 +60,7 @@ The output from this command will tell you if there are any updates to apply.  I
 
 If there are no updates found, proceed to the next step.
 
-### 3. Check for outstanding database migrations
+###3. Check for outstanding database migrations
 
 Run the following command to check for any outstanding database migrations:
 
@@ -70,7 +70,7 @@ If there are any reported, firstly **ensure that you have a tested backup of you
 
     php app/console doctrine:migration:migrate
 
-### 4. Check for database schema updates
+###4. Check for database schema updates
 
 If your upgrade failed during the database update step, the database schema may not be up to date.  Run the following command to check for updates:
 
@@ -82,7 +82,7 @@ Running this command will tell you whether the database is up to date with the c
 
 If this hasn't resolved your problem, proceed to the next step.
 
-### 5. Try to update the files manually
+###5. Try to update the files manually
 
 This step requires some manual intervention - there is no command for this part.
 
@@ -95,29 +95,29 @@ To update the files manually, you will have to:
 6. Upload app/config/local.php from your backup on your local machine to the fresh Mautic folder on the server (Mautic should now run)
 7. Upload your custom data if you have some. Custom fields may be found in the following folders: media/files; plugins; themes; translations
 
-## I don't have SSH access
+## [I don't have SSH access](#nossh)
 
 There is a PHP script which can do almost all steps from the section above.  You can find this script at [https://gist.github.com/escopecz/9a1a0b10861941a457f4](https://gist.github.com/escopecz/9a1a0b10861941a457f4).
 
 The description about how to use the script can be found below the script itself.  There are some details you will need to do differently, so please read these instructions carefully.  For example, you will need to use FTP to upload and download the files.  You will have to unzip the files on your local computer and upload those files, which will take a lot longer.
 
-## There is a PHP error when I execute a command
+##There is a PHP error when I execute a command
 The best thing to do is read the error, and search for the error in your preferred search engine.  You can also search the [Mautic Forums](https://forum.mautic.org) to see if others have reported and resolved the same problem.
 
-### Allowed memory size exhausted
+###Allowed memory size exhausted
 This error will usually be reported as:
 
     PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 10924085 bytes) in ...
     
 This means that the memory limit that Apache has available is too low.  Edit the memory_limit in the php.ini configuration file.
 
-### A required PHP extension is missing
+###A required PHP extension is missing
 
     Fatal: Class 'ZipArchive' not found
 
 This means that PHP cannot work with Zip packages - changes need to be made to your server configuration to allow unzipping of files at the command line.  Ask your hosting provider, or search for a tutorial to help with this.
 
-### I need help
+###I need help
 
 If you are stuck and need help, there are several places you can go to ask for assistance.  Remember that most people who use the Community Forums, Chat and Github are volunteers.
 
