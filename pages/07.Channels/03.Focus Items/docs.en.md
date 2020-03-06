@@ -28,8 +28,7 @@ When creating a focus item, you'll see that there is a place to enter a website.
 
 After entering the website, click the builder button top right. This is where the magic happens.
 
-~~Notice that you should have a snapshot of the website. If not, you'll have the option to fetch it. Again note that some complex websites may not be snapshot-able.
-~~
+~~Notice that you should have a snapshot of the website. If not, you'll have the option to fetch it. Again note that some complex websites may not be snapshot-able.~~
 ![](step_2.png)
  
 On the left, you'll see a button to switch between mobile and desktop views. A mobile snapshot is also attempted - it may not match your website exactly due to the snapshot process but it should at least give you the general look. On the right is the builder toolbar.   
