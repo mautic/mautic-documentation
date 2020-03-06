@@ -1,10 +1,19 @@
 ---
 title: 'Managing emails'
 media_order: 'email-segments.jpg,base64-images.jpg'
-slug: managing-emails
 taxonomy:
     category:
         - docs
+slug: managing-emails
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---------------------
@@ -77,7 +86,7 @@ The tracking pixel image is usually appended to the email message, if enabled. I
 
 ## Code Mode
 
-**[Go to the Code Mode docs]().**
+Go to the [Code Mode][code-mode] page to learn more about editing emails in code mode.
 
 ## Base64 Encoded Images
 
@@ -92,3 +101,5 @@ Since Mautic 1.4, there is a new option in the Mautic configuration, the Email S
 ## Disable the Tracking Pixel
 
 As described above, some email clients display the image approval if one of the images is loaded from remote location. Like the tracking pixel. If you care more about this approval than the email open tracking, you can disable the tracking pixel. Then the images should be displayed directly without any approval.
+
+[code-mode]: </themes/code-mode>
