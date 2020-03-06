@@ -27,6 +27,8 @@ The **Channels** Dropdown contains:
 
 All of these must be created or configured before you can use them in a campaign.
 
+![](channels-dropdown.jpg)
+
 [marketing-messages]: </channels/marketing-messages>
 [emails]: </channels/emails>
 [web-notifications]: </channels/marketing-messages/web-notifications>
