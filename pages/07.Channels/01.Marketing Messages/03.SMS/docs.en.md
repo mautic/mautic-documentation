@@ -3,6 +3,15 @@ title: 'SMS Text Messages'
 taxonomy:
     category:
         - docs
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---------------------
@@ -10,7 +19,7 @@ This new channel was added in Mautic 1.4.0. It allows Mautic to send text messag
 
 ## Configure Text Messages
 
-Before you start to send text messages from your Mautic, it needs to be connected to the service which can send them. The first and default implemented service is [Twilio](https://www.twilio.com). In order to configure the text messages correctly, follow these steps:
+Before you start to send text messages from your Mautic, it needs to be connected to the service which can send them. The first and default implemented service is [Twilio][twilio]. In order to configure the text messages correctly, follow these steps:
 
 1. Create an account at Twilio.com.
 2. In Mautic, go to *Settings* (cog icon) > *Plugins*.
@@ -35,7 +44,7 @@ The new Text message will be pre-selected so you can save the *Send Text Message
 
 ## Alphanumeric Sender ID
 
-Alphanumeric Sender ID allows you to send Twilio Programmable SMS messages using a personalized sender name, in supported countries (see [International Support for Alphanumeric Sender ID](https://support.twilio.com/hc/en-us/articles/223133767-International-support-for-Alphanumeric-Sender-ID)).
+Alphanumeric Sender ID allows you to send Twilio Programmable SMS messages using a personalized sender name, in supported countries (see [International Support for Alphanumeric Sender ID][twilio-international-alphanumeric-id).
 
 Instead of using an E.164 formatted Twilio Phone number for the "From" value, you can use a custom string like your own business' branding.
 
@@ -43,11 +52,11 @@ Instead of using an E.164 formatted Twilio Phone number for the "From" value, yo
 
 ###  Alphanumeric Sender ID requirements
 
-Alphanumeric Sender ID is automatically supported on all new [upgraded (paid) Twilio accounts](https://support.twilio.com/hc/en-us/articles/223183208-Upgrading-to-a-paid-Twilio-Account). It is not supported for Free Trial accounts.
+Alphanumeric Sender ID is automatically supported on all new [upgraded (paid) Twilio accounts][twilio-paid-accounts]. It is not supported for Free Trial accounts.
 
 You can validate that Alphanumeric Sender is enabled on your account by following these steps:
 
-1.  Login to your account at [www.twilio.com](http://www.twilio.com/).
+1.  Login to your account at [www.twilio.com][twilio].
 2.  From the left side navigation bar, click Programmable SMS.
 3.  Click Settings.
 4.  Verify that "Alphanumeric Sender ID" is set to Enabled.
@@ -58,4 +67,9 @@ Just setup your alias in plugin settings:
 
 ![](alphanumeric-id.png)
 
-Read more info about [Alphanumeric Sender ID](https://support.twilio.com/hc/en-us/articles/223181348-Getting-started-with-Alphanumeric-Sender-ID) on Twillio site.
+Read more info about [Alphanumeric Sender ID][twilio-docs-alphanumeric-id] on Twillio site.
+
+[twilio]: <https://www.twilio.com>
+[twilio-paid-accounts]: <https://support.twilio.com/hc/en-us/articles/223183208-Upgrading-to-a-paid-Twilio-Account>
+[twilio-international-alphanumeric-id]: <https://support.twilio.com/hc/en-us/articles/223133767-International-support-for-Alphanumeric-Sender-ID>
+[twilio-docs-alphanumeric-id]: <https://support.twilio.com/hc/en-us/articles/223181348-Getting-started-with-Alphanumeric-Sender-ID>
