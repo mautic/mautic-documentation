@@ -14,7 +14,6 @@ personenabled: false
 facebookenable: true
 ---
 
----
 From the [2.16 release][216-release], Mautic has supported using a license key to access the Maxmind IP lookup service.
 
 Follow these steps to configure your Mautic instance to use the license key.
