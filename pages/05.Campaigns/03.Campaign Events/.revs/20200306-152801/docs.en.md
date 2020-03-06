@@ -63,7 +63,7 @@ See the documentation on [Focus items][focus-items] for an in-depth walk through
 
 ### Update contact's primary company
 
-A campaign action was added in Mautic 2.14 which allows you to edit a contact's primary company via a campaign. Read also about [Mautic's companies support][companies].
+Action added in Mautic 2.14 and allow edit contact's primary company via campaign. Read also about [Mautic's companies support][companies].
 
 Action update contact's primary company based on company custom fields. 
 
