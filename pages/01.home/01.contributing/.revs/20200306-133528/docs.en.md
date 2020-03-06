@@ -139,7 +139,7 @@ Previously Gitbook was used to manage the Mautic documentation, however this bec
 
 #### Editing documents in the GitHub browser interface
 
-> **Note** \
+> **Note**
 > **If you're unfamiliar with the command line but still want to contribute to the Mautic documentation**
 
 Using *README.md* as an example:
