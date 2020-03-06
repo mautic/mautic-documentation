@@ -1,9 +1,18 @@
 ---
 title: 'Focus items'
-slug: focus-items
 taxonomy:
     category:
         - docs
+slug: focus-items
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---
@@ -13,7 +22,7 @@ Focus Items are listed under the Channels menu.
 
 ## Creating a Focus Item
 
-When creating a focus item, you'll see that there is a place to enter a website. This is currently integrated into a service offered by mautic.com to generate a snapshot of the given website to use a preview when building the focus item. If the website is a very complex website - the snapshot may not work. Note that this feature may change in the future. 
+When creating a focus item, you'll see that there is a place to enter a website. The snapshot feature is currently non-functional. ~~This is currently integrated into a service offered by mautic.com to generate a snapshot of the given website to use a preview when building the focus item. If the website is a very complex website - the snapshot may not work. Note that this feature may change in the future. 
  
 ![](step_1.png)
 
