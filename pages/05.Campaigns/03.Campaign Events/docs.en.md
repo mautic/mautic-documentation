@@ -1,9 +1,19 @@
 ---
+title: 'Campaign events'
 media_order: 'send-email-delay (1).png,vists-a-page.png'
-slug: campaign-events
 taxonomy:
     category:
         - docs
+slug: campaign-events
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---------------------
