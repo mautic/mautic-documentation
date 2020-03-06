@@ -12,7 +12,6 @@ personenabled: false
 facebookenable: true
 ---
 
-# Updating at Command Line
 ---
 When Mautic is updated, there are several tasks which can take a long time to complete depending on the size of your Mautic instance.  
 
