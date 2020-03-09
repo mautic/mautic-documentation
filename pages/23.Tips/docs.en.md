@@ -1,13 +1,18 @@
 ---
 title: 'Tips & Tricks'
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
-slug: 'Tips and tricks'
 taxonomy:
     category:
         - docs
+slug: tips-and-tricks
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ------------------
