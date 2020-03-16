@@ -1,3 +1,13 @@
+# v2.1.0
+## 03/13/2020
+
+1. [](#new)
+    * Requires Grav v1.6.0
+    * Pass phpstan level 2 tests
+1. [](#improved)
+    * Code cleanup
+    * Added support for Gitea / Gogs webhook secret (#149, thanks @Aisbergg)
+
 # v2.0.5
 ## 05/06/2019
 
