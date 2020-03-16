@@ -69,7 +69,7 @@ Processing page hits is done by using the following command:
 php /path/to/mautic/app/console mautic:queue:process --env=prod -i page_hit
 ```
 
-Processing page hits is done by using the following command:
+Processing email hits is done by using the following command:
 
 ```
 php /path/to/mautic/app/console mautic:queue:process --env=prod -i email_hit
