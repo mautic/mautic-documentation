@@ -454,7 +454,7 @@ class AdminPowerToolsPlugin extends Plugin
 
             if ($this->config->get("plugins.admin-power-tools.edit_page_enabled", true)) {
                 $path = $this->grav['uri']->path();
-                $content .= "\n\n[Edit Page In UI](/admin/pages/$path?target=_blank)";
+                $content .= "\n\n[Edit Page On Grav](/admin/pages/$path?target=_blank)";
             }
 
             if ($this->config->get("plugins.admin-power-tools.edit_section_enabled", true)) {
@@ -462,7 +462,7 @@ class AdminPowerToolsPlugin extends Plugin
                 $href = $base . "/admin/powertools/edit-section" . $page->route();
                 $content = preg_replace_callback("~^(#+\s*.*)$~m", function ($m) use ($href) {
                     $s = urlencode($m[1]);
-                    return "$m[0]&nbsp;<a href='$href?section=$s'><i class='fa fa-edit' style='font-size:initial' title='Edit Section In UI'></i></a>";
+                    return "$m[0]&nbsp;<a href='$href?section=$s'><i class='fa fa-edit' style='font-size:initial' title='Edit Section'></i></a>";
                 }, $content);
             }
 
