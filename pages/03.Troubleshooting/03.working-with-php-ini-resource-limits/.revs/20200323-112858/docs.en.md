@@ -67,7 +67,7 @@ phpinfo();
 
 Save this file, then browse to it in your web browser of choice.  
 
-For example, `https://example.com/mautic/info.php` where your Mautic installation is within a folder called 'mautic' on your domain.
+For example, https://example.com/mautic/info.php where your Mautic installation is within a folder called 'mautic' on your domain.
 
 ## A note on local v master values
 
