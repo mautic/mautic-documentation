@@ -95,7 +95,7 @@ Change the value you see in the php.ini file, and then save, using ctrl+x (keybo
 
 Once the changes have been saved, you will need to restart Apache for the changes to take effect.
 
-It is always a good idea to do a dry-run first, using the [configtest][apache-configtest] command
+It is always a good idea to do a dry-run first, using the following command
 
 `sudo apachectl configtest`
 
@@ -124,4 +124,3 @@ This should be considered as a last resort, and may not be supported by your hos
 [php-ini]: (https://www.php.net/manual/en/configuration.file.php)
 [nano-kb-shortcuts]: (https://staffwww.fullcoll.edu/sedwards/Nano/NanoKeyboardCommands.html)
 [php-configuration]: (https://www.php.net/manual/en/configuration.changes.php)
-[apache-configtest]: (http://httpd.apache.org/docs/2.2/programs/apachectl.html)
