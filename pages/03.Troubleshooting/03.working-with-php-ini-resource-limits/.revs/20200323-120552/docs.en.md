@@ -1,6 +1,6 @@
 ---
 title: 'Working with php.ini resource limits'
-media_order: screenshot-local.mautic3-2020.03.23-12_04_53.png
+media_order: 64cb269464e6bfc29022160cf4cc869cfb840b2b_2_690x322.png
 published: true
 taxonomy:
     category:
@@ -45,7 +45,7 @@ The first step is to find which php.ini file is being loaded.  The [php.ini file
 ### I have access to Mautic
 If you have access to your Mautic instance, navigate to Settings > System Info > PHP Info where you will be able to view a file which tells you every configuration setting for PHP that Mautic is using.  In particular, the areas outlined in red in the screenshot below will give you the paths to the relevant files.
 
-![Screenshot of PHP info file](screenshot-local.mautic3-2020.03.23-12_04_53.png)
+![](64cb269464e6bfc29022160cf4cc869cfb840b2b_2_690x322.png)
 
 ### I do not have access to Mautic
 If you can't access the System Info page of Mautic, you can manually generate a PHP Info page by placing a file in the root of your Mautic directory.
