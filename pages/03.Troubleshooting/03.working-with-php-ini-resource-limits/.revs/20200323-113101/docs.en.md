@@ -117,7 +117,6 @@ Check out [this article][php-configuration] for more details on how to override 
 As an example of two settings you may wish to use in a local htaccess file to override the values in the global php.ini file:
 
 `php_value upload_max_filesize 20M`
-
 `php_value max_execution_time 600`
 
 This should be considered as a last resort, and may not be supported by your hosting provider.
