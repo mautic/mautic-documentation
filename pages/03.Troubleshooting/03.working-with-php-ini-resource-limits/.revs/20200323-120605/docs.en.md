@@ -47,28 +47,39 @@ If you have access to your Mautic instance, navigate to Settings > System Info >
 
 ![Screenshot of PHP info file](screenshot-local.mautic3-2020.03.23-12_04_53.png)
 
-#### A note on local v master values
+### I do not have access to Mautic
+If you can't access the System Info page of Mautic, you can manually generate a PHP Info page by placing a file in the root of your Mautic directory.
+
+Create a file called info.php using the following command:
+
+`nano info.php` 
+    
+In this file, paste the following:
+
+```
+<?php
+
+// Show all information, defaults to INFO_ALL
+phpinfo();
+
+?>
+```
+
+Save this file, then browse to it in your web browser of choice.  
+
+For example, `https://example.com/mautic/info.php` where your Mautic installation is within a folder called 'mautic' on your domain.
+
+## A note on local v master values
 
 When you view the PHP info file, you will notice two values, Master and Local.
 
-#### Master Value
+### Master Value
 This comes from your main php.ini file (the one being loaded above in the ‘Loaded configuration file’ section). This is the value which applies server-wide.
 
-#### Local Value
+### Local Value
 The global setting can be overridden locally in multiple locations, such as httpd.conf, .htaccess or other Apache configuration.
 
 This is often used to get around restrictive settings at the server level, and can sometimes mean that making changes at the top global level doesn’t trickle down to your specific folder or location. So if you have a discrepancy between the two, check for a local .htaccess or a *.ini file within your Mautic directory (or check with your hosting provider!)
-
-### I do not have access to Mautic
-If you can't access the System Info page of Mautic, you can check the file path for php.ini using a command:
-
-`php -i | grep .ini`
-
-You can also use the same command to find the specific value being used:
-
-`php -i | grep upload_max_filesize`
-
-where upload_max_filesize is the value you need to change.
 
 ## Updating the value
 
