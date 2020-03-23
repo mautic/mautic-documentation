@@ -1,7 +1,7 @@
 ---
 title: 'Working with php.ini resource limits'
 media_order: 64cb269464e6bfc29022160cf4cc869cfb840b2b_2_690x322.png
-published: true
+published: false
 taxonomy:
     category:
         - docs
