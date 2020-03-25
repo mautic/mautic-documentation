@@ -44,7 +44,7 @@ Permissions and ownership settings are critical to ensuring the security of your
 Mautic needs access to read and write files in the Mautic directory to enable certain functions and scripts to run. If the permissions are not set correctly, or if the user that is trying to run them does not have the correct access, Mautic will not be able to function and you will see errors in the application and server logs.
 
 Problems with permissions and ownership generally occur because:
-* You've uploaded Mautic or made changes to files and folders as a different user to the one that Mautic uses to run - for example you uploaded files using an FTP account with the username 'user' but your web server executes scripts as a user 'www-data'.
+* You've uploaded Mautic or made changes to files and folders as a different user to the one that Mautic uses to run - for example you uploaded files using 'user' but your web server executes scripts as www-data.
 * The user that Mautic uses to run does not have the appropriate permissions on the files and folders - for example, 'user' isn't able to create directories, or read files
 * An update has been run as a different user to that which Mautic uses to run - resulting in some files and folders having their ownership changed
 
