@@ -3,7 +3,6 @@ title: 'File ownership and permissions'
 taxonomy:
     category:
         - docs
-googledesc: 'Experiencing problems with file and folder ownership or permissions in Mautic? This article walks through how to fix them.'
 twitterenable: true
 twittercardoptions: summary
 articleenabled: false
