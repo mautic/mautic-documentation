@@ -75,3 +75,15 @@ There are 3 places to manage that:
 ; To add support for long parameters with suhosin add the following to php.ini
 suhosin.get.max_value_length = 5000
 ```
+
+## How to Verify the tracking URL
+You can check if the tracking URL that is added in Outlook is correct this way:
+- send a test email with tracking on
+- view the source of the send email
+- copy the tracking URL (probably at the bottom if the source file)
+- open an incognito browser and past the url
+- a blank (black) page should show. Not an error pag lik 404 or file not found
+- when the url is correct got to mautic/contacts and check it the contact was added or if an event was added to an existing contact
+- you can also create a report for visited pages and filter for the tracking URL 
+- it seems there are multiple versions of the plugin for Outlook. It could be that the URL is /index.php/plugin
+- having said that: In my case a new contact still isn't created (2.16)
