@@ -111,7 +111,7 @@ As an example of two settings you may wish to use in a local htaccess file to ov
 
 This should be considered as a last resort, and may not be supported by your hosting provider.
 
-[php-ini]: (https://www.php.net/manual/en/configuration.file.php)
-[nano-kb-shortcuts]: (https://staffwww.fullcoll.edu/sedwards/Nano/NanoKeyboardCommands.html)
-[php-configuration]: (https://www.php.net/manual/en/configuration.changes.php)
-[apache-configtest]: (http://httpd.apache.org/docs/2.2/programs/apachectl.html)
+[php-ini]: <https://www.php.net/manual/en/configuration.file.php>
+[nano-kb-shortcuts]: <https://staffwww.fullcoll.edu/sedwards/Nano/NanoKeyboardCommands.html>
+[php-configuration]: <https://www.php.net/manual/en/configuration.changes.php>
+[apache-configtest]: <http://httpd.apache.org/docs/2.2/programs/apachectl.html>
