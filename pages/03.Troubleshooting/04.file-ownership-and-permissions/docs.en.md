@@ -96,6 +96,6 @@ To reset the ownership of files and folders, use the following command (ensuring
 
 This command **ch**-anges **own**-ership, using the -R flag which means recursively - including all files/folders within that location. [Read more about the chown command][chown-command]
 
-[ls-syntax]: (https://www.garron.me/en/go2linux/ls-file-permissions.html)
-[ownership]: (https://www.thegeekdiary.com/understanding-basic-file-permissions-and-ownership-in-linux/)
-[chown-command]: (https://linuxize.com/post/linux-chown-command/)
+[ls-syntax]: <https://www.garron.me/en/go2linux/ls-file-permissions.html>
+[ownership]: <https://www.thegeekdiary.com/understanding-basic-file-permissions-and-ownership-in-linux/>
+[chown-command]: <https://linuxize.com/post/linux-chown-command/>
