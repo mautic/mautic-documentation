@@ -88,3 +88,12 @@ or
 ```
 php /path/to/mautic/app/console mautic:queue:process --env=prod -i email_hit -m 50
 ```
+
+### Cron to push the jobs
+You need to run the following cron to keep pushing the jobs. 
+```
+php /path/to/mautic/app/console mautic:email:send
+```
+See the documentation on [cron jobs][cron-jobs] for further information.
+
+[cron-jobs]: </setup/cron-jobs>
