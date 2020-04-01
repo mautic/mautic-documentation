@@ -38,6 +38,14 @@ The following search operators can be used:
 - `OR` - By default the expressions will be joined as `AND` statements. Use the `OR` operator to change that.
 - `%` - Use the `%` as a wildcard to search for specific names or values in a phrase (i.e. to find all companies with the word ‘Technologies’ then type `%technologies%`)
 
+## Search by fields 
+
+Contacts and companies list allow search by fields in format: ___fieldalias="seached value"___. 
+Also support type-in suggestions for aliases
+    
+![search](contact-fields-search.png)
+![search](company-fields-search.png)
+
 ## Search filters
 
 The following search filters can be used:
