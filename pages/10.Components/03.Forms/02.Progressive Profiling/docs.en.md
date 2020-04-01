@@ -7,7 +7,8 @@ taxonomy:
 ---
 
 ---
-This feature was added in Mautic 2.1.0.
+This feature was introduced in Mautic 2.1.0.
+This feature was improved in Mautic 3.1
 
 Progressive profiling makes your forms smarter by asking for the most important information that you don't have yet. This way your contacts won't feel overwhelmed by long forms and saves time by answering questions Mautic already knows the answer to. Progressive Profiling lets you improve the form conversion rate.
 
@@ -31,7 +32,12 @@ It's recommended to use the email field in each form. From Mautic 2.9 email can 
 
 2. Display field only after X submissions.
 
-If you want to ask a contact additional questions on the second form load, you can specify so for each lead. It works nicely with hiding fields which you already know the answer to. For the first submission, the contact can be asked to fill in the First and the Last name. When they come to the form for a second time, the First and the Last name fields will be hidden and instead they will be asked to fill in their Company and Phone.
+    If you want to ask a contact additional questions on the second form load, you can specify so for each lead. It works nicely with hiding fields which you already know the answer to. For the first submission, the contact can be asked to fill in the First and the Last name. When they come to the form for a second time, the First and the Last name fields will be hidden and instead they will be asked to fill in their Company and Phone.
+    
+3. Always display
+
+    Force display a field.  We recommend use  email field visible because it is the identifier of a contact.
+    
 
 ## Limits of Progressive Profiling
 
