@@ -43,8 +43,8 @@ The following search operators can be used:
 Contacts and companies list allow search by fields in format: ___fieldalias="seached value"___. 
 Also support type-in suggestions for aliases
     
-![search](contact-fields-search.png)
-![search](company-fields-search.png)
+![search fields in contacts](contact-fields-search.png)
+![search fields in companies](company-fields-search.png)
 
 ## Search filters
 
