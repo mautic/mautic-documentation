@@ -52,6 +52,10 @@ Problems with permissions and ownership generally occur because:
 ## How to fix permission-related problems in Mautic
 Resetting the permissions of your files and folders requires running some commands at the command line. You will need to have SSH access to your server, or ask someone who does to execute these commands for you.  Some hosting providers may be able to create a script to periodically reset permissions if this becomes an ongoing problem for you.
 
+### Solution for hosting providers that offer cPanel access
+A script to fix permissions & ownership, on files & directories, for cPanel accounts. You could ask your hosting provider to run that script to reset the permissions to the correct values. This handy script could be found here: 
+[**GitHub** - PeachFlame/cPanel-fixperms][cpanel-fixperms]
+
 ### Identifying the problem
 Log into your server using SSH, and change to the Mautic directory using the command
 
@@ -99,3 +103,4 @@ This command **ch**-anges **own**-ership, using the -R flag which means recursiv
 [ls-syntax]: <https://www.garron.me/en/go2linux/ls-file-permissions.html>
 [ownership]: <https://www.thegeekdiary.com/understanding-basic-file-permissions-and-ownership-in-linux/>
 [chown-command]: <https://linuxize.com/post/linux-chown-command/>
+[cpanel-fixperms]: <https://github.com/PeachFlame/cPanel-fixperms/>
