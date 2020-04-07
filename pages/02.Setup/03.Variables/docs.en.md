@@ -22,7 +22,7 @@ taxonomy:
 >
 > Default Value
 >
-> The default value can be specified after the `|` (pipe) character.  Consider this email salutation:
+> The default value (sometimes called Fallback Text) can be specified after the `|` (pipe) character.  Consider this email salutation:
 >
 > `Hi {contactfield=firstname|there},`
 >
