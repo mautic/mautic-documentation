@@ -32,7 +32,7 @@ class AdminAddonRevisionsPlugin extends Plugin {
     return self::$instance;
   }
 
-  private function autoload($namespace, $folders) {
+  private function _autoload($namespace, $folders) {
     if ($this->loader === null) {
       $this->loader = new ClassLoader();
     }
@@ -46,15 +46,17 @@ class AdminAddonRevisionsPlugin extends Plugin {
   }
 
   public function onPluginsInitialized() {
-    $this->autoload('AdminAddonRevisions', array(__DIR__ . '/src/'));
+    $this->_autoload('AdminAddonRevisions', array(__DIR__ . '/src/'));
     self::$instance = $this;
 
     $this->directoryName = $this->config->get($this->configKey() . '.directory', '.revs');
 
     // Add revisions directory to ignored folders
     $ignoreFolders = $this->config->get('system.pages.ignore_folders');
-    $ignoreFolders[] = $this->directoryName;
-    $this->config->set('system.pages.ignore_folders', $ignoreFolders);
+    if (!in_array($this->directoryName, $ignoreFolders)) {
+      $ignoreFolders[] = $this->directoryName;
+      $this->config->set('system.pages.ignore_folders', $ignoreFolders);
+    }
 
     // Enable events
     $this->enable([
@@ -112,8 +114,8 @@ class AdminAddonRevisionsPlugin extends Plugin {
     } else {
       if ($uri->basename() === self::PAGE_LOCATION) {
         $action = 'list-pages';
-        $pages = $this->grav['pages']->instances();
-        foreach ($pages as $k => &$page) {
+        $pages = $this->grav['pages']->all();
+        foreach ($pages as $k => $page) {
           // Remove folders
           if (!$page->file()) {
             unset($pages[$k]);

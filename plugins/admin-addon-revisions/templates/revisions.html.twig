@@ -43,7 +43,7 @@
           {% if loop.first %}
             <div>{{ revision.name }} (Current)</div>
           {% else %}
-            <div><a href="{{base_url}}/revisions{{ context.route }}/action:diff/rev:{{ revision.name }}">{{ revision.name }}</a> ({{ revision.createdAt|nicetime(true) }})</div>
+            <div><a href="{{base_url}}/revisions{{ context.route }}/action{{ config.system.param_sep }}diff/rev{{ config.system.param_sep }}{{ revision.name }}">{{ revision.name }}</a> ({{ revision.createdAt|nicetime(true) }})</div>
           {% endif %}
         {% endfor %}
       </div>

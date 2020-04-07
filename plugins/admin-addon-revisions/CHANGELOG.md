@@ -1,3 +1,11 @@
+# v1.4.0
+##  04/05/2020
+
+1. [](#bugfix)
+    * Fixed error when non-default URL parameter separator used (Fix #22)
+    * Fixed "unsaved changes" modal coming up on configuration page every time (Fix #23)
+    * Rename autoload method to support v1.7
+
 # v1.3.3
 ##  06/13/2018
 
