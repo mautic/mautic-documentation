@@ -20,7 +20,7 @@ facebookenable: true
 
 ## Mautic - Zoho CRM plugin
 
-[Mautic][mautic] can push a contact to [Zoho CRM][zoho-crm] based on [Campaign actions][campaigns] or [Point Triggers][points].
+[Mautic][mautic] can push a contact to [Zoho CRM][zoho-crm] based on [Contact actions][testing] or [Point Triggers][points].
 
 ## Language configuration warning
 
@@ -77,7 +77,6 @@ You can also configure other options:
 
 Follow [these steps][testing] to test the integration.
 
-[campaigns]: </campaigns/campaign-events>
 [zoho-crm]: <https://www.zoho.com/crm/>
 [zoho-2fa]: <https://www.zoho.com/mail/help/adminconsole/two-factor-authentication.html#alink5>
 [zoho-api-docs]: <https://www.zoho.com/crm/developer/docs/api/whats-new.html>
