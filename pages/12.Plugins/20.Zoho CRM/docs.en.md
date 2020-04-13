@@ -53,6 +53,6 @@ Follow [these steps][testing] to test the integration.
 [mautic]: <https://mautic.org>
 [Mautic]: <https://mautic.org>
 
-[field mapping]: <field_mapping.html>
-[testing]: <integration_test.html>
-[points]: <./../points>
+[field mapping]: </plugins/plugin-resources/field-mapping>
+[testing]: </plugins/plugin-resources/testing-integrations>
+[points]: </points>
