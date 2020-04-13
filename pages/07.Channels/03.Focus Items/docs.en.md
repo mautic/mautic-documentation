@@ -47,7 +47,7 @@ The first step to building the focus item is to choose what the focus or goal is
 
 Each focus/goal will have slightly different settings but all have a few in common:
   
-1. Animate? - simply determine if  
+1. Animate? - Should the focus item be animated or static?
 1. When to engage - this determines when the focus is engaged based on visitor interaction. It can be immediate, on scroll, timed, or with an exit attempt. If `Visitor intends to leave` is chosen, an option appears that allows configuration if links within the site should trigger the engagement or not.
 2. How often to engage - should the visitor be engaged every time, once per session, or during a period of time? 
 3. Stop engaging after a conversion - once a user clicks the link or submits the form (not applicable for displaying a notice), enabling this option will no longer engage the visitor.
