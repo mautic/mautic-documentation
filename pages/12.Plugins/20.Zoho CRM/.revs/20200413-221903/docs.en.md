@@ -50,18 +50,18 @@ Once you have authorized successfully, the button will update to show 'Reauthori
 
 1. In the _Features_ tab you can select the behaviour that you wish to have happen with this integration:
 
-* Triggered action push contacts to integration - **when triggered**, contacts are pushed from Mautic to Zoho
-* Pull contacts and/or companies from integration - pull **all** contacts and/or companies from ZohoCRM into Mautic
-* Push contacts and/or companies to this integration - push **all** contacts and/or companies from Mautic into ZohoCRM
+		Triggered action push contacts to integration - **when triggered**, contacts are pushed from Mautic to Zoho
+		Pull contacts and/or companies from integration - pull **all** contacts and/or companies from ZohoCRM into Mautic
+		Push contacts and/or companies to this integration - push **all** contacts and/or companies from Mautic into ZohoCRM
 
 Note this still requires a [cron job][cron-job] to function.
 
 You can also configure other options:
 
-* Update blank values:
- This will update blank values regardless of data priority, on both ZohoCRM and Mautic.
-* Choose what Zoho Objects to pull data from:
- Here you can specify which objects you want to pull from ZohoCRM - Leads, Contacts and/or Accounts
+	Update blank values:
+		This will update blank values regardless of data priority, on both ZohoCRM and Mautic.
+	Choose what Zoho Objects to pull data from:
+		Here you can specify which objects you want to pull from ZohoCRM - Leads, Contacts and/or Accounts
 
 ![Screenshot of features available in ZohoCRM integration](screenshot-local.mauticautomatedtests-2020.04.13-23_09_01.png)
 
