@@ -1,20 +1,26 @@
 ---
 title: 'Zoho CRM'
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
-slug: zoho-crm
+media_order: 'screenshot-accounts.zoho.com-2020.04.13-22_55_03.png,screenshot-local.mauticautomatedtests-2020.04.13-23_01_11.png,screenshot-accounts.zoho.com-2020.04.13-22_59_32.png,screenshot-local.mauticautomatedtests-2020.04.13-23_09_01.png'
 taxonomy:
     category:
         - docs
+slug: zoho-crm
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 -----------
 
 ## Mautic - Zoho CRM plugin
 
-[Mautic] can push a contact to [Zoho CRM] based on [Contact actions][testing] or [Point Triggers][points].
+[Mautic][mautic] can push a contact to [Zoho CRM][zoho-crm] based on [Contact actions][testing] or [Point Triggers][points].
 
 ## Language configuration warning
 
@@ -26,20 +32,44 @@ taxonomy:
 
 ## Configure the Zoho CRM plugin
 
-1. Create a [Zoho CRM] account if you don't have one already.
+1. Create a [Zoho CRM][zoho-crm] account if you don't have one already.  
 
-1. Insert the email and password you created the Zoho account with into the Mautic Zoho integration plugin and Authorize it.
+1. Generate a key pair by going to the [Zoho Developers Console][zoho-dev-console].  You will need to provide a name for the client, the URL, and the callback URL (which you can access by going to Plugins > ZohoCRM in Mautic and copying the callback URL).  Copy the Client ID and secret that is displayed when you save the client - this will be needed in Mautic.
 
-    If Zoho [Two Factor Authentication][zoho-admin] is enabled, an [Application Specific Password][zoho-admin] will need to be generated and used.
+![Screenshot of ZohoCRM developer client setup screen](screenshot-accounts.zoho.com-2020.04.13-22_55_03.png)
 
-1. Set the *Publish* switch to *Yes*. Save.
-![Zoho CRM Plugin configuration](plugins-zoho-authorization.png "Zoho CRM Plugin configuration")
+1. Insert the client ID and client secret you created the Zoho Developers Console into the Mautic Zoho integration plugin and Authorize it.  You will see a popup window which prompts you to log into Zoho and to authorize access - select Accept.
 
-1. In the _Features_ tab select *Push contacts to this integration* checkbox.
+> Note: You must select the correct data centre corresponding to your CRM instance - e.g. if you access your CRM at crm.zoho.com you should choose the .com option in the dropdown.
 
-    It is checked by default. If you uncheck it, the plugin will not push contacts to [Zoho CRM] any more.
+![Screenshot of Zoho configuration screen in Mautic](screenshot-local.mauticautomatedtests-2020.04.13-23_01_11.png)
 
-1. Configure the [field mapping][field mapping].
+![Screenshot of authorization popup](screenshot-accounts.zoho.com-2020.04.13-22_59_32.png)
+
+Once you have authorized successfully, the button will update to show 'Reauthorize'.
+
+1. In the _Features_ tab you can select the behaviour that you wish to have happen with this integration:
+
+		Triggered action push contacts to integration - **when triggered**, contacts are pushed from Mautic to Zoho
+		Pull contacts and/or companies from integration - pull **all** contacts and/or companies from ZohoCRM into Mautic
+		Push contacts and/or companies to this integration - push **all** contacts and/or companies from Mautic into ZohoCRM
+
+Note this still requires a [cron job][cron-job] to function.
+
+You can also configure other options:
+
+	Update blank values:
+		This will update blank values regardless of data priority, on both ZohoCRM and Mautic.
+	Choose what Zoho Objects to pull data from:
+		Here you can specify which objects you want to pull from ZohoCRM - Leads, Contacts and/or Accounts
+
+![Screenshot of features available in ZohoCRM integration](screenshot-local.mauticautomatedtests-2020.04.13-23_09_01.png)
+
+1. Configure the [field mapping][field mapping].  
+
+> Note: If the values are empty for the Mautic object, a value of 'Unknown' will be sent. If the ZohoCRM field is a pick list, be sure the list values of Mautic's field match those of the field in ZohoCRM.
+
+1. Set the *Publish* switch to *Yes*. 
 
 1. Save the plugin configuration.
 
@@ -47,11 +77,12 @@ taxonomy:
 
 Follow [these steps][testing] to test the integration.
 
-[Zoho CRM]: <https://www.zoho.com/crm/>
-[zoho-admin]: <https://www.zoho.com/mail/help/adminconsole/two-factor-authentication.html#alink5>
-
+[zoho-crm]: <https://www.zoho.com/crm/>
+[zoho-2fa]: <https://www.zoho.com/mail/help/adminconsole/two-factor-authentication.html#alink5>
+[zoho-api-docs]: <https://www.zoho.com/crm/developer/docs/api/whats-new.html>
+[zoho-dev-console]: <https://accounts.zoho.com/developerconsole>
+[cron-job]: </setup/cron-jobs>
 [mautic]: <https://mautic.org>
-[Mautic]: <https://mautic.org>
 
 [field mapping]: </plugins/plugin-resources/field-mapping>
 [testing]: </plugins/plugin-resources/testing-integrations>
