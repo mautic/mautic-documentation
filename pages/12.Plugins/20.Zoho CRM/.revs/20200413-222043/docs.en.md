@@ -34,11 +34,11 @@ facebookenable: true
 
 1. Create a [Zoho CRM][zoho-crm] account if you don't have one already.  
 
-2. Generate a key pair by going to the [Zoho Developers Console][zoho-dev-console].  You will need to provide a name for the client, the URL, and the callback URL (which you can access by going to Plugins > ZohoCRM in Mautic and copying the callback URL).  Copy the Client ID and secret that is displayed when you save the client - this will be needed in Mautic.
+1. Generate a key pair by going to the [Zoho Developers Console][zoho-dev-console].  You will need to provide a name for the client, the URL, and the callback URL (which you can access by going to Plugins > ZohoCRM in Mautic and copying the callback URL).  Copy the Client ID and secret that is displayed when you save the client - this will be needed in Mautic.
 
 ![Screenshot of ZohoCRM developer client setup screen](screenshot-accounts.zoho.com-2020.04.13-22_55_03.png)
 
-3. Insert the client ID and client secret you created the Zoho Developers Console into the Mautic Zoho integration plugin and Authorize it.  You will see a popup window which prompts you to log into Zoho and to authorize access - select Accept.
+1. Insert the client ID and client secret you created the Zoho Developers Console into the Mautic Zoho integration plugin and Authorize it.  You will see a popup window which prompts you to log into Zoho and to authorize access - select Accept.
 
 > Note: You must select the correct data centre corresponding to your CRM instance - e.g. if you access your CRM at crm.zoho.com you should choose the .com option in the dropdown.
 
@@ -48,7 +48,7 @@ facebookenable: true
 
 Once you have authorized successfully, the button will update to show 'Reauthorize'.
 
-4. In the _Features_ tab you can select the behaviour that you wish to have happen with this integration:
+1. In the _Features_ tab you can select the behaviour that you wish to have happen with this integration:
 
 * Triggered action push contacts to integration - **when triggered**, contacts are pushed from Mautic to Zoho
 * Pull contacts and/or companies from integration - pull **all** contacts and/or companies from ZohoCRM into Mautic
@@ -65,13 +65,13 @@ You can also configure other options:
 
 ![Screenshot of features available in ZohoCRM integration](screenshot-local.mauticautomatedtests-2020.04.13-23_09_01.png)
 
-5. Configure the [field mapping][field mapping].  
+1. Configure the [field mapping][field mapping].  
 
 > Note: If the values are empty for the Mautic object, a value of 'Unknown' will be sent. If the ZohoCRM field is a pick list, be sure the list values of Mautic's field match those of the field in ZohoCRM.
 
-6. Set the *Publish* switch to *Yes*. 
+1. Set the *Publish* switch to *Yes*. 
 
-7. Save the plugin configuration.
+1. Save the plugin configuration.
 
 ## Test the plugin
 
