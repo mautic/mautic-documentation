@@ -26,7 +26,7 @@ facebookenable: true
 
 > **Warning**
 >
-> Your [Zoho][zoho-crm] and [Mautic][mautic] accounts must be **configured for English language**, otherwise the synchronization won't work.
+> Your [Zoho][zoho-admin] and [Mautic] accounts must be **configured for English language**, otherwise the synchronization won't work.
 >
 > Zoho changes the alias of each of the contact fields depending on the language, which generates unmatched fields and errors on sync.
 
