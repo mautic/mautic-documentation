@@ -44,7 +44,7 @@ The new Text message will be pre-selected so you can save the *Send Text Message
 
 ## Alphanumeric Sender ID
 
-Alphanumeric Sender ID allows you to send Twilio Programmable SMS messages using a personalized sender name, in supported countries (see [International Support for Alphanumeric Sender ID][twilio-international-alphanumeric-id).
+Alphanumeric Sender ID allows you to send Twilio Programmable SMS messages using a personalized sender name, in supported countries (see [International Support for Alphanumeric Sender ID][twilio-international-alphanumeric-id]).
 
 Instead of using an E.164 formatted Twilio Phone number for the "From" value, you can use a custom string like your own business' branding.
 
