@@ -419,6 +419,10 @@ For images that cannot be uploaded via the GitHub web interface, upload them to 
 >
 > ~~`![form rebuild cache](/forms/media/rebuild.png "Rebuild form cache")`~~
 
+### Videos
+You can embed a YouTube video using the following syntax:
+    `[plugin:youtube](https://www.youtube.com/watch?v=<videoid>)`
+    
 ## Mautic specific information
 
 ### Example domain references
