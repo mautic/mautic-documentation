@@ -89,6 +89,9 @@ Note the data-slot-name matches the slot name in the campaign.
 
 Watch a [video tutorial][video tutorial].
 
+### Hint for testing
+After you made changes to your campaign, it might be a good idea to clone it. In this way you can be sure that your changes are reflected with your test users.
+
 ## Translations
 
 Dynamic web content supports translated content. When creating/editing a dynamic web content item, there are the options to set a language and select a translation parent. By selecting a translation parent, the current item is then considered to be a translation in the selected language of that parent item.
