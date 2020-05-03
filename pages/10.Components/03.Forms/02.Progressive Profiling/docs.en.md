@@ -17,7 +17,11 @@ There are two possible ways that you can configure a form field to display only 
 
 It's recommended to use the email field in each form. From Mautic 2.9 email can be hidden, but be aware of that. Email as identifier of a contact could be unusable if same PC is used by more people (public library, schools...).
 
-1. Display field only if the value is not known yet
+1. Maximum fields displayed at a time
+
+
+
+2. Display field only if the value is not known yet
 
 	Mautic will search for a value in two places before the form is rendered for the current contact:
 
@@ -29,7 +33,7 @@ It's recommended to use the email field in each form. From Mautic 2.9 email can 
   
    If the form field is linked with a contact field, Mautic will check if there is a value in the contact's profile and hides the field if configured to do so.
 
-2. Display field only after X submissions.
+3. Display field only after X submissions.
 
 If you want to ask a contact additional questions on the second form load, you can specify so for each lead. It works nicely with hiding fields which you already know the answer to. For the first submission, the contact can be asked to fill in the First and the Last name. When they come to the form for a second time, the First and the Last name fields will be hidden and instead they will be asked to fill in their Company and Phone.
 
