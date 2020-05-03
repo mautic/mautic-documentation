@@ -19,9 +19,17 @@ It's recommended to use the email field in each form. From Mautic 2.9 email can 
 
 1. Maximum fields displayed at a time
 
+Global feature enable progressive profiling feature and allow render only certain amount of fields in time.
 
+![image](https://user-images.githubusercontent.com/462477/80913098-3f71c500-8d42-11ea-919c-13763228bc1c.png)
 
-2. Display field only if the value is not known yet
+2. Always display
+
+Force display and skip fields orders in the form If you set **1. Maximum fields displayed at a time**. 
+
+![image](https://user-images.githubusercontent.com/462477/80913150-b6a75900-8d42-11ea-944d-7552882b215f.png)
+
+3. Display field only if the value is not known yet
 
 	Mautic will search for a value in two places before the form is rendered for the current contact:
 
@@ -33,7 +41,7 @@ It's recommended to use the email field in each form. From Mautic 2.9 email can 
   
    If the form field is linked with a contact field, Mautic will check if there is a value in the contact's profile and hides the field if configured to do so.
 
-3. Display field only after X submissions.
+4. Display field only after X submissions.
 
 If you want to ask a contact additional questions on the second form load, you can specify so for each lead. It works nicely with hiding fields which you already know the answer to. For the first submission, the contact can be asked to fill in the First and the Last name. When they come to the form for a second time, the First and the Last name fields will be hidden and instead they will be asked to fill in their Company and Phone.
 
