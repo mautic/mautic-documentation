@@ -1,3 +1,35 @@
+# 3.3.1
+## 05/07/2020
+
+1. [](#bugfix)
+    * Set missing default logout route to `/` for homepage
+
+# 3.3.0
+## 04/30/2020
+
+* [](#new)
+    * Rate limiter logic was moved to login events and can be turned on with `['rate_limit' => true]` option
+    * Rate limiter sets `UserLoginEvent::AUTHENTICATION_CANCELLED` and triggers `onUserLoginFailure` event
+    * Login now triggers extra `onUserLoginAuthorized` event if user is authorized
+    * 2FA now triggers either `onUserLoginAuthorized` or `onUserLoginFailure` event with `AUTHORIZATION_CHALLENGE` state
+1. [](#bugfix)
+    * Fixed issue with backwards compatibility for `route_after_login` and `route_after_logout`
+    * Removed duplicate entries in `blueprint.yaml` causing YAML errors
+    * Fixed logout not removing task if there was no redirect set
+    * Fixed remember me triggering `onUserLoginFailure`, use `onUserLoginGuest` event instead
+
+# 3.2.0
+## 04/27/2020
+
+1. [](#new)
+    * CHANGE: `redirect_to_login` and `redirect_after_logout` are now boolean, with accompanying `route_after_login` and `route_after_logout` options.  NOTE: Compatibility is maintained with existing config.
+* [](#improved)
+    * Improved configuration layout
+    * Better handling of login route when that page doesn't exist 
+1. [](#bugfix)
+    * Fixed guest only pages requiring login
+    * Fixed issue when logging out, not redirecting, and attempting to log right back in
+
 # 3.1.0
 ## 03/05/2020
 
