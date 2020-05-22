@@ -67,13 +67,13 @@ remove the first two lines
 Why is Git used for the documentation?
 
 - *versions* - anyone can go back and look at what the text looked like.
-- *authorship* - not only every file, but every line has its author.
+- *authorship* - not only every file but every line has its author.
 - *community contributions* - no need to worry about deleting someone else's work while working on the same document.
 
 Although some Git knowledge is required to clone, modify, commit and push changes, there is a way to avoid that and edit the files directly in the GitHub web interface or via our web-based interface using the Grav CMS. If you know Git, use the workflow you like. If not, the following guide will show you how to contribute easily.
 
 ## Why Grav
-Previously Gitbook was used to manage the Mautic documentation, however this became cumbersome to maintain, and difficult for those who were not familiar with Git.  The Education Team looked into various solutions and decided that Grav would best meet the needs of the Community.
+Previously Gitbook was used to manage the Mautic documentation, however, this became cumbersome to maintain and difficult for those who were not familiar with Git.  The Education Team looked into various solutions and decided that Grav would best meet the needs of the Community.
 
 ## How to contribute
 
