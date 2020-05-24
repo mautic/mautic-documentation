@@ -12,7 +12,7 @@ Sometimes you may need to use the command line with Mautic.  Here follows a list
  
 You can find this list (and others - for example commands relating to Doctrine and other vendors) by typing 
 
-`app/console`
+`bin/console`
 
 at the command line in your Mautic directory.
 
@@ -33,7 +33,7 @@ Options:
 
 ## Mautic commands
 
-These are the commands you may need to use in relation to your Mautic instance.  They should be preceded by app/console.
+These are the commands you may need to use in relation to your Mautic instance.  They should be preceded by bin/console.
 
 | Command  | Description  |
 |---|---|
@@ -51,7 +51,6 @@ These are the commands you may need to use in relation to your Mautic instance. 
 | mautic:email:fetch  | Fetch and process monitored email.  |
 | mautic:emails:send   | Processes SwiftMail's mail queue  |
 | mautic:import  | Imports data to Mautic  |
-| mautic:install:data   | Installs Mautic with sample data  |
 | mautic:integration:fetchleads  | Fetch leads from integration.  |
 | mautic:integration:pipedrive:fetch  | Pulls the data from Pipedrive and sends it to Mautic  |
 | mautic:integration:pipedrive:push  | Pushes the data from Mautic to Pipedrive  |
@@ -78,3 +77,7 @@ These are the commands you may need to use in relation to your Mautic instance. 
 | mautic:webhooks:process  | Process queued webhook payloads  |
 | social:monitor:twitter:hashtags  | Looks at our monitoring records and finds hashtags  |
 | social:monitor:twitter:mentions  | Searches for mentioned tweets   |
+
+## Doctrine commands
+
+| doctrine:fixtures:load   | Installs Mautic sample data, overwriting existing data  |
