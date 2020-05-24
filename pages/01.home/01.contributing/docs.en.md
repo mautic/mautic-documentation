@@ -158,7 +158,7 @@ The **`README.md`** file serves as the introduction and description of this repo
 
 The **`SUMMARY.md`** file defines the menu of the documentation. If you add a new page to the documentation, you'll have to also add a new line there defining the title and the link to the file (formatted like the existing menu items).
 
-The folders in this repository are grouped together by topic. For example, within the *asset* folder, you'll see it has its own **`README.md`** file (becomes `./index.html`) which contains the primary description of the Asset menu; the *manage_assets.md* the file is a subitem; the *media* subfolder contains all the images used in the *.md* files.
+The folders in this repository are grouped together by topic. For example, within the *asset* folder, you'll see it has its own **`doc.en.md`** file (becomes `./index.html`) which contains the primary description of the Asset menu; the *manage_assets.md* the file is a subitem; the *media* subfolder contains all the images used in the *.md* files.
 
 ## Style Guide
 
