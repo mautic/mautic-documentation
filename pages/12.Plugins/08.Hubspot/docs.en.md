@@ -33,7 +33,7 @@ taxonomy:
 
 ## Hubspot API key
 
-Visit [https://app.hubspot.com/hapikeys][hubspot-keys] to generate your [Hubspot API key][hubspot-keys].
+Visit [https://app.hubspot.com/api-key][hubspot-keys] to generate your [Hubspot API key][hubspot-keys].
 
 ## Configure the Hubspot CRM plugin
 
@@ -67,7 +67,7 @@ If the contact has not been created, ensure the email address you tested with is
 This plugin had been developed by [@gpassarelli].
 
 [Hubspot CRM]: <https://www.hubspot.com/crm>
-[hubspot-keys]: <https://app.hubspot.com/hapikey>
+[hubspot-keys]: <https://app.hubspot.com/api-key>
 
 [@gpassarelli]: <https://github.com/gpassarelli>
 
