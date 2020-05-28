@@ -19,7 +19,7 @@ facebookenable: true
 
 Mautic requires a few [cron jobs](https://en.wikipedia.org/wiki/Cron) to handle some maintenance tasks. Most web hosts provide a means to add cron jobs either through SSH, cPanel, or another custom panel. Please consult your host's documentation/support if you are unsure on how to setup cron jobs.
 
-If you're new to Linux or Cron Jobs, then the Apache Foundation have [an excellent guide](https://www.howtoforge.com/a-short-introduction-to-cron-jobs) which we would suggest that you read before asking questions via the various support channels.
+If you're new to Linux or Cron Jobs, then the Apache Foundation has [an excellent guide](https://www.howtoforge.com/a-short-introduction-to-cron-jobs) which we would suggest that you read before asking questions via the various support channels.
 
 How frequently you run the cron jobs is up to you. Many shared hosts prefer that you run scripts every 15 or 30 minutes and may even override the scheduled times to meet these restrictions. Consult your host's documentation if they have such a restriction.
 
@@ -39,7 +39,7 @@ For instance:
 php /path/to/mautic/app/console mautic:segments:update
 ```
 
-By default, the script will process contacts in batches of 300. If this is too many for your server's resources, use the option `--batch-limit=X` replacing X with the a number of contacts to process each batch.
+By default, the script will process contacts in batches of 300. If this is too many for your server's resources, use the option `--batch-limit=X` replacing X with the number of contacts to process each batch.
 
 You can also limit the number of contacts to process per script execution using `--max-contacts` to further limit resources used.
 
@@ -50,7 +50,7 @@ You can also limit the number of contacts to process per script execution using 
 php /path/to/mautic/app/console mautic:campaigns:update
 ```
 
-By default, the script will process contacts in batches of 300. If this is too many for your server's resources, use the option `--batch-limit=X` replacing X with the a number of contacts to process each batch.
+By default, the script will process contacts in batches of 300. If this is too many for your server's resources, use the option `--batch-limit=X` replacing X with the number of contacts to process each batch.
 
 You can also limit the number of contacts to process per script execution using `--max-contacts` to further limit resources used.
 
@@ -60,7 +60,7 @@ You can also limit the number of contacts to process per script execution using 
 php /path/to/mautic/app/console mautic:campaigns:trigger
 ```
 
-By default, the script will process events in batches of 100. If this is too many for your server's resources, use the option `--batch-limit=X` replacing X with the a number of events to process each batch.
+By default, the script will process events in batches of 100. If this is too many for your server's resources, use the option `--batch-limit=X` replacing X with the number of events to process each batch.
 
 You can also limit the number of contacts to process per script execution using `--max-events` to further limit resources used.
 
