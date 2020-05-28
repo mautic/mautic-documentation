@@ -16,7 +16,7 @@ facebookenable: true
 ---
 
 ---
-Leads were renamed to contacts in [Mautic 1.4.0[[mautic-140].
+Leads were renamed to contacts in [Mautic 1.4.0][mautic-140].
 
 Contacts are the central factor of a marketing automation platform. These are all the individuals who have visited your websites or interacted with you in some way.
 
