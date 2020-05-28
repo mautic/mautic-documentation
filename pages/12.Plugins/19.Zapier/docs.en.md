@@ -110,3 +110,9 @@ This happens when you create a new action or trigger at Zapier.
 ## Integration development
 
 Even this integration is developed as an open source software as is usual with Mautic community. Learn more at https://github.com/mautic/mautic-zapier.
+
+## Common errors
+
+You may encounter a 404 error during configuration. If this happens, [clear the cache][clear-cache].
+
+[clear-cache]: </troubleshooting#1-clear-the-cache>
