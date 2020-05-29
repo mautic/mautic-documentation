@@ -117,7 +117,7 @@ The next step allows you to configure the way in which email is sent from your M
 
 ![email config](email-config.png)
 
-If you are testing, whether locally or on a live server, it is highly recommended to make use of [Mailhog] [Mailhog] or similar to capture all outgoing emails, until you are ready to send to real recipients. Otherwise, in a production environment you will need to choose whether you want to send an email immediately, or queue email (and process it when the Cron job runs), and provide the appropriate server, port, encryption type, credentials, and authentication mode for the systems you wish to use.
+If you are testing, whether locally or on a live server, it is highly recommended to make use of [Mailhog][Mailhog] or similar to capture all outgoing emails, until you are ready to send to real recipients. Otherwise, in a production environment you will need to choose whether you want to send an email immediately, or queue email (and process it when the Cron job runs), and provide the appropriate server, port, encryption type, credentials, and authentication mode for the systems you wish to use.
 
 ### Admin login
 
