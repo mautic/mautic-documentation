@@ -21,7 +21,7 @@ Awesome! You've downloaded a marketing automation tool. That's a great first ste
 
 ## Step 1: Install Mautic
 
-If you have already downloaded the zip from the download page or have installed Mautic through some other source (Softaculous, Bitnami, Digital Ocean, etc...) then you have already completed the first step. If not then you will need to upload the Mautic package (a zip file) to your server; unzip the files, and then navigate to that location in your browser.
+If you have already downloaded the zip from the download page or have installed Mautic through some other source (Softaculous, Bitnami, Digital Ocean etc...) then you have already completed the first step. If not then you will need to upload the Mautic package (a zip file) to your server; unzip the files, and then navigate to that location in your browser.
 
 As an example, if your domain is `example.com` and you have unzipped the file into a folder called `mautic`, you would then browse to `https://example.com/mautic` to start the installation process.
 
@@ -39,7 +39,7 @@ If you have access to the command line, you can run the following commands to re
 
 Depending on your server configuration, the default path to a _website_ is usually something similar to `/var/www/website` or `/var/www/website/public_html`. For [Apache](https://httpd.apache.org/docs/current/) this is the [DocumentRoot](https://httpd.apache.org/docs/current/mod/core.html#documentroot) path and for [nginx](https://nginx.org/en/docs/) it is the [`root`](https://nginx.org/en/docs/http/ngx_http_core_module.html#root) path.
 
-> NB: the _website_ is also known as _site_, _vhost_, _virtualhost_, or _server block_.
+> NB: the _website_ is also known as _site_, _vhost_, _virtualhost_ or _server block_.
 
 Continuing the example above, that would mean executing these commands within the `/var/www/example.com/mautic` directory.
 
@@ -125,7 +125,7 @@ Now you have completed the setup process, you will be directed to the back-end l
 
 ## Step 2: Add Cron Jobs
 
-Once you've installed Mautic you will need to create a few standards [cron jobs][cron] to have your software process various tasks. These [cron jobs][cron] can be created through a cPanel or added through the command line. Here is a list of the [cron jobs][cron] you'll need to create. (Please note: "/path/to/mautic..." will reflect the directory where your version of Mautic is installed, and you may need to replace 'php' with the path to PHP on your server. Ask your hosting provider if you are not sure.)
+Once you've installed Mautic you will need to create a few standard [cron jobs][cron] to have your software process various tasks. These [cron jobs][cron] can be created through a cPanel or added through the command line. Here is a list of the [cron jobs][cron] you'll need to create. (Please note: "/path/to/mautic..." will reflect the directory where your version of Mautic is installed, and you may need to replace 'php' with the path to PHP on your server. Ask your hosting provider if you are not sure.)
 
 ### Updating Segments
 
