@@ -95,7 +95,7 @@ added through the execution of a cron job. This is the essence of segments.
 To keep the segments current, create a cron job that executes the following
 command at the desired interval:
 
-> php /path/to/mautic/app/console mautic:segments:update --env=prod
+> php /path/to/mautic/bin/console mautic:segments:update --env=prod
 
 Through the execution of that command, contacts that match the filters will be
 added and contacts that no longer match will be removed. Any contacts that were
@@ -115,10 +115,8 @@ Filter the contacts in the segment. The batch delete action in the contact table
 But deleting thousands of contacts this way in one segment will become a tedious task. Luckily, there is a trick how to let the background workers do the job for you.
 
 1. Create a simple campaign which has the segment as the source \
-2. Use the [Delete contact action](./../campaign/campaign_events.html#delete-contact). 
+2. Use the [Delete contact action](./../campaign/campaign_events.html#delete-contact).
 
 This way the `mautic:campaign:update` and `mautic:campaign:trigger` commands will delete all the contacts in the segment. As well as all the contacts which will be added to the segment in the future. Everything is done automatically in the background. The cron jobs must be configured. However, be aware that when a contact is deleted, there is no way to get it back.
 
 ![](mautic-delete-contacts-in-segment.png)
-
-

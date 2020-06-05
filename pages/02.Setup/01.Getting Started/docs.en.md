@@ -129,15 +129,15 @@ Once you've installed Mautic you will need to create a few standard [cron jobs][
 
 ### Updating Segments
 
-`php /path/to/mautic/app/console mautic:segments:update`
+`php /path/to/mautic/bin/console mautic:segments:update`
 
 ### Update Campaigns
 
-`php /path/to/mautic/app/console mautic:campaigns:update`
+`php /path/to/mautic/bin/console mautic:campaigns:update`
 
 ### Execute Campaign Actions
 
-`php /path/to/mautic/app/console mautic:campaigns:trigger`
+`php /path/to/mautic/bin/console mautic:campaigns:trigger`
 
 Review the page on [cron jobs][cron] for more information on these and other optional cron jobs.
 
@@ -172,4 +172,3 @@ Checkout [Contact Monitoring](./../contacts/contact_monitoring.html) for more de
 
 
 [download page]: <https://www.mautic.org/download>
-

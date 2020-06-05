@@ -113,7 +113,7 @@ To push or pull records from Salesforce you need to run the Mautic integration c
 #### Pull records from the Leads object in Salesforce
 
 ```console
-php app/console mautic:integration:synccontacts --integration=Salesforce
+php bin/console mautic:integration:synccontacts --integration=Salesforce
 ```
 
 `mautic:integration:fetchleads` is a alias of this command.
@@ -121,7 +121,7 @@ php app/console mautic:integration:synccontacts --integration=Salesforce
 #### Push activities to the Salesforce custom object described below
 
 ```console
-php app/console mautic:integration:pushactivity --integration=Salesforce
+php bin/console mautic:integration:pushactivity --integration=Salesforce
 ```
 
 `mautic:integration:pushleadactivity` is a alias of this command.
