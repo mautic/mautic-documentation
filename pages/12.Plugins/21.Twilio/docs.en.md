@@ -13,7 +13,7 @@ taxonomy:
 ## Mautic - Twilio plugin
 
 
-Before you start to send text messages from your Mautic, it needs to be connected to the service which can send them. The first and default implemented service is [Twilio][twilio]. In order to configure the text messages correctly, follow these steps:
+Before you start to send text messages from your Mautic instance, it needs to be connected to the service which can send them. The first and default implemented service is [Twilio][twilio]. In order to configure the text messages correctly, follow these steps:
 
 1. Create an account at Twilio.com.
 2. In Mautic, go to *Settings* (cog icon) > *Plugins*.
