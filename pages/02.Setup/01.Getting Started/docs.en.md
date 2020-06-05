@@ -37,7 +37,7 @@ If you have access to the command line, you can run the following commands to re
 
 #### Finding your website root directory
 
-Depending on your server configuration, the default path to a _website_ is usually something similar to `/var/www/website` or `/var/www/website/public_html`. For [Apache](https://httpd.apache.org/docs/current/) this is the [DocumentRoot](https://httpd.apache.org/docs/current/mod/core.html#documentroot) path and for [nginx](https://nginx.org/en/docs/) it is the [`root`](https://nginx.org/en/docs/http/ngx_http_core_module.html#root) path.
+Depending on your server configuration, the default path to a _website_ is usually something similar to `/var/www/website` or `/var/www/website/public_html`. For [Apache][Apache] this is the [DocumentRoot][DocumentRoot] path and for [nginx][nginx] it is the [`root`][`root`] path.
 
 > NB: the _website_ is also known as _site_, _vhost_, _virtualhost_ or _server block_.
 
@@ -117,7 +117,7 @@ The next step allows you to configure the way in which email is sent from your M
 
 ![email config](email-config.png)
 
-If you are testing, whether locally or on a live server, it is highly recommended to make use of [Mailhog](https://github.com/mailhog/MailHog) or similar to capture all outgoing emails, until you are ready to send to real recipients. Otherwise, in a production environment you will need to choose whether you want to send email immediately, or queue email (and process it when the Cron job runs), and provide the appropriate server, port, encryption type, credentials and authentication mode for the systems you wish to use.
+If you are testing, whether locally or on a live server, it is highly recommended to make use of [Mailhog][Mailhog] or similar to capture all outgoing emails, until you are ready to send to real recipients. Otherwise, in a production environment you will need to choose whether you want to send email immediately, or queue email (and process it when the Cron job runs), and provide the appropriate server, port, encryption type, credentials and authentication mode for the systems you wish to use.
 
 ### Admin login
 
@@ -172,4 +172,10 @@ Checkout [Contact Monitoring](./../contacts/contact_monitoring.html) for more de
 
 
 [download page]: <https://www.mautic.org/download>
+[Apache]: <https://httpd.apache.org/docs/current/>
+[DocumentRoot]: <https://httpd.apache.org/docs/current/mod/core.html#documentroot>
+[nginx]: <https://nginx.org/en/docs/>
+[`root`]: <https://nginx.org/en/docs/http/ngx_http_core_module.html#root>
+[Mailhog]: <https://github.com/mailhog/MailHog>
+[Contact Monitoring]: <./../contacts/contact_monitoring.html> 
 
