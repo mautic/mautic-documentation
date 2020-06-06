@@ -12,12 +12,9 @@ personenabled: false
 facebookenable: true
 ---
 
-Did you get an error while running the Mautic 3 upgrade? We're here to help. Please look for the error code you got on this page for further instructions.
-
-If you need any further help, please post into our MAUTIC 3 FORUM CATEGORY (TODO).
+Contains all info about the Mautic 3 upgrade.
 
 ## Error codes
-
 ### ERR_DATABASE_BACKUP_FAILED
 Text
 
