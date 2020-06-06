@@ -32,7 +32,7 @@ If you don't have a Dynamics CRM account, follow the instructions below to creat
 
 ### How to create a Dynamics 365 Trial account
 
-1. Go to the [Dynamics 365 Trial website](https://www.microsoft.com/en-us/free-crm-trial.aspx)
+1. Go to the [Dynamics 365 Trial website][Dynamics 365 Trial website]
 
 ![image](bbdb46ab545f.png)
 ![image](8106fe116d63.png)
@@ -42,7 +42,7 @@ If you don't have a Dynamics CRM account, follow the instructions below to creat
 
 ### Set Up Azure
 
-1. Go to the [Azure Portal](https://portal.azure.com)
+1. Go to the [Azure Portal][Azure Portal]
 1. Log in with your onmicrosoft.com account
 
    ![image](4e7c9a85014f.png)
@@ -115,3 +115,5 @@ Follow [these steps][testing] to test the integration.
 [field mapping]: <field_mapping.html>
 [testing]: <integration_test.html>
 [points]: <./../points>
+[Dynamics 365 Trial website]:<https://www.microsoft.com/en-us/free-crm-trial.aspx>
+[Azure Portal]:<https://portal.azure.com>
