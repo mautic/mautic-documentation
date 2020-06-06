@@ -29,7 +29,6 @@ taxonomy:
 > - _lead lists_ were renamed to _**segments**_
 > - _anonymous leads_ were renamed to _**visitors**_
 
-[release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
 
 ## Requirements
 
@@ -42,7 +41,7 @@ taxonomy:
 
 ### Authorize App
 
-There is [official documentation](http://feedback.uservoice.com/knowledgebase/articles/235661-get-your-key-and-secret-from-salesforce) about how to get the _Consumer Key_ and _Consumer Secret_ although it doesn't seem to be updated.
+There is [official documentation][official documentation] about how to get the _Consumer Key_ and _Consumer Secret_ although it doesn't seem to be updated.
 
 Follow these steps to get the Salesforce _Consumer_ credentials
 
@@ -264,6 +263,7 @@ This means the API is not turned on in your Salesforce account. [Read more][sale
 
 [Salesforce CRM]: <https://www.salesforce.com/>
 [salesforce-admin]: <https://help.salesforce.com/apex/HTViewHelpDoc?id=admin_userperms.htm&language=en>
+[official documentation]:<http://feedback.uservoice.com/knowledgebase/articles/235661-get-your-key-and-secret-from-salesforce>
 
 [mautic]: <https://mautic.org>
 [Mautic]: <https://mautic.org>
@@ -275,3 +275,4 @@ This means the API is not turned on in your Salesforce account. [Read more][sale
 [cron]: <./../setup/cron_jobs.html>
 
 [release-2.15.0]: <https://github.com/mautic/mautic/releases/tag/2.15.0>
+[release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>

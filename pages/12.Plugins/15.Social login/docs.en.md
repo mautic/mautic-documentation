@@ -22,9 +22,9 @@ For social login buttons to be available you need to enable your social media bu
 Please follow the links provided to create your social applications before you authorize and configure your plugins.
 - Twitter
 For twitter please see the [twitter docs](twitter.md)
-- [Facebook](https://developers.facebook.com)
-- [g+](https://console.developers.google.com)
-- [LinkedIn](https://developer.linkedin.com)
+- [Facebook][Facebook]
+- [g+][g+]
+- [LinkedIn][LinkedIn]
 
 ### Authorize the plugin
 
@@ -61,3 +61,8 @@ Then you will need to follow these steps:
 'currentLocation','relationshipStatus','organizations','placesLived','language','ageRange'
 
 **Linkedin** 'firstName','lastName','maidenName','formattedName','headline','location','summary','specialties','positions','publicProfileUrl','emailAddress'
+
+
+[Facebook]:<https://developers.facebook.com>
+[g+]:<https://console.developers.google.com>
+[LinkedIn]:<https://developer.linkedin.com>
