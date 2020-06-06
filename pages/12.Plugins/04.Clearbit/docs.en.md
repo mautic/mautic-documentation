@@ -20,7 +20,7 @@ This plugin can:
 ### Requirements
 
 - Mautic installed on a publicly accessible URL. This plugin won't work on a localhost because callbacks from Clearbit to Mautic are necessary.
-- Get a [Clearbit API key](https://dashboard.clearbit.com/signup)
+- Get a [Clearbit API key][Clearbit API key]
 
 ### Authorize the plugin
 ![image](connectwiseauth.png)
@@ -33,3 +33,5 @@ When clicking one of those buttons a window will pop up to confirm the action:
 ![image](https://cloud.githubusercontent.com/assets/2924026/20521597/8f7e8ec2-b071-11e6-99c2-590cb90c227f.png)
 
 A few moments later, if information was found, the contact/company details will be updated.
+
+[Clearbit API key]:<https://dashboard.clearbit.com/signup>
