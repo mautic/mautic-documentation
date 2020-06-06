@@ -1,6 +1,6 @@
 ---
-title: 'Mautic 3 upgrade errors'
-slug: mautic-3-upgrade-errors
+title: 'Mautic 3 upgrade'
+slug: mautic-3-upgrade
 published: true
 twitterenable: true
 twittercardoptions: summary
