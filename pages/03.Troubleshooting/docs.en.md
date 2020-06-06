@@ -108,7 +108,7 @@ __Error:__
 PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR in
 ```
 __Solution:__
-This usually means your PHP is outdated. Check what [Mautic requirements](../../../../index.phputic.org/download/requirements/) are.
+This usually means your PHP is outdated. Check what [Mautic requirements] are.
 
 __Error:__
 ```
@@ -149,3 +149,4 @@ Help your fellow developers and report the bug correctly the first time. Go to t
 And paste in the error message(s) in the section on the post template.
 
 [github-issues]: <https://github.com/mautic/mautic/issues/new>
+[Mautic requirements]: </index.phputic.org/download/requirements/>
