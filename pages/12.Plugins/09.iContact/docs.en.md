@@ -29,7 +29,6 @@ taxonomy:
 > - _lead lists_ were renamed to _**segments**_
 > - _anonymous leads_ were renamed to _**visitors**_
 
-[release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
 
 ## Authorize
 
@@ -70,7 +69,8 @@ When you have your [APP][iContact APP] created, you should be able to see this s
 Follow [these steps][testing] to test the integration.
 
 [iContact]: <https://www.icontact.com>
-[iContact APP]: <https://www.icontact.com/developerportal/documentation/register-your-app/>
+[iContact APP]: <https://www.icontact.com/developerportal/documentation/register-your-app/>\
+[release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
 
 [mautic]: <https://mautic.org>
 [Mautic]: <https://mautic.org>
