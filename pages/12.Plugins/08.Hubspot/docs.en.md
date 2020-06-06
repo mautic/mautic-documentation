@@ -29,8 +29,6 @@ taxonomy:
 > - _lead lists_ were renamed to _**segments**_
 > - _anonymous leads_ were renamed to _**visitors**_
 
-[release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
-
 ## Hubspot API key
 
 Visit [https://app.hubspot.com/hapikeys][hubspot-keys] to generate your [Hubspot API key][hubspot-keys].
@@ -70,6 +68,7 @@ This plugin had been developed by [@gpassarelli].
 [hubspot-keys]: <https://app.hubspot.com/hapikey>
 
 [@gpassarelli]: <https://github.com/gpassarelli>
+[release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
 
 [mautic]: <https://mautic.org>
 [Mautic]: <https://mautic.org>
