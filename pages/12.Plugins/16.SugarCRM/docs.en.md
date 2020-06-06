@@ -12,7 +12,7 @@ taxonomy:
 -------------------
 
 ## Mautic - SugarCRM plugin
-Bi-directional sync. has been added in Mautic 2.8.0, this plugin can push a contact to SugarCRM when a contact makes some action  (SugarCRM 6 Community & 7.x) or if updated (SugarCRM 6 Community). It can also pull leads, contacts and companies from SugarCRM (SugarCRM 6 Community). If you don't have the SugarCRM account yet, [create it](https://www.sugarcrm.com/).
+Bi-directional sync. has been added in Mautic 2.8.0, this plugin can push a contact to SugarCRM when a contact makes some action  (SugarCRM 6 Community & 7.x) or if updated (SugarCRM 6 Community). It can also pull leads, contacts and companies from SugarCRM (SugarCRM 6 Community). If you don't have the SugarCRM account yet, [create it][create it].
 
 ## Requirements
 SSL. Your Mautic instance has to run on HTTPS. SugarCRM will not allow you to synchronize with an application in HTTP.
@@ -23,8 +23,8 @@ To enable the SugarCRM plugin, you’ll need to get API credential (Oauth keys) 
 ## Configure the Mautic SugarCRM plugin
 1. Insert the keys to the Mautic SugarCRM plugin and authorize it.
 2. Configure the features you want to enable
-3. Configure the [field mapping](./../plugins/field_mapping.html) for contacts
-4. Configure the [field mapping](./../plugins/field_mapping.html) for companies
+3. Configure the [field mapping][field mapping] for contacts
+4. Configure the [field mapping][field mapping] for companies
 5. Save and close the configuration panel
 
 ### Features
@@ -61,7 +61,15 @@ Enable option **Update emails Do Not Contact** on plugins features tab allow:
 - Mautic to Sugar CRM - sync both unsubscribed and bounced status
 
 ## Test the plugin
-Follow [these steps](./../plugins/integration_test.html) to test the integration.
+Follow [these steps][these steps] to test the integration.
 
 ## Credits
-This feature has been developed by [@Webmecanik](https://github.com/webmecanik) and [@canal-web](https://github.com/canal-web).
+This feature has been developed by [@Webmecanik][@Webmecanik]and [@canal-web][@canal-web].
+
+
+[create it]:<https://www.sugarcrm.com/>
+[@Webmecanik]:<https://github.com/webmecanik>
+[@canal-web]:<https://github.com/canal-web>
+
+[field mapping]:</plugins/field_mapping.html>
+[these steps]:</plugins/integration_test.html>
