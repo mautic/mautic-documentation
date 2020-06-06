@@ -23,7 +23,7 @@ This plugin can push/pull a contact to/from Connectwise Manage.
 
 You will need your company id in order to authenticate the Connectwise plugin.
 
-Use the thick client to create a new API member.  Dowload think client from [here](https://university.connectwise.com/university/pageview.aspx?short_name=workstation-installation). 
+Use the thick client to create a new API member.  Dowload think client from [here][here]. 
 
 1. Go to *System/member*
 1. Create a new API member.
@@ -94,7 +94,7 @@ Options:
 
 ## Test the plugin
 
-Follow [these steps](./../plugins/integration_test.html) to test the integration.
+Follow [these steps][these steps] to test the integration.
 
 ## Connectwise Contact Activities
 
@@ -125,3 +125,5 @@ You can create a Mautic Segment composed of contacts that are in a Connectwise c
 [cron]: <./../setup/cron_jobs.html>
 
 [release-2.15.0]: <https://github.com/mautic/mautic/releases/tag/2.15.0>
+[here]:<https://university.connectwise.com/university/pageview.aspx?short_name=workstation-installation>
+[these steps]:</plugins/integration_test.html>
