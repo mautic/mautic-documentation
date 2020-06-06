@@ -17,9 +17,9 @@ facebookenable: true
 
 ---------------------
 
-Mautic requires a few [cron jobs](https://en.wikipedia.org/wiki/Cron) to handle some maintenance tasks. Most web hosts provide a means to add cron jobs either through SSH, cPanel, or another custom panel. Please consult your host's documentation/support if you are unsure on how to setup cron jobs.
+Mautic requires a few [cron jobs][cron jobs] to handle some maintenance tasks. Most web hosts provide a means to add cron jobs either through SSH, cPanel, or another custom panel. Please consult your host's documentation/support if you are unsure on how to setup cron jobs.
 
-If you're new to Linux or Cron Jobs, then the Apache Foundation has [an excellent guide](https://www.howtoforge.com/a-short-introduction-to-cron-jobs) which we would suggest that you read before asking questions via the various support channels.
+If you're new to Linux or Cron Jobs, then the Apache Foundation has [an excellent guide][an excellent guide] which we would suggest that you read before asking questions via the various support channels.
 
 How frequently you run the cron jobs is up to you. Many shared hosts prefer that you run scripts every 15 or 30 minutes and may even override the scheduled times to meet these restrictions. Consult your host's documentation if they have such a restriction.
 
@@ -65,7 +65,7 @@ By default, the script will process events in batches of 100. If this is too man
 You can also limit the number of contacts to process per script execution using `--max-events` to further limit resources used.
 
 **To send frequency rules rescheduled marketing campaign messages:**
-Messages that are marked as [_Marketing Messages_](./../contacts/message_queue.md) (such as emails to be sent as part of a marketing campaign) , will be inserted into a message queue IF frequency rules are setup as either systemwide or per contact. To process this queue and reschedule sending these messages, this cron job should be added to your list of jobs:
+Messages that are marked as [_Marketing Messages_] (such as emails to be sent as part of a marketing campaign) , will be inserted into a message queue IF frequency rules are setup as either systemwide or per contact. To process this queue and reschedule sending these messages, this cron job should be added to your list of jobs:
 
 `mautic:messages:send`
 
@@ -83,7 +83,7 @@ php /path/to/mautic/app/console mautic:emails:send
 
 ### Fetch and Process Monitored Email
 
-If using the [Bounce Management](./../emails/bounce_management.html),
+If using the [Bounce Management],
 
 ```
 php /path/to/mautic/app/console mautic:email:fetch
@@ -91,7 +91,7 @@ php /path/to/mautic/app/console mautic:email:fetch
 
 ### Social Monitoring
 
-If using the [Social Monitoring](./../social-monitoring/index.html),
+If using the [Social Monitoring],
 
 ```
 php /path/to/mautic/app/console mautic:social:monitoring
@@ -107,7 +107,7 @@ php /path/to/mautic/app/console mautic:webhooks:process
 
 ### Update MaxMind GeoLite2 IP Database
 
-Mautic uses [MaxMind's](http://www.maxmind.com) GeoLite2 IP database by default. The database is licensed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/) and thus cannot be packaged with Mautic. The database can be downloaded manually through Mautic's Configuration or the following script can be used as a cron job to automatically download updates. (MaxMind updates their database the first Tuesday of the month).
+Mautic uses [MaxMind's][MaxMind's] GeoLite2 IP database by default. The database is licensed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License][Creative Commons Attribution-ShareAlike 3.0 Unported License] and thus cannot be packaged with Mautic. The database can be downloaded manually through Mautic's Configuration or the following script can be used as a cron job to automatically download updates. (MaxMind updates their database the first Tuesday of the month).
 
 ```
 php /path/to/mautic/app/console mautic:iplookup:download
@@ -175,3 +175,13 @@ $ php app/console mautic:segments:update --no-interaction --no-ansi
 
 If you have SSH access, try to run the command directly to see if any errors are generated. If there is nothing printed from either in a SSH session or in the cron output from above, check the server's logs. If you see similar errors to `'Warning: Invalid argument supplied for foreach()' in /vendor/symfony/console/Symfony/Component/Console/Input/ArgvInput.php:287`, you either need to use `php-cli` instead of `php` or try using `php -d register_argc_argv=On`.
 `
+
+
+[cron jobs]:<https://en.wikipedia.org/wiki/Cron>
+[an excellent guide]:<https://www.howtoforge.com/a-short-introduction-to-cron-jobs>
+[MaxMind's]:<http://www.maxmind.com>
+[Creative Commons Attribution-ShareAlike 3.0 Unported License]:<http://creativecommons.org/licenses/by-sa/3.0/>
+
+[_Marketing Messages_]: </contacts/message_queue.md>
+[Bounce Management]: </emails/bounce_management.html>
+[Social Monitoring]: </social-monitoring/index.html>
