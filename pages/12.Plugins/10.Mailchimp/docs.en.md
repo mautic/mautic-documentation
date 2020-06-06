@@ -46,7 +46,6 @@ This plugin is backward compatible.
 > - _lead lists_ were renamed to _**segments**_
 > - _anonymous leads_ were renamed to _**visitors**_
 
-[release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
 
 ## Authorize
 
@@ -106,3 +105,4 @@ Follow [these steps][testing] to test the integration.
 [release-latest]: <https://github.com/mautic/mautic/releases/latest>
 [release-1.2.3]: <https://github.com/mautic/mautic/releases/tag/1.2.3>
 [release-1.2.2]: <https://github.com/mautic/mautic/releases/tag/1.2.2>
+[release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
