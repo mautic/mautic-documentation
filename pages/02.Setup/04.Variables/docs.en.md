@@ -231,11 +231,11 @@ See the [Search][search] page for more information.
 
 <!-- Page links -->
 
-[companies]: <./../companies/>
-[components]: <./../components/>
-[contact monitoring]: <./../contacts/contact_monitoring.html>
-[custom fields]: <./../contacts/manage_fields.html>
-[make pref center]: <./../contacts/customize_preference_center.html>
-[manage emails]: <./../emails/manage_emails.html>
-[manage pages]: <./../pages/manage_pages.html>
-[search]: <./../search/>
+[companies]: </companies/>
+[components]: </components/>
+[contact monitoring]: </contacts/contact_monitoring.html>
+[custom fields]: </contacts/manage_fields.html>
+[make pref center]: </contacts/customize_preference_center.html>
+[manage emails]: </emails/manage_emails.html>
+[manage pages]: </pages/manage_pages.html>
+[search]: </search/>
