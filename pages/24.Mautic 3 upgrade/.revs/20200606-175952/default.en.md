@@ -13,7 +13,3 @@ facebookenable: true
 ---
 
 Contains all info about the Mautic 3 upgrade.
-
-## Error codes
-### ERR_TEST
-Test error
