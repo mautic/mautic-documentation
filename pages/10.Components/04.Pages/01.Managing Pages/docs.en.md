@@ -54,7 +54,7 @@ Since Mautic 2.7.0, the builder will let you drag the predefined content section
 
 #### Code Mode
 
-[Go to the Code Mode docs](../../../../index.phpde_mode.html).
+[Go to the Code Mode docs][Go to the Code Mode docs].
 
 ### Unpublish a page
 
@@ -68,4 +68,8 @@ Note: When you are logged in as a Mautic administrator, you will always see the 
 
 #### Disable search indexing
 
-Mautic 2.13 added new option [Block search indexing with noindex](../../../../index.phpt.google.com/webmasters/answer/93710?hl=en). You can prevent a page from appearing in search engines like Google, Bing etc.
+Mautic 2.13 added new option [Block search indexing with noindex][Block search indexing with noindex]. You can prevent a page from appearing in search engines like Google, Bing etc.
+
+
+[Go to the Code Mode docs]:</index.phpde_mode.html>
+[Block search indexing with noindex]:</index.phpt.google.com/webmasters/answer/93710?hl=en>
