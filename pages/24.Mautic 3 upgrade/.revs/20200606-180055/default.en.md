@@ -1,6 +1,6 @@
 ---
 title: 'Mautic 3 upgrade'
-published: true
+published: false
 twitterenable: true
 twittercardoptions: summary
 articleenabled: false
