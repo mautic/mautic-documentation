@@ -6,7 +6,7 @@ If you want to know more about all the upgrade steps of the Mautic 3 upgrade pro
 
 The upgrade process consists of multiple steps to make it as robust as possible. If the process fails at a certain step, you can find all details about the specific error code on the [Mautic 3 upgrade errors](../mautic-3-upgrade-errors) page.
 
-If you use the web interface to do the upgrade, and you're stuck, you can always go to a specific step by adding the step code to the URL, e.g. `upgrade_v3.php#buildCache`. **Please note that we don't support manually switching between steps, only do so when support asks you to do so!**
+! If you use the web interface to do the upgrade, and you're stuck, you can always go to a specific step by adding the step code to the URL, e.g. `upgrade_v3.php#buildCache`. **Please note that we don't support manually switching between steps, only do so when support asks you to do so!**
 
 ### Start upgrade
 Code: startUpgrade
