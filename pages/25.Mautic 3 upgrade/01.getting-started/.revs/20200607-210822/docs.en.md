@@ -11,8 +11,6 @@ That's absolutely fine! This is handy, for example, when you use custom plugins 
 'block_mautic_3_upgrade'    => true,
 ```
 
-The Mautic 3 upgrade notification will now disappear. If it doesn't disappear immediately, you can run `app/console mautic:update:find` on the command line so that it's hidden immediately.
-
 ### Choose your update method (web interface or CLI)
 .... (add steps + screenshots here)
 
