@@ -8,25 +8,6 @@ The upgrade process consists of multiple steps to make it as robust as possible.
 
 If you use the web interface to do the upgrade, and you're stuck, you can always go to a specific step by adding the step code to the URL, e.g. `upgrade_v3.php#buildCache`. **Please note that we don't support manually switching between steps, only do so when support asks you to do so!**
 
-### Pre-upgrade checks
-Code: preUpgradeChecks
-
-Here, we do some checks prior to starting the upgrade, to make sure your system is compatible with the upgrade. The checks are:
-
-* PHP version must be 7.2 or 7.3
-* MySQL version needs to be >= 5.7.14 or MariaDB >= 10.1
-* Is custom `api_rate_limiter_cache` set? TODO add docs
-* Is Mautic's root directory writable?
-* Are there items in the `spool/default` folder? This indicates that there are still emails in the queue
-* Is the free disk space at least 2x the current Mautic 2 installation?
-* Do you at least have Mautic 2.16.3 installed?
-* Is PHP's `max_execution_time` either 0 (unlimited) or > 240? If not, we try to set it, if that doesn't work, we show an error
-* Is `mysqldump` available for creating database backups?
-* Is there a Mautic 3 upgrade package available for download?
-* Is the upgrade "kill switch" activated? (Mautic's Product Team can enable a Kill Switch which will show a warning to users that there might be problems with the upgrade. Read more HERE (TODO))
-* Are there any custom plugins installed? If yes, we show a warning that users should check if those plugins are compatible with Mautic 3 or temporarily disable them
-* Get the amount of available database migrations. If that fails, we show a warning
-
 ### 1. Start upgrade
 Code: startUpgrade
 
