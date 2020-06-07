@@ -1,6 +1,5 @@
 ---
 title: 'Mautic 3 upgrade'
-slug: mautic-3-upgrade
 twitterenable: true
 twittercardoptions: summary
 articleenabled: false
