@@ -4,7 +4,7 @@ title: 'Getting started'
 
 Are you ready for Mautic 3? Let's get started!
 
-### I don't want to upgrade to Mautic 3 yet, how do I turn off the upgrade notification?
+### I don't want to upgrade to Mautic 3 yet, how do I turn off upgrade notifications?
 That's absolutely fine! This is handy, for example, when you use custom plugins that aren't ready for Mautic 3 (yet). The only thing you have to do is to go to `app/config/local.php` and add the following setting there:
 
 ```PHP
