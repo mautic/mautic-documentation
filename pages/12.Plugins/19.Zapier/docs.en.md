@@ -13,12 +13,12 @@ taxonomy:
 
 ## Mautic Zapier Integration
 
-This integration integrates any Mautic instance with 1.100+ third party web services via the [Zapier](https://zapier.com) web automation service.
+This integration integrates any Mautic instance with 1.100+ third party web services via the [Zapier][Zapier] web automation service.
 
 ## Requirements
 
 1. Mautic version 2.9.0 or newer with SSL - basic authentication requires HTTPS to be secure.
-3. Zapier account. Free or Paid. [View Zapier pricing](https://zapier.com/pricing/).
+3. Zapier account. Free or Paid. [View Zapier pricing][View Zapier pricing].
 
 ## Installation
 
@@ -37,7 +37,7 @@ Zapier will be able to create actions and triggers with your Mautic installation
 
 ## Sign up for a Zapier account
 
-1. Go to the [Zapier website](https://zapier.com).
+1. Go to the [Zapier website][Zapier].
 2. Select the "Sign Up for Free" button.
 
 Or log into your existing Zapier account.
@@ -116,3 +116,5 @@ Even this integration is developed as an open source software as is usual with M
 You may encounter a 404 error during configuration. If this happens, [clear the cache][clear-cache].
 
 [clear-cache]: </troubleshooting#1-clear-the-cache>
+[Zapier]:<https://zapier.com>
+[View Zapier pricing]:<https://zapier.com/pricing/>
