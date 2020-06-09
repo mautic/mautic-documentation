@@ -37,7 +37,7 @@ should now be:
 Mautic 3.0 removed support for the Rackspace and OpenStack plugins for remote assets.
 While uploading an asset on the New Asset page, if you select Remote Storage location and click Browse Remote Files, you will see only Amazon S3 as the available plugin. The Rackspace and OpenStack plugins are no longer available.
 
-![](remote-asset.png)
+![Browse Remote Files window](remote-asset.png)
 
 ##Version 2.0
 Mautic 2.0 brought a significant number of enhancements to Mautic.  The full release notes are at https://github.com/mautic/mautic/releases/tag/2.0.0.
