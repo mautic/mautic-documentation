@@ -46,11 +46,11 @@ You can schedule emails to send reports to one or more email addresses. In the T
 
 ![The Schedule tab in the Edit Report window](schedule.png)
 
-To be able to send the scheduled reports, the following cron command is required:
+To be able to send scheduled reports, the following cron command is required:
 
 ```
 php /path/to/mautic/app/console mautic:reports:scheduler [--report=ID]
 ```
-The `--report=ID` argument allows you to specify a report by ID if required. For more information, see [Cron jobs][link macro].
+The `--report=ID` argument allows you to specify a report by ID if required. For more information, see [Cron jobs][cron-jobs].
 
-[link macro]:</setup/cron-jobs>
+[cron-jobs]:</setup/cron-jobs>
