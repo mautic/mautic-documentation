@@ -108,7 +108,7 @@ __Error:__
 PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR in
 ```
 __Solution:__
-This usually means your PHP is outdated. Check what [Mautic requirements]Mautic-requirements] are.
+This usually means your PHP is outdated. Check what [Mautic requirements][Mautic-requirements] are.
 
 __Error:__
 ```
