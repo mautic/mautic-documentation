@@ -125,7 +125,7 @@ Now you have completed the setup process, you will be directed to the back-end l
 
 ## Step 2: Add Cron Jobs
 
-Once you've installed Mautic you will need to create a few standard [cron-jobs][cron-jobs] to have your software process various tasks. These cron jobs][cron-jobs] can be created through a cPanel or added through command line. Here is a list of the [cron-jobs][cron-jobs] you'll need to create. (Please note: "/path/to/mautic..." will reflect the directory where your version of Mautic is installed, and you may need to replace 'php' with the path to PHP on your server. Ask your hosting provider if you are not sure.)
+Once you've installed Mautic you will need to create a few standard [cron jobs][cron-jobs] to have your software process various tasks. These [cron jobs][cron-jobs] can be created through a cPanel or added through command line. Here is a list of the [cron jobs][cron-jobs] you'll need to create. (Please note: "/path/to/mautic..." will reflect the directory where your version of Mautic is installed, and you may need to replace 'php' with the path to PHP on your server. Ask your hosting provider if you are not sure.)
 
 ### Updating Segments
 
@@ -139,7 +139,7 @@ Once you've installed Mautic you will need to create a few standard [cron-jobs][
 
 `php /path/to/mautic/app/console mautic:campaigns:trigger`
 
-Review the page on [cron-jobs][cron-jobs] for more information on these and other optional cron jobs.
+Review the page on [cron jobs][cron-jobs] for more information on these and other optional cron jobs.
 
 ## Step 3: Download the IP lookup service database
 
