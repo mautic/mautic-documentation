@@ -82,14 +82,14 @@ Support for tracking Mautic landing pages was added in Mautic 2.6. This works ou
 
 Don't forget to copy the three files from the SDK to the root directory of your website, otherwise your notifications will not work!
 
-* [https://mautic.example.com/manifest.json][https://mautic.example.com/manifest.json]
-* [https://mautic.example.com/OneSignalSDKWorker.js][https://mautic.example.com/OneSignalSDKWorker.js]
-* [https://mautic.example.com/OneSignalSDKUpdaterWorker.js][https://mautic.example.com/OneSignalSDKUpdaterWorker.js]
+* [https://mautic.example.com/manifest.json][manifest.json]
+* [https://mautic.example.com/OneSignalSDKWorker.js][OneSignalSDKWorker.js]
+* [https://mautic.example.com/OneSignalSDKUpdaterWorker.js][OneSignalSDKUpdaterWorker.js]
 
 [onesignal]: <https://onesignal.com>
 [onesignal-docs]: <https//documentation.onesignal.com/docs/web-push-setup>
 [onesignal-docs-welcome]: <https://documentation.onesignal.com/docs/welcome-notifications>
 [onesignal-docs-https]: <https://documentation.onesignal.com/docs/web-push-http-vs-https>
-[https://mautic.example.com/manifest.json]: <https://mautic.example.com/manifest.json>
-[https://mautic.example.com/OneSignalSDKWorker.js]: <https://mautic.example.com/OneSignalSDKWorker.js>
-[https://mautic.example.com/OneSignalSDKUpdaterWorker.js]: <https://mautic.example.com/OneSignalSDKUpdaterWorker.js>
+[manifest.json]: <https://mautic.example.com/manifest.json>
+[OneSignalSDKWorker.js]: <https://mautic.example.com/OneSignalSDKWorker.js>
+[OneSignalSDKUpdaterWorker.js]: <https://mautic.example.com/OneSignalSDKUpdaterWorker.js>
