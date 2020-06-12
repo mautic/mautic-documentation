@@ -233,9 +233,9 @@ See the [Search][search] page for more information.
 
 [companies]: </contacts/companies>
 [components]: </components>
-[contact-monitoring]: </contacts/contact-monitoring>
-[custom-field]: </contacts/manage-custom-fields>
+[contact-monitoring]: </contacts/manage-contacts/contact-monitoring> 
+[custom-field]: </contacts/manage-fields>
 [make-pref-center]: </contacts/preference-center/customize-preference-center>
 [manage-emails]: </channels/emails/managing-emails>
-[manage-pages]: </components/landing-pages/managing-pages>
+[manage-pages]: </components/pages/managing-pages>
 [search]: </search>
