@@ -13,7 +13,7 @@ taxonomy:
 
 ## Mautic - Hubspot CRM plugin
 
-[Mautic] can push contacts to [Hubspot CRM] based on [Contact actions][testing] or [Point Triggers][points].
+[Mautic][mautic] can push contacts to [Hubspot CRM][Hubspot-crm] based on [Contact actions][testing] or [Point Triggers][points].
 
 > **Note**
 >
@@ -35,7 +35,7 @@ Visit [https://app.hubspot.com/hapikeys][hubspot-keys] to generate your [Hubspot
 
 ## Configure the Hubspot CRM plugin
 
-1. Create a [Hubspot CRM] account if you don't have one already.
+1. Create a [Hubspot CRM][Hubspot-crm] account if you don't have one already.
 
 1. Open the Hubspot Plugin configuration
 
@@ -46,9 +46,9 @@ Visit [https://app.hubspot.com/hapikeys][hubspot-keys] to generate your [Hubspot
 
 1. In the _Features_ tab select *Push contacts to this integration* checkbox.
 
-    It is checked by default. If you uncheck it, the plugin will not push contacts to [Hubspot CRM] any more.
+    It is checked by default. If you uncheck it, the plugin will not push contacts to [Hubspot CRM][Hubspot-crm] any more.
 
-1. Configure the [field mapping][field mapping].
+1. Configure the [field mapping][field-mapping].
 
 1. Save the plugin configuration.
 
@@ -64,15 +64,11 @@ If the contact has not been created, ensure the email address you tested with is
 
 This plugin had been developed by [@gpassarelli].
 
-[Hubspot CRM]: <https://www.hubspot.com/crm>
+[Hubspot-crm]: <https://www.hubspot.com/crm>
 [hubspot-keys]: <https://app.hubspot.com/hapikey>
-
 [@gpassarelli]: <https://github.com/gpassarelli>
 [release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
-
 [mautic]: <https://mautic.org>
-[Mautic]: <https://mautic.org>
-
-[field mapping]: <field_mapping.html>
-[testing]: <integration_test.html>
-[points]: <./../points>
+[field-mapping]: </plugins/plugin-resources/field-mapping>
+[testing]: </plugins/plugin-resources/testing-integrations>
+[points]: </points>
