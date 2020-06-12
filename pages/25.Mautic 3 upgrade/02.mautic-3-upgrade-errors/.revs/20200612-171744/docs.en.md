@@ -47,23 +47,19 @@ If you see an error which tells you that downloading the Mautic 3 upgrade packag
 The error message should give you more information about this problem. 
 
 ### ERR_EXTRACT_UPGRADE_PACKAGE_FAILED
-In this stage we are extracting the Mautic 3 files from the downloaded archive.
-
-An error in this stage means that we were unable to extract the files on your server or that the process has been interrupted for some reason. 
+If you see an arrow which tells you that there was a problem extracting more tick three files this means that we were unable to extract the archive on your server. 
 
 The error message should give you more information about this problem.
 
 ### ERR_MOVE_MAUTIC_2_AND_3_FILES
 During this stage, we move the current Mautic 2 files into a temporary directory called "mautic-2-backup-files", and then move the Mautic 3 files from "mautic-3-temp-files" to the root directory.
 
-If an error is encountered in this stage, it could be that there are problems with moving directories or that the process has been interrupted for some reason.  Although we do some basic tests before starting the upgrade to ensure that we can create and delete files and folders, it might be that errors have been encountered during the upgrade.
+If an error is encountered in this stage, it could be that there are problems with moving directories.  Although we do some basic tests before starting the upgrade to ensure that we can create and delete files and folders, it might be that errors have been encountered during the upgrade.
 
 The error message should give you more information about this problem.
 
 ### ERR_UPDATE_LOCAL_CONFIG
-During this stage we are updating their config/local.php with new Mautic 3 values.  If an error occurs in the stage it may be that we were unable to write changes to the file. 
-
-The error message should give you more information about this problem.
+When updating config/local.php with new M3 values fails
 
 ### ERR_MAUTIC_3_MIGRATIONS_FAILED
 When running M3 database migrations fails
