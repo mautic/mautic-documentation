@@ -1,3 +1,18 @@
+# v4.0.10
+## 06/08/2020
+
+1. [](#improved)
+    * Updated languages
+1. [](#bugfix)
+    * Fixed redirect causing empty form on homepage forms with no action set
+
+# v4.0.9
+## 06/03/2020
+
+1. [](#bugfix)
+    * Fixed bad `id` attribute on `checkbox` field [#421](https://github.com/getgrav/grav-plugin-form/issues/421)
+    * Show the `description` span even for an empty description [#313](https://github.com/getgrav/grav-plugin-form/pull/313)
+
 # v4.0.8
 ## 04/30/2020
 

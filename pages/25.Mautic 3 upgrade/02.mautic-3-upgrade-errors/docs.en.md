@@ -18,7 +18,11 @@ If you need any further help, please post into our MAUTIC 3 FORUM CATEGORY (TODO
 ## Error codes
 
 ### ERR_DATABASE_BACKUP_FAILED
-When mysqldump fails
+During the upgrade process, the script makes an attempt to back up your database. We make use of the command `mysqldump` in order to execute the backup process. 
+
+If your migration fails in this stage, it is likely that an error was experienced when running the command. The error code displayed should give you some more information.  Your Mautic 2.x instance is intact.
+
+To move forward from this stage, you will need to fix the problem that has been reported and restart the upgrade script. 
 
 ### ERR_MAUTIC_2_MIGRATIONS_FAILED
 When Mautic 2 migrations fail
