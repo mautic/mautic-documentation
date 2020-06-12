@@ -23,7 +23,7 @@ This plugin can push/pull a contact to/from Connectwise Manage.
 
 You will need your company id in order to authenticate the Connectwise plugin.
 
-Use the thick client to create a new API member.  Dowload think client from [here][here]. 
+Use the thick client to create a new API member.  Dowload think client from [here][connectwise–thick-client]. 
 
 1. Go to *System/member*
 1. Create a new API member.
@@ -35,7 +35,7 @@ Use the thick client to create a new API member.  Dowload think client from [her
 1. Insert the keys to the Mautic Connectwise plugin and authorize it.
 ![Connectwise CRM Authorize](connectwiseauth.png "Connectwise CRM Authorize")
 
-1. Configure the [field mapping][field mapping].
+1. Configure the [field mapping][field-mapping].
 
 Please map all fields marked in red, as these are required fields.
 
@@ -45,7 +45,7 @@ Please map all fields marked in red, as these are required fields.
 
 - You can pull leads and/or push leads from and to the integration.
 - Push leads is done through a Form action or a Campaign action.
-- Pull leads is done through command line and it can be setup as a [cron job][cron].
+- Pull leads is done through command line and it can be setup as a [cron job][cron-job].
 
 #### Feature specific settings
 
@@ -94,7 +94,7 @@ Options:
 
 ## Test the plugin
 
-Follow [these steps][these steps] to test the integration.
+Follow [these steps][testing] to test the integration.
 
 ## Connectwise Contact Activities
 
@@ -115,15 +115,8 @@ You can create a Mautic Segment composed of contacts that are in a Connectwise c
  ![Connectwise CRM segment filter](segment-integration-campaign-members.png "Connectwise CRM segment filter")
  ![Connectwise CRM campaign groups](connectwise-campaign-segment.png "Connectwise CRM campaign filters")
 
-[mautic]: <https://mautic.org>
-[Mautic]: <https://mautic.org>
 
-[field mapping]: <field_mapping.html>
-[testing]: <integration_test.html>
-[points]: <./../points>
-[custom field]: <./../contacts/manage_fields.html>
-[cron]: <./../setup/cron_jobs.html>
-
-[release-2.15.0]: <https://github.com/mautic/mautic/releases/tag/2.15.0>
-[here]:<https://university.connectwise.com/university/pageview.aspx?short_name=workstation-installation>
-[these steps]:</plugins/integration_test.html>
+[field-mapping]: </plugins/plugin-resources/field-mapping>
+[testing]: </plugins/plugin-resources/testing-integrations>
+[cron-job]: </setup/cron-jobs>
+[connectwise–thick-client]: <https://university.connectwise.com/university/pageview.aspx?short_name=workstation-installation>
