@@ -116,7 +116,7 @@ You can create a Mautic Segment composed of contacts that are in a Connectwise c
  ![Connectwise CRM campaign groups](connectwise-campaign-segment.png "Connectwise CRM campaign filters")
 
 
-[field-mapping]: </plugins/plugin-resources/field-mapping>
-[testing]: </plugins/plugin-resources/testing-integrations>
+[field-mapping]: </plugins/general-resources/field-mapping>
+[testing]: </plugins/general-resources/integration-test>
 [cron-job]: </setup/cron-jobs>
 [connectwise–thick-client]: <https://university.connectwise.com/university/pageview.aspx?short_name=workstation-installation>
