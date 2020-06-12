@@ -178,5 +178,5 @@ Checkout [Contact Monitoring][contact-monitoring] for more details.
 [root]: <https://nginx.org/en/docs/http/ngx_http_core_module.html#root>
 [mailhog]: <https://github.com/mailhog/MailHog>
 [cron-jobs]: </setup/cron-jobs>
-[contact-monitoring]: </contacts/contact-monitoring> 
+[contact-monitoring]: </contacts/manage-contacts/contact-monitoring> 
 
