@@ -25,21 +25,7 @@ If your migration fails in this stage, it is likely that an error was experience
 To move forward from this stage, you will need to fix the problem that has been reported and restart the upgrade script. 
 
 ### ERR_MAUTIC_2_MIGRATIONS_FAILED
-During the migration process we checked to ensure that there are no database migrations is waiting to be applied from previous Mautic upgrades.
-
-This error indicates that there was a problem in getting the available migrations, or an error in applying them. 
-
-#### Unable to detect database migrations
-
-If you see an error message that says we were unable to reliably detect the amount of available database migration, this means that the upgrade script was unable to access the appropriate files, or that the process was interrupted for some reason.
-
-To move forward from this stage, refresh the page.
-
-#### Database migrations have failed
-
-If you say an error message that says "Oh no! While preparing the upgrade, the so-called 'database migrations' for Mautic 2 have failed." this means that the upgrade script was unable to apply the migrations that it found.  The output message will give you more details about where the problem lies.
-
-To move forward from this stage, review the error message and address any problems that it raises.
+When Mautic 2 migrations fail
 
 ### ERR_DOWNLOAD_UPGRADE_PACKAGE_FAILED
 When downloading M3 upgrade package fails
