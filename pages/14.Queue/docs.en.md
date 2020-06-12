@@ -26,9 +26,9 @@ You can activate and configure the queuing mechanism by going to configuration:
 
 ### RabbitMQ
 
-[RabbitMQ][RabbitMQ] is one of the available queue protocols that Mautic supports.
+[RabbitMQ][rabbitMQ] is one of the available queue protocols that Mautic supports.
 In order to use it, you must have a RabbitMQ server running.  Instructions on how to install RabbitMQ can be obtained
-on their [website][website].  For testing purposes, you can use
+on their [website][rabbitMQ-website].  For testing purposes, you can use
 you can use [cloudamqp][cloudamqp] which offers a RabbitMQ as a service.
 
 Once you have setup a RabbitMQ server, you can configure Mautic to use it by using the *Configuration* menu item again.
@@ -45,9 +45,9 @@ Once you have setup a RabbitMQ server, you can configure Mautic to use it by usi
 
 ### Beanstalkd
 
-[Beanstalkd][Beanstalkd] is another available queue protocol that Mautic supports.
+[Beanstalkd][beanstalkd] is another available queue protocol that Mautic supports.
 In order to use it, you must have a Beanstalkd server running.  Instructions on how to install Beanstalkd can be
-obtained on their [website][website].
+obtained on their [website][beanstalkd-website].
 
 Once you have setup a Beanstalkd server, you can configure mautic to use it by using the *Configuration* menu item again.
 
@@ -96,9 +96,9 @@ php /path/to/mautic/app/console mautic:email:send
 ```
 See the documentation on [cron jobs][cron-jobs] for further information.
 
-[cron-jobs]:</setup/cron-jobs>
-[RabbitMQ]:<https://www.rabbitmq.com/features.html>
-[website]:<http://www.rabbitmq.com/download.html>
-[cloudamqp]:<https://www.cloudamqp.com/>
-[Beanstalkd]:<https://kr.github.io/beanstalkd/>
-[website]:<https://kr.github.io/beanstalkd/download.html>
+[cron-jobs]: </setup/cron-jobs>
+[rabbitMQ]: <https://www.rabbitmq.com/features.html>
+[rabbitMQ-website]: <http://www.rabbitmq.com/download.html>
+[cloudamqp]: <https://www.cloudamqp.com/>
+[beanstalkd]: <https://kr.github.io/beanstalkd/>
+[beanstalkd-website]: <https://kr.github.io/beanstalkd/download.html>
