@@ -69,6 +69,6 @@ This plugin had been developed by [@gpassarelli].
 [@gpassarelli]: <https://github.com/gpassarelli>
 [release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
 [mautic]: <https://mautic.org>
-[field-mapping]: </plugins/plugin-resources/field-mapping>
-[testing]: </plugins/plugin-resources/testing-integrations>
+[field-mapping]: </plugins/general-resources/field-mapping>
+[testing]: </plugins/general-resources/integration-test>
 [points]: </points>
