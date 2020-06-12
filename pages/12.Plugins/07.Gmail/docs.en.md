@@ -12,13 +12,13 @@ taxonomy:
 -------------------
 
 ## GMail Plugin for Mautic
-This plugin allows for the [Mautic Helper Chrome Extension][Mautic Helper Chrome Extension] to keep track of emails sent to leads from within GMail.
+This plugin allows for the [Mautic Helper Chrome Extension][chrome-extension] to keep track of emails sent to leads from within GMail.
 
 ### Requirements
 
 - Mautic installed on a publicly accessible URL.
 - GMail account (for email tracking).
-- [Mautic Helper Chrome Extension][Mautic Helper Chrome Extension]
+- [Mautic Helper Chrome Extension][chrome-extension]
 
 ### Configure the plugin
 1. Install the Mautic plugin as usual. It will appear on the plugins page in Mautic.
@@ -27,7 +27,7 @@ This plugin allows for the [Mautic Helper Chrome Extension][Mautic Helper Chrome
 2. Click on the GMail plugin button and enter a secret or key to validate the Mautic Helper Chrome Extension
 ![image](https://cloud.githubusercontent.com/assets/2924026/18927155/f336b23e-8577-11e6-99a7-9e1e5b493f5c.png)
 
-3. Install the [Mautic Helper Chrome Extension][Mautic Helper Chrome Extension] from the Chrome Web Store
+3. Install the [Mautic Helper Chrome Extension][chrome-extension] from the Chrome Web Store
 ![image](https://cloud.githubusercontent.com/assets/2924026/18927690/2c995d2c-857a-11e6-9870-c5bf5b27e3be.png)
 
 4. Configure the extension using the options page that will automatically be displayed. (Remember to use the same secret you entered in Mautic)
@@ -54,4 +54,4 @@ To add support for long parameters with suhosin add the following to php.ini:
     suhosin.get.max_value_length = 5000
 
 
-[Mautic Helper Chrome Extension]:<https://chrome.google.com/webstore/category/extensions>
+[chrome-extension]: <https://chrome.google.com/webstore/category/extensions>
