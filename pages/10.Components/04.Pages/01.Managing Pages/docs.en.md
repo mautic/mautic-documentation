@@ -71,5 +71,5 @@ Note: When you are logged in as a Mautic administrator, you will always see the 
 Mautic 2.13 added new option [Block search indexing with noindex][block-search]. You can prevent a page from appearing in search engines like Google, Bing etc.
 
 
-[code-mode]:</themes/code-mode>
-[block-search]:<https://support.google.com/webmasters/answer/93710?hl=en>
+[code-mode]: </themes/code-mode>
+[block-search]: <https://support.google.com/webmasters/answer/93710?hl=en>
