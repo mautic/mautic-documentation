@@ -25,14 +25,14 @@ If you don't have a Dynamics CRM account, follow the instructions below to creat
    ![Dynamics CRM Plugin configuration](858c5a2a7134.png "Dynamics CRM Plugin configuration")
 
 1. Select the features you like in the Features tab. *Push contacts to this integration* checkbox is checked by default.
-1. Configure the [field mapping][field mapping].
+1. Configure the [field mapping][field-mapping].
 1. Save the plugin configuration.
 
 ## Set Up Dynamics 365
 
 ### How to create a Dynamics 365 Trial account
 
-1. Go to the [Dynamics 365 Trial website][Dynamics 365 Trial website]
+1. Go to the [Dynamics 365 Trial website][dynamics365-website]
 
 ![image](bbdb46ab545f.png)
 ![image](8106fe116d63.png)
@@ -42,7 +42,7 @@ If you don't have a Dynamics CRM account, follow the instructions below to creat
 
 ### Set Up Azure
 
-1. Go to the [Azure Portal][Azure Portal]
+1. Go to the [Azure Portal][azure-ortal]
 1. Log in with your onmicrosoft.com account
 
    ![image](4e7c9a85014f.png)
@@ -109,11 +109,8 @@ Follow [these steps][testing] to test the integration.
 1. The plugin is ready. You can test using "Push to Integration" form and campaign actions.
 1. You can also test by executing the command: `php app/console mautic:integration:fetchleads -i Dynamics`
 
-[mautic]: <https://mautic.org>
-[Mautic]: <https://mautic.org>
 
-[field mapping]: <field_mapping.html>
-[testing]: <integration_test.html>
-[points]: <./../points>
-[Dynamics 365 Trial website]:<https://www.microsoft.com/en-us/free-crm-trial.aspx>
-[Azure Portal]:<https://portal.azure.com>
+[field-mapping]: </plugins/plugin-resources/field-mapping>
+[testing]: </plugins/plugin-resources/testing-integrations>
+[dynamics365-website]:<https://www.microsoft.com/en-us/free-crm-trial.aspx>
+[azure-portal]: <https://portal.azure.com>
