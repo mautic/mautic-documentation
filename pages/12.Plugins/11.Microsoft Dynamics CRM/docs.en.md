@@ -112,5 +112,5 @@ Follow [these steps][testing] to test the integration.
 
 [field-mapping]: </plugins/general-resources/field-mapping>
 [testing]: </plugins/general-resources/integration-test>
-[dynamics365-website]:<https://www.microsoft.com/en-us/free-crm-trial.aspx>
+[dynamics365-website]: <https://www.microsoft.com/en-us/free-crm-trial.aspx>
 [azure-portal]: <https://portal.azure.com>
