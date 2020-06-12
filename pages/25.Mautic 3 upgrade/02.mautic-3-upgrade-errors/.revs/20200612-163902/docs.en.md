@@ -37,26 +37,18 @@ To move forward from this stage, refresh the page.
 
 #### Database migrations have failed
 
-If you see an error message that says "Oh no! While preparing the upgrade, the so-called 'database migrations' for Mautic 2 have failed." this means that the upgrade script was unable to apply the migrations that it found.  The output message will give you more details about where the problem lies.
+If you say an error message that says "Oh no! While preparing the upgrade, the so-called 'database migrations' for Mautic 2 have failed." this means that the upgrade script was unable to apply the migrations that it found.  The output message will give you more details about where the problem lies.
 
 To move forward from this stage, review the error message and address any problems that it raises.
 
 ### ERR_DOWNLOAD_UPGRADE_PACKAGE_FAILED
-If you see an error which tells you that downloading the Mautic 3 upgrade package has failed, this means that we were unable to contact the server in order to download the package we need to run the upgrade.
-
-The error message should give you more information about this problem. 
+When downloading M3 upgrade package fails
 
 ### ERR_EXTRACT_UPGRADE_PACKAGE_FAILED
-If you see an arrow which tells you that there was a problem extracting more tick three files this means that we were unable to extract the archive on your server. 
-
-The error message should give you more information about this problem.
+When extracting M3 upgrade package fails
 
 ### ERR_MOVE_MAUTIC_2_AND_3_FILES
-During this stage, we move the current Mautic 2 files into a temporary directory called "mautic-2-backup-files", and then move the Mautic 3 files from "mautic-3-temp-files" to the root directory.
-
-If an error is encountered in this stage, it could be that there are problems with moving directories.  Although we do some basic tests before starting the upgrade to ensure that we can create and delete files and folders, it might be that errors have been encountered during the upgrade.
-
-The error message should give you more information about this problem.
+When moving M2 or M3 files fails
 
 ### ERR_UPDATE_LOCAL_CONFIG
 When updating config/local.php with new M3 values fails
