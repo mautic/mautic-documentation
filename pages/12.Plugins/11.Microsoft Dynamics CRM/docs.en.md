@@ -42,7 +42,7 @@ If you don't have a Dynamics CRM account, follow the instructions below to creat
 
 ### Set Up Azure
 
-1. Go to the [Azure Portal][azure-ortal]
+1. Go to the [Azure Portal][azure-portal]
 1. Log in with your onmicrosoft.com account
 
    ![image](4e7c9a85014f.png)
@@ -110,7 +110,7 @@ Follow [these steps][testing] to test the integration.
 1. You can also test by executing the command: `php app/console mautic:integration:fetchleads -i Dynamics`
 
 
-[field-mapping]: </plugins/plugin-resources/field-mapping>
-[testing]: </plugins/plugin-resources/testing-integrations>
+[field-mapping]: </plugins/general-resources/field-mapping>
+[testing]: </plugins/general-resources/integration-test>
 [dynamics365-website]:<https://www.microsoft.com/en-us/free-crm-trial.aspx>
 [azure-portal]: <https://portal.azure.com>
