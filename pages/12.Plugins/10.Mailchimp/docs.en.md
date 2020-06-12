@@ -13,7 +13,7 @@ taxonomy:
 
 ## MailChimp integration
 
-[Mautic] can send Contacts to [MailChimp] based on [Contact actions][testing] or [Point Triggers][points].
+[Mautic][mautic] can send Contacts to [MailChimp][mailchimp] based on [Contact actions][testing] or [Point Triggers][points].
 
 ## Version notes
 
@@ -51,7 +51,7 @@ This plugin is backward compatible.
 
 ### Get MailChimp API key
 
-1. Create a [MailChimp] account if you don't have one already.
+1. Create a [MailChimp][mailchimp] account if you don't have one already.
 2. Go to *Account* / *Extras* / *API Keys* and create a new one.
 3. Copy the created API Key.
 
@@ -72,14 +72,14 @@ Navigate to the *Features* tab in the plugin configuration modal box. You should
 
 1. Select the Segment.
 
-   If you don't have a segment in [MailChimp] created yet, go to *MailChimp dashboard* / *Segments* / *Create List* and create one.
+   If you don't have a segment in [MailChimp][mailchimp] created yet, go to *MailChimp dashboard* / *Segments* / *Create List* and create one.
 
 1. Save the plugin configuration
 1. Open it again.
 
    The *Contact Field Mapping* tab should appear now.
 
-1. Configure the [field mapping].
+1. Configure the [field mapping][field-mapping].
 
 ### Other configuration options
 
@@ -95,12 +95,11 @@ Navigate to the *Features* tab in the plugin configuration modal box. You should
 Follow [these steps][testing] to test the integration.
 
 [mautic]: <https://mautic.org>
-[Mautic]: <https://mautic.org>
-[MailChimp]: <https://mailchimp.com>
+[mailchimp]: <https://mailchimp.com>
 
-[field mapping]: <field_mapping.html>
-[testing]: <integration_test.html>
-[points]: <./../points>
+[field-mapping]: </plugins/plugin-resources/field-mapping>
+[testing]: </plugins/plugin-resources/testing-integrations>
+[points]: </points>
 
 [release-latest]: <https://github.com/mautic/mautic/releases/latest>
 [release-1.2.3]: <https://github.com/mautic/mautic/releases/tag/1.2.3>
