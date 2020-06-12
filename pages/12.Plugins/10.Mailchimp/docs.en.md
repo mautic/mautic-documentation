@@ -97,8 +97,8 @@ Follow [these steps][testing] to test the integration.
 [mautic]: <https://mautic.org>
 [mailchimp]: <https://mailchimp.com>
 
-[field-mapping]: </plugins/plugin-resources/field-mapping>
-[testing]: </plugins/plugin-resources/testing-integrations>
+[field-mapping]: </plugins/general-resources/field-mapping>
+[testing]: </plugins/general-resources/integration-test>
 [points]: </points>
 
 [release-latest]: <https://github.com/mautic/mautic/releases/latest>
