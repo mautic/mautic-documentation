@@ -26,7 +26,7 @@ This plugin can:
 
 ### Authorize the plugin
 
-A Twitter application has to be created for authorization. To create/manage one, go to [apps.twitter.com][twitter-com]. While creating your Twitter app, you'll have to insert a *Callback URL*. This callback URL is written in the Twitter plugin configuration.
+A Twitter application has to be created for authorization. To create/manage one, go to [apps.twitter.com][twitter]. While creating your Twitter app, you'll have to insert a *Callback URL*. This callback URL is written in the Twitter plugin configuration.
 
 When your Twitter app is created, copy the *API Key* to the *Client Key* field in Mautic's Twitter configuration and *API Secret* to *Client Secret* field. Click the *Authorize* button. 
 
@@ -58,5 +58,5 @@ All these tokens are easily accessible in the UI, so you can just click a button
 
 The original idea was that Mautic will search for additional information about a contact in various social platforms. But since the time the social plugins were written, social platforms restricted the API search only to the username.
 
-[twitter-com]: <https://apps.twitter.com/>
+[twitter]: <https://apps.twitter.com/>
 [field-mapping]: </plugins/general-resources/field-mapping>
