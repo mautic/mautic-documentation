@@ -12,6 +12,6 @@ taxonomy:
 
 # Theme structure
 
-Visit the [Developer documentation][Developer documentation] about themes for details about the theme structure.
+Visit the [Developer documentation][developer-documentation] about themes for details about the theme structure.
 
-[Developer documentation]:<https://developer.mautic.org/#themes>
+[developer-documentation]: <https://developer.mautic.org/#themes>
