@@ -36,4 +36,4 @@ When clicking one of those buttons a window will pop up to confirm the action:
 
 A few moments later, if information was found, the contact/company details will be updated.
 
-[full-contact-apikey]:<https://portal.fullcontact.com/signup>
+[full-contact-apikey]: <https://portal.fullcontact.com/signup>
