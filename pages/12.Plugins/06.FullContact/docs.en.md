@@ -20,7 +20,7 @@ This plugin can:
 ### Requirements
 
 - Mautic installed on a publicly accessible URL. This plugin won't work on a localhost because callbacks from FullContact to Mautic are necessary.
-- Get a [Full Contact API key][Full Contact API key]
+- Get a [Full Contact API key][full-contact-apikey]
 
 ### Authorize the plugin
 ![image](https://cloud.githubusercontent.com/assets/2924026/20350951/db8137e4-abde-11e6-8c93-7d4561b27f48.png)
@@ -36,4 +36,4 @@ When clicking one of those buttons a window will pop up to confirm the action:
 
 A few moments later, if information was found, the contact/company details will be updated.
 
-[Full Contact API key]:<https://portal.fullcontact.com/signup>
+[full-contact-apikey]:<https://portal.fullcontact.com/signup>
