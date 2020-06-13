@@ -23,7 +23,7 @@ This plugin can push/pull a contact to/from Connectwise Manage.
 
 You will need your company id in order to authenticate the Connectwise plugin.
 
-Use the thick client to create a new API member.  Dowload think client from [here][connectwise–thick-client]. 
+Use the thick client to create a new API member.  Download think client from [here][connectwise–thick-client]. 
 
 1. Go to *System/member*
 1. Create a new API member.
