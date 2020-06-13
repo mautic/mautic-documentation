@@ -22,32 +22,29 @@ During the upgrade process, the script makes an attempt to back up your database
 
 If your migration fails in this stage, it is likely that an error was experienced when running the command. 
 
-The error message will give you more details about where the problem lies. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
+The error code displayed should give you some more information.  You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
 
 To move forward from this stage, you will need to fix the problem that has been reported and restart the upgrade script. 
 
 If you need any further help, please post into our dedicated [Mautic 3 Installation/Upgrade forum][m3-forum]. Please ensure that you provide all the details requested in the post template, which enables our community volunteers to provide effective support.
 
-### ERR_MAUTIC_2_MIGRATIONS_FAILED
+### ERR_MAUTIC_2_MIGRATIONS_IDENTIFICATION_FAILED
 During the migration process we check to ensure that there are no database migrations waiting to be applied from previous Mautic upgrades.
-
-This error indicates that there was a problem in getting the available migrations, or an error in applying them. 
-
-#### Unable to detect database migrations
 
 If you see an error message that says:
 
->  We couldn't reliably detect the amount of available database migrations. Please try again by refreshing this page.
+> we were unable to reliably detect the amount of available database migration, 
 
 this means that the upgrade script was unable to access the appropriate files, or that the process was interrupted for some reason.
 
-The error message will give you more details about where the problem lies. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
+You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
 
 To move forward from this stage, refresh the page.
 
 If you need any further help, please post into our dedicated [Mautic 3 Installation/Upgrade forum][m3-forum]. Please ensure that you provide all the details requested in the post template, which enables our community volunteers to provide effective support.
 
-#### Database migrations have failed
+### ERR_MAUTIC_2_MIGRATIONS_FAILED
+During the migration process we check to ensure that there are no database migrations waiting to be applied from previous Mautic upgrades.
 
 If you see an error message that says 
 
@@ -55,7 +52,7 @@ If you see an error message that says
 
 this means that the upgrade script was unable to apply the migrations that it found.  
 
-The error message will give you more details about where the problem lies. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
+The output message will give you more details about where the problem lies. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
 
 To move forward from this stage, review the error message and address any problems that it raises.
 
@@ -64,7 +61,7 @@ If you need any further help, please post into our dedicated [Mautic 3 Installat
 ### ERR_DOWNLOAD_UPGRADE_PACKAGE_FAILED
 If you see an error which tells you that downloading the Mautic 3 upgrade package has failed, this means that we were unable to contact the server to download the package we need to run the upgrade.
 
-The error message will give you more details about where the problem lies. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
+The error message should give you more information about this problem. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
 
 If you need any further help, please post into our dedicated [Mautic 3 Installation/Upgrade forum][m3-forum]. Please ensure that you provide all the details requested in the post template, which enables our community volunteers to provide effective support.
 
@@ -73,43 +70,34 @@ In this stage we are extracting the Mautic 3 files from the downloaded archive.
 
 An error in this stage means that we were unable to extract the files on your server or that the process has been interrupted for some reason. 
 
-The error message will give you more details about where the problem lies. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
+The error message should give you more information about this problem. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
 
 If you need any further help, please post into our dedicated [Mautic 3 Installation/Upgrade forum][m3-forum]. Please ensure that you provide all the details requested in the post template, which enables our community volunteers to provide effective support.
 
 ### ERR_MOVE_MAUTIC_2_AND_3_FILES
 During this stage, we move the current Mautic 2 files into a temporary directory called "mautic-2-backup-files", and then move the Mautic 3 files from "mautic-3-temp-files" to the root directory.
 
-If an error is encountered in this stage it could be that there are problems with moving directories, or that the process has been interrupted for some reason.  
+If an error is encountered in this stage, it could be that there are problems with moving directories or that the process has been interrupted for some reason.  Although we do some basic tests before starting the upgrade to ensure that we can create and delete files and folders, it might be that errors have been encountered during the upgrade.
 
-The error message will give you more details about where the problem lies. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
+The error message should give you more information about this problem. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
 
 If you need any further help, please post into our dedicated [Mautic 3 Installation/Upgrade forum][m3-forum]. Please ensure that you provide all the details requested in the post template, which enables our community volunteers to provide effective support.
 
 ### ERR_UPDATE_LOCAL_CONFIG
-During this stage we are updating their config/local.php file with new Mautic 3 values.  If an error occurs in the stage it may be that we were unable to make or save changes to the file. 
+During this stage we are updating their config/local.php with new Mautic 3 values.  If an error occurs in the stage it may be that we were unable to write changes to the file. 
 
-The error message will give you more details about where the problem lies. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
+The error message should give you more information about this problem. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
 
 If you need any further help, please post into our dedicated [Mautic 3 Installation/Upgrade forum][m3-forum]. Please ensure that you provide all the details requested in the post template, which enables our community volunteers to provide effective support.
+
+### ERR_MAUTIC_3_MIGRATIONS_IDENTIFICATION_FAILED
+When identifying M3 database migrations fails
 
 ### ERR_MAUTIC_3_MIGRATIONS_FAILED
-During this stage, we are running the database migrations that are required to move between Mautic 2 and Mautic 3.
-
-If an error is encountered during this stage, there may have been a problem with running the migrations, or the process has been interrupted for some reason.
-
-The error message will give you more details about where the problem lies. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
-
-If you need any further help, please post into our dedicated [Mautic 3 Installation/Upgrade forum][m3-forum]. Please ensure that you provide all the details requested in the post template, which enables our community volunteers to provide effective support.
+When running M3 database migrations fails
 
 ### ERR_RESTORE_USER_DATA_FAILED
-During this stage, we are restoring the user data (themes/plugins/media) from the Mautic 2 backup directory to the new Mautic 3 directory.
-
-If an error is encountered during this stage, there may have been a problem with copying the files and folders, or the process may have been interrupted for some reason.
-
-The error message will give you more details about where the problem lies. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
-
-If you need any further help, please post into our dedicated [Mautic 3 Installation/Upgrade forum][m3-forum]. Please ensure that you provide all the details requested in the post template, which enables our community volunteers to provide effective support.
+When restoring user data (themes/plugins/media) from M2 fails
 
 ### ERR_BUILD_M3_CACHE
 When building M3 cache fails
