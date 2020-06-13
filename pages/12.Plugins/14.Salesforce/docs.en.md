@@ -263,7 +263,7 @@ This means the API is not turned on in your Salesforce account. [Read more][sale
 
 [salesforce-crm]: <https://www.salesforce.com/>
 [salesforce-admin]: <https://help.salesforce.com/apex/HTViewHelpDoc?id=admin_userperms.htm&language=en>
-[official-documentation]:<http://feedback.uservoice.com/knowledgebase/articles/235661-get-your-key-and-secret-from-salesforce>
+[official-documentation]: <http://feedback.uservoice.com/knowledgebase/articles/235661-get-your-key-and-secret-from-salesforce>
 [mautic]: <https://mautic.org>
 [field-mapping]: </plugins/general-resources/field-mapping>
 [testing]: </plugins/general-resources/integration-test>
