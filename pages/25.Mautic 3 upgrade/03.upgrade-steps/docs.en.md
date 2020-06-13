@@ -1,5 +1,14 @@
 ---
 title: 'Upgrade steps'
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 If you want to know more about all the upgrade steps of the Mautic 3 upgrade process, this is the place to be.
@@ -26,6 +35,8 @@ Here, we do some checks prior to starting the upgrade, to make sure your system 
 * Is the upgrade "kill switch" activated? (Mautic's Product Team can enable a Kill Switch which will show a warning to users that there might be problems with the upgrade. Read more HERE (TODO))
 * Are there any custom plugins installed? If yes, we show a warning that users should check if those plugins are compatible with Mautic 3 or temporarily disable them
 * Get the amount of available database migrations. If that fails, we show a warning
+* Check if the platform is Windows. If it is, we show a warning that cache creation is significantly slower on this platform and that the user should be extra patient.
+* Is PHP's `memory_limit` equal to or higher than 256M? If not, we try to set it, if that doesn't work, we show an error
 
 ### 1. Start upgrade
 Code: startUpgrade
@@ -79,4 +90,6 @@ Mautic always prepares cache the first time you start it, so that it runs faster
 ### 12. Finish
 Code: finished
 
-Cleans up some last files (including the upgrade script itself), and allows the user to open Mautic 3.
+Cleans up some last files, and allows the user to open Mautic 3.
+
+A last step that is offered at the end of the upgrade, is to **remove backup files**. The user is advised to remove the backup files as soon as possible; this step also removes the upgrade script itself.
