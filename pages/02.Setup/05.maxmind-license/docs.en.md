@@ -21,7 +21,7 @@ From the [2.16 release][216-release], Mautic has supported using a license key t
 Follow these steps to configure your Mautic instance to use the license key.
 
 1. Create a MaxMind account by going to [Maxmind Signup][maxmind-signup]
-1. After signup, check your email and click on access your [Maxmind Account][Maxmind Account].
+1. After signup, check your email and click on access your [Maxmind Account][maxmind-account].
 1. Click on the Contact icon at the top right of the menu to login 
 ![mautic-maxmind-account](mautic-maxmind-account.png "mautic-maxmind-account")
 1. After logging in, under services click on "My License Key" on the left hand side in the menu
@@ -38,6 +38,6 @@ Follow these steps to configure your Mautic instance to use the license key.
 1. Set up the [cron job][cron-jobs] to periodically download a fresh copy.
 
 [216-release]: <https://github.com/mautic/mautic/releases/tag/2.16.0>
-[Maxmind Account]: <https://www.maxmind.com/en/accounts/>
+[maxmind-account]: <https://www.maxmind.com/en/accounts/>
 [maxmind-signup]: <https://www.maxmind.com/en/geolite2/signup>
 [cron-jobs]: </setup/cron-jobs>
