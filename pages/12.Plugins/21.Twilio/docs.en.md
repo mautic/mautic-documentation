@@ -16,12 +16,12 @@ taxonomy:
 Before you start to send text messages from your Mautic instance, it needs to be connected to the service which can send them. The first and default implemented service is [Twilio][twilio]. In order to configure the text messages correctly, follow these steps:
 
 1. Create an account at [Twilio.com][twilio].
-2. In Mautic, go to *Settings* (cog icon) > *Plugins*.
-3. Open *Twilio* plugin and activate it.
-4. Copy the *Account SID* from Twilio account and paste it to *Account SID* field in the Twilio plugin configuration.
-5. Unlock and copy the *Auth Token* and paste it to *Auth Token* field in the Twilio plugin configuration.
-6. Go to *Products* > *Phone Numbers* in Twilio, copy the number and paste it to the *Sending Phone Number* field in Mautic.
-7. Select the *Text Message Enabled?* switch to *Yes* and save the Mautic configuration.
+1. In Mautic, go to *Settings* (cog icon) > *Plugins*.
+1. Open *Twilio* plugin and activate it.
+1. Copy the *Account SID* from Twilio account and paste it to *Account SID* field in the Twilio plugin configuration.
+1. Unlock and copy the *Auth Token* and paste it to *Auth Token* field in the Twilio plugin configuration.
+1. Go to *Products* > *Phone Numbers* in Twilio, copy the number and paste it to the *Sending Phone Number* field in Mautic.
+1. Select the *Text Message Enabled?* switch to *Yes* and save the Mautic configuration.
 
 
 ## Alphanumeric Sender ID
@@ -39,9 +39,9 @@ Alphanumeric Sender ID is automatically supported on all new [upgraded (paid) T
 You can validate that Alphanumeric Sender is enabled on your account by following these steps:
 
 1.  Login to your account at [www.twilio.com][twilio].
-2.  From the left side navigation bar, click Programmable SMS.
-3.  Click Settings.
-4.  Verify that "Alphanumeric Sender ID" is set to Enabled.
+1.  From the left side navigation bar, click Programmable SMS.
+1.  Click Settings.
+1.  Verify that "Alphanumeric Sender ID" is set to Enabled.
 
 ### Send SMS Messages using an Alphanumeric Sender ID with Mautic
 
