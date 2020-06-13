@@ -33,7 +33,7 @@ Before you start to send text messages from your Mautic you need to configure th
 
 The new Text message will be pre-selected so you can save the *Send Text Message* action as well. You can use the action in your Campaign dripflow.
 
-[twilio-plugin]: </plugins/Twilio>
+[twilio-plugin]: </plugins/twilio>
 [twilio]: <https://www.twilio.com>
 [twilio-paid-accounts]: <https://support.twilio.com/hc/en-us/articles/223183208-Upgrading-to-a-paid-Twilio-Account>
 [twilio-international-alphanumeric-id]: <https://support.twilio.com/hc/en-us/articles/223133767-International-support-for-Alphanumeric-Sender-ID>
