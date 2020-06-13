@@ -40,4 +40,4 @@ Follow these steps to configure your Mautic instance to use the license key.
 [216-release]: <https://github.com/mautic/mautic/releases/tag/2.16.0>
 [maxmind-account]: <https://www.maxmind.com/en/accounts/>
 [maxmind-signup]: <https://www.maxmind.com/en/geolite2/signup>
-[cron-jobs]: </setup/cron-jobs>
+[cron-jobs]: </setup/cron-jobs#update-maxmind-geolite2-ip-database>
