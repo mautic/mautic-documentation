@@ -32,7 +32,7 @@ Even if the plugin is compatible to Outlook 2013, this will describe the install
 2. Click on the Outlook plugin button and enter a secret or key to validate the Outlook Add-In
 ![image](secret.png)
 
-3. Run the [Mautic Outlook Add-In Installer][add-in-installer]on a Windows machine with Outlook 2016]
+3. Run the [Mautic Outlook Add-In Installer][add-in-installer] on a Windows machine with Outlook 2016
 
 4. On the Outlook 2016 Options window, select Add-Ins and click on the Add-In Options button
 ![image](outlook_addin.png)
