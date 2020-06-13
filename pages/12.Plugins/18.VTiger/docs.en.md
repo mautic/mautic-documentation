@@ -46,5 +46,5 @@ Save the plugin configuration.
 Follow [these steps][testing] to test the integration.
 
 [vTiger-crm]: <https://www.vtiger.com/>
-[[field-mapping]: </plugins/general-resources/field-mapping>
+[field-mapping]: </plugins/general-resources/field-mapping>
 [testing]: </plugins/general-resources/integration-test>
