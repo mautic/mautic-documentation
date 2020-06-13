@@ -115,6 +115,6 @@ Even this integration is developed as an open source software as is usual with M
 
 You may encounter a 404 error during configuration. If this happens, [clear the cache][clear-cache].
 
-[cache]: </troubleshooting>
+[clear-cache]: </troubleshooting#1-clear-the-cache>
 [zapier]: <https://zapier.com>
 [zapier-pricing]: <https://zapier.com/pricing/>
