@@ -28,8 +28,12 @@ To move forward from this stage, you will need to fix the problem that has been 
 
 If you need any further help, please post into our dedicated [Mautic 3 Installation/Upgrade forum][m3-forum]. Please ensure that you provide all the details requested in the post template, which enables our community volunteers to provide effective support.
 
-### ERR_MAUTIC_2_MIGRATIONS_IDENTIFICATION_FAILED
+### ERR_MAUTIC_2_MIGRATIONS_FAILED
 During the migration process we check to ensure that there are no database migrations waiting to be applied from previous Mautic upgrades.
+
+This error indicates that there was a problem in getting the available migrations, or an error in applying them. 
+
+#### Unable to detect database migrations
 
 If you see an error message that says:
 
@@ -43,8 +47,7 @@ To move forward from this stage, refresh the page.
 
 If you need any further help, please post into our dedicated [Mautic 3 Installation/Upgrade forum][m3-forum]. Please ensure that you provide all the details requested in the post template, which enables our community volunteers to provide effective support.
 
-### ERR_MAUTIC_2_MIGRATIONS_FAILED
-During the migration process we check to ensure that there are no database migrations waiting to be applied from previous Mautic upgrades.
+#### Database migrations have failed
 
 If you see an error message that says 
 
@@ -89,9 +92,6 @@ During this stage we are updating their config/local.php with new Mautic 3 value
 The error message should give you more information about this problem. You can find further information in the `upgrade_log.txt` file which is created in the root of your Mautic instance when an upgrade has been attempted.
 
 If you need any further help, please post into our dedicated [Mautic 3 Installation/Upgrade forum][m3-forum]. Please ensure that you provide all the details requested in the post template, which enables our community volunteers to provide effective support.
-
-### ERR_MAUTIC_3_MIGRATIONS_IDENTIFICATION_FAILED
-When identifying M3 database migrations fails
 
 ### ERR_MAUTIC_3_MIGRATIONS_FAILED
 When running M3 database migrations fails
