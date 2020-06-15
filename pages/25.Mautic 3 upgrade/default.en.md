@@ -15,8 +15,9 @@ facebookenable: true
 Are you ready for Mautic 3? Let's get started!
 
 * [Getting Started][getting-started]
+* [Upgrade Steps][steps]
 * [Upgrade Errors][errors]
-* [Upgrade steps][steps]
+
 
 [getting-started]: </mautic-3-upgrade/getting-started>
 [errors]: </mautic-3-upgrade/mautic-3-upgrade-errors>
