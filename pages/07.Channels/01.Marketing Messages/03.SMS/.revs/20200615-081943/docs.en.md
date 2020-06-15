@@ -22,7 +22,7 @@ This new channel was added in Mautic 1.4.0. It allows Mautic to send text messag
 
 A Text Message can be created/modified only via Campaign Builder.
 
-Before you start to send text messages from your Mautic instance you need to configure the text messages correctly (see [Twilio Plugin][twilio-plugin]), then follow these steps:
+Before you start to send text messages from your Mautic you need to configure the text messages correctly see [Twilio Plugin][twilio-plugin], Then follow these steps:
 
 1. Go to *Campaigns*.
 1. Edit an existing campaign or create a new one.
