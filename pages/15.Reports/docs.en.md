@@ -53,4 +53,4 @@ php /path/to/mautic/app/console mautic:reports:scheduler [--report=ID]
 ```
 The `--report=ID` argument allows you to specify a report by ID if required. For more information, see [Cron jobs][cron-jobs].
 
-[cron-jobs]:</setup/cron-jobs>
+[cron-jobs]: </setup/cron-jobs#send-scheduled-reports>
