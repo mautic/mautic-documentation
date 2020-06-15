@@ -40,7 +40,7 @@ Having SSH access to your server makes things much easier. Log in via command li
 
 When an upgrade attempt fails in the final step, it may be only the outdated cache that is causing a problem.  Use the following command to clear it manually:
 
-    php app/console cache:clear
+    php bin/console cache:clear
 
 If this command throws a PHP error, you can try to remove the cache folder using the following command (be careful, this removes all files and folders in the path specified, so ensure you type it correctly!)
 
@@ -52,11 +52,11 @@ If clearing the cache has not resolved your problems, continue with the next ste
 
 The first step is to find out if there are any updates available using the following command:
 
-    php app/console mautic:update:find
+    php bin/console mautic:update:find
 
 The output from this command will tell you if there are any updates to apply.  If there are, run the following command to apply them:
 
-    php app/console mautic:update:apply
+    php bin/console mautic:update:apply
 
 If there are no updates found, proceed to the next step.
 
@@ -64,21 +64,21 @@ If there are no updates found, proceed to the next step.
 
 Run the following command to check for any outstanding database migrations:
 
-    php app/console doctrine:migration:status
+    php bin/console doctrine:migration:status
 
 If there are any reported, firstly **ensure that you have a tested backup of your database before proceeding, as this command will cause changes to the database**, then run:
 
-    php app/console doctrine:migration:migrate
+    php bin/console doctrine:migration:migrate
 
 ### 4. Check for database schema updates
 
 If your upgrade failed during the database update step, the database schema may not be up to date.  Run the following command to check for updates:
 
-    php app/console doctrine:schema:update --dump-sql
+    php bin/console doctrine:schema:update --dump-sql
 
 Running this command will tell you whether the database is up to date with the code.  If there are queries that need to be executed, **ensure you have a tested backup of your database before proceeding, as this command will cause changes to the database**, then run the following command:
 
-    php app/console doctrine:schema:update --force
+    php bin/console doctrine:schema:update --force
 
 If this hasn't resolved your problem, proceed to the next step.
 
@@ -108,7 +108,7 @@ The best thing to do is read the error, and search for the error in your preferr
 This error will usually be reported as:
 
     PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 10924085 bytes) in ...
-    
+
 This means that the memory limit that Apache has available is too low.  Edit the memory_limit in the php.ini configuration file.
 
 ### A required PHP extension is missing

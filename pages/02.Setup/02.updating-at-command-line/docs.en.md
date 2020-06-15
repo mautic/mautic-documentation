@@ -24,7 +24,7 @@ It is therefore recommended as best practice that you carry out any updates at t
 
 Before you commence these steps, **please ensure that you have a tested backup of your Mautic instance**.  This means that you have downloaded the files and database of your Mautic instance, and you have re-created it in a test environment somewhere and tested that everything is working as expected.
 
-## Checking for updates 
+## Checking for updates
 
  Log in via command line, and change directory to the location where Mautic is installed using the command
 
@@ -32,11 +32,11 @@ Before you commence these steps, **please ensure that you have a tested backup o
 
 The first step is to find out if there are any updates available using the following command:
 
-    php app/console mautic:update:find
+    php bin/console mautic:update:find
 
 The output from this command will tell you if there are any updates to apply.  If there are, run the following command to apply them:
 
-    php app/console mautic:update:apply
+    php bin/console mautic:update:apply
 
 ## I need help updating Mautic
 

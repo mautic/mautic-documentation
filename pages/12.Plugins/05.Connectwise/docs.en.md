@@ -60,7 +60,7 @@ To push or pull records from Connectwise you need to run the Mautic integration 
 #### Pull records from the Leads object in Connectwise
 
 ```console
-php app/console mautic:integration:synccontacts --integration=Connectwise
+php bin/console mautic:integration:synccontacts --integration=Connectwise
 ```
 
 `mautic:integration:fetchleads` is a alias of this command.
@@ -68,7 +68,7 @@ php app/console mautic:integration:synccontacts --integration=Connectwise
 #### Push activities to the Connectwise custom object described below
 
 ```console
-php app/console mautic:integration:pushactivity --integration=Connectwise
+php bin/console mautic:integration:pushactivity --integration=Connectwise
 ```
 
 `mautic:integration:pushleadactivity` is a alias of this command.

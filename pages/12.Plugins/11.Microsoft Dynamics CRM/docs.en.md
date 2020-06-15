@@ -107,7 +107,7 @@ If you don't have a Dynamics CRM account, follow the instructions below to creat
 Follow [these steps][testing] to test the integration.
 
 1. The plugin is ready. You can test using "Push to Integration" form and campaign actions.
-1. You can also test by executing the command: `php app/console mautic:integration:fetchleads -i Dynamics`
+1. You can also test by executing the command: `php bin/console mautic:integration:fetchleads -i Dynamics`
 
 
 [field-mapping]: </plugins/general-resources/field-mapping>

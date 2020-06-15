@@ -41,7 +41,7 @@ The basics of campaign creation are handled easily by the initial screen but the
 Executing starting actions for contacts newly added to the campaign, scheduled actions and the actions on the "non-action" decision paths, must be triggered by the system. To do so, create a [cron job][cron-jobs] that executes the following command at the desired interval:
 
 ```
-php /path/to/mautic/app/console mautic:campaigns:trigger --env=prod
+php /path/to/mautic/bin/console mautic:campaigns:trigger --env=prod
 ```
 
 If you want to execute the command at different intervals for specific campaigns, you can pass the `--campaign-id=ID` argument to the command.
@@ -51,7 +51,7 @@ If you want to execute the command at different intervals for specific campaigns
 Batch adding/removing contacts for campaigns is done by using the following command:
 
 ```
-php /path/to/mautic/app/console mautic:campaigns:update --env=prod
+php /path/to/mautic/bin/console mautic:campaigns:update --env=prod
 ```
 
 See documentation on [cron jobs][cron-jobs] for further detail.
