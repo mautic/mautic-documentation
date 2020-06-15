@@ -13,7 +13,7 @@ facebookenable: true
 
 If you want to know more about all the upgrade steps of the Mautic 3 upgrade process, this is the place to be.
 
-The upgrade process consists of multiple steps to make it as robust as possible. If the process fails at a certain step, you can find all details about the specific error code on the [Mautic 3 upgrade errors](../mautic-3-upgrade-errors) page.
+The upgrade process consists of multiple steps to make it as robust as possible. If the process fails at a certain step, you can find all details about the specific error code on the [Mautic 3 upgrade errors][errors] page.
 
 If you use the web interface to do the upgrade, and you're stuck, you can always go to a specific step by adding the step code to the URL, e.g. `upgrade_v3.php#buildCache`. **Please note that we don't support manually switching between steps, only do so when support asks you to do so!**
 
@@ -51,11 +51,17 @@ If `mysqldump` is available, we create a database backup. Especially on shared h
 ### 3. Apply Mautic 2 database migrations
 Code: applyV2Migrations
 
+During this stage we are applying any database migration is that remain outstanding for your Mautic 2.16.3 instance. This can sometimes happen if a previous update has not completed successfully. It is important that your database has all of the updates required before we proceed.
+
 ### 4. Download Mautic 3 upgrade package
 Code: fetchUpdates
 
+In this stage we are downloading the Mautic 3 upgrade package from the server.
+
 ### 5. Extract Mautic 3 files
 Code: extractUpdate
+
+In this stage we are extracting the files from the upgrade package and saving them into a folder which we will then use for your migration.
 
 ### 6. Move Mautic 2 files into backup folder, move Mautic 3 files into root folder
 Code: moveMautic2and3Files
@@ -65,7 +71,7 @@ This is where a lot of magic happens. A complete backup is taken of your Mautic 
 ### 7. Update config/local.php with new configuration parameters
 Code: updateLocalConfig
 
-A few configuration parameters have changed in Mautic 3; the upgrade script automatically updates them for you if necessary. To get an overview of all changes configuration parameters, see our [update doc](https://github.com/mautic/mautic/blob/3.x/UPGRADE-3.0.md#configuration).
+A few configuration parameters have changed in Mautic 3; the upgrade script automatically updates them for you if necessary. To get an overview of all changes configuration parameters, see our [update doc][upgrade].
 
 ### 8. Apply Mautic 3 database migrations
 Code: applyMigrations
@@ -93,3 +99,6 @@ Code: finished
 Cleans up some last files, and allows the user to open Mautic 3.
 
 A last step that is offered at the end of the upgrade, is to **remove backup files**. The user is advised to remove the backup files as soon as possible; this step also removes the upgrade script itself.
+
+[errors]: </mautic-3-upgrade/mautic-3-upgrade-errors>
+[upgrade]: <https://github.com/mautic/mautic/blob/3.x/UPGRADE-3.0.md#configuration>
