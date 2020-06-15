@@ -19,5 +19,5 @@ Are you ready for Mautic 3? Let's get started!
 * [Upgrade steps][steps]
 
 [getting-started]: </mautic-3-upgrade/getting-started>
-[upgrade]: </mautic-3-upgrade/mautic-3-upgrade-errors>
+[errors]: </mautic-3-upgrade/mautic-3-upgrade-errors>
 [steps]: </mautic-3-upgrade/upgrade-steps>
