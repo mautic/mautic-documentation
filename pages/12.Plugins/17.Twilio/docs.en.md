@@ -1,12 +1,17 @@
 ---
 title: Twilio
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
 taxonomy:
     category:
         - docs
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 -------------------
