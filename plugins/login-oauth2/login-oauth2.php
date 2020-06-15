@@ -125,7 +125,9 @@ class LoginOauth2Plugin extends Plugin
      */
     public function onLoginPage()
     {
-        $this->grav['login']->addProviderLoginTemplate('login-oauth2/login-oauth2.html.twig');
+        if ($this->grav['oauth2']->getProviders()) {
+            $this->grav['login']->addProviderLoginTemplate('login-oauth2/login-oauth2.html.twig');
+        }
     }
 
     /**
@@ -207,7 +209,7 @@ class LoginOauth2Plugin extends Plugin
 
                     $event->defRedirect(
                         $this->grav['session']->redirect_after_login
-                            ?: $this->grav['config']->get('plugins.login.redirect_after_login')
+                            ?: LoginPlugin::defaultRedirectAfterLogin()
                             ?: $this->grav['uri']->referrer('/')
                     );
                 } else {
