@@ -20,4 +20,4 @@ Messages are put into the queue with status pending, so all pending messages tha
 
 Setup your cron as followed:
 
-`php app/console mautic:messages:send`
+`php bin/console mautic:messages:send`

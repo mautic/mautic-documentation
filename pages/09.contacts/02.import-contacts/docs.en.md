@@ -56,12 +56,12 @@ Background import jobs (CLI command triggered manually or via a cron job) have t
 
 This option is available since [Mautic 2.9][release-2.9.0].
 
-> **Warning** background import require the command `php /path/to/mautic/app/console mautic:import` to run periodically. Add it to your [cron jobs][cron].
+> **Warning** background import require the command `php /path/to/mautic/bin/console mautic:import` to run periodically. Add it to your [cron jobs][cron].
 
 Successful result of the [background job][cron] can look like this:
 
 ```console
-$ app/console mautic:import
+$ bin/console mautic:import
  48/48 [============================] 100%
 48 lines were processed, 0 items created, 48 items updated, 0 items ignored in 4.78 s
 ```

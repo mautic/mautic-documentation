@@ -9,10 +9,10 @@ taxonomy:
 -------------------------
 
 Sometimes you may need to use the command line with Mautic.  Here follows a list of the CLI commands that can be used.
- 
-You can find this list (and others - for example commands relating to Doctrine and other vendors) by typing 
 
-`app/console`
+You can find this list (and others - for example commands relating to Doctrine and other vendors) by typing
+
+`bin/console`
 
 at the command line in your Mautic directory.
 
@@ -33,7 +33,7 @@ Options:
 
 ## Mautic commands
 
-These are the commands you may need to use in relation to your Mautic instance.  They should be preceded by app/console.
+These are the commands you may need to use in relation to your Mautic instance.  They should be preceded by bin/console.
 
 | Command  | Description  |
 |---|---|

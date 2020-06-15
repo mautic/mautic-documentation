@@ -165,7 +165,7 @@ When the [cron job][cron] that synchronizes the data runs, it retrieves the new 
 
 The [cron job][cron] to synchronize the events is
 
-    php app/console mautic:citrix:sync
+    php bin/console mautic:citrix:sync
 
     Usage:
         mautic:citrix:sync [options]
@@ -182,7 +182,7 @@ Follow these steps to include a _GoToWebinar Join Button_ in a Segment email:
 
 1. Create a new contact and use the email address to register for the new webinar
 
-1. Run the Citrix Sync console command: `php app/console mautic:citrix:sync` so that the webinar information is retrieved to the database.
+1. Run the Citrix Sync console command: `php bin/console mautic:citrix:sync` so that the webinar information is retrieved to the database.
 
 1. Create a Segment with a "Webinar (registered)" filter.
 
@@ -192,7 +192,7 @@ Follow these steps to include a _GoToWebinar Join Button_ in a Segment email:
 
     ![edit Segment](https://cloud.githubusercontent.com/assets/2924026/24730532/5ff1f31e-1a21-11e7-9e5f-fbdc604c0883.png)
 
-1. Add the Contact to the Segment manually or by running `php app/console mautic:segments:update`
+1. Add the Contact to the Segment manually or by running `php bin/console mautic:segments:update`
 
 1. Create a new Segment Email and assign the previously created segment.
 
