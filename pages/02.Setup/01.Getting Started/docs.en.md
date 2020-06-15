@@ -21,7 +21,7 @@ Awesome! You've downloaded a marketing automation tool. That's a great first ste
 
 ## Step 1: Install Mautic
 
-If you have already downloaded the zip from the download page or have installed Mautic through some other source (Softaculous, Bitnami, Digital Ocean etc...) then you have already completed the first step. If not then you will need to upload the Mautic package (a zip file) to your server; unzip the files; and then navigate to that location in your browser.
+If you have already downloaded the zip from the [download page][download-page] or have installed Mautic through some other source (Softaculous, Bitnami, Digital Ocean etc...) then you have already completed the first step. If not then you will need to upload the Mautic package (a zip file) to your server; unzip the files; and then navigate to that location in your browser.
 
 As an example, if your domain is `example.com` and you have unzipped the file into a folder called `mautic`, you would then browse to `https://example.com/mautic` to start the installation process.
 
@@ -37,7 +37,7 @@ If you have access to the command line, you can run the following commands to re
 
 #### Finding your website root directory
 
-Depending on your server configuration, the default path to a _website_ is usually something similar to `/var/www/website` or `/var/www/website/public_html`. For [Apache](https://httpd.apache.org/docs/current/) this is the [DocumentRoot](https://httpd.apache.org/docs/current/mod/core.html#documentroot) path and for [nginx](https://nginx.org/en/docs/) it is the [`root`](https://nginx.org/en/docs/http/ngx_http_core_module.html#root) path.
+Depending on your server configuration, the default path to a _website_ is usually something similar to `/var/www/website` or `/var/www/website/public_html`. For [Apache][apache] this is the [DocumentRoot][document-root] path and for [Nginx][nginx] it is the [`root`][root] path.
 
 > NB: the _website_ is also known as _site_, _vhost_, _virtualhost_ or _server block_.
 
@@ -117,7 +117,7 @@ The next step allows you to configure the way in which email is sent from your M
 
 ![email config](email-config.png)
 
-If you are testing, whether locally or on a live server, it is highly recommended to make use of [Mailhog](https://github.com/mailhog/MailHog) or similar to capture all outgoing emails, until you are ready to send to real recipients. Otherwise, in a production environment you will need to choose whether you want to send email immediately, or queue email (and process it when the Cron job runs), and provide the appropriate server, port, encryption type, credentials and authentication mode for the systems you wish to use.
+If you are testing, whether locally or on a live server, it is highly recommended to make use of [Mailhog][mailhog] or similar to capture all outgoing emails, until you are ready to send to real recipients. Otherwise, in a production environment you will need to choose whether you want to send email immediately, or queue email (and process it when the Cron job runs), and provide the appropriate server, port, encryption type, credentials and authentication mode for the systems you wish to use.
 
 ### Admin login
 
@@ -125,21 +125,21 @@ Now you have completed the setup process, you will be directed to the back-end l
 
 ## Step 2: Add Cron Jobs
 
-Once you've installed Mautic you will need to create a few standard [cron jobs][cron] to have your software process various tasks. These [cron jobs][cron] can be created through a cPanel or added through command line. Here is a list of the [cron jobs][cron] you'll need to create. (Please note: "/path/to/mautic..." will reflect the directory where your version of Mautic is installed, and you may need to replace 'php' with the path to PHP on your server. Ask your hosting provider if you are not sure.)
+Once you've installed Mautic you will need to create a few standard [cron jobs][cron-jobs] to have your software process various tasks. These [cron jobs][cron-jobs] can be created through a cPanel or added through command line. Here is a list of the [cron jobs][cron-jobs] you'll need to create. (Please note: "/path/to/mautic..." will reflect the directory where your version of Mautic is installed, and you may need to replace 'php' with the path to PHP on your server. Ask your hosting provider if you are not sure.)
 
 ### Updating Segments
 
-`php /path/to/mautic/app/console mautic:segments:update`
+`php /path/to/mautic/bin/console mautic:segments:update`
 
 ### Update Campaigns
 
-`php /path/to/mautic/app/console mautic:campaigns:update`
+`php /path/to/mautic/bin/console mautic:campaigns:update`
 
 ### Execute Campaign Actions
 
-`php /path/to/mautic/app/console mautic:campaigns:trigger`
+`php /path/to/mautic/bin/console mautic:campaigns:trigger`
 
-Review the page on [cron jobs][cron] for more information on these and other optional cron jobs.
+Review the page on [cron jobs][cron-jobs] for more information on these and other optional cron jobs.
 
 ## Step 3: Download the IP lookup service database
 
@@ -168,7 +168,15 @@ After installation and setup of the cron jobs you're ready to begin tracking con
 
 You will need to change the site URL (replace example.com/mautic with the URL to your Mautic instance) in the above script.
 
-Checkout [Contact Monitoring](./../contacts/contact_monitoring.html) for more details.
+Checkout [Contact Monitoring][contact-monitoring] for more details.
 
 
 
+[download-page]: <https://www.mautic.org/download>
+[apache]: <https://httpd.apache.org/docs/current/>
+[document-root]: <https://httpd.apache.org/docs/current/mod/core.html#documentroot>
+[nginx]: <https://nginx.org/en/docs/>
+[root]: <https://nginx.org/en/docs/http/ngx_http_core_module.html#root>
+[mailhog]: <https://github.com/mailhog/MailHog>
+[cron-jobs]: </setup/cron-jobs>
+[contact-monitoring]: </contacts/manage-contacts/contact-monitoring> 

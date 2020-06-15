@@ -13,7 +13,7 @@ taxonomy:
 
 ## Mautic - Salesforce CRM plugin
 
-[Mautic] can push a contact to [Salesforce CRM] based on [Contact actions][testing] or [Point Triggers][points].
+[Mautic][mautic] can push a contact to [Salesforce CRM][salesforce-crm] based on [Contact actions][testing] or [Point Triggers][points].
 
 > **Note**
 >
@@ -29,12 +29,11 @@ taxonomy:
 > - _lead lists_ were renamed to _**segments**_
 > - _anonymous leads_ were renamed to _**visitors**_
 
-[release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
 
 ## Requirements
 
-1. Create a [Salesforce CRM] account if you don't have one already.
-1. Your [Mautic] instance has to run on `https://`.
+1. Create a [Salesforce CRM][salesforce-crm] account if you don't have one already.
+1. Your [Mautic][mautic] instance has to run on `https://`.
 
     Salesforce will not allow you to create an App with a `http://` callback URL.
 
@@ -42,7 +41,7 @@ taxonomy:
 
 ### Authorize App
 
-There is [official documentation](http://feedback.uservoice.com/knowledgebase/articles/235661-get-your-key-and-secret-from-salesforce) about how to get the _Consumer Key_ and _Consumer Secret_ although it doesn't seem to be updated.
+There is [official documentation][official-documentation] about how to get the _Consumer Key_ and _Consumer Secret_ although it doesn't seem to be updated.
 
 Follow these steps to get the Salesforce _Consumer_ credentials
 
@@ -76,10 +75,10 @@ Follow these steps to get the Salesforce _Consumer_ credentials
     _Consumer ID_ is the _Consumer Key_
     ![Salesforce CRM Authorize](plugins-salesforce-authorize.png "Salesforce CRM Authorize")
 
-1. Configure the [field mapping][field mapping].
+1. Configure the [field mapping][field-mapping].
 
-    - Formula fields from Salesforce will be pulled and can be saved into a Mautic [custom field].
-    - Salesforce's lead Id can be matched to a Mautic [custom field].
+    - Formula fields from Salesforce will be pulled and can be saved into a Mautic [custom field][custom-field].
+    - Salesforce's lead Id can be matched to a Mautic [custom field][custom-field].
 
 ### Features
 
@@ -87,7 +86,7 @@ Follow these steps to get the Salesforce _Consumer_ credentials
 
 - You can pull leads and/or push leads from and to the integration.
 - Push leads is done through a Form action or a Campaign action.
-- Pull leads is done through command line and it can be setup as a [cron job][cron].
+- Pull leads is done through command line and it can be setup as a [cron job][cron-job].
 
 ![Salesforce CRM features](plugins-salesforce-features.png "Salesforce CRM features")
 
@@ -113,7 +112,7 @@ To push or pull records from Salesforce you need to run the Mautic integration c
 #### Pull records from the Leads object in Salesforce
 
 ```console
-php app/console mautic:integration:synccontacts --integration=Salesforce
+php bin/console mautic:integration:synccontacts --integration=Salesforce
 ```
 
 `mautic:integration:fetchleads` is a alias of this command.
@@ -121,7 +120,7 @@ php app/console mautic:integration:synccontacts --integration=Salesforce
 #### Push activities to the Salesforce custom object described below
 
 ```console
-php app/console mautic:integration:pushactivity --integration=Salesforce
+php bin/console mautic:integration:pushactivity --integration=Salesforce
 ```
 
 `mautic:integration:pushleadactivity` is a alias of this command.
@@ -262,16 +261,14 @@ Follow [these steps][testing] to test the integration.
 This means the API is not turned on in your Salesforce account. [Read more][salesforce-admin]
 
 
-[Salesforce CRM]: <https://www.salesforce.com/>
+[salesforce-crm]: <https://www.salesforce.com/>
 [salesforce-admin]: <https://help.salesforce.com/apex/HTViewHelpDoc?id=admin_userperms.htm&language=en>
-
+[official-documentation]: <http://feedback.uservoice.com/knowledgebase/articles/235661-get-your-key-and-secret-from-salesforce>
 [mautic]: <https://mautic.org>
-[Mautic]: <https://mautic.org>
-
-[field mapping]: <field_mapping.html>
-[testing]: <integration_test.html>
-[points]: <./../points>
-[custom field]: <./../contacts/manage_fields.html>
-[cron]: <./../setup/cron_jobs.html>
-
+[field-mapping]: </plugins/general-resources/field-mapping>
+[testing]: </plugins/general-resources/integration-test>
+[points]: </points>
+[custom-field]: </contacts/manage-fields>
+[cron-job]: </setup/cron-jobs>
 [release-2.15.0]: <https://github.com/mautic/mautic/releases/tag/2.15.0>
+[release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>

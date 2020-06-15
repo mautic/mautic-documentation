@@ -8,9 +8,9 @@ taxonomy:
 
 -------------------------
 
-Sometimes you may need to use the command line with Mautic.  Here follows a list of the CLI commands that can be used.
- 
-You can find this list (and others - for example commands relating to Doctrine and other vendors) by typing 
+Sometimes you may need to use the command line (CLI) with Mautic.  Here follows a list of the CLI commands that can be used.
+
+You can find this list (and others - for example commands relating to Doctrine and other vendors) by typing
 
 `bin/console`
 
