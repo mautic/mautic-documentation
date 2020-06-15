@@ -13,7 +13,7 @@ taxonomy:
 
 ## iContact integration
 
-[Mautic] can push contacts to [iContact] based on [Contact actions][testing] or [Point Triggers][points].
+[Mautic][mautic] can push contacts to [iContact][iContact] based on [Contact actions][testing] or [Point Triggers][points].
 
 > **Note**
 >
@@ -29,25 +29,24 @@ taxonomy:
 > - _lead lists_ were renamed to _**segments**_
 > - _anonymous leads_ were renamed to _**visitors**_
 
-[release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
 
 ## Authorize
 
-In order to connect your [iContact] account with [Mautic], you'll have to create an [iContact APP].
+In order to connect your [iContact][iContact] account with [Mautic][mautic], you'll have to create an [iContact APP][iContact-app].
 
-Follow the [tutorial][iContact APP] to create your [iContact APP].
+Follow the [tutorial][iContact-app] to create your [iContact APP][iContact-app].
 
-When you have your [APP][iContact APP] created, you should be able to see this screen:
+When you have your [APP][iContact-app] created, you should be able to see this screen:
 
 ![iContact - create a App Key](plugins-icontact-authorization-details.png "iContact - create a App Key")
 
 ## Configure the plugin
 
-1. Fill in the new credentials for [Mautic] - [iContact] integration:
+1. Fill in the new credentials for [Mautic][mautic] - [iContact][iContact] integration:
 
    - APP ID = the Application ID you created
-   - APP username = the email you use to log into your [iContact] account. (Not the APP name)
-   - APP password = The password chosen when saving the [APP][iContact APP].
+   - APP username = the email you use to log into your [iContact][iContact] account. (Not the APP name)
+   - APP password = The password chosen when saving the [APP][iContact-app].
 
     ![iContact - authoriztion](plugins-icontact-authorization.png "iContact - authorization")
 
@@ -59,9 +58,9 @@ When you have your [APP][iContact APP] created, you should be able to see this s
 
    1. In the _Features_ tab select *Push contacts to this integration* checkbox.
 
-    It is checked by default. If you uncheck it, the plugin will not push contacts to [iContact] any more.
+    It is checked by default. If you uncheck it, the plugin will not push contacts to [iContact][iContact] any more.
 
-1. Configure the [field mapping][field mapping].
+1. Configure the [field mapping][field-mapping].
 
 1. Save the plugin configuration.
 
@@ -70,11 +69,9 @@ When you have your [APP][iContact APP] created, you should be able to see this s
 Follow [these steps][testing] to test the integration.
 
 [iContact]: <https://www.icontact.com>
-[iContact APP]: <https://www.icontact.com/developerportal/documentation/register-your-app/>
-
+[iContact-app]: <https://www.icontact.com/developerportal/documentation/register-your-app/>\
+[release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
 [mautic]: <https://mautic.org>
-[Mautic]: <https://mautic.org>
-
-[field mapping]: <field_mapping.html>
-[testing]: <integration_test.html>
-[points]: <./../points>
+[field-mapping]: </plugins/general-resources/field-mapping>
+[testing]: </plugins/general-resources/integration-test>
+[points]: </points>

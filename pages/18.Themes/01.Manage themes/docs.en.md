@@ -18,7 +18,7 @@ The table of installed themes shows you the name of the theme, the author name a
 
 ### Install new theme
 
-A new theme can be installed as a zip package. The zip package must have the same structure as the themes preinstalled at Mautic. Than means there must be the config.json file present in the root folder of the zip package. More on that can be found in the [developer documentation](https://developer.mautic.org/#theme-directory-structure).
+A new theme can be installed as a zip package. The zip package must have the same structure as the themes preinstalled at Mautic. Than means there must be the config.json file present in the root folder of the zip package. More on that can be found in the [developer documentation][developer-documentation].
 
 If you have the theme zip package either created by yourself or downloaded from a theme provider, in the top right corner of the Themes page is the upload form. Click the "Choose File" button to choose the zip file, then click Install. The notice will appear if the installation was successful and if so, the new theme appears in the table of currently installed themes.
 
@@ -52,3 +52,4 @@ Themes are available for emails and landing pages on each one's main editing pag
 
 
 
+[developer-documentation]: <https://developer.mautic.org/#theme-directory-structure>

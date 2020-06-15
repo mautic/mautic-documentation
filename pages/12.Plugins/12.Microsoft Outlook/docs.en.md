@@ -19,7 +19,7 @@ This plugin allows for the Outlook Add-In to keep track of emails sent to leads.
 
 - Mautic installed on a publicly accessible URL.
 - Microsoft Outlook 2013 or 2016.
-- [Mautic Outlook Add-In for Outlook 2013/2016](https://m.mautic.com/asset/24:microsoft-outlook-plugin-102)
+- [Mautic Outlook Add-In for Outlook 2013/2016][outlook]
 - Emails should be sent in HTML format.
 
 ### Configure the plugin
@@ -32,7 +32,7 @@ Even if the plugin is compatible to Outlook 2013, this will describe the install
 2. Click on the Outlook plugin button and enter a secret or key to validate the Outlook Add-In
 ![image](secret.png)
 
-3. Run the [Mautic Outlook Add-In Installer](https://m.mautic.com/asset/24:microsoft-outlook-plugin-102) on a Windows machine with Outlook 2016
+3. Run the [Mautic Outlook Add-In Installer][add-in-installer] on a Windows machine with Outlook 2016
 
 4. On the Outlook 2016 Options window, select Add-Ins and click on the Add-In Options button
 ![image](outlook_addin.png)
@@ -87,3 +87,6 @@ You can check if the tracking URL that is added in Outlook is correct this way:
 - a blank (black) page should show. Not an error page like a 404 or file not found
 - when the URL is correct, got to mautic/contacts and check it the contact was added or if an event was added to an existing contact
 - you can also create a report for visited pages and filter for the tracking URL 
+
+[outlook]: <https://m.mautic.com/asset/24:microsoft-outlook-plugin-102>
+[add-in-installer]: <https://m.mautic.com/asset/24:microsoft-outlook-plugin-102>

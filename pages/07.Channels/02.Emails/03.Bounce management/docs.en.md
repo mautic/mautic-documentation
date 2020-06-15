@@ -59,7 +59,7 @@ All contacts with bounced emails should appear in this segment.
 
 1. Login to your Elastic Email account and go to Settings -> Notification.
 
-2. Fill in the Notification URL as https://mautic.example.com/mailer/elasticemail/callback
+2. Fill in the Notification URL as [https://mautic.example.com/mailer/elasticemail/callback][elasticemail-callback]
 
 3. Check  these actions:  Unsubscribed, Complaints, Bounce/Error
 
@@ -191,3 +191,4 @@ Mautic 2.2.0 supports the following webhooks: Message is Bounced, Message is Blo
 [mautic-120]: <https://github.com/mautic/mautic/releases/tag/1.2.0>
 [elasticemail-help]: <https://www.elasticemail.com/support>
 [elasticemail-support]: <https://support.elasticemail.com/>
+[elasticemail-callback]: <https://mautic.example.com/mailer/elasticemail/callback>

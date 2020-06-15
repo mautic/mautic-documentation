@@ -41,13 +41,13 @@ A user can define her own language and override the default language. This lets 
 
 ## How to translate Mautic
 
-Mautic can be translated to any language. As Mautic is a community project, it can be translated by any community member to any language. Translations are made in the [Transifex](https://www.transifex.com/mautic/mautic/) web app.
+Mautic can be translated to any language. As Mautic is a community project, it can be translated by any community member to any language. Translations are made in the [Transifex][transifex] web app.
 
-1. Create an account at [Transifex](https://www.transifex.com/mautic/mautic/) if you don't have one already.
-2. Take a look at the [list of languages](https://www.transifex.com/mautic/mautic/) which were created for the project already.
+1. Create an account at [Transifex][transifex] if you don't have one already.
+2. Take a look at the [list of languages][transifex] which were created for the project already.
 3. Create a language if your language is missing or apply for an existing language.
 
-Take a look at official [Transifex Documentation](http://docs.transifex.com/tutorials/txeditor/) if you have any questions about the translation process.
+Take a look at official [Transifex Documentation][transifex-documentation]if you have any questions about the translation process.
 
 ## How to update a language
 
@@ -60,4 +60,9 @@ A language is downloaded automatically every time the configuration is saved and
 
 The language should be downloaded again with the latest translations. The translations are generated from Transifex once a day.
 
-If you have any questions about translations, join the community in the [Slack #Translations channel](https://www.mautic.org/slack/).
+If you have any questions about translations, join the community in the [Slack #Translations channel][slack-channel].
+
+
+[transifex]: <https://www.transifex.com/mautic/mautic/>
+[transifex-documentation]: <http://docs.transifex.com/tutorials/txeditor/>
+[slack-channel]: <https://mautic.slack.com/archives/C02HV79J2>

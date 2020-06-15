@@ -29,7 +29,7 @@ taxonomy:
 
 ## Contact fields
 
-See [managing custom fields][custom fields] for more information.
+See [managing custom fields][custom-field] for more information.
 
 | **VARIABLE NAME**                                  | **VARIABLE SYNTAX**                         |
 | :------------------------------------------------- | :------------------------------------------ |
@@ -84,7 +84,7 @@ See [Companies][companies] for more information.
 
 ## Mautic Component tokens
 
-See [Components][components] and [Manage Pages][manage pages] for more information.
+See [Components][components] and [Manage Pages][manage-pages] for more information.
 
 | **VARIABLE NAME**                                  | **VARIABLE SYNTAX**                         |
 | :------------------------------------------------- | :------------------------------------------ |
@@ -95,7 +95,7 @@ See [Components][components] and [Manage Pages][manage pages] for more informati
 
 ## Email specific tokens
 
-See [Manage Emails][manage emails] for more information.
+See [Manage Emails][manage-emails] for more information.
 
 | **VARIABLE NAME**                                  | **VARIABLE SYNTAX**                         |
 | :------------------------------------------------- | :------------------------------------------ |
@@ -109,7 +109,7 @@ See [Manage Emails][manage emails] for more information.
 
 ## Landing Page tokens
 
-See [Manage Pages][manage pages] for more information.
+See [Manage Pages][manage-pages] for more information.
 
 | **VARIABLE NAME**                                  | **VARIABLE SYNTAX**                         |
 | :------------------------------------------------- | :------------------------------------------ |
@@ -121,7 +121,7 @@ See [Manage Pages][manage pages] for more information.
 
 ### Preference Center Landing Page tokens
 
-See [customizing preference center][make pref center] for more information.
+See [customizing preference center][make-pref-center] for more information.
 
 | **VARIABLE NAME**                                  | **VARIABLE SYNTAX**                         |
 | :------------------------------------------------- | :------------------------------------------ |
@@ -140,7 +140,7 @@ See [customizing preference center][make pref center] for more information.
 
 ## Contact Monitoring
 
-See [Contact Monitoring][contact monitoring] for more information.
+See [Contact Monitoring][contact-monitoring] for more information.
 
 | **VARIABLE NAME**                                  | **VARIABLE SYNTAX**                         |
 | :------------------------------------------------- | :------------------------------------------ |
@@ -231,11 +231,11 @@ See the [Search][search] page for more information.
 
 <!-- Page links -->
 
-[companies]: <./../companies/>
-[components]: <./../components/>
-[contact monitoring]: <./../contacts/contact_monitoring.html>
-[custom fields]: <./../contacts/manage_fields.html>
-[make pref center]: <./../contacts/customize_preference_center.html>
-[manage emails]: <./../emails/manage_emails.html>
-[manage pages]: <./../pages/manage_pages.html>
-[search]: <./../search/>
+[companies]: </contacts/companies>
+[components]: </components>
+[contact-monitoring]: </contacts/manage-contacts/contact-monitoring> 
+[custom-field]: </contacts/manage-fields>
+[make-pref-center]: </contacts/preference-center/customize-preference-center>
+[manage-emails]: </channels/emails/managing-emails>
+[manage-pages]: </components/pages/managing-pages>
+[search]: </search>

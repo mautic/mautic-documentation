@@ -19,6 +19,6 @@ If you are on a freshly installed Mautic instance, there is a chance that you do
 
 If you are trying to install a new plugin that did not come with the original Mautic installation files and it does not appear after you click on "Install/Upgrade plugins", [clear your Mautic cache][cache] and try the _**Install/Upgrade plugins**_ button again.
 
-[cache]: <./../tips/troubleshooting.html>
+[cache]: </troubleshooting#1-clear-the-cache>
 
 [developer-docs-plugins]: <https://developer.mautic.org#plugins>
