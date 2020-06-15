@@ -1,18 +1,9 @@
 ---
 title: 'Command Line Interface (CLI) commands'
+slug: command-line-tools-cli
 taxonomy:
     category:
         - docs
-slug: command-line-tools-cli
-twitterenable: true
-twittercardoptions: summary
-articleenabled: false
-orgaenabled: false
-orga:
-    ratingValue: 2.5
-orgaratingenabled: false
-personenabled: false
-facebookenable: true
 ---
 
 -------------------------
@@ -88,6 +79,5 @@ These are the commands you may need to use in relation to your Mautic instance. 
 | social:monitor:twitter:mentions  | Searches for mentioned tweets   |
 
 ## Doctrine commands
-| Command  | Description  |
-|---|---|
+
 | doctrine:fixtures:load   | Installs Mautic sample data, overwriting existing data  |
