@@ -8,7 +8,7 @@ taxonomy:
 
 -------------------------
 
-Sometimes you may need to use the command line with Mautic.  Here follows a list of the CLI commands that can be used.
+Sometimes you may need to use the command line (CLI) with Mautic.  Here follows a list of the CLI commands that can be used.
 
 You can find this list (and others - for example commands relating to Doctrine and other vendors) by typing
 
@@ -51,7 +51,6 @@ These are the commands you may need to use in relation to your Mautic instance. 
 | mautic:email:fetch  | Fetch and process monitored email.  |
 | mautic:emails:send   | Processes SwiftMail's mail queue  |
 | mautic:import  | Imports data to Mautic  |
-| mautic:install:data   | Installs Mautic with sample data  |
 | mautic:integration:fetchleads  | Fetch leads from integration.  |
 | mautic:integration:pipedrive:fetch  | Pulls the data from Pipedrive and sends it to Mautic  |
 | mautic:integration:pipedrive:push  | Pushes the data from Mautic to Pipedrive  |
@@ -78,3 +77,7 @@ These are the commands you may need to use in relation to your Mautic instance. 
 | mautic:webhooks:process  | Process queued webhook payloads  |
 | social:monitor:twitter:hashtags  | Looks at our monitoring records and finds hashtags  |
 | social:monitor:twitter:mentions  | Searches for mentioned tweets   |
+
+## Doctrine commands
+
+| doctrine:fixtures:load   | Installs Mautic sample data, overwriting existing data  |
