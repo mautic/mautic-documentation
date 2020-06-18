@@ -88,12 +88,12 @@ This step requires some manual intervention - there is no command for this part.
 
 To update the files manually, you will have to:
 1. Back up (download) all Mautic files from your server to your local computer, using FTP or the [scp command][scp-command] which is much faster.
-2. Delete all Mautic files and folders.  Use FTP or the [rm command][rm-command] (use the latter with extreme caution)
-3. Download the latest Mautic package from [https://www.mautic.org/download][mautic-download]
-4. Upload the zip package to the server, to the Mautic folder, using FTP or the [scp command][scp-command] which is much faster.
-5. Unzip the package with unzip 2.16.zip (change the filename to match the one you have uploaded).  You can then remove the zip file using the command         rm 2.16.zip
-6. Upload app/config/local.php from your backup on your local machine to the fresh Mautic folder on the server (Mautic should now run)
-7. Upload your custom data if you have some. Custom fields may be found in the following folders: media/files; plugins; themes; translations
+1. Delete all Mautic files and folders.  Use FTP or the [rm command][rm-command] (use the latter with extreme caution)
+1. Download the latest Mautic package from [https://www.mautic.org/download][mautic-download]
+1. Upload the zip package to the server, to the Mautic folder, using FTP or the [scp command][scp-command] which is much faster.
+1. Unzip the package with unzip 2.16.zip (change the filename to match the one you have uploaded).  You can then remove the zip file using the command         rm 2.16.zip
+1. Upload app/config/local.php from your backup on your local machine to the fresh Mautic folder on the server (Mautic should now run)
+1. Upload your custom data if you have some. Custom fields may be found in the following folders: media/files; plugins; themes; translations
 
 ## I don't have SSH access
 
