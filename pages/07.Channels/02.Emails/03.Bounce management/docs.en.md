@@ -48,10 +48,10 @@ If you select an Unsubscribe folder, Mautic will also append the email as part o
 This is not required, but if you want to be able to select the contacts with bounced emails easily - for example to delete all bounced contacts - create a segment with bounced emails.
 
 1. Go to _Segments / New_.
-2. Type in the segment name. For example _Bounced emails_.
-3. Select the _Filters_ tab.
-4. Create new _Bounced Email_ equals _Yes_ filter.
-5. Wait for the `app/console mautic:segments:update` command to be automatically triggered by a cron job or execute it manually.
+1. Type in the segment name. For example _Bounced emails_.
+1. Select the _Filters_ tab.
+1. Create new _Bounced Email_ equals _Yes_ filter.
+1. Wait for the `app/console mautic:segments:update` command to be automatically triggered by a cron job or execute it manually.
 
 All contacts with bounced emails should appear in this segment.
 
@@ -59,9 +59,9 @@ All contacts with bounced emails should appear in this segment.
 
 1. Login to your Elastic Email account and go to Settings -> Notification.
 
-2. Fill in the Notification URL as [https://mautic.example.com/mailer/elasticemail/callback][elasticemail-callback]
+1. Fill in the Notification URL as [https://mautic.example.com/mailer/elasticemail/callback][elasticemail-callback]
 
-3. Check  these actions:  Unsubscribed, Complaints, Bounce/Error
+1. Check  these actions:  Unsubscribed, Complaints, Bounce/Error
 
 ![Webhooks](elasticemail_webhook_1.png "Elastic Email notification")
 
