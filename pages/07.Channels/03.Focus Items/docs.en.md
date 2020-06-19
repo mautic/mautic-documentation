@@ -40,8 +40,8 @@ On the left, you'll see a button to switch between mobile and desktop views. A m
 The first step to building the focus item is to choose what the focus or goal is. There are three options:
 
 1. Collect data - will use a Mautic form in the output as the content. Note that it should be a very simple form (One or or two inputs) as there is very little room to work with in some of the styles. But this is great for capturing emails for a newsletter signup.
-2. Display a notice - information only and is great for announcements and the like.
-3. Emphasize a link - great for landing pages with an event, sale, promotion, etc. It displays a button to click that will direct to the given link.
+1. Display a notice - information only and is great for announcements and the like.
+1. Emphasize a link - great for landing pages with an event, sale, promotion, etc. It displays a button to click that will direct to the given link.
 
 ![](step_4.png)
 
@@ -49,8 +49,8 @@ Each focus/goal will have slightly different settings but all have a few in comm
   
 1. Animate? - Should the focus item be animated or static?
 1. When to engage - this determines when the focus is engaged based on visitor interaction. It can be immediate, on scroll, timed, or with an exit attempt. If `Visitor intends to leave` is chosen, an option appears that allows configuration if links within the site should trigger the engagement or not.
-2. How often to engage - should the visitor be engaged every time, once per session, or during a period of time? 
-3. Stop engaging after a conversion - once a user clicks the link or submits the form (not applicable for displaying a notice), enabling this option will no longer engage the visitor.
+1. How often to engage - should the visitor be engaged every time, once per session, or during a period of time? 
+1. Stop engaging after a conversion - once a user clicks the link or submits the form (not applicable for displaying a notice), enabling this option will no longer engage the visitor.
 
 ### Focus Style
 
@@ -59,9 +59,9 @@ Each focus/goal will have slightly different settings but all have a few in comm
 There are four styles supported - 
 
 1. Bar - display a bar across the top or bottom of the page
-2. Modal - a small modal window that appears centred on the page
-3. Notification - these are like modals but smaller and slide in from the side.
-4. Full page - also like a modal only it takes up the entire view.
+1. Modal - a small modal window that appears centred on the page
+1. Notification - these are like modals but smaller and slide in from the side.
+1. Full page - also like a modal only it takes up the entire view.
 
 Each style has its own settings such as position, size, sticky, etc.
 
