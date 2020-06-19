@@ -23,11 +23,11 @@ There can be a few reasons for this:
 
 1. Make sure that you are not testing the page visit while logged into Mautic. Mautic ignores user generated activity so use an anonymous session, another browser, or logout of Mautic.
 
-2. Ensure the contact getting tracked is in the campaign. The easy way to test this is to review the time line of the contact for the page hit.
+1. Ensure the contact getting tracked is in the campaign. The easy way to test this is to review the time line of the contact for the page hit.
 
-3. Campaigns are executed sequentially and will not repeat per contact. If the contact has already visited the page while part of the campaign and triggered the Visits a Page decision, subsequent visits will not re-trigger the actions associated with the decision.
+1. Campaigns are executed sequentially and will not repeat per contact. If the contact has already visited the page while part of the campaign and triggered the Visits a Page decision, subsequent visits will not re-trigger the actions associated with the decision.
 
-4. Ensure that the URL in the campaign action either matches _exactly_ the URL visited or use a wildcard (note that [a URL can include the schema, host/domain, path, query parameters, and/or fragment][url]).
+1. Ensure that the URL in the campaign action either matches _exactly_ the URL visited or use a wildcard (note that [a URL can include the schema, host/domain, path, query parameters, and/or fragment][url]).
 
 For example, if you have a URL of `http://example.com` and the page hit registers as `http://example.com/index.php?foo=bar`, the campaign decision will not be triggered. However, if you use `http://example.com*` as the URL, it'll match and thus trigger.
 

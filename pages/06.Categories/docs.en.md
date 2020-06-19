@@ -9,7 +9,7 @@ taxonomy:
 Categories are a way to organize Mautic elements. They are available for assets, campaigns, emails, focus items, forms, pages, points, social monitoring and stages. There are two ways to use categories:
 
 1. Create element-specific categories (e.g. only for assets, emails or forms)
-2. Create global categories for all Mautic elements
+1. Create global categories for all Mautic elements
 
 ## Creating/Managing Categories
 
