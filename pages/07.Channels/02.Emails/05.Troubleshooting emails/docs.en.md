@@ -35,10 +35,10 @@ Mautic tracks the click action and redirects the contact to the original locatio
 If the email click doesn't get tracked, make sure that:
 
 1. Your Mautic server is on a public URL. **Tracking doesn't work on a localhost**.
-2. Make sure the email was sent to an existing contact **via a campaign or a segment email**. Emails sent by the *Send Example* link, *direct email* (from the contact detail) or *form submission preview* won't replace links with trackables.
-3. Make sure the URL in the `href` attribute is **absolute and valid**. It should start with http:// or https://.
-4. You've opened the link in a incognito browser. More about it in the **[Campaign troubleshooting][campaign-troubleshooting].**
-5. Check if the link in the email has been replaced by Mautic's tracking link. If not, report it on [Github][mautic-github] with all the details (Mautic version, PHP version, what the link URL is before sending, what it is after sending and so on).
+1. Make sure the email was sent to an existing contact **via a campaign or a segment email**. Emails sent by the *Send Example* link, *direct email* (from the contact detail) or *form submission preview* won't replace links with trackables.
+1. Make sure the URL in the `href` attribute is **absolute and valid**. It should start with http:// or https://.
+1. You've opened the link in a incognito browser. More about it in the **[Campaign troubleshooting][campaign-troubleshooting].**
+1. Check if the link in the email has been replaced by Mautic's tracking link. If not, report it on [Github][mautic-github] with all the details (Mautic version, PHP version, what the link URL is before sending, what it is after sending and so on).
 
 ## Unsubscribe link doesn't work
 
