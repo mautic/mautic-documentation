@@ -17,6 +17,8 @@ facebookenable: true
 
 ---------------------
 
+>>> Mautic 3 introduced a new path for cron jobs `bin/console` - if you are using the legacy Mautic 2.x series you should replace this with the older version, `app/console`
+
 Mautic requires a few [cron jobs][cron-jobs] to handle some maintenance tasks. Most web hosts provide a means to add cron jobs either through SSH, cPanel, or another custom panel. Please consult your host's documentation/support if you are unsure on how to setup cron jobs.
 
 If you're new to Linux or Cron Jobs, then the Apache Foundation has [an excellent guide][apache-foundation-guide] which we would suggest that you read before asking questions via the various support channels.
