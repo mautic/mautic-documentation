@@ -36,7 +36,7 @@ For instance:
 **To keep the segments current:**
 
 ```
-php /path/to/mautic/app/console mautic:segments:update
+php /path/to/mautic/bin/console mautic:segments:update
 ```
 
 By default, the script will process contacts in batches of 300. If this is too many for your server's resources, use the option `--batch-limit=X` replacing X with the number of contacts to process each batch.
@@ -47,7 +47,7 @@ You can also limit the number of contacts to process per script execution using 
 **To keep campaigns updated with applicable contacts:**
 
 ```
-php /path/to/mautic/app/console mautic:campaigns:update
+php /path/to/mautic/bin/console mautic:campaigns:update
 ```
 
 By default, the script will process contacts in batches of 300. If this is too many for your server's resources, use the option `--batch-limit=X` replacing X with the number of contacts to process each batch.
@@ -57,7 +57,7 @@ You can also limit the number of contacts to process per script execution using 
 **To execute campaigns events:**
 
 ```
-php /path/to/mautic/app/console mautic:campaigns:trigger
+php /path/to/mautic/bin/console mautic:campaigns:trigger
 ```
 
 By default, the script will process events in batches of 100. If this is too many for your server's resources, use the option `--batch-limit=X` replacing X with the number of events to process each batch.
@@ -78,7 +78,7 @@ Messages that are marked as [_Marketing Messages_][marketing-messages] (such as 
 If the system is configured to queue emails to the filesystem, a cron job is required to process them.
 
 ```
-php /path/to/mautic/app/console mautic:emails:send
+php /path/to/mautic/bin/console mautic:emails:send
 ```
 
 ### Fetch and Process Monitored Email
@@ -86,7 +86,7 @@ php /path/to/mautic/app/console mautic:emails:send
 If using the [Bounce Management][bounce-management],
 
 ```
-php /path/to/mautic/app/console mautic:email:fetch
+php /path/to/mautic/bin/console mautic:email:fetch
 ```
 
 ### Social Monitoring
@@ -94,7 +94,7 @@ php /path/to/mautic/app/console mautic:email:fetch
 If using the [Social Monitoring][social-monitoring],
 
 ```
-php /path/to/mautic/app/console mautic:social:monitoring
+php /path/to/mautic/bin/console mautic:social:monitoring
 ```
 
 ### Webhooks
@@ -102,7 +102,7 @@ php /path/to/mautic/app/console mautic:social:monitoring
 If Mautic is configured to send webhooks in batches, use the following command to send the payloads:
 
 ```
-php /path/to/mautic/app/console mautic:webhooks:process
+php /path/to/mautic/bin/console mautic:webhooks:process
 ```
 
 ### Update MaxMind GeoLite2 IP Database
@@ -110,7 +110,7 @@ php /path/to/mautic/app/console mautic:webhooks:process
 Mautic uses [MaxMind's][maxmind] GeoLite2 IP database by default. The database is licensed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License][ccasa-unported-license] and thus cannot be packaged with Mautic. The database can be downloaded manually through Mautic's Configuration or the following script can be used as a cron job to automatically download updates. (MaxMind updates their database the first Tuesday of the month).
 
 ```
-php /path/to/mautic/app/console mautic:iplookup:download
+php /path/to/mautic/bin/console mautic:iplookup:download
 ```
 
 ### Cleanup Old Data
@@ -122,7 +122,7 @@ Use ‘--gdpr’ flag to delete data to fulfill GDPR European regulation. This w
 **This will permanently delete data! Be sure to keep database backups.**
 
 ```
-php /path/to/mautic/app/console mautic:maintenance:cleanup --days-old=365 --dry-run
+php /path/to/mautic/bin/console mautic:maintenance:cleanup --days-old=365 --dry-run
 ```
 
 ### Send Scheduled Broadcasts (e.g. segment emails)
@@ -130,7 +130,7 @@ php /path/to/mautic/app/console mautic:maintenance:cleanup --days-old=365 --dry-
 Starting with Mautic 2.2.0, it is now possible to use cron to send scheduled broadcasts for channel communications. The current only implementation of this is for segment emails. Instead of requiring a manual send and wait with the browser window open while ajax batches over the send - a command can now be used. The caveat for this is that the emails must be published and must have a published up date - this is to help prevent any unintentional email broadcasts. Just as it was with the manual/ajax process - only contacts who have not already received the specific communication will have it sent to them. This command will send messages to contacts added to the source segments later, so if you don't want this to happen, set an unpublish date.
 
 ```
-php /path/to/mautic/app/console mautic:broadcasts:send [--id=ID] [--channel=CHANNEL]
+php /path/to/mautic/bin/console mautic:broadcasts:send [--id=ID] [--channel=CHANNEL]
 ```
 
 #### Command parameters:
@@ -150,7 +150,7 @@ php /path/to/mautic/app/console mautic:broadcasts:send [--id=ID] [--channel=CHAN
 Starting with Mautic 2.12.0, it is now possible to use cron to send scheduled reports.
 
 ```
-php /path/to/mautic/app/console mautic:reports:scheduler [--report=ID]
+php /path/to/mautic/bin/console mautic:reports:scheduler [--report=ID]
 ```
 
 ## Note
@@ -165,7 +165,7 @@ To assist in troubleshooting cron issues, you can pipe the output of each cron j
 
 Example output
 ```
-$ php app/console mautic:segments:update --no-interaction --no-ansi
+$ php bin/console mautic:segments:update --no-interaction --no-ansi
 [2016-09-08 06:13:57] Rebuilding contacts for segment 1
 [2016-09-08 06:13:57] 0 total contact(s) to be added in batches of 300
 [2016-09-08 06:13:57] 0 total contact(s) to be removed in batches of 300
