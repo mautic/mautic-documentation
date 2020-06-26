@@ -20,7 +20,7 @@ facebookenable: true
 
 This serves as the [documentation][mautic-docs] for [Mautic][mautic], the open source marketing automation system.
 
-Everyone is [welcome to contribute][CONTRIBUTING] to improve this information as needed.
+Everyone is [welcome to contribute][contributing] to improve this information as needed.
 
 ## Mautic Developer documentation
 
@@ -28,7 +28,7 @@ If you are looking for details about the Mautic API, webhooks, theme or plugin d
 
 ## Contributing to the Mautic documentation
 
-See [CONTRIBUTING]
+See [CONTRIBUTING][contributing]
 
 ### License
 
@@ -38,7 +38,7 @@ The Mautic official end user documentation is licensed under the **Apache 2.0**,
 Links below
 -->
 
-[CONTRIBUTING]: </home/contributing>
+[contributing]: </home/contributing>
 
 [mautic-docs]: <https://mautic.org/docs/>
 [mautic-docs-github]: <https://github.com/mautic/documentation>
@@ -53,10 +53,6 @@ Links below
 [mautic]: <https://mautic.org/>
 [mautic-github]: <https://github.com/mautic/mautic>
 
-[cron]: <./../setup/cron_jobs.html>
-[field mapping]: <./../plugins/field_mapping.html>
-[testing]: <./../plugins/integration_test.html>
-[points]: <./../points>
 
 [gitbook]: <https://www.gitbook.com/>
 [markup]: <https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax>
