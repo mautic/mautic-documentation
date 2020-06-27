@@ -85,6 +85,6 @@ Follow [these steps][testing] to test the integration.
 [cron-job]: </setup/cron-jobs>
 [mautic]: <https://mautic.org>
 
-[field mapping]: </plugins/plugin-resources/field-mapping>
+[field-mapping]: </plugins/plugin-resources/field-mapping>
 [testing]: </plugins/plugin-resources/testing-integrations>
 [points]: </points>

@@ -42,5 +42,5 @@ You can create additional custom fields and define the data type you want that f
 
 ![new custom field](new-custom-field.jpg)
 
-[contact monitoring]: <contact_monitoring.html>
-[variables]: <./../setup/VARIABLES.html>
+[contact monitoring]: </contacts/manage-contacts/contact-monitoring>
+[variables]: </setup/variables>

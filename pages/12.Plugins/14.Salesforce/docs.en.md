@@ -265,7 +265,7 @@ This means the API is not turned on in your Salesforce account. [Read more][sale
 [salesforce-admin]: <https://help.salesforce.com/apex/HTViewHelpDoc?id=admin_userperms.htm&language=en>
 [official-documentation]: <http://feedback.uservoice.com/knowledgebase/articles/235661-get-your-key-and-secret-from-salesforce>
 [mautic]: <https://mautic.org>
-[field-mapping]: </plugins/general-resources/field-mapping>
+[field-mapping]: </plugins/plugin-resources/field-mapping>
 [testing]: </plugins/plugin-resources/testing-integrations>
 [points]: </points>
 [custom-field]: </contacts/manage-fields>
