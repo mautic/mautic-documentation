@@ -18,6 +18,8 @@ The form overview provides a quick overview of the submissions received over a t
 
 A form can contain as many fields as needed. These fields can be laid out dynamically by the system or handled via HTML if you want more control.
 
+>>> When using the file upload field there is a limit of 1,000 submissions using the same filename.
+
 ![new-form](new-form.png)
 
 ### Page Breaks
