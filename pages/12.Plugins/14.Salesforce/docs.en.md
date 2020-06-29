@@ -266,7 +266,7 @@ This means the API is not turned on in your Salesforce account. [Read more][sale
 [official-documentation]: <http://feedback.uservoice.com/knowledgebase/articles/235661-get-your-key-and-secret-from-salesforce>
 [mautic]: <https://mautic.org>
 [field-mapping]: </plugins/general-resources/field-mapping>
-[testing]: </plugins/general-resources/integration-test>
+[testing]: </plugins/plugin-resources/testing-integrations>
 [points]: </points>
 [custom-field]: </contacts/manage-fields>
 [cron-job]: </setup/cron-jobs>
