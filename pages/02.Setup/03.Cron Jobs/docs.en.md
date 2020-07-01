@@ -19,11 +19,11 @@ facebookenable: true
 
 >>> Mautic 3 introduced a new path for cron jobs `bin/console` - if you are using the legacy Mautic 2.x series you should replace this with the older version, `app/console`
 
-Mautic requires a few [cron jobs][cron-jobs] to handle some maintenance tasks. Most web hosts provide a means to add cron jobs either through SSH, cPanel, or another custom panel. Please consult your host's documentation/support if you are unsure on how to setup cron jobs.
+Mautic requires a few [cron jobs][cron-jobs] to handle some maintenance tasks such as updating contacts or campaigns, executing campaign actions, sending emails, and more. You must manually add the required cron jobs to your server. Most web hosts provide a means to add cron jobs either through SSH, cPanel, or another custom panel. Please consult your host's documentation/support if you are unsure on how to set up cron jobs.
 
 If you're new to Linux or Cron Jobs, then the Apache Foundation has [an excellent guide][apache-foundation-guide] which we would suggest that you read before asking questions via the various support channels.
 
-How frequently you run the cron jobs is up to you. Many shared hosts prefer that you run scripts every 15 or 30 minutes and may even override the scheduled times to meet these restrictions. Consult your host's documentation if they have such a restriction.
+When setting up cron jobs, you must choose how often you want the cron jobs to run. Many shared hosts prefer that you run scripts every 15 or 30 minutes and may even override the scheduled times to meet these restrictions. Consult your host's documentation if they have such a restriction.
 
 **It is HIGHLY recommended that you stagger the following required jobs so as to not run the exact same minute.**
 
@@ -33,6 +33,7 @@ For instance:
 - 10,25,40,55 <— mautic:campaigns:trigger
 
 ## Required
+Mautic needs some mandatory cron jobs to run on a regular basis. They are listed as follows:
 
 ### Segments
 **To keep the segments current:**
@@ -74,6 +75,7 @@ Messages that are marked as [_Marketing Messages_][marketing-messages] (such as 
 **NOTE** that these messages will only be added to the queue if frequency rules are applied either systemwide or per contact.
 
 ## Optional
+Depending on your server configuration, you can set up additional cron jobs that are optional but can be used for tasks such as sending emails, importing contacts, and more. The optional cron jobs are listed as follows:
 
 ### Process Email Queue
 
@@ -85,7 +87,7 @@ php /path/to/mautic/bin/console mautic:emails:send
 
 ### Fetch and Process Monitored Email
 
-If using the [Bounce Management][bounce-management],
+If you are using [Bounce Management][bounce-management], set up the following command to fetch and process messages:
 
 ```
 php /path/to/mautic/bin/console mautic:email:fetch
@@ -93,11 +95,21 @@ php /path/to/mautic/bin/console mautic:email:fetch
 
 ### Social Monitoring
 
-If using the [Social Monitoring][social-monitoring],
+If you are using [Social Monitoring][social-monitoring], add the following command to your cron configuration:
 
 ```
 php /path/to/mautic/bin/console mautic:social:monitoring
 ```
+
+### Import Contacts
+To import an especially large number of contacts in the background, use the following command:
+
+```
+php /path/to/mautic/app/console mautic:import
+```
+
+The time taken for this command to execute depends on the number of contacts in the CSV file. However, on successful completion of the import operation, a notification will appear on the Mautic dashboard.
+
 
 ### Webhooks
 
@@ -115,9 +127,9 @@ Mautic uses [MaxMind's][maxmind] GeoLite2 IP database by default. The database i
 php /path/to/mautic/bin/console mautic:iplookup:download
 ```
 
-### Cleanup Old Data
+### Clean up Old Data
 
-Cleanup a Mautic installation by purging old data. Note that not all data is able to be purged. Currently supported are audit log entries, visitors (anonymous contacts), and visitor page hits. Use `--dry-run` to view the number of records to be purged before making any changes.
+Clean up a Mautic installation by purging old data. Note that not all data is able to be purged. Currently supported are audit log entries, visitors (anonymous contacts), and visitor page hits. Use `--dry-run` to view the number of records to be purged before making any changes.
 
 Use ‘--gdpr’ flag to delete data to fulfill GDPR European regulation. This will delete leads that have been inactive for 3 years.
 
@@ -155,9 +167,54 @@ Starting with Mautic 2.12.0, it is now possible to use cron to send scheduled re
 php /path/to/mautic/bin/console mautic:reports:scheduler [--report=ID]
 ```
 
-## Note
+>**Note**: For releases prior to 1.1.3, it is required to append ` --env=prod` to the cron job command to ensure commands execute correctly.
 
-For releases prior to 1.1.3, it is required to append ` --env=prod` to the cron job command to ensure commands execute correctly.
+### Configure Mautic Integrations
+To perform synchronization of all integrations and to manage plugins, use the cron job commands in this section.
+
+**To fetch leads from the integration:**
+
+```
+php /path/to/mautic/bin/console
+mautic:integration:fetchleads
+```
+
+or
+
+```
+php /path/to/mautic/bin/console
+mautic:integration:synccontacts
+```
+
+**To push lead activity to an integration:**
+
+```
+php /path/to/mautic/bin/console
+mautic:integration:pushactivity
+```
+ or
+
+ ```
+php /path/to/mautic/bin/console
+mautic:integration:pushleadactivity
+ ```
+
+These commands work with all available plugins. To avoid performance issues when using multiple integrations, you must specify the name of the integration to be performed by adding the `–integration` suffix to the command. For instance, for integration of Mautic with Hubspot, use the following command:
+
+```
+php /path/to/mautic/bin/console
+mautic:integration:fetchleads --integration=Hubspot
+mautic:integration:pushactivity --integration=Hubspot
+```
+
+**To  install, update, enable, or disable plugins:**
+
+```
+php /path/to/mautic/bin/console
+mautic:plugins:reload
+```
+
+> Note: You can replace `mautic:plugins:reload` with `mautic:plugins:install` or `mautic:plugins:update`. They are the same commands with different alias.
 
 ## Tips & Troubleshooting
 
@@ -185,4 +242,3 @@ If you have SSH access, try to run the command directly to see if any errors are
 [marketing-messages]: </contacts/message-queue>
 [bounce-management]: </channels/emails/bounce-management>
 [social-monitoring]: </channels/social-monitoring>
-
