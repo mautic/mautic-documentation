@@ -72,6 +72,6 @@ Follow [these steps][testing] to test the integration.
 [iContact-app]: <https://www.icontact.com/developerportal/documentation/register-your-app/>\
 [release-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
 [mautic]: <https://mautic.org>
-[field-mapping]: </plugins/general-resources/field-mapping>
-[testing]: </plugins/general-resources/integration-test>
+[field-mapping]: </plugins/plugin-resources/field-mapping>
+[testing]: </plugins/plugin-resources/testing-integrations>
 [points]: </points>

@@ -110,7 +110,7 @@ Follow [these steps][testing] to test the integration.
 1. You can also test by executing the command: `php bin/console mautic:integration:fetchleads -i Dynamics`
 
 
-[field-mapping]: </plugins/general-resources/field-mapping>
-[testing]: </plugins/general-resources/integration-test>
+[field-mapping]: </plugins/plugin-resources/field-mapping>
+[testing]: </plugins/plugin-resources/testing-integrations>
 [dynamics365-website]: <https://www.microsoft.com/en-us/free-crm-trial.aspx>
 [azure-portal]: <https://portal.azure.com>
