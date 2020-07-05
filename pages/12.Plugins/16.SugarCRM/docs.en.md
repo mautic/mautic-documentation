@@ -70,6 +70,5 @@ This feature has been developed by [@Webmecanik][webmecanik]and [@canal-web][can
 [sugar-crm]: <https://www.sugarcrm.com/>
 [webmecanik]: <https://github.com/webmecanik>
 [canal-web]: <https://github.com/canal-web>
-[field-mapping]: </plugins/general-resources/field-mapping>
-[testing]: </plugins/general-resources/integration-test>
-
+[field-mapping]: </plugins/plugin-resources/field-mapping>
+[testing]: </plugins/plugin-resources/testing-integrations>

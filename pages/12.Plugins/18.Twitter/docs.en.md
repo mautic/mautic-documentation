@@ -59,4 +59,4 @@ All these tokens are easily accessible in the UI, so you can just click a button
 The original idea was that Mautic will search for additional information about a contact in various social platforms. But since the time the social plugins were written, social platforms restricted the API search only to the username.
 
 [twitter]: <https://apps.twitter.com/>
-[field-mapping]: </plugins/general-resources/field-mapping>
+[field-mapping]: </plugins/plugin-resources/field-mapping>
