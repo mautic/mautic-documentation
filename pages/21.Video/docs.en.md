@@ -46,7 +46,7 @@ URL to the actual mp4 file location in order to use the gated video feature.
     <source type="video/youtube" src="https://www.youtube.com/watch?v=QT6169rdMdk" />
 </video>
 ```
-> Note: Mautic only supports `<video>` elements with proper `<source>` elements in it for the Gated video functionality. Mautic ignores all video tags that don't have the `data-form-id` and `data-gate-time` attributes
+> Note: Mautic only supports `<video>` elements with proper `<source>` elements in it for the gated video functionality. Mautic ignores all video tags that don't have the `data-form-id` and `data-gate-time` attributes
 
 If the form you've chosen to display has the *Successful Submit Action* set to *Display
 Message* and you've entered text into the *Redirect URL/Message* text box on the form
