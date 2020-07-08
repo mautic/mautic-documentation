@@ -33,8 +33,8 @@ attribute will be treated as a gated video by the Mautic javascript. The simples
 embed a gated video is to embed the HTML below on a page where the Mautic tracking
 javascript is installed.
 
-Keep in mind that you should replace the form id with a valid form id from your Mautic
-installation and that gate time should be set to the desired time (in seconds) when you
+Keep in mind that you should replace the `data-form-id` with a valid form id from your Mautic
+installation and that `data-gate-time` should be set to the desired time (in seconds) when you
 would like to pause the video after it has started to play. The `type` attribute on the
 `<source>` tag can be one of `video/youtube`, `video/vimeo`, or `video/mp4`. When using
 `video/youtube` or `video/vimeo`, you can use the URL found in your browser address bar
@@ -46,6 +46,7 @@ URL to the actual mp4 file location in order to use the gated video feature.
     <source type="video/youtube" src="https://www.youtube.com/watch?v=QT6169rdMdk" />
 </video>
 ```
+> Note: Mautic only supports `<video>` elements with proper `<source>` elements in it for the Gated video functionality. Mautic ignores all video tags that don't have the `data-form-id` and `data-gate-time` attributes
 
 If the form you've chosen to display has the *Successful Submit Action* set to *Display
 Message* and you've entered text into the *Redirect URL/Message* text box on the form
