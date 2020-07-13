@@ -106,6 +106,8 @@ See [Manage Emails][manage-emails] for more information.
 | Unsubscribe URL                                    | `{unsubscribe_url}`                         |
 | Web View Text                                      | `{webview_text}`                            |
 | Web View URL                                       | `{webview_url}`                             |
+| Do Not Contact Text                                | `{dnc_text}`                                |
+| Do Not Contact URL                                 | `{dnc_url}`                                 |
 
 ## Landing Page tokens
 
@@ -131,6 +133,8 @@ See [customizing preference center][make-pref-center] for more information.
 | Preferred Channel                                  | `{preferredchannel}`                        |
 | Channel Frequency                                  | `{channelfrequency}`                        |
 | Save Preferences                                   | `{saveprefsbutton}`                         |
+| Do Not Contact Text                                | `{dnc_text}`                                |
+| Do Not Contact URL                                 | `{dnc_url}`                                 |
 
 ## Dynamic Web Content tokens
 
