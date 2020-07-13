@@ -52,8 +52,8 @@ This plugin is backward compatible.
 ### Get MailChimp API key
 
 1. Create a [MailChimp][mailchimp] account if you don't have one already.
-2. Go to *Account* / *Extras* / *API Keys* and create a new one.
-3. Copy the created API Key.
+1. Go to *Account* / *Extras* / *API Keys* and create a new one.
+1. Copy the created API Key.
 
 ![MailChimp - create a API Key](plugins-mailchimp-create-api-key.png "MailChimp - create a API Key")
 ![MailChimp - copy the API Key](plugins-mailchimp-copy-api-key.png "MailChimp - copy the API Key")

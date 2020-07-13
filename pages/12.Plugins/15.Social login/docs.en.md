@@ -47,8 +47,8 @@ Next, you need to map your contact fields. Please be aware that the social login
 The social login buttons are used in forms. To be able to use them please make sure you have followed all steps mentioned above.
 Then you will need to follow these steps:
 1. Create a form.
-2. Choose the social login field. Buttons for all plugins enabled will appear. Buttons for plugins that have not been authorized yet will not work properly.
-3. To pre-fill the form: The social login tries to match fields that have the same or similar names to the fields found on the social profile.
+1. Choose the social login field. Buttons for all plugins enabled will appear. Buttons for plugins that have not been authorized yet will not work properly.
+1. To pre-fill the form: The social login tries to match fields that have the same or similar names to the fields found on the social profile.
 
 **Twitter**
 'profileHandle','name', 'location', 'description', 'url', 'time_zone', 'lang', 'email'
