@@ -48,17 +48,10 @@ If you select an Unsubscribe folder, Mautic will also append the email as part o
 This is not required, but if you want to be able to select the contacts with bounced emails easily - for example to delete all bounced contacts - create a segment with bounced emails.
 
 1. Go to _Segments / New_.
-<<<<<<< HEAD
 1. Type in the segment name. For example _Bounced emails_.
 1. Select the _Filters_ tab.
 1. Create new _Bounced Email_ equals _Yes_ filter.
-1. Wait for the `app/console mautic:segments:update` command to be automatically triggered by a cron job or execute it manually.
-=======
-2. Type in the segment name. For example _Bounced emails_.
-3. Select the _Filters_ tab.
-4. Create new _Bounced Email_ equals _Yes_ filter.
-5. Wait for the `bin/console mautic:segments:update` command to be automatically triggered by a cron job or execute it manually.
->>>>>>> afc371df5a3078fa1d3e6ab214adde26b633c1fa
+1. Wait for the `bin/console mautic:segments:update` command to be automatically triggered by a cron job or execute it manually.
 
 All contacts with bounced emails should appear in this segment.
 
