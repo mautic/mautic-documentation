@@ -112,7 +112,7 @@ To push or pull records from Salesforce you need to run the Mautic integration c
 #### Pull records from the Leads object in Salesforce
 
 ```console
-php app/console mautic:integration:synccontacts --integration=Salesforce
+php bin/console mautic:integration:synccontacts --integration=Salesforce
 ```
 
 `mautic:integration:fetchleads` is a alias of this command.
@@ -120,7 +120,7 @@ php app/console mautic:integration:synccontacts --integration=Salesforce
 #### Push activities to the Salesforce custom object described below
 
 ```console
-php app/console mautic:integration:pushactivity --integration=Salesforce
+php bin/console mautic:integration:pushactivity --integration=Salesforce
 ```
 
 `mautic:integration:pushleadactivity` is a alias of this command.
@@ -265,8 +265,8 @@ This means the API is not turned on in your Salesforce account. [Read more][sale
 [salesforce-admin]: <https://help.salesforce.com/apex/HTViewHelpDoc?id=admin_userperms.htm&language=en>
 [official-documentation]: <http://feedback.uservoice.com/knowledgebase/articles/235661-get-your-key-and-secret-from-salesforce>
 [mautic]: <https://mautic.org>
-[field-mapping]: </plugins/general-resources/field-mapping>
-[testing]: </plugins/general-resources/integration-test>
+[field-mapping]: </plugins/plugin-resources/field-mapping>
+[testing]: </plugins/plugin-resources/testing-integrations>
 [points]: </points>
 [custom-field]: </contacts/manage-fields>
 [cron-job]: </setup/cron-jobs>

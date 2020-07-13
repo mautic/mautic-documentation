@@ -114,7 +114,7 @@ If you create or edit contact in Mautic, Mautic should send this update to Piped
 [mautic]: <https://mautic.org>
 [Mautic]: <https://mautic.org>
 
-[field mapping]: <field_mapping.html>
-[testing]: <integration_test.html>
-[points]: <./../points>
-[cron]: <./../setup/cron_jobs.html>
+[field-mapping]: </plugins/plugin-resources/field-mapping>
+[testing]: </plugins/plugin-resources/testing-integrations>
+[points]: </points>
+[cron]: </setup/cron-jobs>

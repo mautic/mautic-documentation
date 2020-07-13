@@ -39,16 +39,16 @@ Enabled features:
 
 ### Command line script to push/pull records to/from SugarCRM
 To synchronize records from/to SugarCRM you need to use a command from CLI. Use this command:
-* `php app/console mautic:integration:fetchleads`
+* `php bin/console mautic:integration:fetchleads`
 
 To push activities of synchronized contacts from Mautic to CRM use the following command:
-* `php app/console mautic:integration:pushleadactivity`
+* `php bin/console mautic:integration:pushleadactivity`
 
 
 Parameters both commands take:
 * **--time-interval** This parameter is used to setup the amount of time we want to pull records from. Possible entries: "10 days", "1 day", "10 minutes", "1 minute". Maximum time interval "29 days". Default for both commands is “15 minutes”.
 * **--integration=Sugarcrm** to use with SugarCRM integration. In future this command may be used for other integrations.
-Parameter specific to php app/console mautic:integration:fetchleads
+Parameter specific to php bin/console mautic:integration:fetchleads
 * **--fetch-all** To synchronize all contacts to and from integration. Preferably, use this command only after installation.
 
 These commands may be used for other integrations.
@@ -70,6 +70,5 @@ This feature has been developed by [@Webmecanik][webmecanik]and [@canal-web][can
 [sugar-crm]: <https://www.sugarcrm.com/>
 [webmecanik]: <https://github.com/webmecanik>
 [canal-web]: <https://github.com/canal-web>
-[field-mapping]: </plugins/general-resources/field-mapping>
-[testing]: </plugins/general-resources/integration-test>
-
+[field-mapping]: </plugins/plugin-resources/field-mapping>
+[testing]: </plugins/plugin-resources/testing-integrations>
