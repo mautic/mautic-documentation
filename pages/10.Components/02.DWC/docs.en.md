@@ -72,8 +72,8 @@ The key to this step is naming the "slot".  This can be anything you want as lon
 If you want to serve up different information based on certain criteria, you can use a push request.
 
 1. If the person is known, they receive the content from the pull request.
-2. If they meet the criteria (in the example below - if they are from Canada), a different set of content can be delivered to the browser.
-3. If they are unknown, they will see the information embedded in the dynamic web content div from the page (see below).
+1. If they meet the criteria (in the example below - if they are from Canada), a different set of content can be delivered to the browser.
+1. If they are unknown, they will see the information embedded in the dynamic web content div from the page (see below).
 
 ![](dwc-push.jpg)
 
