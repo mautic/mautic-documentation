@@ -40,29 +40,18 @@ On the left, you'll see a button to switch between mobile and desktop views. A m
 
 The first step to building the focus item is to choose what the focus or goal is. There are three options:
 
-<<<<<<< HEAD
-1. Collect data - will use a Mautic form in the output as the content. Note that it should be a very simple form (One or or two inputs) as there is very little room to work with in some of the styles. But this is great for capturing emails for a newsletter signup.
-1. Display a notice - information only and is great for announcements and the like.
-1. Emphasize a link - great for landing pages with an event, sale, promotion, etc. It displays a button to click that will direct to the given link.
-=======
-1. Collect data - will use a Mautic form in the output as the content. Note that it should be a very simple form if using layouts such as the bar (one or or two inputs) as there is very little room to work with in some of the styles. This is great for capturing emails for a newsletter signup.
+1. Collect data - will use a Mautic form in the output as the content. Note that it should be a very simple form if using layouts such as the bar (one or two inputs) as there is very little room to work with in some of the styles. This is great for capturing emails for a newsletter signup.
 1. Display a notice - text-based information only - great for announcements and important messages.
 1. Emphasize a link - great for landing pages with an event, sale, promotion, and so forth. It displays a button to click, which will direct the visitor to the given link.
->>>>>>> afc371df5a3078fa1d3e6ab214adde26b633c1fa
 
 ![A screenshot demonstrating the Collect Data options](step_4.png)
 
 Each focus/goal will have slightly different settings but all have a few in common:
   
 1. Animate? - Should the focus item be animated or static?
-<<<<<<< HEAD
-1. When to engage - this determines when the focus is engaged based on visitor interaction. It can be immediate, on scroll, timed, or with an exit attempt. If `Visitor intends to leave` is chosen, an option appears that allows configuration if links within the site should trigger the engagement or not.
-1. How often to engage - should the visitor be engaged every time, once per session, or during a period of time? 
-=======
 1. When to engage - this determines when the focus item is engaged, based on visitor interaction. It can be shown immediately on arrival, on scrolling slightly; to the middle of the page or to the bottom of the page, or when the visitor appears to be navigating away from the page. If `Visitor intends to leave` is chosen, an option appears that allows the ability to trigger engagement if links within the site have been clicked.
 1. Timeout before engage - allows a delay (in seconds) before the focus item is triggered.
 1. How often to engage - should the visitor be engaged every time, once per session, or repeatedly at specified intervals of time? 
->>>>>>> afc371df5a3078fa1d3e6ab214adde26b633c1fa
 1. Stop engaging after a conversion - once a user clicks the link or submits the form (not applicable for displaying a notice), enabling this option will no longer engage the visitor.
 
 ### Focus Style
@@ -74,11 +63,7 @@ There are four styles supported -
 1. Bar - display a bar across the top or bottom of the page
 1. Modal - a small modal window that appears centred on the page
 1. Notification - these are like modals but smaller and slide in from the side.
-<<<<<<< HEAD
-1. Full page - also like a modal only it takes up the entire view.
-=======
 1. Full page - also like a modal, only it takes up the entire view.
->>>>>>> afc371df5a3078fa1d3e6ab214adde26b633c1fa
 
 Each style has its own settings such as position, size, sticky, etc.
 
