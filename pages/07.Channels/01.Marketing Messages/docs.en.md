@@ -18,7 +18,7 @@ facebookenable: true
 
 ---------------------
 ## What are Marketing Messages?
-The Marketing Messages feature can be found under the Channels section in Mautic, and is one of the channels available to you thorugh which you can optimize and personalize communication with your customers.
+The Marketing Messages feature can be found under the Channels section in Mautic, and is one of the channels available to you through which you can optimize and personalize communication with your customers.
 
 Marketing messages allow you to empower the customer to decide how they prefer to receive the content you send via the channel they have set as their preference.
 
