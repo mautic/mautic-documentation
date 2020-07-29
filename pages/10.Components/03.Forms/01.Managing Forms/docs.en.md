@@ -107,40 +107,69 @@ It is possible to choose a theme for a form. If you do so and the theme supports
 >
 > **When testing the pre-population of forms you should always use a browser in incognito mode, because being logged in as an administrator can confuse Mautic.**
 
-It is possible to pre-populate the value of a form field from the URL query parameters.
+It is possible to pre-populate the value of a form field from the URL query parameters. However, this only works for form fields that are linked to contact fields, all of which can be found on the Settings -> Custom fields page. (In spite of the name, this page lists all fields, including core ones.)
 
-You will need to know the aliases of the contact fields you wish to pre-populate. The alias can be obtained from the table when viewing Settings -> Custom fields. In spite of the name this page lists all fields, including core ones. (Note, any fields you wish to be updatable via a form must be set to Publicly updatable via this page, so do check the field settings if that is the case.)
+Before you start it is **critical** that any fields you wish to pre-populate are set to be "Publicly updatable" by editing them via the Custom fields page. With this setting enabled Mautic fields can be altered from API. If they are not correctly configured, Mautic will ignore them when pre-populating the data.
 
-When creating a form field you wish to be pre-populated from contact data, it is **critical** the form field's Field HTML name, which becomes its alias, matches the contact field's alias. For example, if you want pre-populate an email field with the contact's email address, because the Contact: Email field has the alias "email" the form field you want to pre-populate with that data must have the Field HTML name "email" as well.
+You will also need to know the aliases of the contact fields you wish to pre-populate, because you will use these aliases in the URL to feed in your data. The alias can be obtained from the table when viewing the same Settings -> Custom fields page mentioned above.
 
-It is also **critical** that Auto fill data is enabled for every form field you wish to pre-populate, via the field's Behaviour dialogue. Without this setting the data will not be pre-populated in your form field.
+Create your form field in the usual way and use the Contact Field dialogue while creating the field to link it to the contact field you wish to tie the form field too. Then go to the Behaviour dialogue and enable the "Auto fill data" setting, if you fail to do this then Mautic will ignore this field at the pre-populate stage.
 
-Once these two important steps have been followed, you will be able to  Mautic will link the form field to the corresponding contact field automatically.
+Once these three important steps have been followed for each form field you wish to pre-populate, you will be able to move on to building your URL.
 
-### Finding the name of a form field
+> **Checklist**
+>
+> **1. My contact field has "Publicly updatable" enabled under Custom fields**
+> 
+> **2. My form field is linked to the correct contact field under Contact Field on the field settings**
+> 
+> **3. My form field has "Auto fill data" enabled under Behavior on the field settings**
 
-The form field's name is stored as the alias in the database and is auto generated from the field's label, though may be manipulated using Field HTML name under the field's Attributes dialogue. You may have to look at the source of your form to get the exact name by opening the form and clicking the preview button so you can see the fully rendered HTML. For example, here is a sample section of HTML taken from a form. The name to use is `FIELDNAME` from the value of the `<input name=mauticform[FIELDNAME]` attribute.
+### Building your URL
 
+By way of an example, we will pretend we want to prepopulate a field linked to Contact: First name in a landing page on the Mautibox staging instance. To illustrate this we can imagine we have added our form to the default demo content landing page using either the JavaScript method or the `{form=N}` variable method (where N is the form ID). The address is:
 
-    <div id="mauticform_democampaignform_email" data-validate="email" data-validation-type="email" class="mauticform-row mauticform-email mauticform-field-1 mauticform-required">
-    <label id="mauticform_label_democampaignform_email" for="mauticform_input_democampaignform_email" class="mauticform-label">Email</label>
-    <input id="mauticform_input_democampaignform_email" name="mauticform[email]" value="" placeholder="user@example.com" class="mauticform-input" type="email">
-    <span class="mauticform-errormsg" style="display: none;">This is required.</span>
-    </div>
+https://mautibox.com/staging/kaleidoscope-conference-2014
+
+The contact field's alias is `firstname`, so if I want to prepopulate the content of the field linked to the contact first name field, my URL would look like this:
+
+https://mautibox.com/staging/kaleidoscope-conference-2014?firstname=Mauty
+
+If I added another field and linked it to Contact: Phone, which has the alias `phone`, to pre-populate this phone number field I would make this URL:
+
+https://mautibox.com/staging/kaleidoscope-conference-2014?firstname=Mauty&phone=020%20000%20000
+
+Etc.
+
+You may want to take some time to learn more about [percent encoding](https://en.wikipedia.org/wiki/Percent-encoding) and [query strings](https://en.wikipedia.org/wiki/Query_string) if you are not familiar.
+
+> **ProTip**
+>
+> **If you pass Mautic the key identifying data for a contact - their email address - via the URL, it will automatically prefill all information in auto-fillable fields it already knows about, even if that information was not provided in the URL.**
+
+### Pre-populate the values automatically in an email
  
- ### Pre-populate the values automatically in an email
- 
- >>> This section describes building a link within an email to pass contact data to a page with an embedded form. It is important to note forms **within** emails are never recommended. While it is possible to do this with Mautic, in reality form support in mail clients is still poor, so there's a real risk many of your contacts will have a bad experience.
+>>> This section describes building a link within an email to pass contact data to a page with an embedded form. It is important to note forms **within** emails are never recommended. While it is possible to do this with Mautic, in reality form support in mail clients is still poor, so there's a real risk many of your contacts will have a bad experience.
 
-Embed the tokens `{contactfield=FIELDALIAS|true}`, one for each contact specific information you want to pre-populate the form with, into the URL, assigning them to the name of your form field.The |true tells Mautic to URL encode the value so that it works in the browser.
+You should always use the `{pagelink=N}` variable, where N is the ID of the landing page e.g. `{pagelink=1}`, to create the link to a landing page in a Mautic email. In most cases this is all you need. In the rendered email sent to a contact, the URL may be converted into something like: `http(s)://example.com/my-landing-page?ct=A_REALLY_LONG_STRING`
 
-```http
-{pagelink=1}&email={contactfield=email|true}
-```
+So, what happened is `{pagelink=1}` was converted into the landing page URL and had `?ct=A_REALLY_LONG_STRING` appended. The really long string is encoded information about the contact which includes the contact ID. When the contact hits the landing page, this really long string allows Mautic to know who the contact is and automatically populate their details into every properly configured auto-fillable field in the embedded form. You do not need to pass any data in the URL.
 
-In the rendered email sent to a contact, the URL may be converted into something like: `http(s)://example.com/my-landing-page?ct=A_REALLY_LONG_STRING&email=contactemail%40gmail.com`
+However, if you wished to augment the data known about a contact with something prefilled, you can. For example, you might have made a new custom contact field to register which product a contact is interested in, Product A or Product B. This is a new field so Mautic won't have any data for it, you want to gather it via an email. You might send an email to solicit product interest with two links, one to select Product A and one to select Product B, and those two links would look like this, if your contact field has the alias of `product`:
 
-So, what happened is `{pagelink=1}` was converted into the landing page URL and had `?ct=A_REALLY_LONG_STRING` appended. The really long string is encoded information about the contact which includes the contact ID. Each `{contactfield=FIELDALIAS}` was replaced with the contact's data. When the contact clicks the link, they will be taken to the landing page with the embedded form, and the form's `email` input will be pre-populated with the value passed through the URL.
+`{pagelink=1}?product=A`
+
+`{pagelink=1}?product=B`
+
+Which will be converted automatically when the email is sent into:
+
+`http(s)://example.com/my-landing-page?ct=A_REALLY_LONG_STRING?product=A`
+
+`http(s)://example.com/my-landing-page?ct=A_REALLY_LONG_STRING?product=B`
+
+Your form has a hidden field connected to the Contact: Email field and a visible radio button field with A and B as product choices. You will find the email address is passed to the hidden email field and the product selector is pre-populated with the selection according to the link the contact clicked. When they click submit, Mautic will have captured the entire trail through email sent, read, link opened and form submitted, it will all appear on the contact record and their product choice will be recorded in your new custom contact field with the alias of `product`.
+
+Note, your form field alias has nothing to do with the URL, as long as the form field exists, is linked to the `product` contact field and set to auto-fill as described above, and has the appropriate values, A and B, the parameter name in your querystring will be the contact alias and Mautic will connect the parameter to the matching form field.
 
 ### Remove Contact from Do Not Contact (undo unsubscribe)
 
