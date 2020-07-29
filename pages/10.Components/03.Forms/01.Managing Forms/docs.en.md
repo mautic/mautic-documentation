@@ -103,9 +103,23 @@ It is possible to choose a theme for a form. If you do so and the theme supports
 
 ## Pre-populate a form field value
 
+> **ProTip**
+>
+> **When testing the pre-population of forms you should always use a browser in incognito mode, because being logged in as an administrator can confuse Mautic.**
+
 It is possible to pre-populate the value of a form field from the URL query parameters.
 
-The contact field's alias can be obtained from the table when viewing Contacts -> Manage Fields. The form field's name is stored as the alias in the database and is auto generated from the field's label; you may have to look at the source of your form to get the exact name (open the form and click the preview button). For example, here is a sample html section taken from a form. The name to use is `FIELDNAME` from the value of the `<input name=mauticform[FIELDNAME]` attribute.
+You will need to know the aliases of the contact fields you wish to pre-populate. The alias can be obtained from the table when viewing Settings -> Custom fields. In spite of the name this page lists all fields, including core ones. (Note, any fields you wish to be updatable via a form must be set to Publicly updatable via this page, so do check the field settings if that is the case.)
+
+When creating a form field you wish to be pre-populated from contact data, it is **critical** the form field's Field HTML name, which becomes its alias, matches the contact field's alias. For example, if you want pre-populate an email field with the contact's email address, because the Contact: Email field has the alias "email" the form field you want to pre-populate with that data must have the Field HTML name "email" as well.
+
+It is also **critical** that Auto fill data is enabled for every form field you wish to pre-populate, via the field's Behaviour dialogue. Without this setting the data will not be pre-populated in your form field.
+
+Once these two important steps have been followed, you will be able to  Mautic will link the form field to the corresponding contact field automatically.
+
+### Finding the name of a form field
+
+The form field's name is stored as the alias in the database and is auto generated from the field's label, though may be manipulated using Field HTML name under the field's Attributes dialogue. You may have to look at the source of your form to get the exact name by opening the form and clicking the preview button so you can see the fully rendered HTML. For example, here is a sample section of HTML taken from a form. The name to use is `FIELDNAME` from the value of the `<input name=mauticform[FIELDNAME]` attribute.
 
 
     <div id="mauticform_democampaignform_email" data-validate="email" data-validation-type="email" class="mauticform-row mauticform-email mauticform-field-1 mauticform-required">
@@ -115,6 +129,8 @@ The contact field's alias can be obtained from the table when viewing Contacts -
     </div>
  
  ### Pre-populate the values automatically in an email
+ 
+ >>> This section describes building a link within an email to pass contact data to a page with an embedded form. It is important to note forms **within** emails are never recommended. While it is possible to do this with Mautic, in reality form support in mail clients is still poor, so there's a real risk many of your contacts will have a bad experience.
 
 Embed the tokens `{contactfield=FIELDALIAS|true}`, one for each contact specific information you want to pre-populate the form with, into the URL, assigning them to the name of your form field.The |true tells Mautic to URL encode the value so that it works in the browser.
 
