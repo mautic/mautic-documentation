@@ -127,17 +127,17 @@ Once these three important steps have been followed for each form field you wish
 
 ### Building your URL
 
-By way of an example, we will pretend we want to prepopulate a field linked to Contact: First name in a landing page on the Mautibox staging instance. To illustrate this we can imagine we have added our form to the default demo content landing page using either the JavaScript method or the `{form=N}` variable method (where N is the form ID). The address is:
+By way of an example, we will pretend we want to prepopulate a field linked to Contact: First name in a landing page on an example Mautic instance. To illustrate this we can imagine we have added our form to a landing page at `my-landing-page`, using either the JavaScript method or the `{form=N}` variable method (where N is the form ID). The address is:
 
-https://mautibox.com/staging/kaleidoscope-conference-2014
+`http(s)://example.com/my-landing-page`
 
 The contact field's alias is `firstname`, so if I want to prepopulate the content of the field linked to the contact first name field, my URL would look like this:
 
-https://mautibox.com/staging/kaleidoscope-conference-2014?firstname=Mauty
+`http(s)://example.com/my-landing-page?firstname=Mauty`
 
 If I added another field and linked it to Contact: Phone, which has the alias `phone`, to pre-populate this phone number field I would make this URL:
 
-https://mautibox.com/staging/kaleidoscope-conference-2014?firstname=Mauty&phone=020%20000%20000
+`http(s)://example.com/my-landing-page?firstname=Mauty&phone=020%20000%20000`
 
 Etc.
 
