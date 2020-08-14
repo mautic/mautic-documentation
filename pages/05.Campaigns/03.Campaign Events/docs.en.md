@@ -47,7 +47,7 @@ Action Send a Webhook with GET, POST, PUT, PATCH, DELETE, TRACE request support 
 
 Mautic 2.15.0 [adds][215-ip-as-token] possibility to use contact's IP address as a token `{contactfield=ipAddress}`.
 
-Mautic 3.1.0 [adds][8959-send-content-as-json] possibility to send webhook payload in JSON format, to send JSON payload you have to add to headers an entry with label `content-type` and value `application/json`
+Mautic 3.1.0 [adds][8959-send-content-as-json] the possibility to send webhook payloads in JSON format.  To send a JSON payload, add a header entry with the label `content-type` and value `application/json`:
 ![](send-json-webhooks.png)
 
 ### Delete contact
