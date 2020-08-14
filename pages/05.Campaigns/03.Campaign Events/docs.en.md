@@ -47,6 +47,9 @@ Action Send a Webhook with GET, POST, PUT, PATCH, DELETE, TRACE request support 
 
 Mautic 2.15.0 [adds][215-ip-as-token] possibility to use contact's IP address as a token `{contactfield=ipAddress}`.
 
+Mautic 3.1.0 [adds][8959-send-content-as-json] possibility to send webhook payload in JSON format, to send JSON payload you have to add to headers an entry with label `content-type` and value `application/json`
+![](send-json-webhooks.png)
+
 ### Delete contact
 
 This action will **permanently delete the contact** who will trigger this action in your campaign flow, together with all the information Mautic knows about that contact. See in the [segment docs][segments] about how to use this action to delete all contacts in a segment.
@@ -86,3 +89,4 @@ Note: The decision uses the OR operator between fields (Limit to Pages, URL, Ref
 [segments]: </contacts/manage-segments>
 [focus-items]: </channels/focus-items>
 [companies]: <contacts/companies>
+[8959-send-content-as-json]: <https://github.com/mautic/mautic/pull/8959>
