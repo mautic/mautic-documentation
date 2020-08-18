@@ -11,9 +11,9 @@ taxonomy:
 
 -------------------
 
-## Mautic - Trello plugin
+## Mautic - Trello Plugin
 
-Dieses Plugin erstellt eine Trello-Karte basierend auf einem Mautic Kontakt.
+Dieses Plugin erstellt Trello-Karten basierend auf einem Mautic Kontakt.
 
 ## Anforderungen
 
@@ -23,7 +23,7 @@ Dieses Plugin erstellt eine Trello-Karte basierend auf einem Mautic Kontakt.
 ## Autorisieren Sie das Plugin
 
 **Achtung:**
-Möglicherweise möchten sie für den Berechtigungsprozess einen separaten Trello-Benutzer verwenden. Jeder Mautic Benutzer wird in der Lage sein, die Namen aller Trello Boards und Listen zu sehen, auf die dieser Benutzer Zugriff hat und darin Karten zu erstellen. Die einzelnen Trello Karten bleiben verborgen.
+Für den Autorisierungsprozess des Plugin empfehlen wir, einen separaten Trello-Benutzer als Ihren normalen Benutzer zu verwenden. Jeder mit Zugang zu Ihrer Mautic-Instanz wird in der Lage sein, die Namen aller Trello Boards und Listen zu sehen, auf die dieser Trello-Benutzer Zugriff hat. Außerdem können über Mautic neue Karten in diesen Trello Boards und Listen erstellt werden. Die einzelnen Trello-Karten können allerdings nicht über Mautic eingesehen werden.
 
 1. Öffnen sie die Trello-Plugin-Einstellungen (Einstellungen > Plugins)\
    <img src="media/trello-plugin-settings-en.png" alt="Trello Plugin Settings" width="400"/>
@@ -38,7 +38,7 @@ Vergessen Sie nicht, *Veröffentlicht* auf *Ja* umzuschalten und die Konfigurati
 
 ## Konfigurieren sie das Plugin
 
-Gehen sie zu Ihren Einstellungen und stellen sie ihr bevorzugtes Board ein. Zur Zeit können sie das Plugin nur mit einem Lieblings-Board verwenden.
+Gehen sie zu Ihren Einstellungen und stellen Sie Ihr bevorzugtes Board ein. Derzeit ist das Plugin auf die Verwendung mit nur einem Trello-Board limitiert.
 
 ## Trello Karte erstellen
 
