@@ -12,7 +12,7 @@ Companies are a way to group contacts based on the company(ies) the contact is a
 
 ## Company overview
 
-Each company has a detail page where you can see what Mautic knows about them.
+Introduced in 3.1.0, each company has a detail page where you can see what Mautic knows about them.
 
 ### Engagements/Points chart
 The Engagements line chart display how active the contacts of the company were in the past 6 months. Engagement is any action the contacts made. E.g. page hit, form submission, email open and so on. The chart displays also the sum of points the contacts received.
