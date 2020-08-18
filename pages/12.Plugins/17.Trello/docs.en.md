@@ -27,10 +27,10 @@ You might want to use a separate Trello user for the authorization process. Ever
 
 1. Open Trello plugin settings (Settings > Plugins)\
    <img src="media/trello-plugin-settings-en.png" alt="Trello Plugin Settings" width="400"/>
-2. Open [https://trello.com/app-key](https://trello.com/app-key) in a separate window.\
+2. Open [https://trello.com/app-key][trello app key] in a separate window.\
    <img src="media/trello-app-key-en.png" alt="Get auth keys on Trello" width="400"/>
 3. Copy the displayed key and add it to the plugin settings
-4. Click "Generate a Token" on the opened Trello developer site.
+4. Click "Generate a Token" on the opened [Trello developer site][trello app key].
 5. Follow the Trello authorization process
 6. Copy the displayed token and add it to the Trello plugin settings
 
@@ -54,3 +54,5 @@ Go to "your plugins and open the Trello settings. Here you have to choose which 
 
 **Note:**
 Like stated before, currently only lists from one single board can be selected. The board can be changed via Settings > Configuration > Trello.
+
+[trello app key]: <https://trello.com/app-key>

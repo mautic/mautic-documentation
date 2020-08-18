@@ -27,10 +27,10 @@ Für den Autorisierungsprozess des Plugin empfehlen wir, einen separaten Trello-
 
 1. Öffnen sie die Trello-Plugin-Einstellungen (Einstellungen > Plugins)\
    <img src="media/trello-plugin-settings-en.png" alt="Trello Plugin Settings" width="400"/>
-2. Öffnen sie [https://trello.com/app-key](https://trello.com/app-key) in einem separaten Fenster.\
+2. Öffnen sie [https://trello.com/app-key][trello app key] in einem separaten Fenster.\
    <img src="media/trello-app-key-en.png" alt="Get auth keys on Trello" width="400"/>
 3. Kopieren sie den angezeigten Schlüssel (Key) und fügen Sie ihn zu den Plugin-Einstellungen hinzu.
-4. Klicken Sie auf "Token" generieren unter [https://trello.com/app-key](https://trello.com/app-key)
+4. Klicken Sie auf "Token" generieren unter [https://trello.com/app-key][trello app key]
 5. Folgen Sie dem Autorisierungsprozess bei Trello
 6. Kopieren Sie das angezeigte Token und fügen Sie es zu den Einstellungen des Trello-Plugins hinzu
 
@@ -51,3 +51,5 @@ Gehen sie zu Ihren Einstellungen und stellen Sie Ihr bevorzugtes Board ein. Derz
 
 **Hinweis:**
 Aktuell können nur Listen aus einem Board gewählt werden. Das Board kann über Einstellungen > Konfiguration > Trello geändert werden.
+
+[trello app key]: <https://trello.com/app-key>
