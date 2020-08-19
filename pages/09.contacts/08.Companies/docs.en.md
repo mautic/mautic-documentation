@@ -8,7 +8,19 @@ taxonomy:
 
 ---
 
-Companies are a way to group contacts based on the company(ies) the contact works or has worked for.
+Companies are a way to group contacts based on the company(ies) the contact is assigned to.
+
+## Company overview
+
+Introduced in 3.1.0, each company has a detail page where you can see what Mautic knows about them.
+
+### Engagements/Points chart
+The Engagements line chart display how active the contacts of the company were in the past 6 months. Engagement is any action the contacts made. E.g. page hit, form submission, email open and so on. The chart displays also the sum of points the contacts received.
+
+### List of contacts assigned
+Above the informations of the company (name, address, and all you custom company fields) and the chart, you can find a table with the list of the assigned contacts displaying the date of their last activity. A good way to have a view of the recent activity of the contacts you know in this company!
+
+## Company actions
 
 ### Merging Companies
 
