@@ -60,6 +60,16 @@ See [managing custom fields][custom-field] for more information.
 | Website                                            | `{contactfield=website}`                    |
 | Zip Code                                           | `{contactfield=zipcode}`                    |
 
+## Contact Owner fields
+
+| **VARIABLE NAME**                                  | **VARIABLE SYNTAX**                         |
+| :------------------------------------------------- | :------------------------------------------ |
+| First Name                                         | `{ownerfield=firstname}`                    |
+| Last Name                                          | `{ownerfield=lastname}`                     |
+| Email                                              | `{ownerfield=email}`                        |
+| Position                                           | `{ownerfield=position}`                     |
+| Signature                                          | `{ownerfield=signature}`                    |
+
 ## Company Contact fields
 
 See [Companies][companies] for more information.
