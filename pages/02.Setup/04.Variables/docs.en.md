@@ -40,6 +40,7 @@ See [managing custom fields][custom-field] for more information.
 | Country                                            | `{contactfield=country}`                    |
 | City                                               | `{contactfield=city}`                       |
 | Company                                            | `{contactfield=company}`                    |
+| Contact ID                                         | `{contactfield=id}`                         |
 | Email                                              | `{contactfield=email}`                      |
 | Facebook                                           | `{contactfield=facebook}`                   |
 | Fax                                                | `{contactfield=fax}`                        |
@@ -180,6 +181,7 @@ See the [Search][search] page for more information.
 | Country                                            | `{contactfield=country}`                    |
 | Country (Company)                                  | `{contactfield=companycountry}`             |
 | Company                                            | `{contactfield=company}`                    |
+| Contact ID                                         | `{contactfield=id}`                         |
 | Description (Company)                              | `{contactfield=companydescription}`         |
 | [Dynamic Content 1]<br>ie: user-defined variable name | `{dynamiccontent="Dynamic Content 1"}`   |
 | Email                                              | `{contactfield=email}`                      |
