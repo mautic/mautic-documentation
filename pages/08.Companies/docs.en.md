@@ -31,6 +31,8 @@ The Engagements line chart display how active the contacts of the company were i
 ### List of contacts assigned
 Above the informations of the company (name, address, and all you custom company fields) and the chart, you can find a table with the list of the assigned contacts displaying the date of their last activity. A good way to have a view of the recent activity of the contacts you know in this company!
 
+Note also that since 3.1 it is possible to add the column 'date added to company' to reports.
+
 ## Company actions
 
 ### Merging Companies
