@@ -59,6 +59,7 @@ See [managing custom fields][custom-field] for more information.
 | Title                                              | `{contactfield=title}`                      |
 | Website                                            | `{contactfield=website}`                    |
 | Zip Code                                           | `{contactfield=zipcode}`                    |
+| Contact ID                                         | `{contactfield=id}`                         |
 
 ## Company Contact fields
 
