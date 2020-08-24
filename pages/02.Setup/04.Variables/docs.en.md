@@ -41,7 +41,7 @@ See [managing custom fields][custom-field] for more information.
 | City                                               | `{contactfield=city}`                       |
 | Company                                            | `{contactfield=company}`                    |
 | Contact ID                                         | `{contactfield=id}`                         |
-| Instagram                                          | `{contactfield=instagram}`                  |
+| Email                                              | `{contactfield=email}`                      |
 | Facebook                                           | `{contactfield=facebook}`                   |
 | Fax                                                | `{contactfield=fax}`                        |
 | First Name                                         | `{contactfield=firstname}`                  |
