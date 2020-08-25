@@ -9,15 +9,18 @@ taxonomy:
 ---
 This feature was added in Mautic 2.1.0.
 
-Progressive profiling makes your forms smarter by asking for the most important information that you don't have yet. This way your contacts won't feel overwhelmed by long forms and saves time by answering questions Mautic already knows the answer to. Progressive Profiling lets you improve the form conversion rate.
+Progressive profiling is a powerfull feature used to reduce the length of forms by hiding all the fields which are already known. This will prevent your contacts from feeling overwhelmed by massive forms and will even reduce the time it takes to fill out a form if fields are already known to your Mautic instance and thus hidden for the contact.
 
 ## Configuration
 
-There are two possible ways that you can configure a form field to display only when needed. The configuration is in the __Behavior__ tab in the field configuration form. The Behavior (Progressive Profiling) can be configured for all field types except the _button_ field. We recommend use  email field visible because it is the identifier of a contact. The button field must be always visible because otherwise the form couldn't be submitted.
+There are two possible ways that you can configure a form field to display only when the asked information is unknown. 
 
-It's recommended to use the email field in each form. From Mautic 2.9 email can be hidden, but be aware of that. Email as identifier of a contact could be unusable if same PC is used by more people (public library, schools...).
+First, choose the form that you want to use for progressive profiling. Go to the form fields and open the field configuration. Manover to the __Behavior__ tab, here you can configurate the behaviour of the fields.
 
-1. Display field only if the value is not known yet
+Note: We recommend to always use the email field, even thought it might already to known, because Mautic uses the email as an unique identifier for contacts. Also the submit button field must be always visible because otherwise the form can not be submitted by the contact.
+
+
+### 1. Display field only if the value is not known yet
 
 	Mautic will search for a value in two places before the form is rendered for the current contact:
 
@@ -29,7 +32,7 @@ It's recommended to use the email field in each form. From Mautic 2.9 email can 
   
    If the form field is linked with a contact field, Mautic will check if there is a value in the contact's profile and hides the field if configured to do so.
 
-2. Display field only after X submissions.
+### 2. Display field only after X submissions.
 
 If you want to ask a contact additional questions on the second form load, you can specify so for each lead. It works nicely with hiding fields which you already know the answer to. For the first submission, the contact can be asked to fill in the First and the Last name. When they come to the form for a second time, the First and the Last name fields will be hidden and instead they will be asked to fill in their Company and Phone.
 
