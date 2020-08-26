@@ -22,7 +22,7 @@ Note: We recommend to always use the email field, even though it might already b
 
 #### 1. Show when value exists
 
-If this option is turned to "No", Mautic checks if the value for this field exists in the databank or if the value was provided in a former form submission already. If a value is found, the field won`t be displayed in the form. If this option is turned to "Yes", Mautic will show the field regardless whether a value is found or not. The default configuration for this option is "Yes".
+If this option is set to "No", Mautic checks if the value for this field exists in the database or if the value was provided in a former form submission already. If a value is found, the field won't be displayed in the form. If this option is set to "Yes", Mautic will show the field, regardless whether a value is found or not. The default configuration for this option is "Yes".
 
 #### 2. Display field only after X submissions.
 
