@@ -9,7 +9,7 @@ taxonomy:
 ---
 This feature was added in Mautic 2.1.0.
 
-Progressive profiling is a powerfull feature used to reduce the length of forms by hiding all the fields which are already known. This will prevent your contacts from feeling overwhelmed by massive forms and will even reduce the time it takes to fill out a form if fields are already known to your Mautic instance and thus are hidden for the contact.
+Progressive profiling is a powerful feature used to reduce the length of forms by hiding all the fields which are already known. This will prevent your contacts from feeling overwhelmed by massive forms and will even reduce the time it takes to fill out a form if fields are already known to your Mautic instance and thus are hidden for the contact.
 
 ## Configuration
 
