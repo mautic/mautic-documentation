@@ -17,7 +17,7 @@ There are two ways to configure a form field to only display when the asked valu
 
 First, choose the form that you want to use for progressive profiling. Go to the form fields and open the field configuration of the field you want to use progressive profiling. Maneuver to the __Behavior__ tab, here you can configurate the behaviour of the fields.
 
-Note: We recommend to always use the email field, even thought it might already to known, because Mautic uses the email as an unique identifier for contacts. Also the submit button field must be always visible because otherwise the form can not be submitted by the contact.
+Note: We recommend to always use the email field, even though it might already be known, because Mautic uses the email as a unique identifier for contacts. Also the submit button field must be always visible because otherwise the form can not be submitted by the contact.
 
 
 #### 1. Show when value exists
