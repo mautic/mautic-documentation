@@ -15,7 +15,7 @@ Progressive profiling is a powerful feature used to reduce the length of forms b
 
 There are two ways to configure a form field to only display when the asked values are unknown. 
 
-First, choose the form that you want to use for progressive profiling. Go to the form fields and open the field configuration of the field you want to use progressive profiling. Maneuver to the __Behavior__ tab, here you can configurate the behaviour of the fields.
+First, choose the form that you want to use for progressive profiling. Go to the form fields and open the field configuration of the field you want to use for progressive profiling. Change to the __Behavior__ tab, here you can configure the behaviour of the fields.
 
 Note: We recommend to always use the email field, even though it might already be known, because Mautic uses the email as a unique identifier for contacts. Also the submit button field must be always visible because otherwise the form can not be submitted by the contact.
 
