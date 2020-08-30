@@ -29,6 +29,11 @@ Mautic will try to download the contact's avatar image based on their email addr
 
 The main tab displays the contact's action history sorted from the latest to the oldest. Each action will display as many details as there is about it. For example a form submission will display what values the contact submitted, the email send action will inform you whether the email was opened and when and so on. You can filter what actions you want to include or exclude from the timeline if you are searching for a specific one.
 
+A "Page hit" event type will also appear in the main history tab. If the page's title is written in non-Latin characters (e.g., Hebrew, Chinese, Arabic), the page title will appear transliterated in the history tab.
+
+You can turn this off from Configuration > System Settings > Transliterate page titles.
+This setting will then show the original page title in the history tab.
+
 ## Notes
 
 Mautic can be used as a basic CRM. You or your teammates can write notes for a specific contact. A note can be marked with a specific purpose: General, Email, Call, Meeting. It's also possible to define a date of a meeting or a call. If you do so, the note will also appear in the Mautic calendar.
