@@ -119,10 +119,10 @@ The contact field's alias can be obtained from the table when viewing Contacts -
 Embed the tokens `{contactfield=FIELDALIAS|true}`, one for each contact specific information you want to pre-populate the form with, into the URL, assigning them to the name of your form field.The |true tells Mautic to URL encode the value so that it works in the browser.
 
 ```http
-{pagelink=1}&email={contactfield=email|true}
+{pagelink=1}?email={contactfield=email|true}
 ```
 
-In the rendered email sent to a contact, the URL may be converted into something like: `http(s)://example.com/my-landing-page?ct=A_REALLY_LONG_STRING&email=contactemail%40gmail.com`
+In the rendered email sent to a contact, the URL may be converted into something like: `http(s)://example.com/my-landing-page?ct=A_REALLY_LONG_STRING?email=contactemail%40gmail.com`
 
 So, what happened is `{pagelink=1}` was converted into the landing page URL and had `?ct=A_REALLY_LONG_STRING` appended. The really long string is encoded information about the contact which includes the contact ID. Each `{contactfield=FIELDALIAS}` was replaced with the contact's data. When the contact clicks the link, they will be taken to the landing page with the embedded form, and the form's `email` input will be pre-populated with the value passed through the URL.
 
