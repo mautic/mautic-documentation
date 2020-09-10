@@ -151,7 +151,7 @@ $d = urlencode(base64_encode(serialize(array(
     'email' => $loggedInUsersEmail // Use your website's means of user management to retrieve the email
 ))));
 
-echo '<img src="httpi://example.com/mtracking.gif?d=' . $d . '" style="display: none;" />';
+echo '<img src="https://example.com/mtracking.gif?d=' . $d . '" style="display: none;" />';
 ```
 
 ##### Javascript
