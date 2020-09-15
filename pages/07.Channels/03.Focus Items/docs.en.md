@@ -101,4 +101,4 @@ Focus Items action depends on page visits. This means that **you must add it jus
 
 ![Animated GIF showing the Campaign Builder adding a focus item directly after a visits page decision](focus-campaign-action.gif)
 
-For a focus item to be triggered by a campaign, do not use the focus item code in the site. You just need to have mautic tracking code installed in the page/s that you want the focus triggerd. The campaign itself as you built it is ok. Focus should be published. (edited)
+For a focus item to be triggered by a campaign, do not use the focus item code in the site. You just need to have mautic tracking code installed in the page/s that you want the focus triggerd. Focus should be published. (edited)
