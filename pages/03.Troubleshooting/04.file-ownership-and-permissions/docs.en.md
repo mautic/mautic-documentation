@@ -18,7 +18,7 @@ facebookenable: true
 ---
 If you experience errors like the following:
 ```
-mautic.WARNING: PHP Warning - require(/mautic/app/cache/prod/doctrine/orm/Proxies/__CG__MauticCategoryBundleEntityCategory.php): failed to open stream: No such file or directory - in file /mautic/vendor/doctrine/common/lib/Doctrine/Common/Proxy/AbstractProxyFactory.php - at line 209
+mautic.WARNING: PHP Warning - require(/mautic/var/cache/prod/doctrine/orm/Proxies/__CG__MauticCategoryBundleEntityCategory.php): failed to open stream: No such file or directory - in file /mautic/vendor/doctrine/common/lib/Doctrine/Common/Proxy/AbstractProxyFactory.php - at line 209
 ```
 there is a strong likelihood that you have problems with the permissions and/or ownership of the files and folders on your Mautic instance.
 
@@ -77,9 +77,9 @@ If your file and folder permissions are incorrect, you can run the following com
 ```
 find . -type f -not -perm 644 -exec chmod 644 {} +
 find . -type d -not -perm 644 -exec chmod 755 {} +
-chmod -R g+w app/cache/ app/logs/ app/config/
+chmod -R g+w var/cache/ var/logs/ app/config/
 chmod -R g+w media/files/ media/images/ translations/
-rm -rf app/cache/*
+rm -rf var/cache/*
 ```
 
 ### Change ownership of files and folders

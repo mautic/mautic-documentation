@@ -87,7 +87,7 @@ Previously Gitbook was used to manage the Mautic documentation, however, this be
 1. Fork this repository at [GitHub][mautic-docs-github]
 1. Select a file to edit on your fork
 1. Make your commits
-1. Open a pull request to `base fork: mautic/documentation` with `base: master`
+1. Open a pull request to `base fork: mautic/mautic-documentation` with `base: master`
 1. Include and reference any [Issues][doc-issues] your Pull Request addresses
 
 #### Editing documentation using the command line
@@ -96,7 +96,7 @@ Previously Gitbook was used to manage the Mautic documentation, however, this be
 1. Clone this repository
 
     ````console
-    git clone https://github.com/mautic/documentation.git --origin upstream
+    git clone https://github.com/mautic/mautic-documentation.git --origin upstream
     ````
 
 1. Fork this repository at [GitHub][mautic-docs-github] or use the [`hub`][hub] utility
@@ -130,7 +130,7 @@ Previously Gitbook was used to manage the Mautic documentation, however, this be
 1. Review the changes at your fork `https://github.com/{yourusername}/mautic-documentation`
 1. Submit your pull request using one of these methods
    - Direct link: `https://github.com/{yourusername}/mautic-documentation/pull/new/{yourusername}-revision-readme-file`
-   - GitHub web interface - `base fork: mautic/documentation` and `base: master` at [GitHub][mautic-docs-github]
+   - GitHub web interface - `base fork: mautic/mautic-documentation` and `base: master` at [GitHub][mautic-docs-github]
    - use the [`hub`][hub] utility
 
     ````console
