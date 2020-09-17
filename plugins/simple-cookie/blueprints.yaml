@@ -1,5 +1,5 @@
 name: Simple Cookie
-version: 0.1.7
+version: 0.1.8
 description: "Simple cookie plugin is based on the popular CookieConsent JS-library. For Advanced Opt-In/Opt-Out configurations you can use the 'Custom configuration' option."
 icon: shield
 author:
@@ -97,7 +97,6 @@ form:
       help: The text on the deny button.
       validate:
         type: text
-
 
     banner_accept:
       type: text
