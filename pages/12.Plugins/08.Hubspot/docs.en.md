@@ -44,6 +44,9 @@ It is checked by default. If you uncheck it, the plugin will not push contacts t
 
 1. Set up the [cron job][cron-job] if you have not already configured it.
 
+>>> Script to configure in your cron job: `php $PATH_TO_MAUTIC_DIRECTORY/bin/console mautic:integration:fetchleads --integration=Hubspot --fetch-all`
+  
+
 ## Test the plugin
 
 Follow [these steps][testing] to test the integration.
@@ -51,6 +54,13 @@ Follow [these steps][testing] to test the integration.
 ## Troubleshooting
 
 If the contact has not been created, ensure the email address you tested with is valid. Hubspot will only create a new contact when the email address is valid.
+
+Note, despite `--fetch-all` flag, the Hubspot API endpoints used in Mautic primarily leverage the following endpoints:
+
+- `/companies/v2/companies/recent/modified/`
+- `/contactslistseg/v1/lists/recently_updated/contacts/recent`
+
+If you intend to do a full sync of your hubspot contacts/leads, you will need to modify an attribute of each of them so that they appear in Hubspot's recent/modified endpoints. By default, these endpoints just pull contects that have been modified in the last 30 days resulting in an incomplete sync if you are connecting to a long living Hubspot instance. [source][hubspot-endpoint-docs]
 
 ## Credit
 
@@ -63,4 +73,5 @@ This plugin had been developed by [@gpassarelli].
 [hubspot-keys]: <https://app.hubspot.com/hapikey>
 [field-mapping]: </plugins/plugin-resources/field-mapping>
 [cron-job]: </setup/cron-jobs>
+[hubspot-endpoint-docs]:<https://legacydocs.hubspot.com/docs/methods/companies/get_companies_modified>
 [@gpassarelli]: <https://github.com/gpassarelli>
