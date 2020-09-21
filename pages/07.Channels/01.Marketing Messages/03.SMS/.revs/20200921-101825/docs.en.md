@@ -36,22 +36,21 @@ The new Text message will be pre-selected so you can save the *Send Text Message
 
 ## Tracking Replies and Unsubscribes
 
-Contacts can unsubscribe from your SMS messages by replying with the word "Stop" to your SMS. Once Mautic receives this SMS, the specific contact will be marked as Do Not Contact (DNC) and will not be contacted again via text message.
+Contacts can unsubscribe from your SMS messags by replying with the word "Stop" to your SMS, Once Mautic recive this SMS that specific contact will be marked as Do not Contact and will not be contacted again.
 
 You can also get SMS replies in your contact's timeline like this 
-![screenshot of contact reply in timeline](contact-reply.png)
+![](contact-reply.png)
 
 ## Configure Twilio Webhooks
 
-In order to make Twilio send back replies to Mautic, you have to follow these steps: 
+In order to make twilio send back the replies to Mautic you have to do the following steps: 
+1. Go to twilio dashboard -> Phone Numbers -> Manage Numbers -> Active Numbers, then select the number you are sending from (the same number you configured in the steps above). or simple follow this link [twilio-active-numbers]
 
-1. Go to your Twilio dashboard -> Phone Numbers -> Manage Numbers -> Active Numbers, then select the number you are sending from (the same number you configured in the steps above), or follow [this link][twilio-active-numbers]
+2. Go the messaging section, configure with webhook as shown in the screenshot below. make sure you point back to your server like this `https://domain.com/sms/twilio/callback`
+![](twilio-webhook.png)
 
-2. Go the messaging section, and configure a webhook as shown in the screenshot below. Make sure that you point back to your server like this `https://example.com/mautic/sms/twilio/callback` where https://example.com/mautic/ is the path to your Mautic instance.
+After these configurations you twilio will notify Mautic with any incoming SMS
 
-![screenshot showing the Twilio webhook configuration](twilio-webhook.png)
-
-After these configurations, Twilio will notify Mautic of any incoming SMS replies.
 
 [twilio-plugin]: </plugins/twilio>
 [twilio]: <https://www.twilio.com>
