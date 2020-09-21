@@ -1,5 +1,6 @@
 ---
 title: 'SMS Text Messages'
+media_order: 'contact-reply.png, twilio-webhook.png'
 taxonomy:
     category:
         - docs
@@ -33,8 +34,27 @@ Before you start to send text messages from your Mautic instance you need to con
 
 The new Text message will be pre-selected so you can save the *Send Text Message* action as well. You can use the action in your Campaign dripflow.
 
+## Tracking Replies and Unsubscribes
+
+Contacts can unsubscribe from your SMS messags by replying with the word "Stop" to your SMS, Once Mautic recive this SMS that specific contact will be marked as Do not Contact and will not be contacted again.
+
+You can also get SMS replies in your contact's timeline like this 
+![](contact-reply.png)
+
+## Configure Twilio Webhooks
+
+In order to make twilio send back the replies to Mautic you have to do the following steps: 
+1. Go to twilio dashboard -> Phone Numbers -> Manage Numbers -> Active Numbers, then select the number you are sending from (the same number you configured in the steps above). or simple follow this link [twilio-active-numbers]
+
+2. Go the messaging section, configure with webhook as shown in the screenshot below. make sure you point back to your server like this `https://domain.com/sms/twilio/callback`
+![](twilio-webhook.png)
+
+After these configurations you twilio will notify Mautic with any incoming SMS
+
+
 [twilio-plugin]: </plugins/twilio>
 [twilio]: <https://www.twilio.com>
 [twilio-paid-accounts]: <https://support.twilio.com/hc/en-us/articles/223183208-Upgrading-to-a-paid-Twilio-Account>
 [twilio-international-alphanumeric-id]: <https://support.twilio.com/hc/en-us/articles/223133767-International-support-for-Alphanumeric-Sender-ID>
 [twilio-docs-alphanumeric-id]: <https://support.twilio.com/hc/en-us/articles/223181348-Getting-started-with-Alphanumeric-Sender-ID>
+[twilio-active-numbers]: <https://www.twilio.com/console/phone-numbers/incoming>
