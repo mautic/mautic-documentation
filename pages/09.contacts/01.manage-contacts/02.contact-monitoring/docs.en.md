@@ -149,7 +149,9 @@ Currently, `utm_medium`, `utm_source`, `utm_campaign`, `utm_content`, and `utm_t
 
 All the Utm tags are available in the time entry, just by toggling the entry details button.
 
-Please note that UTM tags are recorded only on a form submission that contains the action "Record UTM Tags".
+Mautic automatically tracks UTM tags for all requests (including visitors).
+
+Before version 3.2, UTM tags were only recorded on a form submission that contains the action "Record UTM Tags".
 
 #### Embedding the Pixel
 
