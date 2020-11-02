@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
 <head>
-{% block head %}
+    <script src="//m.mautic.org/focus/4.js" type="text/javascript" charset="utf-8" async="async"></script>
+    {% block head %}
     <meta charset="utf-8" />
     <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
     {% include 'partials/metadata.html.twig' %}
