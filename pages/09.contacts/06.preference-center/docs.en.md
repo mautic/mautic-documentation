@@ -42,4 +42,4 @@ Use the segments tab to add or remove a contact from a segment. Segments are use
 The contact's preferences can be presented to the user in the unsubscribe page by selecting "Show contact preference settings" in the email configuration. You may also choose to hide or show different segments of the user preferences. If any of these areas is set to no, it will hide it from the contact's personal preferences page. The default unsubscribe message is shown if the preference setting option is set to no.
 ![](unsubscribe.png)
 
-You can also [Customize the preference center page for individual emails](customize_preference_center.md)
+You can also [Customize the preference center page for individual emails](https://docs.mautic.org/en/contacts/preference-center/customize-preference-center)
