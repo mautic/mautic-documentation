@@ -4,6 +4,15 @@ media_order: 'preferences.png,categories.png,segments.png,email-unsubscribe-sett
 taxonomy:
     category:
         - docs
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---
@@ -13,7 +22,7 @@ When managing a contact you can set the contacts preference of communication. Yo
 
 ## Preferred Channels and Frequency
 
-![](preferences.png)
+![](preferences.png?resize=400,200)
 In this window you can enable/disable channels of communication, set the frequency of the communication via each channel enabled, and set one of the channels as a preferred channel.
 
 To set a channel as a do not contact me through this channel, untick the tickbox next to the channel name in the first column. 
