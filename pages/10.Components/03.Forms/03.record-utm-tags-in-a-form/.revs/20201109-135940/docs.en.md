@@ -1,6 +1,5 @@
 ---
 title: 'Record UTM tags in a Form'
-media_order: Record-utm-tags.png
 published: false
 taxonomy:
     category:
@@ -21,6 +20,5 @@ facebookenable: true
 
 ## Form Action
 
-There is a form action which lets you save the users UTM tags.
+There is a form action which lets you save the user UTM tags.
 
-![](Record-utm-tags.png)
