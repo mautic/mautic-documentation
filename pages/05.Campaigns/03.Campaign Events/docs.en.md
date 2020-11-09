@@ -72,6 +72,10 @@ Action update contact's primary company based on company custom fields.
 
 If you try update company name, then action will add new or existed company with same name to contact and mark it as primary.
 
+### Update contact information
+You can use the update contact information action to change the values stored in the contact fields.
+Note that for Date Fields, you can use relative dates (eg: +4 days or -2 days).
+
 ## Campaign Decisions
 
 ### Opens Email
@@ -83,6 +87,12 @@ The opens email decision can only be attached to a send email action. Whatever e
 Note: The decision uses the OR operator between fields (Limit to Pages, URL, Referrer).
 
 ![](visits-a-page.png)
+
+## Campaign Conditions
+
+### Contact field value
+You can use the contact field value condition to create branches with different behavior in your campaigns.
+Note that for Date Fields, you can use relative dates (eg: +4 days or -2 days).
 
 [webhook-discussion-github]: <https://www.github.com/mautic/mautic/issues/854>
 [215-ip-as-token]: <https://www.github.com/mautic/mautic/pull/6539>
