@@ -1,6 +1,6 @@
 ---
 title: 'Campaign events'
-media_order: 'send-email-delay (1).png,vists-a-page.png,send-json-webhooks.png,submits-form.png'
+media_order: 'send-email-delay (1).png,vists-a-page.png'
 taxonomy:
     category:
         - docs
@@ -75,6 +75,18 @@ If you try update company name, then action will add new or existed company with
 ## Campaign Decisions
 Decisions are things the user does which we can track, like his page visit or wheter he opens an email or not. 
 
+### Opens Email
+
+The contact opens up the email. 
+
+### Clicks Mail
+
+The contact clicks on a link within the send email.
+
+### Replies to Email
+
+If correctly setup in the [Email settings][email-settings], you can track if a contact replied to the mail you send to him.
+
 ### Visits a page
 
 Specify single or multiple pages you want the Contact to visit. Once a page that you specified is visited, the contact will advance to the next campaign step. 
@@ -96,29 +108,6 @@ Note: You can choose multiple Assets to download, once **one of them** was downl
 ### Request Dynamic Content 
 
 Step needed to use campaign based Dynamic Content. Click here to read more about [campaign based Dynamic Content](campaign-based-dwc)
-
-### Submits Form
-
-Define one or more forms, which the Contact needs to fill out.
-
-![](submits-form.png)
-
-Note: You can choose multiple Forms, once **one of them** was submitted the step is fullfilled.
-
-#### Email related Decisions
-These decision camppaign steps can only be used if the previous campaign action is "Send Email".
-
-### Opens Email
-
-The contact opens up the email. 
-
-### Clicks Mail
-
-The contact clicks on a link within the send email.
-
-### Replies to Email
-
-If correctly setup in the [Email settings][email-settings], you can track if a contact replied to the mail you send to him.
 
 [webhook-discussion-github]: <https://www.github.com/mautic/mautic/issues/854>
 [215-ip-as-token]: <https://www.github.com/mautic/mautic/pull/6539>
