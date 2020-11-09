@@ -74,7 +74,7 @@ If you try update company name, then action will add new or existed company with
 
 ### Jump to Event
 
-A pretty nifty feature which lets you jump to any campaign step in the campaign. You don't have to build reoccuring campaign workflows, just define them once and use the "Jump to Event" action!
+A pretty nifty feature which lets you jump to any campaign step in the campaign. 
 
 ![](jump-to-event.png)
 
