@@ -41,6 +41,13 @@ Contacts can unsubscribe from your SMS messages by replying with the word "Stop"
 You can also get SMS replies in your contact's timeline like this 
 ![screenshot of contact reply in timeline](contact-reply.png)
 
+## Important Sidenotes 
+* +XXXXXXX format for the contact phone number including the + and no space.
+* fulfilled in the mobile contact field.
+* the configuration tab must contain the phone number with same format: +XXXXXXX
+* the SID must be the one of the account, not the one of the phone number
+* STOP, STOPALL, UNSUBSCRIBE, CANCEL, END, and QUIT - will stop customers from receiving messages from that particular Twilio number.
+
 ## Configure Twilio Webhooks
 
 In order to make Twilio send back replies to Mautic, you have to follow these steps: 
