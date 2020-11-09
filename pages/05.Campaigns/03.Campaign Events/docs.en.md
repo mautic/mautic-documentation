@@ -72,7 +72,7 @@ Action update contact's primary company based on company custom fields.
 
 If you try update company name, then action will add new or existed company with same name to contact and mark it as primary.
 
-## Campaign Decisions
+## **Campaign Decisions**
 Decisions are things the user does which we can track, like his page visit or wheter he opens an email or not. 
 
 ### Visits a page
