@@ -1,13 +1,18 @@
 ---
 title: 'Microsoft Outlook'
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
-slug: microsoft-outlook
 taxonomy:
     category:
         - docs
+slug: microsoft-outlook
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 --------------------
@@ -88,5 +93,5 @@ You can check if the tracking URL that is added in Outlook is correct this way:
 - when the URL is correct, got to mautic/contacts and check it the contact was added or if an event was added to an existing contact
 - you can also create a report for visited pages and filter for the tracking URL 
 
-[outlook]: <https://m.mautic.com/asset/24:microsoft-outlook-plugin-102>
-[add-in-installer]: <https://m.mautic.com/asset/24:microsoft-outlook-plugin-102>
+[outlook]: <https://github.com/virlatinus/MauticOutlookPlugin/archive/master.zip>
+[add-in-installer]: <https://github.com/virlatinus/MauticOutlookPlugin/archive/master.zip>
