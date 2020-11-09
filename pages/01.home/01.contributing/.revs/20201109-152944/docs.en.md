@@ -387,7 +387,7 @@ Link format:
 ![alternative text here](image-reference.png "Tooltip text here")
 ```
 
-#### Relative image links
+#### relative image links
 
 To display an image already in the documentation repository, use a relative path.
 
@@ -399,7 +399,7 @@ The first line is an example of using images in the same section.  The second fo
 ![form rebuild cache](./../forms/media/rebuild.png "Rebuild form cache")
 ```
 
-#### Absolute image links
+#### absolute image links
 
 For images that cannot be uploaded via the GitHub web interface, upload them to a public URL service and use the generated link.
 
