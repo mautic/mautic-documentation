@@ -4,6 +4,15 @@ media_order: 'pref1.png,pref2.png,pref3.png,pref4.png,pref7.png,pref8.png,pref5.
 taxonomy:
     category:
         - docs
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---
@@ -31,7 +40,7 @@ These slots in the builder are used to customize the page:
 
 Optionally, you can use [tokens][variables] to insert the different slots. Keep in mind that if you use [tokens][variables], you lose the ability to customize the labels and styles of the [slots](#builder-slots) because it uses the default ones.
 
-![tokens](pref3.png)
+![tokens](pref3.png?resie=600,400)
 
 See the [VARIABLES][variables] page for a full list of tokens.
 
