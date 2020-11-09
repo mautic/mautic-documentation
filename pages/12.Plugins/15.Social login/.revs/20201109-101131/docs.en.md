@@ -55,8 +55,6 @@ Then you will need to follow these steps:
 
 ![](Social-Login-2.png)
 
-###Integration Fields
-
 **Twitter**
 'profileHandle','name', 'location', 'description', 'url', 'time_zone', 'lang', 'email'
 
