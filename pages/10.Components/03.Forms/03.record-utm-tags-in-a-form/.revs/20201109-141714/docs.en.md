@@ -1,6 +1,6 @@
 ---
 title: 'Record UTM tags in a Form'
-media_order: 'utm-timeline.png,Record-utm-tags.png'
+media_order: 'utm-timeline.png,utm-timeline.png'
 published: false
 taxonomy:
     category:
