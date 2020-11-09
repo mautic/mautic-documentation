@@ -46,7 +46,7 @@ See the [VARIABLES][variables] page for a full list of tokens.
 
 To finish, don't forget to include a "save preferences" button, otherwise the preferences can't be saved:
 
-![save preferences button](pref4.png?resize=750,550)
+![save preferences button](pref4.png?resize=650,450)
 
 Save the page and the Preference Center landing page is ready.
 
