@@ -38,7 +38,7 @@ Use the categories tab to add or remove a contact from a global category. Global
 Use the segments tab to add or remove a contact from a segment. Segments are used as a source for campaigns and emails. Any contact in a particular segment will be part of a campaign that has that segment as the source. You can also use a standalone email manually to a segment. If a user has opted out of a segment it will no longer receive campaign actions or messages sent to that segment.
 
 ## Contact's Unsubscribe Email Preferences
-![](email-unsubscribe-settings.png?resize=800,600)
+![](email-unsubscribe-settings.png?resize=1000,800)
 The contact's preferences can be presented to the user in the unsubscribe page by selecting "Show contact preference settings" in the email configuration. You may also choose to hide or show different segments of the user preferences. If any of these areas is set to no, it will hide it from the contact's personal preferences page. The default unsubscribe message is shown if the preference setting option is set to no.
 ![](unsubscribe.png)
 
