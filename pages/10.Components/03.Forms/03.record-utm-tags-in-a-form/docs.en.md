@@ -21,7 +21,9 @@ facebookenable: true
 
 ## Form Action
 
-There is a form action for standalone forms, which lets you save the users UTM tags from the referrer URL.
+UTM ("Urchin Tracking Monitor") tags are usually used for tracking with Google Analytics. For this purpose, links are extended by UTM parameters. If a contact clicks on a link with such a UTM parameter, this click is recorded in Google Analytics. 
+
+But you can also utilize these parameters using Mautic! The form action "Record UTM tags" records these UTM tags and saves them, enabling you to use them in your Mautic instance.
 
 ![](Record-utm-tags.png)
 
