@@ -349,12 +349,12 @@ This make linking to the same place much easier.  In Markdown, it looks like thi
 
 #### Absolute links
 
-Aut et laudantium ad [ratione id][link macro]. Ut similique quis et ut.
-Consectetur eum quia totam [recusandae][link macro] necessitatibus dolorem debitis.
+**Example:**
+You can have different links in your text, some leading [here][link macro] and others leading [there][link macro].
 
+**How it looks in Markdown:**
 ```markdown
-Aut et laudantium ad [ratione id][link macro]. Ut similique quis et ut.
-Consectetur eum quia totam [recusandae][link macro] necessitatibus dolorem debitis.
+You can have different links in your text, some leading [here][link macro] and others leading [there][link macro].
 
 [link macro]: <http://example.com>
 ```
@@ -377,9 +377,7 @@ Heading anchors enable linking directly to a Markdown heading from within the sa
 The link target is specified inline.
 
 ```markdown
-Aut et laudantium ad [ratione id](#heading-anchors). Ut similique quis et ut.
-Consectetur eum quia totam [recusandae](#style-guide) necessitatibus dolorem debitis.
-```
+You can have different anchors in your text, for example to this [Section][#anchor-section] right here.
 
 ### Images
 
