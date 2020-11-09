@@ -40,7 +40,7 @@ These slots in the builder are used to customize the page:
 
 Optionally, you can use [tokens][variables] to insert the different slots. Keep in mind that if you use [tokens][variables], you lose the ability to customize the labels and styles of the [slots](#builder-slots) because it uses the default ones.
 
-![tokens](pref3.png?resize=600,400)
+![tokens](pref3.png?resie=600,400)
 
 See the [VARIABLES][variables] page for a full list of tokens.
 
