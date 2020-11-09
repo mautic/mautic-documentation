@@ -1,19 +1,13 @@
 ---
 title: 'Social login'
-media_order: Social-Login-2.png
+media_order: ''
+body_classes: ''
+order_by: ''
+order_manual: ''
+slug: social-login
 taxonomy:
     category:
         - docs
-slug: social-login
-twitterenable: true
-twittercardoptions: summary
-articleenabled: false
-orgaenabled: false
-orga:
-    ratingValue: 2.5
-orgaratingenabled: false
-personenabled: false
-facebookenable: true
 ---
 
 ---------------
@@ -26,8 +20,10 @@ Social login in Mautic is used to sign forms and pre-fill them with matched cont
 For social login buttons to be available you need to enable your social media buttons listed and authorized.
 
 Please follow the links provided to create your social applications before you authorize and configure your plugins.
-- [Twitter][twitter]
+- Twitter
+For twitter please see the [twitter docs][twitter]
 - [Facebook][facebook]
+- [g+][g+]
 - [LinkedIn][linkedIn]
 
 ### Authorize the plugin
@@ -35,6 +31,7 @@ Please follow the links provided to create your social applications before you a
 An application has to be created for authorization. While creating your social app, you might be asked for a *Callback URL*. This callback URL is the one provided in the configuration window for your plugin.
 
 Once your app is created, copy the *API Key* to the *Client Key* field in Mautic's plugin configuration and *API Secret* to *Client Secret* field. Click the *Authorize* button.
+
 Don't forget to switch *Published* to *Yes* and save the configuration.
 
 ### Configure the plugin
@@ -52,8 +49,6 @@ Then you will need to follow these steps:
 1. Create a form.
 2. Choose the social login field. Buttons for all plugins enabled will appear. Buttons for plugins that have not been authorized yet will not work properly.
 3. To pre-fill the form: The social login tries to match fields that have the same or similar names to the fields found on the social profile.
-
-![](Social-Login-2.png)
 
 **Twitter**
 'profileHandle','name', 'location', 'description', 'url', 'time_zone', 'lang', 'email'
