@@ -349,8 +349,10 @@ This make linking to the same place much easier.  In Markdown, it looks like thi
 
 #### Absolute links
 
+**Example:**
 You can have different links in your text, some leading [here][link macro] and others leading [there][link macro].
 
+**How it looks in Markdown:**
 ```markdown
 You can have different links in your text, some leading [here][link macro] and others leading [there][link macro].
 
