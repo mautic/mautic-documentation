@@ -61,9 +61,14 @@ Then you will need to follow these steps:
 **Facebook:**
 'first_name','last_name','name','gender','locale','email','link',
 
+**G+** 'profileHandle'
+'nickname','occupation','skills','birthday','gender','urls','displayName','name','emails','tagline','braggingRights','aboutMe'         
+'currentLocation','relationshipStatus','organizations','placesLived','language','ageRange'
+
 **Linkedin** 'firstName','lastName','maidenName','formattedName','headline','location','summary','specialties','positions','publicProfileUrl','emailAddress'
 
 
 [facebook]: <https://developers.facebook.com>
+[g+]: <https://console.developers.google.com>
 [linkedIn]: <https://developer.linkedin.com>
 [twitter]: <https://developer.twitter.com/en>
