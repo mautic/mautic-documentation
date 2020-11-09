@@ -81,7 +81,7 @@ Specify single or multiple pages you want the Contact to visit. Once a page that
 
 Note: The decision uses the OR operator between fields (Limit to Pages, URL, Referrer).
 
-![](visits-a-page.png)
+![](vists-a-page.png)
 
 ### Device Visit
 
