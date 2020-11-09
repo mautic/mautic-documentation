@@ -58,7 +58,7 @@ There are different logs in your system which could tell us more. Let's start fr
 
 If your Mautic administration works, go to the Admin menu (click the __cog icon__ in the top right side corner), then __System Info__, then __Log__. You will see the error messages recorded by Mautic today.
 
-If your Mautic administration doesn't work, open the logs in via the file system. Go to `[mautic_root]/app/logs` folder. You should see one file for every day called `mautic_prod-YYYY-mm-dd.php`. Open the latest one.
+If your Mautic administration doesn't work, open the logs in via the file system. Go to `[mautic_root]/var/logs` folder. You should see one file for every day called `mautic_prod-YYYY-mm-dd.php`. Open the latest one.
 
 #### Server logs
 
@@ -70,7 +70,7 @@ If your Mautic says it is not able to connect to MySql for some reason, you can 
 
 #### The log file is too big
 
-If the log is so big that a normal editor cannot open it and you have the CLI access, try to read only the few last rows of it with command `tail [mautic_root]/app/logs/mautic_prod-YYYY-mm-dd.php`. You have to add the current date instead of the `YYYY-mm-dd` part. If you want to see more rows than the default is, use the `-n 40` attribute at the end of the command to see the last 40 rows.
+If the log is so big that a normal editor cannot open it and you have the CLI access, try to read only the few last rows of it with command `tail [mautic_root]/var/logs/mautic_prod-YYYY-mm-dd.php`. You have to add the current date instead of the `YYYY-mm-dd` part. If you want to see more rows than the default is, use the `-n 40` attribute at the end of the command to see the last 40 rows.
 
 #### But I don't understand the error message
 
@@ -121,7 +121,7 @@ It means that the file permissions aren't right and Mautic cannot write the cach
 
 __Error:__
 ```
-mautic.WARNING: IP LOOKUP: The file "../app/cache/prod/../ip_data/GeoLite2-City.mmdb
+mautic.WARNING: IP LOOKUP: The file "../var/cache/prod/../ip_data/GeoLite2-City.mmdb
 ```
 __Solution:__
 It means that you just didn't download the IP lookup library. Go to Mautic's Configuration, scroll to the bottom and click the button to download it.
