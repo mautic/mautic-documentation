@@ -1,6 +1,6 @@
 ---
 title: 'Campaign events'
-media_order: 'send-email-delay (1).png,send-json-webhooks.png,submits-form.png'
+media_order: 'send-email-delay (1).png,vists-a-page.png,send-json-webhooks.png,submits-form.png'
 taxonomy:
     category:
         - docs
