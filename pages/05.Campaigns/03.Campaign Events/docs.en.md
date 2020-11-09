@@ -73,16 +73,41 @@ Action update contact's primary company based on company custom fields.
 If you try update company name, then action will add new or existed company with same name to contact and mark it as primary.
 
 ## Campaign Decisions
+Decisions are things the user does which we can track, like his page visit or wheter he opens an email or not. 
 
 ### Opens Email
 
-The opens email decision can only be attached to a send email action. Whatever email is sent through the action is the email used by the decision.
+The contact opens up the email. 
+
+### Clicks Mail
+
+The contact clicks on a link within the send email.
+
+### Replies to Email
+
+If correctly setup in the [Email settings][email-settings], you can track if a contact replied to the mail you send to him.
 
 ### Visits a page
+
+Specify single or multiple pages you want the Contact to visit. Once a page that you specified is visited, the contact will advance to the next campaign step. 
 
 Note: The decision uses the OR operator between fields (Limit to Pages, URL, Referrer).
 
 ![](visits-a-page.png)
+
+### Device Visit
+
+Specify and seperate visits from different devices. You can define the Device Type (desktop, smartphone etc.), Device Brand (Acer, Apple, Samsung etc.) and the Devise OS (IOS, Android etc.) 
+
+### Downloads Asset 
+
+Choose the Asset you want the Contact to download before advancing in the campaign. Once the chosen Asset has been downloaded, the contact will continue in the campaign. 
+
+Note: You can choose multiple Assets to download, once **one of them** was downloaded the step is fullfilled.
+
+### Request Dynamic Content 
+
+Step needed to use campaign based Dynamic Content. Click here to read more about [campaign based Dynamic Content](campaign-based-dwc)
 
 [webhook-discussion-github]: <https://www.github.com/mautic/mautic/issues/854>
 [215-ip-as-token]: <https://www.github.com/mautic/mautic/pull/6539>
@@ -90,3 +115,5 @@ Note: The decision uses the OR operator between fields (Limit to Pages, URL, Ref
 [focus-items]: </channels/focus-items>
 [companies]: <contacts/companies>
 [8959-send-content-as-json]: <https://github.com/mautic/mautic/pull/8959>
+[email-settings]: <https://docs.mautic.org/en/channels/emails>
+[campaign-based-dwc]: <https://docs.mautic.org/en/components/dynamic-web-content>
