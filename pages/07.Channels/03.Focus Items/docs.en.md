@@ -100,3 +100,11 @@ On the right, you'll see a  "Focus Installation" box which includes the line of 
 Focus Items action depends on page visits. This means that **you must add it just after 'Visits a page' decision**.
 
 ![Animated GIF showing the Campaign Builder adding a focus item directly after a visits page decision](focus-campaign-action.gif)
+
+## Disabling Tracking
+
+In the Mautic Configuration you can disable to set the Tracking Cookie.
+
+![Screenshot showing the configuration Settings to disable tracking](configuration.png)
+
+If set to no, there will be no Tracking Cookies set. This allows Focus Items to be used even if a Consent Manager is used and the user has denied consent to tracking, marketing cookies etc. The mautic_focus cookie will still be set (can be defined as "technically required") but nothing else.
