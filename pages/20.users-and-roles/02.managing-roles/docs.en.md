@@ -1,6 +1,9 @@
 ---
 title: 'Managing Roles'
 media_order: 'screenshot-local.mautic3-2020.11.21-13_36_43.png,screenshot-local.mautic3-2020.11.21-13_39_46.png'
+taxonomy:
+    category:
+        - docs
 twitterenable: true
 twittercardoptions: summary
 articleenabled: false
