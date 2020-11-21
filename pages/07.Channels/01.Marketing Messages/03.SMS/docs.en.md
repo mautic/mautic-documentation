@@ -65,7 +65,7 @@ In order to make Twilio send back replies to Mautic, you have to follow these st
 
 After these configurations, Twilio will notify Mautic of any incoming SMS replies.
 
-[cron-jobs]: <//setup/cron-jobs#send-scheduled-broadcasts-e-g-segment-emails>
+[cron-jobs]: </setup/cron-jobs#send-scheduled-broadcasts-e-g-segment-emails>
 [twilio-plugin]: </plugins/twilio>
 [twilio]: <https://www.twilio.com>
 [twilio-paid-accounts]: <https://support.twilio.com/hc/en-us/articles/223183208-Upgrading-to-a-paid-Twilio-Account>
