@@ -1,8 +1,5 @@
 ---
 title: 'Users and Roles'
-taxonomy:
-    category:
-        - docs
 twitterenable: true
 twittercardoptions: summary
 articleenabled: false
