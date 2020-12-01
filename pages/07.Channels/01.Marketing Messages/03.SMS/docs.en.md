@@ -34,6 +34,11 @@ Before you start to send text messages from your Mautic instance you need to con
 
 The new Text message will be pre-selected so you can save the *Send Text Message* action as well. You can use the action in your Campaign dripflow.
 
+## Segment (Broadcast) Text Messages
+These are marketing text messages by default. Segments are assigned to the text message which will determine which contacts receive the communication. Note that each contact can only receive the text message once - it's like a mailing list.
+
+Initiating these text messages requires the Send Scheduled Broadcast Cron Job. See [Cron Jobs][cron-jobs] for more detail.
+
 ## Tracking Replies and Unsubscribes
 
 Contacts can unsubscribe from your SMS messages by replying with the word "Stop" to your SMS. Once Mautic receives this SMS, the specific contact will be marked as Do Not Contact (DNC) and will not be contacted again via text message.
@@ -60,6 +65,7 @@ In order to make Twilio send back replies to Mautic, you have to follow these st
 
 After these configurations, Twilio will notify Mautic of any incoming SMS replies.
 
+[cron-jobs]: </setup/cron-jobs#send-scheduled-broadcasts-e-g-segment-emails>
 [twilio-plugin]: </plugins/twilio>
 [twilio]: <https://www.twilio.com>
 [twilio-paid-accounts]: <https://support.twilio.com/hc/en-us/articles/223183208-Upgrading-to-a-paid-Twilio-Account>

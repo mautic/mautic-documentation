@@ -18,6 +18,8 @@ facebookenable: true
 ---
 From the [2.16 release][216-release], Mautic has supported using a license key to access the Maxmind IP lookup service.
 
+>>>> From the 3.2 release the format for the license key needs to be AccountID:Licensekey. Account ID is displayed above the license keys table.
+
 Follow these steps to configure your Mautic instance to use the license key.
 
 1. Create a MaxMind account by going to [Maxmind Signup][maxmind-signup]
@@ -30,9 +32,9 @@ Follow these steps to configure your Mautic instance to use the license key.
 ![maxmind-generate-key-2](maxmind-generate-key-2.png "maxmind-generate-key-2")
 1. Answer "Will this key be used for GeoIP Update?" with No and confirm
 ![maxmind-confirm-key](maxmind-confirm-key.png "maxmind-confirm-key")
-1. Copy the license key that you see on the screen
+1. Copy the license key that you see on the screen and note down the Account ID above the license key table
 ![maxmind-license-key](maxmind-license-key.png "maxmind-license-key")
-1. Go to Mautic > Settings > Configuration > System Settings > Miscellaneous Settings and enter the license key into the "IP lookup service authentication" field
+1. Go to Mautic > Settings > Configuration > System Settings > Miscellaneous Settings and enter the license key into the "IP lookup service authentication" field in the format AccountID:Licensekey. Account ID is displayed above the license keys table
 ![mautic-maxmind-license-key](mautic-maxmind-license-key.png "mautic-maxmind-license-key")
 1. Click "Fetch IP Lookup Data Store". This will download the IP lookup database to your Mautic instance.
 1. Set up the [cron job][cron-jobs] to periodically download a fresh copy.
