@@ -13,23 +13,51 @@ Segments provide ways to easily organize your contacts. These segments can be co
 
 When viewing all segments you will notice the column on the right which shows the number of contacts matching that particular segment.
 
-![](contact-segments.jpg)
+![Screenshot of contact segments](contact-segments.jpg)
+
+## Creating a segment
+
+To create a new segment navigate to Segments in the menu, and click on 'New'.
+
+### Naming segments
+
+Since the 3.2 release it has been possible to provide a public name, in addition to an internal name, for a segment. 
+
+This is used if the segment is displayed in the Preference Centre, allowing the contact to choose to remove themselves from it.  The Public Name is what will be displayed to the contact in the preference centre.
+
+![Screenshot of public segment name showing that it can be customised if used in the preference centre](public-segment-name.jpg)
+
+### Public and private segments
+
+It is possible to create a segment which is accessible to everybody who uses your Mautic instance - a public segment - or just for your own use - a private segment.
+
+### Making segments available in the preference centre
+
+There are many approaches that can be taken when it comes to allowing contacts to choose communications they wish to receive from you. If you wish to allow them to subscribe and unsubscribe based on segments, you can select the option to make a segment available in the Preference Centre.
+
+Use this in conjunction with the public name to provide a user-friendly description of the segment.
+
+### Publish status
+
+If a segment is unpublished, it will not be available for use in Mautic, and will not show in any dropdown fields.
 
 ## Segment Filters
 
-![](segment-filters.jpg)
+Filters are used to define the contacts who will be in the segment.
+
+![Screenshot showing filter dropdown ](segment-filters.jpg)
 
 In addition, these filters can be combined to either be inclusive or exclusive depending on your needs.
 
-![](multiple-segment-filters.jpg)
+![Screenshot showing boolean options for combining filters](multiple-segment-filters.jpg)
 
 Once you have selected the field you can then choose the type of operation to perform. These vary depending on the way you wish to filter your contacts.
 
-![](segment-filters-dropdown.jpg)
+![Screenshot showing selection of options](segment-filters-dropdown.jpg)
 
-If you want to divide your segment based on certain criterion, and you wish to avoid sending duplicate emails to the (sub)segments, you can view and alter them through typing the alias name of the contact segments separated by '+' only. You can add n contact segments to have their common, but you will always receive the result as the intersection of the subsets. You can then manipulate the contacts to remove them from either one subset or all, hence avoiding duplicate emails to the same leads in the subsets.
+If you want to divide your segment based on certain criterion, and you wish to avoid sending duplicate emails to the (sub)segments, you can view and alter them through typing the alias name of the contact segments separated by '+' only. You can add n contact segments to show the contacts they have in common, but you will always receive the result as the intersection of the subsets. You can then manipulate the contacts to remove them from either one subset or all, hence avoiding sending duplicate emails to the same leads in the subsets.
 
-![](common-leads-in-segments.jpg)
+![Screenshot showing common leads in segments](common-leads-in-segments.jpg)
 
 ### Matching part of a string
 
@@ -52,7 +80,7 @@ You can use regular expressions in a `regexp` filter. Mautic recognises all comm
 
 Date filters allow you to choose a date via DatePicker:
 
-![](segment-filters-datepicker.png)
+![Screenshot showing date picker](segment-filters-datepicker.png)
 
 Hovewer you can specify much more here. Mautic recognizes relative formats too (these string are not translatable):
 
@@ -110,7 +138,7 @@ clicking the Preferences button at the segments tab, use the dropdown to select 
 
 Filter the contacts in the segment. The batch delete action in the contact table allows deletion of up to 100 contacts at one time. This is a performance precaution since deleting more contacts at one time could cause issues. This feature can be used for hundreds of contacts.
 
-![](mautic-contact-batch-delete.png)
+![Screenshot showing batch delete](mautic-contact-batch-delete.png)
 
 But deleting thousands of contacts this way in one segment will become a tedious task. Luckily, there is a trick how to let the background workers do the job for you.
 
@@ -119,4 +147,4 @@ But deleting thousands of contacts this way in one segment will become a tedious
 
 This way the `mautic:campaign:update` and `mautic:campaign:trigger` commands will delete all the contacts in the segment. As well as all the contacts which will be added to the segment in the future. Everything is done automatically in the background. The cron jobs must be configured. However, be aware that when a contact is deleted, there is no way to get it back.
 
-![](mautic-delete-contacts-in-segment.png)
+![Screenshot showing campaign to delete contacts in a segment](mautic-delete-contacts-in-segment.png)
