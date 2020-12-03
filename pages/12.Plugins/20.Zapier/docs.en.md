@@ -17,7 +17,7 @@ This integration integrates any Mautic instance with 1.100+ third party web serv
 
 ## Requirements
 
-Zapier account. Free or Paid. [View Zapier pricing](https://zapier.com/pricing/).
+Zapier account. Free or Paid. [View Zapier pricing][zapier-pricing].
 
 ## Installation
 
