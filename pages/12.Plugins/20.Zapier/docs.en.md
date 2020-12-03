@@ -21,7 +21,7 @@ Zapier account. Free or Paid. [View Zapier pricing][zapier-pricing].
 
 ## Installation
 
-There is no need to install any additional plugin to your Mautic instance. Zapier works with the API and webhooks already available within Mautic.
+There is no need to install any additional plugin. Zapier works with the API and webhooks already available within Mautic.
 
 ### Setup Oauth2 Authentication in Mautic for Zapier 3.x
 
