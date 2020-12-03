@@ -25,7 +25,7 @@ There is no need to install any additional plugin. Zapier works with the API and
 
 ### Set up OAuth2 Authentication in Mautic for Zapier 3.x
 
-This new version of the app improves authentication by implementing the Oauth2 protocol
+This new version of the app improves authentication by implementing the OAuth2 protocol
 
 1. Open the admin menu	1. Open the admin menu
 2. Go to Mautic's global configuration	2. Go to Mautic's global configuration > API Settings
