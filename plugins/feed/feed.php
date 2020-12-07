@@ -1,11 +1,12 @@
 <?php
 namespace Grav\Plugin;
 
+use Composer\Autoload\ClassLoader;
 use Grav\Common\Data;
 use Grav\Common\Page\Collection;
+use Grav\Common\Page\Interfaces\PageInterface;
 use Grav\Common\Plugin;
 use Grav\Common\Uri;
-use Grav\Common\Page\Page;
 use RocketTheme\Toolbox\Event\Event;
 
 class FeedPlugin extends Plugin
@@ -36,9 +37,22 @@ class FeedPlugin extends Plugin
     public static function getSubscribedEvents()
     {
         return [
-            'onPluginsInitialized' => ['onPluginsInitialized', 0],
+            'onPluginsInitialized' => [
+                ['autoload', 100000],
+                ['onPluginsInitialized', 0],
+            ],
             'onBlueprintCreated' => ['onBlueprintCreated', 0]
         ];
+    }
+
+    /**
+     * [onPluginsInitialized:100000] Composer autoload.
+     *
+     * @return ClassLoader
+     */
+    public function autoload()
+    {
+        return require __DIR__ . '/vendor/autoload.php';
     }
 
     /**
@@ -80,7 +94,7 @@ class FeedPlugin extends Plugin
      */
     public function onPageInitialized()
     {
-        /** @var Page $page */
+        /** @var PageInterface $page */
         $page = $this->grav['page'];
         if (isset($page->header()->feed)) {
             $this->feed_config = array_merge($this->feed_config, $page->header()->feed);
