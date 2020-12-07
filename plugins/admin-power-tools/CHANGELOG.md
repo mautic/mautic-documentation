@@ -1,3 +1,23 @@
+# v0.1.13
+## 12/6/2020
+
+1. [](#improvement)
+    * Fix whitespace formatting
+    * Set minimum height for editor
+1. [](#bugfix)
+    * Grav 1.7 Compatibility
+    * Fix invalid regex
+    * Check that base_url_relative is set
+    * Check for empty route
+    * Catch RuntimeExceptions for empty HTML
+    * Lookup root slug name
+    * Check for post data not set
+    * Strip leading slash
+    * Use correct package for Utils::startsWith
+    * Workaround for query getting removed
+    * Use CoreServiceUtil:save
+    * Disable broken tasks for Grav 1.7
+   
 # v0.1.12
 ## 09/28/2019
 
