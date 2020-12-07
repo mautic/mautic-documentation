@@ -72,6 +72,11 @@ Action update contact's primary company based on company custom fields.
 
 If you try update company name, then action will add new or existed company with same name to contact and mark it as primary.
 
+
+### Update contact information
+You can use the update contact information action to change the values stored in the contact fields.
+Note that for Date Fields, you can use relative dates (eg: +4 days or -2 days).
+
 ### Jump to Event
 
 A pretty nifty feature which lets you jump to any campaign step in the campaign. You don't have to build reoccuring campaign workflows, just define them once and use the "Jump to Event" action!
@@ -88,6 +93,12 @@ Specify single or multiple pages you want the Contact to visit. Once a page that
 Note: The decision uses the OR operator between fields (Limit to Pages, URL, Referrer).
 
 ![](visits-a-page.png)
+
+## Campaign Conditions
+
+### Contact field value
+You can use the contact field value condition to create branches with different behavior in your campaigns.
+Note that for Date Fields, you can use relative dates (eg: +4 days or -2 days).
 
 ### Device Visit
 
