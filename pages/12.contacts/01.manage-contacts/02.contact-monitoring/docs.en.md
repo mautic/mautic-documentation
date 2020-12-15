@@ -275,11 +275,12 @@ https://example.com/mtracking.gif?page_url=cart_screen&email=myemail@example.com
 
 Important: Make sure in your App, that the above HTTP request is using a cookie (if possible, re-use the cookie from the mautic.addcontact POST request prior) AND that you reuse this cookie from one request to the next. This is how Mautic (and other tracking software) knows that it's really the same user. If you can't do this, you may run into the (unlikely but possible) case where you have multiple contacts from the same IP address and Mautic will merge them all into a single contact as it can't tell who is who without a cookie.
 
-### Google Analytics and Facebook Pixel tracking support
+### Google Analytics, Google Tag Manager and Facebook Pixel tracking support
 
 Mautic supports contact tracking using Google Analytics and the Facebook pixel. Go to Mautic Configuration > Tracking Settings and set up:
 
 - [Google Analytics ID][Google Analytics ID]
+- [Google Tag Manager][Google Tag Manager]
 - [Facebook Pixel ID][Facebook Pixel ID]
 
 Tracking codes support also [Google Analytics USERID][Google Analytics USERID] and [Facebook Pixel Advanced Matching][Facebook Pixel Advanced Matching].
@@ -295,6 +296,14 @@ There is a campaign action which allows you to send a custom event to [Google An
 - Test it and check in the Tag Assistant debug window that you see one Pageview request and one event
 
 ![Google Tag Assistant](google-analytics-tag-assistent.png)
+
+##### How to test Google Tag Manager tracking code and campaign action
+
+- Install [Tag assistent](https://chrome.google.com/webstore/detail/tag-assistant-by-google/kejbdjndbnbjgmefkgdddjlbokphdefk) and enable recording on your website 
+- Create campaign with Visits a page decision and  Send tracking event action
+- Test it and see Tag assistent debug window with one Pageview request and 1 events
+
+![](media/google-analytics-tag-assistent.png)
 
 ##### How to test Facebook Pixel tracking code and campaign action
 
@@ -316,6 +325,7 @@ If the tracking doesn't work, take a look at the [troubleshooting section][troub
 
 [Google Analytics ID]: <https://support.google.com/analytics/answer/1008080?hl=en#trackingID>
 [Facebook Pixel ID]: <https://www.facebook.com/business/help/952192354843755>
+[Google Tag Manager]: <https://support.google.com/tagmanager/answer/6103696?hl=en#install>
 [Google Analytics USERID]: <https://support.google.com/analytics/answer/3123662?hl=en>
 [Facebook Pixel Advanced Matching]: <https://developers.facebook.com/ads/blog/post/2016/05/31/advanced-matching-pixel/> 
 [Google Analytics]: <https://developers.google.com/analytics/devguides/collection/analyticsjs/events>
