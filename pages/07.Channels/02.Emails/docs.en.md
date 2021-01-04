@@ -75,6 +75,8 @@ Clicks of each link in an email are tracked and those clicks count can be found 
 
 Mautic has a built in means of allowing a contact to unsubscribe from email communication. If using the builder, simply drag and drop the Unsubscribe Text or Unsubscribe URL tokens into your email. Or insert `{unsubscribe_text}` or `{unsubscribe_url}` into your custom HTML. The unsubscribe text token will insert a sentence with a link instructing the contact to click to unsubscribe. The unsubscribe URL token will simply insert the URL into your custom written instructions.
 
+Attention: If you want to test your `{unsubscribe_text}` or `{unsubscribe_url}` in an Email, do *not* use the "Send Example" option. If you us it, Mautic will throw an Error when clicking on the unsubscribe link. Instead try creating a test segment, add yourself as a contact, and send the email to that segment.
+
 ## Online version
 
 Mautic manages also the hosting of an online version of the email sent. To use that feature, simply add the following as URL on text to generate the online version link `{webview_url}`.
