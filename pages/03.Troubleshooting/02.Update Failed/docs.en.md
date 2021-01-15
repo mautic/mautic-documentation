@@ -44,7 +44,7 @@ When an upgrade attempt fails in the final step, it may be only the outdated cac
 
 If this command throws a PHP error, you can try to remove the cache folder using the following command (be careful, this removes all files and folders in the path specified, so ensure you type it correctly!)
 
-    rm -rf app/cache
+    rm -rf bin/cache
 
 If clearing the cache has not resolved your problems, continue with the next step.
 
