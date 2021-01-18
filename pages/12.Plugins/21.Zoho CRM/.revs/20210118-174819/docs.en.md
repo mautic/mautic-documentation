@@ -1,6 +1,6 @@
 ---
 title: 'Zoho CRM'
-media_order: 'screenshot-accounts.zoho.com-2020.04.13-22_55_03.png,screenshot-local.mauticautomatedtests-2020.04.13-23_01_11.png,screenshot-local.mauticautomatedtests-2020.04.13-23_09_01.png,zoho-authorize-application.png,zoho-create-api-creds.png,zoho-server-based-applications.png'
+media_order: 'screenshot-accounts.zoho.com-2020.04.13-22_55_03.png,screenshot-local.mauticautomatedtests-2020.04.13-23_01_11.png,screenshot-accounts.zoho.com-2020.04.13-22_59_32.png,screenshot-local.mauticautomatedtests-2020.04.13-23_09_01.png'
 taxonomy:
     category:
         - docs
