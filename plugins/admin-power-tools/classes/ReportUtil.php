@@ -131,6 +131,10 @@ class ReportUtil
         return "<div class='report-tree'>" . $s . "</div>";
     }
 
+	/**
+	 * @deprecated use CoreServiceUtil::routeToAdmin
+	 * @return string
+	 */
     public static function getAdminBaseRelative()
     {
         $config = \Grav\Common\Grav::instance()['config'];
@@ -144,7 +148,9 @@ class ReportUtil
 
     public static function edit_link($page, $text)
     {
-        $href = self::getAdminBaseRelative() . "/pages" . $page->route();
+		$grav = \Grav\Common\Grav::instance();
+		$url = $grav['core-service-util']->routeToAdmin();
+		$href = $url . "/pages" . $page->route();
         return "<a href='$href'>" . $text . "</a>";
     }
 
@@ -157,15 +163,16 @@ class ReportUtil
 
     public static function view_url($page)
     {
-        $base = \Grav\Common\Grav::instance()['base_url_relative'];
-        $href = $base . $page->route();
-        return $href;
+    	$grav = \Grav\Common\Grav::instance();
+		$base = isset($grav['base_url_relative']) ? $grav['base_url_relative'] : '';
+		return $base . $page->route();
     }
 
     public static function edit_url($page)
     {
-        $base = \Grav\Common\Grav::instance()['base_url_relative'];
-        $href = self:: getAdminBaseRelative() . "/pages" . $page->route();
+		$grav = \Grav\Common\Grav::instance();
+		$url = $grav['core-service-util']->routeToAdmin();
+		$href = $url . "/pages" . $page->route();
         return $href;
     }
 

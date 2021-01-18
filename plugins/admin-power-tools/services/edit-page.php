@@ -90,8 +90,9 @@
 				$page->rawMarkdown($trimmed);
 				$page->save();
 
-				$grav['core-service-util']->updateAdminCache();
-				$grav->redirect('/admin/pages' . $newPage->rawRoute());
+				$util = $grav['core-service-util'];
+				$util->updateAdminCache();
+				$grav->redirect($util->routeToEdit($newPage));
 			},
 		]);
 	}

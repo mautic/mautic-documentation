@@ -2,7 +2,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2018 TwelveTone LLC
+ * Copyright (c) 2018-2020 TwelveTone LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -122,5 +122,35 @@ class CoreServiceUtil
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * @param Page $page
+	 * @return string A route that points the user to a page's admin edit page.
+	 */
+	public function routeToEdit(Page $page): string
+	{
+		$route = $page->route();
+		if ($route === '/') {
+			$route = $page->rawRoute();
+		}
+		return $this->routeToAdmin() . '/pages' . $route;
+	}
+
+	/**
+	 * @return string An absolute route that points to the admin base page.
+	 */
+	public function routeToAdmin(): string
+	{
+		$route = '/admin';
+		$config = $this->grav['config'];
+		$adminRoute = $config->get('plugins.admin', false);
+		if ($adminRoute && isset($adminRoute['route'])) {
+			$route = $adminRoute['route'];
+		}
+
+//		$base = isset($config->grav['base_url_relative']) ? $config->grav['base_url_relative'] : '';
+		$base = rtrim($config->get('system.custom_base_url', ''), '/');
+		return $base . $route;
 	}
 }
