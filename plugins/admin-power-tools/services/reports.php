@@ -157,7 +157,7 @@
                     $dom = new DOMDocument();
                     try {
                         $dom->loadHTML($page->content());
-                    } catch (Exception $e) {
+                    } catch (Throwable $e) {
                         // loadHTML will throw exception if content is empty
                         return;
                     }
@@ -298,7 +298,7 @@
 
                 $root = $grav['pages']->root();
                 page_link_walker($root, function ($link, $page) use (&$links, $base) {
-                    if (\Grav\Plugin\startsWith($base, $link)) {
+                    if (\Grav\Common\Utils::startsWith($base, $link)) {
                         $bin = 'internal';
                     } else {
                         $bin = 'external';

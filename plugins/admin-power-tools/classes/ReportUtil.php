@@ -48,7 +48,7 @@ function link_walker(Page $page, $visitor)
     $dom = new DOMDocument();
     try {
         $dom->loadHTML($page->content());
-    } catch (Exception $e) {
+    } catch (Throwable $e) {
         // loadHTML will throw exception if content is empty
         return;
     }
@@ -76,7 +76,7 @@ function page_link_walker(Page $page, $visitor)
 class ReportUtil
 {
     // the folder and media name
-    const rxMedia = "#.*/([^/]+/[^?\Z]+)#";
+    const rxMedia = "#.*/([^/]+/[^?]+)$#";
 
     static public function getSampleTree()
     {
@@ -136,7 +136,7 @@ class ReportUtil
         $config = \Grav\Common\Grav::instance()['config'];
         $route = $config->get('plugins.admin.route');
         $base = '/' . trim($route, '/');
-        return $config->grav['base_url_relative'] . $base;
+        return isset($config->grav['base_url_relative']) ? $config->grav['base_url_relative'] . $base : $base;
 //        $admin_base = '/' . trim($config->get('plugins.admin.route'), '/');
 //        $admin_base = trim($config->get('plugins.admin.route'), '/');
 //        return $admin_base;
@@ -201,7 +201,7 @@ class ReportUtil
                         $tree['links'][] = self::stripOrder($m[1]);
                     }
                 }
-            } catch (Exception $e) {
+            } catch (Throwable $e) {
                 // loadHTML will throw exception if content is empty;
             }
         });
@@ -267,7 +267,7 @@ class ReportUtil
                         }
                     }
                 }
-            } catch (Exception $e) {
+            } catch (Throwable $e) {
                 // loadHTML will throw exception if content is empty;
             }
         });
