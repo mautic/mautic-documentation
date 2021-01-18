@@ -24,27 +24,25 @@ facebookenable: true
 
 ## Language configuration warning
 
-> **Warning**
->
-> Your [Zoho][zoho-crm] and [Mautic][mautic] accounts must be **configured for English language**, otherwise the synchronization won't work.
->
-> Zoho changes the alias of each of the contact fields depending on the language, which generates unmatched fields and errors on sync.
+>>>> **Warning** Your [Zoho][zoho-crm] and [Mautic][mautic] accounts must be **configured for English language**, otherwise the synchronization won't work. Zoho changes the alias of each of the contact fields depending on the language, which generates unmatched fields and errors on sync.
 
 ## Configure the Zoho CRM plugin
 
 1. Create a [Zoho CRM][zoho-crm] account if you don't have one already.  
 
-2. Generate a key pair by going to the [Zoho Developers Console][zoho-dev-console].  You will need to provide a name for the client, the URL, and the callback URL (which you can access by going to Plugins > ZohoCRM in Mautic and copying the callback URL).  Copy the Client ID and secret that is displayed when you save the client - this will be needed in Mautic.
+2. Generate a key pair by going to the [Zoho Developers Console][zoho-dev-console].  You will need to select **Server Based Application** and provide a name for the client, the URL of your Mautic instance, and the callback URL (which you can access by going to Plugins > ZohoCRM in Mautic and copying the callback URL, usually in the format `https://mautic.example.com/plugins/integrations/authcallback/Zoho`).  Copy the Client ID and secret that is displayed when you save the client - this will be needed in Mautic.
 
-![Screenshot of ZohoCRM developer client setup screen](screenshot-accounts.zoho.com-2020.04.13-22_55_03.png)
+![Screenshot of ZohoCRM developer server based application setup screen](zoho-server-based-applications.png)
 
-3. Insert the client ID and client secret you created the Zoho Developers Console into the Mautic Zoho integration plugin and Authorize it.  You will see a popup window which prompts you to log into Zoho and to authorize access - select Accept.
+![Screenshot of creating the API credentials](zoho-create-api-creds.png)
 
-> Note: You must select the correct data centre corresponding to your CRM instance - e.g. if you access your CRM at crm.zoho.com you should choose the .com option in the dropdown.
+3. Insert the Client ID and Client Secret you created the Zoho Developers Console into the Mautic Zoho integration plugin, select the correct data centre based on the URL of your Zoho CRM instance, and click the button to authorize the plugin to access your instance.  You will see a popup window which prompts you to log into Zoho and to authorize access - select Accept.
+
+>>>>> Note: You must select the correct data centre corresponding to your CRM instance - e.g. if you access your CRM at crm.zoho.com you should choose the .com option in the dropdown.
 
 ![Screenshot of Zoho configuration screen in Mautic](screenshot-local.mauticautomatedtests-2020.04.13-23_01_11.png)
 
-![Screenshot of authorization popup](screenshot-accounts.zoho.com-2020.04.13-22_59_32.png)
+![Screenshot of authorization popup](zoho-authorize-application.png)
 
 Once you have authorized successfully, the button will update to show 'Reauthorize'.
 
@@ -65,9 +63,9 @@ You can also configure other options:
 
 ![Screenshot of features available in ZohoCRM integration](screenshot-local.mauticautomatedtests-2020.04.13-23_09_01.png)
 
-5. Configure the [field mapping][field mapping].  
+5. Configure the [field mapping][field-mapping].  
 
-> Note: If the values are empty for the Mautic object, a value of 'Unknown' will be sent. If the ZohoCRM field is a pick list, be sure the list values of Mautic's field match those of the field in ZohoCRM.
+>>> Note: If the values are empty for the Mautic object, a value of 'Unknown' will be sent. If the ZohoCRM field is a pick list, be sure the list values of Mautic's field match those of the field in ZohoCRM.
 
 6. Set the *Publish* switch to *Yes*. 
 
@@ -81,7 +79,7 @@ Follow [these steps][testing] to test the integration.
 [zoho-crm]: <https://www.zoho.com/crm/>
 [zoho-2fa]: <https://www.zoho.com/mail/help/adminconsole/two-factor-authentication.html#alink5>
 [zoho-api-docs]: <https://www.zoho.com/crm/developer/docs/api/whats-new.html>
-[zoho-dev-console]: <https://accounts.zoho.com/developerconsole>
+[zoho-dev-console]: <https://api-console.zoho.eu/>
 [cron-job]: </setup/cron-jobs>
 [mautic]: <https://mautic.org>
 [field-mapping]: </plugins/plugin-resources/field-mapping>
