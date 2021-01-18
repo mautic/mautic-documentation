@@ -24,13 +24,13 @@ facebookenable: true
 
 ## Language configuration warning
 
->>>>Your [Zoho][zoho-crm] and [Mautic][mautic] accounts must be **configured with the English language**, otherwise the synchronization won't work. Zoho changes the alias of each of the contact fields depending on the language, which generates unmatched fields and errors on sync.
+>>>>Your [Zoho][zoho-crm] and [Mautic][mautic] accounts must be **configured for English language**, otherwise the synchronization won't work. Zoho changes the alias of each of the contact fields depending on the language, which generates unmatched fields and errors on sync.
 
 ## Configure the Zoho CRM plugin
 
 1. Create a [Zoho CRM][zoho-crm] account if you don't have one already.  
 
-2. Generate a key pair by going to the [Zoho Developers Console][zoho-dev-console].  You will need to select **Server Based Applications** and provide a name for the client; the URL of your Mautic instance, and the callback URL (which you can access by going to Plugins > ZohoCRM in Mautic and copying the callback URL, usually in the format `https://mautic.example.com/plugins/integrations/authcallback/Zoho`).  Copy the Client ID and Client Secret that is displayed when you save the client - this will be needed in Mautic.
+2. Generate a key pair by going to the [Zoho Developers Console][zoho-dev-console].  You will need to select **Server Based Application** and provide a name for the client, the URL of your Mautic instance, and the callback URL (which you can access by going to Plugins > ZohoCRM in Mautic and copying the callback URL, usually in the format `https://mautic.example.com/plugins/integrations/authcallback/Zoho`).  Copy the Client ID and secret that is displayed when you save the client - this will be needed in Mautic.
 
 ![Screenshot of ZohoCRM developer server based application setup screen](zoho-server-based-applications.png)
 
