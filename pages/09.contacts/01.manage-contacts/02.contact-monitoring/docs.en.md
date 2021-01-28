@@ -23,7 +23,7 @@ JS tracking method was implemented in Mautic 1.4 and recommended as the primary 
 
 Or, copy the code below and change the URL to your Mautic instance.
 
-As of 2.3.0, Mautic sets cookies with a lifetime of 2 years. Returning visitors are identified exclusively by the cookie. If no cookie exists yet, Mautic creates a new contact and sets the cookie. Make sure your website URL is entered in the CORS settings. This is the first step in better contact identification. Note that if a browser is set to not accept cookies, this may result in each hit creating a new visitor. 
+As of 2.3.0, Mautic sets cookies with a lifetime of 1 year. Returning visitors are identified exclusively by the cookie. If no cookie exists yet, Mautic creates a new contact and sets the cookie. Make sure your website URL is entered in the CORS settings. This is the first step in better contact identification. Note that if a browser is set to not accept cookies, this may result in each hit creating a new visitor. 
 
 ```
 <script>
