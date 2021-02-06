@@ -43,7 +43,7 @@ Use this in conjunction with the public name to provide a user-friendly descript
 
 ![Screenshot showing segement category](segment-category.png)
 
-You can use `Category` to add new categories of type 'segment'.  When listing the segments it is also possible to filter and sort segments them based on their categories.
+You can use `Category` to add new categories of type 'segment'.  When listing the segments it is also possible to filter and sort them based on their categories.
 
 
 ### Publish status
