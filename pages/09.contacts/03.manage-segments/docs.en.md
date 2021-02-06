@@ -19,13 +19,15 @@ When viewing all segments you will notice the column on the right which shows th
 
 To create a new segment navigate to Segments in the menu, and click on 'New'.
 
+![Screenshot showing new](segment-new.png)
+
 ### Naming segments
 
 Since the 3.2 release it has been possible to provide a public name, in addition to an internal name, for a segment. 
 
 This is used if the segment is displayed in the Preference Centre, allowing the contact to choose to remove themselves from it.  The Public Name is what will be displayed to the contact in the preference centre.
 
-![Screenshot of public segment name showing that it can be customised if used in the preference centre](public-segment-name.jpg)
+![Screenshot of public segment name showing that it can be customised if used in the preference centre](public-segment-name.png)
 
 ### Public and private segments
 
@@ -36,6 +38,13 @@ It is possible to create a segment which is accessible to everybody who uses you
 There are many approaches that can be taken when it comes to allowing contacts to choose communications they wish to receive from you. If you wish to allow them to subscribe and unsubscribe based on segments, you can select the option to make a segment available in the Preference Centre.
 
 Use this in conjunction with the public name to provide a user-friendly description of the segment.
+
+### Creating segment categories
+
+![Screenshot showing segement category](segment-category.png)
+
+You can use `Category` to add new categories of type 'segment'.  When listing the segments it is also possible to filter and sort segments them based on their categories.
+
 
 ### Publish status
 
