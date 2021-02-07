@@ -40,7 +40,7 @@ The following search operators can be used:
 
 ## Search by fields 
 
-Contacts and companies lists allow search by fields in the format: ___fieldalias="seached value"___.
+Contacts and Companies lists allow search by fields in the format: ___fieldalias="seached value"___.
 It also supports type-in suggestions for aliases.
     
 ![search fields in contacts](contact-fields-search.png)
