@@ -158,7 +158,7 @@ The **`README.md`** file serves as the introduction and description of this repo
 
 The **`SUMMARY.md`** file defines the menu of the documentation. If you add a new page to the documentation, you'll have to also add a new line there defining the title and the link to the file (formatted like the existing menu items).
 
-The folders in this repository are grouped together by topic. For example, within the *asset* folder, you'll see it has its own **`README.md`** file (becomes `./index.html`) which contains the primary description of the Asset menu; the *manage_assets.md* file is a subitem; the *media* subfolder contains all the images used in the *.md* files.
+The folders in this repository are grouped together by topic. For example, within the *asset* folder, you'll see it has its own **`doc.en.md`** file (becomes `./index.html`) which contains the primary description of the Asset menu; the *manage_assets.md* the file is a subitem; the *media* subfolder contains all the images used in the *.md* files.
 
 ## Style Guide
 
@@ -180,7 +180,7 @@ Please contribute :)
 - Use `1.` for numbered lists.
 - Use `1.` only for numbered lists.
 - Use `-` for unnumbered lists
-  - Indent spaces until first character of content in line above
+  - Indent spaces until the first character of content in the line above
   - which is effectively 2 spaces for nested unnumbered lists
 
 <details><summary>example list</summary>
@@ -189,11 +189,11 @@ Please contribute :)
 
 1. Item the first
 1. Something else
-   1. indent spaces until first character of content in line above
-   1. that means line up on the `S` in `Something`
+   1. indent spaces until the first character of content in the line above
+   1. that means to line up on the `S` in `Something`
       1. and the first `t` in `that`
 1. And finally
-   - minor point from the `A`
+   - a minor point from the `A`
 
 - not part of the numbered list
 
@@ -204,11 +204,11 @@ Please contribute :)
 ```markdown
 1. Item the first
 1. Something else
-   1. indent spaces until first character of content in line above
-   1. that means line up on the `S` in `Something`
+   1. indent spaces until the first character of content in the line above
+   1. that means to line up on the `S` in `Something`
       1. and the first `t` in `that`
 1. And finally
-   - minor point from the `A`
+   - a minor point from the `A`
 
 - not part of the numbered list
 ```
@@ -344,8 +344,8 @@ public function __construct($environment, $debug)
 [link macro]: <http://example.com>
 [testing]: <./../plugins/integration_test.html>
 
-Often you'll want to make a link to another place in the documentation.  We prefer to group links at the bottom of a page, and provide a reference macro in the text.
-This make linking to the same place much easier.  In Markdown, it looks like this:
+Often you'll want to make a link to another place in the documentation.  We prefer to group links at the bottom of a page and provide a reference macro in the text.
+This makes linking to the same place much easier.  In Markdown, it looks like this:
 
 #### Absolute links
 
@@ -453,7 +453,7 @@ For the various installation types, use
 
 #### Protocol scheme: http vs https
 
-- Prefer the `https://` protocol in documentation.
+- Prefer the `https://` protocol in the documentation.
 
     ```http
     https://example.com
