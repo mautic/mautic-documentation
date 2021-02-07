@@ -17,21 +17,32 @@ This integration integrates any Mautic instance with 1.100+ third party web serv
 
 ## Requirements
 
-1. Mautic version 2.9.0 or newer with SSL - basic authentication requires HTTPS to be secure.
-3. Zapier account. Free or Paid. [View Zapier pricing][zapier-pricing].
+Zapier account. Free or Paid. [View Zapier pricing][zapier-pricing].
 
 ## Installation
 
-There is no need to install any additional plugin to your Mautic instance. Zapier works with the API and webhooks already available within Mautic. This Zapier integration use Basic Authentication to access Mautic API. It is disabled by default so enable this first.
+There is no need to install any additional plugin. Zapier works with the API and webhooks already available within Mautic.
+
+### Set up OAuth2 Authentication in Mautic for Zapier 3.x
+
+This new version of the app improves authentication by implementing the OAuth2 protocol
 
 1. Open the admin menu
-2. Go to Mautic's global configuration
-3. Go to API Settings
-4. Set __API enabled?__ to __Yes__.
-5. Set __Enable HTTP basic auth?__ to __Yes__.
-6. Save the configuration.
+2. Go to Mautic's global configuration > API Settings
+3. Set __API enabled?__ to __Yes__.
+4. Save the configuration.
+5. Go to Mautic's global configuration > API Credentials > __OAuth2__
+6. Create new __OAuth2___ application with redirect URI: __example.com__
+7. Copy Public Key and Secret Key of your created app
 
-![How to enable API and basic auth](enable-api.png)
+![How to enable the API](https://user-images.githubusercontent.com/462477/74520415-cc616b00-4f17-11ea-8dbe-f6dd8a0a6cfc.png)
+
+
+![How to enable API and basic auth](https://www.mautic.org/wp-content/uploads/2018/02/enable-api.png)	
+
+>>>>>**Refresh token lifetime (in days)**  means how many days needed before the app needs to refresh the token. If your app does not have any activity in that period, you have to re-authorize it again. 
+
+![New OAuth2 application](https://user-images.githubusercontent.com/462477/74520342-a1771700-4f17-11ea-866f-5be1c895f0f9.png)
 
 Zapier will be able to create actions and triggers with your Mautic installation.
 
@@ -62,8 +73,6 @@ The configured Zapier integrations are called Zaps. The main types of Zaps are T
 
 ### 1. Find Mautic integration
 
-When you click on _Make a Zap!_ button, search for Mautic. You may see some unofficial Mautic integrations there. We recommend to use this one. It will always be called "Mautic (2.1.0)". Of course the version number will change in time. The latest version number is available within each changelog at https://github.com/mautic/mautic-zapier/releases.
-
 If you want some inspiration or speed up the process of creating a Zap use preconfigured Mautic Zap templates:
 <div id="zapier-widget"></div>
 <script src="https://zapier.com/apps/embed/widget.js?services=mautic&html_id=zapier-widget"></script>
@@ -76,12 +85,13 @@ At this point choose which Trigger or Action you need. Each trigger will get you
 
 ### 3. Authorize Mautic instance
 
-Once you choose to use Mautic integration you'll need to authorize your Mautic to it. Mautic use basic auth as mentioned earlier. So all you need is a Mautic user credentials and URL of where your Mautic lives. It's recommended to create a new user for Zapier which will have some advantages:
+Once you choose to use Mautic integration you'll need to authorize your Mautic to use it.
 
-1. Giving a third party app credentials to your Mautic is a security risk. If something happens you simply delete this special Zapier user and your admin user will be safe.
-2. You will see what contacts were created by Zapier simply by looking at the created by user.
+1. Giving a third party app credentials to your Mautic is a security risk. If something happens you simply delete this special Zapier user and your admin user will be safe.	<img src="https://user-images.githubusercontent.com/462477/74520761-848f1380-4f18-11ea-82be-152c00020995.PNG" width="300"> 
+2. You will see what contacts were created by Zapier simply by looking at the created by user.	
 
-![Mautic Zap auth](zapier-auth.png)
+
+![Mautic Zap auth](https://www.mautic.org/wp-content/uploads/2018/02/zapier-auth.png)	![Mautic Zap auth](https://user-images.githubusercontent.com/462477/74520761-848f1380-4f18-11ea-82be-152c00020995.PNG)
 
 ### 4. Select an item for Triggers
 
