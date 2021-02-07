@@ -131,6 +131,8 @@ class Manager implements IManager, EventSubscriberInterface {
     $method = $event['method'];
 
     if ($method === 'taskGroupDelete' && ($group = $this->grav['uri']->param('name', false))) {
+      $groupObj = Group::load($group);
+      $this->grav->fireEvent('AAUM_onGroupRemove', new Event(['group' => $groupObj]));
       Group::remove($group);
       $this->grav->redirect($this->grav['uri']->url($this->getLocation()));
       return true;
@@ -157,6 +159,8 @@ class Manager implements IManager, EventSubscriberInterface {
       if (isset($_POST['bulk_delete'])) {
         // Bulk delete groups
         foreach ($groupnames as $groupname) {
+          $groupObj = Group::load($groupname);
+          $this->grav->fireEvent('AAUM_onGroupRemove', new Event(['group' => $groupObj]));
           Group::remove($groupname);
         }
 
@@ -196,11 +200,16 @@ class Manager implements IManager, EventSubscriberInterface {
       $filter = (empty($_GET['filter'])) ? '' : $_GET['filter'];
       $vars['filter'] = $filter;
       if ($filter) {
+        if (preg_match("/^[0-9a-zA-Z \-_\.@]+$/", $filter)) {
+          $filter = preg_quote($filter, '/');
+          $filter = "group.groupname matches '/$filter/' or group.readableName matches '/$filter/' or group.description matches '/$filter/'";
+        }
+
         try {
           $language = new ExpressionLanguage();
           $language->addFunction(ExpressionFunction::fromPhp('count'));
           foreach ($groups as $k => $group) {
-            if (!$language->evaluate($_GET['filter'], ['group' => $group])) {
+            if (!$language->evaluate($filter, ['group' => $group])) {
               unset($groups[$k]);
             }
           }

@@ -1,5 +1,7 @@
 name: Login OAuth2
-version: 2.0.3
+type: login-oauth2
+slug: form
+version: 2.0.5
 description: OAuth2 Client Plugin to integrate with Grav's Login
 icon: plug
 author:
@@ -11,7 +13,7 @@ bugs: https://github.com/trilbymedia/grav-plugin-login-oauth2/issues
 docs: https://github.com/trilbymedia/grav-plugin-login-oauth2/blob/develop/README.md
 license: MIT
 dependencies:
-  - { name: login, version: '~3.0' }
+  - { name: login, version: '>=3.3.2' }
 
 form:
   validation: strict
