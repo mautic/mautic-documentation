@@ -39,7 +39,7 @@ There are many approaches that can be taken when it comes to allowing contacts t
 
 Use this in conjunction with the public name to provide a user-friendly description of the segment.
 
-### Creating segment categories
+### Creating Segment Categories
 
 ![Screenshot showing segement category](segment-category.png)
 
