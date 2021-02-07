@@ -38,14 +38,14 @@ This type of switch is used throughout the Mautic UI to publish and unpublish it
 
 ### Adding A New Field
 
-You can create additional custom fields and define the data type you want that field to hold. In addition to the data type you will also select the group for that particular field. This will define where the field displays on the Contact edit and detail view.
+You can create additional Custom Fields and define the data type you want that field to hold. In addition to the data type you will also select the group for that particular field. This will define where the field displays on the Contact edit and detail view.
 
 ![New Custom Field](new-custom-field.jpg)
 
 
 ### Customize Contact List Column
 
-You can create your custom contact list column from your configuration and add the fields that you want. To do that you need to: 
+You can create your custom Contact List column from your configuration and add the fields that you want. To do that you need to: 
 
 1. Go to Configurations > Contact Settings to see the Contact List Settings.
 
