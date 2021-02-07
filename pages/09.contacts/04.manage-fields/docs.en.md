@@ -42,5 +42,20 @@ You can create additional custom fields and define the data type you want that f
 
 ![new custom field](new-custom-field.jpg)
 
+
+### Customize Contact List Column
+
+You can create your custom contact list column from your configuration and add the fields that you want. To do that you need to: 
+
+1. Go to Configurations > Contact Settings to see the Contact List Settings.
+
+![Contact List](contact-list.png)
+
+2. Change some columns and save.
+3. Go to Contacts and see if your changes were applied.
+
+![Customized Contact List](customize.png)
+
+
 [contact monitoring]: </contacts/manage-contacts/contact-monitoring>
 [variables]: </setup/variables>
