@@ -11,12 +11,10 @@ taxonomy:
 
 -----------
 
+> **_INfO:_**  Mautic 3.x users who are implementing RabbitMQ or Beanstalkd need to configure the settings directly in their local configuration file. If you are using the legacy Mautic 2.x series the steps below remains the same. 
 
 Improved scalability can be achieved by activating the queuing mechanism for email and page opens.  Use this if you
 are getting too much traffic at once from people opening pages or opening emails.
-
-> **_NOTE:_**  Mautic 3.x users who are implementing RabbitMQ or Beanstalkd need to configure the settings directly in their local configuration file. If you are using the legacy Mautic 2.x series the steps below remains the same. 
-
 
 ## Activating
 
