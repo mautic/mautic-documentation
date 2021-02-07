@@ -19,7 +19,7 @@ When viewing all segments you will notice the column on the right which shows th
 
 To create a new segment navigate to Segments in the menu, and click on 'New'.
 
-![Screenshot showing new](segment-new.png)
+![Screenshot showing new Segment](segment-new.png)
 
 ### Naming segments
 
