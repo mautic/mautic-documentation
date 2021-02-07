@@ -55,7 +55,7 @@ There are permission levels relating to resources the user has created themselve
 * Own - this allows the users with this role to view/edit/delete/publish their own resources in this part of Mautic, but not those created by others
 * Others - this allows the users with this role to view/edit/delete/publish their own resources in this part of Mautic, and those created by others
 
-Since the 3.2 release there is a permission level to prevent users from exporting resources:
+Since the [3.3][mautic-3.3] release there is a permission level to prevent users from exporting resources:
 
 * Export Access - Select disable to prevent the users with this role from exporting resources from this part of Mautic
 
