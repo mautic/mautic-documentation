@@ -17,7 +17,7 @@ When viewing all segments you will notice the column on the right which shows th
 
 ## Creating a segment
 
-To create a new segment navigate to Segments in the menu, and click on 'New'.
+To create a new Segment navigate to Segments in the menu, and click on 'New'.
 
 ![Screenshot showing new Segment](segment-new.png)
 
