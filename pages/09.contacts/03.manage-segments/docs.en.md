@@ -29,7 +29,7 @@ This is used if the Segment is displayed in the Preference Centre, allowing the 
 
 ![Screenshot of public segment name showing that it can be customised if used in the preference centre](public-segment-name.png)
 
-### Public and private segments
+### Public and private Segments
 
 It is possible to create a segment which is accessible to everybody who uses your Mautic instance - a public segment - or just for your own use - a private segment.
 
