@@ -29,7 +29,7 @@ Always force the display of the field, even if you set a maximum number of field
 
 ![image](https://user-images.githubusercontent.com/462477/80913150-b6a75900-8d42-11ea-944d-7552882b215f.png)
 
-3. Display field only if the value is not known yet
+3. Display field only if the value is not yet known
 
 	Mautic will search for a value in two places before the form is rendered for the current contact:
 
