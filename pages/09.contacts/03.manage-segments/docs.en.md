@@ -48,7 +48,7 @@ You can use `Category` to add new categories of type 'segment'.  When listing th
 
 ### Publish status
 
-If a segment is unpublished, it will not be available for use in Mautic, and will not show in any dropdown fields.
+If a Segment is unpublished, it will not be available for use in Mautic, and will not show in any dropdown fields.
 
 ## Segment Filters
 
