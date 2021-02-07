@@ -21,7 +21,7 @@ To create a new segment navigate to Segments in the menu, and click on 'New'.
 
 ![Screenshot showing new Segment](segment-new.png)
 
-### Naming segments
+### Naming Segments
 
 Since the 3.2 release it has been possible to provide a public name, in addition to an internal name, for a segment. 
 
