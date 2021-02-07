@@ -21,7 +21,9 @@ Awesome! You've downloaded a marketing automation tool. That's a great first ste
 
 ## Step 1: Install Mautic
 
-If you have already downloaded the zip from the [download page][download-page] or have installed Mautic through some other source (Softaculous, Bitnami, Digital Ocean etc...) then you have already completed the first step. If not then you will need to upload the Mautic package (a zip file) to your server; unzip the files; and then navigate to that location in your browser.
+
+If you have already downloaded the zip from the [download page][download-page] or have installed Mautic through some other source (Softaculous, Bitnami, Digital Ocean etc...) then you have already completed the first step. If not then you will need to upload the Mautic package (a zip file) to your server; unzip the files and then navigate to that location in your browser.
+
 
 As an example, if your domain is `example.com` and you have unzipped the file into a folder called `mautic`, you would then browse to `https://example.com/mautic` to start the installation process.
 
@@ -109,7 +111,7 @@ The next step after creating the database is to set up your administrator accoun
 
 ![admin user](admin-user.png)
 
-Enter a username, password, first and last name and an email address, and the account will be created for you.
+Enter the required fields: username, password, first and last name, email address, and the account would be created for you.
 
 ### Email configuration
 
@@ -117,7 +119,9 @@ The next step allows you to configure the way in which email is sent from your M
 
 ![email config](email-config.png)
 
+
 If you are testing, whether locally or on a live server, it is highly recommended to make use of [Mailhog][mailhog] or similar to capture all outgoing emails, until you are ready to send to real recipients. Otherwise, in a production environment you will need to choose whether you want to send email immediately, or queue email (and process it when the Cron job runs), and provide the appropriate server, port, encryption type, credentials and authentication mode for the systems you wish to use.
+
 
 ### Admin login
 
@@ -125,7 +129,9 @@ Now you have completed the setup process, you will be directed to the back-end l
 
 ## Step 2: Add Cron Jobs
 
+
 Once you've installed Mautic you will need to create a few standard [cron jobs][cron-jobs] to have your software process various tasks. These [cron jobs][cron-jobs] can be created through a cPanel or added through command line. Here is a list of the [cron jobs][cron-jobs] you'll need to create. (Please note: "/path/to/mautic..." will reflect the directory where your version of Mautic is installed, and you may need to replace 'php' with the path to PHP on your server. Ask your hosting provider if you are not sure.)
+
 
 ### Updating Segments
 
@@ -172,6 +178,7 @@ Checkout [Contact Monitoring][contact-monitoring] for more details.
 
 
 
+
 [download-page]: <https://www.mautic.org/download>
 [apache]: <https://httpd.apache.org/docs/current/>
 [document-root]: <https://httpd.apache.org/docs/current/mod/core.html#documentroot>
@@ -180,3 +187,4 @@ Checkout [Contact Monitoring][contact-monitoring] for more details.
 [mailhog]: <https://github.com/mailhog/MailHog>
 [cron-jobs]: </setup/cron-jobs>
 [contact-monitoring]: </contacts/manage-contacts/contact-monitoring> 
+
