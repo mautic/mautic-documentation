@@ -92,19 +92,6 @@ As the JS tracking request is loaded asynchronously, you can ask JS to call a fu
 
 ```
 
-#### Fingerprint (beta feature)
-
-Mautic 1.4.0 comes with a tracking feature called fingerprint. [Fingerprint2](https://github.com/Valve/fingerprintjs2) library was used. It should work together or replace current tracking identifiers like IP address and/or cookie ID. This method is not yet deeply implemented into the system, but you can already see more information in the timeline page hit events in the contact detail:
-
-- **Fingerprint** - Unique hash calculated from browser settings and another environment variables.
-- **Resolution** - Width x Height of the device display resolution.
-- **Timezone Offset** - Amount of minutes plus or minus from UTC.
-- **Platform** - Platform of the device. Usually OS and processor architecture.
-- **Adblock** - A Boolean value whether contact uses an adblock browser plugin.
-- **Do Not Track** - A Boolean value if DNT is turned on.
-
-If you'd like to store any of the values above to a contact detail field, create a new custom field called exactly like the name in the list above and make the field publicly updatable. You can also try to make the Fingerprint field unique and this way you can simulate the future fingerprint tracking. It is not a tested feature though, do not use it on production unless you tested it first.
-
 ### Tracking Pixel tracking
 
 This method is secondary since Mautic 1.4.
