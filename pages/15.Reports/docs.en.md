@@ -38,18 +38,36 @@ Each graph of each report is made available as a widget on the dashboard allowin
 
 ![The Add Widget window on the Dashboard](widget.png)
 
-## Schedule
+## Scheduling Reports
 
 Enable or disable sending reports via email by using the toggle switch.
 
-You can schedule emails to send reports to one or more email addresses. In the To field, enter a comma-separated list of email addresses and set the frequency of sending reports by choosing day, week, or month from the drop-down list.
+It is possible to schedule emails which will send reports to one or more email addresses. In the To field, enter a comma-separated list of email addresses and set the frequency of sending reports by choosing day, week, or month from the drop-down list.
 
 ![The Schedule tab in the Edit Report window](schedule.png)
+
+Since version 3.2 it is possible to send a report once. This may be helpful if the report takes some time to load. The cron job will process the request, and send the result by email.
+
+The problem is that email attachments cannot be too large, as this could prevent them being sent. If the file is greater than 5MB (configurable file attachment limit) then the CSV file will be zipped. If the zip package is within the file attachment limit then it will be sent as an email attachment. If it is still too big the zip file will be moved to a more permanent location, and the email will contain a link to download it. The download link works only for logged in Mautic users.
+
+If someone tries to download a compressed CSV report that had been deleted for whatever reason, Mautic will schedule the report to NOW again, and send the user the email notification when the CSV report has been created.
+
+The one-time report export and send can be configured 2 ways:
+
+1. By scheduling the email:
+![Screenshot showing the option to send the report now](send-report-now.png)
+
+2. By a button from the report list:
+![Screenshot shoowing option to export and send the report](export-and-send.png)
+
+The button is available only for non-scheduled reports as it would reset configuration for scheduled reports.
+
+### Cron job to schedule reports
 
 To be able to send scheduled reports, the following cron command is required:
 
 ```
-php /path/to/mautic/app/console mautic:reports:scheduler [--report=ID]
+php /path/to/mautic/bin/console mautic:reports:scheduler [--report=ID]
 ```
 The `--report=ID` argument allows you to specify a report by ID if required. For more information, see [Cron jobs][cron-jobs].
 
