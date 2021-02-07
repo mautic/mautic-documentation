@@ -111,7 +111,7 @@ The next step after creating the database is to set up your administrator accoun
 
 ![admin user](admin-user.png)
 
-Enter the required fields: username, password, first and last name, email address, and the account would be created for you
+Enter the required fields: username, password, first and last name, email address, and the account would be created for you.
 
 ### Email configuration
 
