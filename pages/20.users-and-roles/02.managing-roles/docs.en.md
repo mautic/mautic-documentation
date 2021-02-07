@@ -67,3 +67,5 @@ There are permission levels relating to what fields in the Users section can be 
 
 * Specified fields - allow or deny the users with this role to edit specified fields in the Users section (e.g. Name, Username, Email, Position)
 * All - this allows the users with this role to edit all fields relating to the Users section
+
+[mautic-3.3]: <https://github.com/mautic/mautic/releases/tag/3.3>
