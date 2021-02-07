@@ -22,7 +22,7 @@ Awesome! You've downloaded a marketing automation tool. That's a great first ste
 ## Step 1: Install Mautic
 
 
-If you have already downloaded the zip from the [download page][download-page] or have installed Mautic through some other source (Softaculous, Bitnami, Digital Ocean etc...) then you have already completed the first step. If not then you will need to upload the Mautic package (a zip file) to your server; unzip the files; and then navigate to that location in your browser.
+If you have already downloaded the zip from the [download page][download-page] or have installed Mautic through some other source (Softaculous, Bitnami, Digital Ocean etc...) then you have already completed the first step. If not then you will need to upload the Mautic package (a zip file) to your server; unzip the files and then navigate to that location in your browser.
 
 
 As an example, if your domain is `example.com` and you have unzipped the file into a folder called `mautic`, you would then browse to `https://example.com/mautic` to start the installation process.
@@ -111,7 +111,7 @@ The next step after creating the database is to set up your administrator accoun
 
 ![admin user](admin-user.png)
 
-Enter a username, password, first and last name, and an email address, and the account will be created for you.
+Enter the required fields: username, password, first and last name, email address, and the account would be created for you
 
 ### Email configuration
 
