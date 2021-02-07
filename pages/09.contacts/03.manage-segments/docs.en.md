@@ -37,7 +37,7 @@ It is possible to create a segment which is accessible to everybody who uses you
 
 There are many approaches that can be taken when it comes to allowing contacts to choose communications they wish to receive from you. If you wish to allow them to subscribe and unsubscribe based on segments, you can select the option to make a segment available in the Preference Centre.
 
-Use this in conjunction with the public name to provide a user-friendly description of the segment.
+Use this in conjunction with the public name to provide a user-friendly description of the Segment.
 
 ### Creating Segment Categories
 
