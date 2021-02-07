@@ -55,6 +55,10 @@ There are permission levels relating to resources the user has created themselve
 * Own - this allows the users with this role to view/edit/delete/publish their own resources in this part of Mautic, but not those created by others
 * Others - this allows the users with this role to view/edit/delete/publish their own resources in this part of Mautic, and those created by others
 
+Since the [3.3][mautic-3.3] release there is a permission level to prevent users from exporting resources:
+
+* Export Access - Select disable to prevent the users with this role from exporting resources from this part of Mautic
+
 There are permission levels relating to being able to manage resources:
 
 * Manage - this allows the users with this role to manage resources in this area of Mautic (for example, managing custom fields or plugins)
@@ -63,3 +67,5 @@ There are permission levels relating to what fields in the Users section can be 
 
 * Specified fields - allow or deny the users with this role to edit specified fields in the Users section (e.g. Name, Username, Email, Position)
 * All - this allows the users with this role to edit all fields relating to the Users section
+
+[mautic-3.3]: <https://github.com/mautic/mautic/releases/tag/3.3>
