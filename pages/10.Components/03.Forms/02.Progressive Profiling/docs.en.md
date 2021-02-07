@@ -25,7 +25,7 @@ A global feature to enable progressive profiling and allow the rendering of a sp
 
 2. Always display
 
-Force display and skip fields orders in the form If you set **1. Maximum fields displayed at a time**. 
+Always force the display of the field, even if you set a maximum number of fields (x) and this field is not in the first x fields - this is helpful for fields like Email which must always be displayed.**. 
 
 ![image](https://user-images.githubusercontent.com/462477/80913150-b6a75900-8d42-11ea-944d-7552882b215f.png)
 
