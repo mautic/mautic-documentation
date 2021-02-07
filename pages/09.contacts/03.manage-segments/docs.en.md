@@ -23,7 +23,7 @@ To create a new Segment navigate to Segments in the menu, and click on 'New'.
 
 ### Naming Segments
 
-Since the 3.2 release it has been possible to provide a public name, in addition to an internal name, for a segment. 
+Since the 3.2 release it has been possible to provide a public name, in addition to an internal name, for a Segment. 
 
 This is used if the segment is displayed in the Preference Centre, allowing the contact to choose to remove themselves from it.  The Public Name is what will be displayed to the contact in the preference centre.
 
