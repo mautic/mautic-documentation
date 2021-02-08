@@ -45,13 +45,13 @@ You can create additional Custom Fields and define the data type you want that f
 
 ### Customize Contact List Column
 
-You can create your custom Contact List column and add the fields that you want from your configuration. To do that you need to: 
+You can create your custom Contact List column and add the fields that you want from your Configurations. To do that you need to: 
 
 1. Go to Configurations > Contact Settings to see the Contact List Settings.
 
 ![Contact List](contact-list.png)
 
-2. Customize your columns by selecting the different fields according to your needs. You can use the search bar to search for fields.
+2. Customize your Columns by selecting the different fields according to your needs. You can use the search bar to search for fields.
 3. Save and go to Contacts to check if your changes were applied.
 
 ![Customized Contact List](customize.png)
