@@ -1,13 +1,19 @@
 ---
 title: 'Social login'
-media_order: ''
-body_classes: ''
-order_by: ''
-order_manual: ''
-slug: social-login
+media_order: Social-Login-2.png
 taxonomy:
     category:
         - docs
+slug: social-login
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---------------
@@ -20,10 +26,8 @@ Social login in Mautic is used to sign forms and pre-fill them with matched cont
 For social login buttons to be available you need to enable your social media buttons listed and authorized.
 
 Please follow the links provided to create your social applications before you authorize and configure your plugins.
-- Twitter
-For twitter please see the [twitter docs][twitter]
+- [Twitter][twitter]
 - [Facebook][facebook]
-- [g+][g+]
 - [LinkedIn][linkedIn]
 
 ### Authorize the plugin
@@ -31,7 +35,6 @@ For twitter please see the [twitter docs][twitter]
 An application has to be created for authorization. While creating your social app, you might be asked for a *Callback URL*. This callback URL is the one provided in the configuration window for your plugin.
 
 Once your app is created, copy the *API Key* to the *Client Key* field in Mautic's plugin configuration and *API Secret* to *Client Secret* field. Click the *Authorize* button.
-
 Don't forget to switch *Published* to *Yes* and save the configuration.
 
 ### Configure the plugin
@@ -50,20 +53,19 @@ Then you will need to follow these steps:
 1. Choose the social login field. Buttons for all plugins enabled will appear. Buttons for plugins that have not been authorized yet will not work properly.
 1. To pre-fill the form: The social login tries to match fields that have the same or similar names to the fields found on the social profile.
 
+![](Social-Login-2.png)
+
+###Integration Fields
+
 **Twitter**
 'profileHandle','name', 'location', 'description', 'url', 'time_zone', 'lang', 'email'
 
 **Facebook:**
 'first_name','last_name','name','gender','locale','email','link',
 
-**G+** 'profileHandle'
-'nickname','occupation','skills','birthday','gender','urls','displayName','name','emails','tagline','braggingRights','aboutMe'         
-'currentLocation','relationshipStatus','organizations','placesLived','language','ageRange'
-
 **Linkedin** 'firstName','lastName','maidenName','formattedName','headline','location','summary','specialties','positions','publicProfileUrl','emailAddress'
 
 
 [facebook]: <https://developers.facebook.com>
-[g+]: <https://console.developers.google.com>
 [linkedIn]: <https://developer.linkedin.com>
 [twitter]: <https://developer.twitter.com/en>

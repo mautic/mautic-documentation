@@ -15,7 +15,7 @@ providers:
     client_id: ''
     client_secret: ''
     options:
-      scope: ['user', 'user:email']
+      scope: ['user:email']
 
   instagram:
     enabled: true

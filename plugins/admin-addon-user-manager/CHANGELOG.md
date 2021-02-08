@@ -1,5 +1,25 @@
+# v2.5.0
+## 01/12/2021
+
+1. [](#new)
+    * It's now possible to do simple searches rather than advanced searches in the user and group manager. (#69)
+
+# v2.4.0
+## 01/12/2021
+
+1. [](#new)
+    * German translation (Thanks: https://github.com/Markus00000 PR #73)
+    * Event hook for user removal: AAUM_onUserRemove
+    * Event hook for group removal: AAUM_OnGroupRemove
+
+2. [](#improved)
+    * Full name column is now shown in the User Manager list display (#77)
+
+3. [](#bugfix)
+    * Fixed an issue when Grav pages folder is mounted on docker causing the plugin to malfunction (#75)
+
 # v2.3.0
-## 05/04/2020
+## 04/05/2020
 
 1. [](#new)
     * Chinese translation (Thanks: https://github.com/dallaslu PR #68)
@@ -26,7 +46,7 @@
     * Fixed avatar upload
 
 # v2.1.8
-## 28/05/2019
+## 05/28/2019
 
 1. [](#new)
     * French translation (Thanks: https://github.com/Miaourt PR #58)
@@ -35,7 +55,7 @@
     * Fixed a problem with saving groups (#59)
 
 # v2.1.7
-##  13/02/2019
+##  02/13/2019
 
 1. [](#new)
     * Serbian translation (Thanks: https://github.com/tomaja-linuxo PR #47)
@@ -52,19 +72,19 @@
     * Fixed error when using 'Login As' feature with an user without admin permissions (#43)
 
 # v2.1.5
-##  09/04/2018
+##  04/09/2018
 
 1. [](#bugfix)
     * Fixed error when rendering front-end (#40)
 
 # v2.1.4
-##  09/04/2018
+##  04/09/2018
 
 1. [](#improved)
     * Moved 'site.login' permission to the front of permission list. (#36)
 
 # v2.1.3
-##  02/04/2018
+##  04/02/2018
 
 1. [](#improved)
     * Validate user object on save
@@ -73,19 +93,19 @@
     * Fixed unset user permissions being pushed into the access array with an empty string value. Causing inherited permissions to be overwritten. (#38)
 
 # v2.1.2
-##  29/03/2018
+##  03/29/2018
 
 1. [](#new)
     * Norwegian translation (Thanks: https://github.com/achwell PR #37)
 
 # v2.1.1
-##  22/03/2018
+##  03/22/2018
 
 1. [](#improved)
     * Added 'site.login' permission to the permission list. (#36)
 
 # v2.1.0
-##  14/03/2018
+##  03/14/2018
 
 1. [](#new)
     * Czech translation (Thanks: https://github.com/07pepa Issue #29)
@@ -97,13 +117,13 @@
     * Minor bugfixes
 
 # v2.0.3
-##  27/02/2018
+##  02/27/2018
 
 1. [](#improved)
     * Added missing translations
 
 # v2.0.2
-##  27/01/2018
+##  01/27/2018
 
 1. [](#bugfix)
     * Fixed wrong redirection after deleting an user (#28)
@@ -116,7 +136,7 @@
     * Fixed admin links not working when something is changed in the form (#27)
 
 # v2.0.0
-##  29/12/2017
+##  12/29/2017
 
 1. [](#new)
     * 'Login As' button
@@ -127,27 +147,27 @@
     * Avatar upload now works
 
 # v1.9.1
-##  29/12/2017
+##  12/29/2017
 
 1. [](#bugfix)
     * Fixed 'Memory leak when using non-ascii character (?) to create group' (#26)
     * Fixed being redirected to the deleted group, now redirects to the group manager
 
 # v1.9.0
-##  02/12/2017
+##  12/02/2017
 
 1. [](#improved)
     * Using custom blueprint for user editing (#23)
     * Using custom request handler for saving user data (#23)
 
 # v1.8.1
-##  18/09/2017
+##  09/18/2017
 
 1. [](#improved)
     * Added username validating (#21)
 
 # v1.8.0
-##  14/08/2017
+##  08/14/2017
 
 1. [](#new)
     * Custom permissions (#18)

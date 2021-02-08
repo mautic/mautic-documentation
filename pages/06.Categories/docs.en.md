@@ -13,7 +13,7 @@ Categories are a way to organize Mautic elements. They are available for assets,
 
 ## Creating/Managing Categories
 
-To create a new categories, go to settings menu in the top right corner of Mautic. There choose categories.
+To create new categories, go to settings menu in the top right corner of Mautic. There choose categories.
 
 ![create new category](create-new-category.jpg)
 

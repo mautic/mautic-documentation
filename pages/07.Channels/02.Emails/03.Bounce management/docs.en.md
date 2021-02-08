@@ -85,7 +85,10 @@ Mautic supports the bounce and complaint management from Amazon Simple Email Ser
 
 ![Topic](amazon_webhook_4.png "New subscriber")
 
-3. Enter the url to the Amazon webhook on your Mautic installation. It should usually be your Mautic URL followed by `/mailer/amazon/callback`.
+3. Enter the url to the Amazon webhook on your Mautic installation. 
+
+>>>>> When using the **SMTP method**, the callback URL will be your Mautic URL followed by `/mailer/amazon/callback`.
+>>>>>  When using the **API method** (available since Mautic 3.2), the callback URL will be your Mautic URL followed by `/mailer/amazon_api/callback`.
 
 ![Topic](amazon_webhook_5.png "Enter url to Mautic")
 

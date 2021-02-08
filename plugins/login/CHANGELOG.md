@@ -1,14 +1,33 @@
+# v3.3.8
+## 12/11/2020
+
+1. [](#bugfix)
+   * Fixed saving another user in Admin with 2FA enabled regenerating 2FA secret [#268](https://github.com/getgrav/grav-plugin-login/issues/268)
+
+# v3.3.7
+## 12/02/2020
+
+1. [](#bugfix)
+    * Flex Users: Make sure the user object is fresh and not cached
+
+# v3.3.6
+## 09/24/2020
+
+1. [](#bugfix)
+    * Fixed typos causing invalid config for logout
+    * Fixed cache issues with user login pages [#264](https://github.com/getgrav/grav-plugin-login/issues/264) 
+
 # v3.3.5
 ## 06/10/2020
 
 1. [](#bugfix)
-    * Fixed broken lang strings [#258](https://github.com/getgrav/grav-plugin-login/pulls/258)
+    * Fixed broken lang strings [#258](https://github.com/getgrav/grav-plugin-login/pull/258)
 
 # v3.3.4
 ## 06/08/2020
 
 1. [](#improved)
-    * Missing language strings [#254](https://github.com/getgrav/grav-plugin-login/pulls/254)
+    * Missing language strings [#254](https://github.com/getgrav/grav-plugin-login/pull/254)
 
 # v3.3.3
 ## 06/05/2020
@@ -85,8 +104,8 @@
 
 1. [](#bugfix)
     * Fixed bug in `Login::isUserAuthorizedForPage()` where rules is a list of permissions
-    * Fixed password reset link [#233](https://github.com/getgrav/grav-plugin-login/pulls/233)
-    * Fixed Typo [#236](https://github.com/getgrav/grav-plugin-login/pulls/236)
+    * Fixed password reset link [#233](https://github.com/getgrav/grav-plugin-login/pull/233)
+    * Fixed Typo [#236](https://github.com/getgrav/grav-plugin-login/pull/236)
 
 # v3.0.4
 ## 10/03/2019
@@ -107,7 +126,7 @@
 ## 05/09/2019
 
 1. [](#new)
-  * Added `ru` and `uk` translations [#208](https://github.com/getgrav/grav-plugin-login/pulls/208)
+  * Added `ru` and `uk` translations [#208](https://github.com/getgrav/grav-plugin-login/pull/208)
 1. [](#improved)
   * Fixed typo in README.md
   * Added support for IPv6 addresses for login rate limiting @Vivalldi [#204](https://github.com/getgrav/grav-plugin-login/issues/204)
@@ -140,11 +159,11 @@
 ## 03/20/2019
 
 1. [](#improved)  
-  * Enable "brute force" protection by default [#195](https://github.com/getgrav/grav-plugin-login/pulls/195)
+  * Enable "brute force" protection by default [#195](https://github.com/getgrav/grav-plugin-login/pull/195)
   * UPdated various language translations
 1. [](#bugfix)
   * Set security timeouts in blueprints to use `minutes` rather than `seconds` [#194](https://github.com/getgrav/grav-plugin-login/issues/194)
-  * Send "notification" email to `to` address rather than `from` [#188](https://github.com/getgrav/grav-plugin-login/pulls/188)
+  * Send "notification" email to `to` address rather than `from` [#188](https://github.com/getgrav/grav-plugin-login/pull/188)
 
 # v2.8.3
 ## 01/25/2019

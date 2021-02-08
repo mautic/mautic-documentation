@@ -44,7 +44,7 @@ When an upgrade attempt fails in the final step, it may be only the outdated cac
 
 If this command throws a PHP error, you can try to remove the cache folder using the following command (be careful, this removes all files and folders in the path specified, so ensure you type it correctly!)
 
-    rm -rf app/cache
+    rm -rf bin/cache
 
 If clearing the cache has not resolved your problems, continue with the next step.
 
@@ -70,19 +70,7 @@ If there are any reported, firstly **ensure that you have a tested backup of you
 
     php bin/console doctrine:migration:migrate
 
-### 4. Check for database schema updates
-
-If your upgrade failed during the database update step, the database schema may not be up to date.  Run the following command to check for updates:
-
-    php bin/console doctrine:schema:update --dump-sql
-
-Running this command will tell you whether the database is up to date with the code.  If there are queries that need to be executed, **ensure you have a tested backup of your database before proceeding, as this command will cause changes to the database**, then run the following command:
-
-    php bin/console doctrine:schema:update --force
-
-If this hasn't resolved your problem, proceed to the next step.
-
-### 5. Try to update the files manually
+### 4. Try to update the files manually
 
 This step requires some manual intervention - there is no command for this part.
 

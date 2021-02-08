@@ -1,14 +1,14 @@
 name: Simple Cookie
-version: 0.1.5
+version: 0.1.8
 description: "Simple cookie plugin is based on the popular CookieConsent JS-library. For Advanced Opt-In/Opt-Out configurations you can use the 'Custom configuration' option."
 icon: shield
 author:
-  name: Thomas Schwarz
+  name: Tom Schwarz
   email: thomasschwarz96@web.de
-homepage: https://github.com/thomasschwarz96/grav-plugin-simple-cookie
+homepage: https://github.com/tomschwarz/grav-plugin-simple-cookie
 keywords: grav, plugin, cookie, cookieconsent, simple, opt-in, opt-out
-bugs: https://github.com/thomasschwarz96/grav-plugin-simple-cookie/issues
-docs: https://github.com/thomasschwarz96/grav-plugin-simple-cookie/blob/develop/README.md
+bugs: https://github.com/tomschwarz/grav-plugin-simple-cookie/issues
+docs: https://github.com/tomschwarz/grav-plugin-simple-cookie/blob/develop/README.md
 license: MIT
 
 form:
@@ -88,6 +88,13 @@ form:
       type: text
       label: Dismiss button text
       help: The text on the dismiss button.
+      validate:
+        type: text
+
+    banner_deny:
+      type: text
+      label: Deny button text
+      help: The text on the deny button.
       validate:
         type: text
 
