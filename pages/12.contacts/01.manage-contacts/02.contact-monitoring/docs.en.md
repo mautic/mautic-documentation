@@ -21,7 +21,7 @@ The act of monitoring the traffic and activity of contacts can sometimes be some
 
 Monitoring all traffic on a website can be done by loading a javascript file (since Mautic 1.4) or adding a tracking pixel to the website. It is important to note that traffic will not be monitored from logged-in Mautic users. To check that the JS/pixel is working, use an incognito or private browsing window or simply log-out of Mautic prior to testing.
 
-Note that by default, Mautic will not track traffic originating from the same [private network](https://en.wikipedia.org/wiki/Private_network) as itself, but this internal traffic can be configured to be tracked by setting the `track_private_ip_ranges` configuration option to `true` in `app/config/local.php` and then [clearing the symfony cache](https://developer.mautic.org/#cache).
+Note that by default, Mautic will not track traffic originating from the same [private network][private network] as itself, but this internal traffic can be configured to be tracked by setting the `track_private_ip_ranges` configuration option to `true` in `app/config/local.php` and then [clearing the symfony cache][clearing the symfony cache].
 
 ### Tracking Script (Javascript)
 
@@ -291,19 +291,19 @@ There is a campaign action which allows you to send a custom event to [Google An
 
 ##### How to test Google Analytics tracking code and campaign action
 
-- Install [Tag Assistant][Tag assistant] and enable recording on your website 
+- Install [Tag Assistant][Tag assistant] and enable recording on your website
 - Create campaign with the 'Visits a page' decision and 'Send tracking event' action 
 - Test it and check in the Tag Assistant debug window that you see one Pageview request and one event
 
-![Google Tag Assistant](google-analytics-tag-assistent.png)
+![Google Tag Assistant][Google Tag Assistant]
 
 ##### How to test Google Tag Manager tracking code and Campaign action
 
-- Install [Tag assistant](https://chrome.google.com/webstore/detail/tag-assistant-by-google/kejbdjndbnbjgmefkgdddjlbokphdefk) and enable recording on your website 
+- Install [Tag assistant][Tag assistant] and enable recording on your website
 - Create a Campaign with `Visits a Page` decision and `Send tracking event` action
 - Test it and see Tag assistant debug window with one Pageview request and 1 event.
 
-![](media/google-analytics-tag-assistent.png)
+![Google Tag Assistant][Google Tag Assistant]
 
 ##### How to test Facebook Pixel tracking code and campaign action
 
@@ -311,7 +311,7 @@ There is a campaign action which allows you to send a custom event to [Google An
 - Create campaign with a 'Visits a page' decision and a 'Send tracking event' action 
 - Test it and check in the Facebook Pixel Helper debug window that you see one Pageview and one custom event action
 
-![Facebook Pixel Helper](facebook-pixel-helper.png)
+![Facebook Pixel Helper][Facebook Pixel Helper Img]
 
 Events can be used for [Remarketing with Analytics][Remarketing with Analytics] and [Remarketing for Facebook Ads][Remarketing for Facebook Ads].
 
@@ -332,8 +332,12 @@ If the tracking doesn't work, take a look at the [troubleshooting section][troub
 [Facebook Pixel]: <https://developers.facebook.com/docs/ads-for-websites/pixel-events/> 
 [Tag assistant]: <https://chrome.google.com/webstore/detail/tag-assistant-by-google/kejbdjndbnbjgmefkgdddjlbokphdefk>
 [Facebook Pixel Helper]: <https://chrome.google.com/webstore/detail/facebook-pixel-helper/fdgfkebogiimcoedlicjlajpkdmockpc>
+[Facebook Pixel Helper Img]: <media/facebook-pixel-helper.png>
 [Remarketing with Analytics]: <https://support.google.com/analytics/topic/2611283?hl=en&ref_topic=7185254>
 [Remarketing for Facebook Ads]: <https://www.facebook.com/business/a/online-sales/custom-audiences-website>
+[private network]: <https://en.wikipedia.org/wiki/Private_network>
+[clearing the symfony cache]: <https://developer.mautic.org/#cache>
+[Google Tag Assistant]: <media/google-analytics-tag-assistent.png>
 [troubleshooting section]: </troubleshooting>
 
 [Joomla!]: <https://github.com/mautic/mautic-joomla>
