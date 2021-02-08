@@ -109,11 +109,11 @@ It is possible to choose a theme for a form. If you do so and the theme supports
 
 It is possible to pre-populate the value of a form field from the URL query parameters. However, this only works for form fields that are linked to contact fields, all of which can be found on the Settings -> Custom fields page. (In spite of the name, this page lists all fields, including core ones.)
 
-Before starting it is **critical** that any fields to be pre-populate are set to be "publicly updatable" by editing them via [custom fields][custom-fields]. With this setting enabled, Mautic fields can be altered programatically.
+Before starting it is **critical** that any fields to be pre-populated are set to be "publicly updatable" by editing them via [custom fields][custom-fields]. With this setting enabled Mautic fields can be altered programatically.
 
 The aliases of the contact fields to be pre-populated are used in the URL to match up with the form fields. The alias of each field is shown in the custom fields table.
 
-Create the form fields in the usual way, and link it to the appropriate contact field. In the Behaviour tab, enable the "Auto fill data" setting.
+Create the form fields in the usual way, and link them to the appropriate contact fields. In the Behaviour tab, enable the "Auto fill data" setting.
 
 Once these three important steps have been followed for each form field you wish to pre-populate, you will be able to move on to building your URL.
 
@@ -179,3 +179,5 @@ Note, your form field alias has nothing to do with the URL, as long as the form 
 [release-2.3.0]: <../../../../index.php.com/mautic/mautic/releases/tag/2.3.0>
 [release-2.10.0]: <../../../../index.php.com/mautic/mautic/releases/tag/2.10.0>
 [release-2.15.0]: <../../../../index.php.com/mautic/mautic/releases/tag/2.15.0>
+
+[custom-fields]: </contacts/manage-custom-fields>
