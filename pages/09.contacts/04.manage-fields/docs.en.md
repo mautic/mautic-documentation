@@ -51,8 +51,8 @@ You can create your custom Contact List column and add the fields that you want 
 
 ![Contact List](contact-list.png)
 
-1. Customize your Columns by selecting the different fields according to your needs. You can use the search bar to search for fields.
-1. Save and go to Contacts to check if your changes were applied.
+2. Customize your Columns by selecting the different fields according to your needs. You can use the search bar to search for fields.
+3. Save and go to Contacts to check if your changes were applied.
 
 ![Customized Contact List](customize.png)
 
