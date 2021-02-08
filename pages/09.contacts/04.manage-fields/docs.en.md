@@ -25,9 +25,9 @@ You will notice the group column which will show you where the specific field wi
 ![custom field icons](custom-field-icons.png)
 
 1. Lock icon - These fields are unable to be removed as they are used by the core installation.
-2. List icon - These fields can be used as filters of segments.
-3. Asterisks icon - These fields are required when filling in the contact form
-4. Globe icon - These fields are publicly updatable through the [tracking pixel][variables] URL query (see [Contact Monitoring][contact monitoring] for more details).
+1. List icon - These fields can be used as filters of segments.
+1. Asterisks icon - These fields are required when filling in the contact form
+1. Globe icon - These fields are publicly updatable through the [tracking pixel][variables] URL query (see [Contact Monitoring][contact monitoring] for more details).
 
 ### Published Fields
 

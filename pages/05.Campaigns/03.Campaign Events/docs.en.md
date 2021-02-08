@@ -58,7 +58,7 @@ This action will **permanently delete the contact** who will trigger this action
 
 1.  It will also delete the campaign event log record about that contact so this action will always show 0% progress in the campaign detail page. Even though it could have deleted some contacts. There is no record about it.
 
-2. This action doesn't allow to connect other campaign events to it. There is no point in doing so since the contact won't exist after this action is triggered.
+1. This action doesn't allow to connect other campaign events to it. There is no point in doing so since the contact won't exist after this action is triggered.
 
 ### Focus items
 

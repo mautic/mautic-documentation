@@ -84,7 +84,7 @@ __The delay you set is ran before checking the condition no matter the delay you
 
 Currently there are 2 types of conditions
 1. Conditions based on Contact Field Value.
-2. Conditions based on Form Field Value.
+1. Conditions based on Form Field Value.
 
 #### Positive status Condition Path (Green Points)
 

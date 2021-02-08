@@ -36,7 +36,7 @@ Signature is also a new feature in the Mautic 1.3.0. There are two places where 
 
 	This signature will be used **if the contact owner is not known**.
 
-2. Every user can configure their own signature in the profile edit page. This signature will be used **if the contact owner is known**.
+1. Every user can configure their own signature in the profile edit page. This signature will be used **if the contact owner is known**.
 
 	The signature can be placed into an email text using the `{signature}` token.
 

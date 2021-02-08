@@ -24,9 +24,9 @@ To integrate Mautic with Pipedrive, fill out the following fields:
 ![Mautic Pipedrive plugin window](mautic_window_conf.png "Mautic Pipedrive plugin window")
 
 1. Pipedrive URL: Pipedrive API URL
-2. Pipedrive Token: Pipedrive API token
-3. Webhook user: the username of your choice (used in Pipedrive webhooks)
-4. Webhook password: the password of your choice (used in Pipedrive webhooks)
+1. Pipedrive Token: Pipedrive API token
+1. Webhook user: the username of your choice (used in Pipedrive webhooks)
+1. Webhook password: the password of your choice (used in Pipedrive webhooks)
 
 Get the Pipedrive URL and API Token from Pipedrive. The API URL looks just like your own Pipedrive URL, but you have to add _/v1_ at the very end. In this example the URL will look like this: `https://my-test-company.pipedrive.com/v1`.
 
@@ -85,10 +85,10 @@ You have to create webhooks for Person, User and optionally for Organization.
 ![Configure Pipedrive webhooks](webhooks_2.png "Configure Pipedrive webhooks")
 
 1. Select `updated` to send to Mautic updated events for the given object. Do not select `*` as Pipedrive will send the `updated` events on create event too. If you select `*` the contacts/companies/users will be duplicated.
-2. Choose which object you want to synchronize (Person, Organization, User)
-3. Enter your Mautic URL address (you can find it on the Pipedrive plugin configuration page)
-4. Enter the webhook user that you used for plugin configuration
-5. Enter the webhook password that you used for plugin configuration
+1. Choose which object you want to synchronize (Person, Organization, User)
+1. Enter your Mautic URL address (you can find it on the Pipedrive plugin configuration page)
+1. Enter the webhook user that you used for plugin configuration
+1. Enter the webhook password that you used for plugin configuration
 
 ![Get webhooks data from Mautic](webhooks_3.png "Get webhooks data from Mautic")
 

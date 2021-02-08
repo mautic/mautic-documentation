@@ -18,8 +18,10 @@ Note that by default, Mautic will not track traffic originating from the same [p
 
 JS tracking method was implemented in Mautic 1.4 and recommended as the primary way of website tracking. To implement it, 
 
-1. Go to Mautic > *Settings* (click the cogwheel at the top right) > *Configuration* > *Tracking Settings* to find the JS tracking code build for the Mautic instance
-2. Insert the code before the ending `<body/>` tag of the website you want to track
+
+1. go to Mautic > *Settings* (click the cogwheel at the top right) > *Configuration* > *Tracking Settings* to find the JS tracking code build for your Mautic instance
+1. insert the code before the ending `<body/>` tag of the website you want to track
+
 
 Or, copy the code below and change the URL to your Mautic instance.
 
@@ -210,8 +212,8 @@ In short, use named screen views (e.g. main_screen) in your App as your page_url
 #### Steps in Mautic
 
 1. Make the email field publicly updateable, this means that a call to the tracking GIF with the variable email will get properly recognized by Mautic.
+1. Setup a form, which will be the access point of your campaign (e.g. a new contact email). Make this form as simple as you can, as you will be POST-ing to it from your App. The typical form URL you will POST to is
 
-2. Set up a form, which will be the access point of your campaign (e.g. a new contact email). Make this form as simple as you can, as you will be POST-ing to it from your App. The typical form URL you will POST to is
 
 ```
 https://example.com/form/submit?formId=<form_id>

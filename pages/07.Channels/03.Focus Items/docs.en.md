@@ -40,7 +40,7 @@ On the left, you'll see a button to switch between mobile and desktop views. A m
 
 The first step to building the focus item is to choose what the focus or goal is. There are three options:
 
-1. Collect data - will use a Mautic form in the output as the content. Note that it should be a very simple form if using layouts such as the bar (one or or two inputs) as there is very little room to work with in some of the styles. This is great for capturing emails for a newsletter signup.
+1. Collect data - will use a Mautic form in the output as the content. Note that it should be a very simple form if using layouts such as the bar (one or two inputs) as there is very little room to work with in some of the styles. This is great for capturing emails for a newsletter signup.
 1. Display a notice - text-based information only - great for announcements and important messages.
 1. Emphasize a link - great for landing pages with an event, sale, promotion, and so forth. It displays a button to click, which will direct the visitor to the given link.
 

@@ -22,10 +22,10 @@ To enable the SugarCRM plugin, you’ll need to get API credential (Oauth keys) 
 
 ## Configure the Mautic SugarCRM plugin
 1. Insert the keys to the Mautic SugarCRM plugin and authorize it.
-2. Configure the features you want to enable
-3. Configure the [field mapping][field-mapping] for contacts
-4. Configure the [field mapping][field-mapping] for companies
-5. Save and close the configuration panel
+1. Configure the features you want to enable
+1. Configure the [field mapping][field-mapping] for contacts
+1. Configure the [field mapping][field-mapping] for companies
+1. Save and close the configuration panel
 
 ### Features
 Enabled features:

@@ -247,8 +247,8 @@ a. Setup Field History by going to Setup->Customize->Leads->Fields menu (and als
 ### Prepare Mautic
 
 1. In Mautic's configuration for the Salesforce integration, on the _Features_ tab, check the box to `Use latest updated Do Not Contact record`
-2. Map the Salesforce `Email Opt Out` field to Mautic's `Do Not Contact by email` field
-3. Now the Do Not Contact status will update to the integration
+1. Map the Salesforce `Email Opt Out` field to Mautic's `Do Not Contact by email` field
+1. Now the Do Not Contact status will update to the integration
 
 ## Test the plugin
 

@@ -18,18 +18,18 @@ This integration integrates any Mautic instance with 1.100+ third party web serv
 ## Requirements
 
 1. Mautic version 2.9.0 or newer with SSL - basic authentication requires HTTPS to be secure.
-3. Zapier account. Free or Paid. [View Zapier pricing][zapier-pricing].
+1. Zapier account. Free or Paid. [View Zapier pricing][zapier-pricing].
 
 ## Installation
 
 There is no need to install any additional plugin to your Mautic instance. Zapier works with the API and webhooks already available within Mautic. This Zapier integration use Basic Authentication to access Mautic API. It is disabled by default so enable this first.
 
 1. Open the admin menu
-2. Go to Mautic's global configuration
-3. Go to API Settings
-4. Set __API enabled?__ to __Yes__.
-5. Set __Enable HTTP basic auth?__ to __Yes__.
-6. Save the configuration.
+1. Go to Mautic's global configuration
+1. Go to API Settings
+1. Set __API enabled?__ to __Yes__.
+1. Set __Enable HTTP basic auth?__ to __Yes__.
+1. Save the configuration.
 
 ![How to enable API and basic auth](enable-api.png)
 
@@ -38,7 +38,7 @@ Zapier will be able to create actions and triggers with your Mautic installation
 ## Sign up for a Zapier account
 
 1. Go to the [Zapier website][zapier].
-2. Select the "Sign Up for Free" button.
+1. Select the "Sign Up for Free" button.
 
 Or log into your existing Zapier account.
 
@@ -79,7 +79,7 @@ At this point choose which Trigger or Action you need. Each trigger will get you
 Once you choose to use Mautic integration you'll need to authorize your Mautic to it. Mautic use basic auth as mentioned earlier. So all you need is a Mautic user credentials and URL of where your Mautic lives. It's recommended to create a new user for Zapier which will have some advantages:
 
 1. Giving a third party app credentials to your Mautic is a security risk. If something happens you simply delete this special Zapier user and your admin user will be safe.
-2. You will see what contacts were created by Zapier simply by looking at the created by user.
+1. You will see what contacts were created by Zapier simply by looking at the created by user.
 
 ![Mautic Zap auth](zapier-auth.png)
 
@@ -104,8 +104,8 @@ That's it! Now if a contact submits a Mautic form the contact gets an email. Oka
 This happens when you create a new action or trigger at Zapier.
 
 1. Zapier creates a new webhook via Mautic API at your Mautic instance specifically for this one Zap. Mautic will then send all events related to the trigger or action type to Zapier.
-2. Zapier lets you map Mautic fields to the fields of the integration you want to connect to Mautic.
-3. Once you make your Zap active Mautic will start receiving data (in the case of actions) and sending data (in the case of triggers).
+1. Zapier lets you map Mautic fields to the fields of the integration you want to connect to Mautic.
+1. Once you make your Zap active Mautic will start receiving data (in the case of actions) and sending data (in the case of triggers).
 
 ## Integration development
 

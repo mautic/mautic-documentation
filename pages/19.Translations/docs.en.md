@@ -22,9 +22,9 @@ Language can be selected in 2 places.
 In the Mautic configuration the default language can be configured. It is pre-set to `English - United States` by default. Every user will see this language if she doesn't configure her language in her profile.
 
 1. Open the right admin menu by clicking on the cog icon in the top right corner.
-2. Select the *Configuration* menu item.
-3. Select the default language.
-4. Save the configuration.
+1. Select the *Configuration* menu item.
+1. Select the default language.
+1. Save the configuration.
 
 ![Select the default language](translations-select-language.png "Select the default language")
 
@@ -44,8 +44,8 @@ A user can define her own language and override the default language. This lets 
 Mautic can be translated to any language. As Mautic is a community project, it can be translated by any community member to any language. Translations are made in the [Transifex][transifex] web app.
 
 1. Create an account at [Transifex][transifex] if you don't have one already.
-2. Take a look at the [list of languages][transifex] which were created for the project already.
-3. Create a language if your language is missing or apply for an existing language.
+1. Take a look at the [list of languages][transifex] which were created for the project already.
+1. Create a language if your language is missing or apply for an existing language.
 
 Take a look at official [Transifex Documentation][transifex-documentation]if you have any questions about the translation process.
 
@@ -54,9 +54,9 @@ Take a look at official [Transifex Documentation][transifex-documentation]if you
 A language is downloaded automatically every time the configuration is saved and the language hasn't been downloaded already. The tricky part is that Mautic won't download a language if it has been already downloaded. So to update a language:
 
 1. Open the Mautic file system via SFTP or SSH.
-2. In the Mautic root folder you should see the folder called *translations*. Open it.
-3. In the *translations* folder are the languages stored. Remove the folder of the language you want to update.
-4. Go go Mautic configuration and save it with the language you've deleted.
+1. In the Mautic root folder you should see the folder called *translations*. Open it.
+1. In the *translations* folder are the languages stored. Remove the folder of the language you want to update.
+1. Go go Mautic configuration and save it with the language you've deleted.
 
 The language should be downloaded again with the latest translations. The translations are generated from Transifex once a day.
 
