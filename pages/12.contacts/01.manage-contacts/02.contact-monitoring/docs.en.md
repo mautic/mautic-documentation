@@ -297,11 +297,11 @@ There is a campaign action which allows you to send a custom event to [Google An
 
 ![Google Tag Assistant](google-analytics-tag-assistent.png)
 
-##### How to test Google Tag Manager tracking code and campaign action
+##### How to test Google Tag Manager tracking code and Campaign action
 
-- Install [Tag assistent](https://chrome.google.com/webstore/detail/tag-assistant-by-google/kejbdjndbnbjgmefkgdddjlbokphdefk) and enable recording on your website 
-- Create campaign with Visits a page decision and  Send tracking event action
-- Test it and see Tag assistent debug window with one Pageview request and 1 events
+- Install [Tag assistant](https://chrome.google.com/webstore/detail/tag-assistant-by-google/kejbdjndbnbjgmefkgdddjlbokphdefk) and enable recording on your website 
+- Create a Campaign with `Visits a Page` decision and `Send tracking event` action
+- Test it and see Tag assistant debug window with one Pageview request and 1 event.
 
 ![](media/google-analytics-tag-assistent.png)
 
