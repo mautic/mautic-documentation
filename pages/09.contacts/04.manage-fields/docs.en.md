@@ -16,7 +16,7 @@ You can manage Custom Fields through the _Admin_ menu (click the cogwheel upper 
 
 ## Custom Fields
 
-The _Custom Fields_ page will let you view all existing Contact fields as well as any custom contact fields you have created.
+The _Custom Fields_ page will let you view all existing Contact fields as well as any custom Contact Fields you have created.
 
 ![Custom Fields](custom-fields.jpg)
 
@@ -51,8 +51,8 @@ You can create your custom Contact List column from your configuration and add t
 
 ![Contact List](contact-list.png)
 
-2. Change some columns and save.
-3. Go to Contacts and check if your changes were applied.
+2. Customize your columns by selecting the differet fields according to your needs. You can use the search bar to search for fields.
+3. Save and go to Contacts to check if your changes were applied.
 
 ![Customized Contact List](customize.png)
 
