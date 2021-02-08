@@ -111,7 +111,7 @@ It is possible to pre-populate the value of a form field from the URL query para
 
 Before starting it is **critical** that any fields to be pre-populate are set to be "publicly updatable" by editing them via [custom fields][custom-fields]. With this setting enabled, Mautic fields can be altered programatically.
 
-You will also need to know the aliases of the contact fields you wish to pre-populate, because you will use these aliases in the URL to feed in your data. The alias can be obtained from the table when viewing the same Settings -> Custom fields page mentioned above.
+The aliases of the contact fields to be pre-populated are used in the URL to match up with the form fields. The alias of each field is shown in the custom fields table.
 
 Create the form fields in the usual way, and link it to the appropriate contact field. In the Behaviour tab, enable the "Auto fill data" setting.
 
