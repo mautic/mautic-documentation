@@ -109,7 +109,7 @@ It is possible to choose a theme for a form. If you do so and the theme supports
 
 It is possible to pre-populate the value of a form field from the URL query parameters. However, this only works for form fields that are linked to contact fields, all of which can be found on the Settings -> Custom fields page. (In spite of the name, this page lists all fields, including core ones.)
 
-Before you start it is **critical** that any fields you wish to pre-populate are set to be "Publicly updatable" by editing them via the Custom fields page. With this setting enabled Mautic fields can be altered from API. If they are not correctly configured, Mautic will ignore them when pre-populating the data.
+Before starting it is **critical** that any fields to be pre-populate are set to be "publicly updatable" by editing them via [custom fields][custom-fields]. With this setting enabled, Mautic fields can be altered programatically.
 
 You will also need to know the aliases of the contact fields you wish to pre-populate, because you will use these aliases in the URL to feed in your data. The alias can be obtained from the table when viewing the same Settings -> Custom fields page mentioned above.
 
