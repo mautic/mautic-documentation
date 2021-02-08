@@ -289,7 +289,7 @@ Tracking codes support also [Google Analytics USERID][Google Analytics USERID] a
 
 There is a campaign action which allows you to send a custom event to [Google Analytics][Google Analytics] or [Facebook Pixel][Facebook Pixel] - it depends on there being a 'Visits a page' decision immediately before it in the campaign workflow.
 
-##### How to test Google Analytics tracking code and campaign action
+##### How to test Google Analytics tracking code and Campaign action
 
 - Install [Tag Assistant][Tag assistant] and enable recording on your website
 - Create campaign with the 'Visits a page' decision and 'Send tracking event' action 
