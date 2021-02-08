@@ -113,7 +113,7 @@ Before starting it is **critical** that any fields to be pre-populate are set to
 
 You will also need to know the aliases of the contact fields you wish to pre-populate, because you will use these aliases in the URL to feed in your data. The alias can be obtained from the table when viewing the same Settings -> Custom fields page mentioned above.
 
-Create your form field in the usual way and use the Contact Field dialogue while creating the field to link it to the contact field you wish to tie the form field too. Then go to the Behaviour dialogue and enable the "Auto fill data" setting, if you fail to do this then Mautic will ignore this field at the pre-populate stage.
+Create the form fields in the usual way, and link it to the appropriate contact field. In the Behaviour tab, enable the "Auto fill data" setting.
 
 Once these three important steps have been followed for each form field you wish to pre-populate, you will be able to move on to building your URL.
 
