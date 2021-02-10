@@ -25,7 +25,7 @@ Since the 3.2 release it has been possible to provide a public name, in addition
 
 This is used if the segment is displayed in the Preference Centre, allowing the contact to choose to remove themselves from it.  The Public Name is what will be displayed to the contact in the preference centre.
 
-![Screenshot of public segment name showing that it can be customised if used in the preference centre](public-segment-name.jpg)
+![Screenshot of public segment name showing that it can be customised if used in the preference centre](public-segment-name.png)
 
 ### Public and private segments
 
