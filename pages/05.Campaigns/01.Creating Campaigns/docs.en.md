@@ -20,7 +20,7 @@ facebookenable: true
 
 # Creating campaigns
 
-Creating campaigns is a simple process. When you create a new campaign, you perform the basic administrative tasks such as, choosing a name for the campaign, creating a description, assigning a category, and define publishing information for the campaign.
+Creating campaigns is a central part of the Marketing Automation process. 
 
 At the heart of the campaign creation is the campaign builder that handles the finer details of building a campaign. A campaign builder is where you build your actual campaign.
 
