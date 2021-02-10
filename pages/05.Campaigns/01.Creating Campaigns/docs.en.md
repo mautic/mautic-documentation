@@ -18,7 +18,7 @@ facebookenable: true
 
 ---------------------
 
-# Creating campaigns
+# Creating Campaigns
 
 Creating campaigns is a central part of the Marketing Automation process. 
 
