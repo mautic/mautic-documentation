@@ -8,7 +8,7 @@ taxonomy:
 
 ---------------------
 # Campaigns overview
-A campaign is a marketing activity that aligns Components and the Channels through which you can publish your content in a coordinated, strategically timed approach to meet specific business objectives. After you add your contacts and set up the required channels, you can create campaigns to build meaningful relationships with your contacts.
+A Campaign is a marketing activity that aligns Components and the Channels through which you can publish your content in a coordinated, strategically timed approach to meet specific business objectives. After you add your Contacts and set up the required Channels, you can create Campaigns to build meaningful relationships with your Contacts.
 
 Campaigns are useful for contact management, marketing operations, and sales enablement. A campaign can send tailored messages to all users in the segment, or to a subset of users that you specify. You can set the campaign schedule to send the message once or at a recurring interval, such as once a week.
 
