@@ -48,7 +48,7 @@ Here are the decisions that Mautic offers in the Campaign Builder:
 
 ### Email-Related Decisions
 
-Some decisions in the campaign builder are available for use only if you select the **Send Email** campaign action.
+Some decisions in the Campaign Builder are available for use only if you select the **Send Email** Campaign action.
 
 Here are the decisions that are email-related:
 
