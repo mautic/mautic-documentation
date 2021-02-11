@@ -25,7 +25,7 @@ Time driven campaigns are the type of campaigns that center around specific time
 
 Contact driven campaigns are used to trigger events based on interactions with specific contacts. These interactions can occur as a result of the contact landing on a certain page, opening an email, spending a specified amount of time on a website, or any other activities. Such campaigns can be set up to respond to these actions typically by sending an email to the contact either immediately or at a specific time in future.
 
-### Mixed campaigns
+### Mixed Campaigns
 
 Mautic allows you to create campaigns which consist a mix of both time driven campaigns as well as contact driven actions. This powerful mixed campaign strategy means that actions will be driven by both specific dates or after specific timeframes as well as actions taken by a contact directly.
 <br>
