@@ -35,7 +35,7 @@ To build your Campaign, perform the following steps:
  
     Note that the Segment selection will only show public Segments. If you create a Segment marked as private, that Segment will not be available for use in Campaigns.
 
- - **Contact forms**: Choose this option if you want to use forms that your contacts have intercted with. Forms are the primary point of customer contact and are used to gather information about a contact. This information can then be used to perform a number of actions in a campaign. 
+ - **Contact Forms**: Choose this option if you want to start the Campaign when the Contact completes a specified Form. Forms are the primary point of gathering information about a Contact. This information can then be used to perform a number of actions in a Campaign. 
  
    You can select a mix of both types of contact sources for your campaign. To use both, use the grey selector button on either the left or right side of the contact source box to add whichever source type you didn’t originally select.
 
