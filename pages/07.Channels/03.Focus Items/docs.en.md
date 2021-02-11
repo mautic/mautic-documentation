@@ -103,7 +103,7 @@ Focus Items action depends on page visits. This means that **you must add it jus
 
 ## Disabling Tracking
 
-In the Mautic Configuration you can disable to set the Tracking Cookie.
+In the Mautic Configuration you can disable setting the tracking cookie.
 
 ![Screenshot showing the configuration Settings to disable tracking](configuration.png)
 
