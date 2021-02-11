@@ -30,7 +30,7 @@ Once the basics are established, the Campaign Builder handles the finer details 
 
 Before you start creating campaigns, you must ensure that you have the following set up:
 <!-- What are the prerequisites of campaign creation? Need more information in this section-->
-1. Build campaign contacts
+1. Build Campaign contacts
 
     Add or remove contacts in batch for campaigns using the following command:
 
