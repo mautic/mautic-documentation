@@ -32,7 +32,7 @@ The actions that Mautic offers in a Campaign include:
 |**Adjust Contact Points**| Adds or subtracts Points from the Contact’s Point total.|
 |**Change Campaigns**| Removes a Contact from the existing Campaign, moves them into another Campaign, restarts the current Campaign or a combination of these. You must remove a Contact from a Campaign before restarting the Campaign.|
 |**Change Contact’s Stage**| Moves a Contact to the specified Stage.|
-|**Delete contact**| Permanently deletes the contact <br> record along with all the information <br> about that contact, including the <br> campaign event log record about that <br> contact. See the [segment docs][segments] <br> about how to use this action to delete<br> all contacts in a segment.|
+|**Delete Contact**| Permanently deletes the Contact record along with all the information about that Contact, including the Campaign event log record about that Contact. See the [Segment docs][segments] <br> about how to use this action to delete all contacts in a Segment.|
 |**Jump to Event**| Moves contacts from one point <br> in a campaign to another without <br> rebuilding events. Use this action to <br> send the contact to a different path <br> in the campaign.|
 |**Modify contact’s segments**| Adds or removes contacts to/from <br> segments. If a contact is removed <br> from a dynamic (filter-based) segment by a campaign action, they won’t be re-added <br> to the segment based on meeting <br> the filter criteria.|
 |**Modify contact’s tags**| Overwrites or appends tags on a <br> contact record. You can append tags, <br> remove tags, or do both if you’d like <br> to overwrite existing tags.|
