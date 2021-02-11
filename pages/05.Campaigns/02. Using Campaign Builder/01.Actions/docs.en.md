@@ -51,7 +51,9 @@ The actions that Mautic offers in a Campaign include:
 
 
 **Notes**:
-1.  As the first step of your campaign, you typically send out an email to your contact segments. When you add an email to a campaign, you can select a potential *delay* for when the email is delivered as shown in the following image. If the action is attached to a decision's non-action initiated decision path, the delay becomes how long the contact has to take action before the campaign progresses down the non-action path. 
+1.  As the first step of your Campaign, you typically send out an Email to your Segments. When you add an Email to a Campaign, you can select a potential **delay** for when the Email is delivered as shown in the following image.
+
+ If the action is attached to a decision's **non-action** initiated decision path, the delay becomes how long the Contact has to take action before the Campaign progresses down the non-action path. 
 <br>
 ![](send-email-delay-nonaction.png)
 
