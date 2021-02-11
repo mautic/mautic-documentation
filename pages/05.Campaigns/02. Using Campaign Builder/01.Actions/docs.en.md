@@ -35,7 +35,7 @@ The actions that Mautic offers in a Campaign include:
 |**Delete Contact**| Permanently deletes the Contact record along with all the information about that Contact, including the Campaign event log record about that Contact. See the [Segment docs][segments] <br> about how to use this action to delete all contacts in a Segment.|
 |**Jump to Event**| Moves Contacts from one point in a Campaign to another without rebuilding events. Use this action to send the Contact to a different path in the Campaign.|
 |**Modify Contact’s Segments**| Adds or removes Contacts to/from Segments. If a Contact is removed from a dynamic (filter-based) Segment by a Campaign action, they won’t be re-added to the Segment based on meeting the filter criteria.|
-|**Modify contact’s tags**| Overwrites or appends tags on a <br> contact record. You can append tags, <br> remove tags, or do both if you’d like <br> to overwrite existing tags.|
+|**Modify Contact’s Tags**| Overwrites or appends Tags on a Contact record. You can add or remove Tags, or do both, in the same action.|
 |**Push contact to integration**| Sends the contact record to the <br> selected integration, either creating <br> a new contact in the chosen integration or <br> updating the connected contact record.|
 |**Remove Do Not Contact**| Removes the user from the <br> do not contact list.|
 |**Send a webhook**| Sends a webhook to a defined URL,<br> using the GET, POST, PUT, PATCH, or DELETE methods. Headers and data are customizable, and support the use of tokens, such as contact field tokens and contact's IP address as a token. For example, {contactfield=firstname}|
