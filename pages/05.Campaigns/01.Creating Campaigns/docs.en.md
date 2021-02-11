@@ -48,7 +48,7 @@ Before you start creating campaigns, you must ensure that you have the following
 
 After you create the required components and set up Channels you will be using, you are ready to create your first campaign. 
 
-To begin creating campaigns, perform the following steps:
+To begin creating Campaigns, perform the following steps:
 
 1. Launch your Mautic installation.
 2. Click **Campaigns** in the left navigation menu. The Campaigns page appears.
