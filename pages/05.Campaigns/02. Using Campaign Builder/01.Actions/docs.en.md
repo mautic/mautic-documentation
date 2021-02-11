@@ -22,7 +22,7 @@ facebookenable: true
 
 Campaign actions are events that you initiate on your contacts or contact records. These can represent sending communications to the contact or may automate operational tasks to keep your marketing running. A single Campaign can include more than one action. When you create a Campaign, you select one of these actions to begin the workflow.
 
-Here are the actions that Mautic allows you to take on your campaign:
+The actions that Mautic offers in a Campaign include:
 
 | Action        | Description  | 
 | :------------- | :----------: | 
