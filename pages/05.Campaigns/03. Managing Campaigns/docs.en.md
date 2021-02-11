@@ -27,7 +27,7 @@ Additional information includes a quick overview of what decisions and actions a
 
 The following image shows a sample Campaigns overview page with its highlighted panels:
 
-![](managing-campaigns.png)
+![Screenshot showing campaign overview](managing-campaigns.png)
 
 The **Details** drop-down menu gives a quick overview of the most important information about your campaign. This information inlcudes the name of the user who created the campaign, category of the campaign, creation date and time, publishing date and time, contact segments in your campaign and more.
 
