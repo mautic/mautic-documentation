@@ -1,5 +1,5 @@
 ---
-title: 'Troubleshooting campaigns'
+title: 'Troubleshooting Campaigns'
 taxonomy:
     category:
         - docs
