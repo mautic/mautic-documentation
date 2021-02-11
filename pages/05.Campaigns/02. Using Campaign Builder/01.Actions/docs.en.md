@@ -46,7 +46,7 @@ The actions that Mautic offers in a Campaign include:
 |**Send marketing message**| Sends a message using the Contact's preferred Channel.|
 |**Update contact**| Updates the existing Contact's fields with the specified values.|
 |**Update contact's primary company**| Updates the existing Contact's primary Company fields with the specified value. See [documentation on Companies][companies].|
-|**Update contact owner**| Updates the contact's owner.|
+|**Update contact owner**| Updates the Contact's owner.|
 |
 
 <br>
