@@ -44,7 +44,7 @@ A condition has two paths that are denoted by the red and green points.
 |
 >>> If you set a delay manually on the condition itself, this will be respected before passing down to a delay on any connected action.  For example, if you are coming from a negative path on 'Opens Email', you can set a condition of 'has active notification' with a relative date of 1 day, followed by 'Send Email' on the negative path with a relative date of 2 days. Mautic will check after 1 day if there is an active notification and if there is not, it will schedule the email to be sent two days later.
 
-### Using a custom date field to trigger a campaign
+### Using a custom date field to trigger a Campaign
 
 In the condition based on a contact field value, select the required date field. Then select **date** as the operator and select the required value from the drop-down list.
 
