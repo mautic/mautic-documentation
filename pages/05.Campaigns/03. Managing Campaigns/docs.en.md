@@ -35,7 +35,7 @@ The **Campaign Statistics** panel shows the number of Contacts added to the Camp
 
 The **Preview** tab displays a diagrammatic preview of your Campaign. 
 
-The **Decisions** tab displays a tabular list of all the decisions that you have added to your campaign.
+The **Decisions** tab displays a tabular list of all the decisions that you have added to your Campaign.
 
 The **Actions** tab displays a tabular list of all the actions that you have added to your campaign.
 
