@@ -45,7 +45,7 @@ The actions that Mautic offers in a Campaign include:
 >>> Emails sent using this action do not generate any statistics for Contacts or Emails.|
 |**Send marketing message**| Sends a message using the Contact's preferred Channel.|
 |**Update contact**| Updates the existing Contact's fields with the specified values.|
-|**Update contact's primary company**| Updates the existing contact's <br> primary company fields with the <br> specified value. See <br> [Mautic's companies support][companies].|
+|**Update contact's primary company**| Updates the existing Contact's primary Company fields with the specified value. See [documentation on Companies][companies].|
 |**Update contact owner**| Updates the contact's owner.|
 |
 
