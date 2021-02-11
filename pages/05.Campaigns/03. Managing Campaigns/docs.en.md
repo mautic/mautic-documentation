@@ -23,7 +23,7 @@ You can manage your Campaigns from the Campaigns overview page.
 
 Click any Campaign name on the Campaigns page to take you to the Campaign overview page. Each page displays details of your Campaign, including the number of Contacts that have been added to the Campaign, the number of Emails sent, the number of page views resulting from the Campaign, and more.
 
-Additional information includes a quick overview of what decisions and actions are available in the campaign, as well as a grid layout overview of all the contacts in the campaign.
+Additional information includes a quick overview of what decisions and actions are available in the Campaign, as well as a grid layout overview of all the Contacts in the Campaign.
 
 The following image shows a sample Campaigns overview page with its highlighted panels:
 
