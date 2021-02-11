@@ -33,7 +33,7 @@ The **Details** drop-down menu gives a quick overview of the most important info
 
 The **Campaign Statistics** panel shows the number of Contacts added to the Campaign over the specified period of time in graphical format. To specify the time period, use the **From** and **To** date selectors, and click **Apply**.
 
-The **Preview** tab displays a diagrammatic preview of your campaign. 
+The **Preview** tab displays a diagrammatic preview of your Campaign. 
 
 The **Decisions** tab displays a tabular list of all the decisions that you have added to your campaign.
 
