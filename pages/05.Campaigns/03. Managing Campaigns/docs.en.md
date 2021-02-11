@@ -41,6 +41,6 @@ The **Actions** tab displays a tabular list of all the actions that you have add
 
 The **Conditions** tab displays a tabular list of all he conditions that you have added to your Campaign.
 
-The **Contacts** tab displays a grid view of all the contacts that you have added to your campaign. 
+The **Contacts** tab displays a grid view of all the Contacts that you have added to your Campaign. 
 
 The **Recent Activity** panel on the right displays the recent activities that take place in the campaign.
