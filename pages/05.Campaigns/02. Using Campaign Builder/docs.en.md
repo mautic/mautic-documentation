@@ -54,4 +54,4 @@ For more information about campaign actions, decisions, and conditions, see the 
 
 [actions]: </campaigns/using-campaign-builder/actions>
 [decisions]: </campaigns/using-campaign-builder/decisions>
-[Conditions]: </campaigns/using-campaign-builder/conditions>
+[conditions]: </campaigns/using-campaign-builder/conditions>
