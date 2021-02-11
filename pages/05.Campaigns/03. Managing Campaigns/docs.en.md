@@ -39,7 +39,7 @@ The **Decisions** tab displays a tabular list of all the decisions that you have
 
 The **Actions** tab displays a tabular list of all the actions that you have added to your Campaign.
 
-The **Conditions** tab displays a tabular list of all he conditions that you have added to your campaign.
+The **Conditions** tab displays a tabular list of all he conditions that you have added to your Campaign.
 
 The **Contacts** tab displays a grid view of all the contacts that you have added to your campaign. 
 
