@@ -27,7 +27,7 @@ To build your Campaign, perform the following steps:
 1. Click **Launch the Campaign Builder** on the New Campaigns wizard. The Contact Sources menu appears as shown in the following image.
 ![Screenshot of Contact Sources](contact-sources.png)
 
-   This is the step where you specify the contacts you wish to trigger your campaign to. Campaigns are triggered to either contact segments, or contacts who submit forms.
+   In this step, you specify the contacts to be included in your Campaign. Campaigns can be triggered by contacts joining a Segment, and/or submitting Forms.
 
 2. Select where your campaign will pull the  contacts from: 
 
