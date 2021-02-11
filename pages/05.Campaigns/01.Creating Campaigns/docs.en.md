@@ -66,7 +66,7 @@ To begin creating Campaigns, perform the following steps:
 
 ## Executing Campaign Actions
 
-Executing starting actions for contacts newly added to the campaign, scheduled actions, and the actions on the "non-action" decision paths, must be triggered by the system. To do so, create a [cron job][cron-jobs] that executes the following command at the desired interval:
+Actions and decisions in a Campaign must be triggered by a [cron job][cron-jobs] which executes the following command at the desired interval:
 
 ```
 php /path/to/mautic/bin/console mautic:campaigns:trigger --env=prod
