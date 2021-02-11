@@ -50,7 +50,7 @@ After you create the required components and set up Channels you will be using, 
 
 To begin creating Campaigns, perform the following steps:
 
-1. Launch your Mautic installation.
+1. Launch your Mautic instance.
 2. Click **Campaigns** in the left navigation menu. The Campaigns page appears.
 3. Click **New** on the Campaigns page. The New Campaign wizard appears  as shown in the following image.
 ![](new-campaign.gif)
