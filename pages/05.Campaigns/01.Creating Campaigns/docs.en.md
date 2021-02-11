@@ -52,7 +52,7 @@ To begin creating Campaigns, perform the following steps:
 
 1. Launch your Mautic instance.
 2. Click **Campaigns** in the left navigation menu. The Campaigns page appears.
-3. Click **New** on the Campaigns page. The New Campaign wizard appears  as shown in the following image.
+3. Click **New** on the Campaigns page. The New Campaign wizard appears as shown in the following image.
 ![](new-campaign.gif)
 4. Enter a name and a brief description for your campaign.
 5. Optionally, you can set the following properties:
