@@ -39,7 +39,7 @@ To build your Campaign, perform the following steps:
  
    You can select a mix of both types of Contact sources for your Campaign. To use both, click the grey selector button on either the left or right side of the **Contact source** box to add whichever source type you didn’t originally select.
 
-3. After selecting one or more contact sources, click the grey selector button to add at least one event to your campaign. A campaign event comprises of a combination of actions, decisions, and/or conditions as shown in the following image:
+3. After selecting one or more Contact sources, click the grey selector button to add at least one event to your Campaign. A Campaign event comprises of a combination of actions, decisions, and/or conditions as shown in the following image:
 
 
 ![](events.png)
