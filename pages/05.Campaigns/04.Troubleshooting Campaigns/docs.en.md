@@ -21,7 +21,7 @@ facebookenable: true
 
 To workaround this issue, try one of the following options:
 
-1) Make sure that you are not testing the page visit while logged into Mautic. Mautic ignores user generated activity. So, it is suggested that you use an anonymous session, another browser, or log out of Mautic.
+1. Make sure that you are not testing the Page visit while logged into Mautic. Mautic ignores user generated activity. So, it is suggested that you use an anonymous session, another browser, or log out of Mautic.
 
 2) Ensure that the contact getting tracked is in the campaign. The easy way to test this is to review the timeline of the contact for the page hit.
 
