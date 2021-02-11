@@ -25,7 +25,7 @@ To workaround this issue, try one of the following options:
 
 2) Ensure that the Contact getting tracked is in the Campaign. The easy way to test this is to review the timeline of the Contact for the page hit / being added to the Campaign.
 
-3) Campaigns are executed sequentially and will not repeat per contact. If the contact has already visited the page while part of the campaign and triggered the Visits a Page decision, then the contact's subsequent visits will not re-trigger the actions associated with the decision.
+3) Campaigns are executed sequentially and will not repeat per Contact. If the Contact has already visited the Page while part of the Campaign and triggered the Visits a Page decision, then the Contact's subsequent visits will not re-trigger the actions associated with the decision.
 
 4) Ensure that the URL in the campaign action either matches _exactly_ the URL visited or use a wildcard. [A URL can include the schema, host/domain, path, query parameters, and/or fragment][url]). For example, if you have a URL of `http://example.com` and the page hit registers as `http://example.com/index.php?foo=bar`, the campaign decision will not be triggered. However, if you use `http://example.com*` as the URL, it'll match and thus trigger.
 
