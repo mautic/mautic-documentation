@@ -27,7 +27,7 @@ Contact driven Campaigns are used to trigger events based on interactions with s
 
 ### Mixed Campaigns
 
-Mautic allows you to create campaigns which consist a mix of both time driven campaigns as well as contact driven actions. This powerful mixed campaign strategy means that actions will be driven by both specific dates or after specific timeframes as well as actions taken by a contact directly.
+Mautic allows you to create Campaigns which consist a mix of both time driven Campaigns as well as Contact driven actions. This powerful mixed Campaign strategy means that actions will be driven by both specific dates or after specific timeframes as well as actions taken by a Contact directly.
 <br>
 
 > **Note**: Campaigns can trigger a variety of actions. Email actions are mentioned in the above campaign types only as an example. The other actions that a campaign can trigger include automatic assignment to a new segment, assigning a new point value, or an integration into a CRM or other systems.
