@@ -55,7 +55,7 @@ The actions that Mautic offers in a Campaign include:
 
  If the action is attached to a decision's **non-action** initiated decision path, the delay becomes how long the Contact has to take action before the Campaign progresses down the non-action path. 
 <br>
-![](send-email-delay-nonaction.png)
+![Image showing delayed actions on a non-action decision path in a campaign](send-email-delay-nonaction.png)
 
 2. The Delete contact action also deletes the campaign event log record about that contact. Therefore, though this action might always display 0% progress on the campaign detail page, it could have deleted some contacts.
 
