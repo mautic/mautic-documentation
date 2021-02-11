@@ -61,5 +61,4 @@ Here are the decisions that are Email-related:
 <br>
 
 
-> **Note**:
 A contact must already be part of the campaign in order for it to recognize the decision that is executed. Therefore, campaigns should never start with a decision unless you are manually managing the contacts assigned to it and the decision is expected to be executed at a later time.
