@@ -24,7 +24,7 @@ Creating campaigns is a central part of the Marketing Automation process.
 
 At the heart of any Marketing Automation campaign is the Campaign Builder. This allows you to specify how contacts enter the Campaign, and what happens at every stage after they enter the workflow. 
 
-At the heart of the campaign creation is the campaign builder that handles the finer details of building a campaign. A campaign builder is made up of conditions, decisions, and actions.
+Once the basics are established, the Campaign Builder handles the finer details of building a campaign workflow using Conditions, Decisions, and Actions.
 
 ## Prerequisites
 
