@@ -46,7 +46,7 @@ A condition has two paths that are denoted by the red and green points.
 
 ### Using a custom date field to trigger a Campaign
 
-In the condition based on a contact field value, select the required date field. Then select **date** as the operator and select the required value from the drop-down list.
+In the condition based on a Contact field value, select the required date field. Then select **date** as the operator and select the required value from the drop-down list.
 
 >**Note**: In the **Anniversary** option, you can only enter the day and month values.
 
