@@ -54,7 +54,7 @@ To begin creating Campaigns, perform the following steps:
 2. Click **Campaigns** in the left navigation menu. The Campaigns page appears.
 3. Click **New** on the Campaigns page. The New Campaign wizard appears as shown in the following image.
 ![Image showing the New Campaign screen](new-campaign.gif)
-4. Enter a name and a brief description for your campaign.
+4. Enter a name and a brief description for your Campaign.
 5. Optionally, you can set the following properties:
  - **Category** - Choose a category to assign your campaign to. Categories help you organize your campaigns. To know more about creating and managing categories, see [Categories][categories].
   - **Allow contacts to restart the campaign** - Click the toggle switch to allow contacts to restart the campaign if you’re building a campaign for a recurring message (birthdays, subscriptions) or transactional operations (activity notifications, updating data). Enabling this option lets contacts go through the same campaign multiple times without you having to clone the campaign.
