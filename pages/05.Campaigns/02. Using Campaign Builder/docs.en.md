@@ -33,7 +33,7 @@ To build your Campaign, perform the following steps:
 
  - **Contact Segments**: Choose this option if you want to send your Campaign to a specific group of your Contacts that share certain attributes, for example, 'Located in the USA' or 'Visited Product A page'.
  
-    Note that the segment selection will only show public segments. If you create a segment marked as private within the company, then that segment will not be available for use in campaigns.
+    Note that the Segment selection will only show public Segments. If you create a Segment marked as private, that Segment will not be available for use in Campaigns.
 
  - **Contact forms**: Choose this option if you want to use forms that your contacts have intercted with. Forms are the primary point of customer contact and are used to gather information about a contact. This information can then be used to perform a number of actions in a campaign. 
  
