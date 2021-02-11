@@ -17,7 +17,7 @@ One of the main benefits of the Campaign workflow process is the ability to pred
 ## Campaign types
 Campaigns can be broadly categorized into three types:
 
-### Time driven campaigns
+### Time driven Campaigns
 
 Time driven campaigns are the type of campaigns that center around specific timed events. These events can be anything but are usually in the form of emails. For instance, you can choose to trigger such email events after a delay of a predefined number of days or on a specific date in the future.
 
