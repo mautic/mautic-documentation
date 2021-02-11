@@ -31,7 +31,7 @@ To build your Campaign, perform the following steps:
 
 2. Select where your campaign will pull the contacts from: 
 
- - **Contact segments**: Choose this option if you want to send your campaign to a specific group of your contacts that share certain attributes.<!-- Add example of one or two segments here. -->
+ - **Contact Segments**: Choose this option if you want to send your Campaign to a specific group of your Contacts that share certain attributes, for example, 'Located in the USA' or 'Visited Product A page'.
  
     Note that the segment selection will only show public segments. If you create a segment marked as private within the company, then that segment will not be available for use in campaigns.
 
