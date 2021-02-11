@@ -63,7 +63,7 @@ The actions that Mautic offers in a Campaign include:
 
 
 
-After adding an action, you can place a decision on the campaign.
+After adding an action, you can place a decision on the Campaign.
 
 
 [segments]: </contacts/manage-segments>
