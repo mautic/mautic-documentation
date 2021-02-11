@@ -24,7 +24,7 @@ Campaign conditions are used to execute different actions based on a Contact's d
 
 A condition has two paths that are denoted by the red and green points.
 
- - Actions attached to the green point ![](green-point.png) of a condition are considered as positive status points. The status condition path is executed as a result of the condition at the end of the delay set (trigger, delay or specific date).
+ - Actions attached to the green point ![Icon showing the positive path (green)](green-point.png) of a condition are executed if positive or affirmative conditions occur. The path is triggered immediately that the positive condition occurs, with the connected action taking into account any delay that is set on the path (trigger, delay or send on a specific date). For example, if the email is opened, send a follow-up email 2 days later.
 
  - Actions attached to the red point ![](red-point.png)of a condition are considered as negative status points. This path is executed as a result of negative status for the condition at the end of the delay set (trigger, delay or specific date).
 
