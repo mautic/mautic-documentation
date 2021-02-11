@@ -54,7 +54,7 @@ Here are the decisions that are Email-related:
 
 | Decision        | Description  | 
 | :------------- | :----------: |
-|**Opens email**| Tracks whether the contact <br> opens the email.|
+|**Opens email**| Tracks whether the Contact opens the Email.|
 |**Clicks email**|Tracks whether the contact <br> clicks a link within the send email.|
 |**Replies to email**|Tracks if a contact has replied to an<br> email that you sent.|
 |
