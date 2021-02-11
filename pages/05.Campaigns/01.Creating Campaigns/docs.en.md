@@ -44,7 +44,7 @@ Before you start creating campaigns, you must ensure that you have the following
 2. Create components
 3. Set up the channels
 
-## Create your first campaign
+## Create your first Campaign
 
 After you add contacts, create required components, and set up channels, you are ready to  create your first campaign. 
 
