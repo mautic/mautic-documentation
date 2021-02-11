@@ -52,7 +52,7 @@ In the condition based on a Contact field value, select the required date field.
 
 Since Campaign conditions are evaluated immediately, if the date in the field matches the condition, then the positive action is executed.  If the date doesn’t match, the negative action is executed. The Contact does not wait for the condition to be true.
 
-In order to run campaigns based on a particular date where a contact may or may not be "included" today:
+In order to run Campaigns based on a particular date where a Contact may or may not be "included" today:
 - create a segment with a filter where the date field = TODAY.
 - initiate the campaign based on that segment.
 - as contacts move in and out of the segment, the campaign will run.
