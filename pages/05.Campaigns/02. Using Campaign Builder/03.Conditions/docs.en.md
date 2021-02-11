@@ -60,4 +60,4 @@ In order to run Campaigns based on a particular date where a Contact may or may 
 
 This will NOT work for the Anniversary option.
 
-If a contact appears again at a later date in that segment because the value of the date has changed, then the contact will go through the campaign only once and hence will NOT be included in the campaign again.
+If a Contact appears again at a later date in that Segment because the value of the date has changed, then the Contact will go through the Campaign only once and hence will NOT be included in the Campaign again.
