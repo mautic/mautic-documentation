@@ -50,7 +50,7 @@ In the condition based on a Contact field value, select the required date field.
 
 >>> In the **Anniversary** option, you can only enter the day and month values.
 
-Since campaign conditions are evaluated immediately, if the date in the field matches the condition, then the positive action is executed.  If the date doesn’t match, the negative action is executed. The contact does not wait for the condition to be true.
+Since Campaign conditions are evaluated immediately, if the date in the field matches the condition, then the positive action is executed.  If the date doesn’t match, the negative action is executed. The Contact does not wait for the condition to be true.
 
 In order to run campaigns based on a particular date where a contact may or may not be "included" today:
 - create a segment with a filter where the date field = TODAY.
