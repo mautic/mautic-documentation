@@ -42,7 +42,7 @@ To build your Campaign, perform the following steps:
 3. After selecting one or more Contact sources, click the grey selector button to add at least one event to your Campaign. A Campaign event comprises of a combination of actions, decisions, and/or conditions as shown in the following image:
 
 
-![](events.png)
+![Screenshot showing available Campaign events](events.png)
 
 For more information about campaign actions, decisions, and conditions, see the following topics:
 
