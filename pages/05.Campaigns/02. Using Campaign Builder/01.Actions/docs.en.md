@@ -28,7 +28,7 @@ The actions that Mautic offers in a Campaign include:
 | :------------- | :----------: | 
 | **Add Do Not Contact**|Adds the user to the Do Not Contact (DNC) list |
 | **Add to Company's score** |Adds or subtracts a designated number of Points to or from the score for all Companies associated with the Contact. |
-|**Add to company action**| Associates a contact with a company <br> and sets the company as the primary company for the contact.|
+|**Add Company action**| Associates a Contact with a Company and sets the Company as the primary Company for the Contact.|
 |**Adjust contact points**| Adds or subtracts points <br>from the contact’s point total.|
 |**Change campaigns**| Removes a contact from the existing <br> campaign, moves them into another <br> campaign, restarts the current campaign <br> or a combination of these. You must <br> remove a contact from a campaign <br> before restarting the campaign.|
 |**Change contact’s stage**| Moves a contact to the specified stage.|
