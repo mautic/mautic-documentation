@@ -44,7 +44,7 @@ To build your Campaign, perform the following steps:
 
 ![Screenshot showing available Campaign events](events.png)
 
-For more information about campaign actions, decisions, and conditions, see the following topics:
+For more information about Campaign actions, decisions, and conditions, see the following topics:
 
  - [Actions][actions]
  - [Decisions][decisions]
