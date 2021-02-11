@@ -56,7 +56,7 @@ In order to run Campaigns based on a particular date where a Contact may or may 
 - create a segment with a filter where the date field = TODAY.
 - initiate the Campaign based on that Segment.
 - as Contacts move in and out of the Segment, the Campaign will run.
-- you can elimiate the condition since the segment is changing daily.
+- you can eliminate the condition since the Segment is changing daily.
 
 This will NOT work for the Anniversary option.
 
