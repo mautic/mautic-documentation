@@ -36,7 +36,7 @@ A condition has two paths that are denoted by the red and green points.
 |**Contact device**|Checks if the Contact has interacted with your Campaign from a specific device type, brand, or OS|
 |**Contact field value**| Checks if the information matches the selected criteria on the Contact record, the Contact’s primary Company, or UTM tags|
 |**Contact owner**| Checks if the selected user is assigned as the Contact’s owner|
-|**Contact segments**| Checks if the contact is a member of <br>selected segments|
+|**Contact segments**| Checks if the Contact is a member of selected Segments|
 |**Contact tags**|Checks if specified tags are on the contact record|
 |**Form field value**|Checks if values submitted for a <br>selected field on a selected form <br>matches specified criteria|
 |**Has active notification**|Checks if an active web notification <br> is being sent to the contact|
