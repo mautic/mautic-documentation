@@ -23,7 +23,7 @@ Time driven campaigns are the type of campaigns that center around specific time
 
 ### Contact driven Campaigns
 
-Contact driven campaigns are used to trigger events based on interactions with specific contacts. These interactions can occur as a result of the contact landing on a certain page, opening an email, spending a specified amount of time on a website, or any other activities. Such campaigns can be set up to respond to these actions typically by sending an email to the contact either immediately or at a specific time in future.
+Contact driven Campaigns are used to trigger events based on interactions with specific Contacts. These interactions can occur as a result of the Contact landing on a certain Page, opening an Email, spending a specified amount of time on a website, or any other activities. Such Campaigns can be set up to respond to these actions typically by sending an Email to the Contact either immediately or at a specific time in future.
 
 ### Mixed Campaigns
 
