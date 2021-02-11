@@ -25,7 +25,7 @@ Campaign decisions are actions that your Contacts initiate. Downloading an asset
 A decision usually has two paths that are denoted by the red and green points on the decision tree. 
 
  - Green paths ![Icon showing the positive action path (green)](green-point.png) indicate actions that are considered positive or affirmative actions. A contact is sent down this path if the contact **has** taken a direct action such as opening an email or submitting a form. Actions that follow the green paths are executed (or scheduled if a delay is set) at the time the Contact takes the action.
-  - Red points ![](red-point.png) indicate actions that are considered non-action points. A contact is sent down this path if a contact has NOT taken some direct action. Use an action's delay settings to define at what point the campaign should send the contact down this path.
+  - Red paths ![Icon showing the negative action path (red)](red-point.png) indicate actions that are considered non-action points. A contact is sent down this path if a contact **has not** taken the action. Use an action's delay settings to define at what point the Campaign should send the Contact to the following steps on this path.
 
 Depending on whether the criteria for the decision is met, the contact is sent down either the green or the red points in the decision tree. For example, consider an instance where the decision is to open an email. There can be two outcomes. If the contact chooses to open the email, then the green decision point connects to the next action to be taken in the campaign workflow. If, however, the contact does not open the email, then the red decision point connects to a different action to be taken (e.g. a delay of 30 days then a second email sent).
 
