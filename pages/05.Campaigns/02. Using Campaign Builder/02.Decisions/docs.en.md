@@ -33,7 +33,7 @@ Depending on whether the criteria for the decision is met, the Contact is sent d
 
 ![Screenshot showing Campaign decisions available in Mautic](campaign-decisions.gif)
 
-Here are the decisions that Mautic offers in the Campaign builder:
+Here are the decisions that Mautic offers in the Campaign Builder:
 
 | Decision        | Description  | 
 | :------------- | :----------: |
