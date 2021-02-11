@@ -21,7 +21,7 @@ Campaigns can be broadly categorized into three types:
 
 Time driven campaigns are the type of campaigns that center around specific timed events. These events can be anything but are usually in the form of emails. For instance, you can choose to trigger such email events after a delay of a predefined number of days or on a specific date in the future.
 
-### Contact driven campaigns
+### Contact driven Campaigns
 
 Contact driven campaigns are used to trigger events based on interactions with specific contacts. These interactions can occur as a result of the contact landing on a certain page, opening an email, spending a specified amount of time on a website, or any other activities. Such campaigns can be set up to respond to these actions typically by sending an email to the contact either immediately or at a specific time in future.
 
