@@ -40,7 +40,7 @@ Here are the decisions that Mautic offers in the Campaign Builder:
 |**Device visit** |Set the options to track whether your Contact visits your page/s from a specific device type, brand, or operating system.
 |**Downloads asset**|Set the options to track whether your Contact downloads specified asset/s.|
 |**Request dynamic content**|Set options to push Campaign-based Dynamic Content if you have a webpage or Landing Page where you want to add Dynamic Content.|
-|**Submits form**|Set options to track whether the <br> contact has submitted any Mautic <br> forms. You can also limit this decision <br> to track specific forms.|
+|**Submits form**|Set options to track whether the Contact has submitted any Mautic Forms. You can also limit this decision to track specific Forms.|
 |**Visits a page**|Specify single or multiple pages you want the contact to visit.|
 |
 
