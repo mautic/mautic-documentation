@@ -43,7 +43,7 @@ The actions that Mautic offers in a Campaign include:
 |**Send email to user**| Sends an Email to an entity other than the contact. This may be a Mautic user, the Contact’s owner, or non-users. 
 
 >>> Emails sent using this action do not generate any statistics for Contacts or Emails.|
-|**Send marketing message**| Sends a message using the contact's <br> prefered channel.|
+|**Send marketing message**| Sends a message using the Contact's preferred Channel.|
 |**Update contact**| Updates the existing contact's fields <br> with the specified values.|
 |**Update contact's primary company**| Updates the existing contact's <br> primary company fields with the <br> specified value. See <br> [Mautic's companies support][companies].|
 |**Update contact owner**| Updates the contact's owner.|
