@@ -42,7 +42,7 @@ A condition has two paths that are denoted by the red and green points.
 |**Has active notification**|Checks if an active web notification has been sent to the Contact|
 |**Has valid email address**|Checks if the Contact’s email address has a valid syntax, that is, name@example.com without spaces, other invalid characters or formats.|
 |
-The delay you set is ran before checking the condition no matter the delay you add on the connected actions. It will not wait the delay on the connected action to check the status of the condition to qualify the contact into the positive or negative path of the condition. <This sounds very convoluted. Need to understand and rewrite.>
+>>> If you set a delay manually on the condition itself, this will be respected before passing down to a delay on any connected action.  For example, if you are coming from a negative path on 'Opens Email', you can set a condition of 'has active notification' with a relative date of 1 day, followed by 'Send Email' on the negative path with a relative date of 2 days. Mautic will check after 1 day if there is an active notification and if there is not, it will schedule the email to be sent two days later.
 
 ### Using a custom date field to trigger a campaign
 
