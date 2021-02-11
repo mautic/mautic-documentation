@@ -48,7 +48,7 @@ A condition has two paths that are denoted by the red and green points.
 
 In the condition based on a Contact field value, select the required date field. Then select **date** as the operator and select the required value from the drop-down list.
 
->**Note**: In the **Anniversary** option, you can only enter the day and month values.
+>>> In the **Anniversary** option, you can only enter the day and month values.
 
 Since campaign conditions are evaluated immediately, if the date in the field matches the condition, then the positive action is executed.  If the date doesn’t match, the negative action is executed. The contact does not wait for the condition to be true.
 
