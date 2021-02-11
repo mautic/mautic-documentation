@@ -39,7 +39,7 @@ A condition has two paths that are denoted by the red and green points.
 |**Contact segments**| Checks if the Contact is a member of selected Segments|
 |**Contact tags**|Checks if specified Tags are on the Contact record|
 |**Form field value**|Checks if values submitted for a selected field on a selected Form matches specified criteria|
-|**Has active notification**|Checks if an active web notification <br> is being sent to the contact|
+|**Has active notification**|Checks if an active web notification has been sent to the Contact|
 |**Has valid email address**|Checks if the contact’s email address has a <br>valid syntax, that is, name@domain.com without spaces, other invalid characters, formats.|
 |
 The delay you set is ran before checking the condition no matter the delay you add on the connected actions. It will not wait the delay on the connected action to check the status of the condition to qualify the contact into the positive or negative path of the condition. <This sounds very convoluted. Need to understand and rewrite.>
