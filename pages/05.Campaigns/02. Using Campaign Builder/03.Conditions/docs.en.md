@@ -33,7 +33,7 @@ A condition has two paths that are denoted by the red and green points.
  | Condition        | Description  | 
 | :------------- | :----------: |
 |**Contact campaigns**| Checks if the Contact is a member of another Campaign|
-|**Contact device**|Checks if the contact has interacted <br> with your campaign from a specific device <br>type, brand, or OS|
+|**Contact device**|Checks if the Contact has interacted with your Campaign from a specific device type, brand, or OS|
 |**Contact field value**| Checks if the information matches the selected criteria on the contact record, the contact’s primary company, or UTM tags|
 |**Contact owner**| Checks if the selected user is assigned <br> as the contact’s owner|
 |**Contact segments**| Checks if the contact is a member of <br>selected segments|
