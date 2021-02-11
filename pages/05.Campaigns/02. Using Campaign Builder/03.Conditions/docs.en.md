@@ -55,7 +55,7 @@ Since Campaign conditions are evaluated immediately, if the date in the field ma
 In order to run Campaigns based on a particular date where a Contact may or may not be "included" today:
 - create a segment with a filter where the date field = TODAY.
 - initiate the Campaign based on that Segment.
-- as contacts move in and out of the segment, the campaign will run.
+- as Contacts move in and out of the Segment, the Campaign will run.
 - you can elimiate the condition since the segment is changing daily.
 
 This will NOT work for the Anniversary option.
