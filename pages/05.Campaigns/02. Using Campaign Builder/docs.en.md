@@ -37,7 +37,7 @@ To build your Campaign, perform the following steps:
 
  - **Contact Forms**: Choose this option if you want to start the Campaign when the Contact completes a specified Form. Forms are the primary point of gathering information about a Contact. This information can then be used to perform a number of actions in a Campaign. 
  
-   You can select a mix of both types of contact sources for your campaign. To use both, use the grey selector button on either the left or right side of the contact source box to add whichever source type you didn’t originally select.
+   You can select a mix of both types of Contact sources for your Campaign. To use both, click the grey selector button on either the left or right side of the **Contact source** box to add whichever source type you didn’t originally select.
 
 3. After selecting one or more contact sources, click the grey selector button to add at least one event to your campaign. A campaign event comprises of a combination of actions, decisions, and/or conditions as shown in the following image:
 
