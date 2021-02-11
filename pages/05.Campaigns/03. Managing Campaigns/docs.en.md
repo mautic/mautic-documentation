@@ -1,5 +1,5 @@
 ---
-title: 'Managing campaigns'
+title: 'Managing Campaigns'
 media_order: ''
 taxonomy:
     category:
