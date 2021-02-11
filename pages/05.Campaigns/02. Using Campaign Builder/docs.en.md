@@ -29,7 +29,7 @@ To build your Campaign, perform the following steps:
 
    In this step, you specify the contacts to be included in your Campaign. Campaigns can be triggered by contacts joining a Segment, and/or submitting Forms.
 
-2. Select where your campaign will pull the  contacts from: 
+2. Select where your campaign will pull the contacts from: 
 
  - **Contact segments**: Choose this option if you want to send your campaign to a specific group of your contacts that share certain attributes.<!-- Add example of one or two segments here. -->
  
