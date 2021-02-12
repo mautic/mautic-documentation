@@ -62,7 +62,7 @@ There are exceptions:
 
 ### How can I override this?
 
-Since Mautic 3.3 it has been possible to override the global setting on a per-email basis. 
+Since [Mautic 3.3][mautic-3.3] it has been possible to override the global setting on a per-email basis. 
 
 There is a switch under the Advanced setting of the email, which allows you to decide whether to take the global mailer as owner setting, or the specified from address, into account.
 
