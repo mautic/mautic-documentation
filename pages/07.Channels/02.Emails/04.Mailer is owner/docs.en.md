@@ -71,3 +71,5 @@ There is a switch under the Advanced setting of the email, which allows you to d
 If Yes is selected, then the global setting will take precedence.
 
 If No is selected, the address and name supplied in the email 'From' fields will be used.
+
+[mautic-3.3]: <https://github.com/mautic/mautic/releases/tag/3.3>
