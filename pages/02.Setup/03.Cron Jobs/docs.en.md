@@ -143,7 +143,7 @@ php /path/to/mautic/bin/console mautic:maintenance:cleanup --days-old=365 --dry-
 
 MaxMind requires users to keep a "Do Not Sell" list up to date, and remove all data that was added relating to those IP addresses in the past from MaxMind.
 
-See more details in the official MaxMind website: https://blog.maxmind.com/tag/ccpa/
+See more details in the official MaxMind website: [https://blog.maxmind.com/tag/ccpa/][maxmind-ccpa]
 
 It's recommended to run those 2 commands once/week. One after another.
 
