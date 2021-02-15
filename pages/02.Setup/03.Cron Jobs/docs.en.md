@@ -145,7 +145,7 @@ MaxMind requires users to keep a "Do Not Sell" list up to date, and remove all d
 
 See more details in the official MaxMind website: [https://blog.maxmind.com/tag/ccpa/][maxmind-ccpa]
 
-It's recommended to run those 2 commands once/week. One after another.
+It is recommended to run these two commands once per week, one after another.
 
 
 ```
