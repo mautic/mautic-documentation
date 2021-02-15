@@ -47,7 +47,9 @@ You can create additional custom fields and define the data type you want that f
 
 ### Creating Custom Fields via a command
 
-Each new custom field for contact or a company is adding new column to the database. This operation gets slower with more data. It also locks the table so no changes can come in for tens of minutes in some cases. It will also time out the HTTP request so the UI will report the column exist but contact/company updates will actually fail because the column is missing. There is a way around when you set a background processing of field creation. 
+Each new Custom Field for Contacts or Companies adds a new column to the database. This operation gets slower with larger instances of Mautic, and it locks the table while it is running, meaning that no changes can be made until the field is created. It will also time out the HTTP request, so that the User Interface will report the column exists, but Contact/Company updates will actually fail, because the column is still missing. 
+
+There is a way around this when you configure the processing of field creation in the background. 
 
 There is now an option you can set in your `app/config/local.php` file: `'create_custom_field_in_background' => true,`. If this is set then only the field metadata will be created so you will be able to see the new custom field in the list of custom fields. But it will be unpublished until a command `bin/console mautic:custom-field:create-column` runs. This command will create the actual column in the table and publishes the field metadata.
 
