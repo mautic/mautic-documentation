@@ -18,7 +18,7 @@
 
         {{ service_render(service, scope, 'before:parent') | raw }}
         {{ service_render("action", scope, 'before:parent') | raw }}
-        
+
         {{ service_render(service, scope, 'after:parent') | raw }}
         {{ service_render("action", scope, 'after:parent') | raw }}
 

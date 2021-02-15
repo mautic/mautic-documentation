@@ -9,11 +9,11 @@ taxonomy:
 ---
 This feature was added in Mautic 2.1.0.
 
-Progressive profiling makes your forms smarter by asking for the most important information that you don't have yet. This way your contacts won't feel overwhelmed by long forms and saves time by answering questions Mautic already knows the answer to. Progressive Profiling lets you improve the form conversion rate.
+Progressive profiling is a powerful feature used to reduce the length of forms by hiding all the fields which are already known. This will prevent your contacts from feeling overwhelmed by massive forms and will even reduce the time it takes to fill out a form if fields are already known to your Mautic instance and thus are hidden for the contact.
 
 ## Configuration
 
-There are two possible ways that you can configure a form field to display only when needed. The configuration is in the __Behavior__ tab in the field configuration form. The Behavior (Progressive Profiling) can be configured for all field types except the _button_ field. We recommend use  email field visible because it is the identifier of a contact. The button field must be always visible because otherwise the form couldn't be submitted.
+There are two ways to configure a form field to only display when the asked values are unknown. 
 
 It is recommended to use the Email field in each Form. From [Mautic 2.9][mautic-2.9] the email field can be hidden, but use this with caution. Email as identifier of a Contact could be unusable if same PC is used by more people (public library, schools...).
 
@@ -33,25 +33,23 @@ Always force the display of the field, even if you set a maximum number of field
 
 	Mautic will search for a value in two places before the Form is rendered for the current Contact:
 
-* Former form submissions
-  
-  Mautic will search for the field value in the previous form submissions of the current contact. If a value is found, the field might be hidden if configured so. There are limitations of the search history (see below).   
+#### 1. Show when value exists
 
-* Contact profile values
-  
-   If the Form field is linked with a Contact field, Mautic will check if there is a value in the Contact's profile and hides the field if configured to do so.
+If this option is set to "No", Mautic checks if the value for this field exists in the database or if the value was provided in a former form submission already. If a value is found, the field won't be displayed in the form. If this option is set to "Yes", Mautic will show the field, regardless whether a value is found or not. The default configuration for this option is "Yes".
 
-4. Display field only after X submissions.
+#### 2. Display field only after X submissions.
 
-If you want to ask a Contact additional questions on the second Form load, you can specify so for each lead. It works nicely with hiding fields which you already know the answer to. For the first submission, the Contact can be asked to fill in the First and the Last name. When they come to the Form for a second time, the First and the Last name fields will be hidden and instead they will be asked to fill in their Company and Phone.
+If you have a form that you would like to use multiple times, with more fields occuring the more times a contact fills it out, while still only using a single form, the option "Display field only after X submissions" is what you are looking for. As the name already states, the field will only appear once the form hast been submitted X times. This goes hand in hand very well with the ability to hide fields if the value is already known. 
+
+For example: A form asks for the email, first and last name of a contact on the first time it is filled out and when the contacts fills out the form a second time, the first and the last name fields will be hidden and instead contact will be asked to fill in their company and phone.
 
 ## Limits of Progressive Profiling
 
 ### The search history limit
 
-The Mautic forms without progressive profiling are as fast as they can be. The HTML of the form is rendered once, stored and this "cached" HTML is used for the next form load. When a progressive profiling configuration is turned on for any of the form fields, the form HTML might be different for each contact. It can even change for each contact after each submission. The impact of this is that form caching cannot be used, and the form load time will be slower for a progressive profiling form.
+Mautic forms which do not use progressive profiling are as fast as they can be. The HTML of the form is rendered once, stored and this "cached" HTML is used for the next form load. When a progressive profiling configuration is turned on for any of the form fields, the form HTML might be different for each contact. It can even change for each contact after each submission. The impact of this is that **form-caching cannot be used**, and the form load time will be slower for a progressive profiling forms.
 
-There is limit of 200 submissions from which Mautic searches for existing form values. This limit was added to prevent possible slow form loads - or even hitting the server time or memory limits - when a contact has several thousand form submissions. This limit might cause Mautic to display/hide the wrong fields.
+There also is a limit of 200 submissions from which Mautic searches for existing form values. This limit was added to prevent possible long form loading times - or even hitting the server time or memory limits - when a contact has several thousand form submissions. This limit might cause Mautic to display/hide the wrong fields if the contact exceeds this limit.
 
 ### The embed type limit
 
@@ -60,5 +58,3 @@ Progressive Profiling forms **will not work if you embed your form as static HTM
 ### The kiosk mode limit
 
 Progressive Profiling features are turned off if you switch the form to the Kiosk Mode. The form always creates a new contact on each submission in the Kiosk Mode. It doesn't track the device from which the form was submitted.
-
-The Progressive Profiling options under the Behavior tab will still be accessible in the Form Builder so you could easily switch the Kiosk mode off and use the Progressive Profiling features again.

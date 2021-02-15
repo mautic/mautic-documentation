@@ -2,7 +2,7 @@
 
 ![SimpleSearch](assets/readme_1.png)
 
-`SimpleSearch` is a simple, yet very powerful [Grav][grav] plugin that adds search capabilities to your Grav instance. By default it can search Page **Titles**, **Content** and also **Taxonomy**.
+`SimpleSearch` is a simple, yet very powerful [Grav][grav] plugin that adds search capabilities to your Grav instance. By default it can search Page **Titles**, **Content**, **Taxonomy**, and also a raw page **Header**.
 
 # Installation
 
@@ -40,12 +40,18 @@ route: /search
 search_content: rendered
 template: simplesearch_results
 filters:
-    category: blog
+    category:
 filter_combinator: and
 ignore_accented_characters: false
 order:
     by: date
     dir: desc
+searchable_types:
+    title: true
+    content: true
+    taxonomy: true
+    header: false
+header_keys_ignored: ['title', 'taxonomy','content', 'form', 'forms', 'media_order']
 ```
 
 By creating the configuration file: `user/config/plugins/simplesearch.yaml` you have effectively created a site-wide configuration for SimpleSearch.  However, you may want to have multiple searches.
@@ -56,6 +62,7 @@ To accomplish multiple search types in a single site, you should use **page-base
 
 ```
 simplesearch:
+    process: true
     route: @self
     filters:
         - @self
@@ -162,6 +169,15 @@ As **all taxonomy types are searched by default**, in order to stop searching in
 ```
 filters:
     - '@taxonomy': false
+```
+
+## Ignoring a page
+
+A page can be setup to "opt-out" of being included in the search results by setting the following in page frontmatter:
+
+```yaml
+simplesearch:
+  process: false
 ```
 
 ## Ignoring accented characters

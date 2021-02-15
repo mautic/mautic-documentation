@@ -1,3 +1,17 @@
+# v2.0.5
+## 12/02/2020
+
+1. [](#improved)   
+    * Removed user scope from github by default [#36](https://github.com/trilbymedia/grav-plugin-login-oauth2/pull/36)
+
+# v2.0.4
+## 06/03/2020
+
+1. [](#improved)    
+    * If no provider is enabled for site connections, simply omit the template [#28](https://github.com/trilbymedia/grav-plugin-login-oauth2/pull/28)
+    * Vendor updates
+    * Use `UserLogin::defaultRedirectAfterLogin()` helper method
+
 # v2.0.3
 ## 02/24/2019
 

@@ -11,6 +11,7 @@ use Grav\Common\GPM\GPM as GravGPM;
 use Grav\Common\GPM\Installer;
 use Grav\Common\Grav;
 use Grav\Common\Data;
+use Grav\Common\Helpers\Excerpts;
 use Grav\Common\Page\Interfaces\PageInterface;
 use Grav\Common\Page\Media;
 use Grav\Common\Page\Medium\ImageMedium;
@@ -487,6 +488,11 @@ class AdminController extends AdminBaseController
 
         $data = (array)$this->data;
 
+        $folder = $data['folder'] ?? '';
+        if ($folder === '' || mb_strpos($folder, '/') !== false) {
+            throw new \RuntimeException('Creating folder failed, bad folder name', 400);
+        }
+
         if ($data['route'] === '/') {
             $path = $this->grav['locator']->findResource('page://');
         } else {
@@ -494,7 +500,7 @@ class AdminController extends AdminBaseController
         }
 
         $orderOfNewFolder = static::getNextOrderInFolder($path);
-        $new_path         = $path . '/' . $orderOfNewFolder . '.' . $data['folder'];
+        $new_path         = $path . '/' . $orderOfNewFolder . '.' . $folder;
 
         Folder::create($new_path);
         Cache::clearCache('invalidate');
@@ -584,6 +590,11 @@ class AdminController extends AdminBaseController
 
         /** @var PageInterface $obj */
         $obj = $this->admin->page(true);
+
+        $folder = $data['folder'] ?? null;
+        if ($folder === '' || mb_strpos($folder, '/') !== false) {
+            throw new \RuntimeException('Saving page failed: bad folder name', 400);
+        }
 
         if (!isset($data['folder']) || !$data['folder']) {
             $data['folder'] = $obj->slug();
@@ -814,6 +825,10 @@ class AdminController extends AdminBaseController
             $folder = \Grav\Plugin\Admin\Utils::slug($data[substr($folder, 9)]);
         }
         $folder = ltrim($folder, '_');
+        if ($folder === '' || mb_strpos($folder, '/') !== false) {
+            throw new \RuntimeException('Creating page failed: bad folder name', 400);
+        }
+
         if (!empty($data['modular'])) {
             $folder = '_' . $folder;
         }
@@ -1086,7 +1101,11 @@ class AdminController extends AdminBaseController
         try {
             $result = Gpm::install($package, ['theme' => $type === 'theme']);
         } catch (\Exception $e) {
-            $this->admin->json_response = ['status' => 'error', 'message' => $e->getMessage()];
+            $msg = $e->getMessage();
+            $msg = Utils::contains($msg, '401 Unauthorized') ? "ERROR: License key for this resource is invalid." : $msg;
+            $msg = Utils::contains($msg, '404 Not Found') ? "ERROR: Resource not found" : $msg;
+
+            $this->admin->json_response = ['status' => 'error', 'message' => $msg];
 
             return false;
         }
@@ -1306,10 +1325,9 @@ class AdminController extends AdminBaseController
 
         try {
             if ($download) {
-                $file             = base64_decode(urldecode($download));
-                $backups_root_dir = $this->grav['locator']->findResource('backup://', true);
-
-                if (0 !== strpos($file, $backups_root_dir)) {
+                $filename = basename(base64_decode(urldecode($download)));
+                $file = $this->grav['locator']->findResource("backup://{$filename}", true);
+                if (!$file || !Utils::endsWith($filename, '.zip', false)) {
                     header('HTTP/1.1 401 Unauthorized');
                     exit();
                 }
@@ -1332,8 +1350,6 @@ class AdminController extends AdminBaseController
         $url      = rtrim($this->grav['uri']->rootUrl(false), '/') . '/' . trim($this->admin->base,
                 '/') . '/task' . $param_sep . 'backup/download' . $param_sep . $download . '/admin-nonce' . $param_sep . Utils::getNonce('admin-form');
 
-
-
         $this->admin->json_response = [
             'status'  => 'success',
             'message' => $this->admin::translate('PLUGIN_ADMIN.YOUR_BACKUP_IS_READY_FOR_DOWNLOAD') . '. <a href="' . $url . '" class="button">' . $this->admin::translate('PLUGIN_ADMIN.DOWNLOAD_BACKUP') . '</a>',
@@ -1354,7 +1370,6 @@ class AdminController extends AdminBaseController
      */
     protected function taskBackupDelete()
     {
-        $param_sep = $this->grav['config']->get('system.param_sep', ':');
         if (!$this->authorizeTask('backup', ['admin.maintenance', 'admin.super'])) {
             return false;
         }
@@ -1362,13 +1377,11 @@ class AdminController extends AdminBaseController
         $backup = $this->grav['uri']->param('backup', null);
 
         if (null !== $backup) {
-            $file             = base64_decode(urldecode($backup));
-            $backups_root_dir = $this->grav['locator']->findResource('backup://', true);
+            $filename = basename(base64_decode(urldecode($backup)));
+            $file = $this->grav['locator']->findResource("backup://{$filename}", true);
 
-            $backup_path = $backups_root_dir . '/' . $file;
-
-            if (file_exists($backup_path)) {
-                unlink($backup_path);
+            if ($file && Utils::endsWith($filename, '.zip', false)) {
+                unlink($file);
 
                 $this->admin->json_response = [
                     'status'  => 'success',
@@ -1377,13 +1390,16 @@ class AdminController extends AdminBaseController
                         'closeButton' => true
                     ]
                 ];
-            } else {
-                $this->admin->json_response = [
-                    'status'  => 'error',
-                    'message' => $this->admin::translate('PLUGIN_ADMIN.BACKUP_NOT_FOUND'),
-                ];
+
+                return true;
             }
         }
+
+        $this->admin->json_response = [
+            'status'  => 'error',
+            'message' => $this->admin::translate('PLUGIN_ADMIN.BACKUP_NOT_FOUND'),
+        ];
+
         return true;
     }
 
@@ -1547,6 +1563,8 @@ class AdminController extends AdminBaseController
     /**
      * Determines the file types allowed to be uploaded
      *
+     * Used by pagemedia field.
+     *
      * @return bool True if the action was performed.
      */
     protected function taskListmedia()
@@ -1596,33 +1614,65 @@ class AdminController extends AdminBaseController
     }
 
     /**
-     * @return Media
+     * Get page media.
+     *
+     * @return Media|null
      */
-    protected function getMedia()
+    public function getMedia()
     {
-        $this->uri = $this->uri ?? $this->grav['uri'];
-        $uri = $this->uri->post('uri');
-        $order = $this->uri->post('order') ?: null;
-
-        if ($uri) {
-            /** @var UniformResourceLocator $locator */
-            $locator = $this->grav['locator'];
-
-            $media_path = $locator->isStream($uri) ? $uri : null;
-        } else {
-            $page = $this->admin->page(true);
-
-            $media_path = $page ? $page->path() : null;
+        if ($this->view !== 'media') {
+            return null;
         }
-        if ($order) {
+
+        $this->uri = $this->uri ?? $this->grav['uri'];
+        $this->grav['twig']->twig_vars['current_form_data'] = (array)$this->data;
+
+        $field = (string)$this->uri->post('field', '');
+        $order = $this->uri->post('order') ?: null;
+        if (!is_array($order)) {
             $order = array_map('trim', explode(',', $order));
         }
 
-        return $media_path ? new Media($media_path, $order) : null;
+        $page = $this->admin->page($this->route);
+        if (!$page) {
+            return null;
+        }
+
+        $blueprints = $page->blueprints();
+        $settings = $this->getMediaFieldSettings($blueprints, $field);
+        $path = $settings['destination'] ?? $page->path();
+
+        return $path ? new Media($path, $order) : null;
     }
 
     /**
-     * Handles adding a media file to a page
+     * @param Data\Blueprint|null $blueprint
+     * @param string $field
+     * @return array|null
+     */
+    protected function getMediaFieldSettings(?Data\Blueprint $blueprint, string $field): ?array
+    {
+        $schema = $blueprint ? $blueprint->schema() : null;
+        if (!$schema || $field === '') {
+            return null;
+        }
+
+        $settings = is_object($schema) ? (array)$schema->getProperty($field) : null;
+        if (null === $settings) {
+            return null;
+        }
+
+        if (empty($settings['destination']) || \in_array($settings['destination'], ['@self', 'self@', '@self@'], true)) {
+            unset($settings['destination']);
+        }
+
+        return $settings + ['accept' => '*', 'limit' => 1000];
+    }
+
+    /**
+     * Handles adding a media file to a page.
+     *
+     * Used by pagemedia field.
      *
      * @return bool True if the action was performed.
      */
@@ -1782,7 +1832,9 @@ class AdminController extends AdminBaseController
     }
 
     /**
-     * Handles deleting a media file from a page
+     * Handles deleting a media file from a page.
+     *
+     * Used by pagemedia field.
      *
      * @return bool True if the action was performed.
      */
@@ -1802,14 +1854,10 @@ class AdminController extends AdminBaseController
             return false;
         }
 
-        $filename = !empty($this->post['filename']) ? $this->post['filename'] : null;
+        $filename = !empty($this->post['filename']) ? basename($this->post['filename']) : null;
 
         // Handle bad filenames.
-        if (!Utils::checkFilename($filename)) {
-            $filename = null;
-        }
-
-        if (!$filename) {
+        if (!$filename || !Utils::checkFilename($filename)) {
             $this->admin->json_response = [
                 'status'  => 'error',
                 'message' => $this->admin::translate('PLUGIN_ADMIN.NO_FILE_FOUND')
@@ -2390,5 +2438,260 @@ class AdminController extends AdminBaseController
         }
 
         return $filename . '.' . $language . $ext;
+    }
+
+    protected function taskGetLevelListing()
+    {
+        $data = $this->getPost($_POST);
+
+        if (!isset($data['field'])) {
+            $json = [
+                'status'  => 'error',
+                'message' => 'Bad Request'
+            ];
+            return $this->sendJsonResponse($json, 400);
+        }
+
+        // Base64 decode the route
+        $data['route'] = isset($data['route']) ? base64_decode($data['route']) : null;
+
+        $initial = $data['initial'] ?? null;
+        if ($initial) {
+            $data['leaf_route'] = $data['route'];
+            $data['route'] = null;
+            $data['level'] = 1;
+        }
+
+        [$status, $message, $response,] = $this->getLevelListing($data);
+
+        $json = [
+            'status'  => $status,
+            'message' => $this->admin::translate($message ?? 'PLUGIN_ADMIN.NO_ROUTE_PROVIDED'),
+            'data' => array_values($response)
+        ];
+
+        return $this->sendJsonResponse($json, 200);
+    }
+
+    protected function getLevelListing($data)
+    {
+        // Valid types are dir|file|link
+        $default_filters =  ['type'=> ['root', 'dir'], 'name' => null, 'extension' => null];
+
+        $pages = $this->grav['pages'];
+        $pages_instances = $pages->instances();
+
+        $is_page = $data['page'] ?? true;
+        $route = $data['route'] ?? null;
+        $leaf_route = $data['leaf_route'] ?? null;
+        $sortby = $data['sortby'] ?? 'filename';
+        $order = $data['order'] ?? SORT_ASC;
+        $initial = $data['initial'] ?? null;
+        $filters = isset($data['filters']) ? $default_filters + json_decode($data['filters']) : $default_filters;
+        $filter_type = (array) $filters['type'];
+
+        $status = 'error';
+        $msg = null;
+        $response = [];
+        $children = null;
+        $sub_route = null;
+        $extra = null;
+        $root = false;
+
+        // Handle leaf_route
+        if ($leaf_route && $route !== $leaf_route) {
+            $nodes = explode('/', $leaf_route);
+            $sub_route =  '/' . implode('/', array_slice($nodes, 1, $data['level']++));
+            $data['route'] = $sub_route;
+
+            [$status, $msg, $children, $extra] = $this->getLevelListing($data);
+        }
+
+        // Handle no route, assume page tree root
+        if (!$route) {
+            $is_page = false;
+            $route = $this->grav['locator']->findResource('page://', true);
+            $root = true;
+        }
+
+        if ($is_page) {
+            // Try the path
+            /** @var PageInterface $page */
+            $page = $pages->get(GRAV_ROOT . $route);
+
+            // Try a real route (like homepage)
+            if (is_null($page)) {
+                $page = $pages->find($route);
+            }
+
+            $path = $page ? $page->path() : null;
+        } else {
+            // Try a physical path
+            if (!Utils::startsWith($route, GRAV_ROOT)) {
+                $try_path = GRAV_ROOT . $route;
+            } else {
+                $try_path = $route;
+            }
+
+            $path = file_exists($try_path) ? $try_path : null;
+        }
+
+        $blueprintsData = $this->admin->page(true);
+
+        if (null !== $blueprintsData) {
+            if (method_exists($blueprintsData, 'blueprints')) {
+                $settings = $blueprintsData->blueprints()->schema()->getProperty($data['field']);
+            } elseif (method_exists($blueprintsData, 'getBlueprint')) {
+                $settings = $blueprintsData->getBlueprint()->schema()->getProperty($data['field']);
+            }
+
+            $filters = array_merge([], $filters, ($settings['filters'] ?? []));
+            $filter_type = $filters['type'] ?? $filter_type;
+        }
+
+
+        if ($path) {
+            /** @var \SplFileInfo $fileInfo */
+            $status = 'success';
+            $msg = 'PLUGIN_ADMIN.PAGE_ROUTE_FOUND';
+            foreach (new \DirectoryIterator($path) as $fileInfo) {
+                $fileName = $fileInfo->getFilename();
+                $filePath = str_replace('\\', '/', $fileInfo->getPathname());
+
+                if (($fileInfo->isDot() && $fileName !== '.' && $initial) || (Utils::startsWith($fileName, '.') && strlen($fileName) > 1)) {
+                    continue;
+                }
+
+                if ($fileInfo->isDot()) {
+                    if ($root) {
+                        $payload = [
+                            'name' => '<root>',
+                            'value' => '',
+                            'item-key' => '',
+                            'filename' => '.',
+                            'extension' => '',
+                            'type' => 'root',
+                            'modified' => $fileInfo->getMTime(),
+                            'size' => 0,
+                            'has-children' => false
+                        ];
+                    } else {
+                        continue;
+                    }
+                } else {
+                    $file_page = $pages_instances[$filePath] ?? null;
+                    $file_path = Utils::replaceFirstOccurrence(GRAV_ROOT, '', $filePath);
+                    $type = $fileInfo->getType();
+
+                    $child_path = $file_page ? $file_page->path() : $filePath;
+                    $count_children = Folder::countChildren($child_path);
+
+                    $payload = [
+                        'name' => $file_page ? $file_page->title() : $fileName,
+                        'value' => $file_page ? $file_page->rawRoute() : $file_path,
+                        'item-key' => basename($file_page ? $file_page->route() : $file_path),
+                        'filename' => $fileName,
+                        'extension' => $type === 'dir' ? '' : $fileInfo->getExtension(),
+                        'type' => $type,
+                        'modified' => $fileInfo->getMTime(),
+                        'size' => $count_children,
+                        'symlink' => false,
+                        'has-children' => $count_children > 0
+                    ];
+                }
+
+                // Fix for symlink
+                if ($payload['type'] === 'link') {
+                    $payload['symlink'] = true;
+                    $physical_path = $fileInfo->getRealPath();
+                    $payload['type'] = is_dir($physical_path) ? 'dir' : 'file';
+                }
+
+                // filter types
+                if ($filters['type']) {
+                    if (!in_array($payload['type'], $filter_type)) {
+                        continue;
+                    }
+                }
+
+                // Simple filter for name or extension
+                if (($filters['name'] && Utils::contains($payload['basename'], $filters['name'])) ||
+                    ($filters['extension'] && Utils::contains($payload['extension'], $filters['extension']))) {
+                    continue;
+                }
+
+                // Add children if any
+                if ($filePath === $extra && is_array($children)) {
+                    $payload['children'] = array_values($children);
+                }
+
+                $response[] = $payload;
+            }
+        } else {
+            $msg = 'PLUGIN_ADMIN.PAGE_ROUTE_NOT_FOUND';
+        }
+
+        // Sorting
+        $response = Utils::sortArrayByKey($response, $sortby, $order);
+
+        $temp_array = [];
+        foreach ($response as $index => $item) {
+            $temp_array[$item['type']][$index] = $item;
+        }
+
+        $sorted = Utils::sortArrayByArray($temp_array, $filter_type);
+        $response = Utils::arrayFlatten($sorted);
+
+        return [$status, $this->admin::translate($msg ?? 'PLUGIN_ADMIN.NO_ROUTE_PROVIDED'), $response, $path];
+    }
+
+    protected function taskConvertUrls()
+    {
+        $data = $this->getPost($_POST);
+        $converted_links = [];
+        $converted_images = [];
+        $status = 'success';
+        $message = 'All links converted';
+
+        $data['route'] = isset($data['route']) ? base64_decode($data['route']) : null;
+        $data['data'] = json_decode($data['data'] ?? '{}', true);
+
+        // use the route if passed, else use current page in admin as reference
+        $page_route = $data['route'] ?? $this->admin->page(true);
+
+        /** @var PageInterface */
+        $page = $this->grav['pages']->find($page_route);
+
+        if (!$page) {
+            $json = [
+                'status'  => 'error',
+                'message' => 'Page Not Found'
+            ];
+            return $this->sendJsonResponse($json, 404);
+        }
+
+        if (!isset($data['data'])) {
+            $json = [
+                'status'  => 'error',
+                'message' => 'Bad Request'
+            ];
+            return $this->sendJsonResponse($json, 400);
+        }
+
+        foreach ($data['data']['a'] ?? [] as $link) {
+            $converted_links[$link] = Excerpts::processLinkHtml($link, $page);
+        }
+
+        foreach ($data['data']['img'] ?? [] as $image) {
+            $converted_images[$image] = Excerpts::processImageHtml($image, $page);
+        }
+
+        $json = [
+            'status'  => $status,
+            'message' => $message,
+            'data' => ['links' => $converted_links, 'images' => $converted_images]
+        ];
+
+        return $this->sendJsonResponse($json, 200);
     }
 }

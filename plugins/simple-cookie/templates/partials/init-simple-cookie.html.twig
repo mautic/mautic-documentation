@@ -73,6 +73,13 @@ function createCookieContent(config)
 		cookieContent.dismiss = config.banner_dismiss;
 	}
 
+	cookieContent.deny = "{{ 'PLUGINS.SIMPLE_COOKIE.BANNER_DENY'|t }}";
+	if (config.banner_deny)
+	{
+		cookieContent.deny = config.banner_deny;
+	}
+
+
 	cookieContent.allow = "{{ 'PLUGINS.SIMPLE_COOKIE.BANNER_ACCEPT'|t }}";
 	if (config.banner_accept)
 	{

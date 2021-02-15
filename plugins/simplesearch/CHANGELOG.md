@@ -1,3 +1,45 @@
+# v2.2.1
+## 12/02/2020
+
+1. [](#new)
+    * Require Grav 1.6.0+
+    * Added autoloader
+    * Pass phpstan level 3 tests
+1. [](#bugfix)
+    * Fixed `header_keys_ignored` configuration option not taking effect
+
+# v2.2.0
+## 09/14/2020
+
+1. [](#improved)
+    * Added config option to choose keys to ignore when searching header
+    * Added ability to opt-out of page search by setting: `simplesearch: process: false` in page header
+    * Added `form` and `forms` to default list of ignores in page header searches
+1. [](#bugfix)
+    * Fix issue to ensure matching ignore keys only checked at root level
+    * Fix issue where searchable header content was growing exponentially
+
+# v2.1.0
+## 05/27/2020
+
+1. [](#new)
+    * Added ability to search page headers (excluding title, taxonomy, content)
+
+# v2.0.0
+## 05/13/2020
+
+1. [](#new)
+    * Allow searching the content of modular pages [#170](https://github.com/getgrav/grav-plugin-simplesearch/pull/170)
+    * Allow configuration of Title/Content/Taxononmy searchable types [#184](https://github.com/getgrav/grav-plugin-simplesearch/pull/184)
+1. [](#improved)
+    * Improved default vs custom search page functionality [#186](https://github.com/getgrav/grav-plugin-simplesearch/pull/186)
+    * Add field label for screen reader accessibility [#171](https://github.com/getgrav/grav-plugin-simplesearch/pull/171)
+    * Added Traditional Chinese [#169](https://github.com/getgrav/grav-plugin-simplesearch/pull/169)
+    * Updated Russian and English [#165](https://github.com/getgrav/grav-plugin-simplesearch/pull/165)
+    * Added Galacian [#155](https://github.com/getgrav/grav-plugin-simplesearch/pull/155)
+1. [](#bugfix)
+    * Fixed input attribute [#165](https://github.com/getgrav/grav-plugin-simplesearch/pull/165)
+
 # v1.14.2
 ## 12/07/2018
 
@@ -117,7 +159,7 @@
 1. [](#improved)
     * Added support for Grav's autoescape twig setting
 1. [](#bugfix)
-    * Fix searching on `@self   `[#53](https://github.com/getgrav/grav-plugin-simplesearch/pull/53)
+    * Fix searching on `@self  `[#53](https://github.com/getgrav/grav-plugin-simplesearch/pull/53)
 
 # v1.8.0
 ## 07/14/2016

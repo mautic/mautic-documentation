@@ -24,6 +24,8 @@ Notice Mautic uses 'weight' for stages, this is a way to balance your contact's 
 
 Use a campaign to move your contacts from stage to stage. When creating your campaign choose a _Move Contact to Stage_ action. So if a contact has been sent an email, or has opened an email, you can select to change the contact's stage based on any campaign criteria.
 
+>>> It is not possible to move a contact to a stage which has a lesser weight than their current stage. For example if they are currently in Stage B which has a weight of 50, you cannot move them to Stage A which has a weight of 25.
+
 ###Contact's Lifecycle
 
 Create a lifecycle widget in your dashboard based on segments to also view what stages contacts are in.
