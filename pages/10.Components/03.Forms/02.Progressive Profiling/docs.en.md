@@ -43,7 +43,7 @@ Always force the display of the field, even if you set a maximum number of field
 
 4. Display field only after X submissions.
 
-If you want to ask a contact additional questions on the second form load, you can specify so for each lead. It works nicely with hiding fields which you already know the answer to. For the first submission, the contact can be asked to fill in the First and the Last name. When they come to the form for a second time, the First and the Last name fields will be hidden and instead they will be asked to fill in their Company and Phone.
+If you want to ask a Contact additional questions on the second Form load, you can specify so for each lead. It works nicely with hiding fields which you already know the answer to. For the first submission, the Contact can be asked to fill in the First and the Last name. When they come to the Form for a second time, the First and the Last name fields will be hidden and instead they will be asked to fill in their Company and Phone.
 
 ## Limits of Progressive Profiling
 
