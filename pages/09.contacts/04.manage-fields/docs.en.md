@@ -55,6 +55,6 @@ Since [Mautic 3.3][mautic-3.3] there is an option you can set in your `app/confi
 
 If this is configured, only the field metadata will be created, so you will be able to see the new Custom Field in the list of Custom Fields. It will be unpublished until a command `bin/console mautic:custom-field:create-column` runs. This command will create the actual column in the table and publishes the field metadata.
 
-With this the HTTP request timeout is fixed because the long running SQL query that is creating the new table column is handled in a background task.
+With this configuration enabled, the HTTP request timeout is prevented because the long running SQL query that is creating the new table column is handled in a background task.
 
 The table lock can be solved if you run the command only 1/day when you know that most of your audiance is offline. When there is not as much traffic goint into Mautic then the lock is not that big of an issue.
