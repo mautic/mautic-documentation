@@ -156,7 +156,7 @@ This command will download the database of Do Not Sell IP addresses from MaxMind
 ```
 php /path/to/mautic/bin/console mautic:max-mind:purge
 ```
-This command will find data in the database that were loaded from MaxMind's do not sell IP addresses and deletes them.
+This command will find data in the database that was loaded from MaxMind's Do Not Sell IP addresses and deletes the data.
 
 ### Send Scheduled Broadcasts (e.g. segment emails)
 
