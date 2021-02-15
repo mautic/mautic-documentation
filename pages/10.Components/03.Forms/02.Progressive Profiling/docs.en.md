@@ -31,7 +31,7 @@ Always force the display of the field, even if you set a maximum number of field
 
 3. Display field only if the value is not yet known
 
-	Mautic will search for a value in two places before the form is rendered for the current contact:
+	Mautic will search for a value in two places before the Form is rendered for the current Contact:
 
 * Former form submissions
   
