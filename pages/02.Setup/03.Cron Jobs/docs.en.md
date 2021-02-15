@@ -141,7 +141,7 @@ php /path/to/mautic/bin/console mautic:maintenance:cleanup --days-old=365 --dry-
 
 ### MaxMind CCPA compliance
 
-MaxMind requires to keep a "do not sell" list up to date and remove all data that were added by those IP addresses in the past from MaxMind.
+MaxMind requires users to keep a "Do Not Sell" list up to date, and remove all data that was added relating to those IP addresses in the past from MaxMind.
 
 See more details in the official MaxMind website: https://blog.maxmind.com/tag/ccpa/
 
