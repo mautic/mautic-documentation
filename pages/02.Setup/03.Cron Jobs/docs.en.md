@@ -151,7 +151,7 @@ It is recommended to run these two commands once per week, one after another.
 ```
 php /path/to/mautic/bin/console mautic:donotsell:download
 ```
-This command will download the database of do not sell IP addresses from MaxMind.
+This command will download the database of Do Not Sell IP addresses from MaxMind.
 
 ```
 php /path/to/mautic/bin/console mautic:max-mind:purge
