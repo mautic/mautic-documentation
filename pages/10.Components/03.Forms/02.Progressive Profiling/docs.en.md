@@ -39,7 +39,7 @@ Always force the display of the field, even if you set a maximum number of field
 
 * Contact profile values
   
-   If the form field is linked with a contact field, Mautic will check if there is a value in the contact's profile and hides the field if configured to do so.
+   If the Form field is linked with a Contact field, Mautic will check if there is a value in the Contact's profile and hides the field if configured to do so.
 
 4. Display field only after X submissions.
 
