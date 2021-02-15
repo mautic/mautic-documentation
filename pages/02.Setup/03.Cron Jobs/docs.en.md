@@ -139,7 +139,7 @@ Use ‘--gdpr’ flag to delete data to fulfill GDPR European regulation. This w
 php /path/to/mautic/bin/console mautic:maintenance:cleanup --days-old=365 --dry-run
 ```
 
-### MaxMind CCPA complience
+### MaxMind CCPA compliance
 
 MaxMind requires to keep a "do not sell" list up to date and remove all data that were added by those IP addresses in the past from MaxMind.
 
