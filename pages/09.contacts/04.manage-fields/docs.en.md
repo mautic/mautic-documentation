@@ -51,7 +51,9 @@ Each new Custom Field for Contacts or Companies adds a new column to the databas
 
 There is a way around this when you configure the processing of field creation in the background. 
 
-There is now an option you can set in your `app/config/local.php` file: `'create_custom_field_in_background' => true,`. If this is set then only the field metadata will be created so you will be able to see the new custom field in the list of custom fields. But it will be unpublished until a command `bin/console mautic:custom-field:create-column` runs. This command will create the actual column in the table and publishes the field metadata.
+Since [Mautic 3.3][mautic-3.3] there is an option you can set in your `app/config/local.php` file: `'create_custom_field_in_background' => true,`. 
+
+If this is configured, only the field metadata will be created, so you will be able to see the new Custom Field in the list of Custom Fields. It will be unpublished until a command `bin/console mautic:custom-field:create-column` runs. This command will create the actual column in the table and publishes the field metadata.
 
 With this the HTTP request timeout is fixed because the long running SQL query that is creating the new table column is handled in a background task.
 
