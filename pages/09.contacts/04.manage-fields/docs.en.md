@@ -57,4 +57,4 @@ If this is configured, only the field metadata will be created, so you will be a
 
 With this configuration enabled, the HTTP request timeout is prevented because the long running SQL query that is creating the new table column is handled in a background task.
 
-The table lock can be solved if you run the command only 1/day when you know that most of your audiance is offline. When there is not as much traffic goint into Mautic then the lock is not that big of an issue.
+The table lock issue can be mitigated if you run the command only once per day when you know that most of your audience is offline, therefore less traffic will be going into Mautic and there is less chance of this being a problem.
