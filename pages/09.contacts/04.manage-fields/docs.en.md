@@ -45,7 +45,7 @@ You can create additional custom fields and define the data type you want that f
 [contact monitoring]: </contacts/manage-contacts/contact-monitoring>
 [variables]: </setup/variables>
 
-### Creating custom fields via a command
+### Creating Custom Fields via a command
 
 Each new custom field for contact or a company is adding new column to the database. This operation gets slower with more data. It also locks the table so no changes can come in for tens of minutes in some cases. It will also time out the HTTP request so the UI will report the column exist but contact/company updates will actually fail because the column is missing. There is a way around when you set a background processing of field creation. 
 
