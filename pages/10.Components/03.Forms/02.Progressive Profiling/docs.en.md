@@ -21,7 +21,7 @@ It is recommended to use the Email field in each Form. From [Mautic 2.9][mautic-
 
 A global feature to enable progressive profiling and allow the rendering of a specified amount of fields each time.
 
-![image](https://user-images.githubusercontent.com/462477/80913098-3f71c500-8d42-11ea-919c-13763228bc1c.png)
+![screenshot of maximum fields to show at a time setting](https://user-images.githubusercontent.com/462477/80913098-3f71c500-8d42-11ea-919c-13763228bc1c.png)
 
 2. Always display
 
