@@ -139,6 +139,24 @@ Use ‘--gdpr’ flag to delete data to fulfill GDPR European regulation. This w
 php /path/to/mautic/bin/console mautic:maintenance:cleanup --days-old=365 --dry-run
 ```
 
+### MaxMind CCPA compliance
+
+MaxMind requires users to keep a "Do Not Sell" list up to date, and remove all data that was added relating to those IP addresses in the past from MaxMind.
+
+See more details in the official MaxMind website: [https://blog.maxmind.com/tag/ccpa/][maxmind-ccpa]
+
+It is recommended to run these two commands once per week, one after another.
+
+```
+php /path/to/mautic/bin/console mautic:donotsell:download
+```
+This command will download the database of Do Not Sell IP addresses from MaxMind.
+
+```
+php /path/to/mautic/bin/console mautic:max-mind:purge
+```
+This command will find data in the database that was loaded from MaxMind's Do Not Sell IP addresses and deletes the data.
+
 ### Send Scheduled Broadcasts (e.g. segment emails)
 
 Starting with Mautic 2.2.0, it is now possible to use cron to send scheduled broadcasts for channel communications. The current only implementation of this is for segment emails. Instead of requiring a manual send and wait with the browser window open while ajax batches over the send - a command can now be used. The caveat for this is that the emails must be published and must have a published up date - this is to help prevent any unintentional email broadcasts. Just as it was with the manual/ajax process - only contacts who have not already received the specific communication will have it sent to them. This command will send messages to contacts added to the source segments later, so if you don't want this to happen, set an unpublish date.
