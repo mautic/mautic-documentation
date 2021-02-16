@@ -15,10 +15,23 @@ Progressive profiling is a powerful feature used to reduce the length of forms b
 
 There are two ways to configure a form field to only display when the asked values are unknown. 
 
-First, choose the form that you want to use for progressive profiling. Go to the form fields and open the field configuration of the field you want to use for progressive profiling. Change to the __Behavior__ tab, here you can configure the behaviour of the fields.
+It is recommended to use the Email field in each Form. From [Mautic 2.9][mautic-2.9] the email field can be hidden, but use this with caution. Email as identifier of a Contact could be unusable if same PC is used by more people (public library, schools...).
 
-Note: We recommend to always use the email field, even though it might already be known, because Mautic uses the email as a unique identifier for contacts. Also the submit button field must be always visible because otherwise the form can not be submitted by the contact.
+1. Maximum fields displayed at a time
 
+A global feature to enable progressive profiling and allow the rendering of a specified amount of fields each time.
+
+![screenshot of maximum fields to show at a time setting](https://user-images.githubusercontent.com/462477/80913098-3f71c500-8d42-11ea-919c-13763228bc1c.png)
+
+2. Always display
+
+Always force the display of the field, even if you set a maximum number of fields (x) and this field is not in the first x fields - this is helpful for fields like Email which must always be displayed.**. 
+
+![Screenshot showing the always display setting](https://user-images.githubusercontent.com/462477/80913150-b6a75900-8d42-11ea-944d-7552882b215f.png)
+
+3. Display field only if the value is not yet known
+
+	Mautic will search for a value in two places before the Form is rendered for the current Contact:
 
 #### 1. Show when value exists
 
