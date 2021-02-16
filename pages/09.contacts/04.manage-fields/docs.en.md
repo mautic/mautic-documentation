@@ -42,9 +42,6 @@ You can create additional custom fields and define the data type you want that f
 
 ![new custom field](new-custom-field.jpg)
 
-[contact monitoring]: </contacts/manage-contacts/contact-monitoring>
-[variables]: </setup/variables>
-
 ### Creating Custom Fields via a command
 
 Each new Custom Field for Contacts or Companies adds a new column to the database. This operation gets slower with larger instances of Mautic, and it locks the table while it is running, meaning that no changes can be made until the field is created. It will also time out the HTTP request, so that the User Interface will report the column exists, but Contact/Company updates will actually fail, because the column is still missing. 
@@ -58,3 +55,7 @@ If this is configured, only the field metadata will be created, so you will be a
 With this configuration enabled, the HTTP request timeout is prevented because the long running SQL query that is creating the new table column is handled in a background task.
 
 The table lock issue can be mitigated if you run the command only once per day when you know that most of your audience is offline, therefore less traffic will be going into Mautic and there is less chance of this being a problem.
+
+[contact monitoring]: </contacts/manage-contacts/contact-monitoring>
+[variables]: </setup/variables>
+[mautic-3.3]: <https://github.com/mautic/mautic/releases/tag/3.3.0>
