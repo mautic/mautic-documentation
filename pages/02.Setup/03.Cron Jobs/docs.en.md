@@ -147,7 +147,6 @@ See more details in the official MaxMind website: [https://blog.maxmind.com/tag/
 
 It is recommended to run these two commands once per week, one after another.
 
-
 ```
 php /path/to/mautic/bin/console mautic:donotsell:download
 ```
