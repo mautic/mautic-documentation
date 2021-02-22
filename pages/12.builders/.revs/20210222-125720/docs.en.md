@@ -18,8 +18,6 @@ facebookenable: true
 
 Since [Mautic 3.3][mautic-3.3], Mautic has shipped with an updated, modern builder for creating emails and landing pages.  It is available as a beta release - an optional plugin - until Mautic 4.0 where we plan to fully replace the legacy builder, assuming all goes well during the beta phase.
 
->>> To use your existing templates with the new Email builder, you will need to add one line to your configuration file. Read on for further details.
-
 ## About GrapesJS
 The new builder is based on the Open Source [GrapesJS][grapesjs] framework and was created by the team at [Webmecanik][webmecanik] who have kindly donated it to the Mautic Community.
 
@@ -51,6 +49,8 @@ With the Asset Manager is easier to organize your media files and it's enough to
 Since Mautic 3.3-RC1 the builder is available to enable in the Plugins section of Mautic. Go to the Settings (click the cog wheel at the top right) > Plugins > GrapesJS and click on it. Change the slider to Yes.
 
 Now you will need to **clear your Mautic cache** (located in var/cache) before you will be able to work with the new GrapesJS builder.
+
+>>> To use your existing templates with the new Email builder, you will need to add one line to your configuration file. Read on for further details.
 
 ### Templates
 
