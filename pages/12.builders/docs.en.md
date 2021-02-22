@@ -16,7 +16,7 @@ facebookenable: true
 
 ## Introduction
 
-Since [Mautic 3.3-RC1][mautic-3.3], Mautic has shipped with an updated, modern builder for creating emails and landing pages.  It is available as a beta release - an optional plugin - until Mautic 4.0 where we plan to fully replace the legacy builder, assuming all goes well during the beta phase.
+Since [Mautic 3.3][mautic-3.3], Mautic has shipped with an updated, modern builder for creating emails and landing pages.  It is available as a beta release - an optional plugin - until Mautic 4.0 where we plan to fully replace the legacy builder, assuming all goes well during the beta phase.
 
 ## About GrapesJS
 The new builder is based on the Open Source [GrapesJS][grapesjs] framework and was created by the team at [Webmecanik][webmecanik] who have kindly donated it to the Mautic Community.
