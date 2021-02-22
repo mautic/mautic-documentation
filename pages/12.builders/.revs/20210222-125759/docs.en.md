@@ -43,7 +43,7 @@ You can nest components as much as you can but when the structure begins to grow
 You don't have to care about the code, but it's always there, available for you. When the work is done you can grab and use it wherever you want. Developers could also implement their own storage interfaces to use inside the editor.
 
 #### Asset Manager
-With the Asset Manager is easier to organize your media files and it's enough to double click on the image to change it.
+With the Asset Manager is easier to organize your media files and it's enough to double click on the image to change it
 
 ## About the builder
 
