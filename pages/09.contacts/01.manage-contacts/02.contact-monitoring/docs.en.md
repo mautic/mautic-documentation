@@ -340,5 +340,5 @@ This is a list of cookies potentially used by Mautic when tracking contacts. Not
 |Name|Expiration|Used by Mautic for tracking?|Description
 |--- |--- |--- |---
 |mautic_device_id|session|No|Can be used by the monitored site but is not used by Mautic to actively track the Contact.
-|mtc_id|session|No|tores the Mautic ID for the tracked contact. It is not used for tracking. Can be used by the monitored site to leverage Mautic's REST API on the backend to manipulate the contact.
+|mtc_id|session|No|Stores the Mautic ID for the tracked Contact. It is not used for tracking. Can be used by the monitored site to leverage Mautic's REST API on the backend to manipulate the Contact.
 |mtc_sid|session|No|Deprecated cookie that is the same as mautic_device_id. It is no longer used by Mautic but kept for BC reads.
