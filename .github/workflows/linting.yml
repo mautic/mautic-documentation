@@ -22,9 +22,6 @@ jobs:
         # Optional
         config: https://github.com/mautic/mautic-documentation/blob/implement-vale-linter/.vale.ini
 
-        # To annotate lines that have been modified within a PR
-        onlyAnnotateModifiedLines: true
-
         files: pages/
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
