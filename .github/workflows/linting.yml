@@ -20,7 +20,7 @@ jobs:
           https://github.com/errata-ai/Google/releases/latest/download/Google.zip
 
         # Optional
-        config: /.vale.ini
+        config: .vale.ini
 
         files: pages/
       env:
