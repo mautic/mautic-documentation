@@ -229,7 +229,7 @@ In short, use named screen views (e.g. main_screen) in your App as your page_url
 
 1. Make the email field publicly updatable, this means that a call to the tracking GIF with the variable email will get properly recognized by Mautic.
 
-2. Set up a form, which will be the access point of your campaign (e.g. a new contact email). Make this form as simple as you can, as you will be POST-ing to it from your App. The typical form URL you will POST to is
+2. Set up a Form, which will be the access point of your Campaign (e.g. a new Contact email). Make this form as simple as you can, as you will be POST-ing to it from your App. The typical Form URL you will POST to is
 
 ```
 https://example.com/form/submit?formId=<form_id>
