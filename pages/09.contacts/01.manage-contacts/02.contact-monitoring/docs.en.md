@@ -143,7 +143,7 @@ You can also pass information specific to your Contact by setting Mautic Contact
 
 The Contact's Tags can be changed by using the `tags` query parameter. Multiple Tags can be separated by comma. To remove a Tag, prefix it with a dash (minus sign).  
 
-For example, `mtracking.gif?tags=ProductA,-ProductB` would add the ProductA tag to the contact and remove ProductB.
+For example, `mtracking.gif?tags=ProductA,-ProductB` would add the ProductA Tag to the Contact and remove ProductB.
 
 #### Embedding the Pixel
 
