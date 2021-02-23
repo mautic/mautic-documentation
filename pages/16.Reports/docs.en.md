@@ -19,6 +19,41 @@ Choose the data source appropriate to the report you want. Each data source has 
 
 ![The Details tab in the Edit Report window](data-source.png)
 
+Types of data source available are as below - 
+
+1. Assets
+   1. Assets
+   2. Asset Downloads
+2. Campaigns
+   1. Campaign Events
+3. Channels Messages
+   1. Message Queue
+4. Emails
+   1. Emails
+   2. Emails Sent
+5. Forms
+   1. Forms
+   2. Form Submissions
+6. Contacts
+   1. Contacts
+   2. Multi Touch Attributions
+   3. Contact Point Log
+   4. Frequency Rules
+   5. Segment Membership
+   6. Do Not Contact
+   7. UTM Codes
+7. Companies
+   1. Companies
+8. Mobile Notifications
+   1. Mobile Notifications
+   2. Mobile Notifications Sent
+9. Pages
+   1. Landing Pages
+   2. Page hits
+10. Videos
+    1. Video hits
+
+
 ## Configuration
 
 Each report can be customized to include the columns of choice. Filter data based on set criteria and/or set a specific order for the data.
