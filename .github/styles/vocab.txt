@@ -1,5 +1,4 @@
 AJAX
-API
 bcc
 Beanstalkd
 Bing
@@ -15,6 +14,7 @@ Cron
 CTRL
 Dripflow
 Froala
+Froogaloop
 gcm
 GitHub
 GMail
@@ -33,11 +33,11 @@ Mailjet
 Mautic
 Multiselect
 multiselect
+mysqldump
 namespace
 Namespace
 noindex
 OAuth
-PHP
 Pipedrive
 Piwik
 Rackspace
@@ -61,6 +61,5 @@ utm
 Vtiger
 Webmecanik
 www
-XML
 Zapier
 Zoho
