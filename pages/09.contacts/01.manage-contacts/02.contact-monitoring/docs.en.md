@@ -66,7 +66,7 @@ mt('send', 'pageview', {}, {
 
 #### Local contact cookie (first party cookie)
 
-If CORS is configured to allow access from the domain the mtc.js is embedded, a cookie will be placed on the same domain with the name of `mtc_id`. This cookie will have the value of the ID for the currently tracked contact but is not used to track the contact. This provides access to server side software to the contact ID and thus providing the ability to integrate with Mautic's REST API as well.
+If CORS is configured to allow access from the domain where the mtc.js is embedded, a cookie will be placed on the same domain with the name of `mtc_id`. This cookie will have the value of the ID for the currently tracked contact but is not used to track the contact. This enables the server side software to access the contact ID, and thus providing the ability to integrate with Mautic's REST API as well.
 
 Valid Domains for CORS are expected to include the full domain name as well as the protocol. (e.g. http://example.com). If you serve up secure and non-secure pages you should include both https://example.com as well http://example.com. All subdomains will need to be listed as well (e.g. http://example.com and http://www.example.com ), if your server allows this. If you would like to allow all subdomains, an asterisk can be used as a wildcard (e.g. http://*.example.com).
 
