@@ -1,4 +1,5 @@
 AJAX
+API
 bcc
 Beanstalkd
 Bing
@@ -32,11 +33,11 @@ Mailjet
 Mautic
 Multiselect
 multiselect
-mysqldump
 namespace
 Namespace
 noindex
 OAuth
+PHP
 Pipedrive
 Piwik
 Rackspace
@@ -54,10 +55,12 @@ Twilio
 unassign
 unpublish
 Unpublish
+URL
 URLs
 utm
 Vtiger
 Webmecanik
 www
+XML
 Zapier
 Zoho
