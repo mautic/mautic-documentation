@@ -137,7 +137,7 @@ Please note that UTM tags are recorded only on a form submission that contains t
 
 #### Contact Fields
 
-You can also pass information specific to your contact by setting Mautic contact field(s) to be publicly updatable. Note that values appended to the tracking pixel should be url encoded (%20 for spaces, %40 for @, etc).
+You can also pass information specific to your Contact by setting Mautic Contact field(s) to be publicly updatable. Note that values appended to the tracking pixel should be url encoded (%20 for spaces, %40 for @, etc).
 
 #### Tags
 
