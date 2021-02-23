@@ -20,7 +20,7 @@ jobs:
           https://github.com/errata-ai/Google/releases/latest/download/Google.zip
 
         # Optional
-        config: .vale.ini
+        config: https://github.com/mautic/mautic-documentation/blob/implement-vale-linter/.vale.ini
 
         files: pages/
       env:
