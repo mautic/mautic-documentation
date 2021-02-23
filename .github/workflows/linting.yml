@@ -19,6 +19,9 @@ jobs:
         styles: |
           https://github.com/errata-ai/Google/releases/latest/download/Google.zip
 
+        # Optional
+        # config: /.vale.ini
+
         files: pages/
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
