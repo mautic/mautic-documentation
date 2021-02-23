@@ -330,7 +330,7 @@ This is a list of cookies potentially used by Mautic when tracking contacts. Not
 #### Third party cookies
 |Name|Expiration|Used by Mautic for tracking?|Description
 |--- |--- |--- |---
-|mautic_device_id|1 year|Yes|Used by Mautic to track the contact for either the tracking pixel or if the same key is not found in the brower's local storage for the monitored site.
+|mautic_device_id|1 year|Yes|Used by Mautic to track the Contact for either the tracking pixel or if the same key is not found in the brower's local storage for the monitored site.
 |mtc_id|session|No|Stores the Mautic ID of the tracked Contact. It was used for tracking prior to Mautic 2.13 but is no longer used and kept for BC reads.
 |mautic_referer_id|session|Yes|Stores a reference to the last tracked page for the Contact and used by Mautic to determine when a Contact exists a page they visited.
 |mtc_sid|session|No|Deprecated cookie that is the same as mautic_device_id. It is no longer actively used by Mautic but kept for BC reads.
