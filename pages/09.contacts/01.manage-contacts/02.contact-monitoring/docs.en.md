@@ -207,17 +207,17 @@ There is a configuration section for identifying visitors by tracking URL althou
 Note: The email contact field has to be marked as a unique identifier and publicly updatable in your Mautic configuration.
 
 
-#### How are contacts tracked with the tracking script?
+#### How are Contacts tracked with the tracking script?
 
-When using the tracking script, contacts are tracked with third party cookies on the Mautic instance's domain and/or the browser's local storage.
+When using the tracking script, Contacts are tracked with third party cookies on the Mautic instance's domain and/or the browser's local storage.
 
 Although the script will write first party cookies to the tracked domain (expires with the session), they are NOT used for tracking. See "Local contact cookie (first party cookie)."
 
-When a contact visits the website for the first time, the tracking script will make a call to Mautic. Mautic will check if `mautic_device_id` cookie is set on it's domain. If it exists and if the device_id is found in Mautic's database, Mautic will recognize the request as the contact associated with the given device.
+When a Contact visits the website for the first time, the tracking script will make a call to Mautic. Mautic will check if the `mautic_device_id` cookie is set on it's domain. If it exists and if the device_id is found in Mautic's database, Mautic will recognize the request as the Contact associated with the given device.
 
-Mautic will return the contact ID, the device ID, and a legacy session ID (this is the same as the device ID). These value are stored in the browser's local storage (if applicable) and written to the site's domain as a first party cookie (not used for tracking).
+Mautic will return the Contact ID, the device ID, and a legacy session ID (this is the same as the device ID). These value are stored in the browser's local storage (if applicable) and written to the site's domain as a first party cookie (not used for tracking).
 
-The next time the tracking script sends a request to Mautic, it will use the device ID from the browser's local storage to identify the tracked contact. If that cannot be found, Mautic will default to the cookies stored on it's own domain (so third party cookies) to identify the contact.
+The next time the tracking script sends a request to Mautic, it will use the device ID from the browser's local storage to identify the tracked Contact. If that cannot be found, Mautic will default to the cookies stored on it's own domain (so third party cookies) to identify the Contact.
 
 ### Mobile Monitoring
 
@@ -325,7 +325,7 @@ If the tracking doesn't work, take a look at the [troubleshooting section][troub
 [Grav]: <https://github.com/mautic/mautic-grav>
 
 ### Cookies used by Mautic
-This is a list of cookies potentially used by Mautic when tracking contacts. Note that if using the tracking script, the browser's local storage is used to store a device ID used to track the contact.  
+This is a list of cookies potentially used by Mautic when tracking Cotacts. Note that if using the tracking script, the browser's local storage is used to store a device ID used to track the Contact.  
 
 #### Third party cookies
 |Name|Expiration|Used by Mautic for tracking?|Description
