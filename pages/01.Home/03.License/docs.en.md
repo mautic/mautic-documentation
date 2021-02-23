@@ -5,6 +5,8 @@ taxonomy:
         - docs
 ---
 
+The Mautic official end user documentation is licensed under the **Apache 2.0**, a permissive license whose main conditions require preservation of copyright and license notices.
+
 Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/

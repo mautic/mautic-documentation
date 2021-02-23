@@ -15,41 +15,39 @@ facebookenable: true
 ---
 
 ---------------------
+## Mautic Documentation
 
-## Introduction
+Mautic is an open source marketing automation platform that provides you with the grestest level of audience intelligence, thus, enabling you to make more meaningful customer connections. Use Mautic to engage your customers and create an efficient marketing strategy. 
 
-This serves as the [documentation][mautic-docs] for [Mautic][mautic], the open source marketing automation system.
+To help you navigate your way through Mautic, we provide the following types of documentation:
 
-Everyone is [welcome to contribute][contributing] to improve this information as needed.
+ - [User Guide][mautic-docs]: Describes key concepts of Mautic and provides instructions for using and contributing to Mautic.
+ - [Developer Guide][developer-docs]: Describes details about the Mautic API, Webhooks, themes or plugin development.
+ - [Knowledge Base][knowledge-base]: Provides a database for tutorials, faqs, and how-to articles.
 
-## Mautic Developer documentation
 
-If you are looking for details about the Mautic API, webhooks, theme or plugin development, please see the [developer documentation][developer-docs].
 
-## Contributing to the Mautic documentation
 
-See [CONTRIBUTING][contributing]
-
-### License
-
-The Mautic official end user documentation is licensed under the **Apache 2.0**, a permissive license whose main conditions require preservation of copyright and license notices. [Read more.][mautic-doc-license]
+Before your begin your journey with Mautic, visit the follow topics:
+ - [Overview of Mautic][overview-of-mautic]
+ - [Contributing to Mautic][contributing]
+ - [License Information][mautic-doc-license]
 
 <!--
 Links below
 -->
 
 [contributing]: </home/contributing>
-
+[overview-of-mautic]: </home/overview-of-mautic>
 [mautic-docs]: <https://mautic.org/docs/>
-[mautic-docs-github]: <https://github.com/mautic/documentation>
+[developer-docs]: <https://developer.mautic.org>
+[knowledge-base]: <https://kb.mautic.org/>
+
 [mautic-docs-fork]: <https://github.com/mautic/documentation#fork-destination-box>
 [mautic-doc-license]: </home/license>
 [doc-issues]: <https://github.com/mautic/documentation/issues>
 
-[developer-docs]: <https://developer.mautic.org>
-[developer-docs-github]: <https://github.com/mautic/developer-documentation>
 
-[Mautic]: <https://mautic.org>
 [mautic]: <https://mautic.org/>
 [mautic-github]: <https://github.com/mautic/mautic>
 
