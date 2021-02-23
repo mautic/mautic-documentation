@@ -118,7 +118,7 @@ Mautic currently supports `page_url`, `referrer`, `language`, and `page_title` (
  
 Currently, `utm_medium`, `utm_source`, `utm_campaign`, `utm_content`, and `utm_term` are used to generate the content in a new timeline entry.
 
-`utm_campaign` will be used as  the timeline entry's title.
+`utm_campaign` will be used as the timeline entry's title.
 
 `utm_medium` values are mapped to the following Font Awesome classes:
  
