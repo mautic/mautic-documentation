@@ -19,7 +19,7 @@ Choose the data source appropriate to the report you want. Each data source has 
 
 ![The Details tab in the Edit Report window](data-source.png)
 
-Types of data source available are as below - 
+Types of data sources available are as below - 
 
 1. Assets
    1. Assets
@@ -37,11 +37,13 @@ Types of data source available are as below -
 6. Contacts
    1. Contacts
    2. Multi Touch Attributions
-   3. Contact Point Log
-   4. Frequency Rules
-   5. Segment Membership
-   6. Do Not Contact
-   7. UTM Codes
+   3. First Touch Attributions
+   4. Last Touch Attributions
+   5. Contact Point Log
+   6. Frequency Rules
+   7. Segment Membership
+   8. Do Not Contact
+   9. UTM Codes
 7. Companies
    1. Companies
 8. Mobile Notifications
