@@ -3,6 +3,15 @@ title: 'Contact tracking'
 taxonomy:
     category:
         - docs
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+    ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
 ---
 
 ---
@@ -285,7 +294,7 @@ There is a campaign action which allows you to send a custom event to [Google An
 - Create campaign with the 'Visits a page' decision and 'Send tracking event' action 
 - Test it and check in the Tag Assistant debug window that you see one Pageview request and one event
 
-![Google Tag Assistant](media/google-analytics-tag-assistent.png)
+![Google Tag Assistant](google-analytics-tag-assistent.png)
 
 ##### How to test Facebook Pixel tracking code and campaign action
 
@@ -293,7 +302,7 @@ There is a campaign action which allows you to send a custom event to [Google An
 - Create campaign with a 'Visits a page' decision and a 'Send tracking event' action 
 - Test it and check in the Facebook Pixel Helper debug window that you see one Pageview and one custom event action
 
-![Facebook Pixel Helper](media/facebook-pixel-helper.png)
+![Facebook Pixel Helper](facebook-pixel-helper.png)
 
 Events can be used for [Remarketing with Analytics][Remarketing with Analytics] and [Remarketing for Facebook Ads][Remarketing for Facebook Ads].
 
