@@ -89,7 +89,7 @@ Contact tags and UTM codes can also be used.
 
 ```
 
-#### Load event
+#### Load Event
 
 As the JS tracking request is loaded asynchronously, you can ask JS to call a function when a request is loaded. To do that, define a *onload* function in options like this:
 
