@@ -17,17 +17,19 @@ When viewing all segments you will notice the column on the right which shows th
 
 ## Creating a segment
 
-To create a new segment navigate to Segments in the menu, and click on 'New'.
+To create a new Segment navigate to Segments in the menu, and click on 'New'.
 
-### Naming segments
+![Screenshot showing new Segment](segment-new.png)
 
-Since the 3.2 release it has been possible to provide a public name, in addition to an internal name, for a segment. 
+### Naming Segments
 
-This is used if the segment is displayed in the Preference Centre, allowing the contact to choose to remove themselves from it.  The Public Name is what will be displayed to the contact in the preference centre.
+Since the 3.2 release it has been possible to provide a public name, in addition to an internal name, for a Segment. 
 
-![Screenshot of public segment name showing that it can be customised if used in the preference centre](public-segment-name.jpg)
+This is used if the Segment is displayed in the Preference Centre, allowing the Contact to choose to remove themselves from it.  The Public Name is what will be displayed to the Contact in the Preference Centre.
 
-### Public and private segments
+![Screenshot of public segment name showing that it can be customised if used in the preference centre](public-segment-name.png)
+
+### Public and private Segments
 
 It is possible to create a segment which is accessible to everybody who uses your Mautic instance - a public segment - or just for your own use - a private segment.
 
@@ -35,11 +37,18 @@ It is possible to create a segment which is accessible to everybody who uses you
 
 There are many approaches that can be taken when it comes to allowing contacts to choose communications they wish to receive from you. If you wish to allow them to subscribe and unsubscribe based on segments, you can select the option to make a segment available in the Preference Centre.
 
-Use this in conjunction with the public name to provide a user-friendly description of the segment.
+Use this in conjunction with the public name to provide a user-friendly description of the Segment.
+
+### Creating Segment Categories
+
+![Screenshot showing segement category](segment-category.png)
+
+You can use `Category` to add new categories of type 'Segment'.  When listing the Segments it is also possible to filter and sort them based on their Categories.
+
 
 ### Publish status
 
-If a segment is unpublished, it will not be available for use in Mautic, and will not show in any dropdown fields.
+If a Segment is unpublished, it will not be available for use in Mautic, and will not show in any dropdown fields.
 
 ## Segment Filters
 
