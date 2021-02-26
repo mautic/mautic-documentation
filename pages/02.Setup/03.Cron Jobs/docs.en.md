@@ -105,7 +105,7 @@ php /path/to/mautic/bin/console mautic:social:monitoring
 To import an especially large number of contacts in the background, use the following command:
 
 ```
-php /path/to/mautic/app/console mautic:import
+php /path/to/mautic/bin/console mautic:import
 ```
 
 The time taken for this command to execute depends on the number of contacts in the CSV file. However, on successful completion of the import operation, a notification will appear on the Mautic dashboard.
