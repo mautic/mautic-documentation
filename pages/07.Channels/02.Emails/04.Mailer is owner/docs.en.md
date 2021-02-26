@@ -60,3 +60,16 @@ There are exceptions:
 
 	The values used are pre-filled with those of the currently logged in user.
 
+### How can I override this?
+
+Since [Mautic 3.3][mautic-3.3] it has been possible to override the global setting on a per-email basis. 
+
+There is a switch under the Advanced setting of the email, which allows you to decide whether to take the global mailer as owner setting, or the specified from address, into account.
+
+![Screenshot showing mailer as owner switch](mailer-as-owner-switch.png)
+
+If Yes is selected, then the global setting will take precedence.
+
+If No is selected, the address and name supplied in the email 'From' fields will be used.
+
+[mautic-3.3]: <https://github.com/mautic/mautic/releases/tag/3.3>
