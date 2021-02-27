@@ -49,7 +49,7 @@ Create and manage various types of content that you will use for your marketing 
 
 #### Campaigns
 
-With your contact information and the components in place, create customized marketing activities for  your contacts. Such marketing activities are called Campaigns.
+With your Contact information and the Components in place, you can now start to create customized marketing activities for your Contacts. Such marketing activities are created primarily in Campaigns.
 
 **Channels**
 
