@@ -53,7 +53,7 @@ With your Contact information and the Components in place, you can now start to 
 
 #### Channels
 
-Choose one or more channels to deliver the content and messages to your contacts.
+Choose one or more Channels to deliver the content and messages to your Contacts.
 
 - [Marketing Messages][marketing-messages]: A way to personalize  communication with your contacts. With marketing messages, contacts will receive your content on a channel they’ve set as their preference.
 
