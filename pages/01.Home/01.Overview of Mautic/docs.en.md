@@ -63,7 +63,7 @@ Choose one or more Channels to deliver the content and messages to your Contacts
 
 - [Social Monitoring][social-monitoring]: Marketers can add contacts to Mautic through Twitter mentions and hashtags.
 
-**Assess Performance**
+#### Assess Performance
 
 Analyze trends and assess the performance of your marketin strategy using various tools.
 
