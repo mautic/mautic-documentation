@@ -40,7 +40,7 @@ Build a rich and functional database of Contacts for your business, group them t
 
  #### Components
 
-Create and manage various types of content that you will use for your marketing campaigns to engage your contacts.
+Create and manage various types of content that you will use for your marketing campaigns to engage your Contacts.
 
 - [Assets][assets]: Valubable items that you provide to your contacts upon completion of a form. Whitepapers, a downloadable application/file, documents or vidoes are some examples of assets.
 - [Forms][forms]: Forms are the primary point of customer contact. They're used to collect user information, often in exchange for providing access to an asset such as a download, an event registration, or an email newsletter.
