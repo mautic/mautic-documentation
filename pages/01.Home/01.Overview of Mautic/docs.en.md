@@ -30,7 +30,7 @@ Let us understand how the different pieces of Mautic fit together to give you a 
 ![Mautic Overview](mautic-overview.png)
 
 
-**Contact Management**
+#### Contact Management
 
 Build a rich and functional database of contacts for your business, group them together based on your business needs or based on shared attributes.
 
