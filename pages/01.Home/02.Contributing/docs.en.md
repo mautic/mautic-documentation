@@ -51,7 +51,7 @@ remove the first two lines
 
 
 ## Get Started
- Although we support both Git and Grav for  documentation, we'd prefer contributions using Git because of the following reasons:
+ Although we support using both GitHub and Grav for making changes to the documentation, we'd prefer contributions using GitHub for the following reasons:
 
 - *versions* - Anyone can restore previous versions or refer to any version of the file.
 - *authorship* - Not only every file but every line has its author.
