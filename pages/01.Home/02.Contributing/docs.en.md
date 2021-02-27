@@ -102,7 +102,7 @@ Previously Gitbook was used to manage the Mautic documentation. However, this be
 
 #### Editing documentation using the command-line
 
-To edit documents using the git command-line system, read this section.
+If you want to edit documents using the Git command-line system, read this section. You can also use the GitHub CLI utility that makes working at the command line easy.
 
 1. In the command-line `cd` to where you want the documentation repository to be located.
 1. Clone this repository.
