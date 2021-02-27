@@ -98,7 +98,7 @@ Previously Gitbook was used to manage the Mautic documentation. However, this be
 1. Select a file to edit on your fork.
 1. Make your commits.
 1. Open a pull request to `base fork: mautic/mautic-documentation` with `base: master`.
-1. Include and reference any [Issues][doc-issues] your Pull Request addresses.
+1. Include and reference any [Issues][doc-issues] your Pull Request addresses. Be sure to write 'closes #0001' if your PR will close an existing issue, so that they are automatically linked.
 
 #### Editing documentation using the command-line
 
