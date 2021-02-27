@@ -307,7 +307,6 @@ Include this **Note** if there are references to outdated terminology that canno
 [developer-docs-github]: <https://github.com/mautic/developer-documentation>
 
 [Mautic]: <https://mautic.org/>
-[mautic]: <https://mautic.org/>
 [mautic-github]: <https://github.com/mautic/mautic>
 [mautic-docs-slack]: <https://mautic.slack.com/archives/C02HV781U>
 [mautic-slack-invite]: <https://mautic.org/slack>
