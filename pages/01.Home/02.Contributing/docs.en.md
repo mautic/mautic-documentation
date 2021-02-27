@@ -16,7 +16,7 @@ facebookenable: true
 
 ## Contributing to the Mautic documentation
 ---
-Mautic is an open source marketing automation platform. We welcome contributions to improve and maintain our documentation. 
+Mautic is an Open Source marketing automation platform. We welcome contributions to improve and maintain our documentation. 
 
 Mautic is made up of over 39 Git repositories. To contribute to the Mautic User guide, you must fork the [mautic-documentation][mautic-docs-github] Git repository. You can also contribute to the [Developer documentation][developer-docs] by forking the [developer-documentation][developer-docs-github] Git repository.
 
