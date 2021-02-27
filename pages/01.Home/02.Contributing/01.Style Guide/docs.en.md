@@ -16,8 +16,9 @@ facebookenable: true
 
 ## Style Guide
 
-The style guide section is Work in Progress. Please contribute.
+The Mautic Style guide recommends best practices that aims to bring about a consistent style, voice, and tone across the documentation. Though we recommend following the [Google developer documentation style guide][Google-style-guide], here are a few Mautic-specific best practices to follow: 
 
+  - [Capitalization](#capitalization)
   - [Whitespace and spaces](#whitespace-and-spaces)
   - [Lists](#lists)
       - [Example nested list](#example-nested-list)
@@ -32,8 +33,11 @@ The style guide section is Work in Progress. Please contribute.
     - [Relative links](#relative-links)
     - [Heading anchors](#heading-anchors)
   - [Images](#images)
-    - [relative image links](#relative-image-links)
-    - [absolute image links](#absolute-image-links)
+  - [Videos](#videos)
+
+### Capitalization
+ - Always capitalize all instances of **Mautic**.
+ - Capitalize the first letter of all the official Mautic terms, such as, Contact, Component, Form, Campaign, Email, Points, Stages, etc.  
 
 ### Whitespace and spaces
 
@@ -242,46 +246,25 @@ The link target is specified inline.
 
 ```markdown
 You can have different anchors in your text, for example to this [Section][#anchor-section] right here.
+```
 
 ### Images
 
 Images should be placed in the same folder as the page they are used on. The image should be added to Git as a file to be included in the repository, not uploaded to Github and hosted by Github.
 
-Link format:
+To link to an image in your repository, use the following format:
 
 ```markdown
 ![alternative text here](image-reference.png "Tooltip text here")
 ```
 
-#### Relative image links
 
-To display an image already in the documentation repository, use a relative path.
 
-The first line is an example of using images in the same section.  The second for anywhere else in the directory structure.
-
-```markdown
-![form rebuild cache](media/rebuild.png "Rebuild form cache"")
-
-![form rebuild cache](./../forms/media/rebuild.png "Rebuild form cache")
-```
-
-#### Absolute image links
-
-For images that cannot be uploaded via the GitHub web interface, upload them to a public URL service and use the generated link.
-
-```markdown
-![apple](http://example.com/images/apple.png "Like this delicious apple")
-```
-
-> **Warning**
->
-> ##### internal absolute image link
->
-> This link format should NOT be used.
->
-> ~~`![form rebuild cache](/forms/media/rebuild.png "Rebuild form cache")`~~
 
 ### Videos
 You can embed a YouTube video using the following syntax:
     `[plugin:youtube](https://www.youtube.com/watch?v=<videoid>)`
     
+<Links here>
+
+[Google-style-guide]: https://developers.google.com/style

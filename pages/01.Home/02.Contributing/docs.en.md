@@ -160,8 +160,10 @@ Using *README.md* as an example:
 1. With the content of *README.md* visible, click on the pencil icon to begin editing the file.
 1. After you've made a change, scroll down to the *Commit changes* form. Saving your change requires describing what was changed and why.
 1. Before submitting your commit, select the box for *Creates a new branch* to start a new branch for your change. Name your branch something like `{yourusername}-revision-readme-file`
-1. Select *Propose file change*
+1. Select *Propose file change*.
 1. In the next dialogue box, describe what you've changed and why then select *Create pull request* to open a pull request proposing we add your changes to our official repository.
+
+>**Note**: If you are updating more than one file,  then you can select the newly created branch to switch to the branch, and then repeat this process until you have made all the required edits, before creating a pull request.
 
 ## Mautic specific information
 

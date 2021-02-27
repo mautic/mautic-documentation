@@ -17,7 +17,7 @@ facebookenable: true
 ---------------------
 ## Mautic Documentation
 
-Mautic is an Open Source marketing automation platform that provides you with the greatest level of audience intelligence, thus enabling you to make more meaningful customer connections. Use Mautic to engage your customers and create an efficient marketing strategy. 
+Mautic is an open source marketing automation platform that provides you with the greatest level of audience intelligence, thus enabling you to make more meaningful customer connections. Use Mautic to engage your customers and create an efficient marketing strategy. 
 
 To help you navigate your way through Mautic, we provide the following types of documentation:
 
