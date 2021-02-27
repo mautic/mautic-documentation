@@ -36,7 +36,7 @@ Build a rich and functional database of Contacts for your business, group them t
 
 - [Contacts][contacts]: Individuals who have visited your websites or interacted with your business in some way. They may be known or unknown visitors. Contacts are the primary factor of a marketing automation platform.
 - [Segments][segments]: A group of your Contacts that share certain attributes. For example, you may segment Contacts based on a contact’s location. This may help you easily send out location-based offers or promotions to this specific group of Contacts.
-- [Companies][companies]: A group of contacts based on the company(ies) that the contact is assigned to. <Need some examples here>
+- [Companies][companies]: A group of Contacts based on the Company(ies) that the Contact is assigned to. 
 
  **Components**
 
