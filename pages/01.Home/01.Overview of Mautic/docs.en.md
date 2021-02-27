@@ -67,7 +67,7 @@ Choose one or more Channels to deliver the content and messages to your Contacts
 
 Analyze trends and assess the performance of your marketing strategy using various tools.
 
-- [Dashboard][dashboard]: A high-level representation of user data, Campaigns, and activities. You can create a highly personalized dashboard based on the information that you want to track.
+- [Dashboard][dashboard]: A high-level representation of Contact data, Campaigns, and activities. You can create a highly personalized dashboard based on the information that you want to track.
 
 - [Reports][reports]: A tool to measure the effectiveness of your marketing Campaigns, Emails, Forms, or page hits. Reports also let you troubleshoot or workaround areas of improvement to enhance your marketing strategy.
 
