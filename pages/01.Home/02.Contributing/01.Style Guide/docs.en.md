@@ -234,7 +234,6 @@ The first line is an example from within the same section.  The second for anywh
 ```markdown
 [testing]: </plugins/plugin-resources/testing-integrations>
 
-[testing]: <./../plugins/integration_test.html>
 ```
 
 #### Heading anchors
