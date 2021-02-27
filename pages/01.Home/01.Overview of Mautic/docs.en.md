@@ -32,7 +32,7 @@ Let us understand how the different pieces of Mautic fit together to give you a 
 
 #### Contact Management
 
-Build a rich and functional database of contacts for your business, group them together based on your business needs or based on shared attributes.
+Build a rich and functional database of Contacts for your business, group them together based on your business needs or based on shared attributes.
 
 - [Contacts][contacts]: Individuals who have visited your websites or interacted with your business in some way. They may be known or unknown visiotrs. Contacts are the primary factor of a marketing automation platform.
 - [Segments][segments]: A group of your contacts that share certain attributes. For example, you may segment  contacts based on a contact’s location. This may help you easily send out location-based offers or promotions to this specific group of contacts.
