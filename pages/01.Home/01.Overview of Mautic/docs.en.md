@@ -71,7 +71,7 @@ Analyze trends and assess the performance of your marketing strategy using vario
 
 - [Reports][reports]: A tool to measure the effectiveness of your marketing Campaigns, Emails, Forms, or page hits. Reports also let you troubleshoot or workaround areas of improvement to enhance your marketing strategy.
 
-- [Points][points]: A score that is an indicator of progress for a contact or customer. Points are a way for marketers to measure which of their contacts are the most engaged based on their interactions and behavior.
+- [Points][points]: A score that is an indicator of progress for a Contact or customer. Points are a way for marketers to measure which of their Contacts are the most engaged based on their interactions and behavior.
 
 - [Stages][stages]: A customizable feature that enables you to keep a track of where your contacts are in their marketing/sales journey.
 
