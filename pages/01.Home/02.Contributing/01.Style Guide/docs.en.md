@@ -227,7 +227,7 @@ You can have different links in your text, some leading [here][link macro] and o
 
 #### Relative links
 
-These will link to [`plugins/integration_test.html`][testing] on the documentation website created from the [_`plugins/integration_test.md`_][testing] source file.
+These will link to [`/plugins/plugin-resources/testing-integrations`][testing] on the documentation website created from the [_`pages/13.Plugins/00.General%20Resources/01.Integration%20test/docs.en.md`_][testing] source file.  These should still use a link macro as with absolute links.
 
 The first line is an example from within the same section.  The second for anywhere else in the directory structure.
 
