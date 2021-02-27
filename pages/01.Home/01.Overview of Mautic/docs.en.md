@@ -51,7 +51,7 @@ Create and manage various types of content that you will use for your marketing 
 
 With your Contact information and the Components in place, you can now start to create customized marketing activities for your Contacts. Such marketing activities are created primarily in Campaigns.
 
-**Channels**
+#### Channels
 
 Choose one or more channels to deliver the content and messages to your contacts.
 
