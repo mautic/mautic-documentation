@@ -232,7 +232,7 @@ These will link to [`/plugins/plugin-resources/testing-integrations`][testing] o
 The first line is an example from within the same section.  The second for anywhere else in the directory structure.
 
 ```markdown
-[testing]: <integration_test.html>
+[testing]: </plugins/plugin-resources/testing-integrations>
 
 [testing]: <./../plugins/integration_test.html>
 ```
