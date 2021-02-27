@@ -42,7 +42,7 @@ Build a rich and functional database of Contacts for your business, group them t
 
 Create and manage various types of content that you will use for your marketing campaigns to engage your Contacts.
 
-- [Assets][assets]: Valubable items that you provide to your contacts upon completion of a form. Whitepapers, a downloadable application/file, documents or vidoes are some examples of assets.
+- [Assets][assets]: Valubable items that you provide to your Contacts upon completion of a form. Whitepapers, a downloadable application/file, documents or videos are some examples of assets.
 - [Forms][forms]: Forms are the primary point of customer contact. They're used to collect user information, often in exchange for providing access to an asset such as a download, an event registration, or an email newsletter.
 - [Landing Pages][landing-pages]: A powerful feature that not only lets you promote content quickly and easily, but also gives you an insight into the kind of content your contacts find interesting.
 - [Dynamic Content][dynamic-content]: A feature that you can use to personalize the web experience for your contacts. Marketers can display different content to different people in specific areas of a webpage.
