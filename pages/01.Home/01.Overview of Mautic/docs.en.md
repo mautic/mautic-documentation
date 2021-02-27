@@ -65,7 +65,7 @@ Choose one or more Channels to deliver the content and messages to your Contacts
 
 #### Assess Performance
 
-Analyze trends and assess the performance of your marketin strategy using various tools.
+Analyze trends and assess the performance of your marketing strategy using various tools.
 
 - [Dashboard][dashboard]: A high-level representation of user data, Campaigns, and activities. You can create a highly personalized dashboard based on the information that you want to track.
 
