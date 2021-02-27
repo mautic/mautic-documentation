@@ -47,7 +47,7 @@ Create and manage various types of content that you will use for your marketing 
 - [Landing Pages][landing-pages]: A powerful feature that not only allows you to promote content quickly and easily, but also allows you to rapidly create pages that are tightly tailored for a specific purpose, such as an advertising campaign.
 - [Dynamic Content][dynamic-content]: A feature that you can use to personalize the web experience for your contacts. Marketers can display different content to different people in specific areas of a webpage.
 
-**Campaigns**
+#### Campaigns
 
 With your contact information and the components in place, create customized marketing activities for  your contacts. Such marketing activities are called Campaigns.
 
