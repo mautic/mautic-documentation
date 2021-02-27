@@ -73,7 +73,7 @@ The **`README.md`** file serves as the introduction and description of this repo
 
 
 The folders in this repository are grouped together by topics. 
- - The **`pages`** folder contains folders for each chapter in the Mautic user guide. Each folder contains one *.md* file that you can edit along with images used in this file. For example, within the *Campaigns* folder, you'll subfolders for subtopics such as *Managing Campaigns*, *Campaign Events*, etc. Each of these folders contain its own **`docs.en.md`** file and all images used in the *.md* files.
+ - The **`pages`** folder contains folders for each chapter in the Mautic user guide. Each folder contains *.md* files (one per language - currently English only) that you can edit along with images used in this page. For example, within the *Campaigns* folder, you'll subfolders for subtopics such as *Managing Campaigns*, *Campaign Events*, etc. Each of these folders contain its own **`docs.en.md`** file and all images used in the *.md* files.
   - Similarly, the **`plugins`** folder contains folders for each plugin that Mautic offers.
    - The **`themes`** folder contains all the themes available for this repository. Each folder contains supporting files for a separate theme.
 
