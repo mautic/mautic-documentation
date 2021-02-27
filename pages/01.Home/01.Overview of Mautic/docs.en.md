@@ -55,7 +55,7 @@ With your Contact information and the Components in place, you can now start to 
 
 Choose one or more Channels to deliver the content and messages to your Contacts.
 
-- [Marketing Messages][marketing-messages]: A way to personalize  communication with your contacts. With marketing messages, contacts will receive your content on a channel they’ve set as their preference.
+- [Marketing Messages][marketing-messages]: A way to personalize communication with your contacts. With marketing messages, contacts will receive your content on a channel they’ve set as their preference.
 
 - [Emails][emails]: Use built-in email templates to send messages to a bulk of your contacts or send personalized messages to specific contacts.
 
