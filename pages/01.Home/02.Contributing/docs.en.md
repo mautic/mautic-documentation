@@ -60,7 +60,7 @@ remove the first two lines
 You might require some knowledge of Git to clone, modify, commit, and push changes. However, there is a way to avoid that and edit the files directly in the GitHub web interface or via our web-based interface using the Grav CMS. To learn how to contribute using Github, see [Using Github](#using-github). If not, you can contribute easily [using Grav](#using-grav).
 
 ## Report Issues and Fix Bugs
-If you intend to make any changes to the documentation, we recommend filing an issue. This lets us reach an agreement on your proposal before you put significant effort into it. To report new issues or fix existing issues, visit the [Mautic Documentation Issues][doc-issues] page on Github.
+If you intend to make any changes to the documentation, we recommend filing an issue. This allows us to reach an agreement on your proposal before you put significant effort into it. To report new issues or fix existing issues, visit the [Mautic Documentation Issues][doc-issues] page on Github.
 
 A great place to start and familiarize yourself with our contribution process is to take a look at the list of **`good first issues`** that we have earmarked for new contributors. These issues have a relatively limited scope.
 
