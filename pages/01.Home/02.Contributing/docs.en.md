@@ -90,7 +90,7 @@ For keeping contributions consistent, we encourage you to read our Style Guide w
 Previously Gitbook was used to manage the Mautic documentation. However, this became cumbersome to maintain and difficult for those who were not familiar with Git. After exploring various solutions, the Education Team decided that Grav would best meet the needs of the Community.
 1. Go to the [the login page][mautic-docs-login]. Create a Mautic Community login, or log in with your existing forum/website account.
 1. Send a message on the [Documentation slack channel][mautic-docs-slack] to have your account raised to 'editor' - get a Slack invite [here][mautic-slack-invite].
-1. When logged in, click the **Edit page in Grav** link on the relevant page and make your changes.
+1. When logged in, go to the admin panel (ask the team for the link) and make your changes.
 
 ### Using Github
 
