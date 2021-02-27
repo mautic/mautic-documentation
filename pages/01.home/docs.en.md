@@ -22,7 +22,7 @@ Mautic is an Open Source marketing automation platform that provides you with th
 To help you navigate your way through Mautic, we provide the following types of documentation:
 
  - [User Guide][mautic-docs]: Describes key concepts of Mautic and provides instructions for using and contributing to Mautic.
- - [Developer Guide][developer-docs]: Describes details about the Mautic API, Webhooks, themes or plugin development.
+ - [Developer Guide][developer-docs]: Describes details about the Mautic API, Webhooks, themes and plugin development.
  - [Knowledge Base][knowledge-base]: Provides a database for tutorials, faqs, and how-to articles.
 
 
