@@ -245,7 +245,7 @@ You can have different anchors in your text, for example to this [Section][#anch
 
 ### Images
 
-Images should be placed in the media subfolders in the different sections of this repository.
+Images should be placed in the same folder as the page they are used on. The image should be added to Git as a file to be included in the repository, not uploaded to Github and hosted by Github.
 
 Link format:
 
