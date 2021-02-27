@@ -61,7 +61,7 @@ Choose one or more Channels to deliver the content and messages to your Contacts
 
 - [Focus Items][focus-items]: A type of web personalization that enables marketers to embed on a webpage pop-up messages and forms, bars and splash screens based on the contact's behavior. By using Focus Items, you can easily convert visitors into known Contacts.
 
-- [Social Monitoring][social-monitoring]: Marketeers can add contacts to Mautic through Twitter mentions and hashtags.
+- [Social Monitoring][social-monitoring]: Marketers can add contacts to Mautic through Twitter mentions and hashtags.
 
 **Assess Performance**
 
