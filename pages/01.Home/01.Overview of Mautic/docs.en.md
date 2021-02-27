@@ -59,7 +59,7 @@ Choose one or more Channels to deliver the content and messages to your Contacts
 
 - [Emails][emails]: Use built-in Email templates to send messages to a group of your contacts, or send personalized messages to specific contacts.
 
-- [Focus Items][focus-items]: A type of web personalization that enables marketeers to embed a webpage with pop-up messages, a form, or a link based on the contact's behavior. By using Focus Items, you can easily convert visitors into known contacts.
+- [Focus Items][focus-items]: A type of web personalization that enables marketers to embed on a webpage pop-up messages and forms, bars and splash screens based on the contact's behavior. By using Focus Items, you can easily convert visitors into known Contacts.
 
 - [Social Monitoring][social-monitoring]: Marketeers can add contacts to Mautic through Twitter mentions and hashtags.
 
