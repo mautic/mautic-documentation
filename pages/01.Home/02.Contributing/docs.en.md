@@ -79,7 +79,7 @@ The folders in this repository are grouped together by topics.
 
 ## Style Guide
 
-For keeping contributions consistent, we encourage you to read our style guide which is a set of conventions that we follow while writing documentation for Mautic. You can find our style guide [here][style guide].
+For keeping contributions consistent, we encourage you to read our Style Guide which is a set of conventions that we follow while writing documentation for Mautic. You can find our Style Guide [here][style guide].
 
  Mautic documentation is written with [Markdown markup][markup], a simple but flexible text formatting language. The Markdown files are appended with the *.md* extension.
 
