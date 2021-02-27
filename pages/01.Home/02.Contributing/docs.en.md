@@ -71,7 +71,6 @@ The Mautic documentation repository consists of the following files and folders:
 
 The **`README.md`** file serves as the introduction and description of this repository. This file does not contain any product documentation.
 
-The **`SUMMARY.md`** file defines the menu of the documentation. If you add a new page to the documentation, you'll have to also add a new line there defining the title and the link to the file (formatted like the existing menu items).
 
 The folders in this repository are grouped together by topics. 
  - The **`pages`** folder contains folders for each chapter in the Mautic user guide. Each folder contains one *.md* file that you can edit along with images used in this file. For example, within the *Campaigns* folder, you'll subfolders for subtopics such as *Managing Campaigns*, *Campaign Events*, etc. Each of these folders contain its own **`docs.en.md`** file and all images used in the *.md* files.
