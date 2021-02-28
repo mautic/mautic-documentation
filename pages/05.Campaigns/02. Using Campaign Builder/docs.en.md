@@ -27,9 +27,9 @@ To build your Campaign, perform the following steps:
 1. Click **Launch the Campaign Builder** on the New Campaigns wizard. The Contact Sources menu appears as shown in the following image.
 ![Screenshot of Contact Sources](contact-sources.png)
 
-   In this step, you specify the contacts to be included in your Campaign. Campaigns can be triggered by contacts joining a Segment, and/or submitting Forms.
+   In this step, you specify the Contacts to be included in your Campaign. Campaigns can be triggered by Contacts joining a Segment, and/or submitting Forms.
 
-2. Select where your campaign will pull the contacts from: 
+2. Select where your campaign will pull the Contacts from: 
 
  - **Contact Segments**: Choose this option if you want to send your Campaign to a specific group of your Contacts that share certain attributes, for example, 'Located in the USA' or 'Visited Product A page'.
  
@@ -50,8 +50,17 @@ For more information about Campaign actions, decisions, and conditions, see the 
  - [Decisions][decisions]
  - [Conditions][conditions]
 
+## Trigger campaign events
 
+Actions and decisions in a Campaign must be triggered by a [cron job][cron-jobs] which executes the following command at the desired interval:
+
+```
+php /path/to/mautic/bin/console mautic:campaigns:trigger --env=prod
+```
+
+If you want to execute the command at different intervals for specific Campaigns, you can pass the `--campaign-id=ID` argument to the command.
 
 [actions]: </campaigns/using-campaign-builder/actions>
 [decisions]: </campaigns/using-campaign-builder/decisions>
 [conditions]: </campaigns/using-campaign-builder/conditions>
+[cron-jobs]: </setup/cron-jobs>

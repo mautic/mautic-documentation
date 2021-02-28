@@ -29,17 +29,17 @@ The actions that Mautic offers in a Campaign include:
 | **Add Do Not Contact**|Adds the user to the Do Not Contact (DNC) list |
 | **Add to Company's score** |Adds or subtracts a designated number of Points to or from the score for all Companies associated with the Contact. |
 |**Add Company action**| Associates a Contact with a Company and sets the Company as the primary Company for the Contact.|
-|**Adjust Contact Points**| Adds or subtracts Points from the Contact’s Point total.|
-|**Change Campaigns**| Removes a Contact from the existing Campaign, moves them into another Campaign, restarts the current Campaign or a combination of these. You must remove a Contact from a Campaign before restarting the Campaign.|
-|**Change Contact’s Stage**| Moves a Contact to the specified Stage.|
-|**Delete Contact**| Permanently deletes the Contact record along with all the information about that Contact, including the Campaign event log record about that Contact. See the [Segment docs][segments] <br> about how to use this action to delete all contacts in a Segment.|
+|**Adjust contact points**| Adds or subtracts Points from the Contact’s Point total.|
+|**Change campaigns**| Removes a Contact from the existing Campaign, moves them into another Campaign, restarts the current Campaign or a combination of these. You must remove a Contact from a Campaign before restarting the Campaign.|
+|**Change contact’s stage**| Moves a Contact to the specified Stage.|
+|**Delete contact**| Permanently deletes the Contact record along with all the information about that Contact, including the Campaign event log record about that Contact. See the [Segment docs][segments] about how to use this action to delete all Contacts in a Segment.|
 |**Jump to Event**| Moves Contacts from one point in a Campaign to another without rebuilding events. Use this action to send the Contact to a different path in the Campaign.|
-|**Modify Contact’s Segments**| Adds or removes Contacts to/from Segments. If a Contact is removed from a dynamic (filter-based) Segment by a Campaign action, they won’t be re-added to the Segment based on meeting the filter criteria.|
-|**Modify Contact’s Tags**| Overwrites or appends Tags on a Contact record. You can add or remove Tags, or do both, in the same action.|
-|**Push Contact to integration**| Sends the Contact record to the <br> selected integration, either creating a new Contact in the chosen integration or updating the connected Contact record.|
+|**Modify contact’s segments**| Adds or removes Contacts to/from Segments. If a Contact is removed from a dynamic (filter-based) Segment by a Campaign action, they won’t be re-added to the Segment based on meeting the filter criteria.|
+|**Modify contact’s tags**| Overwrites or appends Tags on a Contact record. You can add or remove Tags, or do both, in the same action.|
+|**Push contact to integration**| Sends the Contact record to the r> selected integration, either creating a new Contact in the chosen integration or updating the connected Contact record.|
 |**Remove Do Not Contact**| Removes the user from the Do Not Contact (DNC) list.|
 |**Send a webhook**| Sends a Webhook to a defined URL, using the GET, POST, PUT, PATCH, or DELETE methods. Headers and data are customizable, and support the use of tokens, such as contact fields and the contact's IP address. For example, {contactfield=firstname}|
-|**Send email**| Sends a transaction or marketing Email to the selected contact. A transactional Email can be sent to the contact multiple times. A marketing Email can be sent to the contact only once across multiple sources. If the contact has already received this Email from another source or the current Campaign, the Email will not be sent again and the contact progresses through the campaign.|
+|**Send email**| Sends a transaction or marketing Email to the selected contact. A transactional Email can be sent to the contact multiple times. A marketing Email can be sent to the contact only once across multiple sources. If the contact has already received this Email from another source or the current Campaign, the Email will not be sent again and the contact progresses through the Campaign.|
 |**Send email to user**| Sends an Email to an entity other than the contact. This may be a Mautic user, the Contact’s owner, or non-users. 
 
 >>> Emails sent using this action do not generate any statistics for Contacts or Emails.|

@@ -24,8 +24,8 @@ Campaign decisions are actions that your Contacts initiate. Downloading an asset
 
 A decision usually has two paths that are denoted by the red and green points on the decision tree. 
 
- - Green paths ![Icon showing the positive action path (green)](green-point.png) indicate actions that are considered positive or affirmative actions. A contact is sent down this path if the contact **has** taken a direct action such as opening an email or submitting a form. Actions that follow the green paths are executed (or scheduled if a delay is set) at the time the Contact takes the action.
-  - Red paths ![Icon showing the negative action path (red)](red-point.png) indicate actions that are considered non-action points. A contact is sent down this path if a contact **has not** taken the action. Use an action's delay settings to define at what point the Campaign should send the Contact to the following steps on this path.
+ - Green paths ![Icon showing the positive action path (green)](green-point.png) indicate actions that are considered positive or affirmative actions. A Contact is sent down this path if the Contact **has** taken a direct action such as opening an email or submitting a form. Actions that follow the green paths are executed (or scheduled if a delay is set) at the time the Contact takes the action.
+  - Red paths ![Icon showing the negative action path (red)](red-point.png) indicate actions that are considered non-action points. A Contact is sent down this path if a Contact **has not** taken the action. Use an action's delay settings to define at what point the Campaign should send the Contact to the following steps on this path.
 
 Depending on whether the criteria for the decision is met, the Contact is sent down either the green or the red paths in the decision tree. For example, consider an instance where the decision is to open an email. There can be two outcomes. If the Contact chooses to open the email, then the green decision path connects to the next action to be taken in the Campaign workflow. If, however, the Contact does not open the email, then the red decision path connects to a different action that will be taken (e.g. a delay of 7 days then a second email sent).
 
@@ -56,9 +56,9 @@ Here are the decisions that are Email-related:
 | :------------- | :----------: |
 |**Opens email**| Tracks whether the Contact opens the Email.|
 |**Clicks email**|Tracks whether the Contact clicks a link within the sent Email. This infers that the email has been opened.|
-|**Replies to email**|Tracks if a Contact has replied to an Email that you sent.|
+|**Replies to email**|Tracks if a Contact has replied to an Email that you sent. For more information, see [Contact replies][contact-replies]. |
 |
 <br>
+<Link here>
 
-
-A contact must already be part of the campaign in order for it to recognize the decision that is executed. Therefore, campaigns should never start with a decision unless you are manually managing the contacts assigned to it and the decision is expected to be executed at a later time.
+[contact-replies]: </channels/emails/contact-replies>

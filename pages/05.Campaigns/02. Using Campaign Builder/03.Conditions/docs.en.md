@@ -26,7 +26,7 @@ A condition has two paths that are denoted by the red and green points.
 
  - Actions attached to the green point ![Icon showing the positive path (green)](green-point.png) of a condition are executed if positive or affirmative conditions occur. The path is triggered immediately that the positive condition occurs, with the connected action taking into account any delay that is set on the path (trigger, delay or send on a specific date). For example, if the email is opened, send a follow-up email 2 days later.
 
- - Steps attached to the red point ![Icon showing the negative path (red)](red-point.png) of a condition are executed if the condition **does not** occur, and is usually associated with a time delay. For example, a contact does not open the email within 7 days. This path is executed if the condition is negative following any delay set (trigger, delay or send on a specific date).
+ - Steps attached to the red point ![Icon showing the negative path (red)](red-point.png) of a condition are executed if the condition **does not** occur, and is usually associated with a time delay. For example, a Contact does not open the email within 7 days. This path is executed if the condition is negative following any delay set (trigger, delay or send on a specific date).
 
  Here are the different conditions that Mautic offers in the Campaign Builder:
 

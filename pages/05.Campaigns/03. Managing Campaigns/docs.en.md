@@ -35,12 +35,18 @@ The **Campaign Statistics** panel shows the number of Contacts added to the Camp
 
 The **Preview** tab displays a diagrammatic preview of your Campaign. 
 
-The **Decisions** tab displays a tabular list of all the decisions that you have added to your Campaign.
+The **[Decisions][decisions]** tab displays a tabular list of all the decisions that you have added to your Campaign.
 
-The **Actions** tab displays a tabular list of all the actions that you have added to your Campaign.
+The **[Actions][actions]** tab displays a tabular list of all the actions that you have added to your Campaign.
 
-The **Conditions** tab displays a tabular list of all he conditions that you have added to your Campaign.
+The **[Conditions][conditions]** tab displays a tabular list of all he conditions that you have added to your Campaign.
 
 The **Contacts** tab displays a grid view of all the Contacts that you have added to your Campaign. 
 
 The **Recent Activity** panel on the right displays the recent activities that take place in the Campaign.
+
+<Links here>
+
+[actions]: </campaigns/using-campaign-builder/actions>
+[decisions]: </campaigns/using-campaign-builder/decisions>
+[conditions]: </campaigns/using-campaign-builder/conditions>
