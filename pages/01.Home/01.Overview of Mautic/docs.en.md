@@ -38,7 +38,7 @@ Build a rich and functional database of Contacts for your business, group them t
 - [Segments][segments]: A group of your Contacts that share certain attributes. For example, you may segment Contacts based on a contact’s location. This may help you easily send out location-based offers or promotions to this specific group of Contacts.
 - [Companies][companies]: A group of Contacts based on the Company(ies) that the Contact is assigned to. 
 
- #### Components
+#### Components
 
 Create and manage various types of content that you will use for your marketing campaigns to engage your Contacts.
 
