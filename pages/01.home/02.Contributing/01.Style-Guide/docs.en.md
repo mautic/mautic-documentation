@@ -1,5 +1,5 @@
 ---
-title: Style Guide
+title: 'Style Guide'
 taxonomy:
     category:
         - docs
