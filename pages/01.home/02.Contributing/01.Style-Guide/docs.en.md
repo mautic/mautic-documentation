@@ -14,8 +14,7 @@ personenabled: false
 facebookenable: true
 ---
 
-## Style Guide
-
+---
 The Mautic Style guide recommends best practices that aims to bring about a consistent style, voice, and tone across the documentation. Though we recommend following the [Google developer documentation style guide][Google-style-guide], here are a few Mautic-specific best practices to follow: 
 
   - [Capitalization](#capitalization)
