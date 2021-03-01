@@ -1,5 +1,6 @@
 ---
 title: 'Mautic Documentation'
+published: true
 taxonomy:
     category:
         - docs
