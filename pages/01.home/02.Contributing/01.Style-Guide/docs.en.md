@@ -265,6 +265,5 @@ To link to an image in your repository, use the following format:
 You can embed a YouTube video using the following syntax:
     `[plugin:youtube](https://www.youtube.com/watch?v=<videoid>)`
     
-<Links here>
 
 [Google-style-guide]: <https://developers.google.com/style>
