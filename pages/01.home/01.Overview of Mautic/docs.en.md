@@ -1,5 +1,5 @@
 ---
-title: Overview of Mautic
+title: 'Overview of Mautic'
 taxonomy:
     category:
         - docs
