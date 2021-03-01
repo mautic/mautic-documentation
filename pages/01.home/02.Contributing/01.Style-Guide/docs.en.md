@@ -267,4 +267,4 @@ You can embed a YouTube video using the following syntax:
     
 <Links here>
 
-[Google-style-guide]: https://developers.google.com/style
+[Google-style-guide]: <https://developers.google.com/style>
