@@ -56,11 +56,8 @@ With your Contact information and the Components in place, you can now start to 
 Choose one or more Channels to deliver the content and messages to your Contacts.
 
 - [Marketing Messages][marketing-messages]: A way to personalize communication with your contacts. With marketing messages, contacts will receive your content on a channel they’ve set as their preference.
-
 - [Emails][emails]: Use built-in Email templates to send messages to a group of your contacts, or send personalized messages to specific contacts.
-
 - [Focus Items][focus-items]: A type of web personalization that enables marketers to embed on a webpage pop-up messages and forms, bars and splash screens based on the contact's behavior. By using Focus Items, you can easily convert visitors into known Contacts.
-
 - [Social Monitoring][social-monitoring]: Marketers can add contacts to Mautic through Twitter mentions and hashtags.
 
 #### Assess Performance
@@ -68,11 +65,8 @@ Choose one or more Channels to deliver the content and messages to your Contacts
 Analyze trends and assess the performance of your marketing strategy using various tools.
 
 - [Dashboard][dashboard]: A high-level representation of Contact data, Campaigns, and activities. You can create a highly personalized dashboard based on the information that you want to track.
-
 - [Reports][reports]: A tool to measure the effectiveness of your marketing Campaigns, Emails, Forms, or page hits. Reports also let you troubleshoot or workaround areas of improvement to enhance your marketing strategy.
-
 - [Points][points]: A score that is an indicator of progress for a Contact or customer. Points are a way for marketers to measure which of their Contacts are the most engaged based on their interactions and behavior.
-
 - [Stages][stages]: A customizable feature that enables you to keep a track of where your Contacts are in their marketing/sales journey.
 
 <!---links--->
