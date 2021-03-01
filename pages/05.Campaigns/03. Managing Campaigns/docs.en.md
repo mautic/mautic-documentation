@@ -17,8 +17,6 @@ facebookenable: true
 ---
 
 ---------------------
-# Managing Campaigns
-
 You can manage your Campaigns from the Campaigns overview page.
 
 Click any Campaign name on the Campaigns page to take you to the Campaign overview page. Each page displays details of your Campaign, including the number of Contacts that have been added to the Campaign, the number of Emails sent, the number of page views resulting from the Campaign, and more.

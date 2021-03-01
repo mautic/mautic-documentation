@@ -18,8 +18,6 @@ facebookenable: true
 ---
 
 ---------------------
-## Decisions
-
 Campaign decisions are actions that your Contacts initiate. Downloading an asset, opening an email, or visiting a landing page are examples of decisions. These decisions can be either directly initiated or implied based on non-action. The options for decisions change based on the Campaign actions that you select.
 
 A decision usually has two paths that are denoted by the red and green points on the decision tree. 

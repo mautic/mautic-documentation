@@ -18,8 +18,6 @@ facebookenable: true
 ---
 
 ---------------------
-## Conditions
-
 Campaign conditions are used to execute different actions based on a Contact's data.  For example, a condition can be configured to execute an action if a Contact has a valid email address or do something else if they do not.
 
 A condition has two paths that are denoted by the red and green points.

@@ -18,7 +18,6 @@ facebookenable: true
 ---
 
 ---------------------
-# Using the Campaign Builder
 The Campaign Builder provides a blank canvas on which you can build your Campaign workflow. A Campaign Builder is made up of conditions, decisions, and actions. It  enables you to create a simple workflow by dragging and dropping various decisions, actions, and conditions onto a canvas.
 
 

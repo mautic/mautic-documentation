@@ -17,8 +17,6 @@ facebookenable: true
 ---
 
 ---------------------
-# Creating Campaigns
-
 Creating Campaigns is a central part of the marketing automation process. When you create a new Campaign, you perform the basic administrative tasks such as choosing a name for the Campaign, creating a description, assigning a Category and defining publishing information for the Campaign. 
 
 At the heart of any marketing automation campaign is the Campaign Builder. This allows you to specify how Contacts enter the Campaign, and what happens at every stage after they enter the workflow. 

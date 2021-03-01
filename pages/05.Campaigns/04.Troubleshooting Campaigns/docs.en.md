@@ -16,7 +16,6 @@ facebookenable: true
 ---
 
 ---------------------
-
 ## Page visits are not recognized
 
 To workaround this issue, try one of the following options:
