@@ -1,5 +1,5 @@
 ---
-title: Contributing
+title: 'Contributing to the Mautic documentation'
 taxonomy:
     category:
         - docs
@@ -14,7 +14,6 @@ personenabled: false
 facebookenable: true
 ---
 
-## Contributing to the Mautic documentation
 ---
 Mautic is an Open Source marketing automation platform. We welcome contributions to improve and maintain our documentation. 
 
