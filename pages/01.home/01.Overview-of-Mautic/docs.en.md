@@ -14,7 +14,6 @@ personenabled: false
 facebookenable: true
 ---
 
-## Overview of Mautic
 ---
 
 The Mautic platform helps you create a strong marketing strategy for your business. With Mautic, you can:
