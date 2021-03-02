@@ -25,7 +25,7 @@ The Mautic campaign builder gives you a blank canvas upon which to build your ca
 
 The first thing to be selected is where the campaign will pull in contacts from or contact sources. There are currently two options for contact sources: segments and forms. One or both can be added to the campaign.
  
-![](contact-sources.png)
+![Screenshot showing contact sources](contact-sources.png)
 
 After selecting one or more sources, the next step will be to add one or more actions (most likely), decisions and/or conditions:
 
