@@ -43,7 +43,6 @@ The **Contacts** tab displays a grid view of all the Contacts that you have adde
 
 The **Recent Activity** panel on the right displays the recent activities that take place in the Campaign.
 
-<Links here>
 
 [actions]: </campaigns/using-campaign-builder/actions>
 [decisions]: </campaigns/using-campaign-builder/decisions>
