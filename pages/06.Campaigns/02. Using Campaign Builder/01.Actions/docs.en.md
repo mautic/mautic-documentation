@@ -59,8 +59,6 @@ The actions that Mautic offers in a Campaign include:
 
    The Delete Contact action doesn't allow other Campaign events to be connected to it. Since the Contact will not exist after this action is triggered, Campaign events cannot be triggered after this point.
 
-
-
 After adding an action, you can place a decision on the Campaign.
 
 
