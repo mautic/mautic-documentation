@@ -1,3 +1,13 @@
+# v1.8.0
+## 12/02/2020
+
+1. [](#new)
+    * Require Grav v1.6
+    * Pass phpstan level 1 tests
+1. [](#improved)
+    * Major plugin overhaul [#57](https://github.com/getgrav/grav-plugin-feed/pull/57)    
+    * Bumped the default image sizes in atom/rss
+
 # v1.7.1
 ## 05/09/2019
 

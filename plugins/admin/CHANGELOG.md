@@ -1,3 +1,53 @@
+# v1.9.19
+## 12/14/2020
+
+1. [](#bugfix)
+    * Fixed `pages` field escaping issues, needs Grav update, too [#1990](https://github.com/getgrav/grav-plugin-admin/issues/1990)
+    * Fixed Plugins references in Themes details page.
+    * Fixed issue preventing purchase of Themes within Admin and redirecting instead.
+    * Fixed Page Picker not passing admin token
+
+# v1.9.18
+## 12/02/2020
+
+1. [](#new)
+    * Never allow Admin pages to be rendered in `<frame>`, `<iframe>`, `<embed>` or `<object>` for improved security
+1. [](#improved)
+    * Auto-link a plugin/theme license in details if it starts with `http`
+    * Allow to fallback to `docs:` instead of `readme:`
+    * Backported finder/pages navigation from 1.10 (you will still need 1.10 for the fancy Parent Picker)
+    * Forward a `sid` to GPM when downloading a premium package
+    * Add focus states to login buttons [#1839](https://github.com/getgrav/grav-plugin-admin/pull/1839)
+    * Output raw text in paragraph for fieldset [#1956](https://github.com/getgrav/grav-plugin-admin/pull/1956)
+    * Set scheduled items to be 'disabled' by default
+    * Added scheduler warning about potential dangers of use
+1. [](#bugfix)
+    * Escape page title in `pages` field
+    * Fixed unused task RemoveMedia, it cannot be used directly anymore [GHSA-945r-cjfm-642c](https://github.com/getgrav/grav-plugin-admin/security/advisories/GHSA-945r-cjfm-642c)
+    * Tightened checks when removing a media file [GHSA-945r-cjfm-642c](https://github.com/getgrav/grav-plugin-admin/security/advisories/GHSA-945r-cjfm-642c)
+    * Removed unused parameter in file field [GHSA-945r-cjfm-642c](https://github.com/getgrav/grav-plugin-admin/security/advisories/GHSA-945r-cjfm-642c)
+    * Fixed backup download URL [GHSA-vrvq-2pxg-rw5r](https://github.com/getgrav/grav-plugin-admin/security/advisories/GHSA-vrvq-2pxg-rw5r)
+    * Fixed deleting backup [GHSA-85r3-mf4x-qp8f](https://github.com/getgrav/grav-plugin-admin/security/advisories/GHSA-85r3-mf4x-qp8f)
+
+# v1.9.17
+## 10/07/2020
+
+1. [](#new)
+    * Support premium themes
+    * Back-ported functionality from Admin 1.10 required for upcoming WYSIWYM Nextgen Editor
+1. [](#improved)
+    * Improved some error messages for better readability
+1. [](#bugfix)
+    * Fixed issue that would force a page reload when failing to install/update a plugin or theme
+    * Fixed proxy/browser caching issues in admin pages
+
+# v1.9.16
+## 09/01/2020
+
+1. [](#bugfix)
+    * Fixed a glitch which allows user to delete entire pages directory [#1941](https://github.com/getgrav/grav-plugin-admin/issues/1941)
+    * Fixed the hidden login plugin toggle
+
 # v1.9.15
 ## 06/08/2020
 

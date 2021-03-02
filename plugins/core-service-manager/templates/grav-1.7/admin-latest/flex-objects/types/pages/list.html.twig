@@ -1,0 +1,166 @@
+{% extends 'flex-objects/types/default/list.html.twig' %}
+
+{% set can_create = true %}
+
+{% block back_button %}
+    {% include ['flex-objects/types/' ~ target ~ '/buttons/back.html.twig', 'flex-objects/types/pages/buttons/back.html.twig'] %}
+{% endblock back_button %}
+
+{% block create_button %}
+    {% for key, add_modal in config.plugins.admin.add_modals %}
+        {% if add_modal.show_in|default('bar') == 'bar' %}
+            <a class="button {{ add_modal.link_classes }}" href="#modal-add_modal-{{ key }}" data-remodal-target="modal-add_modal-{{ key }}"><i class="fa fa-plus"></i> {{ add_modal.label|tu }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% include ['flex-objects/types/' ~ target ~ '/buttons/add.html.twig', 'flex-objects/types/pages/buttons/add.html.twig'] %}
+{% endblock %}
+
+{% block content_top %}{% endblock %}
+
+{#tt#}
+{% block assets  %}
+    {{ parent() }}
+
+    {%  set mode = 'edit' %}
+
+    {% if mode == 'edit' %}
+        {% do assets.addCss(theme_url~'/css/codemirror/codemirror.css') %}
+    {% endif %}
+
+    {% set theScope = mode == 'edit' ? 'page' : 'pages' %}
+    {% for sheet in service_items('admin:stylesheets', theScope, 'first') %}
+        {% do assets.addCss("#{sheet}") %}
+    {% endfor %}
+    {% for sheet in service_items('admin:stylesheets', theScope, 'before:parent') %}
+        {% do assets.addCss("#{sheet}") %}
+    {% endfor %}
+
+    {% for sheet in service_items('admin:stylesheets', theScope, 'after:parent') %}
+        {% do assets.addCss("#{sheet}") %}
+    {% endfor %}
+    {% for sheet in service_items('admin:stylesheets', theScope, 'last') %}
+        {% do assets.addCss("#{sheet}") %}
+    {% endfor %}
+
+    {% set theScope = mode == 'edit' ? 'page' : 'pages' %}
+    {% for asset in service_list('asset', theScope, 'first') %}
+        {% if asset.type == 'link' %}
+            <link rel="{{ asset.rel }}" href="{{ asset.url }}" />
+        {% endif %}
+        {% if asset.type == 'twig' %}
+            {% include "#{asset.url}" %}
+        {% endif %}
+        {% if asset.type == 'javascript' %}
+            {% do assets.addJs("#{asset.url}") %}
+        {% endif %}
+    {% endfor %}
+
+    {% for asset in service_list('asset', theScope, 'before:parent') %}
+        {% if asset.type == 'link' %}
+            <link rel="{{ asset.rel }}" href="{{ asset.url }}" />
+        {% endif %}
+        {% if asset.type == 'twig' %}
+            {% include "#{asset.url}" %}
+        {% endif %}
+        {% if asset.type == 'javascript' %}
+            {% do assets.addJs("#{asset.url}") %}
+        {% endif %}
+    {% endfor %}
+
+    {% for asset in service_list('asset', theScope, 'after:parent') %}
+        {% if asset.type == 'link' %}
+            <link rel="{{ asset.rel }}" href="{{ asset.url }}" />
+        {% endif %}
+        {% if asset.type == 'twig' %}
+            {% include "#{asset.url}" %}
+        {% endif %}
+        {% if asset.type == 'javascript' %}
+            {% do assets.addJs("#{asset.url}") %}
+        {% endif %}
+    {% endfor %}
+
+    {% for asset in service_list('asset', theScope, 'last') %}
+        {% if asset.type == 'link' %}
+            <link rel="{{ asset.rel }}" href="{{ asset.url }}" />
+        {% endif %}
+        {% if asset.type == 'twig' %}
+            {% include "#{asset.url}" %}
+        {% endif %}
+        {% if asset.type == 'javascript' %}
+            {% do assets.addJs("#{asset.url}") %}
+        {% endif %}
+    {% endfor %}
+    {# needed for quicksave plugin #}
+    <script>
+      const context = {
+        rawRoute: window.GravAdmin.config.route
+      }
+    </script>
+{%  endblock assets %}
+{#tt end#}
+
+{#tt#}
+{% block content %}
+    {{ parent() }}
+
+    {% for item in service_list_filter("(&(objectClass=action)(menu=page:add)(scope=#{ mode=='list' ? 'pages' : 'page' }))", object) %}
+        {% if item.form_id %}
+            {% set form_data = item.form_data(object) %}
+            <div class="remodal" data-remodal-id="{{ item.form_id }}" data-remodal-options="hashTracking: false">
+                {% include "partials/blueprints-new-custom.html.twig" with { blueprints:  item.form_blueprint, data: obj_data, form_data:form_data, form_id:"#{item.form_id}" } %}
+            </div>
+        {% endif %}
+    {% endfor %}
+    {% for item in service_list("action", mode == 'list' ? "pages" : ["page", "page:more"], "any", object) %}
+        {% if item.form_id %}
+            {% set form_data = item.form_data(object) %}
+            <div class="remodal" data-remodal-id="{{ item.form_id }}" data-remodal-options="hashTracking: false">
+                {% include "partials/blueprints-new-custom.html.twig" with { blueprints:  item.form_blueprint, data: obj_data, form_data:form_data, form_id:"#{item.form_id}" } %}
+            </div>
+        {% endif %}
+    {% endfor %}
+{%  endblock content %}
+{#tt end#}
+
+{#tt#}
+{% block bottom %}
+    {{ parent() }}
+    {% set like_data = grav.session.getFlashObject("like_data") %}
+    {% set like_page = grav.session.getFlashObject("like_page") %}
+    {% if like_page %}
+        <script>
+          let title2 = $('input[name="data[header][title]"]');
+          title2.val('{{ grav.session.getFlashObject('use_title')  }}');
+
+          let content2 = $('textarea[name="data[content]"]');
+          content2.val({{ grav.session.getFlashObject('use_content') | json_encode | raw }});
+
+          {
+            let c = $('input[name="data[header][body_classes]"]');
+            c.val('{{ like_page.header.body_classes }}');
+          }
+
+          {
+            let c = $('select[name="data[name]"]');
+            c.val('{{ like_page.template }}');
+          }
+
+          {% for name, items in grav.session.getFlashObject('use_taxonomy')  %}
+          let tax{{ name }} = $('select[name="data[header][taxonomy][{{ name }}][]"]');
+          tax{{ name }}.val({{ items | json_encode | raw }});
+          {% endfor %}
+        </script>
+    {% endif %}
+{% endblock bottom %}
+{#tt end#}
+
+{% block content_list %}
+    {% set list_layout = grav.uri.param('layout', 'columns') %}
+    {% include [
+        'flex-objects/types/' ~ target ~ '/list/' ~ list_layout ~ '.html.twig',
+        'flex-objects/types/pages/list/' ~ list_layout ~ '.html.twig',
+        'flex-objects/types/' ~ target ~ '/list/list.html.twig',
+        'flex-objects/types/pages/list/list.html.twig'
+        ] %}
+{% endblock %}

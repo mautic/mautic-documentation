@@ -1,3 +1,19 @@
+# v3.3.0
+## 12/02/2020
+
+1. [](#new)
+    * Upgraded to TNTSearch version 2.5
+    * Pass phpstan level 7 tests
+1. [](#bugfix)
+    * Fixed FlexPages events for add+delete
+    * Fixed running scheduled index job [#104](https://github.com/trilbymedia/grav-plugin-tntsearch/pull/104) 
+
+# v3.2.1
+## 09/04/2020
+
+1. [](#bugfix)
+    * Fixed bad `require("history")...` JS warning [#101](https://github.com/trilbymedia/grav-plugin-tntsearch/issues/101)
+
 # v3.2.0
 ## 06/08/2020
 

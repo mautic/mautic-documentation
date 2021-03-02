@@ -1,6 +1,6 @@
 # Simple Cookie Plugin
 
-The **Simple Cookie** Plugin is an extension for [Grav CMS](http://github.com/getgrav/grav). The plugin is based on the popular [CookieConsent](https://cookieconsent.osano.com/) JS-library. For Advanced Opt-In/Opt-Out configurations you can use the 'Custom configuration' option.
+The **Simple Cookie** Plugin is an extension for [Grav CMS](http://github.com/getgrav/grav). The plugin is based on the popular **[CookieConsent](https://cookieconsent.osano.com/) JS-library**. For Advanced Opt-In/Opt-Out configurations you can use the 'Custom configuration' option.
 
 ## Installation
 
@@ -16,7 +16,7 @@ This will install the Simple Cookie plugin into your `/user/plugins`-directory w
 
 ### Manual Installation
 
-To install the plugin manually, download the zip-version of this repository and unzip it under `/your/site/grav/user/plugins`. Then rename the folder to `simple-cookie`. You can find these files on [GitHub](https://github.com/thomasschwarz96/grav-plugin-simple-cookie) or via [GetGrav.org](http://getgrav.org/downloads/plugins#extras).
+To install the plugin manually, download the zip-version of this repository and unzip it under `/your/site/grav/user/plugins`. Then rename the folder to `simple-cookie`. You can find these files on [GitHub](https://github.com/tomschwarz/grav-plugin-simple-cookie) or via [GetGrav.org](http://getgrav.org/downloads/plugins#extras).
 
 You should now have all the plugin files under
 
@@ -112,11 +112,3 @@ I appreciate every single help!
 ## Other
 
 If you got some problems, improvements or changes let me know.  
-
-
-```
-  _____ _                      ___     _                       ___  __
- |_   _| |_  ___ _ __  __ _ __/ __| __| |___ __ ____ _ _ _ ___/ _ \/ /
-   | | | ' \/ _ \ '  \/ _` (_-<__ \/ _| ' \ V  V / _` | '_|_ /\_, / _ \
-   |_| |_||_\___/_|_|_\__,_/__/___/\__|_||_\_/\_/\__,_|_| /__| /_/\___/
-```

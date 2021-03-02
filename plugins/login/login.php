@@ -111,6 +111,9 @@ class LoginPlugin extends Plugin
             /** @var UserObject $stored */
             if ($accounts instanceof FlexCollectionInterface) {
                 $stored = $accounts[$user->username];
+                if (is_callable([$stored, 'refresh'])) {
+                    $stored->refresh();
+                }
             } else {
                 // TODO: remove when removing legacy support.
                 $stored = $accounts->load($user->username);
@@ -136,7 +139,7 @@ class LoginPlugin extends Plugin
     }
 
     /**
-     * [onPluginsInitialized] Initialize login plugin if path matches.
+     * [onPluginsInitialized:10000] Initialize login plugin if path matches.
      * @throws \RuntimeException
      */
     public function initializeSession()
@@ -168,7 +171,7 @@ class LoginPlugin extends Plugin
     }
 
     /**
-     * [onPluginsInitialized] Initialize login plugin if path matches.
+     * [onPluginsInitialized:1000] Initialize login plugin if path matches.
      * @throws \RuntimeException
      */
     public function initializeLogin()
@@ -252,6 +255,7 @@ class LoginPlugin extends Plugin
             $pages = $e['pages'];
             $user = $this->grav['user'];
 
+            // TODO: This is super slow especially with Flex Pages. Better solution is required (on indexing / on load?).
             foreach ($pages->instances() as $page) {
                 if ($page) {
                     $header = $page->header();
@@ -333,6 +337,9 @@ class LoginPlugin extends Plugin
 
             $pages->addPage($page, $this->route);
         }
+
+        // Login page may not have the correct Cache-Control header set, force no-store for the proxies.
+        $page->expires(0);
     }
 
     /**
@@ -354,6 +361,9 @@ class LoginPlugin extends Plugin
 
             $pages->addPage($page, $route);
         }
+
+        // Forgot page may not have the correct Cache-Control header set, force no-store for the proxies.
+        $page->expires(0);
     }
 
     /**
@@ -384,6 +394,9 @@ class LoginPlugin extends Plugin
 
             $pages->addPage($page, $route);
         }
+
+        // Reset page may not have the correct Cache-Control header set, force no-store for the proxies.
+        $page->expires(0);
     }
 
     /**
@@ -405,6 +418,9 @@ class LoginPlugin extends Plugin
 
             $pages->addPage($page, $route);
         }
+
+        // Register page may not have the correct Cache-Control header set, force no-store for the proxies.
+        $page->expires(0);
     }
 
     /**
@@ -426,6 +442,9 @@ class LoginPlugin extends Plugin
 
         $token = $uri->param('token');
         $user = $users->load($username);
+        if (is_callable([$user, 'refresh'])) {
+            $user->refresh();
+        }
 
         $redirect_route = $this->config->get('plugins.login.user_registration.redirect_after_activation');
         $redirect_code = null;
@@ -503,6 +522,9 @@ class LoginPlugin extends Plugin
             $pages->addPage($page, $route);
         }
 
+        // Profile page may not have the correct Cache-Control header set, force no-store for the proxies.
+        $page->expires(0);
+
         $this->storeReferrerPage();
     }
 
@@ -525,6 +547,9 @@ class LoginPlugin extends Plugin
 
             $pages->addPage($page, $route);
         }
+
+        // Unauthorized page may not have the correct Cache-Control header set, force no-store for the proxies.
+        $page->expires(0);
 
         unset($this->grav['page']);
         $this->grav['page'] = $page;
@@ -624,9 +649,7 @@ class LoginPlugin extends Plugin
                 $login_page = $this->grav['pages']->dispatch($this->route);
             }
 
-
             if (!$login_page) {
-
                 $login_page = new Page();
 
                 // Get the admin Login page is needed, else the default
@@ -643,6 +666,9 @@ class LoginPlugin extends Plugin
                 $pages = $this->grav['pages'];
                 $pages->addPage($login_page, $this->route);
             }
+
+            // Login page may not have the correct Cache-Control header set, force no-store for the proxies.
+            $login_page->expires(0);
 
             $this->authenticated = false;
             unset($this->grav['page']);
@@ -1066,6 +1092,10 @@ class LoginPlugin extends Plugin
 
             // Allow remember me to work with different login methods.
             $user = $users->load($username);
+            if (is_callable([$user, 'refresh'])) {
+                $user->refresh();
+            }
+
             $event->setCredential('username', $username);
             $event->setUser($user);
 
@@ -1229,8 +1259,8 @@ class LoginPlugin extends Plugin
     public static function defaultRedirectAfterLogout()
     {
         $config = Grav::instance()['config'];
-        $redirect_after_logout = $config->get('plugins.logout.redirect_after_logout');
-        $route_after_logout = $config->get('plugins.logout.route_after_logout');
+        $redirect_after_logout = $config->get('plugins.login.redirect_after_logout');
+        $route_after_logout = $config->get('plugins.login.route_after_logout');
 
         return is_bool($redirect_after_logout) && $redirect_after_logout == true ? $route_after_logout : $redirect_after_logout;
     }
