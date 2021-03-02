@@ -37,7 +37,7 @@ Campaign actions are those items which are initiated by you. These are items whi
 
 When you create a campaign you will select one of these actions to begin the workflow. In most cases this initial step will be an email sent to your segments.
 
-![](send-email-delay.png)
+![Screenshot showing email delay](send-email-delay.png)
 
 You will notice that when you add an email to a campaign you will be able to select a potential *delay* for when the email is delivered. If the action is attached to a decision's non-action initiated decision path, the delay becomes how long the contact has to take action before the campaign progresses down the non-action path. 
 
