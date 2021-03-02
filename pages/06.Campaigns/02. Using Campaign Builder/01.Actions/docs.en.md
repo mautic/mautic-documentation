@@ -52,7 +52,6 @@ The actions that Mautic offers in a Campaign include:
 1.  As the first step of your Campaign, you typically send out an Email to your Segments. When you add an Email to a Campaign, you can select a potential **delay** for when the Email is delivered as shown in the following image.
 
  If the action is attached to a decision's **non-action** initiated decision path, the delay becomes how long the Contact has to take action before the Campaign progresses down the non-action path. 
-<br>
 ![Image showing delayed actions on a non-action decision path in a campaign](send-email-delay-nonaction.png)
 
 2. The Delete Contact action also deletes the Campaign event log record about that contact. Therefore, though this action might always display 0% progress on the Campaign detail page, it could have deleted some Contacts.
