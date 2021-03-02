@@ -20,7 +20,6 @@ facebookenable: true
 ---------------------
 The Campaign Builder provides a blank canvas on which you can build your Campaign workflow. A Campaign Builder is made up of conditions, decisions, and actions. It  enables you to create a simple workflow by dragging and dropping various decisions, actions, and conditions onto a canvas.
 
-
 To build your Campaign, perform the following steps:
 
 1. Click **Launch the Campaign Builder** on the New Campaigns wizard. The Contact Sources menu appears as shown in the following image.
