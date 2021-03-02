@@ -43,7 +43,7 @@ The actions that Mautic offers in a Campaign include:
 |**Update contact**| Updates the existing Contact's fields with the specified values.|
 |**Update contact's primary company**| Updates the existing Contact's primary Company fields with the specified value. See [documentation on Companies][companies].|
 |**Update contact owner**| Updates the Contact's owner.|
-|
+
 
 **Notes**:
 1.  As the first step of your Campaign, you typically send out an Email to your Segments. When you add an Email to a Campaign, you can select a potential **delay** for when the Email is delivered as shown in the following image.
