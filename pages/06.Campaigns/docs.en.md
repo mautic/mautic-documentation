@@ -1,5 +1,5 @@
 ---
-title: Campaigns
+title: Campaigns Overview
 published: true
 taxonomy:
     category:
@@ -7,25 +7,26 @@ taxonomy:
 ---
 
 ---------------------
+A Campaign is a marketing activity that aligns Components and the Channels through which you can publish your content in a coordinated, strategically timed approach to meet specific business objectives. After you add your Contacts and set up the required Channels, you can create Campaigns to build meaningful relationships with your Contacts.
 
-Campaigns are central to creating an automated workflow to assist with your marketing efforts. Campaigns consist of various external points of contact which will engage your contacts. These engagements can be created to occur on predefined time intervals or in response to specific contact actions.
+Campaigns are useful for contact management, marketing operations, and sales enablement. A Campaign can send tailored messages to all Contacts in the Segment, or a subset of Contacts that you specify. You can set the Campaign schedule to send the message once or at a recurring interval, such as once a week.
 
-### Time Driven Campaigns
+One of the main benefits of the Campaign workflow process is the ability to predefine these workflows and have them respond automatically to your Contacts and timelines. This automation minimizes the amount of time required for manual Contact activity and improves reliability of Contact nurturing.
 
-The concept of time driven campaigns implies a form of campaign which centers around specific timed events. These events are most usually in the form of emails. These email events can be defined to be triggered after a delay of a predefined number of days or on a specific date in the future.
+## Campaign types
+Campaigns can be broadly categorized into three types:
 
-### Contact Driven Campaigns
+### Time driven Campaigns
 
-A second type of campaign is the contact driven campaign. These are campaigns which trigger events based on interactions from the contact. These can occur as a result of the contact landing on a certain page, opening an email, spending a specified amount of time on a website, or any number of other activities. The response to these actions would be an email sent either immediately or at some point in the future.
+Time driven Campaigns are the type of Campaigns that center around specific timed events. These events can be anything, but are usually in the form of Emails. For instance, you can choose to trigger such Email events after a delay of a predefined number of days or on a specific date in the future.
+
+### Contact driven Campaigns
+
+Contact driven Campaigns are used to trigger events based on interactions with specific Contacts. These interactions can occur as a result of the Contact landing on a certain Page, opening an Email, spending a specified amount of time on a website, or any other activities. Such Campaigns can be set up to respond to these actions typically by sending an Email to the Contact either immediately or at a specific time in future.
 
 ### Mixed Campaigns
 
-Obviously you are not limited to creating either one kind of campaign or another separately. Mautic allows you to create campaigns which consist of both time driven items as well as contact driven actions. This powerful mixed campaign means actions will be driven by both specific dates or after specific timeframes as well as actions taken by a contact directly (as mentioned above).
+Mautic allows you to create Campaigns which consist a mix of both time driven Campaigns as well as Contact driven actions. This powerful mixed Campaign strategy means that actions will be driven by both specific dates or after specific timeframes as well as actions taken by a Contact directly.
+<br>
 
-### Campaign Actions
-
-Email actions have been mentioned specifically as a particular use case, however there are many other responses the system can take. Other actions can include automatic assignment to a new segment, assigning a new point value, or an integration into a CRM or other system.
-
-### Campaign Automation
-
-One of the main benefits of this campaign workflow process is the ability to predefine these workflows and have them respond automatically to your contacts and timelines. This automation minimizes the amount of time required for manual contact activity and improves reliability of contact nurturing through consistent contact.
+>>> Campaigns can trigger a variety of actions. Email actions are mentioned in the above Campaign types only as an example. The other actions that a Campaign can trigger include automatic assignment to a new Segment, assigning a new Point value, or pushing into an integration into a CRM or other systems.
