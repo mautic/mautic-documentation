@@ -1,5 +1,5 @@
 ---
-title: Campaigns Overview
+title: Campaigns
 published: true
 taxonomy:
     category:

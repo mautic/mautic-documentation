@@ -38,14 +38,11 @@ The actions that Mautic offers in a Campaign include:
 |**Remove Do Not Contact**| Removes the user from the Do Not Contact (DNC) list.|
 |**Send a webhook**| Sends a Webhook to a defined URL, using the GET, POST, PUT, PATCH, or DELETE methods. Headers and data are customizable, and support the use of tokens, such as contact fields and the contact's IP address. For example, {contactfield=firstname}|
 |**Send email**| Sends a transaction or marketing Email to the selected contact. A transactional Email can be sent to the contact multiple times. A marketing Email can be sent to the contact only once across multiple sources. If the contact has already received this Email from another source or the current Campaign, the Email will not be sent again and the contact progresses through the Campaign.|
-|**Send email to user**| Sends an Email to an entity other than the contact. This may be a Mautic user, the Contact’s owner, or non-users. 
-
->>> Emails sent using this action do not generate any statistics for Contacts or Emails.|
+|**Send email to user**| Sends an Email to an entity other than the contact. This may be a Mautic user, the Contact’s owner, or non-users. Emails sent using this action do not generate any statistics for Contacts or Emails.|
 |**Send marketing message**| Sends a message using the Contact's preferred Channel.|
 |**Update contact**| Updates the existing Contact's fields with the specified values.|
 |**Update contact's primary company**| Updates the existing Contact's primary Company fields with the specified value. See [documentation on Companies][companies].|
 |**Update contact owner**| Updates the Contact's owner.|
-|
 
 
 **Notes**:
