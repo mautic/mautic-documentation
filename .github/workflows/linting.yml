@@ -13,13 +13,12 @@ jobs:
       uses: actions/checkout@master
 
     - name: Vale
-      uses: errata-ai/vale-action@v1.3.0
+      uses: errata-ai/vale-action@master
       with:
         # We can modify these styles as we want
         styles: |
           https://github.com/errata-ai/Google/releases/latest/download/Google.zip
 
-        files: pages/
-        onlyAnnotateModifiedLines: true
+        files: __onlyModified
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
