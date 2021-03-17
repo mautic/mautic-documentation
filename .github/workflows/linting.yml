@@ -19,6 +19,6 @@ jobs:
         styles: |
           https://github.com/errata-ai/Google/releases/latest/download/Google.zip
 
-        files: pages/
+        files: __onlyModified
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
