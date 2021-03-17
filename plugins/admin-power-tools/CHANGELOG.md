@@ -1,3 +1,50 @@
+# v0.1.17
+## 12/9/2020
+
+1. [](#bugfix)      
+    * Use an absolute path for admin routes
+   
+# v0.1.16
+## 12/8/2020
+
+1. [](#bugfix)      
+    * Use CoreServiceUtil to generate URLs
+   
+# v0.1.15
+## 12/7/2020
+
+1. [](#bugfix)      
+    * Fix regexp format
+   
+# v0.1.14
+## 12/7/2020
+
+1. [](#improved)
+    * Remove hardcoded admin paths
+    * Update changelog sections
+2. [](#bugfix)      
+    * check that 'base_url_relative' is set
+   
+# v0.1.13
+## 12/6/2020
+
+1. [](#improved)
+    * Fix whitespace formatting
+    * Set minimum height for editor
+1. [](#bugfix)
+    * Grav 1.7 Compatibility
+    * Fix invalid regex
+    * Check that base_url_relative is set
+    * Check for empty route
+    * Catch RuntimeExceptions for empty HTML
+    * Lookup root slug name
+    * Check for post data not set
+    * Strip leading slash
+    * Use correct package for Utils::startsWith
+    * Workaround for query getting removed
+    * Use CoreServiceUtil:save
+    * Disable broken tasks for Grav 1.7
+   
 # v0.1.12
 ## 09/28/2019
 

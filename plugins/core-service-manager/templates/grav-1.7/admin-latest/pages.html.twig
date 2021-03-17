@@ -27,17 +27,17 @@
 
     {% for p in pcol %}
         {% set description = (not p.page ? "PLUGIN_ADMIN.FOLDER"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.PAGE"|tu ~ ' &bull; ') ~
-                             (p.modular ? "PLUGIN_ADMIN.MODULAR"|tu ~ ' &bull; ' : '') ~
-                             (p.routable ? "PLUGIN_ADMIN.ROUTABLE"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.NON_ROUTABLE"|tu ~ ' &bull; ') ~
-                             (p.visible ? "PLUGIN_ADMIN.VISIBLE"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.NON_VISIBLE"|tu ~ ' &bull; ') ~
-                             (p.published ? "PLUGIN_ADMIN.PUBLISHED"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.NON_PUBLISHED"|tu ~ ' &bull; ') %}
+            (p.isModule ? "PLUGIN_ADMIN.MODULE"|tu ~ ' &bull; ' : '') ~
+            (p.routable ? "PLUGIN_ADMIN.ROUTABLE"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.NON_ROUTABLE"|tu ~ ' &bull; ') ~
+            (p.visible ? "PLUGIN_ADMIN.VISIBLE"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.NON_VISIBLE"|tu ~ ' &bull; ') ~
+            (p.published ? "PLUGIN_ADMIN.PUBLISHED"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.NON_PUBLISHED"|tu ~ ' &bull; ') %}
 
         {% set page_url = getPageUrl(p) %}
 
         <li class="page-item" data-nav-id="{{ p.route }}">
             <div class="row page-item__row">
                 <span class="page-item__toggle" {{ p.children(0).count > 0 ? 'data-toggle="children"' : ''}}>
-                    <i class="page-icon fa fa-fw fa-circle-o {{ p.children(0).count > 0 ? 'children-closed' : ''}} {{ p.modular ? 'modular' : (not p.routable ? 'not-routable' : (not p.visible ? 'not-visible' : (not p.page ? 'folder' :  ''))) }}"></i>
+                    <i class="page-icon fa fa-fw fa-circle-o {{ p.children(0).count > 0 ? 'children-closed' : ''}} {{ p.isModule ? 'modular' : (not p.routable ? 'not-routable' : (not p.visible ? 'not-visible' : (not p.page ? 'folder' :  ''))) }}"></i>
                 </span>
                 <div class="page-item__content">
                     <div class="page-item__content-name">
@@ -110,8 +110,9 @@
     {% set title = "PLUGIN_ADMIN.PAGES"|tu %}
 {% endif %}
 
-{% set modular = context.modular ? 'modular_' : '' %}
+{% set modular = context.isModule ? 'modular_' : '' %}
 {% set warn = config.plugins.admin.warnings.delete_page %}
+{% set secure_delete = config.plugins.admin.warnings.secure_delete %}
 {% set page_lang = context.language %}
 {% set type = 'page' %}
 
@@ -206,13 +207,14 @@
 {% endif %}
 
 {% block titlebar %}
+
     <div class="button-bar">
         {% if mode == 'list' %}
             {#tt#}
             {{ service_render('renderer', 'pages', 'first', context) | raw }}
             {{ service_render('action', 'pages', 'first', context) | raw }}
             {#tt end#}
-            <a class="button" href="{{ admin_route() }}"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
+            <a class="button" href="{{ admin_route('/') }}"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
 
             {% for key, add_modal in config.plugins.admin.add_modals %}
                 {% if add_modal.show_in|defined('bar') == 'bar' %}
@@ -235,7 +237,7 @@
                     <li><a class="button" href="#modal" data-remodal-target="modal">{{ "PLUGIN_ADMIN.ADD_PAGE"|tu }}</a></li>
                     <li><a class="button" href="#modal-folder" data-remodal-target="modal-folder">{{ "PLUGIN_ADMIN.ADD_FOLDER"|tu }}</a></li>
                     {% if admin.modularTypes is not empty %}
-                        <li><a class="button" href="#modular" data-remodal-target="modular">{{ "PLUGIN_ADMIN.ADD_MODULAR"|tu }}</a></li>
+                        <li><a class="button" href="#modular" data-remodal-target="modular">{{ "PLUGIN_ADMIN.ADD_MODULE"|tu }}</a></li>
                     {% endif %}
                     {% for key, add_modal in config.plugins.admin.add_modals %}
                         {% if add_modal.show_in|defined('bar') == 'dropdown' %}
@@ -293,24 +295,24 @@
             <a class="button" href="{{ admin_route('/pages') }}" title="{{ "PLUGIN_ADMIN.BACK"|tu }}"><i class="fa fa-reply"></i></a>
 
             {% if exists %}
-            {% set siblings = context.parent().children() %}
+                {% set siblings = context.parent().children() %}
 
-            {% if not siblings.isFirst(context.path) %}
-                {% set sib = siblings.nextSibling(context.path) %}
+                {% if not siblings.isFirst(context.path) %}
+                    {% set sib = siblings.nextSibling(context.path) %}
                     {% set sib_url = admin_route('/pages' ~ (sib.header.routes.default ?: sib.rawRoute)) %}
-                <a class="button hidden-mobile" href="{{ sib_url }}" title="{{ "PLUGIN_ADMIN.PREVIOUS"|tu }}"><i class="fa fa-chevron-left"></i></a>
-            {% endif %}
+                    <a class="button hidden-mobile" href="{{ sib_url }}" title="{{ "PLUGIN_ADMIN.PREVIOUS"|tu }}"><i class="fa fa-chevron-left"></i></a>
+                {% endif %}
 
-            {% if not siblings.isLast(context.path) %}
-                {% set sib = siblings.prevSibling(context.path) %}
+                {% if not siblings.isLast(context.path) %}
+                    {% set sib = siblings.prevSibling(context.path) %}
                     {% set sib_url = admin_route('/pages' ~ (sib.header.routes.default ?: sib.rawRoute)) %}
-                <a class="button hidden-mobile" href="{{ sib_url }}" title="{{ "PLUGIN_ADMIN.NEXT"|tu }}"><i class="fa fa-chevron-right"></i></a>
-            {% endif %}
+                    <a class="button hidden-mobile" href="{{ sib_url }}" title="{{ "PLUGIN_ADMIN.NEXT"|tu }}"><i class="fa fa-chevron-right"></i></a>
+                {% endif %}
 
                 {% if warn %}
-                    <a class="button danger" href="#delete" data-remodal-target="delete" data-delete-url="{{ uri.addNonce(page_url ~ '/task' ~ config.system.param_sep ~ 'delete', 'admin-form', 'admin-nonce') }}"><i class="fa fa-trash-o"></i> {{ "PLUGIN_ADMIN.DELETE"|tu }}</a>
+                    <a class="button" href="#delete" data-remodal-target="delete" data-delete-url="{{ uri.addNonce(page_url ~ '/task' ~ config.system.param_sep ~ 'delete', 'admin-form', 'admin-nonce') }}"><i class="fa fa-trash-o"></i> {{ "PLUGIN_ADMIN.DELETE"|tu }}</a>
                 {% else %}
-                    <a class="button danger disable-after-click" href="{{ uri.addNonce(uri.route(true) ~ '/task' ~ config.system.param_sep ~ 'delete', 'admin-form', 'admin-nonce') }}" class="page-delete" ><i class="fa fa-trash-o"></i></a>
+                    <a class="button disable-after-click" href="{{ uri.addNonce(uri.route(true) ~ '/task' ~ config.system.param_sep ~ 'delete', 'admin-form', 'admin-nonce') }}" class="page-delete" ><i class="fa fa-trash-o"></i></a>
                 {% endif %}
 
             {#tt#}
@@ -329,7 +331,7 @@
                         <li><a class="button" href="#modal" data-remodal-target="modal">{{ "PLUGIN_ADMIN.ADD_PAGE"|tu }}</a></li>
                         <li><a class="button" href="#modal-folder" data-remodal-target="modal-folder">{{ "PLUGIN_ADMIN.ADD_FOLDER"|tu }}</a></li>
                         {% if admin.modularTypes is not empty %}
-                            <li><a class="button" href="#modular" data-remodal-target="modular">{{ "PLUGIN_ADMIN.ADD_MODULAR"|tu }}</a></li>
+                            <li><a class="button" href="#modular" data-remodal-target="modular">{{ "PLUGIN_ADMIN.ADD_MODULE"|tu }}</a></li>
                         {% endif %}
                         {#tt#}
                         {% for item in service_list_filter("(&(objectClass=action)(menu=page:add)(scope=page))", context) %}
@@ -414,25 +416,30 @@
         <div class="admin-form-wrapper">
             <div id="admin-topbar">
 
-                {% if admin.multilang and page_lang %}
+                {% if admin.multilang %}
+                    {% set translated = context.translatedLanguages(false) %}
                     <div id="admin-lang-toggle" class="button-group">
                         <button type="button" class="button disabled">
                             {% if exists %}
-                                {{ page_lang }}
+                                {{ page_lang ?? "PLUGIN_ADMIN.DEFAULT"|tu }}
                             {% else %}
                                 {{ admin.language }}
                             {% endif %}
                         </button>
-                        {% if exists and context.translatedLanguages(false)|length > 1 %}
+
+                        {% if exists and translated|length > 1 - (exists and not page_lang)|int %}
                             <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-caret-down"></i>
                             </button>
                             <ul class="dropdown-menu language-switcher">
-                                {% for language, route in context.translatedLanguages(false) %}
-                                    {% if language != page_lang %}
+                                {% for language, route in translated %}
+                                    {% if language != page_lang ?? grav.language.default %}
                                     <li><button class="task" name="task" value="switchlanguage" lang="{{language}}" redirect="{{context.rawRoute|trim('/')}}" form="blueprints">{{ language }}</button></li>
                                     {% endif %}
                                 {% endfor %}
+                                {% if translated|length > 1  %}
+                                    <li><button class="task" name="task" value="switchlanguage" lang="{{ grav.language.default }}" redirect="{{context.rawRoute|trim('/')}}" form="blueprints">Default</button></li>
+                                {% endif %}
                             </ul>
                         {% endif %}
                     </div>
@@ -570,10 +577,19 @@
             <p class="bigger">
               {{ "PLUGIN_ADMIN.MODAL_DELETE_PAGE_CONFIRMATION_REQUIRED_DESC"|tu }}
             </p>
+            {% if secure_delete %}
+                <p class="form-secure-delete">
+                    <input id="secure-delete-field" autofocus type="text" placeholder="{{ "PLUGIN_ADMIN.SECURE_DELETE_DESC"|tu }}" />
+                </p>
+            {% endif %}
             <br>
             <div class="button-bar">
             <button data-remodal-action="cancel" class="button secondary remodal-cancel"><i class="fa fa-fw fa-close"></i> {{ "PLUGIN_ADMIN.CANCEL"|tu }}</button>
-            <a class="button disable-after-click" data-delete-action href="#"><i class="fa fa-fw fa-check"></i> {{ "PLUGIN_ADMIN.CONTINUE"|tu }}</a>
+            {% if secure_delete %}
+                <button id="secure-delete-btn" disabled="true" class="button danger disable-after-click" data-delete-action><i class="fa fa-fw fa-check"></i> {{ "PLUGIN_ADMIN.CONFIRM"|tu }}</button>
+            {% else %}
+                <a class="button danger disable-after-click" data-delete-action href="#"><i class="fa fa-fw fa-check"></i> {{ "PLUGIN_ADMIN.CONTINUE"|tu }}</a>
+            {% endif %}
             </div>
         </form>
     </div>
@@ -584,13 +600,26 @@
 
 {% block bottom %}
     {{ parent() }}
-<script>
-    $('.admin-pages .form-tabs .tabs-nav').css('margin-right', ($('#admin-topbar').width() + 20) + 'px');
-</script>
+    <script>
+        $('.admin-pages .form-tabs .tabs-nav').css('margin-right', ($('#admin-topbar').width() + 20) + 'px');
+        {% if secure_delete %}
+        $('#secure-delete-field').keyup(function () {
+            var inputValue = $(this).val();
+            if (inputValue == 'DELETE') {
+                $('#secure-delete-btn').attr('disabled', false);
+            }else{
+                $('#secure-delete-btn').attr('disabled', true);
+            }
+        });
+        $(document).on('closing', '.remodal', function () {
+            $('#secure-delete-field').val('');
+        });
+        {% endif %}
+    </script>
 
-{#tt - remove this when the admin plugin is fixed#}
-{{ assets.js('bottom') | raw }}
-{#tt end#}
+    {#tt - remove this when the admin plugin is fixed#}
+    {{ assets.js('bottom') | raw }}
+    {#tt end#}
 
     {#tt#}
     {% set like_data = grav.session.getFlashObject("like_data") %}

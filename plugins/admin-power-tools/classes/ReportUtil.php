@@ -48,7 +48,7 @@ function link_walker(Page $page, $visitor)
     $dom = new DOMDocument();
     try {
         $dom->loadHTML($page->content());
-    } catch (Exception $e) {
+    } catch (Throwable $e) {
         // loadHTML will throw exception if content is empty
         return;
     }
@@ -76,7 +76,7 @@ function page_link_walker(Page $page, $visitor)
 class ReportUtil
 {
     // the folder and media name
-    const rxMedia = "#.*/([^/]+/[^?\Z]+)#";
+    const rxMedia = "#.*/([^/]+/[^?]+)$#";
 
     static public function getSampleTree()
     {
@@ -131,12 +131,16 @@ class ReportUtil
         return "<div class='report-tree'>" . $s . "</div>";
     }
 
+	/**
+	 * @deprecated use CoreServiceUtil::routeToAdmin
+	 * @return string
+	 */
     public static function getAdminBaseRelative()
     {
         $config = \Grav\Common\Grav::instance()['config'];
         $route = $config->get('plugins.admin.route');
         $base = '/' . trim($route, '/');
-        return $config->grav['base_url_relative'] . $base;
+        return isset($config->grav['base_url_relative']) ? $config->grav['base_url_relative'] . $base : $base;
 //        $admin_base = '/' . trim($config->get('plugins.admin.route'), '/');
 //        $admin_base = trim($config->get('plugins.admin.route'), '/');
 //        return $admin_base;
@@ -144,7 +148,9 @@ class ReportUtil
 
     public static function edit_link($page, $text)
     {
-        $href = self::getAdminBaseRelative() . "/pages" . $page->route();
+		$grav = \Grav\Common\Grav::instance();
+		$url = $grav['core-service-util']->routeToAdmin();
+		$href = $url . "/pages" . $page->route();
         return "<a href='$href'>" . $text . "</a>";
     }
 
@@ -157,15 +163,16 @@ class ReportUtil
 
     public static function view_url($page)
     {
-        $base = \Grav\Common\Grav::instance()['base_url_relative'];
-        $href = $base . $page->route();
-        return $href;
+    	$grav = \Grav\Common\Grav::instance();
+		$base = isset($grav['base_url_relative']) ? $grav['base_url_relative'] : '';
+		return $base . $page->route();
     }
 
     public static function edit_url($page)
     {
-        $base = \Grav\Common\Grav::instance()['base_url_relative'];
-        $href = self:: getAdminBaseRelative() . "/pages" . $page->route();
+		$grav = \Grav\Common\Grav::instance();
+		$url = $grav['core-service-util']->routeToAdmin();
+		$href = $url . "/pages" . $page->route();
         return $href;
     }
 
@@ -201,7 +208,7 @@ class ReportUtil
                         $tree['links'][] = self::stripOrder($m[1]);
                     }
                 }
-            } catch (Exception $e) {
+            } catch (Throwable $e) {
                 // loadHTML will throw exception if content is empty;
             }
         });
@@ -267,7 +274,7 @@ class ReportUtil
                         }
                     }
                 }
-            } catch (Exception $e) {
+            } catch (Throwable $e) {
                 // loadHTML will throw exception if content is empty;
             }
         });
