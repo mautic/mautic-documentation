@@ -1,8 +1,7 @@
 name: Linting
 on:
-  push:
-    branches:
-      - master
+  # Note: onlyAnnotateModifiedLines only works correctly on PRs!
+  # If you need to run checks on push as well, create a separate workflow file.
   pull_request:
 
 jobs:
@@ -20,7 +19,7 @@ jobs:
         # We can modify these styles as we want
         styles: |
           https://github.com/errata-ai/Google/releases/latest/download/Google.zip
-
-        files: __onlyModified
+        files: pages/
+        onlyAnnotateModifiedLines: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
