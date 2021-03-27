@@ -69,6 +69,62 @@ The context menu shows actions you can take.
 
 ![Marketplace detail](marketplace-detail.png)
 
+### CLI command
+
+The marketplace has commands that can be handy for those who prefer CLI over UI or for some automations.
+
+#### List plugins
+
+`bin/console mautic:marketplace:list` will list first page of available plugins like so:
+
+```
++-------------------------------------------------------+-----------+--------+
+| name                                                  | downloads | favers |
++-------------------------------------------------------+-----------+--------+
+| mautic/mautic-saelos-bundle                           | 11623     | 11     |
+| koco/mautic-recaptcha-bundle                          | 2662      | 24     |
+|     This plugin brings reCAPTCHA integration to       |           |        |
+|     mautic.                                           |           |        |
+| thedmsgroup/mautic-extended-field-bundle              | 3069      | 25     |
+|     Extends custom fields for scalability and         |           |        |
+|     HIPAA/PCI compliance.                             |           |        |
+| mtcextendee/mautic-sql-conditions-bundle              | 190       | 6      |
+| maatoo/mautic-referrals-bundle                        | 1063      | 5      |
+|     This plugin enables referrals in mautic.          |           |        |
+| thedmsgroup/mautic-health-bundle                      | 2139      | 11     |
+|     Checks the health of the Mautic instance.         |           |        |
+| thedmsgroup/mautic-dashboard-warm-bundle              | 1921      | 12     |
+|     Improves the performance of the dashboard by      |           |        |
+|     sharing/extending/warming caches.                 |           |        |
+| thedmsgroup/mautic-contact-source-bundle              | 2852      | 43     |
+|     Creates API endpoints for receiving contacts from |           |        |
+|     external sources.                                 |           |        |
+| thedmsgroup/mautic-contact-client-bundle              | 4035      | 70     |
+|     Create custom integrations without writing code.  |           |        |
+| thedmsgroup/mautic-campaign-watch-bundle              | 1817      | 14     |
+|     Visual improvements for campaigns.                |           |        |
+| raow/mautic-rss-to-email-bundle                       | 971       | 69     |
+| mtcextendee/mautic-random-smtp-bundle                 | 101       | 10     |
+| kuzmany/mautic-recommender-bundle                     | 250       | 30     |
+| kuzmany/mautic-custom-tags-bundle                     | 119       | 20     |
+| dazzle/mautic-sendinblue-bundle                       | 73        | 5      |
+|     Allows to send E-mails with Sendinblue            |           |        |
++-------------------------------------------------------+-----------+--------+
+Total packages: 69
+Execution time: 388 ms
+```
+
+There are options that will allow you to filter or go to next pages. The full list will show up when you add `--help` after the command as you are used to in other Mautic commands.
+
+```
+  -p, --page[=PAGE]      Page number [default: 1]
+  -l, --limit[=LIMIT]    Packages per page [default: 15]
+  -f, --filter[=FILTER]  Filter the packages [default: ""]
+  -h, --help             Display this help message
+```
+
+Example usage how to search for Captcha plugin: `bin/console mautic:marketplace:list --filter=captcha`
+
 ### Planned Features
 
 The Marketplace is lacking some important features. In the text above there are mentions of several planned features in cursiva. Most of the features are waiting for Mautic 4 release and it's main features (Composer v2 support, new directory structure) and therefore can be developed when all these features will come together.
