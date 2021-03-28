@@ -58,7 +58,7 @@ In this section is a list of maintainers of the Plugin on Packagist. There may b
 
 [GitHub](https://github.com) is a social network for developers. The majority of Mautic plugins is available on GitHub. There are some quick stats available directly in this section but you can find much more if you follow the link to the repository.
 
-#### Packagist Info
+#### Packagist information
 
 [Packagist](https://packagist.org) is a PHP package repository. It's not related specifically to the Mautic community but to PHP community. All the PHP packages listed in Packagist are installable by [Composer](https://getcomposer.org) which is a tool for dependency management which is used under the hood when you install a Mautic plugin. Packagist section shows download stats of how many the plugin has been installed in different timeframes.
 
