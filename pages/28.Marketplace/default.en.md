@@ -32,7 +32,7 @@ Click a Plugin name to view details.
 
 ### Plugin detail page
 
-The detail page gives you enough information together with links to additional resources to decide whether you want to install the plugin or not.
+The detail page gives you enough information together with links to additional resources to decide whether you want to install the Plugin or not.
 
 #### Latest Stable Version
 
