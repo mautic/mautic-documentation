@@ -42,7 +42,7 @@ All plugins should follow [semantic versioning](https://semver.org) so you can s
 
 The license should be GPL v3 mostly as Mautic is released under GPL v3 which is a viral license. This means anything using Mautic's code base should also be released under the same license.
 
-Required packages are dependencies. The bigger is the list of dependencies the bigger will be the size of the plugin. More dependencies also means more security risks and incompatibility issues with future upgrades.
+Required packages are dependencies. The bigger is the list of dependencies, the bigger will be the size of the Plugin. More dependencies also means more security risks and incompatibility issues with future upgrades.
 
 #### All Versions
 
