@@ -54,7 +54,7 @@ From the list you can see how many times the Plugin has been released and the re
 
 In this section is a list of maintainers of the Plugin on Packagist. There may be more contributors in the GitHub repository. There is also a link to the maintainer's Packagist detail page where you can browse other PHP packages by the same maintainer.
 
-#### GitHub Info
+#### GitHub information
 
 [GitHub](https://github.com) is a social network for developers. The majority of Mautic plugins is available on GitHub. There are some quick stats available directly in this section but you can find much more if you follow the link to the repository.
 
