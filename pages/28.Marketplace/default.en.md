@@ -52,7 +52,7 @@ From the list you can see how many times the Plugin has been released and the re
 
 #### Maintainers
 
-In this section is a list of maintainers of the plugin on Packagist. There may be more contributors in the GitHub repository. There is also a link to the maintainer's Packagist detail page where you can browse other PHP packages of the same author.
+In this section is a list of maintainers of the Plugin on Packagist. There may be more contributors in the GitHub repository. There is also a link to the maintainer's Packagist detail page where you can browse other PHP packages by the same maintainer.
 
 #### GitHub Info
 
