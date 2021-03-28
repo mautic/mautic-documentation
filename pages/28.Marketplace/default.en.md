@@ -75,7 +75,7 @@ The context menu shows actions you can take.
 
 The Marketplace has commands that can be used by those who prefer using the command line to the user interface, or for some automations.
 
-#### List plugins
+#### List Plugins
 
 `bin/console mautic:marketplace:list` will list first page of available plugins like so:
 
