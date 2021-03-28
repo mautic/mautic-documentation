@@ -16,7 +16,9 @@ facebookenable: true
 
 **Warning**
 
-*The first marketplace version does not check for Mautic version compatibility yet as it requires change in each existing plugin, so please do not blindly manually install plugins you see there. Always check youself if they support your Mautic version.*
+*The first Marketplace version does not check for Mautic version compatibility yet, as this requires a change in each existing plugin.
+
+Please do not blindly manually install plugins you see there as they may not work with your version of Mautic. Always check if they support your Mautic version before installing.  Developers can refer to the [Developer Documentation][dev-docs] for how to make your plugin compatible with the Mautic Marketplace.*
 
 ### List of plugins
 
