@@ -73,7 +73,7 @@ The context menu shows actions you can take.
 
 ### CLI command
 
-The marketplace has commands that can be handy for those who prefer CLI over UI or for some automations.
+The Marketplace has commands that can be used by those who prefer using the command line to the user interface, or for some automations.
 
 #### List plugins
 
