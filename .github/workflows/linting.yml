@@ -19,7 +19,7 @@ jobs:
         # We can modify these styles as we want
         styles: |
           https://github.com/errata-ai/Google/releases/latest/download/Google.zip
-        config: https://raw.githubusercontent.com/mautic/mautic-documentation/master/.vale.ini
+        config: https://github.com/mautic/mautic-documentation/blob/implement-vale-linter/.github/.vale.ini
         files: pages/
         onlyAnnotateModifiedLines: true
       env:
