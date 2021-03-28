@@ -129,7 +129,7 @@ Example usage how to search for Captcha Plugin: `bin/console mautic:marketplace:
 
 ### Planned features
 
-The Marketplace is lacking some important features. In the text above there are mentions of several planned features in cursiva. Most of the features are waiting for Mautic 4 release and it's main features (Composer v2 support, new directory structure) and therefore can be developed when all these features will come together.
+The Marketplace is lacking some important features. In the text above there are mentions of several planned features. Most of the features are waiting for the Mautic 4 release and its main features (Composer v2 support, new directory structure) and therefore can be developed when all these features come together.
 
 - Mautic version compatibility check. The Marketplace should tell you whether a plugin is compatible with your Mautic installation.
 - Installation via CLI and UI. 
