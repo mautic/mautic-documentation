@@ -56,7 +56,7 @@ remove the first two lines
 - *authorship* - Not only every file but every line has its author.
 - *community contributions* - You needn't worry about deleting someone else's work while working on the same document.
 
-You might require some knowledge of Git to clone, modify, commit, and push changes. However, there is a way to avoid that and edit the files directly in the GitHub web interface or via our web-based interface using the Grav CMS. To learn how to contribute using GitHub, see [Using Github](#using-github). If not, you can contribute easily [using Grav](#using-grav).
+You might require some knowledge of Git to clone, modify, commit, and push changes. However, there is a way to avoid that and edit the files directly in the GitHub web interface or via our web-based interface using the Grav CMS. To learn how to contribute using GitHub, see [Using GitHub](#using-github). If not, you can contribute easily [using Grav](#using-grav).
 
 ## Report Issues and Fix Bugs
 If you intend to make any changes to the documentation, we recommend filing an issue. This allows us to reach an agreement on your proposal before you put significant effort into it. To report new issues or fix existing issues, visit the [Mautic Documentation Issues][doc-issues] page on GitHub.
