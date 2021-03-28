@@ -116,7 +116,7 @@ Total packages: 69
 Execution time: 388 ms
 ```
 
-There are options that will allow you to filter or go to next pages. The full list will show up when you add `--help` after the command as you are used to in other Mautic commands.
+There are options that will allow you to filter or go to next pages. The full list will show up when you add `--help` after the command, as used in other Mautic commands.
 
 ```
   -p, --page[=PAGE]      Page number [default: 1]
