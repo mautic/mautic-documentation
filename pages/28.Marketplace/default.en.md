@@ -77,7 +77,7 @@ The Marketplace has commands that can be used by those who prefer using the comm
 
 #### List Plugins
 
-`bin/console mautic:marketplace:list` will list first page of available plugins like so:
+`bin/console mautic:marketplace:list` will list first page of available Plugins like so:
 
 ```
 +-------------------------------------------------------+-----------+--------+
