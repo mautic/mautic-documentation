@@ -8,7 +8,9 @@ Citrix
 Clearbit
 CloudAMQP
 config
+Company(ies)
 ConnectWise
+Contribution(s)
 cron
 Cron
 CTRL
@@ -16,6 +18,7 @@ Dripflow
 Froala
 Froogaloop
 gcm
+GitBook
 GitHub
 GMail
 Grav
@@ -28,6 +31,7 @@ infographics
 JavaScript
 Joomla
 Libre
+Licensor
 LinkedIn
 Mailjet
 Mautic
@@ -48,6 +52,7 @@ scp
 SendGrid
 SMS
 SparkPost
+sublicense
 SugarCRM
 Suhosin
 Transifex
