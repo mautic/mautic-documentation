@@ -125,7 +125,7 @@ There are options that will allow you to filter or go to next pages. The full li
   -h, --help             Display this help message
 ```
 
-Example usage how to search for Captcha plugin: `bin/console mautic:marketplace:list --filter=captcha`
+Example usage how to search for Captcha Plugin: `bin/console mautic:marketplace:list --filter=captcha`
 
 ### Planned Features
 
