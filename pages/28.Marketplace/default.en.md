@@ -67,7 +67,7 @@ In this section is a list of maintainers of the Plugin on Packagist. There may b
 The context menu shows actions you can take.
 - Close will take you to the List View
 - Install will install the Plugin
-- Issue Tracker will open a new window with the issue tracker. It will show up only if the plugin has this information available. Use this option to search for issues with the pluin and report new ones.
+- Issue tracker will open a new window with the issue tracker for the Plugin. It will show only if the Plugin has this information available. Use this option to search for issues with the Plugin and to report new issues to the maintainers.
 
 ![Marketplace detail](marketplace-detail.png)
 
