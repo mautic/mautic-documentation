@@ -22,7 +22,7 @@ Please do not blindly manually install plugins you see there as they may not wor
 
 ### List of plugins
 
-The list of plugins is accessible from your Mautic administration menu. Click the cog icon in the top right hand corner to display the admin menu.
+The list of Plugins is accessible from your Mautic administration menu. Click the cog icon in the top right hand corner to display the menu.
 
 The list view allows you to search for specific keywords. It displays quick stats of how many times a plugin was downloaded and how many stars it has in [Packagist](https://packagist.org). It also shows the vendor who has developed the plugin. Sadly, the sorting by columns is not available at the moment because it's not supported by the Packagist API.
 
