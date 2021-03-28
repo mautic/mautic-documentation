@@ -46,7 +46,7 @@ Required packages are dependencies. The bigger is the list of dependencies, the 
 
 #### All Versions
 
-The next table shows the list of all versions. *In the future versions of the marketplace it should be possible to select which version you want to install or upgrade to.*
+The next table shows the list of all versions. *In the future versions of the Marketplace it should be possible to select which version you want to install or upgrade to.*
 
 From the list you can see how many times the plugin has been released and what is the release cadence. When you click on a specific version it will open a new window where the plugin maintainers should write change log. Meaning what has been added or which bugs were fixed in the specific version.
 
