@@ -34,7 +34,7 @@ Click a Plugin name to view details.
 
 The detail page gives you enough information together with links to additional resources to decide whether you want to install the Plugin or not.
 
-#### Latest Stable Version
+#### Latest stable version
 
 The first information you see is what is the latest stable version. *In the future you will also see what version is currently installed if any and will allow you to upgrade.*
 
