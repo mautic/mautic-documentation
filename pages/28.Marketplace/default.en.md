@@ -40,7 +40,7 @@ The detail page gives you enough information together with links to additional r
 
 The first information you see is the latest stable version. *In the future you will also see what version is currently installed (if any), and this will allow you to upgrade.*
 
-All plugins should follow [semantic versioning](https://semver.org) so you can see from the first glance whether it is a breaking change version, feature version or bug fix (patch) version. In short, it is more risky to install fresh breaking change version and less risky to install a bug fix version.
+All Plugins should follow [semantic versioning][semver] so you can see from the first glance whether it is a breaking change version, feature version or bug fix (patch) version. In short, it is more risky to install breaking change versions and less risky to install a bug fix version.
 
 The license should be GPL v3 mostly as Mautic is released under GPL v3 which is a viral license. This means anything using Mautic's code base should also be released under the same license.
 
