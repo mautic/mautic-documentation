@@ -12,7 +12,9 @@ personenabled: false
 facebookenable: true
 ---
 
-*Mautic 4 comes with new Marketplace. In the initial release there is just plugin browser. The install an update features will be added in the future feature releases as it depends on the new Composer v2 support and new file structure.*
+---
+
+*Mautic 4 comes with new Marketplace. In the initial release there is just plugin browser. The features to install and update plugins will be added in a future feature releases, as it depends on the new Composer v2 support and new file structure.*
 
 **Warning**
 
