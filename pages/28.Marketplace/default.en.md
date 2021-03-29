@@ -139,6 +139,6 @@ The Marketplace is lacking some important features. In the text above there are 
 - Installation via CLI and UI,
 - Update of installed Plugins,
 - Automatic Plugin updates - there will be configuration that will allow you to set globally whether you want to automatically upgrade Plugins and also have the possibility of configuring this at the plugin level. Automatic upgrades make sense only for bug fix releases. Other releases are too risky and should be handled manually. [API reference][track-updates]
-- List security advisories. [API reference](https://packagist.org/apidoc#list-security-advisories)
+- List security advisories [API reference][advisories],
 - Notifications about new versions and security vulnerabilities that have been identified,
 - Support also theme installations and updates.
