@@ -58,7 +58,7 @@ In this section is a list of maintainers of the Plugin on Packagist. There may b
 
 #### GitHub information
 
-[GitHub](https://github.com) is a social network for developers. The majority of Mautic plugins is available on GitHub. There are some quick stats available directly in this section but you can find much more if you follow the link to the repository.
+[GitHub][github] is a social network for developers. The majority of Mautic Plugins are available on GitHub. There are some stats available directly in this section, but you can find much more if you follow the link to the repository.
 
 #### Packagist information
 
