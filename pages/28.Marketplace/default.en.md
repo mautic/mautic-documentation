@@ -136,7 +136,7 @@ Example usage how to search for Captcha Plugin: `bin/console mautic:marketplace:
 The Marketplace is lacking some important features. In the text above there are mentions of several planned features. Most of the features are waiting for the Mautic 4 release and its main features (Composer v2 support, new directory structure) and therefore can be developed when all these features come together.
 
 - Mautic version compatibility check. The Marketplace should tell you whether a Plugin is compatible with your Mautic installation,
-- Installation via CLI and UI. 
+- Installation via CLI and UI,
 - Update of installed plugins.
 - Automatic plugin updates. There will be configuration that will allow you to set globally whether you want to automatically upgrade plugins and also posibility to set that on per plugin bases. Automatic upgrades make sense only for bug fix releases. Other releases are too risky and should be handled manually. [API reference](https://packagist.org/apidoc#track-package-updates)
 - List security advisories. [API reference](https://packagist.org/apidoc#list-security-advisories)
