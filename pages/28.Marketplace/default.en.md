@@ -62,7 +62,9 @@ In this section is a list of maintainers of the Plugin on Packagist. There may b
 
 #### Packagist information
 
-[Packagist](https://packagist.org) is a PHP package repository. It's not related specifically to the Mautic community but to PHP community. All the PHP packages listed in Packagist are installable by [Composer](https://getcomposer.org) which is a tool for dependency management which is used under the hood when you install a Mautic plugin. Packagist section shows download stats of how many the plugin has been installed in different timeframes.
+[Packagist][packagist] is a PHP package repository. It is not related specifically to the Mautic Community, but to the PHP community. 
+
+All the PHP packages listed in Packagist are installable by [Composer][composer] which is a tool for dependency management used under the hood when you install a Mautic Plugin. The Packagist section shows download stats of how many times the Plugin has been installed in different timeframes.
 
 #### Context menu
 
