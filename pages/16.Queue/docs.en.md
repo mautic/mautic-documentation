@@ -53,14 +53,13 @@ Once you have setup a RabbitMQ server, you can configure Mautic to use it by set
 In order to use it, you must have a Beanstalkd server running.  Instructions on how to install Beanstalkd can be
 obtained on their [website][beanstalkd-website].
 
-Once you have setup a Beanstalkd server, you can configure mautic to use it by using the *Configuration* menu item again.
+Once you have setup a Beanstalkd server, you can configure mautic to use it by setting the appropriate *parameters* (`mautic.beanstalkd_*`) in your installation's configuration file.
 
-- Open the admin menu by clicking the cog icon in the top right corner.
-- Select the *Configuration* menu item.
-- Select the *Queue Settings* tab.
-- Switch the *Queue Protocol* to *Beanstalkd*.
-- Change the *Host* to the hostname of your Beanstalkd installation.
-- Save the configuration.
+| Parameter            | Default       | Description                                         |
+|----------------------|---------------|-----------------------------------------------------|
+| *beanstalkd_host*    | `'localhost'` | The hostname of the Beanstalkd server               |
+| *beanstalkd_port*    | `'11300'`     | The port that the Beanstalkd server is listening on |
+| *beanstalkd_timeout* | `'60'`        | The default TTR for Beanstalkd jobs                 |
 
 ## Processing
 
