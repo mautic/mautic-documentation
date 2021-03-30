@@ -37,13 +37,15 @@ you can use [cloudamqp][cloudamqp] which offers a RabbitMQ as a service.
 
 Once you have setup a RabbitMQ server, you can configure Mautic to use it by setting the appropriate *parameters* (`mautic.rabbitmq_*`) in your installation's configuration file.
 
-| Parameter           | Default       | Description                                       |
-|---------------------|---------------|---------------------------------------------------|
-| *rabbitmq_host*     | `'localhost'` | The hostname of the RabbitMQ server               |
-| *rabbitmq_port*     | `'5672'`      | The port that the RabbitMQ server is listening on |
-| *rabbitmq_vhost*    | `'/'`         | The virtual host to use for this RabbitMQ server  |
-| *rabbitmq_user*     | `'guest'`     | The username for the RabbitMQ server              |
-| *rabbitmq_password* | `'guest'`     | The password for the RabbitMQ server              |
+| Parameter                         | Default       | Description                                                                   |
+|-----------------------------------|---------------|-------------------------------------------------------------------------------|
+| *rabbitmq_host*                   | `'localhost'` | The hostname of the RabbitMQ server                                           |
+| *rabbitmq_port*                   | `'5672'`      | The port that the RabbitMQ server is listening on                             |
+| *rabbitmq_vhost*                  | `'/'`         | The virtual host to use for this RabbitMQ server                              |
+| *rabbitmq_user*                   | `'guest'`     | The username for the RabbitMQ server                                          |
+| *rabbitmq_password*               | `'guest'`     | The password for the RabbitMQ server                                          |
+| *rabbitmq_idle_timeout*           | `0`           | The number of seconds after which the queue consumer should timeout when idle |
+| *rabbitmq_idle_timeout_exit_code* | `0`           | The exit code to be returned when the consumer exits due to idle timeout      |
 
 ### Beanstalkd
 
