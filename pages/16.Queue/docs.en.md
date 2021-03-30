@@ -35,17 +35,15 @@ In order to use it, you must have a RabbitMQ server running.  Instructions on ho
 on their [website][rabbitMQ-website].  For testing purposes, you can use
 you can use [cloudamqp][cloudamqp] which offers a RabbitMQ as a service.
 
-Once you have setup a RabbitMQ server, you can configure Mautic to use it by using the *Configuration* menu item again.
+Once you have setup a RabbitMQ server, you can configure Mautic to use it by setting the appropriate *parameters* (`mautic.rabbitmq_*`) in your installation's configuration file.
 
-- Open the admin menu by clicking the cog icon in the top right corner.
-- Select the *Configuration* menu item.
-- Select the *Queue Settings* tab.
-- Switch the *Queue Protocol* to *RabbitMQ*.
-- Change the *Host* to the hostname of your RabbitMQ installation.
-- Change the *Virtual Host* to the virtual host of your RabbitMQ installation.
-- Change the *User* to the username of your RabbitMQ installation.
-- Change the *Password* to the password of your RabbitMQ installation.
-- Save the configuration.
+| Parameter           | Default       | Description                                       |
+|---------------------|---------------|---------------------------------------------------|
+| *rabbitmq_host*     | `'localhost'` | The hostname of the RabbitMQ server               |
+| *rabbitmq_port*     | `'5672'`      | The port that the RabbitMQ server is listening on |
+| *rabbitmq_vhost*    | `'/'`         | The virtual host to use for this RabbitMQ server  |
+| *rabbitmq_user*     | `'guest'`     | The username for the RabbitMQ server              |
+| *rabbitmq_password* | `'guest'`     | The password for the RabbitMQ server              |
 
 ### Beanstalkd
 
