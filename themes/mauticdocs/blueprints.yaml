@@ -1,5 +1,5 @@
 name: Mautic Theme
-slug: mautic-docs
+slug: mauticdocs
 type: theme
 version: 1.0
 description: "Theme for Mautic Docs based on the parent theme Learn2"

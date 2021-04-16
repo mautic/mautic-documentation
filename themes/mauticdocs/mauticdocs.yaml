@@ -4,4 +4,5 @@ streams:
       type: ReadOnlyStream
       prefixes:
         '':
+          - user/themes/mauticdocs
           - user/themes/learn2

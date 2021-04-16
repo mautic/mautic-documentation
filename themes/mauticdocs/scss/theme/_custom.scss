@@ -1,0 +1,44 @@
+// Typography
+$h1-font-size:                  $core-font-size + 1.5 !default;
+$h2-font-size:                  $core-font-size + 1.3 !default;
+$h3-font-size:                  $core-font-size + 1.1 !default;
+$h4-font-size:                  $core-font-size + 0.9 !default;
+$h5-font-size:                  $core-font-size + 0.7 !default;
+$h6-font-size:                  $core-font-size + 0.5 !default;
+
+// Colours
+$core-accent:					#414f8a;
+$header-bg: $core-accent;
+
+// Core styles
+#header {
+  background: $header-bg;
+}
+a {
+  color: $core-accent;
+  font-weight: bold;
+  &:hover {
+    color: darken($core-accent, 15%);
+    font-weight: bold;
+  }
+}
+h3 {
+  font-family: $font-family-default;
+  font-weight: $font-weight-regular;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  border-bottom: 4px solid $rule-color;
+}
+
+p {
+  text-align: left;
+  font-size: 1.2rem;
+}
