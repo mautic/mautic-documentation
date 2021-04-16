@@ -307,8 +307,9 @@ class AdminPowerToolsPlugin extends Plugin
 					$newPage->rawMarkdown("");
 				}
 
-				$this->grav['core-service-util']->save($newPage);
-				$this->grav->redirect('/admin/pages' . $newPage->route());
+				$util = $this->grav['core-service-util'];
+				$util->save($newPage);
+				$this->grav->redirect($util->routeToEdit($newPage->route()));
 				break;
 
 			case "new-page-custom-parent":
@@ -392,7 +393,8 @@ class AdminPowerToolsPlugin extends Plugin
 				$session->setFlashObject("like_page", $likePage);
 				$session->setFlashObject("like_data", $data);
 				$session->setFlashObject("add_page_enabled", true);
-				$this->grav->redirect('/admin/pages' . $route);
+				$util = $this->grav['core-service-util'];
+				$this->grav->redirect($util->routeToEdit($route));
 
 				if (false) {
 					$route = $data['route'] != '/' ? $data['route'] : '';
@@ -440,7 +442,8 @@ class AdminPowerToolsPlugin extends Plugin
 				if ($parentPage == null || $sourcePage->id() !== $parentPage->id()) {
 					$sourcePage->move($parentPage);
 					$this->grav['core-service-util']->save($sourcePage);
-					$this->grav->redirect('/admin/pages' . $sourcePage->route());
+					$routeToEdit = $this->grav['core-service-util']->routeToEdit($sourcePage);
+					$this->grav->redirect($routeToEdit);
 				}
 
 				return true;
@@ -481,12 +484,14 @@ class AdminPowerToolsPlugin extends Plugin
 						$path = "/" . $page->slug();
 					}
 				}
-				$content .= "\n\n[Edit Page On Grav](/admin/pages$path?target=_blank)";
+				$util = $this->grav['core-service-util'];
+				$routeToEdit = $util->routeToEdit($page);
+				$content .= "\n\n[Edit Page On Grav](" . $routeToEdit . "?target=_blank)";
 			}
 
 			if ($this->config->get("plugins.admin-power-tools.edit_section_enabled", true)) {
-				$base = $this->grav['base_url_relative'];
-				$href = $base . "/admin/powertools/edit-section" . $page->route();
+				$util = $this->grav['core-service-util'];
+				$href = $util->routeToAdmin() .  "/powertools/edit-section" . $page->route();
 
 				//WORKAROUND see https://github.com/getgrav/grav/issues/2964
 				if (substr($href, -1) == '/') {

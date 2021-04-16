@@ -120,7 +120,7 @@ class DependencyUtil
 					}
 					$realVersion = $found->blueprints()->version;
 					// bug fix for beta versions
-					$realVersion = preg_replace('-beta.*$','', $realVersion);
+					$realVersion = preg_replace('/-beta.*$/','', $realVersion);
 					if (!version_compare($realVersion, $version, $compare)) {
 						$msg = "Missing dependency: '$name' $version";
 						$msg .= ' actual ' . $realVersion;

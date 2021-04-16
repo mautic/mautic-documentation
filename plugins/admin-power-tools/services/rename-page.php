@@ -131,7 +131,8 @@ use Grav\Common\Filesystem\Folder;
                     });
                 }
 				$grav['core-service-util']->updateAdminCache();
-                $grav->redirect('/admin/pages' . $page->route());
+				$routeToEdit = $grav['core-service-util']->routeToEdit($page);
+				$grav->redirect($routeToEdit);
             }
         ]);
 

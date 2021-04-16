@@ -72,7 +72,8 @@
             }
         ]);
 
-        $url = ReportUtil::getAdminBaseRelative();
+        $grav = \Grav\Common\Grav::instance();
+        $url = $grav['core-service-util']->routeToAdmin();
         $url .= "/admin-power-tools/reports";
         $manager->registerService('action', [
             "caption" => "Reports",
