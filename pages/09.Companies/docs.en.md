@@ -39,7 +39,10 @@ Company name field is mark as unique identifier by default. But you can choose a
 
 In Configurations > Company Settings you can choose operator for the merge companies by the unique identifiers.
 
+![Setup operator for find duplications algorithm](company-duplicates-configuration-operator.png "Setup operator for find duplications algorithm")
+
 These settings use algorithm to find and merge duplicates companies during the import, [integrations framework][integration-framework] and other parts of Mautic
+
 
 
 ## Company actions
