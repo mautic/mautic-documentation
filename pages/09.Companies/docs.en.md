@@ -33,6 +33,15 @@ Above the informations of the company (name, address, and all you custom company
 
 Note also that since 3.1 it is possible to add the column 'date added to company' to reports.
 
+### Company duplicates
+
+Company name field is mark as unique identifier by default. But you can choose any other company fields as unique identifier in [custom fields][custom fields]. 
+
+In Configurations > Company Settings you can choose operator for the merge companies by the unique identifiers.
+
+These settings are use in algorithm to find and merge duplicates companies during the import, [integrations framework][integration-framework] and other parts of Mautic
+
+
 ## Company actions
 
 ### Merging Companies
@@ -107,3 +116,5 @@ As of [Mautic 2.3.0][release-2.3.0], it is now possible to set primary company t
 <!-- Page Links -->
 
 [release-2.3.0]: <https://github.com/mautic/mautic/releases/tag/2.3.0>
+[custom fields]: </contacts/manage-custom-fields>
+[integration-framework]: <https://developer.mautic.org/#integration-framework>
