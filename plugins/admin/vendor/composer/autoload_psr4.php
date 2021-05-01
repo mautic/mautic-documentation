@@ -6,7 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ScssPhp\\ScssPhp\\' => array($vendorDir . '/scssphp/scssphp/src'),
     'Laminas\\ZendFrameworkBridge\\' => array($vendorDir . '/laminas/laminas-zendframework-bridge/src'),
     'Laminas\\Xml\\' => array($vendorDir . '/laminas/laminas-xml/src'),
-    'Composer\\Semver\\' => array($vendorDir . '/composer/semver/src'),
+    'Grav\\Plugin\\Admin\\' => array($baseDir . '/classes/plugin'),
 );

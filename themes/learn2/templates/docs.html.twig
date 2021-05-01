@@ -9,11 +9,11 @@
 {% block navigation %}
 	<div id="navigation">
 	{% if not progress.isFirst(page.path) %}
-	    <a class="nav nav-prev" aria-label="Next page" href="{{ progress.nextSibling(page.path).url }}"> <i class="fa fa-chevron-left"></i></a>
+	    <a class="nav nav-prev" href="{{ progress.nextSibling(page.path).url }}"> <i class="fa fa-chevron-left"></i></a>
 	{% endif %}
 
 	{% if not progress.isLast(page.path) %}
-	    <a class="nav nav-next" aria-label="Previous page" href="{{ progress.prevSibling(page.path).url }}"><i class="fa fa-chevron-right"></i></a>
+	    <a class="nav nav-next" href="{{ progress.prevSibling(page.path).url }}"><i class="fa fa-chevron-right"></i></a>
 	{% endif %}
 	</div>
 {% endblock %}

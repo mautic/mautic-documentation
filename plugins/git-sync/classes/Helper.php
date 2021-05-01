@@ -5,6 +5,7 @@ namespace Grav\Plugin\GitSync;
 use Defuse\Crypto\Crypto;
 use Grav\Common\Config\Config;
 use Grav\Common\Grav;
+use Grav\Common\Utils;
 use SebastianBergmann\Git\RuntimeException;
 
 class Helper
@@ -69,6 +70,10 @@ class Helper
         $user = $user ? urlencode($user) . ':' : '';
         $password = urlencode($password);
 
+        if (Utils::startsWith($repository, 'ssh://')) {
+            return $repository;
+        }
+
         return str_replace('://', "://${user}${password}@", $repository);
     }
 
@@ -78,13 +83,13 @@ class Helper
      * @param string $repository
      * @return string[]
      */
-    public static function testRepository($user, $password, $repository)
+    public static function testRepository($user, $password, $repository, $branch)
     {
         $git = new GitSync();
         $repository = self::prepareRepository($user, $password, $repository);
 
         try {
-            return $git->testRepository($repository);
+            return $git->testRepository($repository, $branch);
         } catch (RuntimeException $e) {
             return [$e->getMessage()];
         }
