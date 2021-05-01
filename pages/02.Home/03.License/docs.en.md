@@ -13,7 +13,7 @@ orgaratingenabled: false
 personenabled: false
 facebookenable: true
 ---
-{.no-lint}
+<div markdown="1" class="no-lint">
 The Mautic official end user documentation is licensed under the **Apache 2.0**, a permissive license whose main conditions require preservation of copyright and license notices.
 
 Apache License
@@ -217,3 +217,4 @@ Apache License
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+</div>
