@@ -13,7 +13,7 @@ orgaratingenabled: false
 personenabled: false
 facebookenable: true
 ---
-<div markdown="1" class="no-lint">
+
 The Mautic official end user documentation is licensed under the **Apache 2.0**, a permissive license whose main conditions require preservation of copyright and license notices.
 
 Apache License
@@ -87,7 +87,7 @@ Apache License
       copyright license to reproduce, prepare Derivative Works of,
       publicly display, publicly perform, sublicense, and distribute the
       Work and such Derivative Works in Source or Object form.
-
+<p class="no-lint" markdown="1">
    3. Grant of Patent License. Subject to the terms and conditions of
       this License, each Contributor hereby grants to You a perpetual,
       worldwide, non-exclusive, no-charge, royalty-free, irrevocable
@@ -102,7 +102,7 @@ Apache License
       or a Contribution incorporated within the Work constitutes direct
       or contributory patent infringement, then any patent licenses
       granted to You under this License for that Work shall terminate
-      as of the date such litigation is filed.
+      as of the date such litigation is filed.</p>
 
    4. Redistribution. You may reproduce and distribute copies of the
       Work or Derivative Works thereof in any medium, with or without
@@ -217,4 +217,4 @@ Apache License
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-</div>
+</>
