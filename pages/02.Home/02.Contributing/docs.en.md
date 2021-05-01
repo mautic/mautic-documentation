@@ -37,7 +37,7 @@ remove the first two lines
 - [Style guide](#style-guide)
 - [How to contribute](#how-to-contribute)
   * [Using Grav](#using-grav)
-  * [Using Github](#using-github)
+  * [Using GitHub](#using-github)
     + [Editing documentation using the command-line](#editing-documentation-using-the-command-line)
     + [Editing documents in the GitHub browser interface](#editing-documents-in-the-github-browser-interface)
 - [Mautic specific information](#mautic-specific-information)
@@ -56,10 +56,10 @@ remove the first two lines
 - *authorship* - Not only every file but every line has its author.
 - *community contributions* - You needn't worry about deleting someone else's work while working on the same document.
 
-You might require some knowledge of Git to clone, modify, commit, and push changes. However, there is a way to avoid that and edit the files directly in the GitHub web interface or via our web-based interface using the Grav CMS. To learn how to contribute using Github, see [Using Github](#using-github). If not, you can contribute easily [using Grav](#using-grav).
+You might require some knowledge of Git to clone, modify, commit, and push changes. However, there is a way to avoid that and edit the files directly in the GitHub web interface or via our web-based interface using the Grav CMS. To learn how to contribute using GitHub, see [Using GitHub](#using-github). If not, you can contribute easily [using Grav](#using-grav).
 
 ## Report Issues and Fix Bugs
-If you intend to make any changes to the documentation, we recommend filing an issue. This allows us to reach an agreement on your proposal before you put significant effort into it. To report new issues or fix existing issues, visit the [Mautic Documentation Issues][doc-issues] page on Github.
+If you intend to make any changes to the documentation, we recommend filing an issue. This allows us to reach an agreement on your proposal before you put significant effort into it. To report new issues or fix existing issues, visit the [Mautic Documentation Issues][doc-issues] page on GitHub.
 
 A great place to start and familiarize yourself with our contribution process is to take a look at the list of **`good first issues`** that we have earmarked for new contributors. These issues have a relatively limited scope.
 
@@ -72,7 +72,7 @@ The **`README.md`** file serves as the introduction and description of this repo
 
 
 The folders in this repository are grouped together by topics. 
- - The **`pages`** folder contains folders for each chapter in the Mautic user guide. Each folder contains *.md* files (one per language - currently English only) that you can edit along with images used in this page. For example, within the *Campaigns* folder, you'll subfolders for subtopics such as *Managing Campaigns*, *Campaign Events*, etc. Each of these folders contain its own **`docs.en.md`** file and all images used in the *.md* files.
+ - The **`pages`** folder contains folders for each chapter in the Mautic user guide. Each folder contains *.md* files (one per language - currently English only) that you can edit along with images used in this page. For example, within the *Campaigns* folder, you'll sub-folders for subtopics such as *Managing Campaigns*, *Campaign Events*, etc. Each of these folders contain its own **`docs.en.md`** file and all images used in the *.md* files.
   - Similarly, the **`plugins`** folder contains folders for each plugin that Mautic offers.
    - The **`themes`** folder contains all the themes available for this repository. Each folder contains supporting files for a separate theme.
 
@@ -86,12 +86,12 @@ For keeping contributions consistent, we encourage you to read our Style Guide w
 
 ### Using Grav
 
-Previously Gitbook was used to manage the Mautic documentation. However, this became cumbersome to maintain and difficult for those who were not familiar with Git. After exploring various solutions, the Education Team decided that Grav would best meet the needs of the Community.
-1. Go to the [the login page][mautic-docs-login]. Create a Mautic Community login, or log in with your existing forum/website account.
+Previously GitBook was used to manage the Mautic documentation. However, this became cumbersome to maintain and difficult for those who were not familiar with Git. After exploring various solutions, the Education Team decided that Grav would best meet the needs of the Community.
+1. Go to [the login page][mautic-docs-login]. Create a Mautic Community login, or log in with your existing forum/website account.
 1. Send a message on the [Documentation slack channel][mautic-docs-slack] to have your account raised to 'editor' - get a Slack invite [here][mautic-slack-invite].
 1. When logged in, go to the admin panel (ask the team for the link) and make your changes.
 
-### Using Github
+### Using GitHub
 
 1. Fork this [GitHub][mautic-docs-github] repository.
 1. Select a file to edit on your fork.
@@ -150,7 +150,7 @@ If you want to edit documents using the Git command-line system, read this secti
 
 #### Editing documents in the GitHub browser interface
 
-If you're unfamiliar with the Git command-line but still want to contribute to the Mautic documentation via Github, read this section.
+If you're unfamiliar with the Git command-line but still want to contribute to the Mautic documentation via GitHub, read this section.
 
 Using *README.md* as an example:
 
@@ -228,9 +228,9 @@ Since [Mautic `2.9`][release-2.9.0], when...
 
 #### `latest` version
 
-Avoid using the term _**`current`**_ or _**`latest`**_ if you actually mean _"the currently released version of Mautic that I installed"_.
+Avoid using the term _**`current`**_ or _**`latest`**_ if you actually mean _"the currently released version of Mautic that I installed."
 
-In most cases, it has no meaning when a new version is released.  Instead, check the [latest release][release-latest] and explicitly use that version number.
+In most cases, it has no meaning when a new version is released. Instead, check the [latest release][release-latest] and explicitly use that version number.
 
 Do NOT do this:
 
