@@ -1,7 +1,7 @@
 en:
   PLUGIN_FORM:
     NOT_VALIDATED: "Form not validated. One or more required fields are missing."
-    NONCE_NOT_VALIDATED: "Oops there was a problem, please check your input and submit the form again."
+    NONCE_NOT_VALIDATED: "Oops, your form has timed out, please reload the page and submit the form again."
     FILES: "Files Upload"
     FORM_ALREADY_SUBMITTED: "This form has already been submitted."
     ALLOW_MULTIPLE: "Allow More than one file"
@@ -148,45 +148,45 @@ de:
     ALLOW_MULTIPLE_HELP: "Erlaubt es, mehr als eine Datei zum Hochladen auszuwählen."
     DESTINATION: "Ziel"
     DESTINATION_HELP: "Das Ziel, wohin die Dateien hochgeladen werden sollen."
-    ACCEPT: "Erlaube MIME-Typen"
+    ACCEPT: "Erlaubte MIME-Typen"
     ACCEPT_HELP: "Eine Liste von MIME-Typen, die hochgeladen werden dürfen."
     ERROR_VALIDATING_CAPTCHA: "Die Überprüfung des Captcha ist fehlgeschlagen."
-    DATA_SUMMARY: "Hier die Zusammenfassung von dem, was Sie geschrieben haben:"
+    DATA_SUMMARY: "Hier die Zusammenfassung dessen, was du geschrieben hast:"
     YES: "Ja"
     NO: "Nein"
     NO_FORM_DATA: "Keine Formulardaten vorhanden"
     RECAPTCHA: "ReCaptcha"
-    RECAPTCHA_SITE_KEY: "Seiten Schlüssel"
+    RECAPTCHA_SITE_KEY: "Seitenschlüssel"
     RECAPTCHA_SITE_KEY_HELP: "Für mehr Informationen besuche https://developers.google.com/recaptcha"
     RECAPTCHA_SECRET_KEY: "Privater Schlüssel"
     RECAPTCHA_SECRET_KEY_HELP: "Für mehr Informationen besuche https://developers.google.com/recaptcha"
     GENERAL: "General"
-    USE_BUILT_IN_CSS: "Benutze built-in CSS"
+    USE_BUILT_IN_CSS: "Benutze eingebautes CSS"
     USE_INLINE_CSS: "Benutze inline CSS"
     FILEUPLOAD_PREVENT_SELF: '"%s" kann nicht ausserhalb der Seiten verwendet werden.'
-    FILEUPLOAD_UNABLE_TO_UPLOAD: 'Upload Fehler %s: %s'
-    FILEUPLOAD_UNABLE_TO_MOVE: 'Fehler beim verschieben von %s nach "%s"'
+    FILEUPLOAD_UNABLE_TO_UPLOAD: 'Upload-Fehler %s: %s'
+    FILEUPLOAD_UNABLE_TO_MOVE: 'Fehler beim Verschieben von %s nach "%s"'
     DROPZONE_CANCEL_UPLOAD: 'Upload abgebrochen'
-    DROPZONE_CANCEL_UPLOAD_CONFIRMATION: 'Bist du sicher das Du diesen Upload abbrechen möchtest??'
-    DROPZONE_DEFAULT_MESSAGE: 'Ziehe deine Dateien hierhin <strong>Klicke hier</strong>'
+    DROPZONE_CANCEL_UPLOAD_CONFIRMATION: 'Bist du sicher, dass du diesen Upload abbrechen möchtest??'
+    DROPZONE_DEFAULT_MESSAGE: 'Ziehe deine Dateien hierhin: <strong>Klicke hier</strong>'
     DROPZONE_FALLBACK_MESSAGE: 'Dein Browser unterstützt kein "drag and drop".'
-    DROPZONE_FILE_TOO_BIG: 'Datei zu gross ({{filesize}}MiB). Max Dateigrösse: {{maxFilesize}}MiB.'
+    DROPZONE_FILE_TOO_BIG: 'Datei zu gross ({{filesize}}MiB). Maximale Dateigrösse: {{maxFilesize}}MiB.'
     DROPZONE_INVALID_FILE_TYPE: "Du kannst keine Dateien dieses Typs hochladen."
-    DROPZONE_MAX_FILES_EXCEEDED: "DU kannst keine weiteren Dateien hochladen."
+    DROPZONE_MAX_FILES_EXCEEDED: "Du kannst keine weiteren Dateien hochladen."
     DROPZONE_REMOVE_FILE: "Datei entfernen"
     DROPZONE_REMOVE_FILE_CONFIRMATION: 'Möchtest du diese Datei wirklich löschen?'
     DROPZONE_RESPONSE_ERROR: "Server antwortet mit {{statusCode}}."
     LIMIT_HELP: "Maximale anzahl erlaubter Dateien (Mehrfachauswahl erforderlich) "
-    FILESIZE: "Max Dateigrösse"
+    FILESIZE: "Maximale Dateigrösse"
     FILESIZE_HELP: "Maximale Dateigrösse (in MB), 0 = Benutze Standart"
-    AVOID_OVERWRITING: "Überschreibungen verhindern"
-    AVOID_OVERWRITING_HELP: "Verhindert überschreibungen und fügt ein Prefix an."
+    AVOID_OVERWRITING: "Überschreiben verhindern"
+    AVOID_OVERWRITING_HELP: "Verhindert das Überschreiben und fügt einen Dateipräfix hinzu."
     RANDOM_NAME: "Zufälliger Name"
-    RANDOM_NAME_HELP: "Generiert einen 15 Zeichen langen Zufalls Name."
+    RANDOM_NAME_HELP: "Generiert einen 15 Zeichen langen Zufallsnamen."
     CLIENT_SIDE_VALIDATION: "Klientseitige Überprüfung"
-    INLINE_ERRORS: "Inline errors"
+    INLINE_ERRORS: "Inline-Fehler"
     DESTINATION_NOT_SPECIFIED: "Zielort nicht definiert"
-    INVALID_MIME_TYPE: "Der MIME-Type %s für die Datei %s ist nicht erlaubt."
+    INVALID_MIME_TYPE: "Der MIME-Typ %s für die Datei %s ist nicht erlaubt."
     INVALID_FILE_EXTENSION: "Die Dateiendung %s ist nicht erlaubt."
 
 es:
@@ -821,3 +821,77 @@ da:
     DESTINATION_NOT_SPECIFIED: "Destination ikke angivet"
     INVALID_MIME_TYPE: "MIME typen %s for filen %s er ikke accepteret."
     INVALID_FILE_EXTENSION: "Filendelsen for filen %s er ikke accepteret."
+lt:
+  PLUGIN_FORM:
+    NOT_VALIDATED: "Forma nepatikrinta. Trūksta vieno ar daugiau privalomų laukų."
+    NONCE_NOT_VALIDATED: "Oi, įvyko klaida. Prašome patikrinti įvestus duomenis ir pateikti formą iš naujo."
+    FILES: "Bylų įkėlimas"
+    FORM_ALREADY_SUBMITTED: "Ši forma jau buvo pateikta."
+    ALLOW_MULTIPLE: "Leisti daugiau nei vieną bylą"
+    ALLOW_MULTIPLE_HELP: "Leidžia pasirinkti daugiau nei vieną bylą įkėlimui."
+    DESTINATION: "Tikslas"
+    DESTINATION_HELP: "Vieta, kur bylos turėtų būti įkeltos"
+    ACCEPT: "Leidžiami MIME tipai"
+    ACCEPT_HELP: "MIME tipų sąrašas, kuriuos galima įkelti"
+    ERROR_VALIDATING_CAPTCHA: "reCAPTCHA apsauga aptiko problemų pateikiant formą"
+    DATA_SUMMARY: "Čia yra santrauka to, ką mums parašėte:"
+    NO_FORM_DATA: "Nėra formos duomenų"
+    RECAPTCHA: "reCAPTCHA"
+    RECAPTCHA_VERSION: "Versija"
+    RECAPTCHA_VERSION_V2_CHECKBOX: "v2 - žymimasis langelis"
+    RECAPTCHA_VERSION_V2_INVISIBLE: "v2 - nematoma"
+    RECAPTCHA_VERSION_V3_LATEST: "v3 - naujausia"
+    RECAPTCHA_THEME: "Tema"
+    RECAPTCHA_THEME_LIGHT: "Šviesi tema"
+    RECAPTCHA_THEME_DARK: "Tamsi tema"
+    RECAPTCHA_SITE_KEY: "Puslapio raktas"
+    RECAPTCHA_SITE_KEY_HELP: "Daugiau informacijos - https://developers.google.com/recaptcha"
+    RECAPTCHA_SECRET_KEY: "Slaptas raktas"
+    RECAPTCHA_SECRET_KEY_HELP: "Daugiau informacijos - https://developers.google.com/recaptcha"
+    GENERAL: "Bendra"
+    USE_BUILT_IN_CSS: "Naudoti įdiegtą CSS"
+    USE_INLINE_CSS: "Naudoti įterptą (inline) CSS"
+    FILEUPLOAD_PREVENT_SELF: 'Negalima naudoti "%s" už puslapių ribų.'
+    FILEUPLOAD_UNABLE_TO_UPLOAD: 'Nepavyko įkelti bylos %s: %s'
+    FILEUPLOAD_UNABLE_TO_MOVE: 'Nepavyko perkelti bylos iš %s į "%s"'
+    FILEUPLOAD_ERR_OK: 'Klaidos nėra, byla įkelta sėkmingai'
+    FILEUPLOAD_ERR_INI_SIZE: 'Įkelta byla viršija maksimalų įkėlimo dydį'
+    FILEUPLOAD_ERR_FORM_SIZE: 'Įkelta byla viršija HTML nurodytą MAX_FILE_SIZE direktyvą'
+    FILEUPLOAD_ERR_PARTIAL: 'Įkeliama byla buvo įkelta tik dalinai'
+    FILEUPLOAD_ERR_NO_FILE: 'Nebuvo įkelta jokia byla'
+    FILEUPLOAD_ERR_NO_TMP_DIR: 'Nerastas laikinasis katalogas'
+    FILEUPLOAD_ERR_CANT_WRITE: 'Nepavyko įrašyti bylos į diską'
+    FILEUPLOAD_ERR_EXTENSION: 'PHP plėtinys sustabdė bylos įkėlimą'
+    FILEUPLOAD_ERR_UNKNOWN: 'Nežinoma bylos įkėlimo klaida'
+    DROPZONE_CANCEL_UPLOAD: 'Atšaukti įkėlimą'
+    DROPZONE_CANCEL_UPLOAD_CONFIRMATION: 'Ar tikrai norite atšaukti šį įkėlimą?'
+    DROPZONE_DEFAULT_MESSAGE: 'Tempkite bylas čia arba <strong>paspauskite šioje zonoje</strong>'
+    DROPZONE_FALLBACK_MESSAGE: 'Jūsų naršyklė nepalaiko bylų įtempimo (drag and drop).'
+    DROPZONE_FALLBACK_TEXT: 'Prašome bylų įkėlimui naudoti žemiau esantį atsarginį variantą, kaip senais laikais.'
+    DROPZONE_FILE_TOO_BIG: 'Byla per didelė ({{filesize}}MiB). Maks. dydis: {{maxFilesize}}MiB.'
+    DROPZONE_INVALID_FILE_TYPE: "Negalite įkelti šio tipo bylų."
+    DROPZONE_MAX_FILES_EXCEEDED: "Nebegalite įkelti daugiau bylų."
+    DROPZONE_REMOVE_FILE: "Šalinti bylą"
+    DROPZONE_REMOVE_FILE_CONFIRMATION: 'Ar tikrai norite ištrinti šią bylą?'
+    DROPZONE_RESPONSE_ERROR: "Serveris atsakė su {{statusCode}} kodu."
+    YES: "Taip"
+    NO: "Ne"
+    REFRESH_PREVENTION: "Atnaujinimo apsauga"
+    REFRESH_PREVENTION_HELP: "Naudoti formos unikalų ID, kad būtų sustabdytas formos pakartotinis apdorojimas atnaujinus puslapį"
+    LIMIT: "Riba"
+    LIMIT_HELP: "Maksimalus viename lauke leidžiamų bylų kiekis (privaloma leisti daugiau nei vieną)"
+    FILESIZE: "Maks. bylos dydis"
+    FILESIZE_HELP: "Maksimalus leidžiamas bylos dydis (MB), 0 = naudoti sistemos pagal nutylėjimą"
+    AVOID_OVERWRITING: "Išvengti perrašymo"
+    AVOID_OVERWRITING_HELP: "Neleisti perrašyti bylų tuo pačiu pavadinimu. Bus pridėtas datos priešdėlis"
+    RANDOM_NAME: "Atsitiktinis pavadinimas"
+    RANDOM_NAME_HELP: "Generuoti atsitiktinį 15-os simbolių ilgio pavadinimą įkeliamoms byloms"
+    CLIENT_SIDE_VALIDATION: "Tikrinimas kliento pusėje"
+    CLIENT_SIDE_VALIDATION_HELP: "Pagal nutylėjimą formos naudos HTML5 kliento tikrinimą kaip pirminį"
+    INLINE_ERRORS: "Įterptos klaidos"
+    INLINE_ERRORS_HELP: "Pravartu su išjungtu 'tikrinimu kliento pusėje' - parodo kontekstines formos klaidas"
+    RESOLUTION_MIN: "{{attr}} buvo mažiau nei minimalus {{min}}px <br />"
+    RESOLUTION_MAX: "{{attr}} buvo daugiau nei maksimalus {{max}}px <br />"
+    DESTINATION_NOT_SPECIFIED: "Nenurodytas tikslas"
+    INVALID_MIME_TYPE: "MIME tipas %s bylai %s nepriimtinas."
+    INVALID_FILE_EXTENSION: "Bylos išplėtimas bylai %s nepriimtinas."
