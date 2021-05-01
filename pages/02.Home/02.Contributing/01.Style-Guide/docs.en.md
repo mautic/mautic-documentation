@@ -45,7 +45,7 @@ The Mautic Style guide recommends best practices that aims to bring about a cons
 - One blank line around code blocks
 - One final blank line
 
-- Two spaces after a full stop.  Next sentence.
+- One space after a full stop. Next sentence.
 
 ### Lists
 
@@ -94,7 +94,7 @@ The Mautic Style guide recommends best practices that aims to bring about a cons
    - Use `text` if no highlighting required
 1. Fenced code blocks within lists need to be indented for numbered lists to continue
 
-<details><summary>example codeblock</summary>
+<details><summary>example code block</summary>
 
 ##### Example `<codeblock>`
 
@@ -149,7 +149,7 @@ public function __construct($environment, $debug)
 </details>
 </details>
 
-<details><summary>example nested codeblock</summary>
+<details><summary>example nested code block</summary>
 
 ##### Example nested `<codeblock>`
 
@@ -215,8 +215,8 @@ public function __construct($environment, $debug)
 [link macro]: <http://example.com>
 [testing]: <./../plugins/integration_test.html>
 
-Often you'll want to make a link to another place in the documentation.  We prefer to group links at the bottom of a page, and provide a reference macro in the text.
-This make linking to the same place much easier.  In Markdown, it looks like this:
+Often you'll want to make a link to another place in the documentation. We prefer to group links at the bottom of a page, and provide a reference macro in the text.
+This make linking to the same place much easier. In Markdown, it looks like this:
 
 #### Absolute links
 
@@ -230,7 +230,7 @@ You can have different links in your text, some leading [here][link macro] and o
 
 #### Relative links
 
-These will link to [`/plugins/plugin-resources/testing-integrations`][testing] on the documentation website created from the [_`pages/13.Plugins/00.General%20Resources/01.Integration%20test/docs.en.md`_][testing] source file.  These should still use a link macro as with absolute links.
+These will link to [`/plugins/plugin-resources/testing-integrations`][testing] on the documentation website created from the [_`pages/13.Plugins/00.General%20Resources/01.Integration%20test/docs.en.md`_][testing] source file. These should still use a link macro as with absolute links.
 
 
 ```markdown
@@ -240,7 +240,7 @@ These will link to [`/plugins/plugin-resources/testing-integrations`][testing] o
 
 #### Heading anchors
 
-Heading anchors enable linking directly to a Markdown heading from within the same document very easily.  The anchors are auto-generated for all headings.
+Heading anchors enable linking directly to a Markdown heading from within the same document very easily. The anchors are auto-generated for all headings.
 The link target is specified inline.
 
 ```markdown
@@ -249,7 +249,7 @@ You can have different anchors in your text, for example to this [Section][#anch
 
 ### Images
 
-Images should be placed in the same folder as the page they are used on. The image should be added to Git as a file to be included in the repository, not uploaded to Github and hosted by Github.
+Images should be placed in the same folder as the page they are used on. The image should be added to Git as a file to be included in the repository, not uploaded to GitHub and hosted by GitHub.
 
 To link to an image in your repository, use the following format:
 

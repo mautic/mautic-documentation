@@ -1,3 +1,28 @@
+# v3.4.2
+## 04/06/2021
+
+1. [](#improved)
+   * `Login::register()` now validates all the provided built-in user fields, not just username
+   * Improved user field validation
+   * Do not validate optional `fullname` field, it's already handled in the registration form
+
+# v3.4.1
+## 02/17/2021
+
+1. [](#new)
+  * Added Lithuanian translation [#270](https://github.com/getgrav/grav-plugin-login/pull/270)
+  * Added Chinese Translation [#245](https://github.com/getgrav/grav-plugin-login/pull/345)
+  * Added Brazillian Portuguese [#222](https://github.com/getgrav/grav-plugin-login/pull/222)
+
+# v3.4.0
+## 01/31/2021
+
+1. [](#new)
+   * Prevent information leak on every ACL protected page by always setting Cache-Control [#264](https://github.com/getgrav/grav-plugin-login/issues/264))
+1. [](#improved)
+   * Allow browser caching for all login/profile pages
+   * Composer update 
+
 # v3.3.8
 ## 12/11/2020
 

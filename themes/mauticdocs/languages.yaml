@@ -1,0 +1,49 @@
+en:
+    THEME_MAUTICDOCS_GITHUB_EDIT_THIS_PAGE: edit this page
+    THEME_MAUTICDOCS_GITHUB_NOTE: Found errors? Think you can improve this documentation?
+    THEME_MAUTICDOCS_CLEAR_HISTORY: Clear History
+    THEME_MAUTICDOCS_BUILT_WITH_GRAV: Built with <a href="http://getgrav.org">Grav</a> - The Modern Flat File CMS
+    THEME_MAUTICDOCS_SEARCH_DOCUMENTATION: Search Documentation
+    THEME_MAUTICDOCS_ADVANCED_SEARCH: Search options
+cn:
+    THEME_MAUTICDOCS_GITHUB_EDIT_THIS_PAGE: 编辑此页
+    THEME_MAUTICDOCS_GITHUB_NOTE: 发现错误？请帮忙改进，谢谢！
+    THEME_MAUTICDOCS_CLEAR_HISTORY: 清除历史
+    THEME_MAUTICDOCS_BUILT_WITH_GRAV: Built with <a href="http://getgrav.org">Grav</a> - The Modern Flat File CMS
+    THEME_MAUTICDOCS_SEARCH_DOCUMENTATION: 搜索文档
+cs:
+    THEME_MAUTICDOCS_GITHUB_EDIT_THIS_PAGE: Upravte tuto stránku
+    THEME_MAUTICDOCS_GITHUB_NOTE: Našli jste chybu? Myslíte, že můžete vylepšit tuto dokumentaci?
+    THEME_MAUTICDOCS_CLEAR_HISTORY: Smazat historii
+    THEME_MAUTICDOCS_BUILT_WITH_GRAV: Postaveno na <a href="http://getgrav.org">Grav</a> - Moderní správce obsahu pomocí souborů prostých textů
+    THEME_MAUTICDOCS_SEARCH_DOCUMENTATION: Vyhledat v dokumentaci
+de:
+    THEME_MAUTICDOCS_GITHUB_EDIT_THIS_PAGE: diese Seite bearbeiten
+    THEME_MAUTICDOCS_GITHUB_NOTE: Fehler gefunden? Möchten Sie diese Seite verbessern?
+    THEME_MAUTICDOCS_CLEAR_HISTORY: Verlauf löschen
+    THEME_MAUTICDOCS_BUILT_WITH_GRAV: Seite erstellt mit <a href="http://getgrav.org">Grav</a> - The Modern Flat File CMS
+    THEME_MAUTICDOCS_SEARCH_DOCUMENTATION: Dokumentation durchsuchen
+es:
+    THEME_MAUTICDOCS_GITHUB_EDIT_THIS_PAGE: editar esta página
+    THEME_MAUTICDOCS_GITHUB_NOTE: ¿Encontraste errores? ¿Crees que puedes mejorar esta documentación?
+    THEME_MAUTICDOCS_CLEAR_HISTORY: Limpiar historial
+    THEME_MAUTICDOCS_BUILT_WITH_GRAV: Hecho con <a href="http://getgrav.org">Grav</a> - El CMS moderno de archivos planos
+    THEME_MAUTICDOCS_SEARCH_DOCUMENTATION: Buscar en la documentación
+fr:
+    THEME_MAUTICDOCS_GITHUB_EDIT_THIS_PAGE: modifier cette page
+    THEME_MAUTICDOCS_GITHUB_NOTE: Vous avez découvert des erreurs ? Vous pensez pouvoir améliorer cette documentation ?
+    THEME_MAUTICDOCS_CLEAR_HISTORY: Effacer l'historique
+    THEME_MAUTICDOCS_BUILT_WITH_GRAV: Créé avec <a href="http://getgrav.org">Grav</a> - Le CMS moderne sans base de données
+    THEME_MAUTICDOCS_SEARCH_DOCUMENTATION: Rechercher dans la documentation
+it:
+    THEME_MAUTICDOCS_GITHUB_EDIT_THIS_PAGE: modifica pagina
+    THEME_MAUTICDOCS_GITHUB_NOTE: Hai trovato degli errori? Pensi di poter migliorare questa documentazione?
+    THEME_MAUTICDOCS_CLEAR_HISTORY: Cancella Cronologia
+    THEME_MAUTICDOCS_BUILT_WITH_GRAV: Built with <a href="http://getgrav.org">Grav</a> - The Modern Flat File CMS
+    THEME_MAUTICDOCS_SEARCH_DOCUMENTATION: Cerca nella Documentatione
+ru:
+    THEME_MAUTICDOCS_GITHUB_EDIT_THIS_PAGE: редактировать эту страницу
+    THEME_MAUTICDOCS_GITHUB_NOTE: Нашли ошибки? Думаете, что можете улучшить документацию?
+    THEME_MAUTICDOCS_CLEAR_HISTORY: Очистить историю
+    THEME_MAUTICDOCS_BUILT_WITH_GRAV: Сделано на <a href="http://getgrav.org">Grav</a> — современной файловой CMS
+    THEME_MAUTICDOCS_SEARCH_DOCUMENTATION: Поиск по документации
