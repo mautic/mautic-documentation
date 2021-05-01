@@ -125,20 +125,15 @@
         font-family: $font-family-default;
         font-weight: $font-weight-regular;
         text-align: center;
-        font-size: 1.3rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 5rem;
         border-bottom: 4px solid $rule-color;
     }
 
     p {
-        text-align: left;
+        text-align: center;
         font-size: 1.2rem;
     }
 }

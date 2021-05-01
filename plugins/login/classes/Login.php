@@ -256,7 +256,13 @@ class Login
             }
         }
 
+        // Validate fields from the form.
         $username = $this->validateField('username', $data['username']);
+        $password = $this->validateField('password1', $data['password'] ?? $data['password1'] ?? null);
+        foreach ($data as $key => &$value) {
+            $value = $this->validateField($key, $value, $key === 'password2' ? $password : '');
+        }
+        unset($value);
 
         /** @var UserCollectionInterface $users */
         $users = $this->grav['accounts'];
@@ -342,47 +348,45 @@ class Login
                 $config = Grav::instance()['config'];
                 $username_regex = '/' . $config->get('system.username_regex') . '/';
 
-                if (!\is_string($value) || !preg_match($username_regex, $value)) {
+                $value = \is_string($value) ? trim($value) : '';
+                if ($value === '' || !preg_match($username_regex, $value)) {
                     throw new \RuntimeException('Username does not pass the minimum requirements');
                 }
 
                 break;
 
+            case 'password':
             case 'password1':
                 /** @var Config $config */
                 $config = Grav::instance()['config'];
                 $pwd_regex = '/' . $config->get('system.pwd_regex') . '/';
 
-                if (!\is_string($value) || !preg_match($pwd_regex, $value)) {
+                $value = \is_string($value) ? $value : '';
+                if ($value === '' || !preg_match($pwd_regex, $value)) {
                     throw new \RuntimeException('Password does not pass the minimum requirements');
                 }
 
                 break;
 
             case 'password2':
-                if (!\is_string($value) || strcmp($value, $extra)) {
+                $value = \is_string($value) ? $value : '';
+                if ($value === '' || $value !== $extra) {
                     throw new \RuntimeException('Passwords did not match.');
                 }
 
                 break;
 
             case 'email':
-                if (!\is_string($value) || !filter_var($value, FILTER_VALIDATE_EMAIL)) {
+                $value = \is_string($value) ? trim($value) : '';
+                if ($value === '' || !filter_var($value, FILTER_VALIDATE_EMAIL)) {
                     throw new \RuntimeException('Not a valid email address');
                 }
 
                 break;
 
             case 'permissions':
-                if (!\is_string($value) || !\in_array($value, ['a', 's', 'b'], true)) {
+                if (!\in_array($value, ['a', 's', 'b'], true)) {
                     throw new \RuntimeException('Permissions ' . $value . ' are invalid.');
-                }
-
-                break;
-
-            case 'fullname':
-                if (!\is_string($value) || trim($value) === '') {
-                    throw new \RuntimeException('Fullname cannot be empty');
                 }
 
                 break;
@@ -612,14 +616,14 @@ class Login
     public function isUserAuthorizedForPage(UserInterface $user, PageInterface $page, $config = null)
     {
         $header = $page->header();
-        $rules = isset($header->access) ? (array)$header->access : [];
+        $rules = (array)($header->access ?? []);
 
         if (!$rules && $config !== null && $config->get('parent_acl')) {
             // If page has no ACL rules, use its parent's rules
             $parent = $page->parent();
             while (!$rules and $parent) {
                 $header = $parent->header();
-                $rules = isset($header->access) ? (array)$header->access : [];
+                $rules = (array)($header->access ?? []);
                 $parent = $parent->parent();
             }
         }
@@ -628,6 +632,27 @@ class Login
         if (!$rules) {
             return true;
         }
+
+        // All protected pages have a private cache-control. This includes pages which are for guests only.
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $cacheControl = 'private, no-cache, must-revalidate';
+        } else {
+            // The response is intended for a single user only and must not be stored by a shared cache.
+            $cacheControl = str_replace('public', 'private', $cacheControl);
+            if (strpos($cacheControl, 'private') === false) {
+                $cacheControl = 'private, ' . $cacheControl;
+            }
+            // The cache will send the request to the origin server for validation before releasing a cached copy.
+            if (strpos($cacheControl, 'no-cache') === false) {
+                $cacheControl .= ', no-cache';
+            }
+            // The cache must verify the status of the stale resources before using the copy and expired ones should not be used.
+            if (strpos($cacheControl, 'must-revalidate') === false) {
+                $cacheControl .= ', must-revalidate';
+            }
+        }
+        $page->cacheControl($cacheControl);
 
         // Deny access if user has not completed 2FA challenge.
         if ($user->authenticated && !$user->authorized) {
