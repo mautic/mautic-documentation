@@ -1,6 +1,6 @@
 ---
 title: 'GrapesJs Plugin'
-media_order: 'screenshot-accounts.zoho.com-2020.04.13-22_55_03.png,screenshot-local.mauticautomatedtests-2020.04.13-23_01_11.png,screenshot-local.mauticautomatedtests-2020.04.13-23_09_01.png,zoho-authorize-application.png,zoho-create-api-creds.png,zoho-server-based-applications.png'
+media_order: 'editor_overview.png'
 taxonomy:
     category:
         - docs
@@ -26,7 +26,7 @@ Since 3.2 [Mautic][mautic] users can choose between the legacy Email Editor and 
 
 Follow the steps in the plugin's [Github page]: <https://github.com/mautic/plugin-grapesjs-builder>
 
-## Editor Overview
+## Email Editor Overview
 
 ![Screenshot of Email Editor](editor_overview.png)
 
@@ -41,3 +41,5 @@ The functions are as follows:
 4. Layout sections. These objects function as the barebone of your design. Create your email structure from sections, and pull in the different blocks you want to use.
 
 5. Content blocks. You can populate your newsletter with these content blocks. Each block has specific layout, settings and design.
+
+
