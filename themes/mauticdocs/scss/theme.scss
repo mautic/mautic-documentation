@@ -1,0 +1,63 @@
+// REQUIRED DEPENDENCIES - DO NOT CHANGE
+
+// Load Third Party Libraries
+@import "../../learn2/scss/vendor/bourbon/bourbon";
+
+// Load Nucleus Configuration
+@import "../../learn2/scss/configuration/nucleus/base";
+
+// Load Template Configuration
+@import "../../learn2/scss/configuration/theme/base";
+
+// Load Nucleus Mixins and Functions
+@import "../../learn2/scss/nucleus/functions/base";
+@import "../../learn2/scss/nucleus/mixins/base";
+
+// Load Template Library
+@import "../../learn2/scss/theme/modules/base";
+
+//-------------------------------------------
+
+// TEMPLATE COMPONENTS
+
+// Configuration
+@import "../../learn2/scss/theme/configuration";
+
+// Core
+@import "../../learn2/scss/theme/core";
+@import "../../learn2/scss/theme/fonts";
+
+// Forms
+@import "../../learn2/scss/theme/forms";
+
+// Header
+@import "../../learn2/scss/theme/header";
+
+// Nav
+@import "../../learn2/scss/theme/nav";
+
+// Main
+@import "../../learn2/scss/theme/main";
+
+// Typography
+@import "../../learn2/scss/theme/typography";
+
+// Tables
+@import "../../learn2/scss/theme/tables";
+
+// Buttons
+@import "../../learn2/scss/theme/buttons";
+
+// Bullets
+@import "../../learn2/scss/theme/bullets";
+
+// Custom
+@import "../../learn2/scss/theme/tooltips";
+
+// Scrollbar
+@import "../../learn2/scss/theme/scrollbar";
+
+// Custom
+@import "../../learn2/scss/theme/custom";
+
+@import 'theme/custom';

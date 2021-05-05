@@ -1,10 +1,9 @@
 en:
-    THEME_LEARN2_GITHUB_EDIT_THIS_PAGE: edit this page on Github
-    THEME_LEARN2_GITHUB_NOTE: Found errors? Think you can improve this documentation? 
+    THEME_LEARN2_GITHUB_EDIT_THIS_PAGE: edit this page
+    THEME_LEARN2_GITHUB_NOTE: Found errors? Think you can improve this documentation?
     THEME_LEARN2_CLEAR_HISTORY: Clear History
     THEME_LEARN2_BUILT_WITH_GRAV: Built with <a href="http://getgrav.org">Grav</a> - The Modern Flat File CMS
     THEME_LEARN2_SEARCH_DOCUMENTATION: Search Documentation
-    THEME_LEARN2_ADVANCED_SEARCH: Advanced Search
 cn:
     THEME_LEARN2_GITHUB_EDIT_THIS_PAGE: 编辑此页
     THEME_LEARN2_GITHUB_NOTE: 发现错误？请帮忙改进，谢谢！
@@ -35,7 +34,6 @@ fr:
     THEME_LEARN2_CLEAR_HISTORY: Effacer l'historique
     THEME_LEARN2_BUILT_WITH_GRAV: Créé avec <a href="http://getgrav.org">Grav</a> - Le CMS moderne sans base de données
     THEME_LEARN2_SEARCH_DOCUMENTATION: Rechercher dans la documentation
-    THEME_LEARN2_ADVANCED_SEARCH: Recherche Avancée
 it:
     THEME_LEARN2_GITHUB_EDIT_THIS_PAGE: modifica pagina
     THEME_LEARN2_GITHUB_NOTE: Hai trovato degli errori? Pensi di poter migliorare questa documentazione?

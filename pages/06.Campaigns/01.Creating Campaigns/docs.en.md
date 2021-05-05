@@ -64,4 +64,4 @@ See documentation on [cron jobs][cron-jobs] for further details.
 
 [cron-jobs]: </setup/cron-jobs>
 [categories]: </categories>
-[using-campaign-builder]: </using-campaign-builder>
+[using-campaign-builder]: </campaigns/using-campaign-builder>
