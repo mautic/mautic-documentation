@@ -64,7 +64,7 @@ Before these are released, you can download the files/test the pull requests [he
 
 ### Themes
 
-`Brienz` and `Paprika` will not be available if you check the list of available themes. You'll need to enable GrapesJS builder to get these two themes. Then, in addition to Blank and the other themes, these two themes, **Brienz** and **Paprika**, will now be available.
+`Brienz` and `Paprika` are not be available if you search the list of available themes. You'll need to enable GrapesJS builder to get these two themes. Then, in addition to Blank and the other themes, these two themes, **Brienz** and **Paprika**, will now be available.
 
 
 ### Reporting bugs
