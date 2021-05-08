@@ -62,6 +62,11 @@ From the 3.3 General Availability release there will be three email templates th
 
 Before these are released, you can download the files/test the pull requests [here][mjml-templates]. You can also use the blank theme from Webmecanick which you can access [here][blank-theme].
 
+### Themes
+
+`Brienz` and `Paprika` will not be available if you check the list of available themes. You'll need to enable GrapesJS builder to get these two themes. Then, in addition to Blank and the other themes, these two themes, **Brienz** and **Paprika**, will now be available.
+
+
 ### Reporting bugs
 
 #### Known bugs / issues
