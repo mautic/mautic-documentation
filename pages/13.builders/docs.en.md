@@ -64,7 +64,7 @@ Before these are released, you can download the files/test the pull requests [he
 
 ### Themes
 
-If you check the list of available themes, `Brienz` and `Paprika` would not be available. To use these two themes, you will need to enable GrapeJS first. After enabling GrapeJS you would be able to access **Brienz** and **Paprika** theme.
+If you search through the list of available themes, `Brienz` and `Paprika` would not be available. To use these two themes, you would need to enable GrapeJS first. After enabling GrapeJS you would be able to access **Brienz** and **Paprika** theme.
 
 
 
