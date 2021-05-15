@@ -32,7 +32,7 @@ You can find the Tag Manager in the Menu on the left side.
 
 You can create new Tags by pressing the New button
  
-![Creating Tag](.docs.en_images/create_tag.png)
+![Creating Tag](create_tag.png)
 
 In the Overview you can 
  * edit or delete Tags, by hitting the Arrow-Down-Button next to the checkbox.
