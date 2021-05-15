@@ -22,7 +22,7 @@ facebookenable: true
 
 This plugin can:
  * List all given Tags in your Mautic Instance
- * List all Contacts owning a specific tag
+ * List all Contacts owning a specific Tag
  * enable CRUD-Operations on Tags
 
 ## Usage
