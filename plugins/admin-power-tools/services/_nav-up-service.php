@@ -23,19 +23,20 @@
  * SOFTWARE.
  */
 
-{
-    $manager = \Twelvetone\Common\ServiceManager::getInstance();
-    $grav = \Grav\Common\Grav::instance();
-    $twig = $grav['twig'];
-    
-    $manager->registerService('action', [
-        'scope' => ['page'],
-        'order' => 'before:parent',
-        'caption' => 'Up',
-        'icon' => 'fa-chevron-up',
-        'render' => function ($context) use ($twig) {
-            return $twig->processTemplate('partials/nav-up.html.twig', ['page' => $context]);
-        }
+// version 1.7 includes a nav up button
+$grav = \Grav\Common\Grav::instance();
+if ($grav['core-service-util']->adminVersionIs('<', '1.7')) {
+	$manager = \Twelvetone\Common\ServiceManager::getInstance();
+	$twig = $grav['twig'];
 
-    ]);
+	$manager->registerService('action', [
+		'scope' => ['page'],
+		'order' => 'before:parent',
+		'caption' => 'Up',
+		'icon' => 'fa-chevron-up',
+		'render' => function ($context) use ($twig) {
+			return $twig->processTemplate('partials/nav-up.html.twig', ['page' => $context]);
+		}
+
+	]);
 }

@@ -88,10 +88,11 @@ use Grav\Common\Filesystem\Folder;
                 Folder::move($origPath, $page->path());
                 //BUG not deleting/copying older folder
                 //$page->move($page->parent());
-                $page->save(false);
+				$grav['core-service-util']->save($page);
 
 
-                if ($rename_route_references) {
+
+				if ($rename_route_references) {
                     $base = $grav['uri']->rootUrl(false);
                     $absPath = $base . $current_route;
                     $newAbsPage = $base . $page->route();
@@ -129,8 +130,9 @@ use Grav\Common\Filesystem\Folder;
                         }
                     });
                 }
-
-                $grav->redirect('/admin/pages' . $page->route());
+				$grav['core-service-util']->updateAdminCache();
+				$routeToEdit = $grav['core-service-util']->routeToEdit($page);
+				$grav->redirect($routeToEdit);
             }
         ]);
 

@@ -2,6 +2,7 @@
 namespace Grav\Plugin\Console;
 
 use Grav\Common\Grav;
+use Grav\Common\Data\Data;
 use Grav\Console\ConsoleCommand;
 use Grav\Plugin\Email\Email;
 use Grav\Plugin\Email\Utils as EmailUtils;
@@ -13,13 +14,11 @@ use Symfony\Component\Console\Input\InputOption;
  */
 class TestEmailCommand extends ConsoleCommand
 {
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $options = [];
 
     /**
-     *
+     * @return void
      */
     protected function configure()
     {
@@ -55,7 +54,7 @@ class TestEmailCommand extends ConsoleCommand
     }
 
     /**
-     * @return int|null|void
+     * @return int
      */
     protected function serve()
     {
@@ -64,13 +63,19 @@ class TestEmailCommand extends ConsoleCommand
             $this->initializeThemes();
         }
 
-        $grav = Grav::instance();
-
         $this->output->writeln('');
         $this->output->writeln('<yellow>Current Configuration:</yellow>');
         $this->output->writeln('');
 
-        dump($grav['config']->get('plugins.email'));
+        $grav = Grav::instance();
+        $email_config = new Data($grav['config']->get('plugins.email'));
+        if ($email_config->get('mailer.smtp.password')) {
+            $password = $email_config->get('mailer.smtp.password');
+            $obfuscated_password = str_repeat('*', strlen($password) - 2) . substr($password, -2);
+            $email_config->set('mailer.smtp.password', $obfuscated_password);
+        }
+
+        dump($email_config);
 
         $this->output->writeln('');
 
@@ -85,7 +90,7 @@ class TestEmailCommand extends ConsoleCommand
         }
 
         if (!$body) {
-            $configuration = print_r($grav['config']->get('plugins.email'), true);
+            $configuration = print_r($email_config, true);
             $body = $grav['language']->translate(['PLUGIN_EMAIL.TEST_EMAIL_BODY', $configuration]);
         }
 
@@ -97,5 +102,6 @@ class TestEmailCommand extends ConsoleCommand
             $this->output->writeln("<red>Problem sending email...</red>");
         }
 
+        return 0;
     }
 }

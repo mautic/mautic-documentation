@@ -2,7 +2,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2018 TwelveTone LLC
+ * Copyright (c) 2018-2020 TwelveTone LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 namespace Twelvetone\Common;
 
 use Grav\Common\Grav;
@@ -122,7 +121,7 @@ if (!class_exists('\\TwelveTone\\Common\\DependencyUtil')) {
                         }
                         $realVersion = $found->blueprints()->version;
                         // bug fix for beta versions
-                        $realVersion = preg_replace('-beta.*$','', $realVersion);
+                        $realVersion = preg_replace('/-beta.*$/','', $realVersion);
                         if (!version_compare($realVersion, $version, $compare)) {
                             $msg = "Missing dependency: '$name' $version";
                             $msg .= ' actual ' . $realVersion;

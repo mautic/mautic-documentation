@@ -113,9 +113,10 @@ class GitSync extends Git
      * @param string $url
      * @return string[]
      */
-    public function testRepository($url)
+    public function testRepository($url, $branch)
     {
-        return $this->execute("ls-remote \"{$url}\"");
+        $branch = $branch ? '"' . $branch . '"' : '';
+        return $this->execute("ls-remote \"{$url}\" {$branch}");
     }
 
     /**
@@ -127,7 +128,7 @@ class GitSync extends Git
             $branch = $this->getRemote('branch', null);
             $local_branch = $this->getConfig('branch', $branch);
             $this->execute('init');
-            $this->execute('checkout ' . $local_branch, true);
+            $this->execute('checkout -b ' . $local_branch, true);
         }
 
         $this->enableSparseCheckout();
@@ -144,9 +145,16 @@ class GitSync extends Git
     {
         $name = $this->getConfig('git', $name)['name'];
         $email = $this->getConfig('git', $email)['email'];
+        $privateKey = $this->getGitConfig('private_key', null);
 
         $this->execute("config user.name \"{$name}\"");
         $this->execute("config user.email \"{$email}\"");
+
+        if ($privateKey) {
+            $this->execute('config core.sshCommand "ssh -i ' . $privateKey . ' -F /dev/null"');
+        } else {
+            $this->execute('config --unset core.sshCommand');
+        }
 
         return true;
     }
@@ -212,6 +220,9 @@ class GitSync extends Git
                 $ignore[] = '!/' . $folder;
             }
         }
+
+        $ignoreEntries = explode("\n", $this->getGitConfig('ignore', ''));
+        $ignore = array_merge($ignore, $ignoreEntries);
 
         $file = File::instance(rtrim($this->repositoryPath, '/') . '/.gitignore');
         $file->save(implode("\r\n", $ignore));
@@ -370,7 +381,7 @@ class GitSync extends Git
     {
         $name = $this->getRemote('name', $name);
         $branch = $this->getRemote('branch', $branch);
-        $local_branch = $this->getConfig('branch', $branch);
+        $local_branch = $this->getConfig('branch', null);
 
         return $this->execute("push {$name} {$local_branch}:{$branch}");
     }
@@ -470,7 +481,7 @@ class GitSync extends Git
                 exec($command, $output, $returnValue);
             }
 
-            if ($returnValue !== 0 && !$quiet) {
+            if ($returnValue !== 0 && $returnValue !== 5 && !$quiet) {
                 throw new \RuntimeException(implode("\r\n", $output));
             }
 

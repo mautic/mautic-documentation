@@ -1,3 +1,25 @@
+# v3.0.1
+## 02/23/2021
+
+1. [](#new)
+  * Added ability to disable multi-lang completely to replicate prior functionality [#96](https://github.com/getgrav/grav-plugin-sitemap/pull/96)
+  * Added support for new optional `html_support` option that allows you to render the sitemap as an HTML page in your site when you access the sitemap URL with no extension or `.html`. Can be customized and extended in your theme as needed.
+
+# v3.0.0
+## 01/30/2021
+
+1. [](#new)
+    * Added complete multi-language support utilizing [Google Search recommended SEO best-practices](https://developers.google.com/search/docs/advanced/crawling/localized-versions?hl=en&visit_id=637468720624267418-280936473&rd=2) for bi-directional linking to translated pages.
+    * Added support fo `x-default` hreflang entries.
+    * Added support for new `sitemap.json` custom format that is useful for other plugins to understand the multi-language structure of the site
+    * Added support for sitemap images per [Google guidelines](https://developers.google.com/search/docs/advanced/sitemaps/image-sitemaps) [#81](https://github.com/getgrav/grav-plugin-sitemap/pull/81)
+
+# v2.0.2
+## 12/02/2020
+
+1. [](#improved)
+    * Improved readme/blueprints with regex information [#78](https://github.com/getgrav/grav-plugin-sitemap/pull/78)
+
 # v2.0.1
 ## 07/01/2020
 

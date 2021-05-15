@@ -1,3 +1,9 @@
+# v2.0.5
+## 12/02/2020
+
+1. [](#improved)   
+    * Removed user scope from github by default [#36](https://github.com/trilbymedia/grav-plugin-login-oauth2/pull/36)
+
 # v2.0.4
 ## 06/03/2020
 

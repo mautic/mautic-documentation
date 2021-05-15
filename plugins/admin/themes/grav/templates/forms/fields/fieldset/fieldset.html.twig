@@ -50,9 +50,9 @@
           {% block group %}
               {% if field.text %}
                 {% if grav.twig.twig.filters['tu'] is defined %}
-                    {{ field.markdown ? field.text|tu|markdown : '<p>' ~ field.text|tu ~ '</p>' }}
+                    {{ field.markdown ? field.text|tu|markdown : ('<p>' ~ field.text|tu ~ '</p>')|raw }}
                 {% else %}
-                    {{ field.markdown ? field.text|t|markdown : '<p>' ~ field.t ~ '</p>' }}
+                    {{ field.markdown ? field.text|t|markdown : ('<p>' ~ field.t ~ '</p>')|raw }}
                 {% endif %}
               {% endif %}
 
@@ -60,12 +60,15 @@
                   {% for childName, child in field.fields %}
                       {%- if childName == 'value' -%}
                           {% set childKey = '' %}
-                          {% set childName = itemName -%}
+                          {% set childValue = val %}
+                          {% set childName = field.name -%}
                       {%- elseif childName starts with '.' -%}
                           {% set childKey = childName|trim('.') %}
-                          {% set childName = itemName ~ childName %}
+                          {% set childValue = val|nested(childName) %}
+                          {% set childName = field.name ~ childName %}
                       {% else %}
                           {% set childKey = childName %}
+                          {% set childValue = data.value(childName) %}
                           {% set childName = childName|replace({'*': key}) %}
                       {% endif %}
                       {% set child = child|merge({ name: childName }) %}
@@ -82,12 +85,11 @@
                               ] with { field: child, value: key }
                           %}
                       {% elseif child.type %}
-                          {% set originalValue = data.value(child.name) %}
                           {%
                               include [
                               "forms/fields/#{child.type}/#{child.type}.html.twig",
                               'forms/fields/text/text.html.twig'
-                              ] with { field: child, value: data.value(child.name) }
+                              ] with { field: child, value: childValue }
                           %}
                       {% endif %}
                   {% endfor %}

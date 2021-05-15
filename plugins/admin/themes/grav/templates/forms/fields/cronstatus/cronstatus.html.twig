@@ -13,7 +13,7 @@
     <tbody>
     {% for job in jobs %}
         {% set job_status = attribute(data.status,job.id) %}
-        {% set job_enabled = job_status is defined and job_status == 'disabled' ? 0 : 1 %}
+        {% set job_enabled = job_status is defined and job_status != 'enabled' ? 0 : 1 %}
         {% set job_id = job.id %}
         {% set job_id_md5 = job_id|md5 %}
         {% set job_state = attribute(job_states, job_id) %}
@@ -22,7 +22,7 @@
         <tr>
             <td style="flex:3;overflow:hidden;">
                 {% if job_backlink %}
-                    <a href="{{ base_url_relative ~ job_backlink }}"><kbd>{{ job.id }}</kbd></a>
+                    <a href="{{ admin_route(job_backlink) }}"><kbd>{{ job.id }}</kbd></a>
                 {% else %}
                     <kbd>{{ job.id }}</kbd>
                 {% endif %}

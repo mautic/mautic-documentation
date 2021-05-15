@@ -3,7 +3,15 @@
     "type": "library",
     "description": "A fully featured full text search engine written in PHP",
     "keywords": [
-        "teamtnt", "tntsearch", "search", "fulltext", "geosearch", "fuzzy search"
+        "teamtnt",
+        "tntsearch",
+        "search",
+        "fulltext", 
+        "geosearch",
+        "text classification",
+        "bm25",
+        "stemming",       
+        "fuzzy search"
     ],
     "homepage": "https://github.com/teamtnt/tntsearch",
     "license": "MIT",
@@ -14,7 +22,7 @@
         "role": "Developer"
     }],
     "require": {
-        "php": "~7.1",
+        "php": "~7.1|^8",
         "ext-pdo_sqlite": "*",
         "ext-sqlite3": "*",
         "ext-mbstring": "*"

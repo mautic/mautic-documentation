@@ -111,6 +111,9 @@ class LoginPlugin extends Plugin
             /** @var UserObject $stored */
             if ($accounts instanceof FlexCollectionInterface) {
                 $stored = $accounts[$user->username];
+                if (is_callable([$stored, 'refresh'])) {
+                    $stored->refresh();
+                }
             } else {
                 // TODO: remove when removing legacy support.
                 $stored = $accounts->load($user->username);
@@ -336,7 +339,10 @@ class LoginPlugin extends Plugin
         }
 
         // Login page may not have the correct Cache-Control header set, force no-store for the proxies.
-        $page->expires(0);
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $page->cacheControl('private, no-cache, must-revalidate');
+        }
     }
 
     /**
@@ -360,7 +366,10 @@ class LoginPlugin extends Plugin
         }
 
         // Forgot page may not have the correct Cache-Control header set, force no-store for the proxies.
-        $page->expires(0);
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $page->cacheControl('private, no-cache, must-revalidate');
+        }
     }
 
     /**
@@ -393,7 +402,10 @@ class LoginPlugin extends Plugin
         }
 
         // Reset page may not have the correct Cache-Control header set, force no-store for the proxies.
-        $page->expires(0);
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $page->cacheControl('private, no-cache, must-revalidate');
+        }
     }
 
     /**
@@ -417,7 +429,10 @@ class LoginPlugin extends Plugin
         }
 
         // Register page may not have the correct Cache-Control header set, force no-store for the proxies.
-        $page->expires(0);
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $page->cacheControl('private, no-cache, must-revalidate');
+        }
     }
 
     /**
@@ -439,6 +454,9 @@ class LoginPlugin extends Plugin
 
         $token = $uri->param('token');
         $user = $users->load($username);
+        if (is_callable([$user, 'refresh'])) {
+            $user->refresh();
+        }
 
         $redirect_route = $this->config->get('plugins.login.user_registration.redirect_after_activation');
         $redirect_code = null;
@@ -517,7 +535,10 @@ class LoginPlugin extends Plugin
         }
 
         // Profile page may not have the correct Cache-Control header set, force no-store for the proxies.
-        $page->expires(0);
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $page->cacheControl('private, no-cache, must-revalidate');
+        }
 
         $this->storeReferrerPage();
     }
@@ -543,7 +564,10 @@ class LoginPlugin extends Plugin
         }
 
         // Unauthorized page may not have the correct Cache-Control header set, force no-store for the proxies.
-        $page->expires(0);
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $page->cacheControl('private, no-cache, must-revalidate');
+        }
 
         unset($this->grav['page']);
         $this->grav['page'] = $page;
@@ -662,7 +686,10 @@ class LoginPlugin extends Plugin
             }
 
             // Login page may not have the correct Cache-Control header set, force no-store for the proxies.
-            $login_page->expires(0);
+            $cacheControl = $page->cacheControl();
+            if (!$cacheControl) {
+                $page->cacheControl('private, no-cache, must-revalidate');
+            }
 
             $this->authenticated = false;
             unset($this->grav['page']);
@@ -1086,6 +1113,10 @@ class LoginPlugin extends Plugin
 
             // Allow remember me to work with different login methods.
             $user = $users->load($username);
+            if (is_callable([$user, 'refresh'])) {
+                $user->refresh();
+            }
+
             $event->setCredential('username', $username);
             $event->setUser($user);
 
