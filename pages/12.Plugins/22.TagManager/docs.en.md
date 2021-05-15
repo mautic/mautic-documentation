@@ -28,7 +28,7 @@ This plugin can:
 ## Usage
 You can find the Tag Manager in the Menu on the left side.
 
-![Position of Tag Manager Menu-Button](.docs.en_images/menu_icon.png)
+![Position of Tag Manager Menu-Button](menu_icon.png)
 
 You can create new Tags by pressing the New button
  
