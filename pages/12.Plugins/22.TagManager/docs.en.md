@@ -39,4 +39,4 @@ In the Overview you can
  * batch delete Tags
  * see all Contacts with a specific Tag, by clicking on the "View _n_ contacts"
 
-![Overview of Tags](.docs.en_images/overview.png)
+![Overview of Tags](overview.png)
