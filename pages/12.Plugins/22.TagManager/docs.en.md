@@ -35,7 +35,7 @@ You can create new Tags by pressing the New button
 ![Creating Tag](create_tag.png)
 
 In the Overview you can 
- * edit or delete Tags, by hitting the Arrow-Down-Button next to the checkbox.
+ * edit or delete Tags, by pressing the arrow down button next to the checkbox.
  * batch delete Tags
  * see all Contacts with a specific Tag, by clicking on the "View _n_ contacts"
 
