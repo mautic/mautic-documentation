@@ -7,7 +7,7 @@ taxonomy:
 ---
 
 ---
-Lead lists were renamed to segments in Mautic 1.4.0.
+Lead lists were renamed to segments in Mautic [1.4.0][mautic-1.4.0].
 
 Segments provide ways to easily organize your contacts. These segments can be configured from a variety of fields.
 
@@ -21,7 +21,7 @@ To create a new segment navigate to Segments in the menu, and click on 'New'.
 
 ### Naming segments
 
-Since the 3.2 release it has been possible to provide a public name, in addition to an internal name, for a segment. 
+Since Mautic [3.2][mautic-3.2] it has been possible to provide a public name, in addition to an internal name, for a segment. 
 
 This is used if the segment is displayed in the Preference Centre, allowing the contact to choose to remove themselves from it.  The Public Name is what will be displayed to the contact in the preference centre.
 
@@ -157,6 +157,8 @@ If you attempt to delete a segment which is in use by a filter in another segmen
 
 ![Screenshot showing alert message](delete-segment-alert.png)
 
+[mautic-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
+[mautic-3.2]: <https://github.com/mautic/mautic/releases/tag/3.2>
 [regex]: <https://dev.mysql.com/doc/refman/5.7/en/regexp.html>
 [delete-contact]: </campaigns/using-campaign-builder/actions>
 [mautic-4]: <https://github.com/mautic/mautic/releases/tag/4.0>
