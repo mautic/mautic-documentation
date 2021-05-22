@@ -56,26 +56,15 @@ Now you will need to **clear your Mautic cache** (located in var/cache) before y
 
 To use your existing templates with the new Email builder, you will need to add one line to your configuration file in the template folder:
 
-`"builder": "grapesjsbuilder",`
+`"builder": ["grapesjsbuilder"],`
+
+>>>> NOTE: This syntax changed between Mautic 3.3.* and Mautic 4 to enable support for multiple builders - if you have been testing in the beta phase you will need to update your configuration files, otherwise you will experience a 500 error.
 
 From the 3.3 General Availability release there will be three email templates that support MJML, and also some landing page templates will also be made available in the near future.  
-
-Before these are released, you can download the files/test the pull requests [here][mjml-templates]. You can also use the blank theme from Webmecanick which you can access [here][blank-theme].
 
 ### Reporting bugs
 
 #### Known bugs / issues
-
-* Code mode is not available if there are no active themes
-* Code mode is not working in emails (but you can copy/paste your code into the code editor of the builder)
-* Cloning MJML Template - Reverts template to HTML and locks editor
-* Link Editor is out of viewport on bottom page/email links
-* Cant use space, delete or backspace for text in buttons
-* Gmail 404 broken image for images with spaces
-* Live page render includes links to plugin Javascript and CSS
-* Invalid URLs should be blocked for images
-* Page Builder CSS is not loaded when initially editing a page (it is fine once you save, and open the page with the Preview or Live URL)
-* Toggle on/off publish email throws an error
 
 Please use the issue queue on the [Github repository][github] to check for the latest updates and report bugs with the plugin. Be sure to search first in case someone has already reported the bug!
 
@@ -98,9 +87,7 @@ And of course a really big thank you to all the contributors who have helped to 
 [mautic-3.3]: <https://github.com/mautic/mautic/releases/tag/3.3.0-rc>
 [grapesjs]: <https://grapesjs.com/>
 [webmecanik]: <https://www.webmecanik.com/en>
-[mjml-templates]: <https://github.com/mautic/mautic/pulls?q=is%3Apr+is%3Aopen+mjml>
-[github]: <https://github.com/mautic/plugin-grapesjs-builder/issues>
-[blank-theme]: <https://github.com/mautic/plugin-grapesjs-builder/files/4757520/blank_mjml.zip>
+[github]: <https://github.com/mautic/mautic/issues?q=is%3Aopen+is%3Aissue+label%3Abuilders>
 [friendly]: <https://friendly.is/en/>
 [idea2]: <https://idea2.ch>
 [hartmut.io]: <https://hartmut.io>
