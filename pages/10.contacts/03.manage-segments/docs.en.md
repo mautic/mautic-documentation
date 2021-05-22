@@ -143,6 +143,12 @@ manually added will remain part of the list regardless of filters.
 In addition to segments you can also manually add any contact to a list by
 clicking the Preferences button at the segments tab, use the dropdown to select a segment and add the contact to it or click on the x next to a segment in the input field to remove the contact.
 
+## Add categories to segment
+
+Apart from organizing various Mautic elements, categories can be used to organize contact. To add categories to segement, create new [category](/categories#creating-managing-categories) of type `segment` and sort segments (lead lists) into this category. When you add a new segment, you can now select and pick the cagteory you previously created.
+
+![Screenshot showing segment categories](add-category-segment.jpg)
+
 ## Delete all contacts in a segment
 
 Filter the contacts in the segment. The batch delete action in the contact table allows deletion of up to 100 contacts at one time. This is a performance precaution since deleting more contacts at one time could cause issues. This feature can be used for hundreds of contacts.
