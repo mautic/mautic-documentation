@@ -1,11 +1,18 @@
 {
+    "name": "trilbymedia/grav-plugin-login-oauth2",
+    "type": "grav-plugin",
+    "description": "OAuth 2 plugin for Grav CMS",
+    "keywords": ["oauth"],
+    "homepage": "https://github.com/trilbymedia/grav-plugin-login-oauth2",
+    "license": "MIT",
     "require": {
-        "league/oauth2-client": "^2.0",
+        "ext-json": "*",
+        "league/oauth2-client": "^2.6",
         "league/oauth2-github": "^2.0",
-        "league/oauth2-instagram": "^2.0",
+        "league/oauth2-instagram": "^3.0",
         "league/oauth2-facebook": "^2.0",
-        "league/oauth2-google": "^3.0",
-        "league/oauth2-linkedin": "^4.0"
+        "league/oauth2-google": "^4.0",
+        "league/oauth2-linkedin": "^5.1"
     },
     "autoload": {
         "psr-4": {

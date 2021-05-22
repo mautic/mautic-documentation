@@ -1,18 +1,21 @@
 <?php
+
 namespace Grav\Plugin;
 
 use Composer\Autoload\ClassLoader;
+use Exception;
+use Grav\Common\Debugger;
 use Grav\Common\Language\Language;
 use Grav\Common\Plugin;
 use Grav\Common\Session;
-use Grav\Common\Uri;
-use Grav\Common\User\User;
+use Grav\Common\User\Interfaces\UserCollectionInterface;
 use Grav\Plugin\Login\Events\UserLoginEvent;
 use Grav\Plugin\Login\Login;
 use Grav\Plugin\Login\OAuth2\OAuth2;
 use Grav\Plugin\Login\OAuth2\ProviderFactory;
 use RocketTheme\Toolbox\Event\Event;
 use RocketTheme\Toolbox\Session\Message;
+use RuntimeException;
 
 /**
  * Class GravPluginLoginOauth2Plugin
@@ -20,7 +23,7 @@ use RocketTheme\Toolbox\Session\Message;
  */
 class LoginOauth2Plugin extends Plugin
 {
-
+    /** @var bool */
     protected $admin = false;
 
     /**
@@ -33,11 +36,10 @@ class LoginOauth2Plugin extends Plugin
      *     callable (or function) as well as the priority. The
      *     higher the number the higher the priority.
      */
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             'onPluginsInitialized' => [
-                ['autoload', 100000],
                 ['onPluginsInitialized', 0]
             ],
         ];
@@ -48,12 +50,12 @@ class LoginOauth2Plugin extends Plugin
      *
      * @return ClassLoader
      */
-    public function autoload()
+    public function autoload(): ClassLoader
     {
         return require __DIR__ . '/vendor/autoload.php';
     }
 
-    public function onTwigLoader()
+    public function onTwigLoader(): void
     {
         $media_paths = $this->grav['locator']->findResources('plugins://login-oauth2/media');
         foreach(array_reverse($media_paths) as $images_path) {
@@ -64,13 +66,13 @@ class LoginOauth2Plugin extends Plugin
     /**
      * [onTwigTemplatePaths] Add twig paths to plugin templates.
      */
-    public function onTwigTemplatePaths()
+    public function onTwigTemplatePaths(): void
     {
         $twig = $this->grav['twig'];
         $twig->twig_paths[] = __DIR__ . '/templates';
     }
 
-    public function onTwigSiteVariables()
+    public function onTwigSiteVariables(): void
     {
         // add CSS for frontend if required
         if ((!$this->isAdmin() && $this->config->get('plugins.login-oauth2.built_in_css')) ||
@@ -82,15 +84,14 @@ class LoginOauth2Plugin extends Plugin
     /**
      * Initialize the plugin
      */
-    public function onPluginsInitialized()
+    public function onPluginsInitialized(): void
     {
-        if ($this->isAdmin() && $this->grav['config']->get('plugins.login-oauth2.admin.enabled')) {
+        if ($this->isAdmin()) {
+            if (!$this->grav['config']->get('plugins.login-oauth2.admin.enabled')) {
+                // Don't proceed if we are in the admin plugin
+                return;
+            }
             $this->admin = true;
-        }
-
-        // Don't proceed if we are in the admin plugin
-        if ( $this->isAdmin() && !$this->admin) {
-            return;
         }
 
         $this->enable([
@@ -110,20 +111,24 @@ class LoginOauth2Plugin extends Plugin
 
         // Check to ensure login plugin is enabled.
         if (!$this->grav['config']->get('plugins.login.enabled')) {
-            throw new \RuntimeException('The Login plugin needs to be installed and enabled');
+            throw new RuntimeException('The Login plugin needs to be installed and enabled');
         }
 
-        // Add OAuth2 object to Grav
-        $oauth2 = new OAuth2($this->admin);
-        $oauth2->addEnabledProviders();
 
-        $this->grav['oauth2'] = $oauth2;
+        $isAdmin = $this->admin;
+        $this->grav['oauth2'] = static function () use ($isAdmin) {
+            // Add OAuth2 object to Grav
+            $oauth2 = new OAuth2($isAdmin);
+            $oauth2->addEnabledProviders();
+
+            return $oauth2;
+        };
     }
 
     /**
      * Add navigation item to the admin plugin
      */
-    public function onLoginPage()
+    public function onLoginPage(): void
     {
         if ($this->grav['oauth2']->getProviders()) {
             $this->grav['login']->addProviderLoginTemplate('login-oauth2/login-oauth2.html.twig');
@@ -133,20 +138,19 @@ class LoginOauth2Plugin extends Plugin
     /**
      * Task: login.oauth2
      */
-    public function loginRedirect()
+    public function loginRedirect(): void
     {
         /** @var OAuth2 $oauth2 */
         $oauth2 = $this->grav['oauth2'];
 
-        $user = isset($this->grav['user']) ? $this->grav['user'] : null;
+        $user = $this->grav['user'] ?? null;
         if ($user && $user->authorized) {
-            throw new \RuntimeException('You have already been logged in', 403);
+            throw new RuntimeException('You have already been logged in', 403);
         }
 
-        $provider_name = filter_input(INPUT_POST,'oauth2',FILTER_SANITIZE_STRING,!FILTER_FLAG_STRIP_LOW);
-
+        $provider_name = filter_input(INPUT_POST,'oauth2',FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
         if (!isset($provider_name)) {
-            throw new \RuntimeException('Bad Request', 400);
+            throw new RuntimeException('Bad Request', 400);
         }
 
         if ($oauth2->isValidProvider($provider_name)) {
@@ -157,6 +161,10 @@ class LoginOauth2Plugin extends Plugin
             $session = $this->grav['session'];
             $session->oauth2_state = $provider->getState();
             $session->oauth2_provider = $provider_name;
+            if ($this->isAdmin()) {
+                $current = (string)$this->grav['admin']->request->getUri();
+                $session->redirect_after_login = $current;
+            }
 
             $authorizationUrl = $provider->getAuthorizationUrl();
 
@@ -167,7 +175,7 @@ class LoginOauth2Plugin extends Plugin
     /**
      * Task: callback.oauth2
      */
-    public function loginCallback()
+    public function loginCallback(): void
     {
         /** @var Login $login */
         $login = $this->grav['login'];
@@ -178,21 +186,17 @@ class LoginOauth2Plugin extends Plugin
         /** @var Session $session */
         $session = $this->grav['session'];
         $provider_name = $session->oauth2_provider;
+        $login_redirect = $session->redirect_after_login;
 
         /** @var Language $t */
         $t = $this->grav['language'];
         /** @var Message $messages */
         $messages = $this->grav['messages'];
 
-
-
-        if ($oauth2->isValidProvider($provider_name)) {
-
-            $state = filter_input(INPUT_GET, 'state', FILTER_SANITIZE_STRING, !FILTER_FLAG_STRIP_LOW);
-
-            // try POST
+        if ($provider_name && $oauth2->isValidProvider($provider_name)) {
+            $state = filter_input(INPUT_GET, 'state', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
             if (empty($state)) {
-                $state = filter_input(INPUT_POST, 'state', FILTER_SANITIZE_STRING, !FILTER_FLAG_STRIP_LOW);
+                $state = filter_input(INPUT_POST, 'state', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
             }
 
             if (empty($state) || ($state !== $session->oauth2_state)) {
@@ -201,29 +205,49 @@ class LoginOauth2Plugin extends Plugin
                 $messages->add($t->translate('PLUGIN_LOGIN.LOGIN_FAILED'), 'error');
             } else {
                 // Fire Login process.
-                $event = $login->login([], ['remember_me' => true, 'oauth2' => true, 'provider' => $provider_name], ['return_event' => true]);
-                $user = $event->getUser();
+                $event = $login->login(
+                    [],
+                    ['admin' => $this->isAdmin(), 'remember_me' => true, 'oauth2' => true, 'provider' => $provider_name],
+                    ['authorize' => $this->isAdmin() ? 'admin.login' : 'site.login', 'return_event' => true]);
 
-                if ($user->authenticated) {
+                // Note: session variables have been reset!
+                $user = $event->getUser();
+                if ($user->authorized) {
                     $event->defMessage('PLUGIN_LOGIN.LOGIN_SUCCESSFUL', 'info');
 
-                    $event->defRedirect(
-                        $this->grav['session']->redirect_after_login
-                            ?: LoginPlugin::defaultRedirectAfterLogin()
-                            ?: $this->grav['uri']->referrer('/')
-                    );
-                } else {
-                    if ($user->username) {
-                        $event->defMessage('PLUGIN_LOGIN.ACCESS_DENIED', 'error');
-
-                        $event->defRedirect($this->grav['config']->get('plugins.login.route_unauthorized', '/'));
+                    if ($this->isAdmin()) {
+                        $event->defRedirect($login_redirect ?? '/');
                     } else {
-                        $event->defMessage('PLUGIN_LOGIN.LOGIN_FAILED', 'error');
+                        $event->defRedirect(
+                            $login_redirect
+                                ?: LoginPlugin::defaultRedirectAfterLogin()
+                                ?: $this->grav['uri']->referrer('/')
+                        );
+                    }
+                } elseif ($user->authenticated) {
+                    $event->defMessage('PLUGIN_LOGIN.ACCESS_DENIED', 'error');
+
+                    if ($this->isAdmin()) {
+                        $event->defRedirect($login_redirect ?? '/');
+                    } else {
+                        $event->defRedirect($this->grav['config']->get('plugins.login.route_unauthorized', '/'));
+                    }
+                } else {
+                    $event->defMessage('PLUGIN_LOGIN.LOGIN_FAILED', 'error');
+
+                    if ($this->isAdmin()) {
+                        $event->defRedirect($login_redirect ?? '/');
+                    } else {
+                        $event->defRedirect($this->grav['config']->get('plugins.login.route', '/'));
                     }
                 }
 
                 $message = $event->getMessage();
                 if ($message) {
+                    /** @var Debugger $debugger */
+                    $debugger = $this->grav['debugger'];
+                    $debugger->addMessage($t->translate($message), 'debug');
+
                     $messages->add($t->translate($message), $event->getMessageType());
                 }
 
@@ -242,25 +266,22 @@ class LoginOauth2Plugin extends Plugin
         $this->grav->redirect($redirect);
     }
 
-    public function userLoginAuthenticate(UserLoginEvent $event)
+    public function userLoginAuthenticate(UserLoginEvent $event): void
     {
-
         // Second parameter of Login::login() call.
         $options = $event->getOptions();
 
         if (isset($options['oauth2'])) {
-
-            $code = filter_input(INPUT_GET, 'code', FILTER_SANITIZE_STRING, !FILTER_FLAG_STRIP_LOW);
-
-            // try POST
+            $code = filter_input(INPUT_GET, 'code', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
             if (!$code) {
-                $code = filter_input(INPUT_POST, 'code', FILTER_SANITIZE_STRING, !FILTER_FLAG_STRIP_LOW);
+                $code = filter_input(INPUT_POST, 'code', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
             }
+
             $provider_name = $options['provider'];
+
             $provider = ProviderFactory::create($provider_name, $options);
 
             try {
-
                 // Try to get an access token (using the authorization code grant)
                 $token = $provider->getAccessToken('authorization_code', ['code' => $code]);
 
@@ -268,18 +289,59 @@ class LoginOauth2Plugin extends Plugin
                 $user = $provider->getResourceOwner($token);
                 $userdata = $provider->getUserData($user);
 
-                $userdata_event = $this->grav->fireEvent('onOAuth2Userdata', new Event(['userdata'=>$userdata, 'oauth2user'=>$user, 'provider'=>$provider, 'token'=>$token]));
+                $userdata_event = new Event(
+                    [
+                        'userdata' => $userdata,
+                        'oauth2user' => $user,
+                        'provider' => $provider,
+                        'token' => $token
+                    ]
+                );
+                $this->grav->fireEvent('onOAuth2Userdata', $userdata_event);
                 // Set again with any event-based modifications
                 $userdata = $userdata_event['userdata'];
 
+                $username_event = new Event(
+                    [
+                        'userdata' => $userdata,
+                        'oauth2user' => $user,
+                        'provider' => $provider,
+                        'token' => $token
+                    ]
+                );
                 // Get username from an event to allow you to modify oauth2 filename
-                $username_event = $this->grav->fireEvent('onOAuth2Username', new Event(['userdata'=>$userdata, 'oauth2user'=>$user, 'provider'=>$provider, 'token'=>$token]));
+                $this->grav->fireEvent('onOAuth2Username', $username_event);
 
                 $username = $username_event['username'];
-                $grav_user = User::load($username);
+
+                /** @var UserCollectionInterface $accounts */
+                $accounts = $this->grav['accounts'];
+                $grav_user = $accounts->load($username);
+
+                // If username cannot be found, fall back to email address.
+                $exists = $grav_user->exists();
+                if (!$exists) {
+                    $found_user = $accounts->find($userdata['email'], ['email']);
+                    if ($found_user->exists()) {
+                        $grav_user = $found_user;
+                        $exists = true;
+                    }
+                }
+
+                // Make sure we're using the same provider, multiple providers are not supported.
+                if ($exists) {
+                    $provider_test = $grav_user->get('provider');
+                    if ($provider_test && $provider_test !== $provider_name) {
+                        throw new RuntimeException($this->translate('PLUGIN_LOGIN_OAUTH2.ERROR_EXISTING_ACCOUNT', $provider_test));
+                    }
+                }
+
+                if ($this->config->get('plugins.login-oauth2.require_grav_user', false) && !$exists) {
+                    throw new RuntimeException($this->translate('PLUGIN_LOGIN_OAUTH2.ERROR_NO_ACCOUNT', $username));
+                }
 
                 // Add token to user
-                $grav_user->set('token', json_encode($token));
+                $grav_user->set('token', json_encode($token, JSON_THROW_ON_ERROR));
 
                 // Set provider
                 $grav_user->set('provider', $provider_name);
@@ -321,37 +383,51 @@ class LoginOauth2Plugin extends Plugin
                 // Do something...
                 $event->setStatus($event::AUTHENTICATION_SUCCESS);
                 $event->stopPropagation();
-            } catch (\Exception $e) {
-                $event->setMessage('OAuth2 ' . ucfirst($provider_name) . ' Login Failed: ' . $e->getMessage(), 'error');
+            } catch (Exception $e) {
+                $event->setMessage($this->translate('PLUGIN_LOGIN_OAUTH2.OAUTH2_LOGIN_FAILED', ucfirst($provider_name), $e->getMessage()), 'error');
                 $event->setStatus($event::AUTHENTICATION_FAILURE);
             }
         }
     }
 
-    public function onOAuth2Username(Event $event)
+    public function onOAuth2Username(Event $event): void
     {
         $userdata = $event['userdata'];
         $provider = $event['provider'];
         $provider_name = strtolower($provider->getName());
 
         $username_parts = [$provider_name, $userdata['id'], $userdata['login']];
-        $event['username'] = implode('.', $username_parts);
+        $username = implode('.', $username_parts);
+
+        $event['username'] = $username;
 
         $event->stopPropagation();
     }
 
-    public function userLoginFailure(UserLoginEvent $event)
+    public function userLoginFailure(UserLoginEvent $event): void
     {
         // This gets fired if user fails to log in.
     }
 
-    public function userLogin(UserLoginEvent $event)
+    public function userLogin(UserLoginEvent $event): void
     {
 
     }
 
-    public function userLogout(UserLoginEvent $event)
+    public function userLogout(UserLoginEvent $event): void
     {
         // This gets fired on user logout.
+    }
+
+    /**
+     * @param mixed ...$args
+     * @return string
+     */
+    private function translate(...$args): string
+    {
+        /** @var Language $language */
+        $language = $this->grav['language'];
+
+        return $language->translate($args);
     }
 }
