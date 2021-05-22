@@ -1,15 +1,19 @@
 <?php
+
 namespace Grav\Plugin\Login\OAuth2\Providers;
 
 use Grav\Common\Data\Data;
 use Grav\Common\Grav;
 use Grav\Common\Utils;
 use League\OAuth2\Client\Provider\AbstractProvider;
+use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 use League\OAuth2\Client\Token\AccessToken;
+use League\OAuth2\Client\Token\AccessTokenInterface;
 
 abstract class BaseProvider implements ProviderInterface
 {
+    /** @var string */
     const CALLBACK_URI = '/task:callback.oauth2';
 
     /** @var string */
@@ -20,9 +24,9 @@ abstract class BaseProvider implements ProviderInterface
     protected $provider;
     /** @var string */
     protected $state;
-    /** @var stdClass */
+    /** @var AccessTokenInterface */
     protected $token;
-
+    /** @var Data */
     protected $config;
 
     /**
@@ -40,17 +44,16 @@ abstract class BaseProvider implements ProviderInterface
      *
      * @param array $options
      */
-    public function initProvider(array $options)
+    public function initProvider(array $options): void
     {
-        $options['redirectUri'] = $this->getCallbackUri();
+        $options['redirectUri'] = self::getCallbackUri();
         $this->provider = new $this->classname($options);
     }
-
 
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -58,7 +61,7 @@ abstract class BaseProvider implements ProviderInterface
     /**
      * @return string
      */
-    public function getState()
+    public function getState(): string
     {
         return $this->state;
     }
@@ -67,7 +70,7 @@ abstract class BaseProvider implements ProviderInterface
      * @param string $state
      * @return $this
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->state = $state;
 
@@ -77,18 +80,22 @@ abstract class BaseProvider implements ProviderInterface
     /**
      * @return AbstractProvider
      */
-    public function getProvider()
+    public function getProvider(): AbstractProvider
     {
         return $this->provider;
     }
 
-    public static function getCallbackUri($admin = 'auto')
+    /**
+     * @param string $admin
+     * @return string
+     */
+    public static function getCallbackUri(string $admin = 'auto'): string
     {
         if ($admin === 'auto') {
             $admin = Grav::instance()['oauth2']->isAdmin();
         }
 
-        $callback_uri = ((bool) $admin ? Grav::instance()['config']->get('plugins.admin.route', '') : '') . static::CALLBACK_URI;
+        $callback_uri = ($admin ? Grav::instance()['config']->get('plugins.admin.route', '') : '') . static::CALLBACK_URI;
 
         $base_url = rtrim(Grav::instance()['uri']->rootUrl(true), '/');
 
@@ -98,13 +105,15 @@ abstract class BaseProvider implements ProviderInterface
     /**
      * Requests an access token using a specified grant and option set.
      *
-     * @param  mixed $grant
-     * @param  array $options
-     * @return AccessToken
+     * @param mixed $grant
+     * @param array $options
+     * @return AccessTokenInterface
+     * @throws IdentityProviderException
      */
-    public function getAccessToken($grant, array $options = [])
+    public function getAccessToken($grant, array $options = []): AccessTokenInterface
     {
         $this->token = $this->provider->getAccessToken($grant, $options);
+
         return $this->token;
     }
 
@@ -114,7 +123,7 @@ abstract class BaseProvider implements ProviderInterface
      * @param  AccessToken $token
      * @return ResourceOwnerInterface
      */
-    public function getResourceOwner(AccessToken $token)
+    public function getResourceOwner(AccessToken $token): ResourceOwnerInterface
     {
         return $this->provider->getResourceOwner($token);
     }

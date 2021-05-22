@@ -1,16 +1,22 @@
 <?php
+
 namespace Grav\Plugin\Login\OAuth2\Providers;
 
-use Grav\Common\Grav;
-use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\Instagram;
+use League\OAuth2\Client\Provider\InstagramResourceOwner;
+use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
 class InstagramProvider extends BaseProvider
 {
+    /** @var string */
     protected $name = 'Instagram';
-    protected $classname = 'League\\OAuth2\\Client\\Provider\\Instagram';
+    /** @var string */
+    protected $classname = Instagram::class;
 
-    public function initProvider(array $options)
+    /**
+     * @param array $options
+     */
+    public function initProvider(array $options): void
     {
         $options += [
             'clientId'      => $this->config->get('providers.instagram.client_id'),
@@ -21,7 +27,10 @@ class InstagramProvider extends BaseProvider
         parent::initProvider($options);
     }
 
-    public function getAuthorizationUrl()
+    /**
+     * @return string
+     */
+    public function getAuthorizationUrl(): string
     {
         $options = ['state' => $this->state];
         $options['scope'] = $this->config->get('providers.instagram.options.scope');
@@ -29,9 +38,15 @@ class InstagramProvider extends BaseProvider
         return $this->provider->getAuthorizationUrl($options);
     }
 
-    public function getUserData($user)
+    /**
+     * @param ResourceOwnerInterface|InstagramResourceOwner $user
+     * @return array
+     */
+    public function getUserData(ResourceOwnerInterface $user): array
     {
-        $data_user = [
+        \assert($user instanceof InstagramResourceOwner);
+
+        return [
             'id'         => $user->getId(),
             'login'      => $user->getNickname(),
             'fullname'   => $user->getName(),
@@ -39,7 +54,5 @@ class InstagramProvider extends BaseProvider
                 'avatar_url' => $user->getImageurl(),
             ]
         ];
-
-        return $data_user;
     }
 }
