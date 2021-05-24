@@ -158,11 +158,11 @@ This way the `mautic:campaign:update` and `mautic:campaign:trigger` commands wil
 
 ![Screenshot showing campaign to delete contacts in a segment](mautic-delete-contacts-in-segment.png)
 
-## Deleting a segment
+## Deleting or unpublishing a segment
 
-Since [Mautic 4.0][mautic-4] there is a check when deleting a segment to ensure that it is not required as a filter by an existing filter.
+Since [Mautic 4.0][mautic-4] there is a check when deleting or unpublishing a segment to ensure that it is not required as a filter by an existing segment.
 
-If you attempt to delete a segment which is in use by a filter in another segment, you will see an alert message informing you of the segments that you will need to edit before you delete it.
+If you attempt to delete or unpublish a segment which is in use by a filter in another segment, you will see an alert message informing you of the segments that you will need to edit before you delete it.
 
 ![Screenshot showing alert message](delete-segment-alert.png)
 
