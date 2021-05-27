@@ -62,6 +62,10 @@ To use your existing templates with the new Email builder, you will need to add 
 
 From the 3.3 General Availability release there will be three email templates that support MJML, and also some landing page templates will also be made available in the near future.  
 
+### Themes
+
+If you search through the list of available themes, `Brienz` and `Paprika` would not be available. To use these two themes, you would need to enable GrapeJS first. After enabling GrapeJS you would be able to access **Brienz** and **Paprika** theme.
+
 ### Reporting bugs
 
 #### Known bugs / issues
