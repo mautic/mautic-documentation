@@ -151,7 +151,7 @@ All the Utm tags are available in the time entry, just by toggling the entry det
 
 Mautic automatically tracks UTM tags for all requests (including visitors).
 
-Before version 3.2, UTM tags were only recorded on a form submission that contains the action "Record UTM Tags".
+Before [Mautic 3.3][mautic-3.3], UTM tags were only recorded on a form submission that contains the action "Record UTM Tags".
 
 #### Embedding the Pixel
 
