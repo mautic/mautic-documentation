@@ -32,7 +32,7 @@ The main things to be aware of are:
 It is strongly recommended that all upgrades are completed at the command line, as the process is quite resource intensive and will likely time out in hosting environments with limits on script execution time. If you have over 10,000 contacts you will be blocked from updating through the front-end and will have to use the command line.
 
 1. Take a backup of your Mautic instance, and test that it is working in all respects. 
-2. Connect to your server at the command line and use the `cd`command to move into the directory where you have Mautic installed
+2. Connect to your server at the command line and use the `cd` command to move into the directory where you have Mautic installed
 3. Ensure that your server meets the minimum requirements listed above
 4. Update to the latest available version of Mautic 2.x using `app/console mautic:update:find` to find updates, and then `app/console mautic:update:apply`to apply the updates
 5. Remove any custom themes and plugins from your Mautic instance - you can bring them back in after you have completed the migration. 
