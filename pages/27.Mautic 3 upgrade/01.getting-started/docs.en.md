@@ -37,6 +37,14 @@ It is strongly recommended that all upgrades are completed at the command line, 
 4. Update to the latest available version of Mautic 2.x using `app/console mautic:update:find` to find updates, and then `app/console mautic:update:apply`to apply the updates
 5. Remove any custom themes and plugins from your Mautic instance - you can bring them back in after you have completed the migration. 
 6. Run the check once again for updates using `app/console mautic:update:find` to find updates, and then `app/console mautic:update:apply`to apply the updates
+7. Follow the steps that are detailed - the script will take you through the migration process step by step
+
+#### User interface (not recommended)
+1. Take a backup of your Mautic instance, and test that it is working in all respects. 
+2. Open your Mautic instance and check for the notification of an update being available in the notification bell
+3. Ensure that your server meets the minimum requirements listed above
+4. Update to the latest available version of Mautic 2.x
+5. Once you are at the latest version of Mautic 2.x you will see the 3.x update available and will be able to run the upgrade script via the notification
 
 ### Updating cron jobs
 Because there are significant changes in Mautic 3's file structure, you will need to upgrade your cron jobs.
