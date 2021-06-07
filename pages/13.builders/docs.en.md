@@ -58,6 +58,10 @@ To use your existing templates with the new Email builder, you will need to add 
 
 `"builder": ["grapesjsbuilder"],`
 
+If you wish to use the theme in multiple builders, you can use this syntax:
+
+`"builder": ["legacy", "grapesjsbuilder"],`
+
 >>>> NOTE: This syntax changed between Mautic 3.3.* and Mautic 4 to enable support for multiple builders - if you have been testing in the beta phase you will need to update your configuration files, otherwise you will experience a 500 error.
 
 From the 3.3 General Availability release there will be three email templates that support MJML, and also some landing page templates will also be made available in the near future.  
