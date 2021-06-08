@@ -90,17 +90,18 @@ class FeedPlugin extends Plugin
      */
     public function onPageInitialized()
     {
-        /** @var PageInterface $page */
+        /** @var Uri $uri */
+        $uri = $this->grav['uri'];
         $page = $this->grav['page'];
-
-        $base_url = $this->grav['base_url'];
-        $uri_info = pathinfo($this->grav['uri']->uri());
-        $uri = rtrim($uri_info['dirname'], '/') . '/' . $uri_info['filename'];
+        $base_url = $uri->baseIncludingLanguage();
+        $uri_info = pathinfo($uri->uri());
+        $uri = rtrim(rtrim($uri_info['dirname'], '/') . '/' . $uri_info['filename'], '/');
         $raw_url = $base_url . $page->rawRoute();
-        $url = $page->url();
-
+        $url = rtrim($page->url(), '/');
+        $enable_url_check = $this->feed_config['enable_url_check'] ?? true;
+        $valid_url = !$enable_url_check || ($uri === $url || $uri === $raw_url);
         // Overwrite regular content with feed config, so you can influence the collection processing with feed config
-        if (($uri === $url || $uri === $raw_url) && property_exists($page->header(), 'content')) {
+        if ($valid_url && property_exists($page->header(), 'content')) {
             if (isset($page->header()->feed)) {
                 $this->feed_config = array_merge($this->feed_config, $page->header()->feed);
             }

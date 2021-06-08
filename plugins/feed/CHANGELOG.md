@@ -1,3 +1,11 @@
+# v1.8.4
+## 06/07/2021
+
+1. [](#improved)
+    * Added a configurable `enable_url_check` (default `true`) to disable the URL checking if you run into an issue.
+1. [](#bugfix)
+    * More robust URL checking including multi-lang versions [#62](https://github.com/getgrav/grav-plugin-feed/issues/62)
+
 # v1.8.3
 ## 05/28/2021
 
