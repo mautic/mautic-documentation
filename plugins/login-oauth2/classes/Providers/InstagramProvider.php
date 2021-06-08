@@ -15,6 +15,17 @@ class InstagramProvider extends BaseProvider
 
     /**
      * @param array $options
+     * @return bool
+     */
+    public static function checkIfActive(array $options): bool
+    {
+        $client_id = $options['client_id'] ?? false;
+
+        return $client_id && parent::checkIfActive($options);
+    }
+
+    /**
+     * @param array $options
      */
     public function initProvider(array $options): void
     {

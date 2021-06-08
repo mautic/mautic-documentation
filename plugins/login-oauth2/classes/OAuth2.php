@@ -42,9 +42,7 @@ class OAuth2
         }
 
         foreach ($providers as $provider => $options) {
-            $enabled = $options['enabled'] ?? false;
-            $client_id = $options['client_id'] ?? false;
-            if ($enabled && $client_id) {
+            if (ProviderFactory::checkIfActive($provider, $options)) {
                 $this->addProvider($provider, $options);
             }
         }
