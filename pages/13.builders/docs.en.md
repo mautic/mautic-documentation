@@ -68,7 +68,7 @@ From the 3.3 General Availability release there will be three email templates th
 
 ### Themes
 
-If you search through the list of available themes, `Brienz` and `Paprika` would not be available. To use these two themes, you would need to enable GrapeJS first. After enabling GrapeJS you would be able to access **Brienz** and **Paprika** theme.
+If you search through the list of available themes, the new MJML themes `Brienz`, `Paprika` and `Confirm Me` will not be available until you enable the GrapesJS plugin. 
 
 ### Reporting bugs
 
