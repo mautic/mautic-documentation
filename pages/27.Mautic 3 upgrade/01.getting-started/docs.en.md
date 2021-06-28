@@ -19,7 +19,7 @@ Mautic 3 has some higher minimum requirements than Mautic 2, and the upgrade has
 
 The main things to be aware of are:
 
-1. PHP must be at 7.3 as a minimum, but ideally 7.4. Check this in the system information for your Mautic instance, or using the command `php -v`at the command line - note that sometimes a different version of PHP will be used at the command line than what is is use for your Mautic instance.
+1. PHP must be at 7.3 but no higher in order to start the update.  This is because we need to be able to run Mautic 2 (7.3 and below) and Mautic 3 (7.4 and below) in tandem - PHP 7.3 will allow you to do this. As soon as the update is completed and you are running the latest released version of Mautic 3.x you will be able to raise the PHP version to 7.4. Check what version of PHP is in use by accessing the system information for your Mautic instance (located under the settings cog wheel at the top right), or using the command `php -v`at the command line - note that sometimes a different version of PHP will be used at the command line than what is is use for your Mautic instance.
 2. MySQL needs to be >= 5.7.14 or if you use MariaDB, this must be >= 10.1. Check this in the system information for your Mautic instance, or using the command `mysql -V` at the command line.
 3. At least 2x the space that your Mautic 2.x instance is using currently (remember that your database size should be included in this calculation, in addition to files and folders)
 4. PHP's max_execution_time should be either 0 (unlimited) or > 240 otherwise the upgrade is likely to fail (if using the user interface)
