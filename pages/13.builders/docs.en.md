@@ -95,7 +95,7 @@ And of course a really big thank you to all the contributors who have helped to 
 [mautic-3.3]: <https://github.com/mautic/mautic/releases/tag/3.3.0-rc>
 [grapesjs]: <https://grapesjs.com/>
 [webmecanik]: <https://www.webmecanik.com/en>
-[github]: <https://github.com/mautic/mautic/issues?q=is%3Aopen+is%3Aissue+label%3Abuilders>
+[github]: <https://github.com/mautic/mautic/issues?q=is%3Aopen+is%3Aissue+label%3Abuilder-grapesjs>
 [friendly]: <https://friendly.is/en/>
 [idea2]: <https://idea2.ch>
 [hartmut.io]: <https://hartmut.io>
