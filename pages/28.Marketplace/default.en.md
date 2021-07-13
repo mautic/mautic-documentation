@@ -142,3 +142,11 @@ The Marketplace is lacking some important features. In the text above there are 
 - List security advisories [API reference][advisories],
 - Notifications about new versions and security vulnerabilities that have been identified,
 - Support also theme installations and updates.
+
+[dev-docs]: <https://developer.mautic.org/#marketplace>
+[packagist]: <https://packagist.org>
+[semver]: <https://semver.org>
+[github]: <https://github.com>
+[composer]: <https://getcomposer.org>
+[track-updates]: <https://packagist.org/apidoc#track-package-updates>
+[advisories]: <https://packagist.org/apidoc#track-package-updates>
