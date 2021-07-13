@@ -78,8 +78,8 @@
             {% block content %}{% endblock %}
 
             {% block footer %}
-                {% if  github_link_position == 'bottom' %}
-                {% include 'partials/github_note.html.twig' %}
+                {% if github_link_position == 'bottom' %}
+                    {% include 'partials/github_note.html.twig' %}
                 {% endif %}
             {% endblock %}
 
