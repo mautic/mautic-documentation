@@ -71,7 +71,7 @@ and continue with the `sudo` prefix for the commands below:
 ```console
 find . -type d -not -perm 755 -exec chmod 755 {} +
 find . -type f -not -perm 644 -exec chmod 644 {} +
-chmod -R g+w app/cache/ var/logs/ app/config/
+chmod -R g+w var/cache/ var/logs/ app/config/
 chmod -R g+w media/files/ media/images/ translations/
 ```
 

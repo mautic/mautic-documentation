@@ -7,6 +7,9 @@ use League\OAuth2\Client\Provider\Exception\FacebookProviderException;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * @method FacebookUser getResourceOwner(AccessToken $token)
+ */
 class Facebook extends AbstractProvider
 {
     /**
@@ -103,7 +106,7 @@ class Facebook extends AbstractProvider
         $fields = [
             'id', 'name', 'first_name', 'last_name',
             'email', 'hometown', 'picture.type(large){url,is_silhouette}',
-            'cover{source}', 'gender', 'locale', 'link', 'timezone', 'age_range'
+            'gender', 'age_range'
         ];
 
         // backwards compatibility less than 2.8

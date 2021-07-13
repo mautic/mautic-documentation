@@ -76,6 +76,7 @@ The following search filters can be used:
     ids:ID1,ID2 (comma separated IDs, no spaces)
     is:global
     name:*
+    category:category-alias
 
 #### Assets
 

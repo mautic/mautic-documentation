@@ -1,3 +1,17 @@
+# v3.4.4
+## 06/16/2021
+
+1. [](#new)
+   * Updated 2FA library
+1. [](#bugfix)
+   * Fixed missing email conflict check when calling `Login::register()`
+
+# v3.4.3
+## 05/19/2021
+
+1. [](#bugfix)
+    * Fixed failing Flex User validation if user has changed in the filesystem (requires Grav 1.7.13) [#278](https://github.com/getgrav/grav-plugin-login/issues/278)
+
 # v3.4.2
 ## 04/06/2021
 
