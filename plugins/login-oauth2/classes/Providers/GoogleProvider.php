@@ -1,27 +1,50 @@
 <?php
+
 namespace Grav\Plugin\Login\OAuth2\Providers;
 
-use Grav\Common\Grav;
-use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\Google;
+use League\OAuth2\Client\Provider\GoogleUser;
+use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
 class GoogleProvider extends BaseProvider
 {
+    /** @var string */
     protected $name = 'Google';
-    protected $classname = 'League\\OAuth2\\Client\\Provider\\Google';
+    /** @var string */
+    protected $classname = Google::class;
 
-    public function initProvider(array $options)
+    /**
+     * @param array $options
+     * @return bool
+     */
+    public static function checkIfActive(array $options): bool
+    {
+        $client_id = $options['client_id'] ?? false;
+
+        return $client_id && parent::checkIfActive($options);
+    }
+
+    /**
+     * @param array $options
+     */
+    public function initProvider(array $options): void
     {
         $options += [
             'clientId'      => $this->config->get('providers.google.client_id'),
             'clientSecret'  => $this->config->get('providers.google.client_secret'),
-            'hostedDomain'  => $this->config->get('providers.google.options.hd', '*')
         ];
+        $hd = $this->config->get('providers.google.options.hd');
+        if ($hd) {
+            $options['hostedDomain'] = $this->config->get('providers.google.options.hd');
+        }
 
         parent::initProvider($options);
     }
 
-    public function getAuthorizationUrl()
+    /**
+     * @return string
+     */
+    public function getAuthorizationUrl(): string
     {
         $options = ['state' => $this->state];
         $options['scope'] = $this->config->get('providers.google.options.scope');
@@ -29,9 +52,15 @@ class GoogleProvider extends BaseProvider
         return $this->provider->getAuthorizationUrl($options);
     }
 
-    public function getUserData($user)
+    /**
+     * @param ResourceOwnerInterface|GoogleUser $user
+     * @return array
+     */
+    public function getUserData(ResourceOwnerInterface $user): array
     {
-        $data_user = [
+        \assert($user instanceof GoogleUser);
+
+        return [
             'id'         => $user->getId(),
             'login'      => $user->getEmail(),
             'fullname'   => $user->getName(),
@@ -40,15 +69,21 @@ class GoogleProvider extends BaseProvider
                 'avatar_url' => $this->getAvatar($user),
             ]
         ];
-
-        return $data_user;
     }
 
-    public function getAvatar($user)
+    /**
+     * @param ResourceOwnerInterface|GoogleUser $user
+     * @return string
+     */
+    public function getAvatar(ResourceOwnerInterface $user): string
     {
-        $avatar = $user->getAvatar();
-        $avatarSize = $this->config->get('plugins.login-oauth2.providers.google.options.avatar_size', 200);
-        $avatar = preg_replace("/\?sz=\d{1,}$/", '?sz=' . $avatarSize, $avatar);
+        \assert($user instanceof GoogleUser);
+
+        $avatar = $user->getAvatar() ?? '';
+        if ($avatar) {
+            $avatarSize = (int)$this->config->get('plugins.login-oauth2.providers.google.options.avatar_size', 200);
+            $avatar = preg_replace("/\?sz=\d{1,}$/", '?sz=' . $avatarSize, $avatar);
+        }
 
         return $avatar;
     }

@@ -1,16 +1,33 @@
 <?php
+
 namespace Grav\Plugin\Login\OAuth2\Providers;
 
-use Grav\Common\Grav;
-use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\Github;
+use League\OAuth2\Client\Provider\GithubResourceOwner;
+use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
 class GithubProvider extends BaseProvider
 {
+    /** @var string */
     protected $name = 'Github';
-    protected $classname = 'League\\OAuth2\\Client\\Provider\\Github';
+    /** @var string */
+    protected $classname = Github::class;
 
-    public function initProvider(array $options)
+    /**
+     * @param array $options
+     * @return bool
+     */
+    public static function checkIfActive(array $options): bool
+    {
+        $client_id = $options['client_id'] ?? false;
+
+        return $client_id && parent::checkIfActive($options);
+    }
+
+    /**
+     * @param array $options
+     */
+    public function initProvider(array $options): void
     {
         $options += [
             'clientId'      => $this->config->get('providers.github.client_id'),
@@ -20,7 +37,10 @@ class GithubProvider extends BaseProvider
         parent::initProvider($options);
     }
 
-    public function getAuthorizationUrl()
+    /**
+     * @return string
+     */
+    public function getAuthorizationUrl(): string
     {
         $options = ['state' => $this->state];
         $options['scope'] = $this->config->get('providers.github.options.scope');
@@ -28,11 +48,17 @@ class GithubProvider extends BaseProvider
         return $this->provider->getAuthorizationUrl($options);
     }
 
-    public function getUserData($user)
+    /**
+     * @param ResourceOwnerInterface|GithubResourceOwner $user
+     * @return array
+     */
+    public function getUserData(ResourceOwnerInterface $user): array
     {
+        \assert($user instanceof GithubResourceOwner);
+
         $data = $user->toArray();
 
-        $data_user = [
+        return [
             'id'         => $user->getId(),
             'login'      => $data['login'],
             'fullname'   => $user->getName(),
@@ -43,21 +69,21 @@ class GithubProvider extends BaseProvider
                 'avatar_url' => $data['avatar_url'],
             ]
         ];
-
-        return $data_user;
     }
 
     /**
      * Handle regular email
      *
-     * @param $user
-     * @return null
+     * @param ResourceOwnerInterface|GithubResourceOwner $user
+     * @return string|null
      */
-    public function getEmail($user)
+    public function getEmail(ResourceOwnerInterface $user)
     {
+        \assert($user instanceof GithubResourceOwner);
+
         $email = $user->getEmail();
 
-        if (is_null($email)) {
+        if (null === $email) {
             $url = $this->provider->getResourceOwnerDetailsUrl($this->token);
             $request = $this->provider->getAuthenticatedRequest(
                 'GET',
@@ -74,8 +100,6 @@ class GithubProvider extends BaseProvider
 
             $email = $filtered ? array_shift($filtered)->email : null;
         }
-
-
 
         return $email;
     }

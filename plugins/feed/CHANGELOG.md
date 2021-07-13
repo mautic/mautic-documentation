@@ -1,3 +1,37 @@
+# v1.8.5
+## 06/09/2021
+
+1. [](#improved)
+   * Rolled back the URL check functionality as it caused more issues than it solved.
+
+# v1.8.4
+## 06/07/2021
+
+1. [](#improved)
+    * Added a configurable `enable_url_check` (default `true`) to disable the URL checking if you run into an issue.
+1. [](#bugfix)
+    * More robust URL checking including multi-lang versions [#62](https://github.com/getgrav/grav-plugin-feed/issues/62)
+
+# v1.8.3
+## 05/28/2021
+
+1. [](#bugfix)
+    * Fixed issue with feeds at the root of a site [#61](https://github.com/getgrav/grav-plugin-feed/issues/61)
+
+# v1.8.2
+## 05/21/2021
+
+1. [](#bugfix)
+    * Fixed issue with json feed type corrupting other json requests [getgrav/grav-premium-issues#102](https://github.com/getgrav/grav-premium-issues/issues/102)
+    * Fixed issue with modular pages showing up in feed
+      
+
+# v1.8.1
+## 05/21/2021
+
+1. [](#bugfix)
+    * Provide a default language if multi-language not enabled
+
 # v1.8.0
 ## 12/02/2020
 

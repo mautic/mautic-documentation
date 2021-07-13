@@ -1,69 +1,82 @@
 <?php
+
 namespace Grav\Plugin\Login\OAuth2;
 
 use Grav\Common\Grav;
 
 class OAuth2
 {
+    /** @var array */
     protected $config;
+    /** @var array */
     protected $providers = [];
+    /** @var bool */
     protected $admin;
 
+    /**
+     * OAuth2 constructor.
+     * @param bool $admin
+     */
     public function __construct($admin = false)
     {
-        $this->config = Grav::instance()['config']->get('plugins.login-oauth2');
-        $this->admin = $admin;
+        $this->config = (array)(Grav::instance()['config']->get('plugins.login-oauth2') ?? []);
+        $this->admin = (bool)$admin;
     }
 
-    public function getConfig()
+    public function getConfig(): array
     {
         return $this->config;
     }
 
-    public function isAdmin()
+    public function isAdmin(): bool
     {
         return $this->admin;
     }
 
-    public function addEnabledProviders()
+    public function addEnabledProviders(): void
     {
         if ($this->admin) {
-            $providers = isset($this->config['admin']['providers']) ? (array)$this->config['admin']['providers'] : [];
+            $providers = (array)($this->config['admin']['providers'] ?? []);
         } else {
-            $providers = isset($this->config['providers']) ? (array)$this->config['providers'] : [];
+            $providers = (array)($this->config['providers'] ?? []);
         }
 
         foreach ($providers as $provider => $options) {
-            if ($options['enabled']) {
+            if (ProviderFactory::checkIfActive($provider, $options)) {
                 $this->addProvider($provider, $options);
             }
         }
     }
 
-    public function addProvider($provider = null, $options = null)
+    /**
+     * @param string $provider
+     * @param array|null $options
+     */
+    public function addProvider(string $provider, array $options = null): void
     {
         $this->providers[$provider] = $options;
     }
 
-    public function getProviders()
+    public function getProviders(): array
     {
         return $this->providers;
     }
 
-    public function getProviderOptions($provider)
+    /**
+     * @param string $provider
+     * @return mixed|null
+     */
+    public function getProviderOptions(string $provider)
     {
-        if (isset($this->providers[$provider])) {
-            return $this->providers[$provider];
-        } else {
-            return null;
-        }
+        return $this->providers[$provider] ?? null;
     }
 
-    public function isValidProvider($provider)
+    /**
+     * @param string $provider
+     * @return bool
+     */
+    public function isValidProvider(string $provider): bool
     {
-        if (in_array($provider, array_keys($this->providers),true)) {
-            return true;
-        }
-        return false;
+        return array_key_exists($provider, $this->providers);
     }
 }

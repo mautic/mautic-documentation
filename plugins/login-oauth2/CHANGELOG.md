@@ -1,3 +1,25 @@
+# v2.1.1
+## 05/24/2021
+
+1. [](#bugfix)
+    * Fixed Facebook login never showing up [#40](https://github.com/trilbymedia/grav-plugin-login-oauth2/issues/40)
+
+# v2.1.0
+## 05/13/2021
+
+1. [](#new)
+   * Require **Grav 1.7.0**
+   * Added configuration option to require existing Grav user
+   * Assign OAuth2 to existing user [#35](https://github.com/trilbymedia/grav-plugin-login-oauth2/issues/35)
+1. [](#improved)
+   * Code improvements and updates
+   * Only enable configured oauth2 providers
+1. [](#bugfix)
+    * Google: non-hosted google accounts cannot be used [#25](https://github.com/trilbymedia/grav-plugin-login-oauth2/issues/25)
+    * Fixed missing translations in the template file [#37](https://github.com/trilbymedia/grav-plugin-login-oauth2/pull/37)
+    * Fixed login buttons exceeding available width on mobile screens [#31](https://github.com/trilbymedia/grav-plugin-login-oauth2/pull/31)
+    * Fixed login redirects in admin plugin
+
 # v2.0.5
 ## 12/02/2020
 
@@ -30,7 +52,7 @@
 ## 04/28/2019
 
 1. [](#bugfix)
-    * Fixed login verison requirements (`~3.0`) [#17](https://github.com/trilbymedia/grav-plugin-login-oauth2/issues/17)
+    * Fixed login version requirements (`~3.0`) [#17](https://github.com/trilbymedia/grav-plugin-login-oauth2/issues/17)
 
 # v2.0.0
 ## 04/26/2019
