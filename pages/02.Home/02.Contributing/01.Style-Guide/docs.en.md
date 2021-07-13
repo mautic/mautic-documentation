@@ -305,10 +305,6 @@ HTML:
 <h6>h6 Heading</h6>
 ```
 
-<br>
-<br>
-<br>
-
 #### Comments
 
 Comments should be HTML compatible
@@ -323,10 +319,6 @@ Comment below should **NOT** be seen:
 <!--
 This is a comment
 -->
-
-<br>
-<br>
-<br>
 
 #### Horizontal Rules
 
@@ -344,12 +336,6 @@ ___
 
 ***
 
-
-<br>
-<br>
-<br>
-
-
 #### Body Copy
 
 Body copy written as normal, plain text will be wrapped with `<p></p>` tags in the rendered HTML.
@@ -364,12 +350,6 @@ renders to this HTML:
 ```html
 <p>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.</p>
 ```
-
-
-<br>
-<br>
-<br>
-
 
 #### Emphasis
 
@@ -427,11 +407,6 @@ HTML:
 <del>Strike through this text.</del>
 ```
 
-<br>
-<br>
-<br>
-
-
 #### Blockquotes
 For quoting blocks of content from another source within your document.
 
@@ -461,9 +436,7 @@ Renders to:
 Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
 >> Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
 odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
-<br>
-<br>
-<br>
+
 #### Notices
 We have four notice styles and they extend the standard markdown syntax for block quotes.  Basically levels of 3 block quote or greater produce notices in 4 colors:
 ##### Yellow
@@ -475,6 +448,7 @@ Renders to:
 
 >>> Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
 odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
+
 ##### Red
 
 ```markdown
@@ -484,6 +458,7 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 Renders to:
 >>>> Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
 odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
+
 ##### Blue
 ```markdown
 >>>>> Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
@@ -493,6 +468,7 @@ Renders to:
 
 >>>>> Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
 odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
+
 ##### Green
 
 ```markdown
@@ -502,9 +478,7 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 Renders to:
 >>>>>> Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
 odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
-<br>
-<br>
-<br>
+
 #### Lists
 ##### Unordered
 A list of items in which the order of the items does not explicitly matter.
@@ -631,12 +605,6 @@ Renders to:
 7. Aenean sit amet erat nunc
 8. Eget porttitor lorem
 
-
-<br>
-<br>
-<br>
-
-
 #### Code
 
 ##### Inline code
@@ -686,7 +654,6 @@ HTML:
   </code>
 </pre>
 ```
-
 
 ##### Block code "fences"
 
@@ -759,9 +726,7 @@ grunt.initConfig({
   }
 };
 ```
-<br>
-<br>
-<br>
+
 #### Tables
 Tables are created by adding pipes as dividers between each cell, and by adding a line of dashes (also separated by bars) beneath the header. Note that the pipes do not need to be vertically aligned.
 ```markdown
@@ -771,7 +736,9 @@ Tables are created by adding pipes as dividers between each cell, and by adding 
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
 ```
+
 Renders to:
+
 | Option | Description |
 | ------ | ----------- |
 | data   | path to data files to supply the data that will be passed into templates. |
@@ -812,9 +779,7 @@ Adding a colon on the right side of the dashes below any heading will right alig
 | data   | path to data files to supply the data that will be passed into templates. |
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
-<br>
-<br>
-<br>
+
 #### Links
 ##### Basic link
 ```markdown
@@ -826,26 +791,36 @@ HTML:
 ```html
 <a href="http://assemble.io">Assemble</a>
 ```
->>> Please see later resources on using link macros, which is how we use links in the documentation.
+
+>>> Please see earlier resources on using [link macros](#absolute-links), which is how we use links in the documentation.
+
 ##### Add a title
+
 ```markdown
 [Upstage](https://github.com/upstage/ "Visit Upstage!")
 ```
+
 Renders to (hover over the link, there should be a tooltip):
+
 [Upstage](https://github.com/upstage/ "Visit Upstage!")
+
 HTML:
 ```html
 <a href="https://github.com/upstage/" title="Visit Upstage!">Upstage</a>
 ```
+
 ##### Named Anchors
 Named anchors enable you to jump to the specified anchor point on the same page. For example, each of these chapters:
+
 ```markdown
 # Table of Contents
   * [Chapter 1](#chapter-1)
   * [Chapter 2](#chapter-2)
   * [Chapter 3](#chapter-3)
 ```
+
 will jump to these sections:
+
 ```markdown
 ## Chapter 1 <a id="chapter-1"></a>
 Content for chapter one.
@@ -854,10 +829,9 @@ Content for chapter one.
 ## Chapter 3 <a id="chapter-3"></a>
 Content for chapter one.
 ```
+
 **NOTE** that specific placement of the anchor tag seems to be arbitrary. They are placed inline here since it seems to be unobtrusive, and it works.
-<br>
-<br>
-<br>
+
 #### Images
 Images have a similar syntax to links but include a preceding exclamation point. They must always have alternative text.
 ```markdown
@@ -877,7 +851,5 @@ Like links, Images also have a footnote style syntax
 With a reference later in the document defining the URL location:
 [id]: http://octodex.github.com/images/dojocat.jpg  "The Dojocat"
     [id]: http://octodex.github.com/images/dojocat.jpg  "The Dojocat"
-
-    
 
 [Google-style-guide]: <https://developers.google.com/style>
