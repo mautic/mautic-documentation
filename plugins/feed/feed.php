@@ -90,18 +90,10 @@ class FeedPlugin extends Plugin
      */
     public function onPageInitialized()
     {
-        /** @var Uri $uri */
-        $uri = $this->grav['uri'];
         $page = $this->grav['page'];
-        $base_url = $uri->baseIncludingLanguage();
-        $uri_info = pathinfo($uri->uri());
-        $uri = rtrim(rtrim($uri_info['dirname'], '/') . '/' . $uri_info['filename'], '/');
-        $raw_url = $base_url . $page->rawRoute();
-        $url = rtrim($page->url(), '/');
-        $enable_url_check = $this->feed_config['enable_url_check'] ?? true;
-        $valid_url = !$enable_url_check || ($uri === $url || $uri === $raw_url);
+
         // Overwrite regular content with feed config, so you can influence the collection processing with feed config
-        if ($valid_url && property_exists($page->header(), 'content')) {
+        if (property_exists($page->header(), 'content')) {
             if (isset($page->header()->feed)) {
                 $this->feed_config = array_merge($this->feed_config, $page->header()->feed);
             }
@@ -112,7 +104,6 @@ class FeedPlugin extends Plugin
 
             $this->enable([
                 'onCollectionProcessed' => ['onCollectionProcessed', 0],
-
             ]);
         }
 

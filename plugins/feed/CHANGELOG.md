@@ -1,3 +1,9 @@
+# v1.8.5
+## 06/09/2021
+
+1. [](#improved)
+   * Rolled back the URL check functionality as it caused more issues than it solved.
+
 # v1.8.4
 ## 06/07/2021
 

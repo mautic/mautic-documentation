@@ -4,5 +4,4 @@ title: 'My Feed Title'
 description: 'My Feed Description'
 length: 500
 enable_json_feed: false
-enable_url_check: true
 show_last_modified: false
