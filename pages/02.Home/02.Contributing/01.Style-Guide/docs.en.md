@@ -271,6 +271,7 @@ Grav ships with built-in support for [Markdown](http://daringfireball.net/projec
 Here are the main elements of Markdown and what the resulting HTML looks like:
 
 >>> <i class="fa fa-bookmark"></i> Bookmark this page for easy future reference!
+
 #### Headings
 
 Headings from `h1` through `h6` are constructed with a `#` for each level:
