@@ -151,7 +151,7 @@ Images have to refer to the themes folder the following way:
 
   * save your images in the assets folder
   * Save your MJML in the html folder as email.mjml.twig AND email.html.twig
-  * use the base.html.twig and message.html.twig files from the basic template or make your changes there
+  * Use the base.html.twig and message.html.twig files from the basic theme or make your changes there
   * save your config.json as described above
   * create a thumbnail (around 400px wide, 600px high)
   * zip the contents of the folder
