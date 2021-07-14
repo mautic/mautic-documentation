@@ -145,7 +145,7 @@ clicking the Preferences button at the segments tab, use the dropdown to select 
 
 ## Add categories to segment
 
-Apart from organizing various Mautic elements, categories are used to organize contact. To add categories to segment, create a new [category](../categories#creating-managing-categories) of type `segment`. When you add a new segment, you can now sort and select from the categories you previously created.
+Apart from organizing various Mautic elements, categories help with organizing contacts. To add categories to a segment, create a new [category](../categories#creating-managing-categories) of type `segment`. When you add a new segment, you can now sort and select from the categories you previously created.
 
 ![Screenshot showing segment categories](add-category-segment.jpg)
 
