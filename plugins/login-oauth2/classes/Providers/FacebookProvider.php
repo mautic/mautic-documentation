@@ -1,17 +1,33 @@
 <?php
+
 namespace Grav\Plugin\Login\OAuth2\Providers;
 
-use Grav\Common\Grav;
-use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\Facebook;
+use League\OAuth2\Client\Provider\FacebookUser;
+use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
 class FacebookProvider extends BaseProvider
 {
+    /** @var string */
     protected $name = 'Facebook';
-    protected $classname = 'League\\OAuth2\\Client\\Provider\\Facebook';
-    protected $config;
+    /** @var string */
+    protected $classname = Facebook::class;
 
-    public function initProvider(array $options)
+    /**
+     * @param array $options
+     * @return bool
+     */
+    public static function checkIfActive(array $options): bool
+    {
+        $client_id = $options['app_id'] ?? false;
+
+        return $client_id && parent::checkIfActive($options);
+    }
+
+    /**
+     * @param array $options
+     */
+    public function initProvider(array $options): void
     {
         $options += [
             'clientId'          => $this->config->get('providers.facebook.app_id'),
@@ -22,7 +38,10 @@ class FacebookProvider extends BaseProvider
         parent::initProvider($options);
     }
 
-    public function getAuthorizationUrl()
+    /**
+     * @return string
+     */
+    public function getAuthorizationUrl(): string
     {
         $options = ['state' => $this->state];
         $options['scope'] = $this->config->get('providers.facebook.options.scope');
@@ -30,19 +49,25 @@ class FacebookProvider extends BaseProvider
         return $this->provider->getAuthorizationUrl($options);
     }
 
-    public function getUserData($user)
+    /**
+     * @param ResourceOwnerInterface|FacebookUser $user
+     * @return array
+     */
+    public function getUserData(ResourceOwnerInterface $user): array
     {
-        $data_user = [
+        \assert($user instanceof FacebookUser);
+
+        $hometown = $user->getHometown();
+
+        return [
             'id'         => $user->getId(),
             'login'      => $user->getEmail(),
             'fullname'   => $user->getName(),
             'email'      => $user->getEmail(),
             'facebook'  => [
                 'avatar_url' => $user->getPictureUrl(),
-                'location' => $user->getHometown() ? $user->getHometown()['name'] : ''
+                'location' => $hometown ? $hometown['name'] : ''
             ]
         ];
-
-        return $data_user;
     }
 }

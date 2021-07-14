@@ -2,12 +2,13 @@ enabled: true
 
 built_in_css: true
 button_style: row
+require_grav_user: false
 save_grav_user: false
 store_provider_data: true
 default_access_levels:
   access:
     site:
-      login: 'true'
+      login: true
 default_groups:
 providers:
   github:
