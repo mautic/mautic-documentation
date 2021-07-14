@@ -150,7 +150,7 @@ Images have to refer to the themes folder the following way:
   Once your design in MJML is final, go through the following steps to create the template package:
 
   * save your images in the assets folder
-  * save your mjml in the html folder as email.mjml.twig AND email.html.twig
+  * Save your MJML in the html folder as email.mjml.twig AND email.html.twig
   * use the base.html.twig and message.html.twig files from the basic template or make your changes there
   * save your config.json as described above
   * create a thumbnail (around 400px wide, 600px high)
