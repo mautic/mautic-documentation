@@ -23,7 +23,7 @@ Since [Mautic 3.3][mautic-3.3], Mautic has shipped with an updated, modern build
 ## About GrapesJS
 The new builder is based on the Open Source [GrapesJS][grapesjs] framework and was created by the team at [Webmecanik][webmecanik] who have kindly donated it to the Mautic Community.
 
-GrapesJS is an open-source, multi-purpose, Web Builder Framework which combines different tools and features with the goal to help build HTML templates without any knowledge of coding. 
+GrapesJS is an open-source, multi-purpose, Web Builder Framework which combines different tools and features with the goal to help build HTML templates without any knowledge of coding.
 
 ### Available end-user features
 
@@ -79,7 +79,82 @@ From the 3.3 General Availability release there will be three email templates th
 
 ### Themes
 
-If you search through the list of available themes, the new MJML themes `Brienz`, `Paprika` and `Confirm Me` will not be available until you enable the GrapesJS plugin. 
+If you search through the list of available themes, the new MJML themes `Brienz`, `Paprika` and `Confirm Me` will not be available until you enable the GrapesJS plugin.
+
+### Creating new Themes
+
+#### Why to use email templates?
+The GrapesJs makes possible to insert HTML code and edit it in a WYSIWYG environment.
+A template can feature a wide variety of blocks and sections reflecting desired email design.
+By choosing a template and removing the unnecessary blocks beautiful emails can be created very efficiently.
+
+#### Modifying Legacy template
+The GrapesJs Builder looks at the template's config file content before a template is displayed for selection.
+As of Mautic 3.3 a new line has to be added, that defines which email designer is the template suitable for:
+
+File name: config.json
+
+`    {
+      "name": "Great Template",
+      "author": "Mr. Robot",
+      "authorUrl": "https://mautic.org",
+      "builder":  ["grapesjsbuilder"],
+      "features": [
+        "email"
+      ]
+    }`
+
+Once the proper builder is defined, the template will show in the template selection page.
+
+#### Creating a template from scratch
+##### HTML Markup
+As mentioned before, it is possible to use HTML for templates, and the GrapesJs builder will try to offer WYSIWYG editing possibility.
+However once a template is converted into HTML, the structure will be table based, and the vertivaly neighbor blocks are hard to move around.
+
+##### MJML Markup
+The MJML language allows us to create blocks, that can be freely moved around in the editor, changing the template fundamentally without coding.
+In order to harness the power of MJML, the whole template has to be coded in MJML.
+
+The best place to do so is the online editor at https://mjml.io.
+Documentation on using sections, columns and blocks can be found here: https://documentation.mjml.io/
+
+###### Head components
+Mautic will not process the <mj-head> tags at this point. None of the <mj-attribuites> will run, so you have to do all styling inline.
+
+###### Body components
+Most <mj-body> components will be processed.
+
+**Tested elements are:**
+mj-button, mj-column, mj-divider, mj-image, mj-navbar, mj-section, mj-spacer, mj-text
+
+###### Image asset relative URLs
+Images have to refer to the themes folder the following way:
+
+` <mj-image src="{{ getAssetUrl('themes/'~template~'/assets/imagename.ext', null, null, true) }}" alt="logo" align="center" width="105px" padding="10px 0"></mj-image>`
+
+###### File structure
+`name.zip
+├── assets
+│   ├── image1.ext
+│   └── image2.ext
+├── html
+│   ├── email.html.twig
+│   ├── email.mjml.twig
+│   ├── base.html.twig
+│   └── message.html.twig
+├── config.json
+└── thumbnail.png`
+
+##### Steps to save the template package
+
+  Once your design in MJML is final, go through the following steps to create the template package:
+
+  * save your images in the assets folder
+  * save your mjml in the html folder as email.mjml.twig AND email.html.twig
+  * use the base.html.twig and message.html.twig files from the basic template or make your changes there
+  * save your config.json as described above
+  * create a thumbnail (around 400px wide, 600px high)
+  * zip the contents of the folder
 
 ### Reporting bugs
 
