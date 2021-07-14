@@ -73,7 +73,7 @@ If you search through the list of available themes, the new MJML themes `Brienz`
 ### Creating new Themes
 
 #### Why use themes?
-The GrapesJs makes possible to insert HTML code and edit it in a WYSIWYG environment.
+The GrapesJs builder makes it possible to insert HTML code and edit it in a 'What You See Is What You Get' (WYSIWYG) environment.
 A template can feature a wide variety of blocks and sections reflecting desired email design.
 By choosing a template and removing the unnecessary blocks beautiful emails can be created very efficiently.
 
