@@ -1,7 +1,7 @@
 name: Login OAuth2
 type: login-oauth2
 slug: form
-version: 2.0.5
+version: 2.1.1
 description: OAuth2 Client Plugin to integrate with Grav's Login
 icon: plug
 author:
@@ -13,7 +13,8 @@ bugs: https://github.com/trilbymedia/grav-plugin-login-oauth2/issues
 docs: https://github.com/trilbymedia/grav-plugin-login-oauth2/blob/develop/README.md
 license: MIT
 dependencies:
-  - { name: login, version: '>=3.3.2' }
+  - { name: grav, version: '>=1.7.0' }
+  - { name: login, version: '>=3.4' }
 
 form:
   validation: strict
@@ -77,10 +78,22 @@ form:
                 row: Horizontal Row
                 square: Square Block
 
+            require_grav_user:
+              type: toggle
+              label: PLUGIN_LOGIN_OAUTH2.REQUIRE_GRAV_USER
+              help: PLUGIN_LOGIN_OAUTH2.REQUIRE_GRAV_USER_DESC
+              highlight: 0
+              default: 0
+              options:
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+
             save_grav_user:
               type: toggle
               label: PLUGIN_LOGIN_OAUTH2.SAVE_GRAV_USER
-              help: Get up shitSAVE_GRAV_USER_DESC
+              help: PLUGIN_LOGIN_OAUTH2.SAVE_GRAV_USER_DESC
               highlight: 0
               default: 0
               options:

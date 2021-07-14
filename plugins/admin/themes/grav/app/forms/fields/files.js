@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import Dropzone from 'dropzone';
-import EXIF from 'exif-js';
+// import EXIF from 'exif-js';
 import request from '../../utils/request';
 import { config, translations } from 'grav-config';
 
@@ -71,7 +71,7 @@ const DropzoneMediaConfig = {
         </div>`.trim()
 };
 
-global.EXIF = EXIF;
+// global.EXIF = EXIF;
 
 const ACCEPT_FUNC = function(file, done, settings) {
     const resolution = settings.resolution;
@@ -85,6 +85,9 @@ const ACCEPT_FUNC = function(file, done, settings) {
         reader.onload = function(event) {
             const image = new Image();
             image.src = event.target.result;
+            image.onerror = function() {
+                done(translations.PLUGIN_ADMIN.FILE_ERROR_UPLOAD);
+            };
             image.onload = function() {
                 if (resolution.min) {
                     Object.keys(resolution.min).forEach((attr) => {
@@ -104,6 +107,7 @@ const ACCEPT_FUNC = function(file, done, settings) {
                     }
                 }
 
+                URL.revokeObjectURL(image.src); // release memory
                 return error ? done(error) : done();
             };
         };
@@ -331,7 +335,9 @@ export function UriToMarkdown(uri) {
     uri = uri.replace(/\(/g, '%28');
     uri = uri.replace(/\)/g, '%29');
 
-    return uri.match(/\.(jpe?g|png|gif|svg|mp4|webm|ogv|mov)$/i) ? `![](${uri})` : `[${decodeURI(uri)}](${uri})`;
+    const title = uri.split('.').slice(0, -1).join('.');
+
+    return uri.match(/\.(jpe?g|png|gif|svg|webp|mp4|webm|ogv|mov)$/i) ? `![${title}](${uri} "${title}")` : `[${decodeURI(uri)}](${uri})`;
 }
 
 let instances = [];
@@ -367,6 +373,7 @@ const addNode = (container) => {
         resizeWidth: settings.resizeWidth || null,
         resizeHeight: settings.resizeHeight || null,
         resizeQuality: settings.resizeQuality || null,
+        resolution: settings.resolution || null,
         accept: function(file, done) { ACCEPT_FUNC(file, done, settings); }
     };
 
@@ -375,7 +382,7 @@ const addNode = (container) => {
     instances.push(new FilesField({ container, options }));
 };
 
-export let Instances = (() => {
+export let Instance = (() => {
     $('.dropzone.files-upload').each((i, container) => addNode(container));
     $('body').on('mutation._grav', onAddedNodes);
 

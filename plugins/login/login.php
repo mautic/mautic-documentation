@@ -104,27 +104,29 @@ class LoginPlugin extends Plugin
         $user = $session->user ?? null;
         if ($user && $user->exists() && ($this->config()['session_user_sync'] ?? false)) {
             // User is stored into the filesystem.
-
-            /** @var UserCollectionInterface $accounts */
-            $accounts = $this->grav['accounts'];
-
-            /** @var UserObject $stored */
-            if ($accounts instanceof FlexCollectionInterface) {
-                $stored = $accounts[$user->username];
-                if (is_callable([$stored, 'refresh'])) {
-                    $stored->refresh();
-                }
+            if ($user instanceof FlexObjectInterface && version_compare(GRAV_VERSION, '1.7.13', '>=')) {
+                $user->refresh(true);
             } else {
                 // TODO: remove when removing legacy support.
-                $stored = $accounts->load($user->username);
-            }
+                /** @var UserCollectionInterface $accounts */
+                $accounts = $this->grav['accounts'];
+                if ($accounts instanceof FlexCollectionInterface) {
+                    /** @var UserObject $stored */
+                    $stored = $accounts[$user->username];
+                    if (is_callable([$stored, 'refresh'])) {
+                        $stored->refresh(true);
+                    }
+                } else {
+                    $stored = $accounts->load($user->username);
+                }
 
-            if ($stored && $stored->exists()) {
-                // User still exists, update user object in the session.
-                $user->update($stored->jsonSerialize());
-            } else {
-                // User doesn't exist anymore, prepare for session invalidation.
-                $user->state = 'disabled';
+                if ($stored && $stored->exists()) {
+                    // User still exists, update user object in the session.
+                    $user->update($stored->jsonSerialize());
+                } else {
+                    // User doesn't exist anymore, prepare for session invalidation.
+                    $user->state = 'disabled';
+                }
             }
 
             if ($user->state !== 'enabled') {
@@ -339,7 +341,10 @@ class LoginPlugin extends Plugin
         }
 
         // Login page may not have the correct Cache-Control header set, force no-store for the proxies.
-        $page->expires(0);
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $page->cacheControl('private, no-cache, must-revalidate');
+        }
     }
 
     /**
@@ -363,7 +368,10 @@ class LoginPlugin extends Plugin
         }
 
         // Forgot page may not have the correct Cache-Control header set, force no-store for the proxies.
-        $page->expires(0);
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $page->cacheControl('private, no-cache, must-revalidate');
+        }
     }
 
     /**
@@ -396,7 +404,10 @@ class LoginPlugin extends Plugin
         }
 
         // Reset page may not have the correct Cache-Control header set, force no-store for the proxies.
-        $page->expires(0);
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $page->cacheControl('private, no-cache, must-revalidate');
+        }
     }
 
     /**
@@ -420,7 +431,10 @@ class LoginPlugin extends Plugin
         }
 
         // Register page may not have the correct Cache-Control header set, force no-store for the proxies.
-        $page->expires(0);
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $page->cacheControl('private, no-cache, must-revalidate');
+        }
     }
 
     /**
@@ -443,7 +457,7 @@ class LoginPlugin extends Plugin
         $token = $uri->param('token');
         $user = $users->load($username);
         if (is_callable([$user, 'refresh'])) {
-            $user->refresh();
+            $user->refresh(true);
         }
 
         $redirect_route = $this->config->get('plugins.login.user_registration.redirect_after_activation');
@@ -523,7 +537,10 @@ class LoginPlugin extends Plugin
         }
 
         // Profile page may not have the correct Cache-Control header set, force no-store for the proxies.
-        $page->expires(0);
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $page->cacheControl('private, no-cache, must-revalidate');
+        }
 
         $this->storeReferrerPage();
     }
@@ -549,7 +566,10 @@ class LoginPlugin extends Plugin
         }
 
         // Unauthorized page may not have the correct Cache-Control header set, force no-store for the proxies.
-        $page->expires(0);
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $page->cacheControl('private, no-cache, must-revalidate');
+        }
 
         unset($this->grav['page']);
         $this->grav['page'] = $page;
@@ -668,7 +688,10 @@ class LoginPlugin extends Plugin
             }
 
             // Login page may not have the correct Cache-Control header set, force no-store for the proxies.
-            $login_page->expires(0);
+            $cacheControl = $page->cacheControl();
+            if (!$cacheControl) {
+                $page->cacheControl('private, no-cache, must-revalidate');
+            }
 
             $this->authenticated = false;
             unset($this->grav['page']);
@@ -1093,7 +1116,7 @@ class LoginPlugin extends Plugin
             // Allow remember me to work with different login methods.
             $user = $users->load($username);
             if (is_callable([$user, 'refresh'])) {
-                $user->refresh();
+                $user->refresh(true);
             }
 
             $event->setCredential('username', $username);
@@ -1112,8 +1135,6 @@ class LoginPlugin extends Plugin
 
             $event->setStatus($event::AUTHENTICATION_SUCCESS);
             $event->stopPropagation();
-
-            return;
         }
     }
 

@@ -38,6 +38,8 @@ export default class FilePickerField {
         let folder = '';
         let thumbs = {};
 
+        let onDemand = field.closest('[data-ondemand]').length > 0;
+
         if (!field.length || field.get(0).selectize) { return; }
 
         let getData = function getData(field, callback, mode = 'all') {
@@ -78,7 +80,7 @@ export default class FilePickerField {
 
         let renderOption = function renderOption(item, escape) {
             let image = '';
-            if (imagesPreview && folder && (!item.status || item.status === 'available') && item.name.match(/\.(jpg|jpeg|png|gif)$/i)) {
+            if (imagesPreview && folder && (!item.status || item.status === 'available') && item.name.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
                 // const fallback2x = insertTextAt(`${config.base_url_relative}/../${folder}/${item.name}`, -4, '@2x');
                 // const fallback3x = insertTextAt(`${config.base_url_relative}/../${folder}/${item.name}`, -4, '@3x');
                 const source = thumbs[item.name] || `${config.base_url_relative}/../${folder}/${item.name}`;
@@ -118,7 +120,9 @@ export default class FilePickerField {
             },
 
             onInitialize: function() {
-                this.load((callback) => getData(field, (data) => callback(data), 'selected'));
+                if (!onDemand) {
+                    this.load((callback) => getData(field, (data) => callback(data), 'selected'));
+                }
             },
 
             onLoad: function(/* data */) {

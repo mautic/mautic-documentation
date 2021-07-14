@@ -1,0 +1,25 @@
+name: Linting
+on:
+  # Note: onlyAnnotateModifiedLines only works correctly on PRs!
+  # If you need to run checks on push as well, create a separate workflow file.
+  pull_request:
+
+jobs:
+  prose:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Vale
+      uses: errata-ai/vale-action@master
+      with:
+        # We can modify these styles as we want
+        styles: |
+          https://github.com/errata-ai/Google/releases/latest/download/Google.zip
+        files: pages/
+        onlyAnnotateModifiedLines: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

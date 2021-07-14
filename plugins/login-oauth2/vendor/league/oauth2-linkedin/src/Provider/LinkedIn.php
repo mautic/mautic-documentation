@@ -2,9 +2,13 @@
 
 namespace League\OAuth2\Client\Provider;
 
+use Exception;
 use InvalidArgumentException;
+use League\OAuth2\Client\Grant\AbstractGrant;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
+use League\OAuth2\Client\Provider\Exception\LinkedInAccessDeniedException;
 use League\OAuth2\Client\Token\AccessToken;
+use League\OAuth2\Client\Token\LinkedInAccessToken;
 use League\OAuth2\Client\Tool\BearerAuthorizationTrait;
 use Psr\Http\Message\ResponseInterface;
 
@@ -17,16 +21,7 @@ class LinkedIn extends AbstractProvider
      *
      * @var array
      */
-    public $defaultScopes = [];
-
-    /**
-     * Preferred resource owner version.
-     *
-     * Options: 1,2
-     *
-     * @var integer
-     */
-    public $resourceOwnerVersion = 1;
+    public $defaultScopes = ['r_liteprofile', 'r_emailaddress'];
 
     /**
      * Requested fields in scope, seeded with default values
@@ -35,9 +30,8 @@ class LinkedIn extends AbstractProvider
      * @see https://developer.linkedin.com/docs/fields/basic-profile
      */
     protected $fields = [
-        'id', 'email-address', 'first-name', 'last-name', 'headline',
-        'location', 'industry', 'picture-url', 'public-profile-url',
-        'summary',
+        'id', 'firstName', 'lastName', 'localizedFirstName', 'localizedLastName',
+        'profilePicture(displayImage~:playableStreams)',
     ];
 
     /**
@@ -58,6 +52,22 @@ class LinkedIn extends AbstractProvider
         }
 
         parent::__construct($options, $collaborators);
+    }
+
+
+    /**
+     * Creates an access token from a response.
+     *
+     * The grant that was used to fetch the response can be used to provide
+     * additional context.
+     *
+     * @param  array $response
+     * @param  AbstractGrant $grant
+     * @return AccessTokenInterface
+     */
+    protected function createAccessToken(array $response, AbstractGrant $grant)
+    {
+        return new LinkedInAccessToken($response);
     }
 
     /**
@@ -99,13 +109,28 @@ class LinkedIn extends AbstractProvider
      */
     public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
-        $fields = implode(',', $this->fields);
+        $query = http_build_query([
+            'projection' => '(' . implode(',', $this->fields) . ')'
+        ]);
 
-        if ($this->resourceOwnerVersion == 1) {
-            return 'https://api.linkedin.com/v1/people/~:('.$fields.')?format=json';
-        }
+        return 'https://api.linkedin.com/v2/me?' . urldecode($query);
+    }
 
-        return 'https://api.linkedin.com/v2/me?fields='.$fields;
+    /**
+     * Get provider url to fetch user details
+     *
+     * @param  AccessToken $token
+     *
+     * @return string
+     */
+    public function getResourceOwnerEmailUrl(AccessToken $token)
+    {
+        $query = http_build_query([
+            'q' => 'members',
+            'projection' => '(elements*(state,primary,type,handle~))'
+        ]);
+
+        return 'https://api.linkedin.com/v2/clientAwareMemberHandles?' . urldecode($query);
     }
 
     /**
@@ -124,17 +149,40 @@ class LinkedIn extends AbstractProvider
     /**
      * Check a provider response for errors.
      *
-     * @throws IdentityProviderException
      * @param  ResponseInterface $response
-     * @param  string $data Parsed response data
+     * @param  array $data Parsed response data
      * @return void
+     * @throws IdentityProviderException
+     * @see https://developer.linkedin.com/docs/guide/v2/error-handling
      */
     protected function checkResponse(ResponseInterface $response, $data)
     {
-        if (isset($data['error'])) {
+        $this->checkResponseUnauthorized($response, $data);
+
+        if ($response->getStatusCode() >= 400) {
             throw new IdentityProviderException(
-                $data['error_description'] ?: $response->getReasonPhrase(),
-                $response->getStatusCode(),
+                isset($data['message']) ? $data['message'] : $response->getReasonPhrase(),
+                isset($data['status']) ? $data['status'] : $response->getStatusCode(),
+                $response
+            );
+        }
+    }
+
+    /**
+     * Check a provider response for unauthorized errors.
+     *
+     * @param  ResponseInterface $response
+     * @param  array $data Parsed response data
+     * @return void
+     * @throws LinkedInAccessDeniedException
+     * @see https://developer.linkedin.com/docs/guide/v2/error-handling
+     */
+    protected function checkResponseUnauthorized(ResponseInterface $response, $data)
+    {
+        if (isset($data['status']) && $data['status'] === 403) {
+            throw new LinkedInAccessDeniedException(
+                isset($data['message']) ? $data['message'] : $response->getReasonPhrase(),
+                isset($data['status']) ? $data['status'] : $response->getStatusCode(),
                 $response
             );
         }
@@ -149,6 +197,16 @@ class LinkedIn extends AbstractProvider
      */
     protected function createResourceOwner(array $response, AccessToken $token)
     {
+        // If current accessToken is not authorized with r_emailaddress scope,
+        // getResourceOwnerEmail will throw LinkedInAccessDeniedException, it will be caught here,
+        // and then the email will be set to null
+        // When email is not available due to chosen scopes, other providers simply set it to null, let's do the same.
+        try {
+            $email = $this->getResourceOwnerEmail($token);
+        } catch (LinkedInAccessDeniedException $exception) {
+            $email = null;
+        }
+        $response['email'] = $email;
         return new LinkedInResourceOwner($response);
     }
 
@@ -163,13 +221,19 @@ class LinkedIn extends AbstractProvider
     }
 
     /**
-     * Returns the preferred resource owner version.
+     * Attempts to fetch resource owner's email address via separate API request.
      *
-     * @return integer
+     * @param  AccessToken $token [description]
+     * @return string|null
+     * @throws IdentityProviderException
      */
-    public function getResourceOwnerVersion()
+    public function getResourceOwnerEmail(AccessToken $token)
     {
-        return $this->resourceOwnerVersion;
+        $emailUrl = $this->getResourceOwnerEmailUrl($token);
+        $emailRequest = $this->getAuthenticatedRequest(self::METHOD_GET, $emailUrl, $token);
+        $emailResponse = $this->getParsedResponse($emailRequest);
+
+        return $this->extractEmailFromResponse($emailResponse);
     }
 
     /**
@@ -187,20 +251,26 @@ class LinkedIn extends AbstractProvider
     }
 
     /**
-     * Updates the preferred resource owner version.
+     * Attempts to extract the email address from a valid email api response.
      *
-     * @param integer $resourceOwnerVersion
-     *
-     * @return LinkedIn
+     * @param  array  $response
+     * @return string|null
      */
-    public function withResourceOwnerVersion($resourceOwnerVersion)
+    protected function extractEmailFromResponse($response = [])
     {
-        $resourceOwnerVersion = (int) $resourceOwnerVersion;
+        try {
+            $confirmedEmails = array_filter($response['elements'], function ($element) {
+                return
+                    strtoupper($element['type']) === 'EMAIL'
+                    && strtoupper($element['state']) === 'CONFIRMED'
+                    && $element['primary'] === true
+                    && isset($element['handle~']['emailAddress'])
+                ;
+            });
 
-        if (in_array($resourceOwnerVersion, [1, 2])) {
-            $this->resourceOwnerVersion = $resourceOwnerVersion;
+            return $confirmedEmails[0]['handle~']['emailAddress'];
+        } catch (Exception $e) {
+            return null;
         }
-
-        return $this;
     }
 }
