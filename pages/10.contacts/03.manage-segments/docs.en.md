@@ -149,7 +149,7 @@ Apart from organizing various Mautic elements, categories help with organizing c
 
 ![Screenshot showing segment categories](add-category-segment.jpg)
 
-To check if your segment is linked to the categories you created, create a new uncategorized segment and click on the `Segment Category Filter` in the toolbar and select the category which you linked to your segment. Only that segment will be listed the uncategorized segment which is not linked to any category wont be listed.
+To determine whether your segment is linked to the categories you created, first create a new segment without any category assigned. From the Segments screen, click in the `Segment Category Filter` in the toolbar. Choose the category linked to your segment. Only the segment associated with that category is displayed, the other segments are not listed.
 
 ## Delete all contacts in a segment
 
