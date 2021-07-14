@@ -154,7 +154,7 @@ Images have to refer to the themes folder the following way:
   * Use the base.html.twig and message.html.twig files from the basic theme or make your changes there
   * save your config.json as described above
   * Create a thumbnail (around 400px wide, 600px high)
-  * zip the contents of the folder
+  * Zip the contents of the folder
 
 ### Reporting bugs
 
