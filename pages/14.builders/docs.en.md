@@ -108,7 +108,7 @@ Once the proper builder is defined, the template will show in the template selec
 
 #### Creating a template from scratch
 ##### HTML Markup
-As mentioned before, it is possible to use HTML for templates, and the GrapesJs builder will try to offer WYSIWYG editing possibility.
+As mentioned before, it is possible to use HTML for Themes, and the GrapesJs Builder will try to offer WYSIWYG editing possibilities from that markup.
 However once a template is converted into HTML, the structure will be table based, and the vertivaly neighbor blocks are hard to move around.
 
 ##### MJML Markup
