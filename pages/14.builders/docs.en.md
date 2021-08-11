@@ -90,7 +90,7 @@ By choosing a theme as a starting point and adding or removing blocks as needed,
 
 #### Modifying legacy Themes
 The GrapesJs Builder checks the Theme configuration file before listing the available Themes, to determine which are compatible with the Builder.
-As of Mautic 3.3 a new line has to be added, that defines which email designer is the template suitable for:
+Since [Mautic `3.3`][mautic-3.3] a new line has to be added which defines the compatible Builders:
 
 File name: config.json
 
