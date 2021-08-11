@@ -102,7 +102,7 @@ File name: config.json
       "features": [
         "email"
       ]
-    }`
+    }```
 
 Once the Builder is defined, the Theme will show in the Theme selection page.
 
