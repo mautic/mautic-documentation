@@ -94,7 +94,7 @@ As of Mautic 3.3 a new line has to be added, that defines which email designer i
 
 File name: config.json
 
-`    {
+```    {
       "name": "Great Template",
       "author": "Mr. Robot",
       "authorUrl": "https://mautic.org",
