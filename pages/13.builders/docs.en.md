@@ -134,7 +134,7 @@ Images have to refer to the themes folder the following way:
 ├── config.json
 └── thumbnail.png`
 
-##### Steps to save the template package
+##### Steps to save the Theme package
 
   Once your design in MJML is final, go through the following steps to create the template package:
 
