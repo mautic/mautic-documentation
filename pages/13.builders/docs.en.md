@@ -105,7 +105,7 @@ The [MJML language][mjml] allows us to create blocks, that can be freely moved a
 In order to harness the power of MJML, the whole template has to be coded in MJML.
 
 The best place to do so is the online editor at https://mjml.io.
-Documentation on using sections, columns and blocks can be found here: https://documentation.mjml.io/
+Documentation on using sections, columns and blocks can be found here: [https://documentation.mjml.io][mjml-docs]
 
 ###### Head components
 Mautic will not process the <mj-head> tags at this point. None of the <mj-attribuites> will run, so you have to do all styling inline.
