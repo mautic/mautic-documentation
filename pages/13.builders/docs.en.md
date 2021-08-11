@@ -77,7 +77,7 @@ The GrapesJs builder makes it possible to insert HTML code and edit it in a 'Wha
 A theme allows you to create a template which can feature a wide variety of blocks and sections reflecting the desired email, landing page and form design.
 By choosing a theme as a starting point and adding or removing blocks as needed, beautiful emails can be created very efficiently.
 
-#### Modifying Legacy template
+#### Modifying legacy Themes
 The GrapesJs Builder checks the Theme configuration file before listing the available Themes, to determine which are compatible with the Builder.
 As of Mautic 3.3 a new line has to be added, that defines which email designer is the template suitable for:
 
