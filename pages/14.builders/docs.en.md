@@ -117,7 +117,7 @@ However once a Theme is converted into HTML, the structure will be table based, 
 
 ##### MJML Markup
 The [MJML language][mjml] allows us to create blocks, that can be freely moved around in the editor, changing the template fundamentally without coding.
-In order to harness the power of MJML, the whole template has to be coded in MJML.
+In order to harness the power of MJML, the whole Theme has to be coded in MJML.
 
 The best place to do so is the online editor at https://mjml.io.
 Documentation on using sections, columns and blocks can be found here: [https://documentation.mjml.io][mjml-docs]
