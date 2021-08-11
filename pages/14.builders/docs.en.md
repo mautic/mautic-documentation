@@ -153,7 +153,7 @@ Images have to refer to the themes folder the following way:
 
   Once your design in MJML is final, go through the following steps to create the Theme package:
 
-  * save your images in the assets folder
+  * Save your images in the assets folder
   * Save your MJML in the html folder as email.mjml.twig AND email.html.twig
   * Use the base.html.twig and message.html.twig files from the basic theme or make your changes there
   * Save your config.json as described above
