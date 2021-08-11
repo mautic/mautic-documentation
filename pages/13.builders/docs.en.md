@@ -78,7 +78,7 @@ A theme allows you to create a template which can feature a wide variety of bloc
 By choosing a theme as a starting point and adding or removing blocks as needed, beautiful emails can be created very efficiently.
 
 #### Modifying Legacy template
-The GrapesJs Builder looks at the template's config file content before a template is displayed for selection.
+The GrapesJs Builder checks the Theme configuration file before listing the available Themes, to determine which are compatible with the Builder.
 As of Mautic 3.3 a new line has to be added, that defines which email designer is the template suitable for:
 
 File name: config.json
