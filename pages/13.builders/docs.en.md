@@ -101,7 +101,7 @@ As mentioned before, it is possible to use HTML for Themes, and the GrapesJs Bui
 However once a Theme is converted into HTML, the structure will be table based, and the blocks above and below each other are hard to move around.
 
 ##### MJML Markup
-The MJML language allows us to create blocks, that can be freely moved around in the editor, changing the template fundamentally without coding.
+The [MJML language][mjml] allows us to create blocks, that can be freely moved around in the editor, changing the template fundamentally without coding.
 In order to harness the power of MJML, the whole template has to be coded in MJML.
 
 The best place to do so is the online editor at https://mjml.io.
