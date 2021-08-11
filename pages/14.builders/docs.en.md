@@ -104,7 +104,11 @@ File name: config.json
       ]
     }`
 
-Once the proper builder is defined, the template will show in the template selection page.
+Once the Builder is defined, the Theme will show in the Theme selection page.
+
+If you wish to support more than one Builder, specify them in an array:
+
+`"builder": ["legacy", "grapesjsbuilder"],`
 
 #### Creating a Theme from scratch
 ##### HTML Markup
