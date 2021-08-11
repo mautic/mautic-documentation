@@ -112,7 +112,7 @@ The best place to do so is the online editor at [https://mjml.io][mjml].
 Documentation on using sections, columns and blocks can be found here: [https://documentation.mjml.io][mjml-docs]
 
 ###### Head components
-Mautic will not process the <mj-head> tags at this point. None of the <mj-attribuites> will run, so you have to do all styling inline.
+Mautic will not process the <mj-head> tags at this point. None of the <mj-attributes> will run, so you have to do all styling inline.
 
 ###### Body components
 Most <mj-body> components will be processed.
