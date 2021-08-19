@@ -82,7 +82,7 @@ A few notes for text filters:
 * `starts with`, `ends with`, `contains` filters were added later than the `like` one, so you can easily specify what you need now.
 * `%` character in the middle of the string has no special meaning. `contains` filter with `my % string` will search for a string with `%` in the middle. The same is true for `like` filter with `%my % string%` value. There is no need for escaping this character.
 * Mautic searches for `%` character in a value for `like` filter and no modification is performed if at least 1 `%` is found.
-* Using `include` or `exclude` operators on text type fields also offer you the ability to paste a list of values from clipboard you've been copying from a spreadsheet column such as Microsoft Excel and Google Sheets.
+* Using `including` or `excluding` operators on text type fields also offer you the ability to paste a list of values from clipboard you've been copying from a spreadsheet column such as Microsoft Excel and Google Sheets.
 
 You can use regular expressions in a `regexp` filter. Mautic recognises all common operators like `|` for OR (`first string|second string`), character sets (`[0-9]`, `[a-z0-9]` etc.), repetitions (`+`, `*`, `?`) and more. You have to escape special characters with `\` if you want to use them as matching character. [Learn more about regex at https://dev.mysql.com/doc/refman/5.7/en/regexp.html](https://dev.mysql.com/doc/refman/5.7/en/regexp.html). Please note that MySQL (and Mautic) uses POSIX regex, which could behave differently from other types of Regex.
 
