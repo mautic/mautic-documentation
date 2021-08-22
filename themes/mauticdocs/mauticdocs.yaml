@@ -8,5 +8,5 @@ streams:
           - user/themes/learn2
 github:
     position: bottom                                   # top | bottom | off
-    tree: https://github.com/mautic/mautic-documentation/tree/main
-    commits: https://github.com/mautic/mautic-documentation/commits/main
+    tree: https://github.com/mautic/mautic-documentation/tree/main/
+    commits: https://github.com/mautic/mautic-documentation/commits/main/
