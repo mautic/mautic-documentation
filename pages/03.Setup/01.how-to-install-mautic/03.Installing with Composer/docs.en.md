@@ -3,19 +3,19 @@ title: 'Installing with Composer'
 taxonomy:
 category:
 - docs
-  slug: install-and-manage-mautic-with-composer
-  twitterenable: true
-  twittercardoptions: summary
-  articleenabled: false
-  orgaenabled: false
-  orga:
-  ratingValue: 2.5
-  orgaratingenabled: false
-  personenabled: false
-  facebookenable: true
-  googledesc: 'How to install Mautic with Composer.'
-  twitterdescription: 'How to install Mautic with Composer.'
-  facebookdesc: 'How to install Mautic with Composer.'
+slug: install-and-manage-mautic-with-composer
+twitterenable: true
+twittercardoptions: summary
+articleenabled: false
+orgaenabled: false
+orga:
+ratingValue: 2.5
+orgaratingenabled: false
+personenabled: false
+facebookenable: true
+googledesc: 'How to install Mautic with Composer.'
+twitterdescription: 'How to install Mautic with Composer.'
+facebookdesc: 'How to install Mautic with Composer.'
 ---
 ## Installing Mautic with Composer
 
