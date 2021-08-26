@@ -47,7 +47,7 @@ The installer displays the first steps of the installation process, including an
 
 **Add screenshot**
 
-Any critical issues that could block installing Mautic are highlighted in red.
+Highlighted in red are any critical issues that could block installing Mautic.
 
 Proceeding with the installation requires entering the appropriate database credentials. If this is a new installation, turn off the option to back up existing tables. 
 
