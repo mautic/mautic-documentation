@@ -21,7 +21,7 @@ category:
 
 Since [Mautic 4.0][mautic-4], it's possible to install and manage Mautic using the full power of Composer, including support for Composer 2.
 
-Mautic is in the process of decoupling plugins and themes from core, however at present while they have been technically mirrored out into separate repositories, the source files are located in [Mautic core][mautic-core]. 
+Mautic is in the process of decoupling plugins and themes from core, however at present while they have been technically mirrored out into separate repositories, you will find the source files in [Mautic core][mautic-core]. 
 
 As with a regular clone from GitHub, running `composer install` installs all the dependencies, there are some other handy features which you can take advantage of when installing and managing Mautic.
 
