@@ -18,15 +18,15 @@ facebookenable: true
 ---
 When Mautic is updated, there are several tasks which can take a long time to complete depending on the size of your Mautic instance.  
 
-If you have a lot of contacts, you might run into problems when updating using the notification 'bell' icon in Mautic.  These problems usually manifest as the update hanging part way through, or crashing with an error.  They often arise as a result of resource limitation, particularly on shared hosting environments. If this has happened to you, head over to the [Update Failed][update-failed] page for a step-by-step walk-through of how to complete the update.
+If you have a lot of contacts, you might run into problems when updating using the notification 'bell' icon in Mautic. These problems usually manifest as the update hanging part way through, or crashing with an error. They often arise as a result of resource limitation, particularly on shared hosting environments. If this has happened to you, head over to the [Update Failed][update-failed] page for a step-by-step walk-through of how to complete the update.
 
-It is **strongly** recommended as best practice that you carry out any updates at the command line - and after testing the update thoroughly in a development environment first.
+It's **strongly** recommended as best practice that you carry out any updates at the command line - and after testing the update thoroughly in a development environment first.
 
-Before you commence these steps, **please ensure that you have a tested backup of your Mautic instance**.  This means that you have downloaded the files and database of your Mautic instance, and you have re-created it in a test environment somewhere and tested that everything is working as expected.  This will be your only recourse if there are any problems with the update. Never update without having a working, up-to-date backup!
+Before you commence these steps, **please ensure that you have a tested backup of your Mautic instance**. This means that you have downloaded the files and database of your Mautic instance, and you have re-created it in a test environment somewhere and tested that everything is working as expected.  This is your only recourse if there are any problems with the update. Never update without having a working, up-to-date backup.
 
 ## Checking for updates
 
- Log in via the command line, and change directory to the location where Mautic is installed using the command
+ Log in via the command line, and change directory to the Mautic directory using the command
 
     cd /your/mautic/directory
 
@@ -55,7 +55,7 @@ In all cases, it is important that you describe the problem, and all steps you h
 
 If you don't provide the information above as a minimum, the person who might try to help you will have to ask you for it, so please save them the trouble and provide the information upfront.  Also, importantly, please be polite.  Mautic is an Open Source project, and people are giving their free time to help you.
 
-If you are sure that you have discovered a bug and you want to report it to developers, you can do so on [Github][mautic-github]. GitHub should **not** be used for requesting support or asking for help with configuration errors. Always post on the forums first if you are not sure, and the community will advise you if a bug report is necessary.
+If you are sure that you have discovered a bug and you want to report it to developers, you can do so on [GitHub][mautic-github]. GitHub **shouldn't** be where you request support or ask for help with configuration errors. Always post on the forums first if you are not sure, if a bug report is appropriate this can be linked to the forum thread.
 
 [update-failed]: </troubleshooting/update-failed>
 [support-forums]: <https://forum.mautic.org/support>
