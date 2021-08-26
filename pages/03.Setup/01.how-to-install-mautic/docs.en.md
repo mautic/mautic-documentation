@@ -20,56 +20,56 @@ facebookdesc: 'Mautic can be installed using several methods. Read more in the o
 There are several ways to install Mautic, you should select the most appropriate method for your situation and technical knowledge.
 
 ## Installing from the production package
-This is the route followed by the majority of Mautic users.  Mautic provides a zipped installation package which you can download at mautic.org/download.
+This is the route followed by the majority of Mautic users. Mautic provides a zipped installation package which you can download at [mautic.org/download][download-mautic].
 
-This will always be the latest stable release - you can find more information about the available versions of Mautic [here][mautic-releases].
+The download is the latest stable release - you can find more information about the available versions of Mautic [here][mautic-releases].
 
-Before proceeding with the installation it is important that you make sure your server environment meets the [minimum requirements][minimum-requirements] for the version you are installing.
+Before proceeding with the installation it's important that you make sure your server environment meets the [minimum requirements][minimum-requirements] for the version you are installing.
 
-It is also strongly recommended that you: 
+It's also strongly recommended that you: 
 
-* Check that the directory you will be using is writable by the webserver
-* Check if there is enough free disk space to run the installation (don't forget to factor in the database size)
+* Check that the directory is writable by the web server
+* Check if there is enough free disk space to run the installation - don't forget to factor in the database size
 * Ensure PHPs `max_execution_time` is at least 240 seconds
 
-Mautic will require a MySQL/MariaDB database, so make sure that you have created one and have the credentials to hand for the user account with permissions to interact with the database.
+Mautic requires a MySQL/MariaDB database, so make sure that you have created one and have the credentials to hand for the user account with permissions to interact with the database.  Remember to check that the version of MySQL/MariaDB matches the [minimum requirements] [minimum-requirements].
 
 ### Uploading the production package
-Once you have downloaded the zip file, you need to upload this to your web server and unzip it in the appropriate directory. 
+Once you have downloaded the zip file, you need to upload this to your web server and unzip it in the appropriate directory where you would like Mautic to be located. 
 
-Ensure that the webserver has the correct permissions to access the files after you have unzipped them - check the documentation on [working with file and folder permissions][file-permissions].
+Ensure that the web server has the correct permissions to access the files after you have unzipped them - read the documentation on [working with file and folder permissions][file-permissions].
 
 ### Using the web-based installer
 
-Browse to the URL that corresponds to your Mautic instance, ensuring that you are accessing it over a secure connection, eg `https://m.example.com`.
+Browse to the URL that corresponds to your Mautic instance, ensuring that you are accessing it over a secure connection, for example `https://m.example.com`.
 
-The installer will display the first steps of the installation process, including any warnings in orange which you may wish to address.
-
-**Add screenshot**
-
-If there are any critical issues that will prevent Mautic being installed, these will be displayed in red.
+The installer displays the first steps of the installation process, including any warnings in orange which you may wish to address.
 
 **Add screenshot**
 
-Proceed with the installation and you will be asked for the database credentials. If this is a new installation, disable the option to back up existing tables. 
-
-We do not recommend using a table prefix unless you have a specific reason to do so.
-
-The next step will ask you to configure how email will be managed with your Mautic instance. If you are configuring a local instance for testing we recommend using a tool like [Mailhog][mailhog] to capture outgoing emails. If you are planning to use this Mautic instance in production, you can enter the details for your email delivery provider.
+If there are any critical issues that will block installing Mautic, these are displayed in red.
 
 **Add screenshot**
 
-Next, we create an administrator which will be your account for logging into Mautic. Ensure that you use a secure password, ideally randomly generated, to keep your Mautic instance safe.
+Proceeding with the installation requires entering the appropriate database credentials. If this is a new installation, turn off the option to back up existing tables. 
+
+Using a database table prefix is not recommended unless you have a specific reason to do so.
+
+The next step involves configuring how email is managed within your Mautic instance. If you are configuring a local instance for testing it is recommended that you use a tool such as [Mailhog][mailhog] to capture outgoing emails. If you are planning to use this Mautic instance in production, you can enter the details for your email delivery provider.
 
 **Add screenshot**
 
-Finally, once all of the settings have been configured, we will arrive at the login page where you can enter the username and password from the previous step, and log into your new Mautic instance.
+The next step is to create an administrator which will be your account for logging into Mautic. Ensure that you use a secure password, ideally randomly generated, to keep your Mautic instance safe.
+
+**Add screenshot**
+
+Finally, once all the settings are successfully configured, you arrive at the login page where you can enter the username and password from the previous step, and log into your new Mautic instance.
 
 ### Using the command line installer
 
-It is also possible to install Mautic from the command line.
+It's also possible to install Mautic from the command line.
 
-You can either pass the settings parameters in the command, or by having first created a local.php file containing your database settings. You can define properties in local.php with the same syntax expected by the command line options (use the command  `path/to/php bin/console mautic:install --help` for the list of options and flags available)
+You can either pass the settings parameters in the command, or by having first created a local.php file containing your database settings. You can define properties in local.php with the same syntax expected by the command line options - use the command  `path/to/php bin/console mautic:install --help` for the list of options and flags available.
 
 ```
      --db_driver=DB_DRIVER                    Database driver. [default: "pdo_mysql"]
@@ -125,7 +125,7 @@ $parameters = array(
 	'mailer_auth_mode' => null,
 );
 ```
-Next, run one of the following commands (replacing the path to PHP and placeholder URL with your details, and any options if you are providing the parameters in the install command): 
+Next, run one of the following commands - replacing the path to PHP and placeholder URL with your details, and any options if you are providing the parameters in the install command: 
 
 #### Simple installation with a local.php configured
 
@@ -161,8 +161,8 @@ Ready to Install!
 Install complete
 ================
 ```
-
-[mautic-releases}: <https://www.mautic.org/mautic-releases>
+[download-mautic]: <https://www.mautic.org/download>
+[mautic-releases]: <https://www.mautic.org/mautic-releases>
 [minimum-requirements]: <https://www.mautic.org/download/requirements>
 [file-permissions]: <troubleshooting/file-ownership-and-permissions>
 [mailhog]: <https://github.com/mailhog/MailHog>
