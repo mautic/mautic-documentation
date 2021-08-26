@@ -32,10 +32,10 @@ It's also strongly recommended that you:
 * Check if there is enough free disk space to run the installation - don't forget to factor in the database size
 * Ensure PHPs `max_execution_time` is at least 240 seconds
 
-Mautic requires a MySQL/MariaDB database, so make sure that you have created one and have the credentials to hand for the user account with permissions to interact with the database.  Remember to check that the version of MySQL/MariaDB matches the [minimum requirements] [minimum-requirements].
+Mautic requires a MySQL/MariaDB database, so make sure that you have created one and have the credentials to hand for the user account with permissions to interact with the database. Remember to verify that the version of MySQL/MariaDB matches the [minimum requirements] [minimum-requirements].
 
 ### Uploading the production package
-Once you have downloaded the zip file, you need to upload this to your web server and unzip it in the appropriate directory where you would like Mautic to be located. 
+Once you have downloaded the zip file, you need to upload this to your web server and unzip it in the appropriate directory where you would like to host your Mautic instance. 
 
 Ensure that the web server has the correct permissions to access the files after you have unzipped them - read the documentation on [working with file and folder permissions][file-permissions].
 
@@ -47,19 +47,17 @@ The installer displays the first steps of the installation process, including an
 
 **Add screenshot**
 
-If there are any critical issues that will block installing Mautic, these are displayed in red.
-
-**Add screenshot**
+Any critical issues that could block installing Mautic are highlighted in red.
 
 Proceeding with the installation requires entering the appropriate database credentials. If this is a new installation, turn off the option to back up existing tables. 
 
-Using a database table prefix is not recommended unless you have a specific reason to do so.
+Using a database table prefix isn't recommended unless you have a specific reason to do so.
 
-The next step involves configuring how email is managed within your Mautic instance. If you are configuring a local instance for testing it is recommended that you use a tool such as [Mailhog][mailhog] to capture outgoing emails. If you are planning to use this Mautic instance in production, you can enter the details for your email delivery provider.
+The next step involves configuring email settings for your Mautic instance. If you are configuring a local instance for testing, use a tool such as [Mailhog][mailhog] to capture outgoing emails. If you are planning to use this Mautic instance in production, you can enter the details for your email delivery provider.
 
 **Add screenshot**
 
-The next step is to create an administrator which will be your account for logging into Mautic. Ensure that you use a secure password, ideally randomly generated, to keep your Mautic instance safe.
+The next step is to create an administrator which is your account for logging into Mautic. Ensure that you use a secure password, ideally randomly generated, to keep your Mautic instance safe.
 
 **Add screenshot**
 
