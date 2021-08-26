@@ -22,7 +22,7 @@ If you have a lot of contacts, you might run into problems when updating using t
 
 It's **strongly** recommended as best practice that you carry out any updates at the command line - and after testing the update thoroughly in a development environment first.
 
-Before you commence these steps, **please ensure that you have a tested backup of your Mautic instance**. This means that you have downloaded the files and database of your Mautic instance, and you have re-created it in a test environment somewhere and tested that everything is working as expected.  This is your only recourse if there are any problems with the update. Never update without having a working, up-to-date backup.
+Before you commence these steps, **please ensure that you have a tested backup of your Mautic instance**. This means that you have downloaded the files and database of your Mautic instance, and you have re-created it in a test environment somewhere and tested that everything is working as expected. This is your only recourse if there are any problems with the update. Never update without having a working, up-to-date backup.
 
 ## Checking for updates
 
