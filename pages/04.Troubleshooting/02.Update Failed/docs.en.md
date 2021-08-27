@@ -1,5 +1,5 @@
 ---
-title: 'Update Failed'
+title: 'Mautic update failed - how to recover'
 taxonomy:
     category:
         - docs
@@ -19,16 +19,18 @@ facebookenable: true
 
 Sometimes when updating Mautic, the process might stall or fail part way through.  This can cause a problem, because it can cause Mautic to be in-between two versions and often this can make the system unusable.
 
-The following processes can be followed to complete the upgrade manually.
+>>>>>> Generally speaking, updates fail in this way because the hosting environment is inadequately resourced. Consider moving to a VPS or Dedicated Server if you are using shared hosting. Read more in the [installing][installing-mautic] and [updating][updating-mautic] Mautic sections.
 
-Before you commence these steps, **please ensure that you have a tested backup of your Mautic instance**
+The following processes can be followed to complete a failed upgrade manually.
+
+Before you commence these steps, **please ensure that you have a tested backup of your Mautic instance** where possible.
 
 ## Checking for schema updates
-Mautic has a built-in tool which enables you to check the database and identify if there are any schema updates required.  Visit your-mautic-url/s/update/schema to see if there are any updates required.
+Mautic has a built-in tool which enables you to check the database and identify if there are any schema updates required.  Visit `example.com/s/update/schema` to see if there are any updates required.
 
 If this is not possible, or your Mautic instance is down completely, follow the next tips.
 
-If you don't have SSH access, skip down to ['I don't have SSH access'](#I don't have SSH access).
+If you don't have SSH access, skip down to ['I don't have SSH access'](#i-dont-have-ssh-access).
 
 ## I have SSH access
 
@@ -42,15 +44,15 @@ When an upgrade attempt fails in the final step, it may be only the outdated cac
 
     php bin/console cache:clear
 
-If this command throws a PHP error, you can try to remove the cache folder using the following command (be careful, this removes all files and folders in the path specified, so ensure you type it correctly!)
+If this command throws a PHP error, you can try to remove the cache folder using the following command (be careful, this removes all files and folders in the path specified, so ensure you type it correctly, and in the correct directory!)
 
-    rm -rf bin/cache
+    rm -rf var/cache
 
 If clearing the cache has not resolved your problems, continue with the next step.
 
 ### 2. Trigger an update manually
 
-The first step is to find out if there are any updates available using the following command:
+The first step is to determine if there are any updates available using the following command:
 
     php bin/console mautic:update:find
 
@@ -76,12 +78,12 @@ This step requires some manual intervention - there is no command for this part.
 
 To update the files manually, you will have to:
 1. Back up (download) all Mautic files from your server to your local computer, using FTP or the [scp command][scp-command] which is much faster.
-2. Delete all Mautic files and folders.  Use FTP or the [rm command][rm-command] (use the latter with extreme caution)
+2. Delete all Mautic files and folders on your server.  Use FTP or the [rm command][rm-command] (use the latter with extreme caution)
 3. Download the latest Mautic package from [https://www.mautic.org/download][mautic-download]
 4. Upload the zip package to the server, to the Mautic folder, using FTP or the [scp command][scp-command] which is much faster.
-5. Unzip the package with unzip 2.16.zip (change the filename to match the one you have uploaded).  You can then remove the zip file using the command         rm 2.16.zip
+5. Unzip the package with unzip 3.3.3.zip (change the filename to match the one you have uploaded).  You can then remove the zip file using the command         rm 3.3.3.zip
 6. Upload app/config/local.php from your backup on your local machine to the fresh Mautic folder on the server (Mautic should now run)
-7. Upload your custom data if you have some. Custom fields may be found in the following folders: media/files; plugins; themes; translations
+7. Upload your custom data if you have some. Custom files may be found in the following folders: media/files; plugins; themes; translations
 
 ## I don't have SSH access
 
@@ -97,7 +99,7 @@ This error will usually be reported as:
 
     PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 10924085 bytes) in ...
 
-This means that the memory limit that Apache has available is too low.  Edit the memory_limit in the php.ini configuration file.
+This means that the memory limit that Apache has available is too low.  Edit the memory_limit in the php.ini configuration file.  Read more about [working with resource limits][resource-limits].
 
 ### A required PHP extension is missing
 
@@ -111,17 +113,17 @@ If you are stuck and need help, there are several places you can go to ask for a
 
 If you think your configuration is causing the problem, ask on the [Mautic Community Forums][support-forums]. Search before you post, as it is likely someone might have already answered your question in the past.
 
-You can also chat with someone in the live [Community Chat][mautic-slack].
+You can also chat with someone in the live [Community Chat][mautic-slack] however all support requests must be posted on the forums. Post there first, then drop the link to the post in Slack if you are discussing it with someone.
 
 In all cases, it is important that you describe the problem, and all steps you have followed to resolve the problem, in detail.  At a minimum, include the following:
 
 * Steps to reproduce your problem - a step-by-step tutorial of how the problem arose, or how to reproduce it
 * The PHP version of your server
-* The error messages you are seeing - if you don't see the error message directly, search for it in the app/logs folder and in the server log.  The server log can be found in different places depending on your setup. Ubuntu servers will generally have logs in /var/log/apache2/error.log.  Sometimes your hosting provider might offer a GUI to view logs in your Control Panel.
+* The error messages you are seeing - if you don't see the error message directly, search for it in the `var/logs` folder and in the server log.  The server log can be found in different places depending on your setup. Ubuntu servers will generally have logs in `/var/log/apache2/error.log`.  Sometimes your hosting provider might offer a GUI to view logs in your Control Panel.
 
 If you don't provide the information above as a minimum, the person who might try to help you will have to ask you for it, so please save them the trouble and provide the information upfront.  Also, importantly, please be polite.  Mautic is an Open Source project, and people are giving their free time to help you.
 
-If you are sure that you have discovered a bug and you want to report it to developers, you can do so on [Github][mautic-github]
+You can also chat with someone in the live [Community Chat][mautic-slack] however all support requests must be posted on the forums. Post there first, then drop the link to the post in Slack if you are discussing it with someone.
 
 [update-failed]: </troubleshooting/update-failed>
 [rm-command]: <http://manpages.ubuntu.com/manpages/precise/en/man1/rm.1.html>
@@ -131,3 +133,6 @@ If you are sure that you have discovered a bug and you want to report it to deve
 [support-forums]: <https://forum.mautic.org/support>
 [mautic-slack]: <https://mautic.org/slack>
 [mautic-github]: <https://github.com/mautic/mautic/issues/new>
+[installing-mautic]: </setup/how-to-install-mautic>
+[updating-mautic]: </setup/how-to-update-mautic>
+[resource-limits]: </troubleshooting/working-with-php-ini-resource-limits>
