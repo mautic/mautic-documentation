@@ -41,25 +41,53 @@ Ensure that the web server has the correct permissions to access the files after
 
 Browse to the URL that corresponds to your Mautic instance, ensuring that you are accessing it over a secure connection, for example `https://m.example.com`.
 
+#### Pre-flight checks
+
 The installer displays the first steps of the installation process, including any warnings in orange which you may wish to address.
 
-**Add screenshot**
+![Screenshot showing Mautic pre-flight checks with warning about installing on a non-SSL connection](mautic-install-pre-flight-check.png)
 
 Highlighted in red are any critical issues that could block installing Mautic.
 
-Proceeding with the installation requires entering the appropriate database credentials. If this is a new installation, turn off the option to back up existing tables.
+#### Database configuration
 
-Using a database table prefix isn't recommended unless you have a specific reason to do so.
+Proceeding with the installation requires entering the appropriate database credentials. If this is a new installation, turn off the option to back up existing tables. Using a database table prefix isn't recommended unless you have a specific reason to do so.
 
-The next step involves configuring email settings for your Mautic instance. If you are configuring a local instance for testing, use a tool such as [Mailhog][mailhog] to capture outgoing emails. If you are planning to use this Mautic instance in production, you can enter the details for your email delivery provider.
+![Screenshot of database configuration screen](mautic-database-configuration.png)
 
-**Add screenshot**
-
+#### Creating the administrator user account
 The next step is to create an administrator which is your account for logging into Mautic. Ensure that you use a secure password, ideally randomly generated, to keep your Mautic instance safe.
 
-**Add screenshot**
+![Screenshot showing the create user screen](mautic-create-admin-user.png)
+
+#### Configuring email settings
+The next step involves configuring email settings for your Mautic instance. If you are configuring a local instance for testing, use a tool such as [Mailhog][mailhog] to capture outgoing emails. If you are planning to use this Mautic instance in production, you can enter the details for your email delivery provider.
+
+![Screenshot showing the email configuration screen](mautic-email-configuration.png)
+
+##### Who should the email be sent as?
+
+Enter the name and email address that will be used as the default for outgoing emails. If you use an email provider which requires authorization of outgoing email addresses, ensure this address has been successfully authorized.
+
+##### How should the email be spooled and delivered?
+
+###### Email handling 
+With larger instances, it is advised to queue emails and have them sent using a timed cron job to trigger the queue to be processed, rather than send immediately. 
+
+###### Mailer transport
+If you wish to use an email delivery provider, select from the options available. If your provider is not listed, select Other SMTP Server and provide the SMTP credentials.
+
+Generally speaking, API-based sending is significantly faster than SMTP.
+
+Depending on which provider you select, additional fields will be displayed to enable entering API keys and selecting regions, as appropriate.
+
+Select the encryption and authentication mode that your provider instructs in their documentation.
+
+#### Logging into Mautic
 
 Finally, once all the settings are successfully configured, you arrive at the login page where you can enter the username and password from the previous step, and log into your new Mautic instance.
+
+![Screenshot of Mautic login screen](mautic-login-screen.png)
 
 ### Using the command line installer
 
