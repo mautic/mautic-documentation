@@ -76,7 +76,7 @@ If a contact sends a form with an email address, it will merge the submission wi
 
 So, Mautic will take care of duplicate contacts created by the event tracking. You can, however, still create a duplicate contact via the Mautic administration. As of Mautic 2.1.0, you will be notified if there is already a contact with the same unique identifier.
 
-`AND` id default operator to find duplicates by unique identifiers. You can choose `OR` operator in Contact Merge Settings configuration.
+`AND` is the default operator to find duplicates by unique identifiers. You can choose to use the `OR` operator in the Contact Merge Settings configuration.
 
 ![Setup operator for find duplications](contact-duplicates-operator-configuration.png "Setup operator for find duplications")
 
