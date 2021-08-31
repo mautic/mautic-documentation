@@ -30,6 +30,15 @@ abstract class BaseProvider implements ProviderInterface
     protected $config;
 
     /**
+     * @param array $options
+     * @return bool
+     */
+    public static function checkIfActive(array $options): bool
+    {
+        return (bool)($options['enabled'] ?? false);
+    }
+
+    /**
      * BaseProvider constructor.
      */
     public function __construct()

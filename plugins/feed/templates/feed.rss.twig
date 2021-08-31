@@ -14,7 +14,7 @@
         <link>{{ page.url(true) }}</link>
         <atom:link href="{{ uri.rootUrl(true)~uri.uri() }}" rel="self" type="application/rss+xml"/>
         <description>{{ collection.params.description }}</description>
-        <language>{{ grav.language.getLanguage }}</language>
+        <language>{{ grav.language.getLanguage|default(config.system.language.default_lang)|default('en') }}</language>
         <lastBuildDate>{{ lastBuildDate|date('D, d M Y H:i:s O') }}</lastBuildDate>
         {% for item in collection %}
         {% set banner = item.media.images|first %}

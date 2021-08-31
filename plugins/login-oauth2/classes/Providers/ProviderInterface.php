@@ -8,6 +8,12 @@ use League\OAuth2\Client\Token\AccessToken;
 
 interface ProviderInterface
 {
+    /**
+     * @param array $options
+     * @return bool
+     */
+    public static function checkIfActive(array $options): bool;
+
     public function __construct();
 
     /**
