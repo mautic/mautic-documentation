@@ -35,7 +35,7 @@ Note also that since 3.1 it is possible to add the column 'date added to company
 
 ### Company duplicates
 
-Company name field is mark as unique identifier by default. But you can choose any other company fields as unique identifier in [custom fields][custom fields]. 
+The Company name field is marked as a unique identifier by default. You can choose any other company field as unique identifier in [custom fields][custom fields]. 
 
 In Configurations > Company Settings you can choose operator for the merge companies by the unique identifiers.
 
