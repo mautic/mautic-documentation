@@ -41,7 +41,7 @@ In Configuration > Company Settings you can choose the operator to be used when 
 
 ![Setup operator for find duplications algorithm](company-duplicates-configuration-operator.png "Setup operator for find duplications algorithm")
 
-These settings use algorithm to find and merge duplicates companies during the import, [integrations framework][integration-framework] and other parts of Mautic
+These settings allow Mautic to find and merge duplicate companies during the import, using the [integrations framework][integration-framework] and in other parts of Mautic.
 
 
 
