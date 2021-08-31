@@ -35,17 +35,17 @@ In order to use it, you must have a RabbitMQ server running.  Instructions on ho
 on their [website][rabbitMQ-website].  For testing purposes, you can use
 you can use [cloudamqp][cloudamqp] which offers a RabbitMQ as a service.
 
-Once you have setup a RabbitMQ server, you can configure Mautic to use it by using the *Configuration* menu item again.
+Once you have setup a RabbitMQ server, you can configure Mautic to use it by setting the appropriate *parameters* (`mautic.rabbitmq_*`) in your installation's configuration file.
 
-- Open the admin menu by clicking the cog icon in the top right corner.
-- Select the *Configuration* menu item.
-- Select the *Queue Settings* tab.
-- Switch the *Queue Protocol* to *RabbitMQ*.
-- Change the *Host* to the hostname of your RabbitMQ installation.
-- Change the *Virtual Host* to the virtual host of your RabbitMQ installation.
-- Change the *User* to the username of your RabbitMQ installation.
-- Change the *Password* to the password of your RabbitMQ installation.
-- Save the configuration.
+| Parameter                         | Default       | Description                                                                   |
+|-----------------------------------|---------------|-------------------------------------------------------------------------------|
+| *rabbitmq_host*                   | `'localhost'` | The hostname of the RabbitMQ server                                           |
+| *rabbitmq_port*                   | `'5672'`      | The port that the RabbitMQ server is listening on                             |
+| *rabbitmq_vhost*                  | `'/'`         | The virtual host to use for this RabbitMQ server                              |
+| *rabbitmq_user*                   | `'guest'`     | The username for the RabbitMQ server                                          |
+| *rabbitmq_password*               | `'guest'`     | The password for the RabbitMQ server                                          |
+| *rabbitmq_idle_timeout*           | `0`           | The number of seconds after which the queue consumer should timeout when idle |
+| *rabbitmq_idle_timeout_exit_code* | `0`           | The exit code to be returned when the consumer exits due to idle timeout      |
 
 ### Beanstalkd
 
@@ -53,14 +53,13 @@ Once you have setup a RabbitMQ server, you can configure Mautic to use it by usi
 In order to use it, you must have a Beanstalkd server running.  Instructions on how to install Beanstalkd can be
 obtained on their [website][beanstalkd-website].
 
-Once you have setup a Beanstalkd server, you can configure mautic to use it by using the *Configuration* menu item again.
+Once you have setup a Beanstalkd server, you can configure mautic to use it by setting the appropriate *parameters* (`mautic.beanstalkd_*`) in your installation's configuration file.
 
-- Open the admin menu by clicking the cog icon in the top right corner.
-- Select the *Configuration* menu item.
-- Select the *Queue Settings* tab.
-- Switch the *Queue Protocol* to *Beanstalkd*.
-- Change the *Host* to the hostname of your Beanstalkd installation.
-- Save the configuration.
+| Parameter            | Default       | Description                                         |
+|----------------------|---------------|-----------------------------------------------------|
+| *beanstalkd_host*    | `'localhost'` | The hostname of the Beanstalkd server               |
+| *beanstalkd_port*    | `'11300'`     | The port that the Beanstalkd server is listening on |
+| *beanstalkd_timeout* | `'60'`        | The default TTR for Beanstalkd jobs                 |
 
 ## Processing
 
