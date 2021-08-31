@@ -37,7 +37,7 @@ Note also that since 3.1 it is possible to add the column 'date added to company
 
 The Company name field is marked as a unique identifier by default. You can choose any other company field as unique identifier in [custom fields][custom fields]. 
 
-In Configurations > Company Settings you can choose operator for the merge companies by the unique identifiers.
+In Configuration > Company Settings you can choose the operator to be used when merging companies with multiple identifiers - 'AND' or 'OR'.
 
 ![Setup operator for find duplications algorithm](company-duplicates-configuration-operator.png "Setup operator for find duplications algorithm")
 
