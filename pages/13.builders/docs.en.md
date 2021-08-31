@@ -64,6 +64,17 @@ If you wish to use the theme in multiple builders, you can use this syntax:
 
 >>>> NOTE: This syntax changed between Mautic 3.3.* and Mautic 4 to enable support for multiple builders - if you have been testing in the beta phase you will need to update your configuration files, otherwise you will experience a 500 error.
 
+An example of a full configuration file can be found in the blank theme:
+```json
+{
+  "name": "Blank",
+  "author": "Mautic team",
+  "authorUrl": "https://mautic.org",
+  "builder": ["legacy", "grapesjsbuilder"],
+  "features": ["page", "email", "form"]
+}
+```
+
 From the 3.3 General Availability release there will be three email templates that support MJML, and also some landing page templates will also be made available in the near future.  
 
 ### Themes

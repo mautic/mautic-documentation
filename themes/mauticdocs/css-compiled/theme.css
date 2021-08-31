@@ -1198,12 +1198,14 @@ a:hover {
 h3 {
   font-family: "Muli", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
+  font-size: 1.3rem;
   font-size: 1.3rem;
 }
 
 h2 {
   font-size: 1.5rem;
+  text-align: left;
 }
 
 h1 {
