@@ -1,4 +1,5 @@
 <?php
+
 namespace Grav\Plugin\Login\OAuth2\Providers;
 
 use League\OAuth2\Client\Provider\AbstractProvider;
@@ -7,8 +8,18 @@ use League\OAuth2\Client\Token\AccessToken;
 
 interface ProviderInterface
 {
+    /**
+     * @param array $options
+     * @return bool
+     */
+    public static function checkIfActive(array $options): bool;
+
     public function __construct();
 
+    /**
+     * @param array $options
+     * @return void
+     */
     public function initProvider(array $options);
 
     /**
@@ -25,7 +36,7 @@ interface ProviderInterface
      * @param string $state
      * @return $this
      */
-    public function setState($state);
+    public function setState(string $state);
 
     /**
      * @return AbstractProvider
@@ -58,5 +69,5 @@ interface ProviderInterface
      * @param ResourceOwnerInterface $user
      * @return array
      */
-    public function getUserData($user);
+    public function getUserData(ResourceOwnerInterface $user);
 }

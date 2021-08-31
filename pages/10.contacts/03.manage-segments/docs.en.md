@@ -16,7 +16,7 @@ facebookenable: true
 ---
 
 ---
-Lead lists were renamed to segments in Mautic 1.4.0.
+Lead lists were renamed to segments in Mautic [1.4.0][mautic-1.4.0].
 
 Segments provide ways to easily organize your contacts. These segments can be configured from a variety of fields.
 
@@ -30,7 +30,7 @@ To create a new segment navigate to Segments in the menu, and click on 'New'.
 
 ### Naming segments
 
-Since the 3.2 release it has been possible to provide a public name, in addition to an internal name, for a segment. 
+Since Mautic [3.2][mautic-3.2] it has been possible to provide a public name, in addition to an internal name, for a segment. 
 
 This is used if the segment is displayed in the Preference Centre, allowing the contact to choose to remove themselves from it.  The Public Name is what will be displayed to the contact in the preference centre.
 
@@ -83,7 +83,7 @@ A few notes for text filters:
 * `%` character in the middle of the string has no special meaning. `contains` filter with `my % string` will search for a string with `%` in the middle. The same is true for `like` filter with `%my % string%` value. There is no need for escaping this character.
 * Mautic searches for `%` character in a value for `like` filter and no modification is performed if at least 1 `%` is found.
 
-You can use regular expressions in a `regexp` filter. Mautic recognises all common operators like `|` for OR (`first string|second string`), character sets (`[0-9]`, `[a-z0-9]` etc.), repetitions (`+`, `*`, `?`) and more. You have to escape special characters with `\` if you want to use them as matching character. [Learn more about regex at https://dev.mysql.com/doc/refman/5.7/en/regexp.html](https://dev.mysql.com/doc/refman/5.7/en/regexp.html). Please note that MySQL (and Mautic) uses POSIX regex, which could behave differently from other types of Regex.
+You can use regular expressions in a `regexp` filter. Mautic recognises all common operators like `|` for OR (`first string|second string`), character sets (`[0-9]`, `[a-z0-9]` etc.), repetitions (`+`, `*`, `?`) and more. You have to escape special characters with `\` if you want to use them as matching character. [Learn more about regex at https://dev.mysql.com/doc/refman/5.7/en/regexp.html][regex]. Please note that MySQL (and Mautic) uses POSIX regex, which could behave differently from other types of Regex.
 
 ### Date options
 
@@ -132,7 +132,7 @@ added through the execution of a cron job. This is the essence of segments.
 To keep the segments current, create a cron job that executes the following
 command at the desired interval:
 
-> php /path/to/mautic/bin/console mautic:segments:update --env=prod
+`php /path/to/mautic/bin/console mautic:segments:update`
 
 Through the execution of that command, contacts that match the filters will be
 added and contacts that no longer match will be removed. Any contacts that were
@@ -151,9 +151,23 @@ Filter the contacts in the segment. The batch delete action in the contact table
 
 But deleting thousands of contacts this way in one segment will become a tedious task. Luckily, there is a trick how to let the background workers do the job for you.
 
-1. Create a simple campaign which has the segment as the source \
-2. Use the [Delete contact action](./../campaign/campaign_events.html#delete-contact).
+1. Create a simple campaign which has the segment as the source 
+2. Use the [Delete contact action][delete-contact].
 
 This way the `mautic:campaign:update` and `mautic:campaign:trigger` commands will delete all the contacts in the segment. As well as all the contacts which will be added to the segment in the future. Everything is done automatically in the background. The cron jobs must be configured. However, be aware that when a contact is deleted, there is no way to get it back.
 
 ![Screenshot showing campaign to delete contacts in a segment](mautic-delete-contacts-in-segment.png)
+
+## Deleting or unpublishing a segment
+
+Since [Mautic 4.0][mautic-4] there is a check when deleting or unpublishing a segment to ensure that it is not required as a filter by an existing segment.
+
+If you attempt to delete or unpublish a segment which is in use by a filter in another segment, you will see an alert message informing you of the segments that you will need to edit before you delete it.
+
+![Screenshot showing alert message](delete-segment-alert.png)
+
+[mautic-1.4.0]: <https://github.com/mautic/mautic/releases/tag/1.4.0>
+[mautic-3.2]: <https://github.com/mautic/mautic/releases/tag/3.2>
+[regex]: <https://dev.mysql.com/doc/refman/5.7/en/regexp.html>
+[delete-contact]: </campaigns/using-campaign-builder/actions>
+[mautic-4]: <https://github.com/mautic/mautic/releases/tag/4.0>

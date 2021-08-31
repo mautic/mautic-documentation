@@ -66,15 +66,19 @@ To edit the contact, click on the 'edit' button on the top-right menu.
 ## Contact duplicates
 
 When Mautic tracks a contact's actions (such as page hits or form submissions), it will automatically merge the contacts by unique identifiers which are:
-- IP address
+
 - Email _(or any other contact field you mark as unique identifier)_
 - Cookie
 
-If Mautic knows only the IP address, it will merge the contact action (page hit, form submission etc.) with a contact with the same IP address. If the IP address does not exist in the Mautic database yet, it will create a new contact. But if Mautic knows the unique cookie, it will merge the actions to the contact with the same cookie or creates a new one.
+If Mautic knows the unique cookie, it will merge the actions to the contact with the same cookie or create a new one.
 
 If a contact sends a form with an email address, it will merge the submission with the contact having the same email address. Even if the IP address or the cookie matches another contact.
 
 So, Mautic will take care of duplicate contacts created by the event tracking. You can, however, still create a duplicate contact via the Mautic administration. As of Mautic 2.1.0, you will be notified if there is already a contact with the same unique identifier.
+
+`AND` is the default operator to find duplicates by unique identifiers. You can choose to use the `OR` operator in the Contact Merge Settings configuration.
+
+![Setup operator for find duplications](contact-duplicates-operator-configuration.png "Setup operator for find duplications")
 
 ## Batch Actions
 

@@ -123,11 +123,14 @@ class AdminController
      */
     public function taskDefault(): bool
     {
-        $object = $this->getObject();
         $type = $this->target;
-        $key = $this->id;
-
         $directory = $this->getDirectory($type);
+        if (!$directory) {
+            throw new RuntimeException('Not Found', 404);
+        }
+
+        $object = $this->getObject();
+        $key = $this->id;
 
         if ($object && $object->exists()) {
             $event = new Event(
@@ -144,8 +147,7 @@ class AdminController
             );
 
             try {
-                $grav = Grav::instance();
-                $grav->fireEvent('onFlexTask' . ucfirst($this->task), $event);
+                $this->grav->fireEvent('onFlexTask' . ucfirst($this->task), $event);
             } catch (Exception $e) {
                 /** @var Debugger $debugger */
                 $debugger = $this->grav['debugger'];
@@ -171,11 +173,14 @@ class AdminController
      */
     public function actionDefault(): bool
     {
-        $object = $this->getObject();
         $type = $this->target;
-        $key = $this->id;
-
         $directory = $this->getDirectory($type);
+        if (!$directory) {
+            throw new RuntimeException('Not Found', 404);
+        }
+
+        $object = $this->getObject();
+        $key = $this->id;
 
         if ($object && $object->exists()) {
             $event = new Event(
@@ -191,8 +196,7 @@ class AdminController
             );
 
             try {
-                $grav = Grav::instance();
-                $grav->fireEvent('onFlexAction' . ucfirst($this->action), $event);
+                $this->grav->fireEvent('onFlexAction' . ucfirst($this->action), $event);
             } catch (Exception $e) {
                 /** @var Debugger $debugger */
                 $debugger = $this->grav['debugger'];
@@ -218,11 +222,19 @@ class AdminController
      */
     public function actionList(): void
     {
+        $directory = $this->getDirectory();
+        if (!$directory) {
+            throw new RuntimeException('Not Found', 404);
+        }
+
+        // Check authorization.
+        if (!$directory->isAuthorized('list', 'admin', $this->user)) {
+            throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' list.', 403);
+        }
+
         /** @var Uri $uri */
         $uri = $this->grav['uri'];
         if ($uri->extension() === 'json') {
-            $directory = $this->getDirectory();
-
             $options = [
                 'collection' => $this->getCollection(),
                 'url' => $uri->path(),
@@ -260,15 +272,31 @@ class AdminController
     {
         $collection = $this->getCollection();
         if (!$collection) {
-            throw new RuntimeException('Internal Error', 500);
+            throw new RuntimeException('Not Found', 404);
         }
-        if (is_callable([$collection, 'isAuthorized']) && !$collection->isAuthorized('list', 'admin', $this->user)) {
-            throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' list.', 403);
+
+        // Check authorization.
+        $directory = $collection->getFlexDirectory();
+        $authorized = is_callable([$collection, 'isAuthorized'])
+            ? $collection->isAuthorized('read', 'admin', $this->user)
+            : $directory->isAuthorized('read', 'admin', $this->user);
+
+        if (!$authorized) {
+            throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' read.', 403);
         }
 
         $config = $collection->getFlexDirectory()->getConfig('admin.views.export') ?? $collection->getFlexDirectory()->getConfig('admin.export') ?? false;
         if (!$config || empty($config['enabled'])) {
             throw new RuntimeException($this->admin::translate('Not Found'), 404);
+        }
+
+        $queryParams = $this->getRequest()->getQueryParams();
+        $type = $queryParams['type'] ?? null;
+        if ($type) {
+            $config = $config['options'][$type] ?? null;
+            if (!$config) {
+                throw new RuntimeException($this->admin::translate('Not Found'), 404);
+            }
         }
 
         $defaultFormatter = CsvFormatter::class;
@@ -282,7 +310,7 @@ class AdminController
         $filename = ($config['filename'] ?? 'export') . $formatter->getDefaultFileExtension();
 
         if (method_exists($collection, $method)) {
-            $list = $collection->{$method}();
+            $list = $type ? $collection->{$method}($type) : $collection->{$method}();
         } else {
             $list = [];
 
@@ -322,12 +350,20 @@ class AdminController
      */
     public function taskDelete()
     {
+        $directory = $this->getDirectory();
+        if (!$directory) {
+            throw new RuntimeException('Not Found', 404);
+        }
+
         $object = null;
         try {
             $object = $this->getObject();
-
             if ($object && $object->exists()) {
-                if ($object instanceof FlexAuthorizeInterface && !$object->isAuthorized('delete', 'admin', $this->user)) {
+                $authorized = $object instanceof FlexAuthorizeInterface
+                    ? $object->isAuthorized('delete', 'admin', $this->user)
+                    : $directory->isAuthorized('delete', 'admin', $this->user);
+
+                if (!$authorized) {
                     throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' delete.', 403);
                 }
 
@@ -342,11 +378,10 @@ class AdminController
 
                 $this->setRedirect($redirect);
 
-                $grav = Grav::instance();
-                $grav->fireEvent('onFlexAfterDelete', new Event(['type' => 'flex', 'object' => $object]));
+                $this->grav->fireEvent('onFlexAfterDelete', new Event(['type' => 'flex', 'object' => $object]));
             }
         } catch (RuntimeException $e) {
-            $this->admin->setMessage($this->admin::translate('PLUGIN_FLEX_OBJECTS.CONTROLLER.TASK_DELETE_FAILURE', $e->getMessage()), 'error');
+            $this->admin->setMessage($this->admin::translate(['PLUGIN_FLEX_OBJECTS.CONTROLLER.TASK_DELETE_FAILURE', $e->getMessage()]), 'error');
 
             $this->setRedirect($this->referrerRoute->toString(true), 302);
         }
@@ -368,11 +403,7 @@ class AdminController
             throw new RuntimeException('Not Found', 404);
         }
 
-        if ($directory instanceof FlexAuthorizeInterface && !$directory->isAuthorized('create', 'admin', $this->user)) {
-            throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' save.', 403);
-        }
-
-        $collection = $directory->getCollection();
+        $collection = $directory->getIndex();
         if (!($collection instanceof PageCollection || $collection instanceof PageIndex)) {
             throw new RuntimeException('Task saveNewFolder works only for pages', 400);
         }
@@ -389,6 +420,10 @@ class AdminController
         $parent = $route ? $directory->getObject($route) : $collection->getRoot();
         if (!$parent instanceof PageObject) {
             throw new RuntimeException('Creating folder failed, bad parent route', 400);
+        }
+
+        if (!$parent->isAuthorized('create', 'admin', $this->user)) {
+            throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' create.', 403);
         }
 
         $path = $parent->getFlexDirectory()->getStorageFolder($parent->getStorageKey());
@@ -416,6 +451,7 @@ class AdminController
 
         Folder::create($new_path);
         Cache::clearCache('invalidate');
+        $directory->getCache('index')->clear();
 
         $this->grav->fireEvent('onAdminAfterSaveAs', new Event(['path' => $new_path]));
 
@@ -438,13 +474,62 @@ class AdminController
             throw new RuntimeException('Not Found', 404);
         }
 
+        if ($directory->getFlexType() === 'pages') {
+            $this->continuePages($directory);
+        } else {
+            $this->continue($directory);
+        }
+    }
+
+    protected function continue(FlexDirectoryInterface $directory): void
+    {
+        $config = $directory->getConfig('admin');
+        $supported = !empty($config['modals']['add']);
+        if (!$supported) {
+            throw new RuntimeException('Task continue is not supported by the type', 400);
+        }
+
+        $authorized = $directory->isAuthorized('create', 'admin', $this->user);
+        if (!$authorized) {
+            $this->setRedirect($this->referrerRoute->toString(true));
+
+            throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' add.', 403);
+        }
+
+        $this->object = $directory->createObject($this->data, '');
+
+        // Reset form, we are starting from scratch.
+        /** @var FlexForm $form */
+        $form = $this->object->getForm('', ['reset' => true]);
+
+        /** @var FlexFormFlash $flash */
+        $flash = $form->getFlash();
+        $flash->setUrl($this->getFlex()->adminRoute($this->object));
+        $flash->save(true);
+
+        $this->setRedirect($flash->getUrl());
+    }
+
+    /**
+     * Create a new page (from modal).
+     *
+     * TODO: Move pages specific logic
+     *
+     * @return void
+     */
+    protected function continuePages(FlexDirectoryInterface $directory): void
+    {
+        $collection = $directory->getIndex();
+
         $this->data['route'] = '/' . trim($this->data['route'] ?? '', '/');
         $route = trim($this->data['route'], '/');
 
-        $object = $this->getObject($route);
-        $authorized = $object && $object->isAuthorized('create', 'admin', $this->user);
+        $parent = $route ? $directory->getObject($route) : $collection->getRoot();
+        $authorized = $parent instanceof FlexAuthorizeInterface
+            ? $parent->isAuthorized('create', 'admin', $this->user)
+            : $directory->isAuthorized('create', 'admin', $this->user);
 
-        if (!$authorized && !$directory->isAuthorized('create', 'admin', $this->user)) {
+        if (!$authorized) {
             $this->setRedirect($this->referrerRoute->toString(true));
 
             throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' add.', 403);
@@ -467,7 +552,11 @@ class AdminController
             throw new RuntimeException('Creating page failed: bad folder name', 400);
         }
 
-        if (isset($this->data['name']) && strpos($this->data['name'], 'modular/') === 0) {
+        if (!isset($this->data['name'])) {
+            // Get default child type.
+            $this->data['name'] = $parent->header()->child_type ?? $parent->getBlueprint()->child_type ?? 'default';
+        }
+        if (strpos($this->data['name'], 'modular/') === 0) {
             $this->data['header']['body_classes'] = 'modular';
             $folder = '_' . $folder;
         }
@@ -487,8 +576,6 @@ class AdminController
 
             // Empty string on visible means auto.
             if ($auto || $visible) {
-                /** @var PageObject $parent */
-                $parent = $route ? $directory->getObject($route) : $directory->getIndex()->getRoot();
                 $children = $parent ? $parent->children()->visible() : [];
                 $max = $auto ? 0 : 1;
                 foreach ($children as $child) {
@@ -538,14 +625,23 @@ class AdminController
     protected function taskCopy(): bool
     {
         try {
+            $directory = $this->getDirectory();
+            if (!$directory) {
+                throw new RuntimeException('Not Found', 404);
+            }
+
             $object = $this->getObject();
-            if (!$object || !$object->exists()) {
+            if (!$object || !$object->exists() || !is_callable([$object, 'createCopy'])) {
                 throw new RuntimeException('Not Found', 404);
             }
 
             // Pages are a special case.
             $parent = $object instanceof PageInterface ? $object->parent() : $object;
-            if (null === $parent || ($parent instanceof FlexAuthorizeInterface && !$parent->isAuthorized('create', 'admin', $this->user))) {
+            $authorized = $parent instanceof FlexAuthorizeInterface
+                ? $parent->isAuthorized('create', 'admin', $this->user)
+                : $directory->isAuthorized('create', 'admin', $this->user);
+
+            if (!$authorized || !$parent) {
                 throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' copy.',
                     403);
             }
@@ -575,7 +671,7 @@ class AdminController
             $this->setRedirect($this->getFlex()->adminRoute($object));
 
         } catch (RuntimeException $e) {
-            $this->admin->setMessage($this->admin::translate('PLUGIN_FLEX_OBJECTS.CONTROLLER.TASK_COPY_FAILURE', $e->getMessage()), 'error');
+            $this->admin->setMessage($this->admin::translate(['PLUGIN_FLEX_OBJECTS.CONTROLLER.TASK_COPY_FAILURE', $e->getMessage()]), 'error');
             $this->setRedirect($this->referrerRoute->toString(true), 302);
         }
 
@@ -731,6 +827,11 @@ class AdminController
      */
     public function taskSave(): bool
     {
+        $directory = $this->getDirectory();
+        if (!$directory) {
+            throw new RuntimeException('Not Found', 404);
+        }
+
         $key = $this->id;
 
         try {
@@ -739,21 +840,17 @@ class AdminController
                 throw new RuntimeException('Not Found', 404);
             }
 
-            if ($object->exists()) {
-                if (!$object->isAuthorized('update', 'admin', $this->user)) {
-                    throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' save.',
+            $authorized = $object instanceof FlexAuthorizeInterface
+                ? $object->isAuthorized('save', 'admin', $this->user)
+                : $directory->isAuthorized($object->exists() ? 'update' : 'create', 'admin', $this->user);
+
+            if (!$authorized) {
+                throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' save.',
                         403);
-                }
-            } else {
-                if (!$object->isAuthorized('create', 'admin', $this->user)) {
-                    throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' save.',
-                        403);
-                }
             }
-            $grav = Grav::instance();
 
             /** @var ServerRequestInterface $request */
-            $request = $grav['request'];
+            $request = $this->grav['request'];
 
             /** @var FlexForm $form */
             $form = $this->getForm($object);
@@ -772,6 +869,10 @@ class AdminController
                     }
                     $object->frontmatter($data['frontmatter']);
                     unset($data['frontmatter']);
+                }
+
+                if (is_callable([$object, 'check'])) {
+                    $object->check($this->user);
                 }
 
                 $object->save();
@@ -859,10 +960,9 @@ class AdminController
                 $this->setRedirect($route->toString(true));
             }
 
-            $grav = Grav::instance();
-            $grav->fireEvent('onFlexAfterSave', new Event(['type' => 'flex', 'object' => $object]));
+            $this->grav->fireEvent('onFlexAfterSave', new Event(['type' => 'flex', 'object' => $object]));
         } catch (RuntimeException $e) {
-            $this->admin->setMessage($this->admin::translate('PLUGIN_FLEX_OBJECTS.CONTROLLER.TASK_SAVE_FAILURE', $e->getMessage()), 'error');
+            $this->admin->setMessage($this->admin::translate(['PLUGIN_FLEX_OBJECTS.CONTROLLER.TASK_SAVE_FAILURE', $e->getMessage()]), 'error');
 
             if (isset($object, $form)) {
                 $data = $form->getData();
@@ -886,17 +986,19 @@ class AdminController
      */
     public function taskConfigure(): bool
     {
+        $directory = $this->getDirectory();
+        if (!$directory) {
+            throw new RuntimeException('Not Found', 404);
+        }
+
         try {
-            $directory = $this->getDirectory();
             $config = $directory->getConfig('admin.views.configure.authorize') ?? $directory->getConfig('admin.configure.authorize') ?? 'admin.super';
             if (!$this->user->authorize($config)) {
                 throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' configure.', 403);
             }
 
-            $grav = Grav::instance();
-
             /** @var ServerRequestInterface $request */
-            $request = $grav['request'];
+            $request = $this->grav['request'];
 
             /** @var FlexForm $form */
             $form = $this->getDirectoryForm();
@@ -927,7 +1029,7 @@ class AdminController
                 $this->setRedirect($this->referrerRoute->toString(true));
             }
         } catch (RuntimeException $e) {
-            $this->admin->setMessage($this->admin::translate('PLUGIN_FLEX_OBJECTS.CONTROLLER.TASK_CONFIGURE_FAILURE', $e->getMessage()), 'error');
+            $this->admin->setMessage($this->admin::translate(['PLUGIN_FLEX_OBJECTS.CONTROLLER.TASK_CONFIGURE_FAILURE', $e->getMessage()]), 'error');
             $this->setRedirect($this->referrerRoute->toString(true), 302);
         }
 
@@ -939,6 +1041,11 @@ class AdminController
      */
     public function taskMediaList(): bool
     {
+        $directory = $this->getDirectory();
+        if (!$directory) {
+            throw new RuntimeException('Not Found', 404);
+        }
+
         try {
             $response = $this->forwardMediaTask('action', 'media.list');
 
@@ -955,6 +1062,11 @@ class AdminController
      */
     public function taskMediaUpload(): bool
     {
+        $directory = $this->getDirectory();
+        if (!$directory) {
+            throw new RuntimeException('Not Found', 404);
+        }
+
         try {
             $response = $this->forwardMediaTask('task', 'media.upload');
 
@@ -971,6 +1083,11 @@ class AdminController
      */
     public function taskMediaDelete(): bool
     {
+        $directory = $this->getDirectory();
+        if (!$directory) {
+            throw new RuntimeException('Not Found', 404);
+        }
+
         try {
             $response = $this->forwardMediaTask('task', 'media.delete');
 
@@ -995,6 +1112,11 @@ class AdminController
      */
     public function taskAddmedia(): bool
     {
+        $directory = $this->getDirectory();
+        if (!$directory) {
+            throw new RuntimeException('Not Found', 404);
+        }
+
         try {
             $response = $this->forwardMediaTask('task', 'media.copy');
 
@@ -1011,6 +1133,11 @@ class AdminController
      */
     public function taskDelmedia(): bool
     {
+        $directory = $this->getDirectory();
+        if (!$directory) {
+            throw new RuntimeException('Not Found', 404);
+        }
+
         try {
             $response = $this->forwardMediaTask('task', 'media.remove');
 
@@ -1046,6 +1173,11 @@ class AdminController
      */
     public function taskGetFilesInFolder(): bool
     {
+        $directory = $this->getDirectory();
+        if (!$directory) {
+            throw new RuntimeException('Not Found', 404);
+        }
+
         try {
             $response = $this->forwardMediaTask('action', 'media.picker');
 
@@ -1104,7 +1236,7 @@ class AdminController
         self::$instance = $this;
 
         $this->grav = Grav::instance();
-        $this->admin = Grav::instance()['admin'];
+        $this->admin = $this->grav['admin'];
         $this->user = $this->admin->user;
 
         $this->active = false;
@@ -1119,7 +1251,6 @@ class AdminController
             return;
         }
         $target = \is_string($target) ? urldecode($target) : null;
-        $id = null;
 
         /** @var Uri $uri */
         $uri = $this->grav['uri'];

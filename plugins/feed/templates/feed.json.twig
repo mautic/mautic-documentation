@@ -40,4 +40,4 @@
 {% endfor %}
 
 {% set jsonfeed = jsonfeed|merge({"items": itemList}) %}
-{{- jsonfeed|json_encode }}
+{{- jsonfeed|json_encode|raw }}
