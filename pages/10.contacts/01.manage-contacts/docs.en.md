@@ -70,7 +70,7 @@ When Mautic tracks a contact's actions (such as page hits or form submissions), 
 - Email _(or any other contact field you mark as unique identifier)_
 - Cookie
 
-If Mautic knows the unique cookie, it will merge the actions to the contact with the same cookie or creates a new one.
+If Mautic knows the unique cookie, it will merge the actions to the contact with the same cookie or create a new one.
 
 If a contact sends a form with an email address, it will merge the submission with the contact having the same email address. Even if the IP address or the cookie matches another contact.
 
