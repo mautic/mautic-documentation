@@ -295,7 +295,7 @@ There is a campaign action which allows you to send a custom event to [Google An
 - Create campaign with the 'Visits a page' decision and 'Send tracking event' action 
 - Test it and check in the Tag Assistant debug window that you see one Pageview request and one event
 
-![Google Tag Assistant][Google Tag Assistant]
+![Google Tag Assistant][google-analytics-tag-assistent.png]
 
 ##### How to test Google Tag Manager tracking code and Campaign action
 
@@ -303,7 +303,7 @@ There is a campaign action which allows you to send a custom event to [Google An
 - Create a Campaign with `Visits a Page` decision and `Send tracking event` action
 - Test it and see Tag assistant debug window with one Pageview request and 1 event.
 
-![Google Tag Assistant][Google Tag Assistant]
+![Google Tag Assistant][google-analytics-tag-assistent.png]
 
 ##### How to test Facebook Pixel tracking code and campaign action
 
@@ -311,7 +311,7 @@ There is a campaign action which allows you to send a custom event to [Google An
 - Create campaign with a 'Visits a page' decision and a 'Send tracking event' action 
 - Test it and check in the Facebook Pixel Helper debug window that you see one Pageview and one custom event action
 
-![Facebook Pixel Helper][Facebook Pixel Helper Img]
+![Facebook Pixel Helper][facebook-pixel-helper.png]
 
 Events can be used for [Remarketing with Analytics][Remarketing with Analytics] and [Remarketing for Facebook Ads][Remarketing for Facebook Ads].
 
@@ -332,12 +332,10 @@ If the tracking doesn't work, take a look at the [troubleshooting section][troub
 [Facebook Pixel]: <https://developers.facebook.com/docs/ads-for-websites/pixel-events/> 
 [Tag assistant]: <https://chrome.google.com/webstore/detail/tag-assistant-by-google/kejbdjndbnbjgmefkgdddjlbokphdefk>
 [Facebook Pixel Helper]: <https://chrome.google.com/webstore/detail/facebook-pixel-helper/fdgfkebogiimcoedlicjlajpkdmockpc>
-[Facebook Pixel Helper Img]: <media/facebook-pixel-helper.png>
 [Remarketing with Analytics]: <https://support.google.com/analytics/topic/2611283?hl=en&ref_topic=7185254>
 [Remarketing for Facebook Ads]: <https://www.facebook.com/business/a/online-sales/custom-audiences-website>
 [private network]: <https://en.wikipedia.org/wiki/Private_network>
 [clearing the symfony cache]: <https://developer.mautic.org/#cache>
-[Google Tag Assistant]: <media/google-analytics-tag-assistent.png>
 [troubleshooting section]: </troubleshooting>
 
 [Joomla!]: <https://github.com/mautic/mautic-joomla>
