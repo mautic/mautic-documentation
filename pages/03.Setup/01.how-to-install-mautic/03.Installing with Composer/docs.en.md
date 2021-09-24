@@ -67,16 +67,13 @@ Follow the steps below to update your core files.
 2. Run git diff to determine if any of the scaffolding files have changed. Review the files for any changes and restore any customizations to .htaccess or others.
 3. Commit everything all together in a single commit, so the public remains in sync with the core when checking out branches or running git bisect.
 4. In the event that there are non-trivial conflicts in step 2, you may wish to perform these steps on a branch, and use git merge to combine the updated core files with your customized files. This facilitates the use of a three-way merge tool such as [kdiff3][kdiff3]. This setup isn't necessary if your changes are simple; keeping all of your modifications at the beginning or end of the file is a good strategy to keep merges easy.
+5. Run the following commands to update your database with any changes from the release:
 
-#### Database migrations
-
-When updating Mautic, you may need to run database migrations if there are any changes to the database in the release. To do this, use the following at the command line in the Mautic directory:
-
-`bin/console doctrine:migration:status`
-
-If there are any reported, firstly **ensure that you have a tested backup of your database before proceeding**, as this command will cause changes to the database, then run:
-
-`bin/console doctrine:migration:migrate`
+`bin/console cache:clear`
+`bin/console mautic:update:apply --finish`
+`bin/console doctrine:migration:migrate --no-interaction`
+`bin/console doctrine:schema:update --no-interaction --force`
+`bin/console cache:clear`
 
 ### Composer FAQs
 
