@@ -131,3 +131,4 @@ And of course a really big thank you to all the contributors who have helped to 
 [idea2]: <https://idea2.ch>
 [hartmut.io]: <https://hartmut.io>
 [release-notes]: <https://github.com/mautic/mautic/releases>
+[creating-a-theme]: </builders/create-a-theme-grapesjs-builder>
