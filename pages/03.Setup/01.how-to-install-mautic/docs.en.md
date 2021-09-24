@@ -20,7 +20,7 @@ facebookdesc: 'Mautic can be installed using several methods. Read more in the o
 There are several ways to install Mautic, you should select the most appropriate method for your situation and technical knowledge.
 
 1. [Installing from the production package][production-package], in the browser or at the command line
-2. [Installing locally by cloning from GitHub][github] (for testing and local development)
+2. [Installing locally by cloning from GitHub][github] - for testing and local development
 3. [Installing with Composer][composer]
 
 [production-package]: </setup/how-to-install-mautic/install-mautic-from-package>
