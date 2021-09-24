@@ -12,7 +12,7 @@ personenabled: false
 facebookenable: true
 ---
 
-Are you ready for Mautic 3? Let's get started!
+Are you ready for Mautic 3? Time to get started.
 
 * [Getting Started][getting-started]
 * [Upgrade Steps][steps]
