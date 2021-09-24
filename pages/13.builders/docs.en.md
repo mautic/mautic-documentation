@@ -23,7 +23,7 @@ Since [Mautic 3.3][mautic-3.3], Mautic has shipped with an updated, modern build
 ## About GrapesJS
 The new builder is based on the Open Source [GrapesJS][grapesjs] framework and was created by the team at [Webmecanik][webmecanik] who have kindly donated it to the Mautic Community.
 
-GrapesJS is an open-source, multi-purpose, Web Builder Framework which combines different tools and features with the goal to help build HTML templates without any knowledge of coding. 
+GrapesJS is an open-source, multi-purpose, Web Builder Framework which combines different tools and features with the goal to help build HTML templates without any knowledge of coding.
 
 ### Available end-user features
 
@@ -68,7 +68,86 @@ From the 3.3 General Availability release there will be three email templates th
 
 ### Themes
 
-If you search through the list of available themes, the new MJML themes `Brienz`, `Paprika` and `Confirm Me` will not be available until you enable the GrapesJS plugin. 
+If you search through the list of available themes, the new MJML themes `Brienz`, `Paprika` and `Confirm Me` will not be available until you enable the GrapesJS plugin.
+
+### Creating new Themes
+
+#### Why use themes?
+The GrapesJs builder makes it possible to insert HTML code and edit it in a 'What You See Is What You Get' (WYSIWYG) environment.
+A theme allows you to create a template which can feature a wide variety of blocks and sections reflecting the desired email, landing page and form design.
+By choosing a theme as a starting point and adding or removing blocks as needed, beautiful emails can be created very efficiently.
+
+#### Modifying legacy Themes
+The GrapesJs Builder checks the Theme configuration file before listing the available Themes, to determine which are compatible with the Builder.
+Since [Mautic `3.3`][mautic-3.3] a new line has to be added which defines the compatible Builders:
+
+File name: config.json
+
+```    {
+      "name": "Great Template",
+      "author": "Mr. Robot",
+      "authorUrl": "https://mautic.org",
+      "builder":  ["grapesjsbuilder"],
+      "features": [
+        "email"
+      ]
+    }```
+
+Once the Builder is defined, the Theme will show in the Theme selection page.
+
+If you wish to support more than one Builder, specify them in an array:
+
+`"builder": ["legacy", "grapesjsbuilder"],`
+
+#### Creating a Theme from scratch
+##### HTML Markup
+As mentioned before, it is possible to use HTML for Themes, and the GrapesJs Builder will try to offer WYSIWYG editing possibilities from that markup.
+However once a Theme is converted into HTML, the structure will be table based, and the blocks above and below each other are hard to move around.
+
+##### MJML Markup
+The [MJML language][mjml] allows us to create blocks, that can be freely moved around in the editor, changing the template fundamentally without coding.
+In order to harness the power of MJML, the whole Theme has to be coded in MJML.
+
+The best place to do so is the online editor at [https://mjml.io][mjml].
+Documentation on using sections, columns and blocks can be found here: [https://documentation.mjml.io][mjml-docs]
+
+###### Head components
+Mautic will not process the <mj-head> tags at this point. None of the <mj-attributes> will run, so you have to do all styling inline.
+
+###### Body components
+Most <mj-body> components will be processed.
+
+**Tested elements are:**
+mj-button, mj-column, mj-divider, mj-image, mj-navbar, mj-section, mj-spacer, mj-text
+
+###### Image asset relative URLs
+Images have to refer to the themes folder the following way:
+
+` <mj-image src="{{ getAssetUrl('themes/'~template~'/assets/imagename.ext', null, null, true) }}" alt="logo" align="center" width="105px" padding="10px 0"></mj-image>`
+
+###### File structure
+`name.zip
+├── assets
+│   ├── image1.ext
+│   └── image2.ext
+├── html
+│   ├── email.html.twig
+│   ├── email.mjml.twig
+│   ├── base.html.twig
+│   └── message.html.twig
+├── config.json
+└── thumbnail.png`
+
+##### Steps to save the Theme package
+
+  Once your design in MJML is final, go through the following steps to create the Theme package:
+
+  * Save your images in the assets folder
+  * Save your MJML in the html folder as email.mjml.twig AND email.html.twig
+  * Use the base.html.twig and message.html.twig files from the basic theme or make your changes there
+  * Save your config.json as described above
+  * Create a thumbnail (around 400px wide, 600px high)
+  * Zip the contents of the folder
 
 ### Reporting bugs
 
