@@ -1,5 +1,5 @@
 ---
-title: 'Creating a theme for the GrapesJS builder'
+title: 'Creating a theme'
 taxonomy:
     category:
         - docs
