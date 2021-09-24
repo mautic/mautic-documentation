@@ -22,7 +22,7 @@ taxonomy:
 >
 > Default Value
 >
-> The default value (sometimes called Fallback Text) can be specified after the `|` (pipe) character.  Consider this email salutation:
+> The default value (sometimes called Fallback Text) can be specified after the `|` (pipe) character. Consider this email salutation:
 >
 > `Hi {contactfield=firstname|there},`
 >
@@ -147,7 +147,7 @@ See [customizing preference center][make-pref-center] for more information.
 
 | **VARIABLE NAME**                                  | **VARIABLE SYNTAX**                         |
 | :------------------------------------------------- | :------------------------------------------ |
-| [Dynamic Content 1]<br>ie: user-defined variable name | `{dynamiccontent="Dynamic Content 1"}`   |
+| [Dynamic Content 1]<br>for example user-defined variable name | `{dynamiccontent="Dynamic Content 1"}`   |
 
 ## Contact Monitoring
 
@@ -193,7 +193,7 @@ See the [Search][search] page for more information.
 | Company                                            | `{contactfield=company}`                    |
 | Contact ID                                         | `{contactfield=id}`                         |
 | Description (Company)                              | `{contactfield=companydescription}`         |
-| [Dynamic Content 1]<br>ie: user-defined variable name | `{dynamiccontent="Dynamic Content 1"}`   |
+| [Dynamic Content 1]<br>for example: user-defined variable name | `{dynamiccontent="Dynamic Content 1"}`   |
 | Email                                              | `{contactfield=email}`                      |
 | Email (Company)                                    | `{contactfield=companyemail}`               |
 | Facebook                                           | `{contactfield=facebook}`                   |

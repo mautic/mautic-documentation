@@ -18,7 +18,7 @@ facebookenable: true
 ---------------------
 ## How to install the tracking script
 
-After installation and setup of the cron jobs you're ready to begin tracking contacts. You need to add a simple piece of JavaScript to the websites for each site you wish to track via Mautic. This is a very simple process and you can add this tracking script to your website template file, or install a Mautic integration for the more common CMS platforms. Here is an example of the tracking JavaScript which you can access by clicking on 'Tracking Settings' in the global configuration:
+After installation and setup of the cron jobs you're ready to begin tracking contacts. You need to add a simple piece of JavaScript to the websites for each site you wish to track via Mautic. This is a very simple process and you can add this tracking script to your website template file, or install a Mautic integration for the more common Content Management System platforms. Here is an example of the tracking JavaScript which you can access by clicking on 'Tracking Settings' in the global configuration:
 
     <script>
     (function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
@@ -29,7 +29,7 @@ After installation and setup of the cron jobs you're ready to begin tracking con
     mt('send', 'pageview');
     </script>
 
-You should change the site URL (replace example.com/mautic with the URL to your Mautic instance) in the script example provided, but it's recommended to copy it from the tracking settings in your instance.
+You should change the site URL - replace `example.com/mautic` with the URL to your Mautic instance - in the script example provided, but it's recommended to copy it from the tracking settings in your instance.
 
 Checkout [Contact Monitoring][contact-monitoring] for more details.
 
