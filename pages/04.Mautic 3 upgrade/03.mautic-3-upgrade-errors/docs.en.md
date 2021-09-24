@@ -74,7 +74,7 @@ To move forward from this stage, review the error message and address any proble
 If you need any further help, please post into the dedicated [Mautic 3 Installation/Upgrade forum][m3-forum]. Please ensure that you provide all the details requested in the post template, which enables the community volunteers to provide effective support.
 
 ### ERR_MOVE_MAUTIC_2_AND_3_FILES
-During this stage, the script moves the current Mautic 2 files into a temporary directory called "mautic-2-backup-files", and then moves the Mautic 3 files from "mautic-3-temp-files" to the root directory.
+During this stage, the script moves the current Mautic 2 files into a temporary directory called `mautic-2-backup-files`, and then moves the Mautic 3 files from "mautic-3-temp-files" to the root directory
 
 If an error occurs in this stage, there were problems with moving the files and/or folders, or there was an interruption in the process for some reason.
 
