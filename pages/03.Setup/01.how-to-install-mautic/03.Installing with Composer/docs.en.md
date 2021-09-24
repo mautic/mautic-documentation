@@ -46,10 +46,10 @@ The composer create-project command passes ownership of all files to the created
 
 When installing the given composer.json the following occurs:
 
-* Mautic is installed in the public-directory.
-* Autoloader uses the generated composer autoloader in vendor/autoload.php, instead of the one provided by Mautic (public/vendor/autoload.php).
-* Plugins (packages of type mautic-plugin) are placed in public/plugins/
-* Themes (packages of type mautic-theme) are placed in public/themes/
+* Install Mautic in the public-directory.
+* Autoloader uses the generated composer autoloader in vendor/autoload.php, instead of the one provided by Mautic in public/vendor/autoload.php.
+* Plugins - packages of type mautic-plugin - are in public/plugins/.
+* Themes - packages of type mautic-theme - are in public/themes/.
 * Creates public/media directory.
 * Creates environment variables based on your .env file. See .env.example.
 
@@ -77,13 +77,13 @@ Follow the steps below to update your core files.
 
 ### Composer FAQs
 
-#### Should the contributed plugins I download be committed?
+#### Should you commit downloaded third party plugins?
 Composer recommends no. They provide [arguments against but also workarounds if a project decides to do it anyway][composer-workarounds].
 
 #### Should the scaffolding files be committed?
 The [Mautic Composer Scaffold][scaffold-plugin] plugin can download the scaffold files - for example index.php, .htaccess - to the public/ directory of your project. 
 
-If you have not customized those files you could choose to not commit them in your version control system - for example, git. If that's the case for your project it might be convenient to automatically run the Mautic Scaffold plugin after every install or update of your project. 
+If you haven't customized those files you could choose to not commit them in your version control system - for example, git. If that's the case for your project it might be convenient to automatically run the Mautic Scaffold plugin after every install or update of your project. 
 
 You can achieve that by registering `@composer mautic:scaffold` as post-install and post-update command in your composer.json:
 
@@ -100,7 +100,7 @@ You can achieve that by registering `@composer mautic:scaffold` as post-install 
 },
 ```
 
-#### How can patches be applied to downloaded plugins?
+#### How can you apply patches to downloaded plugins?
 If you need to apply patches - depending on the plugin, a pull request is often a better solution - you can do so with the composer-patches plugin.
 
 To add a patch to Mautic plugin foobar insert the patches section in the extra section of composer.json:
