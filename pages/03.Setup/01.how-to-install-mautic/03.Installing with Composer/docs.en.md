@@ -68,6 +68,16 @@ Follow the steps below to update your core files.
 3. Commit everything all together in a single commit, so the public remains in sync with the core when checking out branches or running git bisect.
 4. In the event that there are non-trivial conflicts in step 2, you may wish to perform these steps on a branch, and use git merge to combine the updated core files with your customized files. This facilitates the use of a three-way merge tool such as [kdiff3][kdiff3]. This setup isn't necessary if your changes are simple; keeping all of your modifications at the beginning or end of the file is a good strategy to keep merges easy.
 
+#### Database migrations
+
+When updating Mautic, you may need to run database migrations if there are any changes to the database in the release. To do this, use the following at the command line in the Mautic directory:
+
+`bin/console doctrine:migration:status`
+
+If there are any reported, firstly **ensure that you have a tested backup of your database before proceeding**, as this command will cause changes to the database, then run:
+
+`bin/console doctrine:migration:migrate`
+
 ### Composer FAQs
 
 #### Should the contributed plugins I download be committed?
