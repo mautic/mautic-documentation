@@ -17,7 +17,7 @@ facebookenable: true
 ----------------------------
 ## Version 2.0
 
-Mautic 2.0 brought a significant number of enhancements to Mautic.  The full release notes are at https://github.com/mautic/mautic/releases/tag/2.0.0.
+Mautic 2.0 brought a significant number of enhancements to Mautic.  The full release notes are at [https://github.com/mautic/mautic/releases/tag/2.0.0][release-2]
 
 ### Hosting Requirements
 
@@ -65,3 +65,6 @@ A simple code you can attach to a custom URL to track content and more.  The UTM
 - utm_term
 
 For more information on this [watch this video.](https://mautic.wistia.com/medias/vmqohgece0)
+
+
+[release-2]: <https://github.com/mautic/mautic/releases/tag/2.0.0.>
