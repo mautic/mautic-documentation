@@ -21,7 +21,7 @@ Mautic 4.0 brings several long-awaited features in Mautic. They are outlined as 
 
 ### Hosting Requirements
 
-- The minimum PHP version is raised from 7.4.
+- The minimum PHP version is raised from 7.3 to 7.4.
 - The minimum MySQL version is increased from version 5.5.3 to 5.7.14.
 
 ## Update to Mautic 4
@@ -38,6 +38,7 @@ All themes you wish to use in the new builder will need a simple, one line chang
 
 ## OAuth2 support
 
-Support for OAuth1 has been removed. OAuth2 instead is now supported and should be used.
+OAuth1 support has been removed. Mautic supports the OAuth2 standard, including the Client Credentials grant, which was added in Mautic 4. Documentation can be found [here][developer]
 
 
+[developer]: <https://developer.mautic.org/#client-credentials>
