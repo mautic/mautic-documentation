@@ -13,7 +13,7 @@ taxonomy:
 ----------------------------
 In this section we'll highlight the new features for each major release of Mautic.  They are in version order beginning with the latest.
 
-Mautic Releases
+## Mautic Releases
 
 - [Mautic 4][mautic-4]
 - [Mautic 3][mautic-3]
