@@ -49,4 +49,4 @@ If you currently use Rackspace or OpenStack, you will need to switch to Amazon S
 
 When you try to upload an image or replace an existing image using the email or page builder, you will see a new file manager which you can use to drag and drop images.
 
-![The new file manager window](file-manager.png)
+![The new file manager window](/Users/favourkelvin/Documents/mautic-documentation/pages/25.What's New/file-manager.png)
