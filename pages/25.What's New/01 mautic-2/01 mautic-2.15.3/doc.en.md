@@ -15,9 +15,7 @@ facebookenable: true
 ---
 
 ----------------------------
-## Version 2.0
-
-Mautic 2.0 brought a significant number of enhancements to Mautic.  The full release notes are at [https://github.com/mautic/mautic/releases/tag/2.0.0][release-2]
+## Version 2.15.3
 
 This minor release addresses some bugs which arose as a result of the previous release - 2.15.2 - which was a security release. The full release notes are at [https://github.com/mautic/mautic/releases/tag/2.15.3][release-2.15.3]
 
@@ -29,11 +27,11 @@ This minor release addresses some bugs which arose as a result of the previous r
 
 ### Download segment filter
 
-With this release you can download segment filter
+With this release you can download Segment filter
 
 ### CreatedDate to Salesforce integration 
 
-This release improves Salesforce integration byb adding CreatedDate features 
+This release improves Salesforce integration by adding `CreatedDate` feature
 
 
 
