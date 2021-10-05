@@ -1,5 +1,5 @@
 ---
-title: 'Mautic 2.16.0'
+title: 'Mautic 2.16'
 taxonomy:
     category:
         - docs
