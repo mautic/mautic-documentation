@@ -17,7 +17,7 @@ facebookenable: true
 ----------------------------
 ## Version 2.16
 
-This release 2.16 includes many enhancements and bug-fixes. The full release notes are at [https://github.com/mautic/mautic/releases/tag/2.15.3][release-2.15.3]
+This release 2.16 includes many enhancements and bug-fixes. The full release notes are at [https://github.com/mautic/mautic/releases/tag/2.16.0>][release-2.16]
 
 
 
