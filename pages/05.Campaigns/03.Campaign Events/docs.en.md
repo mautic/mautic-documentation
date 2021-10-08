@@ -35,7 +35,7 @@ This action will allow you to send email to:
 
 - any Mautic user
 - contact's owner
-- any email addresses (TO, CC, BCC). You can also use contact token based on email type contact field. As example, you can add as recipient `{contactfield=email}`.
+- any email addresses (TO, CC, BCC).
 
 Emails sent through this action will not generate any statistics for contacts nor emails.
 
