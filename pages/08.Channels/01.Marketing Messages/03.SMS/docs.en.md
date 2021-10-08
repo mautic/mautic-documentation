@@ -52,6 +52,7 @@ You can also get SMS replies in your contact's timeline like this
 * the configuration tab must contain the phone number with same format: +XXXXXXX
 * the SID must be the one of the account, not the one of the phone number
 * STOP, STOPALL, UNSUBSCRIBE, CANCEL, END, and QUIT - will stop customers from receiving messages from that particular Twilio number.
+* the amount of characters used in the text message may influence the amount of SMS sent. We added in the UI a counter under the textarea
 
 ## Configure Twilio Webhooks
 
