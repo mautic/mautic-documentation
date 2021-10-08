@@ -1,3 +1,557 @@
+# v1.10.18
+## 07/19/2021
+
+1. [](#improved)
+    * Add logic to allow fieldset form field inside a list field [#2159](https://github.com/getgrav/grav-plugin-admin/pull/2159)
+
+# v1.10.17
+## 06/15/2021
+
+1. [](#improved)
+    * Added timestamp as title in logs date [#2141](https://github.com/getgrav/grav-plugin-admin/issues/2141)
+    * Use `base64_encode` filter rather than function
+    * Composer update
+1. [](#bugfix)
+    * Fixed missing `Remove Theme` button when the theme is inactive
+    * Update taskGetChildTypes() to use Flex Pages (works without the plugin) [#2087](https://github.com/getgrav/grav-plugin-admin/issues/2087)
+
+# v1.10.16
+## 06/02/2021
+
+1. [](#bugfix)
+    * Fixed issue with some elements overflowing closed list items [#2146](https://github.com/getgrav/grav-plugin-admin/issues/2146)
+    * Fixed configuration not fully updating on save [#2149](https://github.com/getgrav/grav-plugin-admin/issues/2149)
+    * Fixed display issue with "+ Add Page" and picking a different route [#2136](https://github.com/getgrav/grav-plugin-admin/issues/2136), [#2145](https://github.com/getgrav/grav-plugin-admin/issues/2145)
+    * Treat WebP as image when inserting / drag & dropping [#2150](https://github.com/getgrav/grav-plugin-admin/issues/2150)
+
+# v1.10.15
+## 05/19/2021
+
+1. [](#new)
+    * Updated SCSS compiler to v1.5
+1. [](#improved)
+    * Updated node modules dev dependencies
+    * Package.json scripts cleanup
+    * Recompiled JS for production
+    * Use `base645_encode` filter rather than function
+    * Editor: Do not assume images URLs are going to be `http://` (wrong assumption plus not SSL) [#2127](https://github.com/getgrav/grav-plugin-admin/issues/2127)
+    * Improved Theme Activation + Plugin Enabled logic to ensure configuration is not displayed unless activation/enabled state. Fixes [#2140](https://github.com/getgrav/grav-plugin-admin/issues/2140)
+1. [](#bugfix)
+    * Fixed issue with slugify where single curly quotes in titles would translate to straight single quote [#2101](https://github.com/getgrav/grav-plugin-admin/issues/2101)
+    * Fix z-index issue with fullscreeen editor (and toolips) [#2143](https://github.com/getgrav/grav-plugin-admin/issues/2143)
+
+# v1.10.14
+## 04/29/2021
+
+1. [](#improved)
+    * Added a `min_height:` option for list field
+1. [](#bugfix)
+    * Fixed z-index issue for tooltips in sidebar
+    * Fixed custom files being overridden during theme update [#2135](https://github.com/getgrav/grav-plugin-admin/issues/2135)
+
+# v1.10.13
+## 04/23/2021
+
+1. [](#new)
+    * Added refresh action button for Folder to ease the regeneration of the slug based on the title. Available also as API entry `Grav.default.Forms.Fields.FolderField.Regenerate()` [#1738](https://github.com/getgrav/grav-plugin-admin/issues/1738)
+1. [](#improved)
+    * Removed sourcemaps references from fork-awesome.min.css [#2122](https://github.com/getgrav/grav-plugin-admin/issues/2122)
+    * Support native spell checkers in CodeMirror editor [#1266](https://github.com/getgrav/grav-plugin-admin/issues/1266)
+    * Added new 'Content Highlight' color to presets
+    * Copying Pages now prompts a dedicated modal that allows for picking title, folder name, parent location, page template and visibility [#1738](https://github.com/getgrav/grav-plugin-admin/issues/1738)
+    * Updated with latest language translations from Crowdin.com
+1. [](#bugfix)
+    * Moved preset CSS compile to earlier in the process to ensure compilation happens in time.
+    * Prevent Save actions from Flex Objects to trigger the unsaved unload notice [#2125](https://github.com/getgrav/grav-plugin-admin/issues/2125)
+    * Fixed audit vulnerabilities in module dependencies and house cleanup [#2096](https://github.com/getgrav/grav-plugin-admin/issues/2096)
+    * Fixed issue preventing Drag & Drop of media files while in Expert Mode [#1927](https://github.com/getgrav/grav-plugin-admin/issues/1927)
+    * Fixed broken link colors in `preset.css` which was causing issues with tabs and dropdowns
+    * Fixed permissions for page related tasks and actions
+    * Fixed permission check for configuration save [#2130](https://github.com/getgrav/grav-plugin-admin/issues/2130)
+    * Fixed missing/wrong page categories and tags when multi-language support is enabled [#2107](https://github.com/getgrav/grav-plugin-admin/issues/2107)
+
+# v1.10.12
+## 04/15/2021
+
+1. [](#bugfix)
+    * Regression: Fixed broken plugin/theme installer in admin
+    * Fixed error reporting for AJAX tasks if user has no permissions
+    * Fixed missing slash in password reset URL [#2119](https://github.com/getgrav/grav-plugin-admin/issues/2119)
+
+# v1.10.11
+## 04/13/2021
+
+1. [](#bugfix)
+    * **IMPORTANT** Fixed security vulnerability that allows installation of plugins with minimal admin privileges [GHSA-wg37-cf5x-55hq](https://github.com/getgrav/grav-plugin-admin/security/advisories/GHSA-wg37-cf5x-55hq)
+    * Fixed `You have been logged out` message when entering to 2FA authentication due to `/admin/task:getNotifications` AJAX call
+    * Fixed broken 2FA login when site is not configured to use Flex Users [#2109](https://github.com/getgrav/grav-plugin-admin/issues/2109)
+    * Fixed error message when user clicks logout link after the session has been expired
+
+# v1.10.10
+## 04/07/2021
+
+1. [](#bugfix)
+    * Fixed missing `admin-preset.css` in multisite environments
+    * Regression: Fixed broken 2FA form [#2109](https://github.com/getgrav/grav-plugin-admin/issues/2109)
+
+# v1.10.9
+## 04/06/2021
+
+1. [](#new)
+    * Requires **Grav 1.7.10**
+1. [](#improved)
+    * Better isolate admin to prevent session related vulnerabilities
+    * Removed support for custom login redirects for improved security
+    * Shorten forgot password link lifetime from 7 days to 1 hour
+    * Updated with latest language translations from Crowdin.com
+1. [](#bugfix)
+    * Fixed issue where Adding a new page and canceling from within Editing would alter the Parent location of the edited page [#2067](https://github.com/getgrav/grav-plugin-admin/issues/2067)
+    * Fixed and enhanced Range field to be Lists compatible [#2062](https://github.com/getgrav/grav-plugin-admin/issues/2062)
+    * Fixed ERR_TOO_MANY_REDIRECTS with HTTPS = 'On' [#2100](https://github.com/getgrav/grav-plugin-admin/issues/2100)
+    * Prevent expert editing mode from anyone else than super users [#2094](https://github.com/getgrav/grav-plugin-admin/issues/2094)
+    * Fixed login related pages being accessible from admin when user has logged in
+    * Fixed admin user creation and password reset allowing unsafe passwords
+    * Fixed missing validation when registering the first admin user
+    * Fixed reset password email not to have session specific token in it
+    * Fixed admin controller running before setting `$grav['page']`
+
+# v1.10.8
+## 03/19/2021
+
+1. [](#improved)
+    * Include alt text and title for images added to the editor [#2098](https://github.com/getgrav/grav-plugin-admin/issues/2098)
+1. [](#bugfix)
+    * Fixed issue replacing `wildcard` field names in flex collections [#2092](https://github.com/getgrav/grav-plugin-admin/pull/2092)
+    * Fixed legacy Pages having old `modular` reference instead of `module` [#2093](https://github.com/getgrav/grav-plugin-admin/issues/2093)
+    * Fixed issue where Add New modal would close if selecting an item outside of the modal window. It is now necessary go through the Cancel button and clicking the overlay won't trigger the closing of the modal [#2089](https://github.com/getgrav/grav-plugin-admin/issues/2089), [#2065](https://github.com/getgrav/grav-plugin-admin/issues/2065)
+
+# v1.10.7
+## 03/17/2021
+
+1. [](#improved)
+    * Force height of Flex pages admin to fit available space
+    * Updated languages from Crowdin.com
+    * Better field type definitions for file, pagemedia, filepicker and pagemediafield
+1. [](#bugfix)
+    * Fixed error when checking missing log file [#2088](https://github.com/getgrav/grav-plugin-admin/issues/2088)
+
+# v1.10.6
+## 02/23/2021
+
+1. [](#new)
+    * Vastly improved support for RTL languages [#2078](https://github.com/getgrav/grav-plugin-admin/pull/2078)
+1. [](#improved)
+    * Flex pages admin better uses available space [#2075](https://github.com/getgrav/grav/issues/2075)
+1. [](#bugfix)
+    * Regression: Fixed enabling/disabling plugin or theme corrupting configuration
+    * Fixed unnecessary closing bracket causing JS error [#2079](https://github.com/getgrav/grav-plugin-admin/issues/2079)
+    * Fixed wrong language in Admin Tools [#2077](https://github.com/getgrav/grav-plugin-admin/issues/2077)
+
+# v1.10.5
+## 02/18/2021
+
+1. [](#bugfix)
+    * Regression: Fixed fatal error in admin if POST request has `data` in it [#2074](https://github.com/getgrav/grav-plugin-admin/issues/2074)
+    * Fixed Admin creating empty `user/config/info.yaml` file (the file can be safely removed, it is not in use)
+    * Fixed ACL for users with mixed case usernames [#2073](https://github.com/getgrav/grav-plugin-admin/issues/2073)
+
+# v1.10.4
+## 02/17/2021
+
+1. [](#new)
+    * Added support to include new page creation modals in other pages by using `form_action` twig variable [#2024](https://github.com/getgrav/grav-plugin-admin/pull/2024)
+    * Updated all languages from [Crowdin](https://crowdin.com/project/grav-admin) - Please update any translations here
+1. [](#improved)
+    * Removed `noscript` template, because 2021...
+    * List field: added new `placement` property to decide wether to add new items at the top, bottom or based on the *position* of the clicked button [#2055](https://github.com/getgrav/grav-plugin-admin/pull/2055)
+    * Ensure admin default CSS styles load **first**, and presets loads **last**
+    * Tweaked handling of uploaded files [#1429](https://github.com/getgrav/grav-plugin-admin/issues/1429)
+    * Provide media object and filename in `onAdminAfterDelMedia` event [#1905](https://github.com/getgrav/grav-plugin-admin/pull/1905)
+1. [](#bugfix)
+    * Fixed case-sensitive `accept` in `filepicker` field
+    * Fixed HTML Entities in titles [#2028](https://github.com/getgrav/grav-plugin-admin/issues/2028)
+    * Fixed deleting list field options completely, didn't save changes [#2056](https://github.com/getgrav/grav-plugin-admin/issues/2056)
+    * Fixed `onAdminAfterAddMedia` and `onAdminAfterDelMedia` events always pointing to the home page
+    * Fixed ACL for Configuration tabs [#771](https://github.com/getgrav/grav-plugin-admin/issues/771)
+    * Fixed changelog button showing up in Info page even if user cannot access it
+    * Fixed toggleable checkboxes being unchecked in fieldset columns [#2063](https://github.com/getgrav/grav-plugin-admin/issues/2063)
+    * Fixed issue with max backups of zero [#2070](https://github.com/getgrav/grav-plugin-admin/issues/2070)
+
+# v1.10.3
+## 02/01/2021
+
+1. [](#new)
+    * Requires **Grav 1.7.4** (SemVer library moved to Grav)
+    * Added back special fonts (including Gantry)
+2. [](#bugfix)
+    * Fixed field type `range` not taking into account legitimate `0` values
+    * Fixed `Call to a member function trackHit() on null` [#2049](https://github.com/getgrav/grav-plugin-admin/issues/2049)
+
+# v1.10.2
+## 01/21/2021
+
+2. [](#bugfix)
+    * Fixed admin style compilation failing to save CSS if assets folder does not exist
+
+# v1.10.1
+## 01/20/2021
+
+1. [](#improved)
+    * Added `watch.sh` for compiling SCSS with native sass compiler
+2. [](#bugfix)
+    * Fixed issue with overlapping sidebar when using fullscreen editor [#2022](https://github.com/getgrav/grav-plugin-admin/issues/2022)
+
+# v1.10.0
+## 01/19/2021
+
+1. [](#new)
+    * Requires **Grav 1.7 and PHP 7.3.6**
+    * Read about this release in the [Grav 1.7 Released](https://getgrav.org/blog/grav-1.7-released) blog post
+    * Read the full list of changes in the [Changelog on GitHub](https://github.com/getgrav/grav-plugin-admin/blob/1.10.0/CHANGELOG.md)
+    * Please read [Grav 1.7 Upgrade Guide](https://learn.getgrav.org/17/advanced/grav-development/grav-17-upgrade-guide) before upgrading!
+1. [](#improved)
+    * Various notifications improvements
+1. [](#bugfix)
+    * Fixed missed highlight on the selected page in Parents field
+    * Fixed notifications that would not be remembered as hidden
+    * Fixed taxonomy field not listing existing options in Flex Pages
+    * Fixed taxonomy field not working outside pages
+    * Fixed fatal error when moving a page using the old implementation [#2019](https://github.com/getgrav/grav-plugin-admin/issues/2019)
+    * Fixed evaluating default value in `hidden` field (thanks @NicoHood)
+
+# v1.10.0-rc.20
+## 12/14/2020
+
+1. [](#improved)
+    * Cookies now explicitly set `SameSite` to `Lax` unless otherwise specified [#1998](https://github.com/getgrav/grav-plugin-admin/issues/1998)
+    * Exposed **Cookies** class (`Grav.default.Utils.Cookies`) for developers that need it in Admin.
+1. [](#bugfix)
+    * Fixed Plugins references in Themes details page.
+    * Fixed issue preventing purchase of Themes within Admin and redirecting instead.
+    * Regression: Values inside Fieldset do not display [#1995](https://github.com/getgrav/grav-plugin-admin/issues/1995)
+
+# v1.10.0-rc.19
+## 12/02/2020
+
+1. [](#improved)
+    * Just keeping sync with Grav rc.19
+
+# v1.10.0-rc.18
+## 12/02/2020
+
+1. [](#new)
+    * Retired "Secure Delete" and "Warn on page delete". You are now always warned and asked to confirm a deletion.
+1. [](#improved)
+    * Auto-link a plugin/theme license in details if it starts with `http`
+    * Allow to fallback to `docs:` instead of `readme:`
+    * Forward a `sid` to GPM when downloading a premium package
+    * Better support for array field key/value when either key or value is stored empty [#1972](https://github.com/getgrav/grav-plugin-admin/issues/1972)
+    * Remember the open state of the sidebar [#1973](https://github.com/getgrav/grav-plugin-admin/issues/1973)
+    * Upgraded node dependencies to latest version. Improved speed of JS compilation.
+    * Added modal to confirm updating Grav as well as cool down counter before enabling Update button [#1257](https://github.com/getgrav/grav-plugin-admin/issues/1257)
+    * Better handling of offline/intranet mode when the repository index is missing. Faster admin. [#1916](https://github.com/getgrav/grav-plugin-admin/issues/1916)
+    * Statistics is now Page View Statistics [#1885](https://github.com/getgrav/grav-plugin-admin/issues/1885)
+    * It is now possible to use regex as values for "Hide page types in Admin" and "Hide modular page types in Admin" settings [#1828](https://github.com/getgrav/grav-plugin-admin/issues/1828)
+    * Default to `disabled` state for all cron-jobs
+1. [](#bugfix)
+    * Fixed Safari issue with new ACL picker field [#1955](https://github.com/getgrav/grav-plugin-admin/issues/1955)
+    * Stop propagation of ACL add button in ACL picker [flex-objects#83](https://github.com/trilbymedia/grav-plugin-flex-objects/issues/83)
+    * Fixed missing special groups `authors` and `defaults` for pages
+    * Fixed Page Move action and selection highlight in Parents selector modal [flex-objects#80](https://github.com/trilbymedia/grav-plugin-flex-objects/issues/80)
+    * Fixed folder auto-naming in Add Module [#1937](https://github.com/getgrav/grav-plugin-admin/issues/1937)
+    * Fixed remodal issue triggering close when selecting a dropdown item ending outside of scope [#1682](https://github.com/getgrav/grav-plugin-admin/issues/1682)
+    * Reworked how collapsed lists work so the tooltip is not cut off [#1928](https://github.com/getgrav/grav-plugin-admin/issues/1928)
+    * Fixed KeepAlive issue where too large of a session value would fire the keep alive immediately [#1860](https://github.com/getgrav/grav-plugin-admin/issues/1860)
+    * Fixed stringable objects breaking the inputs
+    * Fixed filepicker, pagemediaselect fields with `multiple: true` and `array: true` [#1580](https://github.com/getgrav/grav-plugin-admin/issues/1580)
+
+# v1.10.0-rc.17
+## 10/07/2020
+
+1. [](#new)
+    * Support premium themes
+1. [](#improved)
+    * Improved some error messages for better readability
+    * Strip tags from browser title
+1. [](#bugfix)
+    * More multi-site routing fixes
+    * Fixed issue that would force a page reload when failing to install/update a plugin or theme.
+    * Fixed proxy/browser caching issues in admin pages
+
+# v1.10.0-rc.16
+## 09/01/2020
+
+1. [](#improved)
+    * Made all the `onAdmin*` CRUD events to pass `object` (and backwards compatible `page`) to make them easier to use
+    * Updated vendor libraries including `SCSSPHP` to v1.2
+1. [](#bugfix)
+    * Fixed issue with File field being used in Theme/Plugins
+    * Fixed bad redirection after successful admin login in subdirectory multisite [#1487](https://github.com/getgrav/grav-plugin-admin/issues/1487)
+
+# v1.10.0-rc.15
+## 07/22/2020
+
+1. [](#bugfix)
+    * Disabled the EXIF library for Dropzone for fixing the orientation as it was getting applied twice [#1923](https://github.com/getgrav/grav-plugin-admin/issues/1923)
+    * Forked Dropzone fo fix issue with Resize + Exif orientation [#1923](https://github.com/getgrav/grav-plugin-admin/issues/1923)
+    * Fixed URI encode for the preview of images names
+
+# v1.10.0-rc.14
+## 07/09/2020
+
+1. [](#improved)
+    * Completely removed old Google font support for upgrade compatibility
+1. [](#bugfix)
+    * Fixed bad `use` reference to `UserObject`
+
+# v1.10.0-rc.13
+## 07/01/2020
+
+1. [](#improved)
+    * Improved color picker field
+    * Trim login route for safety
+    * Composer update to grab latest vendor libs
+
+# v1.10.0-rc.12
+## 06/08/2020
+
+1. [](#new)
+    * Added ability to set a preferred markdown editor in user profile
+    * Added new `onAdminListContentEditors` event to add a custom editor to the list of available
+1. [](#bugfix)
+    * Fixed issue deleting file from a plugin's configuration
+    * Use `Pages::find()` instead of `Pages::dispatch()` as we do not want to redirect out of admin
+    * Fixed broken `parent` field when using the old pages
+    * Fixed broken `file` field preview when using streams in the path
+
+# v1.10.0-rc.11
+## 05/14/2020
+
+1. [](#new)
+    * Major enhancements to "White Label" functionality including ability to export/import presets
+    * New horizontal scroller for theme presets
+    * Codemirror Fontsize / Preset / Font preference options
+1. [](#improved)
+    * Fixed lots of styling issues related to "White Label" presets
+    * Changed out "One Light" theme for new "Firewatch Light" theme
+    * New scrolling system based on `SimpleBar` + native CSS scrollbar styling
+
+# v1.10.0-rc.10
+## 04/30/2020
+
+1. [](#new)
+    * Addd new `taskConvertUrls` method for use with 3rd party editors
+
+# v1.10.0-rc.9
+## 04/27/2020
+
+1. [](#new)
+    * Added new "White Label" functionality to customize admin colors + logos
+    * Added badge count for children in the Parents field
+1. [](#improved)
+    * Added markdown support to `text` in `section` field
+1. [](#bugfix)
+    * Prevent loading Pages in Parents field if they don't have children
+    * Fixed custom folder in `mediapicker` field not working with streams
+    * Fixed language redirect adding extra language prefix in Flex
+    * Fixed `Invalid input in "Parent"` when saving page in raw mode [#1869](https://github.com/getgrav/grav-plugin-admin/issues/1869)
+
+# v1.10.0-rc.8
+## 03/19/2020
+
+1. [](#new)
+    * Added `has-children` flag in parent field data response
+    * Added `RESET` en lang string
+1. [](#bugfix)
+    * Fixed parent field not working with regular pages
+
+# v1.10.0-rc.7
+## 03/05/2020
+
+1. [](#new)
+    * Enable admin cache by default (for existing sites, check `Plugins > Admin Panel > Enable Admin Caching`)
+1. [](#improved)
+    * Removed old `scss.sh` and `watch.sh` scripts, use `gulp watch-css`
+    * Added keysOnly parameter to `AdminPlugin::pagesTypes()` and `AdminPlugin::pagesModularTypes()` methods
+    * Added ignore parameter to `Admin::types()` and `Admin::modularTypes()` methods
+    * Improved configuration fields for hiding page types in Admin
+1. [](#bugfix)
+    * Fixed minor UI padding in Flex pages [#1825](https://github.com/getgrav/grav-plugin-admin/issues/1825)
+    * Fixed `column` and `section` fields loosing user entered value when form submit fails
+    * Fixed `order` field not working with a new Flex Page
+
+# v1.10.0-rc.6
+## 02/11/2020
+
+1. [](#new)
+    * Pass phpstan level 1 tests
+    * Updated semver library to v1.5
+    * Require flex-objects plugin
+1. [](#improved)
+    * Added some debugging messages (turned off by default)
+
+# v1.10.0-rc.5
+## 02/03/2020
+
+1. [](#new)
+    * No changes, just keeping things in sync with Grav RC version
+
+# v1.10.0-rc.4
+## 02/03/2020
+
+1. [](#new)
+    * Added message to dashboard to install Flex Objects plugin if it is missing
+    * Updated `permissions` field to use new `$grav['permissions']`
+    * DEPRECATED `onAdminRegisterPermissions` event, use `PermissionsRegisterEvent::class` event instead
+    * DEPRECATED `Admin::setPermissions()` and `Admin::addPermissions()`, use `PermissionsRegisterEvent::class` event instead
+    * DEPRECATED `Admin::getPermissions()`, use `$grav['permissions']->getInstances()` instead
+1. [](#improved)
+    * Added `field.show_label` and `field.label` display logic from frontend forms
+1. [](#bugfix)
+    * Fixed user profile when using `Flex Users` only in admin
+    * Fixed saving data with empty field, default value (from config, plugin, theme) was used instead
+    * Fixed JS bug is using empty Grav URI param key
+    * Fixed bug in toggleable field being disabled with empty value (`''` `0`, `false`, `[]`...)
+    * Fixed `admin_route()` twig function to work properly with Grav 1.7.0-rc.4, which fixes `Route` base
+    * Fixed misleading 'Show sensitive data' configuration option wording [#1818](https://github.com/getgrav/grav-plugin-admin/issues/1818)
+
+# v1.10.0-rc.3
+## 01/02/2020
+
+1. [](#new)
+    * Added ability to display **Changelogs** for `Grav`, `Plugins` and `Themes`
+    * Added raw root page support for `Flex Pages`
+
+# v1.10.0-rc.2
+## 12/04/2019
+
+1. [](#new)
+    * Added support for hiding parts of admin by `Deny` permissions (`Flex Users` only)
+    * Optimized `parent` field for Flex Pages
+1. [](#improved)
+    * Improved `permissions` field to add support for displaying calculated permissions
+    * Grav 1.7: Updated deprecated `$page->modular()` method calls to `$page->isModule()`
+    * Output the current process user name in Scheduler instructions
+    * Translations: rename MODULAR to MODULE everywhere
+1. [](#bugfix)
+    * Fixed `permissions` field with nested permissions
+    * Fixed Save Shortcut (CTRL + S / CMD + S) not working with new Flex Pages [#1787](https://github.com/getgrav/grav-plugin-admin/issues/1787)
+
+# v1.10.0-rc.1
+## 11/06/2019
+
+1. [](#new)
+    * Added a new `onAdminLogFiles()` event for 3rd party plugins to register log files for log viewer [#1765](https://github.com/getgrav/grav-plugin-admin/issues/1765)
+1. [](#improved)
+    * Improved delete button UI [#1769](https://github.com/getgrav/grav-plugin-admin/issues/1769)
+    * Ability to configure display of 3rd party dashboard widgets [#1766](https://github.com/getgrav/grav-plugin-admin/issues/1766)
+1. [](#bugfix)
+    * Fixed administrator user creation when `Flex Users` is enabled
+    * Fixed minor button alignment in FF [#1760](https://github.com/getgrav/grav-plugin-admin/issues/1760)
+
+# v1.10.0-beta.10
+## 10/03/2019
+
+1. [](#bugfix)
+    * Regression: Fixed language assignments for the pages without set language
+
+# v1.10.0-beta.9
+## 09/26/2019
+
+1. [](#bugfix)
+    * Make pages field to work with Flex Pages
+
+# v1.10.0-beta.8
+## 09/19/2019
+
+1. [](#new)
+    * Add ability to Sanitize SVGs on file upload
+    * Add ability to Sanitize SVGs in Page media
+1. [](#improved)
+    * YAML linter report now supports multi-language
+    * Better colors/placement of toolbar buttons in page edit view
+1. [](#bugfix)
+    * Fixed missing language for AJAX requests
+    * Fixed redirect with absolute language URL
+    * Fixed issue with user avatar reference not being deleted when image removed
+
+# v1.10.0-beta.7
+## 08/30/2019
+
+1. [](#bugfix)
+    * Fixed regression: Do not require Flex Objects plugin [grav#2653](https://github.com/getgrav/grav/issues/2653)
+
+# v1.10.0-beta.6
+## 08/29/2019
+
+1. [](#improved)
+    * Optimized admin for speed (only load frontend pages on demand)
+    * Updated navigation menu to be fully controlled and overrideable by `onAdminMenu` event
+    * Lots of Flex Page speed improvements
+
+# v1.10.0-beta.5
+## 08/11/2019
+
+1. [](#new)
+    * Added `data()` twig function to create data object from an array
+1. [](#improved)
+    * Better support for `array` field into `list` field
+    * Made RAW blueprints (expert mode) to work properly with Flex Form
+    * Better support for `clockwork` logs
+1. [](#bugfix)
+    * Fixed issue with nested `list` fields both utilizing the custom `key` functionality
+    * Regression: Page Preview not working, bad url [#1715](https://github.com/getgrav/grav-plugin-admin/issues/1715)
+    * Fixed '+New Folder' to work with new parent picker
+    * Fixed missing XSS check field when editing modular page as raw
+    * Fixed minor CSS layout issue [#1717](https://github.com/getgrav/grav-plugin-admin/issues/1717)
+
+# v1.10.0-beta.4
+## 07/01/2019
+
+1. [](#new)
+    * Added `Admin::redirect()` method to allow redirects to be used outside of controllers
+    * Added `$admin->adminRoute()` method and `admin_route()` twig function to create language aware admin page links
+    * Renamed `Admin::route()` to `Admin::getCurrentRoute()` and deprecated the old call
+1. [](#improved)
+    * Much improved multi-language support for pages
+    * Admin redirects should now work better with multiple languages enabled
+1. [](#bugfix)
+    * Fixed default language being renamed to `page.en.md` (English) instead of keeping existing `page.md` filename
+    * Fixed possibility to override already existing translation by `Save As Language`
+    * Fixed missing default translation if page used plain `.md` file extension without language code
+    * Fixed wrong translation showing up as page fallback language
+    * Integrated Admin 1.9.8 bug fixes
+
+# v1.10.0-beta.3
+## 06/24/2019
+
+1. [](#improved)
+    * Smarter handling of symlinks in parent field
+1. [](#bugfix)
+    * Fixed issue with windows paths in `parent` field [#1699](https://github.com/getgrav/grav-plugin-admin/issues/1699)
+
+# v1.10.0-beta.2
+## 06/21/2019
+
+1. [](#improved)
+    * Moved Remodal in-house and added support for stackable modals [#1698](https://github.com/getgrav/grav-plugin-admin/issues/1698), [#1699](https://github.com/getgrav/grav-plugin-admin/issues/1699)
+1. [](#bugfix)
+    * Fixed missing check for maximum allowed files in `files` field
+
+# v1.10.0-beta.1
+## 06/14/2019
+
+1. [](#new)
+    * New Parent/Move field using Ajax for better performance
+    * Improvements to cache clearing when admin cache is enabled
+    * Require Grav v1.7
+    * Use PSR-4 for plugin classes
+    * Added support for Twig 2.11 (compatible with Twig 1.40+)
+1. [](#improved)
+    * Various admin performance improvements
+1. [](#bugfix)
+    * Fixed admin caching issues
+
 # v1.9.19
 ## 12/14/2020
 

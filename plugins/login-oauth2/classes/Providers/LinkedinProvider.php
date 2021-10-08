@@ -1,16 +1,33 @@
 <?php
+
 namespace Grav\Plugin\Login\OAuth2\Providers;
 
-use Grav\Common\Grav;
-use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\LinkedIn;
+use League\OAuth2\Client\Provider\LinkedInResourceOwner;
+use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
-class LinkedInProvider extends BaseProvider
+class LinkedinProvider extends BaseProvider
 {
+    /** @var string */
     protected $name = 'LinkedIn';
-    protected $classname = 'League\\OAuth2\\Client\\Provider\\LinkedIn';
+    /** @var string */
+    protected $classname = LinkedIn::class;
 
-    public function initProvider(array $options)
+    /**
+     * @param array $options
+     * @return bool
+     */
+    public static function checkIfActive(array $options): bool
+    {
+        $client_id = $options['client_id'] ?? false;
+
+        return $client_id && parent::checkIfActive($options);
+    }
+
+    /**
+     * @param array $options
+     */
+    public function initProvider(array $options): void
     {
         $options += [
             'clientId'      => $this->config->get('providers.linkedin.client_id'),
@@ -20,7 +37,10 @@ class LinkedInProvider extends BaseProvider
         parent::initProvider($options);
     }
 
-    public function getAuthorizationUrl()
+    /**
+     * @return string
+     */
+    public function getAuthorizationUrl(): string
     {
         $options = ['state' => $this->state];
         $options['scope'] = $this->config->get('providers.linkedin.options.scope');
@@ -28,9 +48,15 @@ class LinkedInProvider extends BaseProvider
         return $this->provider->getAuthorizationUrl($options);
     }
 
-    public function getUserData($user)
+    /**
+     * @param ResourceOwnerInterface|LinkedInResourceOwner $user
+     * @return array
+     */
+    public function getUserData(ResourceOwnerInterface $user): array
     {
-        $data_user = [
+        \assert($user instanceof LinkedInResourceOwner);
+
+        return [
             'id'         => $user->getId(),
             'login'      => $user->getEmail(),
             'fullname'   => $user->getFirstName() . ' ' . $user->getLastName(),
@@ -41,7 +67,5 @@ class LinkedInProvider extends BaseProvider
                 'location' => $user->getLocation(),
             ]
         ];
-
-        return $data_user;
     }
 }

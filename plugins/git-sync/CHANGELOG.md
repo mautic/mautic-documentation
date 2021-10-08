@@ -1,3 +1,38 @@
+# v2.3.2
+## 06/03/2021
+
+1. [](#bugfix)
+   * Better validation for Git Repository value on both Wizard and Backend. 
+   * Prevent malicious commands from being executed in Wizard when "Verifying Authentication, Connection and Branch".
+
+# v2.3.1
+## 04/30/2021
+
+1. [](#bugfix)
+   * Fixed regression where `testRepository` would erroneously pass with invalid credentials [#200](https://github.com/trilbymedia/grav-plugin-git-sync/issues/200)
+   * Fixed Exception thrown with `bin/plugin git-sync status` command, preventing `sync` [#200](https://github.com/trilbymedia/grav-plugin-git-sync/issues/200)
+
+# v2.3.0
+## 04/27/2021
+
+1. [](#new)
+   * Added new Advanced Git Ignore field where it is possible to specify custom git ignore entries to play along with GitSync [#197](https://github.com/trilbymedia/grav-plugin-git-sync/issues/197) [#117](https://github.com/trilbymedia/grav-plugin-git-sync/issues/117) 
+   * Support `ssh://` protocol and SSH Key authentication ([read more](https://github.com/trilbymedia/grav-plugin-git-sync#ssh--enterprise)) [#110](https://github.com/trilbymedia/grav-plugin-git-sync/issues/110)
+1. [](#improved)
+   * Updated PHP Encryption dependency
+1. [](#bugfix)
+   * Fixed issue with Flex Objects, preventing GitSync's settings to get refreshed `onAdminSave` when "Sync on Page Save" disabled
+   * Return raw URL for repositories setup with `ssh://` protocol, instead of injecting the password like `git://` and `http://` protocols do [#104](https://github.com/trilbymedia/grav-plugin-git-sync/issues/104)
+
+# v2.2.0
+## 04/17/2021
+
+1. [](#improved)
+   * Better support for branches other than `master`. This includes the transition to `main` from GitHub and the groundwork to support other big providers making the change as announced soon. GitSync is now capable of preset the branch based on the provider selected. You are now also able to specify any custom branch and when testing the repository connection it will also ensure the branch exists and provide feedback if not. 
+1. [](#bugfix)
+   * Changing remote branch is now going to properly reference it instead of remaining stuck to `master` [#192](https://github.com/trilbymedia/grav-plugin-git-sync/issues/192), [#183](https://github.com/trilbymedia/grav-plugin-git-sync/issues/183)
+   * Fixed issue where the Folders to synchronize from the Wizard wouldn't get properly saved [#178](https://github.com/trilbymedia/grav-plugin-git-sync/issues/178)
+
 # v2.1.1
 ## 07/17/2020
 

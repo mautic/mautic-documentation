@@ -108,7 +108,9 @@ export default class PageMedia extends FilesField {
 
     onDropzoneComplete(file) {
         super.onDropzoneComplete(file);
-        this.sortable.options.onSort();
+        if (this.sortable) {
+            this.sortable.options.onSort();
+        }
 
         // accepted
         $('.dz-preview').prop('draggable', 'true');
@@ -116,7 +118,9 @@ export default class PageMedia extends FilesField {
 
     onDropzoneRemovedFile(file, ...extra) {
         super.onDropzoneRemovedFile(file, ...extra);
-        this.sortable.options.onSort();
+        if (this.sortable) {
+            this.sortable.options.onSort();
+        }
     }
 
     attachDragDrop() {
@@ -139,9 +143,9 @@ export default class PageMedia extends FilesField {
             let file = target.parent('.dz-preview').find('.dz-filename');
             let filename = encodeURI(file.text());
             let URL = target.closest('[data-media-path]').data('media-path');
-            let original = this.dropzone.files.filter((file) => encodeURIComponent(file.name) === filename).shift();
+            let original = this.dropzone.files.filter((file) => encodeURI(file.name) === filename).shift();
 
-            original = original.extras.original || encodeURIComponent(original.name);
+            original = original && ((original.extras && original.extras.original) || encodeURI(original.name));
 
             target.attr('href', `${URL}/${original}`);
         });

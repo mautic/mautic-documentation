@@ -1,6 +1,7 @@
 {% extends 'partials/base.html.twig' %}
 
 {% set plugin_slug = admin.route %}
+{% set enabled = true %}
 
 {% if plugin_slug %}
     {% set installing = plugin_slug starts with 'install' %}
@@ -19,6 +20,8 @@
 
         {% set plugin = package.toArray() %}
         {% set title = "PLUGIN_ADMIN.PLUGIN"|tu ~ ": " ~ plugin.name|e %}
+        {% set data = admin.data('plugins/' ~ admin.route) %}
+        {% set enabled = data.get('enabled') %}
     {% endif %}
 {% else %}
     {% set title = "PLUGIN_ADMIN.PLUGINS"|tu %}
@@ -39,10 +42,10 @@
     {% if not admin.route or installing %}
         <div class="button-bar">
         {% if (installing) %}
-            <a class="button" href="{{ base_url_relative }}/plugins"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
+            <a class="button" href="{{ admin_route('/plugins') }}"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
         {% else %}
-            <a class="button" href="{{ base_url }}"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
-            <a class="button" href="{{ base_url_relative }}/plugins/install"><i class="fa fa-plus"></i> {{ "PLUGIN_ADMIN.ADD"|tu }}</a>
+            <a class="button" href="{{ admin_route('/') }}"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
+            <a class="button" href="{{ admin_route('/plugins/install') }}"><i class="fa fa-plus"></i> {{ "PLUGIN_ADMIN.ADD"|tu }}</a>
             {% if authorize(['admin.maintenance', 'admin.super']) %}
                 <button data-gpm-checkupdates="" class="button"><i class="fa fa-refresh"></i> {{ "PLUGIN_ADMIN.CHECK_FOR_UPDATES"|tu }}</button>
             {% endif %}
@@ -52,14 +55,16 @@
     {% else %}
         {% if (installed) %}
         <div class="button-bar">
-            <a class="button" href="{{ base_url_relative }}/plugins"><i class="fa fa-arrow-left"></i> {{ "PLUGIN_ADMIN.BACK_TO_PLUGINS"|tu }}</a>
-            <a class="button" href="{{ base_url_relative }}/plugins/install"><i class="fa fa-plus"></i> {{ "PLUGIN_ADMIN.ADD"|tu }}</a>
+            <a class="button" href="{{ admin_route('/plugins') }}"><i class="fa fa-arrow-left"></i> {{ "PLUGIN_ADMIN.BACK_TO_PLUGINS"|tu }}</a>
+            <a class="button" href="{{ admin_route('/plugins/install') }}"><i class="fa fa-plus"></i> {{ "PLUGIN_ADMIN.ADD"|tu }}</a>
             {% include 'plugins/'~admin.route~'-buttons.html.twig' ignore missing %}
+            {% if enabled %}
             <button class="button" type="submit" name="task" value="save" form="blueprints"><i class="fa fa-check"></i> {{ "PLUGIN_ADMIN.SAVE"|tu }}</button>
+            {% endif %}
         </div>
         {% else %}
         <div class="button-bar">
-            <a class="button" href="{{ base_url_relative }}/plugins/install"><i class="fa fa-arrow-left"></i> {{ "PLUGIN_ADMIN.BACK_TO_PLUGINS"|tu }}</a>
+            <a class="button" href="{{ admin_route('/plugins/install') }}"><i class="fa fa-arrow-left"></i> {{ "PLUGIN_ADMIN.BACK_TO_PLUGINS"|tu }}</a>
         </div>
         {% endif %}
 

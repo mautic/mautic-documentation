@@ -7,10 +7,8 @@ body {
 
 a {
 	color: $core-accent;
-	font-weight: bold;
 	&:hover {
 		color: darken($core-accent, 15%);
-		font-weight: bold;
 	}
 }
 
