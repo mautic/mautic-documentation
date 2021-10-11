@@ -11,4 +11,8 @@ There are some basic tasks you will need to do in order to get started with usin
 
 Check out the following resources for a step-by-step walkthrough.
 
-* Getting started
+* [Getting started][getting-started]
+
+
+
+[getting-started]: </setup/getting-started>
