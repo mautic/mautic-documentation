@@ -24,7 +24,7 @@ Note that Mautic makes use of "append" email addresses. The return-path or the l
 
 Some email services overwrite the return-path header with that of the account's email (Gmail, Amazon SES). In these cases, **IMAP bounce monitoring will not work**.
 
-Elastic Email, SparkPost, Mandrill, Mailjet, and Amazon SES (as of 2.2.0) support webhook callbacks for bounce management. See below for more details.
+Elastic Email, SparkPost, Mandrill, Mailjet, SendGrid and Amazon SES (as of 2.2.0) support webhook callbacks for bounce management. See below for more details.
 
 ## Monitored Inbox Settings
 To use the Monitored email feature you must have the PHP IMAP extension enabled (most shared hosts will already have this turned on).  Simply go to the Mautic configuration and fill in the account details for the inbox(es) you wish to monitor.
