@@ -1,6 +1,6 @@
 # Mautic Documentation
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Introduction
@@ -49,6 +49,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/maxlawton"><img src="https://avatars.githubusercontent.com/u/1194823?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Max Lawton</b></sub></a><br /><a href="https://github.com/mautic/mautic-documentation/commits?author=maxlawton" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/miamicityman"><img src="https://avatars.githubusercontent.com/u/57761794?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Miami City Man</b></sub></a><br /><a href="https://github.com/mautic/mautic-documentation/commits?author=miamicityman" title="Documentation">📖</a></td>
   </tr>
 </table>
 
