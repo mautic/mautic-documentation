@@ -42,6 +42,10 @@ You can create additional custom fields and define the data type you want that f
 
 ![new custom field](new-custom-field.jpg)
 
+You can also set a default value for your field. Since Mautic 4.1, the Multiselect field supports one or more default values. To add multiple default values, select each value that you want to set as default.
+
+![multiple-default-values](https://user-images.githubusercontent.com/79517214/137749000-89f69167-36c1-4ff5-8914-7aaa114b8057.png)
+
 ### Creating Custom Fields via a command
 
 Each new Custom Field for Contacts or Companies adds a new column to the database. This operation gets slower with larger instances of Mautic, and it locks the table while it is running, meaning that no changes can be made until the field is created. It will also time out the HTTP request, so that the User Interface will report the column exists, but Contact/Company updates will actually fail, because the column is still missing. 
