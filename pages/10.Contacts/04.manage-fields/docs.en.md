@@ -42,7 +42,7 @@ You can create additional custom fields and define the data type you want that f
 
 ![new custom field](new-custom-field.jpg)
 
-You can also set a default value for your field. Since Mautic 4.1, the Multiselect field supports one or more default values. To add multiple default values, select each value that you want to set as default.
+You can also set a default value for your field. Since [Mautic 4.1][mautic-4.1], the Multiselect field supports one or more default values. To add multiple default values, select each value that you want to set as default.
 
 ![multiple-default-values](https://user-images.githubusercontent.com/79517214/137749000-89f69167-36c1-4ff5-8914-7aaa114b8057.png)
 
