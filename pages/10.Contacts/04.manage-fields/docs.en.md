@@ -63,3 +63,5 @@ The table lock issue can be mitigated if you run the command only once per day w
 [contact monitoring]: </contacts/manage-contacts/contact-monitoring>
 [variables]: </setup/variables>
 [mautic-3.3]: <https://github.com/mautic/mautic/releases/tag/3.3.0>
+[mautic-4.1]: <https://github.com/mautic/mautic/releases/tag/4.1.0>
+
