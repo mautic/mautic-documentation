@@ -26,6 +26,7 @@ GitHub
 GMail
 Grav
 Gravatar
+Hammerschmied
 href
 http
 https
