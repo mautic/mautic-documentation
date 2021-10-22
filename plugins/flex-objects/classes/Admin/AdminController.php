@@ -5,6 +5,7 @@ namespace Grav\Plugin\FlexObjects\Admin;
 use Exception;
 use Grav\Common\Cache;
 use Grav\Common\Config\Config;
+use Grav\Common\Data\Data;
 use Grav\Common\Debugger;
 use Grav\Common\Filesystem\Folder;
 use Grav\Common\Flex\Types\Pages\PageCollection;
@@ -411,9 +412,9 @@ class AdminController
         $data = $this->data;
         $route = trim($data['route'] ?? '', '/');
 
-        // TODO: Folder name needs to be validated!
+        // TODO: Folder name needs to be validated! However we test against /="' as they are dangerous characters.
         $folder = mb_strtolower($data['folder'] ?? '');
-        if ($folder === '' || mb_strpos($folder, '/') !== false) {
+        if ($folder === '' || preg_match('![="\']!u', $folder) !== 0) {
             throw new RuntimeException('Creating folder failed, bad folder name', 400);
         }
 
@@ -969,7 +970,9 @@ class AdminController
                 if (null !== $data) {
                     $flash = $form->getFlash();
                     $flash->setObject($object);
-                    $flash->setData($data->toArray());
+                    if ($data instanceof Data) {
+                        $flash->setData($data->toArray());
+                    }
                     $flash->save();
                 }
             }
