@@ -19,7 +19,7 @@ facebookdesc: 'How to install Mautic by cloning from GitHub.'
 ---
 ## Cloning Mautic from GitHub
 
-When working with Mautic in a testing environment, or contributing to Mautic, it's important to have all the files locally (including automated tests) from the GitHub repository, many of which the production build process excludes.
+When working with Mautic in a testing environment, or contributing to Mautic, it's important to have all the files locally - including automated tests - from the GitHub repository, many of which the production build process excludes.
 
 You should consider installing the [GitHub Command Line Interface (CLI) tool][github-cli], as it makes the process much simpler.
 

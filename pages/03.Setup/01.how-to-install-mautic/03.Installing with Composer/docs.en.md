@@ -21,7 +21,7 @@ facebookdesc: 'How to install Mautic with Composer.'
 
 Since [Mautic 4.0][mautic-4], it's possible to install and manage Mautic using the full power of Composer, including support for Composer 2.
 
-Mautic is in the process of decoupling plugins and themes from core, however at present while they have been technically mirrored out into separate repositories, you will find the source files in [Mautic core][mautic-core]. 
+Mautic is in the process of decoupling plugins and themes from core, however at present while they have been technically mirrored out into separate repositories, the source files remain in [Mautic core][mautic-core]. 
 
 As with a regular clone from GitHub, running `composer install` installs all the dependencies, there are some other handy features which you can take advantage of when installing and managing Mautic.
 
@@ -80,7 +80,7 @@ Follow the steps below to update your core files.
 #### Should you commit downloaded third party plugins?
 Composer recommends no. They provide [arguments against but also workarounds if a project decides to do it anyway][composer-workarounds].
 
-#### Should the scaffolding files be committed?
+#### Should you commit the scaffolding files?
 The [Mautic Composer Scaffold][scaffold-plugin] plugin can download the scaffold files - for example index.php, .htaccess - to the public/ directory of your project. 
 
 If you haven't customized those files you could choose to not commit them in your version control system - for example, git. If that's the case for your project it might be convenient to automatically run the Mautic Scaffold plugin after every install or update of your project. 

@@ -65,21 +65,21 @@ The next step involves configuring email settings for your Mautic instance. If y
 
 ![Screenshot showing the email configuration screen](mautic-email-configuration.png)
 
-##### Who should the email be sent as?
+##### Who should you send the email as?
 
 Enter the name and email address for the default for outgoing emails. If you use an email provider which requires authorization of outgoing email addresses, ensure this address has been successfully authorized.
 
-##### How should the email be spooled and delivered?
+##### How should you spool and deliver emails?
 
 ###### Email handling 
-With larger instances, queuing emails and having them sent using a timed cron job to trigger the queue processing is recommended, rather than sending immediately. 
+With larger instances, the recommended configuration is queuing emails and having them sent using a timed cron job to trigger the queue processing, rather than sending immediately. 
 
 ###### Mailer transport
 If you wish to use an email delivery provider, select from the options available. If your provider isn't listed, select Other SMTP Server and provide the SMTP credentials.
 
 Generally speaking, API-based sending is significantly faster than SMTP.
 
-Depending on which provider you select, additional fields are displayed to enable entering API keys and selecting regions, as appropriate.
+Depending on which provider you select, additional fields display to enable entering API keys and selecting regions, as appropriate.
 
 Select the encryption and authentication mode that your provider instructs in their documentation.
 
