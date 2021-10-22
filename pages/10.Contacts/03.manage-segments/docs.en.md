@@ -109,6 +109,8 @@ Example (Consider that today is `2018-03-02`):
 Beside this you can specify your date with text. These formulas are **translatable**, so make sure you use them in correct format.
 
 * `birthday` / `anniversary`
+* `day` --> will filter all contacts with day value of the current date field equal to today's day
+* `month` --> will filter all contacts with month value of the current date field equal to today's month
 * `birthday -7 days` / `anniversary -7 days`
 * `today` / `tomorrow` / `yesterday`
 * `this week` / `last week` / `next week`
