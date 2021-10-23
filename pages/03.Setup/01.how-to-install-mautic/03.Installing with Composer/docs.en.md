@@ -89,14 +89,14 @@ You can achieve that by registering `@composer mautic:scaffold` as post-install 
 
 ```
 "scripts": {
-"post-install-cmd": [
-"@composer mautic:scaffold",
-"..."
-],
-"post-update-cmd": [
-"@composer mautic:scaffold",
-"..."
-]
+    "post-install-cmd": [
+        "@composer mautic:scaffold",
+        "..."
+    ],
+    "post-update-cmd": [
+        "@composer mautic:scaffold",
+        "..."
+    ]
 },
 ```
 
@@ -107,11 +107,11 @@ To add a patch to Mautic plugin foobar insert the patches section in the extra s
 
 ```
 "extra": {
-"patches": {
-"mautic/foobar": {
-"Patch description": "URL or local path to patch"
-}
-}
+    "patches": {
+        "mautic/foobar": {
+            "Patch description": "URL or local path to patch"
+        }
+    }
 }
 ```
 
@@ -121,10 +121,10 @@ This project supports PHP 7.4 as the minimum version, however, it's possible tha
 To prevent this you can add this code to specify the PHP version you want to use in the config section of composer.json:
 ```
 "config": {
-"sort-packages": true,
-"platform": {
-"php": "7.4"
-}
+    "sort-packages": true,
+    "platform": {
+        "php": "7.4"
+    }
 },
 ```
 
