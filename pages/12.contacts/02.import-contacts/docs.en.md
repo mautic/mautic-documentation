@@ -27,7 +27,7 @@ Since [Mautic 2.9][release-2.9.0], when an import job creates or updates a conta
 ## Tips
 
 - Use a header row, with the column names matching the Mautic Contact [Custom Field][custom fields] names.  This way Mautic automatically pre-selects the mapping for you.  For example if you name the first name column as `firstname`, this field will be mapped automatically to [`{contactfield=firstname}`][variables].
-
+- When you set up your mapping, you have an option to skip the import on fields where a value already exists on the Contact record. This setting will allow you to avoid erasing already existing data in your Mautic Contacts.
 - If your CSV contains thousands of contacts or more, divide such CSV into several smaller CSV files to avoid memory issues and slow import speed.
 
 > **ProTip**
