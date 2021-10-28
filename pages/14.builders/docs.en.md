@@ -118,7 +118,7 @@ The GrapesJs Plugin has been unloaded, and the legacy builder will now be active
 
 ## Thanks and credits
 
-Thank you to everyone who contributed to this project. Special thanks to Adrian Schimpf from [Aivie][aivie] for all their hard work in leading the project, to [Webmecanik][webmecanik] for initializing this amazing new builder and to Joey from [Friendly Automate][friendly] for donating three email themes to the Community. Additional contributions: Alex Hammerschmied from [hartmut.io][hartmut.io], Dennis Ameling
+Thank you to everyone who contributed to this project. Special thanks to Adrian Schimpf from [Aivie][aivie] for all their hard work in leading the project, to [Webmecanik][webmecanik] for initializing this amazing new builder and to Joey from [Friendly Automate][friendly] for donating three email themes to the Community. Additional contributions: Alex Hammerschmied from [hartmut.io][hartmut.io], Dennis Ameling.
 
 And of course a really big thank you to all the contributors who have helped to bring this project to this point.
 
