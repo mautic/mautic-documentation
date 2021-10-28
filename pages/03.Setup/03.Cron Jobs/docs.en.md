@@ -196,43 +196,37 @@ To perform synchronization of all integrations and to manage plugins, use the cr
 **To fetch leads from the integration:**
 
 ```
-php /path/to/mautic/bin/console
-mautic:integration:fetchleads
+php /path/to/mautic/bin/console mautic:integration:fetchleads
 ```
 
 or
 
 ```
-php /path/to/mautic/bin/console
-mautic:integration:synccontacts
+php /path/to/mautic/bin/console mautic:integration:synccontacts
 ```
 
 **To push lead activity to an integration:**
 
 ```
-php /path/to/mautic/bin/console
-mautic:integration:pushactivity
+php /path/to/mautic/bin/console mautic:integration:pushactivity
 ```
  or
 
  ```
-php /path/to/mautic/bin/console
-mautic:integration:pushleadactivity
+php /path/to/mautic/bin/console mautic:integration:pushleadactivity
  ```
 
 These commands work with all available plugins. To avoid performance issues when using multiple integrations, you must specify the name of the integration by adding the `–integration` suffix to the command. For instance, for integration of Mautic with HubSpot, use the following command:
 
 ```
-php /path/to/mautic/bin/console
-mautic:integration:fetchleads --integration=Hubspot
-mautic:integration:pushactivity --integration=Hubspot
+php /path/to/mautic/bin/console mautic:integration:fetchleads --integration=Hubspot
+php /path/to/mautic/bin/console mautic:integration:pushactivity --integration=Hubspot
 ```
 
 **To  install, update, turn on or turn off plugins:**
 
 ```
-php /path/to/mautic/bin/console
-mautic:plugins:reload
+php /path/to/mautic/bin/console mautic:plugins:reload
 ```
 
 > Note: you can replace `mautic:plugins:reload` with `mautic:plugins:install` or `mautic:plugins:update`. They're the same commands with different alias.
@@ -249,7 +243,7 @@ In addition it's recommended to enable the non-interactive mode together with th
 
 Example output
 ```
-$ php bin/console mautic:segments:update --no-interaction --no-ansi
+$ php /path/to/mautic/bin/console mautic:segments:update --no-interaction --no-ansi
 [2016-09-08 06:13:57] Rebuilding contacts for segment 1
 [2016-09-08 06:13:57] 0 total contact(s) to be added in batches of 300
 [2016-09-08 06:13:57] 0 total contact(s) to be removed in batches of 300
