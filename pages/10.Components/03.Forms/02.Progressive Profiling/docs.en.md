@@ -15,7 +15,7 @@ Progressive profiling is a powerful feature used to reduce the length of forms b
 
 There are two ways to configure a form field to only display when the asked values are unknown. 
 
-It is recommended to use the Email field in each Form. From [Mautic 2.9][mautic-2.9] the email field can be hidden, but use this with caution. Email as identifier of a Contact could be unusable if same PC is used by more people (public library, schools...).
+It is recommended to use the Email field in each Form. From [Mautic 2.9][mautic-2.9] the email field can be hidden, but use this with caution. Email as identifier of a Contact could be unusable if the same PC is used by many people (public library, schools...).
 
 1. Maximum fields displayed at a time
 
