@@ -76,6 +76,6 @@ If no Preference Center page is selected in an email, the default page is displa
 
 ![default Preference Center page](unsubscribe.png)
 
-[variables]: <./../setup/VARIABLES.html>
+[variables]: <../../setup/variables.html>
 
 [pr7915]: <https://github.com/mautic/mautic/pull/7915>
