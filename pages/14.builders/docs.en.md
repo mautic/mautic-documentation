@@ -21,7 +21,7 @@ Since [Mautic 3.3][mautic-3.3], Mautic has shipped with an updated, modern build
 >>> To use your existing templates with the new builder, you need to add one line to your configuration file. Read on for further details.
 
 ## About GrapesJS
-Based on the open source [GrapesJS][grapesjs] framework, the new builder was initially created by the team at [Webmecanik][webmecanik] who have kindly donated it to the Mautic Community.
+The new email and landing page builder was initiated as an MVP by [Webmecanik][webmecanik]. It is based on the open source [GrapesJS][grapesjs] framework and was developed and further refined by [Aivie][aivie] who kindly made it available to the Mautic community.
 
 GrapesJS is an open source, multi-purpose, Web Builder Framework which combines different tools and features with the goal to help build HTML templates without any knowledge of coding.
 
@@ -118,7 +118,7 @@ The GrapesJs Plugin has been unloaded, and the legacy builder will now be active
 
 ## Thanks and credits
 
-Thank you to everyone who contributed to this project. Special thanks to [Webmecanik][webmecanik] for all their hard work in creating and contributing this amazing new builder; to Joey from [Friendly Automate][friendly] for donating three email themes to the Community, and to Adrian Schimpf from [idea2][idea2] and Alex Hammerschmied from [hartmut.io][hartmut.io] for their work in leading the project.
+Thank you to everyone who contributed to this project. Special thanks to Adrian Schimpf from [Aivie][aivie] for all their hard work in leading the project, to [Webmecanik][webmecanik] for initializing this amazing new builder and to Joey from [Friendly Automate][friendly] for donating three email themes to the Community. Additional contributions: Alex Hammerschmied from [hartmut.io][hartmut.io], Dennis Ameling.
 
 And of course a really big thank you to all the contributors who have helped to bring this project to this point.
 
@@ -128,7 +128,7 @@ And of course a really big thank you to all the contributors who have helped to 
 [webmecanik]: <https://www.webmecanik.com/en>
 [github]: <https://github.com/mautic/mautic/issues?q=is%3Aopen+is%3Aissue+label%3Abuilder-grapesjs>
 [friendly]: <https://friendly.is/en/>
-[idea2]: <https://idea2.ch>
+[aivie]: <https://aivie.ch>
 [hartmut.io]: <https://hartmut.io>
 [release-notes]: <https://github.com/mautic/mautic/releases>
 [creating-a-theme]: </builders/create-a-theme-grapesjs-builder>
