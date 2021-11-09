@@ -57,7 +57,7 @@ As of [Mautic 2.10.0][release-2.10.0] you are now able to match form fields with
 
 As of [Mautic 2.2.0][release-2.2.0], for fields that include select lists (select, radio, checkboxes), options can be synced with the contact field itself. No more having to manually keep them in sync! If a custom field's list is updated, simply rebuild the form's HTML.
 
-As of [Mautic 4.1.0][release-4.1.0], you can decide to skip saving the value if you already have a value for the contact or company field. This might help you to avoid erasing an existing value you wouldn't like to lose.
+As of [Mautic 4.1.0][release-4.1.0], you can decide to skip saving the value if you already have a value for the contact or company field. This might help you avoid erasing an existing value you wouldn't like to lose.
 
 ![rebuild](rebuild.png)
 
