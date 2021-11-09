@@ -57,6 +57,8 @@ As of [Mautic 2.10.0][release-2.10.0] you are now able to match form fields with
 
 As of [Mautic 2.2.0][release-2.2.0], for fields that include select lists (select, radio, checkboxes), options can be synced with the contact field itself. No more having to manually keep them in sync! If a custom field's list is updated, simply rebuild the form's HTML.
 
+As of [Mautic 4.1.0][release-4.1.0], you can decide to skip saving the value if you already have a value for the contact or company field. This might help you to avoid erasing an existing value you wouldn't like to lose.
+
 ![rebuild](rebuild.png)
 
 ### Kiosk mode
@@ -113,7 +115,7 @@ The contact field's alias can be obtained from the table when viewing Contacts -
     <input id="mauticform_input_democampaignform_email" name="mauticform[email]" value="" placeholder="user@example.com" class="mauticform-input" type="email">
     <span class="mauticform-errormsg" style="display: none;">This is required.</span>
     </div>
- 
+
  ### Pre-populate the values automatically in an email
 
 Embed the tokens `{contactfield=FIELDALIAS|true}`, one for each contact specific information you want to pre-populate the form with, into the URL, assigning them to the name of your form field.The |true tells Mautic to URL encode the value so that it works in the browser.
@@ -134,3 +136,4 @@ So, what happened is `{pagelink=1}` was converted into the landing page URL and 
 [release-2.3.0]: <../../../../index.php.com/mautic/mautic/releases/tag/2.3.0>
 [release-2.10.0]: <../../../../index.php.com/mautic/mautic/releases/tag/2.10.0>
 [release-2.15.0]: <../../../../index.php.com/mautic/mautic/releases/tag/2.15.0>
+[release-4.1.0]: <../../../../index.php.com/mautic/mautic/releases/tag/4.1.0>
