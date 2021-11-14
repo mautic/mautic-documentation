@@ -9,7 +9,7 @@ class Auth0Provider extends BaseProvider
     protected $name = 'Auth0';
     protected $classname = 'Riskio\\OAuth2\\Client\\Provider\\Auth0';
 
-    public function initProvider(array $options)
+    public function initProvider(array $options): void
     {
         $this->config = Grav::instance()['config'];
         $options += [
