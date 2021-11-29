@@ -16,6 +16,8 @@ use Grav\Common\Debugger;
 use Grav\Common\Grav;
 use Grav\Common\Language\Language;
 use Grav\Common\Page\Interfaces\PageInterface;
+use Grav\Common\Page\Page;
+use Grav\Common\Page\Pages;
 use Grav\Common\Session;
 use Grav\Common\User\Interfaces\UserCollectionInterface;
 use Grav\Common\User\Interfaces\UserInterface;
@@ -78,9 +80,9 @@ class Login
 
     /**
      * @param string $message
-     * @param array $data
+     * @param object|array $data
      */
-    public static function addDebugMessage(string $message, $data = [])
+    public static function addDebugMessage(string $message, $data = []): void
     {
         /** @var Debugger $debugger */
         $debugger = Grav::instance()['debugger'];
@@ -168,6 +170,8 @@ class Login
         $grav = Grav::instance();
 
         if ($extra instanceof UserInterface) {
+            user_error(__METHOD__ . '($options, $user) is deprecated since Login Plugin 3.5.0, use logout($options, [\'user\' => $user]) instead', E_USER_DEPRECATED);
+
             $extra = ['user' => $extra];
         } elseif (isset($extra['user'])) {
             $extra['user'] = $grav['user'];
@@ -239,10 +243,15 @@ class Login
      */
     public function register(array $data, array $files = [])
     {
+        // Add defaults and mandatory fields.
+        $data += [
+            'username' => null,
+            'email' => null
+        ];
+
         if (!isset($data['groups'])) {
             //Add new user ACL settings
             $groups = (array) $this->config->get('plugins.login.user_registration.groups', []);
-
             if (\count($groups) > 0) {
                 $data['groups'] = $groups;
             }
@@ -250,29 +259,39 @@ class Login
 
         if (!isset($data['access'])) {
             $access = (array) $this->config->get('plugins.login.user_registration.access.site', []);
-
             if (\count($access) > 0) {
                 $data['access']['site'] = $access;
             }
         }
 
         // Validate fields from the form.
-        $username = $this->validateField('username', $data['username']);
         $password = $this->validateField('password1', $data['password'] ?? $data['password1'] ?? null);
         foreach ($data as $key => &$value) {
             $value = $this->validateField($key, $value, $key === 'password2' ? $password : '');
         }
         unset($value);
 
-        /** @var UserCollectionInterface $users */
-        $users = $this->grav['accounts'];
+        /** @var UserCollectionInterface $accounts */
+        $accounts = $this->grav['accounts'];
 
-        // Create user object and save it
-        $user = $users->load($username);
-        if ($user->exists()) {
-            throw new \RuntimeException('User ' . $username . ' cannot be registered: user already exists!');
+        // Check whether username already exists.
+        $username = $data['username'];
+        if (!$username || $accounts->find($username, ['username'])->exists()) {
+            /** @var Language $language */
+            $language = $this->grav['language'];
+
+            throw new \RuntimeException($language->translate(['PLUGIN_LOGIN.USERNAME_NOT_AVAILABLE', $username]));
+        }
+        // Check whether email already exists.
+        $email = $data['email'];
+        if (!$email || $accounts->find($email, ['email'])->exists()) {
+            /** @var Language $language */
+            $language = $this->grav['language'];
+
+            throw new \RuntimeException($language->translate(['PLUGIN_LOGIN.EMAIL_NOT_AVAILABLE', $email]));
         }
 
+        $user = $accounts->load($username);
         $user->update($data, $files);
         if (isset($data['groups'])) {
             $user->groups = $data['groups'];
@@ -498,7 +517,8 @@ class Login
         $user->save();
 
         $param_sep = $this->config->get('system.param_sep', ':');
-        $activation_link = $this->grav['base_url_absolute'] . $this->config->get('plugins.login.route_activate') . '/token' . $param_sep . $token . '/username' . $param_sep . $user->username;
+        $activationRoute = $this->getRoute('activate');
+        $activation_link = $this->grav['base_url_absolute'] . $activationRoute . '/token' . $param_sep . $token . '/username' . $param_sep . $user->username;
 
         $site_name = $this->config->get('site.title', 'Website');
         $author = $this->grav['config']->get('site.author.name', '');
@@ -605,6 +625,96 @@ class Login
         }
 
         return $this->rateLimiters[$context];
+    }
+
+    /**
+     * Add Login page.
+     *
+     * @param string $type
+     * @param string|null $route Optional route if we want to force-add the page.
+     * @param PageInterface|null $page
+     * @return PageInterface|null
+     */
+    public function addPage(string $type, string $route = null, PageInterface $page = null): ?PageInterface
+    {
+        $route = $route ?? $this->getRoute($type);
+        if (null === $route) {
+            return null;
+        }
+
+        /** @var Pages $pages */
+        $pages = $this->grav['pages'];
+
+        if ($page) {
+            $page->route($route);
+            $page->slug(basename($route));
+        } else {
+            $page = $pages->find($route);
+        }
+        if (!$page instanceof PageInterface) {
+            // Only add login page if it hasn't already been defined.
+            $page = new Page();
+            $page->init(new \SplFileInfo('plugin://login/pages/' . $type . '.md'));
+            $page->slug(basename($route));
+        }
+
+        $pages->addPage($page, $route);
+
+        // Login page may not have the correct Cache-Control header set, force no-store for the proxies.
+        $cacheControl = $page->cacheControl();
+        if (!$cacheControl) {
+            $page->cacheControl('private, no-cache, must-revalidate');
+        }
+
+        return $page;
+    }
+
+    /**
+     * Get route to a given login page.
+     *
+     * @param string $type Use one of: login, activate, forgot, reset, profile, unauthorized, after_login, after_logout,
+     *                     register, after_registration, after_activation
+     * @return string|null Returns route or null if the route has been disabled.
+     */
+    public function getRoute(string $type): ?string
+    {
+        switch ($type) {
+            case 'login':
+                $route = $this->config->get('plugins.login.route');
+                break;
+            case 'activate':
+            case 'forgot':
+            case 'reset':
+            case 'profile':
+                $route = $this->config->get('plugins.login.route_' . $type);
+                break;
+            case 'unauthorized':
+                $route = $this->config->get('plugins.login.route_' . $type, '/');
+                break;
+            case 'after_login':
+            case 'after_logout':
+                $route = $this->config->get('plugins.login.redirect_' . $type);
+                if ($route === true) {
+                    $route = $this->config->get('plugins.login.route_' . $type);
+                }
+                break;
+            case 'register':
+                $enabled = $this->config->get('plugins.login.user_registration.enabled', false);
+                $route = $enabled === true ? $this->config->get('plugins.login.route_' . $type) : null;
+                break;
+            case 'after_registration':
+            case 'after_activation':
+                $route = $this->config->get('plugins.login.redirect_' . $type);
+                break;
+            default:
+                $route = null;
+        }
+
+        if (!is_string($route) || $route === '') {
+            return null;
+        }
+
+        return $route;
     }
 
     /**

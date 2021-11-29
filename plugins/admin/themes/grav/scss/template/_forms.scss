@@ -688,6 +688,8 @@ textarea.frontmatter {
 
             &.collection-collapsed {
                 height: 70px;
+                overflow: hidden;
+
                 @include transform(translateZ(0));
 
                 @include breakpoint(mobile-only) {
@@ -900,6 +902,14 @@ textarea.frontmatter {
 [data-grav-field="cron"] {
     display: flex;
     align-items: center;
+}
+
+.cron-selector {
+    input {
+        font-family: $monospace !important;
+        font-weight: bold !important;
+    }
+
 }
 
 .cron-install {

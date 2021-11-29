@@ -1,3 +1,76 @@
+# v1.1.2
+## 09/14/2021
+
+1. [](#new)
+    * Require **Grav 1.7.21**, optionally **Error 1.8.0**, **Login 3.5.2** and **Form 5.1.1**
+    * Added file upload/delete support to frontend forms
+    * Support proper error, login and unauthorized pages if all requirements are met
+    * Added page header `flex.router: [ROUTER]` which triggers `flex.router.[ROUTER]` event for child routes of the page
+    * Added `flex.[type].task.create.after`, `flex.[type].task.update.after` and `flex.[type].task.delete.after` events for frontend
+
+# v1.1.1
+## 09/01/2021
+
+1. [](#bugfix)
+    * Fixed XSS in page admin
+    * Fixed check for bad folder name, prevent bad characters
+
+# v1.1.0
+## 08/31/2021
+
+1. [](#new)
+   * Require **Grav 1.7.19** and **Form 5.1.0**
+   * Added basic frontend editing support
+   * Added `onBeforeFlexFormInitialize` event to help to initialize the frontend form
+1. [](#bugfix)
+   * Fixed error in admin when field validation fails
+
+# v1.0.16
+## 07/19/2021
+
+1. [](#new)
+   * Added basic new modal support for all flex types
+1. [](#bugfix)
+   * Fixed authorization check for user configuration
+
+# v1.0.15
+## 06/16/2021
+
+1. [](#improved)
+   * Better checks against missing Flex Type inside tasks
+   * Better authorization checks, falls back to directory level authorization checks if objects do not support authorization
+1. [](#bugfix)
+   * Fixed missing handling of child_type in Flex Pages [getgrav/grav-plugin-admin#2087](https://github.com/getgrav/grav-plugin-admin/issues/2087)
+   * Added support for multiple `Exports` in a dropdown
+   * Admin is no longer a dependency of Flex Objects [#130](https://github.com/trilbymedia/grav-plugin-flex-objects/issues/130)
+   * Fixed authorization checks during page creation for users who have limited access to some pages [getgrav/grav#3382](https://github.com/getgrav/grav/issues/3382)
+   * Fixed permission check when moving a page [getgrav/grav#3382](https://github.com/getgrav/grav/issues/3382)
+
+# v1.0.14
+## 06/07/2021
+
+1. [](#improved)
+   * Added enhanced copy modal from Pages list [getgrav/grav-plugin-admin#2139](https://github.com/getgrav/grav-plugin-admin/issues/2139)
+
+# v1.0.13
+## 06/03/2021
+
+1. [](#bugfix)
+   * Fixed expert mode for Flex Pages
+
+# v1.0.12
+## 06/02/2021
+
+1. [](#bugfix)
+   * Fixed logic to get form blueprints and object, prevents events from being fired twice
+   * Fixed breadcrumb item in Pages list not translating HTML entities [#127](https://github.com/trilbymedia/grav-plugin-flex-objects/issues/127)
+
+# v1.0.11
+## 05/24/2021
+
+1. [](#improved)
+   * Allow file uploads to send data such as `data[media_order]`
+
 # v1.0.10
 ## 05/19/2021
 

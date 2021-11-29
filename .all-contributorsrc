@@ -1,0 +1,61 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "maxlawton",
+      "name": "Max Lawton",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1194823?v=4",
+      "profile": "https://github.com/maxlawton",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "miamicityman",
+      "name": "Miami City Man",
+      "avatar_url": "https://avatars.githubusercontent.com/u/57761794?v=4",
+      "profile": "https://github.com/miamicityman",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "deborahsalves",
+      "name": "Déborah Salves",
+      "avatar_url": "https://avatars.githubusercontent.com/u/79517214?v=4",
+      "profile": "https://github.com/deborahsalves",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "adiux",
+      "name": "Adrian Schimpf",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13075514?v=4",
+      "profile": "http://aivie.ch",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "shinde-rahul",
+      "name": "Rahul Shinde",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1046788?v=4",
+      "profile": "https://github.com/shinde-rahul",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "mautic-documentation",
+  "projectOwner": "mautic",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

@@ -1,4 +1,6 @@
 AJAX
+Autoloader
+autoloader
 bcc
 Beanstalkd
 Bing
@@ -15,6 +17,7 @@ cron
 Cron
 CTRL
 Dripflow
+env
 Froala
 Froogaloop
 gcm
@@ -23,6 +26,7 @@ GitHub
 GMail
 Grav
 Gravatar
+Hammerschmied
 href
 http
 https
@@ -34,6 +38,7 @@ Libre
 Licensor
 LinkedIn
 Mailjet
+Mailhog
 Mautic
 Multiselect
 multiselect

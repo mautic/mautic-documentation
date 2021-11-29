@@ -1,3 +1,50 @@
+# v3.5.3
+## 09/29/2021
+
+1. [](#bugfix)
+    * Fixed double language in redirection after successful login [grav#3411](https://github.com/getgrav/grav/issues/3411)
+
+# v3.5.2
+## 09/14/2021
+
+1. [](#new)
+    * Require **Grav 1.7.21**
+    * Added support for `{% throw 401 'Unauthorized' %}` and `{% throw 403 'Forbidden' %}` from twig template to show appropriate login pages
+1. [](#improved)
+    * Unauthorized page uses now `HTTP 403` code
+    * Remove notification on unauthorized page
+1. [](#bugfix)
+    * Fixed broken CLI [#280](https://github.com/getgrav/grav-plugin-login/issues/280)
+    * Remove dynamic defaults in `route_after_login` and `route_after_login` settings as they have no effect
+
+# v3.5.1
+## 08/31/2021
+
+1. [](#bugfix)
+   * Fixed white-page during new install with admin 
+
+# v3.5.0
+## 08/31/2021
+
+1. [](#new)
+   * Require **Grav 1.7.19**, **Form 5.1.0** and **Email 3.1.0**
+   * Added support for adding login pages by `$grav['login']->addPage()`
+   * Added support for getting all login routes by `$grav['login']->getRoute()`
+   * Added support for form layouts
+   * Deprecated methods `LoginPlugin::defaultRedirectAfterLogin()` and `LoginPlugin::defaultRedirectAfterLogout()`
+1. [](#improved)
+   * Speed up `visibility_requires_access` checks by restricting full check to only visible pages
+1. [](#bugfix)
+   * Fixed login pages with redirect breaking the site
+
+# v3.4.4
+## 06/16/2021
+
+1. [](#new)
+   * Updated 2FA library
+1. [](#bugfix)
+   * Fixed missing email conflict check when calling `Login::register()`
+
 # v3.4.3
 ## 05/19/2021
 

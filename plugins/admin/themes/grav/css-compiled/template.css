@@ -1366,6 +1366,7 @@ textarea.frontmatter {
         cursor: pointer; }
     .form-list-wrapper ul[data-collection-holder] > li.collection-collapsed {
       height: 70px;
+      overflow: hidden;
       -webkit-transform: translateZ(0);
       -moz-transform: translateZ(0);
       -ms-transform: translateZ(0);
@@ -1510,6 +1511,10 @@ textarea.frontmatter {
 [data-grav-field="cron"] {
   display: flex;
   align-items: center; }
+
+.cron-selector input {
+  font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace !important;
+  font-weight: bold !important; }
 
 .cron-install {
   margin: 1rem;

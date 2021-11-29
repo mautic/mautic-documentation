@@ -26,6 +26,7 @@ use Grav\Common\Security;
 use Grav\Common\User\Interfaces\UserCollectionInterface;
 use Grav\Common\User\Interfaces\UserInterface;
 use Grav\Common\Utils;
+use Grav\Framework\Flex\Flex;
 use Grav\Framework\Psr7\Response;
 use Grav\Framework\RequestHandler\Exception\RequestException;
 use Grav\Plugin\Login\TwoFactorAuth\TwoFactorAuth;
@@ -55,6 +56,7 @@ class AdminController extends AdminBaseController
     public function initialize(Grav $grav = null, $view = null, $task = null, $route = null, $post = null)
     {
         $this->grav = $grav;
+        $this->admin = $this->grav['admin'];
         $this->view = $view;
         $this->task = $task ?: 'display';
         if (isset($post['data'])) {
@@ -66,7 +68,6 @@ class AdminController extends AdminBaseController
         }
         $this->post  = $this->getPost($post);
         $this->route = $route;
-        $this->admin = $this->grav['admin'];
 
         $this->grav->fireEvent('onAdminControllerInit', new Event(['controller' => &$this]));
     }
@@ -164,7 +165,13 @@ class AdminController extends AdminBaseController
                 // Not used if Flex-Objects plugin handles users.
                 return $this->saveUser();
             default:
-                return $this->saveDefault();
+                if ($this->saveDefault()) {
+                    $route = $this->grav['uri']::getCurrentRoute();
+                    $this->setRedirect($route->withGravParam('task', null)->toString(), 302);
+                    $this->redirect();
+                }
+
+                return false;
         }
     }
 
@@ -173,11 +180,11 @@ class AdminController extends AdminBaseController
      */
     protected function saveDefault()
     {
-        // Handle standard data types.
-        $type = $this->getDataType();
-        $obj = $this->admin->getConfigurationData($type, $this->data);
-
         try {
+            // Handle standard data types.
+            $type = $this->getDataType();
+
+            $obj = $this->admin->getConfigurationData($type, $this->data);
             $obj->validate();
         } catch (\Exception $e) {
             /** @var Debugger $debugger */
@@ -201,12 +208,16 @@ class AdminController extends AdminBaseController
             $this->grav->fireEvent('onAdminAfterSave', new Event(['object' => $obj]));
         }
 
+        Cache::clearCache('invalidate');
+
         // Force configuration reload.
         /** @var Config $config */
         $config = $this->grav['config'];
         $config->reload();
 
-        Cache::clearCache('invalidate');
+        if ($this->view === 'config') {
+            $this->setRedirect($this->admin->getAdminRoute("/{$this->view}/{$this->route}")->toString());
+        }
 
         return true;
     }
@@ -1847,17 +1858,13 @@ class AdminController extends AdminBaseController
 
         $data = $this->post;
 
-        $rawroute = $data['rawroute'] ?? null;
-
-        if ($rawroute) {
-            $pages = $this->admin::enablePages();
-
-            /** @var PageInterface $page */
-            $page = $pages->find($rawroute);
-
-            if ($page) {
+        $route = $data['rawroute'] ?? null;
+        if ($route) {
+            /** @var Flex $flex */
+            $flex = $this->grav['flex'];
+            $page = $flex->getObject(trim($route, '/'), 'pages');
+            if ($page instanceof PageInterface) {
                 $child_type = $page->childType();
-
                 if ($child_type !== '') {
                     $this->admin->json_response = [
                         'status' => 'success',
@@ -1871,7 +1878,6 @@ class AdminController extends AdminBaseController
         $this->admin->json_response = [
             'status'  => 'success',
             'child_type' => '',
-//            'message' => $this->admin::translate('PLUGIN_ADMIN.NO_CHILD_TYPE')
         ];
 
         return true;
