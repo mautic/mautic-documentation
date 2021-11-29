@@ -20,9 +20,9 @@ facebookenable: true
 
 ## Conditional Fields
 
-Since Mautic [4.0][mautic-4] it has been possible to create fields in Mautic Forms which will be displayed based on selected values. This is sometimes referred to as conditional or dependent fields.
+Since Mautic [4.1][mautic-4.1] it has been possible to create fields in Mautic Forms which will be displayed based on selected values. This is sometimes referred to as conditional or dependent fields.
 
-When using a select box in a form, it is possible to attach other fields based on what is selected in the parent field. This feature also supports multiselect fields.
+When using a select box in a Form, it is possible to attach other fields based on what is selected in the parent field. This feature also supports multiselect fields.
 
 ![Screenshot showing two conditional fields on a Mautic form](conditional-fields-on-form.png)
 
@@ -46,4 +46,4 @@ It is possible to show the states that are relevant to the country selected by:
 
 
 
-[mautic-4]: <https://github.com/mautic/mautic/releases/tag/4.0>
+[mautic-4.1]: <https://github.com/mautic/mautic/releases/tag/4.1>
