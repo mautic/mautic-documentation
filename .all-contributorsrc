@@ -13,6 +13,43 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "miamicityman",
+      "name": "Miami City Man",
+      "avatar_url": "https://avatars.githubusercontent.com/u/57761794?v=4",
+      "profile": "https://github.com/miamicityman",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "deborahsalves",
+      "name": "Déborah Salves",
+      "avatar_url": "https://avatars.githubusercontent.com/u/79517214?v=4",
+      "profile": "https://github.com/deborahsalves",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "adiux",
+      "name": "Adrian Schimpf",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13075514?v=4",
+      "profile": "http://aivie.ch",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "shinde-rahul",
+      "name": "Rahul Shinde",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1046788?v=4",
+      "profile": "https://github.com/shinde-rahul",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

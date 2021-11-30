@@ -1,3 +1,53 @@
+# v1.10.23
+## 09/29/2021
+
+1. [](#new)
+   * Updated SCSS compiler to v1.8
+2. [](#improved)
+   * Updated with latest language strings from Crowdin.com
+3. [](#bugfix)
+   * Fixed images from plugins/themes disappearing when saving twice
+
+# v1.10.22
+## 09/16/2021
+
+1. [](#new)
+    * Updated SCSS compiler to v1.7
+
+# v1.10.21
+## 09/14/2021
+
+1. [](#new)
+    * Require **Grav 1.7.21**
+2. [](#improved)
+    * Added a note about UTC times in scheduler AT syntax help
+    * Now using a monospaced text-based scheduler AT field in scheduler for simplicity
+    * Improved `Admin:data()` and `Admin::getConfigurationData()` to be more strict
+3. [](#bugfix)
+    * Fixed configuration save location to point to existing config folder [#2176](https://github.com/getgrav/grav-plugin-admin/issues/2176)
+
+# v1.10.20
+## 09/01/2021
+
+1. [](#bugfix)
+    * Fixed regression `Argument 4 passed to Grav\Plugin\Form\TwigExtension::prepareFormField() must be of the type array` [#2177](https://github.com/getgrav/grav-plugin-admin/issues/2177)
+    * Fixed `X-Frame-Options` to be `DENY` in all admin pages to prevent a clickjacking attack
+
+# v1.10.19
+## 08/31/2021
+
+1. [](#new)
+    * Require **Grav 1.7.19** and **Form 5.1.0** and **Login 3.5.0**
+    * Updated SCSS compiler to v1.6
+2. [](#improved)
+    * Updated forms and nested fields to use new form logic
+    * Admin form now use layout `admin`, meaning you can create admin specific field templates by `forms/fields/myfield/admin-field.html.twig`
+    * Stop using `|tu` filter, Grav already has the same logic in `|t` for admin
+    * Remove unneeded escapes
+    * Allow removal of plugin when disabled [#2167](https://github.com/getgrav/grav-plugin-admin/issues/2167)
+3. [](#bugfix)
+    * Fixed missing values in `fieldset` form field
+
 # v1.10.18
 ## 07/19/2021
 
