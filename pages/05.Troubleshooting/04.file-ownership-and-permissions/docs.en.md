@@ -76,7 +76,7 @@ If your file and folder permissions are incorrect, you can run the following com
 
 ```
 find . -type f -not -perm 644 -exec chmod 644 {} +
-find . -type d -not -perm 644 -exec chmod 755 {} +
+find . -type d -not -perm 755 -exec chmod 755 {} +
 chmod -R g+w var/cache/ var/logs/ app/config/
 chmod -R g+w media/files/ media/images/ translations/
 rm -rf var/cache/*
