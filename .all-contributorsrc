@@ -50,6 +50,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "chartist1",
+      "name": "chartist1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14365367?v=4",
+      "profile": "https://www.colinh.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
