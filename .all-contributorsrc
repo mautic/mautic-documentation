@@ -59,6 +59,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "robincafolla",
+      "name": "Robin Cafolla",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1263427?v=4",
+      "profile": "http://robincafolla.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
