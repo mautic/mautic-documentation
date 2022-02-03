@@ -15,9 +15,9 @@ facebookenable: true
 ---
 
 ---
-Mautic is an Open Source marketing automation platform. We welcome contributions to improve and maintain our documentation. 
+Mautic is an open-source marketing automation platform. We welcome contributions to improve and maintain our documentation. 
 
-Mautic is made up of over 39 Git repositories. To contribute to the Mautic User guide, you must fork the [mautic-documentation][mautic-docs-github] Git repository. You can also contribute to the [Developer documentation][developer-docs] by forking the [developer-documentation][developer-docs-github] Git repository.
+Mautic is made up of over 39 Git repositories. To contribute to the Mautic user guide, you must fork the [Mautic user documentation Git repository.][mautic-docs-github] Contributions to the Mautic developer documentation can also be made by forking the [Mautic developer documentation Git repository.][developer-docs-github] 
 
 
 
@@ -49,61 +49,88 @@ remove the first two lines
       - [reference note](#reference-note)
 
 
-## Get Started
- Although we support using both GitHub and Grav for making changes to the documentation, we'd prefer contributions using GitHub for the following reasons:
+## Getting Started
+ GitHub and Grav can be used for contributions to the Mautic documentation, but we'd prefer GitHub for the following reasons:
 
-- *versions* - Anyone can restore previous versions or refer to any version of the file.
-- *authorship* - Not only every file but every line has its author.
-- *community contributions* - You needn't worry about deleting someone else's work while working on the same document.
+- *Versions* - Previous versions can be easily restored or viewed.
+- *Authorship* - Each file and line has its author.
+- *Community contributions* - Collaborate on a document without deleting other contributors' work.
 
-You might require some knowledge of Git to clone, modify, commit, and push changes. However, there is a way to avoid that and edit the files directly in the GitHub web interface or via our web-based interface using the Grav CMS. To learn how to contribute using GitHub, see [Using GitHub](#using-github). If not, you can contribute easily [using Grav](#using-grav).
+While working with GitHub requires some knowledge of Git to clone, modify, commit, and push changes, you can choose to edit the files directly in GravCMS web interface. 
+
+For more information on how to contribute using GitHub, refer to the [Using GitHub](#using-github) section. 
+For more information on how to contribute using Grav, the refer to [Using Grav](#using-grav) section.
 
 ## Report Issues and Fix Bugs
-If you intend to make any changes to the documentation, we recommend filing an issue. This allows us to reach an agreement on your proposal before you put significant effort into it. To report new issues or fix existing issues, visit the [Mautic Documentation Issues][doc-issues] page on GitHub.
+To make changes to the current documentation, we recommend you to file an issue to reach an agreement on your proposal before putting significant effort into it. To report new issues or fix an existing issue, visit the [Mautic Documentation Issues][doc-issues] page on GitHub.
 
-A great place to start and familiarize yourself with our contribution process is to take a look at the list of **`good first issues`** that we have earmarked for new contributors. These issues have a relatively limited scope.
+You can familiarize yourself with the Mautic contribution process by  looking at the list of **`good first issues`** that have been earmarked for new contributors. These issues have a relatively limited scope.
 
-If you wish to fix an issue, please check the comment thread to ensure that no one else is already working on a fix. If nobody is working on it at the moment, please leave a comment stating that you intend to work on it to avoid any accidental duplication of your effort.
+To own and fix a ticket, check the comment thread of the GitHub ticket to ensure that no one else is already working on it's fix. If no owners are assigned, leave a comment stating that you intend to work on it to avoid any accidental duplication of your effort.
 
-## Documentation Repository Structure
-The Mautic documentation repository consists of the following files and folders:
+## Understanding the Documentation Repository Structure
+Mautic documentation is written using [Markdown markup][markup], a simple but flexible text formatting language. The Markdown files are appended with the *.md* extension.
 
-The **`README.md`** file serves as the introduction and description of this repository. This file does not contain any product documentation.
+The **`README.md`** file introduces and describes the repository, and does not contain any product documentation.
 
-
-The folders in this repository are grouped together by topics. 
- - The **`pages`** folder contains folders for each chapter in the Mautic user guide. Each folder contains *.md* files (one per language - currently English only) that you can edit along with images used in this page. For example, within the *Campaigns* folder, you'll sub-folders for subtopics such as *Managing Campaigns*, *Campaign Events*, etc. Each of these folders contain its own **`docs.en.md`** file and all images used in the *.md* files.
+Available folders in the repository include:
+ - The **`pages`** folder contains folders for each chapter in the Mautic user guide. Each folder contains its own **`docs.en.md`** (one per language - currently, English only) file and the different images used in the *.md* files. For example, within the **Campaigns** folder, you'll find sub-folders for sub-topics such as **Managing Campaigns**, **Campaign Events**, etc..
   - Similarly, the **`plugins`** folder contains folders for each plugin that Mautic offers.
-   - The **`themes`** folder contains all the themes available for this repository. Each folder contains supporting files for a separate theme.
+   - The **`themes`** folder contains a folder with supporting files for an available theme available for this repository. 
 
 ## Style Guide
 
-For keeping contributions consistent, we encourage you to read our Style Guide which is a set of conventions that we follow while writing documentation for Mautic. You can find our Style Guide [here][style guide].
-
- Mautic documentation is written with [Markdown markup][markup], a simple but flexible text formatting language. The Markdown files are appended with the *.md* extension.
+We encourage you to read the [Mautic Style Guide][style guide] for a consistent tone, voice, and messaging across the Mautic user documentaion. You can find our Style Guide [here][style guide].
 
 ## How to contribute
+On the [Issues][doc-issues] section of the Mautic user documentaion GitHub repository, select an issue you want to work on, and leave a message for a Mautic administrator to assign it to you.
 
-### Using Grav
+You can choose to contribute using either Gitpod or GitHub.
 
-Previously GitBook was used to manage the Mautic documentation. However, this became cumbersome to maintain and difficult for those who were not familiar with Git. After exploring various solutions, the Education Team decided that Grav would best meet the needs of the Community.
-1. Go to [the login page][mautic-docs-login]. Create a Mautic Community login, or log in with your existing forum/website account.
-1. Send a message on the [Documentation slack channel][mautic-docs-slack] to have your account raised to 'editor' - get a Slack invite [here][mautic-slack-invite].
-1. When logged in, go to the admin panel (ask the team for the link) and make your changes.
+### Using Gitpod
 
-### Using GitHub
+For more information on how Gitpod works, watch [this](https://www.youtube.com/watch?v=D41zSHJthZI) video.
 
-1. Fork this [GitHub][mautic-docs-github] repository.
-1. Select a file to edit on your fork.
+### Using GitHub Desktop
+
+To contribute using GitHub:
+1. Fork this [GitHub][mautic-docs-github] repository to add it to your profile repositories. 
+1. Clone the project from your account on to your machine to have a local copy of the project. Ensure that the development environment setup is exactly as stated in the project’s readme file.
+1. Launch the GitHub desktop client on your machine.
+1. In the top section of the GitHub desktop client, select **mautic-documentation** as your **Current Repository**.
+1. To create a new branch, select **Current Branch** to expand the window.
+1. On the **Branches** tab, select **New Branch**.
+1. On the **Create a Branch** window, enter a descriptive **Name** (for example, {your-username}-{issue-that-is-going-to-be-fixed}), and click **Create Branch**. 
+This is your working directory.
+
+After you have finished working on your assigned GitHub ticket, you must publish the branch for review.
+
+To publish your edits to your local branch:
+
+1. In the top section of the GitHub desktop client, select the **Current Repository** tab.
+<br>The **Current Repository** section lists the changes you have made to your file.
+1. In the bottom section of the **Current Repository** tab, enter a brief summary and a message describing the key edits you have made to your document. <br>Refer to repository guidelines.
+1. Click **Commit to {branch name}**.
+
+After pushing the edits to the local branch, to create a pull request:
+1. Navigate to your GitHub account (for example, https://github.com/{username}/) on the portal.
+1. Click on your profile in the upper-right corner to select **Your respositories > mautic-documentation**. <br> A notification detailing your push to your branch with a button labeled **Compare & pull request** is displayed at the top of the page.
+1. Click **Compare & pull request**.
+1. On the Open a pull request page, enter details about the changes you have made to the document. <br>Reference any [Issues][doc-issues] that the current pull request (PR) resolves so that they are automatically linked. For example, if the PR closes an existing issue #0001, reference it in the description as 'closes #0001'.
+1. Click **Create pull request** to generate the PR link.
+1. Share the pull request (PR) link at https://github.com/mautic/user-documentation.
+
+
+Select a file to edit on your fork.
 1. Make your commits.
 1. Open a pull request to `base fork: mautic/mautic-documentation` with `base: master`.
 1. Include and reference any [Issues][doc-issues] your Pull Request addresses. Be sure to write 'closes #0001' if your PR will close an existing issue, so that they are automatically linked.
 
-#### Editing documentation using the command-line
+### Using the Git command-line
 
-If you want to edit documents using the Git command-line system, read this section. You can also use the GitHub CLI utility that makes working at the command line easy.
+To edit documents using the Git command-line system:
 
-1. In the command-line `cd` to where you want the documentation repository to be located.
+1. On the command-line window, enter `cd` to change to the location of the documentation repository.
 1. Clone this repository.
 
     ````console
