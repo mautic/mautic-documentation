@@ -8,13 +8,13 @@ taxonomy:
 
 ---
 
-## Document Purpose  
+## Document purpose  
   
-This document is intended for software developers who write Email Traspornts based on `Symfony Mailer`which will be introduced to Mautic start version 5.  
+This document targets software developers who write email transports based on `Symfony Mailer` which is available to Mautic starting version 5.  
   
 This document will describe Manual steps for testing and the items that you need to check before submitting your PR for approval in case you want to add a new transport.  
   
-## Email Components
+## Email components
 
 Each email sent out by Mautic includes the following components:  
   
@@ -32,12 +32,12 @@ Each email sent out by Mautic includes the following components:
 1. Create 10 contacts with any email address you need  
 2. Create a segment that includes the 10 contacts  
   
-## Testing Email Transport
+## Testing email transport
 
 In order to test the email transport you need to go through the following steps:  
   
 1. Testing the connection, by going to Mautic Configuration -> Email Settings -> Click on Test Connection. If the connection works you should see *success* otherwise you should see an *error*  
-![Testing Connection](contact-replies-imap-folder.png "Testing Connection")  
+![Testing Connection](test-connection.png "Testing Connection")  
   
 2. Sending Sample Email: from the same screen where you test the connection, you should be able to send a sample email. The sample email will be sent to the email of the user you are logged in with. It will have a test message.  
   
@@ -81,7 +81,7 @@ Use the builder to do the following:
   
 9. There are other places like Forget Password: they need to work as well.  
   
-## Testing Transport Callback  
+## Testing transport callback  
   
 Each transport should include a callback URL that webhooks should be `POSTed` to mark contacts who bounce as `DNC` in order to test these callbacks you need to do the following:  
   
