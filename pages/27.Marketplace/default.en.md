@@ -22,6 +22,19 @@ facebookenable: true
 
 Please don't blindly manually install plugins you see there as they may not work with your version of Mautic. Always verify if they support your Mautic version before installing. Developers can refer to the [Developer Documentation][dev-docs] for how to make your plugin compatible with the Mautic Marketplace.*
 
+## Enabling the Mautic Marketplace
+ From Mautic 4.2, a setting in the Mautic Configuration specifies that the instance uses Composer, which allows the installation, update, and removal of plugins in the Mautic Marketplace. This is a requirement due to the technology which underpins the Mautic Marketplace.
+
+ ![Enable Mautic Marketplace](switch-enable-composer.png)
+
+ Once configured, you can search the marketplace using the filter, and install plugins by selecting the option from the dropdown.
+
+  ![Composer Enabled](composer-enabled.png)
+
+If you haven’t correctly set the Composer setting, Mautic displays a warning that the Mautic Marketplace is available in read-only mode, with a link which explains how to transition to a [Composer-managed installation][switch-to-composer].
+
+  ![Need to enable Composer](need-to-enable-composer.png)
+
 ### List of plugins
 
 The list of Plugins available in the Marketplace is accessible from your Mautic administration menu. Click the cog icon in the top right hand corner to display the menu.
@@ -140,6 +153,10 @@ The Marketplace is lacking some important features. In the preceding text there 
 - Notifications about new versions and security vulnerabilities that identified,
 - Support also theme installations and updates.
 
+## How to get your plugin listed on the Mautic Marketplace
+
+Please review the resources on the [Developer Documentation][dev-docs] for more information.
+
 [mautic-4.2]: <https://github.com/mautic/mautic/releases/tag/4.2.0>
 [mautic-marketplace-blog]: <https://www.mautic.org/blog/community/feature-highlight-mautic-marketplace>
 [dev-docs]: <https://developer.mautic.org/#marketplace>
@@ -149,3 +166,4 @@ The Marketplace is lacking some important features. In the preceding text there 
 [composer]: <https://getcomposer.org>
 [track-updates]: <https://packagist.org/apidoc#track-package-updates>
 [advisories]: <https://packagist.org/apidoc#track-package-updates>
+[switch-to-composer]: </setup/switch-to-composer>
