@@ -87,16 +87,16 @@ If you haven't customized those files you could choose to not commit them in you
 
 You can achieve that by registering `@composer mautic:scaffold` as post-install and post-update command in your composer.json:
 
-```
+```json
 "scripts": {
-"post-install-cmd": [
-"@composer mautic:scaffold",
-"..."
-],
-"post-update-cmd": [
-"@composer mautic:scaffold",
-"..."
-]
+    "post-install-cmd": [
+        "@composer mautic:scaffold",
+        "..."
+    ],
+    "post-update-cmd": [
+        "@composer mautic:scaffold",
+        "..."
+    ]
 },
 ```
 
@@ -105,13 +105,13 @@ If you need to apply patches - depending on the plugin, a pull request is often 
 
 To add a patch to Mautic plugin foobar insert the patches section in the extra section of composer.json:
 
-```
+```json
 "extra": {
-"patches": {
-"mautic/foobar": {
-"Patch description": "URL or local path to patch"
-}
-}
+    "patches": {
+        "mautic/foobar": {
+            "Patch description": "URL or local path to patch"
+        }
+    }
 }
 ```
 
@@ -119,12 +119,12 @@ To add a patch to Mautic plugin foobar insert the patches section in the extra s
 This project supports PHP 7.4 as the minimum version, however, it's possible that a composer update may upgrade some package that could then require PHP 7+ or 8+.
 
 To prevent this you can add this code to specify the PHP version you want to use in the config section of composer.json:
-```
+```json
 "config": {
-"sort-packages": true,
-"platform": {
-"php": "7.4"
-}
+    "sort-packages": true,
+    "platform": {
+        "php": "7.4"
+    }
 },
 ```
 

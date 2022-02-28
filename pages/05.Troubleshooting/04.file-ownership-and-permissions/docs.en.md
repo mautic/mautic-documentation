@@ -76,7 +76,7 @@ If your file and folder permissions are incorrect, you can run the following com
 
 ```
 find . -type f -not -perm 644 -exec chmod 644 {} +
-find . -type d -not -perm 644 -exec chmod 755 {} +
+find . -type d -not -perm 755 -exec chmod 755 {} +
 chmod -R g+w var/cache/ var/logs/ app/config/
 chmod -R g+w media/files/ media/images/ translations/
 rm -rf var/cache/*
@@ -96,7 +96,7 @@ If your files and folders are owned by the wrong user, you will continue to expe
 
 To reset the ownership of files and folders, use the following command (ensuring that you **replace apache_user and apache_group** with the values identified in the steps above):
 
-`sudo chown -R apache_user:apache_group`
+`sudo chown -R apache_user:apache_group /path/to/mautic`
 
 This command **ch**-anges **own**-ership, using the -R flag which means recursively - including all files/folders within that location. [Read more about the chown command][chown-command]
 
