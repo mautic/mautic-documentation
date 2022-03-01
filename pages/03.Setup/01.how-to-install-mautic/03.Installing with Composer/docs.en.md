@@ -33,7 +33,7 @@ The Mautic Recommended Project is a template which provides a starter kit for ma
 
 The basic command to use the Recommended Project is:
     
-    composer create-project mautic/recommended-project:4.x-dev some-dir --no-interaction
+    composer create-project mautic/recommended-project:^4 some-dir --no-interaction
 
 With composer require you can download new dependencies to your installation.
 
