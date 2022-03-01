@@ -31,7 +31,7 @@ In this tutorial, it's assumed that Mautic is currently installed in `/var/www/h
 Here's the steps to follow to switch to a Composer-based installation:
 
 1. Go to `/var/www`
-1. Run `composer create-project mautic/recommended-project:4.x-dev html-new --no-interaction`
+1. Run `composer create-project mautic/recommended-project:^4 html-new --no-interaction`
 1. Copy the following files and folders from `/var/www/html` to `/var/www/html-new`:
     - Configuration files - in most cases, located at `app/config/local.php` - move to `docroot/app/config/local.php`
     - The entire `plugins` directory - move to `docroot/plugins`
