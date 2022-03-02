@@ -37,7 +37,9 @@ Here's the steps to follow to switch to a Composer-based installation:
     - The entire `plugins` directory - move to `docroot/plugins`
     - Uploads - in most cases, located at `app/media/files` and `app/media/images` - move to `docroot/app/media/files` and `docroot/app/media/images` respectively
     - Custom dashboards from `app/media/dashboards` - move to `docroot/app/media/dashboards`
-    - Any custom themes from `themes` - move to `/docroot/themes`
+    - Any custom themes from `themes` - move to `/docroot/themes`     
+    - Any translations from `translations` - move to `/docroot/translations`
+
 1. Rename `/var/www/html` to `/var/www/html-old` and `/var/www/html-new` to `/var/www/html`
 1. When you're done, update your web server configuration to point to `/var/www/html/docroot` instead of `/var/www/html`
 1. You have now switched to a Composer-based installation. Test if Mautic works as expected.
