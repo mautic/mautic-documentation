@@ -10,9 +10,6 @@ orga:
 orgaratingenabled: false
 personenabled: false
 facebookenable: true
-taxonomy:
-    category:
-        - docs
 ---
 
 ---
