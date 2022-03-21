@@ -1,7 +1,8 @@
 # Mautic Documentation
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 
 ## Introduction
 
@@ -55,6 +56,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/shinde-rahul"><img src="https://avatars.githubusercontent.com/u/1046788?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rahul Shinde</b></sub></a><br /><a href="https://github.com/mautic/mautic-documentation/commits?author=shinde-rahul" title="Documentation">📖</a></td>
     <td align="center"><a href="https://www.colinh.com"><img src="https://avatars.githubusercontent.com/u/14365367?v=4?s=100" width="100px;" alt=""/><br /><sub><b>chartist1</b></sub></a><br /><a href="https://github.com/mautic/mautic-documentation/commits?author=chartist1" title="Documentation">📖</a></td>
     <td align="center"><a href="http://robincafolla.com"><img src="https://avatars.githubusercontent.com/u/1263427?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Robin Cafolla</b></sub></a><br /><a href="https://github.com/mautic/mautic-documentation/commits?author=robincafolla" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://jonathanphoto.fr"><img src="https://avatars.githubusercontent.com/u/55917666?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jonathan Dahan</b></sub></a><br /><a href="#userTesting-jonathandhn" title="User Testing">📓</a></td>
   </tr>
 </table>
 
