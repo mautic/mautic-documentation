@@ -63,8 +63,8 @@ If you customize any of the "scaffolding" files - commonly .htaccess - you may n
 
 Follow the steps below to update your core files.
 
-1. Run composer update `mautic/core-lib` --with-dependencies to update Mautic Core and its dependencies.
-2. Run git diff to determine if any of the scaffolding files have changed. Review the files for any changes and restore any customizations to .htaccess or others.
+1. Run `composer update mautic/core-lib --with-dependencies` to update Mautic Core and its dependencies.
+2. Run `git diff` in the folder  to determine if any of the scaffolding files have changed. Review the files for any changes and restore any customizations to .htaccess or others.
 3. Commit everything all together in a single commit, so the public remains in sync with the core when checking out branches or running git bisect.
 4. In the event that there are non-trivial conflicts in step 2, you may wish to perform these steps on a branch, and use git merge to combine the updated core files with your customized files. This facilitates the use of a three-way merge tool such as [kdiff3][kdiff3]. This setup isn't necessary if your changes are simple; keeping all of your modifications at the beginning or end of the file is a good strategy to keep merges easy.
 5. Run the following commands to update your database with any changes from the release:
