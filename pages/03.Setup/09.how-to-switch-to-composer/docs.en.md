@@ -1,6 +1,9 @@
 ---
 title: 'How to switch to Composer'
 slug: switch-to-composer
+taxonomy:
+category:
+- docs
 twitterenable: true
 twittercardoptions: summary
 articleenabled: false
@@ -42,6 +45,10 @@ Here's the steps to follow to switch to a Composer-based installation:
 
 1. Rename `/var/www/html` to `/var/www/html-old` and `/var/www/html-new` to `/var/www/html`
 1. When you're done, update your web server configuration to point to `/var/www/html/docroot` instead of `/var/www/html`
+1. Log into Mautic, and in your global settings, enable the switch to fully manage Mautic with Composer - this will also enable you to work with the Mautic Marketplace.
+
+![Screenshot showing the switch to enable composer management](switch-enable-composer.png)
+
 1. You have now switched to a Composer-based installation. Test if Mautic works as expected.
 
 ## Frequently Asked Questions (FAQs)

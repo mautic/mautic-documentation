@@ -75,6 +75,10 @@ Follow the steps below to update your core files.
 `bin/console doctrine:schema:update --no-interaction --force`
 `bin/console cache:clear`
 
+#### Enabling the Mautic Marketplace
+Once you have installed using Composer, log into Mautic, and in your global settings, enable the switch to fully manage Mautic with Composer - this will also enable you to work with the Mautic Marketplace.
+
+![Screenshot showing the switch to enable composer management](switch-enable-composer.png)
 ### Composer FAQs
 
 #### Should you commit downloaded third party plugins?
