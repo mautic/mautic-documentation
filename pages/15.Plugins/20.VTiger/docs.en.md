@@ -23,7 +23,8 @@ If you don't have a vTiger CRM account yet, [create it][vTiger-crm].
 
 To authenticate the Mautic plugin to be able to communicate with vTiger CRM you'll need these credentials:
 
-- **vTiger URL** - the base (root) URL starting with http:// or https:// where your vTiger instance runs. For example `https://your_vtiger.od2.vtiger.com`.
+- **vTiger Cloud URL** - the base (root) URL starting with http:// or https:// where your vTiger instance runs. For example `https://your_vtiger.od2.vtiger.com`.
+- **vTiger Open Source URL** If you are using Open Source Vtiger you must use the base (root) Url starting with http:// or https:// and followed by /webservice.php. For example `https://your_vtiger.od2.vtiger.com/webservice.php`.
 - **vTiger username** - The username (email address usually) which you use to log in to your vTiger.
 - **vTiger access key** - The access key published in your vTiger profile. To get it, go to vTiger's *My Preferences*. The *Access Key* hash is at the bottom of the page.
 
