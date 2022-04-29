@@ -30,7 +30,7 @@ Follow these steps to configure your Mautic instance to use the license key.
 ![maxmind-license-key-2](maxmind-license-key-2.png "maxmind-license-key-2")
 1. Then, Click `Generate new License Key`
 ![maxmind-generate-key-2](maxmind-generate-key-2.png "maxmind-generate-key-2")
-1. Answer `Will this key be used for GeoIP Update?` with No and confirm
+1. Answer `Will this key be used for GeoIP Update?` with Yes and confirm
 ![maxmind-confirm-key](maxmind-confirm-key.png "maxmind-confirm-key")
 1. Copy the license key that you see on the screen and note down the Account ID preceding the license key table
 ![maxmind-license-key](maxmind-license-key.png "maxmind-license-key")
