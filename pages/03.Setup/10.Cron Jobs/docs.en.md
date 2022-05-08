@@ -174,9 +174,9 @@ php /path/to/mautic/bin/console mautic:broadcasts:send [--id=ID] [--channel=CHAN
 
 - `--id=X` is what ID of email, SMS or other entity to send.
 
-- `--limit=X` is how many contacts to pull from the database for processing, set to 100 by default. Using this flag each time the cron fires, it processes X contacts. The next time the cron job runs, it processes the following X contacts, and so on.
+- `--limit=X` is how many contacts to pull from the database for processing. Using this flag each time the cron fires, it processes X contacts. The next time the cron job runs, it processes the following X contacts, and so on.
 
-- `--batch=X` controls how many emails processed in each batch. This can be different for every provider. For example, Mautic has API connection to SparkPost. Their API can send - at present - 1000 emails per call. Therefore the batch should be 1000 for the fastest sending speed with this provider. Many SMTP providers can't handle 1000 emails in one batch, so this would need to be lower.
+- `--batch=X` controls how many emails processed in each batch.
 
 - `--min-contact-id` and `--max-contact-id` allows the separation of email sending by smaller chunks, by specifying contact ID ranges. If those ranges won't overlap, this allows you to run several broadcast commands in parallel.
 
