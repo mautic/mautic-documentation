@@ -188,5 +188,5 @@ Install complete
 [download-mautic]: <https://www.mautic.org/download>
 [mautic-releases]: <https://www.mautic.org/mautic-releases>
 [minimum-requirements]: <https://www.mautic.org/download/requirements>
-[file-permissions]: <troubleshooting/file-ownership-and-permissions>
+[file-permissions]: </troubleshooting/file-ownership-and-permissions>
 [mailhog]: <https://github.com/mailhog/MailHog>
