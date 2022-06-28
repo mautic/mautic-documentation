@@ -77,6 +77,15 @@
       "contributions": [
         "userTesting"
       ]
+    },
+    {
+      "login": "SphinxKnight",
+      "name": "SphinxKnight",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2413436?v=4",
+      "profile": "https://github.com/SphinxKnight",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
