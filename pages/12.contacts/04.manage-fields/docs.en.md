@@ -29,6 +29,21 @@ You will notice the group column which will show you where the specific field wi
 3. Asterisks icon - These fields are required when filling in the contact form
 4. Globe icon - These fields are publicly updatable through the [tracking pixel][variables] URL query (see [Contact Monitoring][contact monitoring] for more details).
 
+It is important to note that from Mautic 5, you will not be able to edit the default value for any Fields that are used to identify a Contact or Company, including:
+
+* Email
+* Company
+* First name
+* Last name
+* Social profiles
+* Unique identifier fields
+* Company name
+* Company Email
+* Company website
+* State
+* Country
+* City
+
 ### Published Fields
 
 There is a toggle switch which shows before each label title.\
