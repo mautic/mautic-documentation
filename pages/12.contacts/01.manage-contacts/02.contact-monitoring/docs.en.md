@@ -277,13 +277,16 @@ Important: Make sure in your App, that the above HTTP request is using a cookie 
 
 ### Google Analytics, Google Tag Manager and Facebook Pixel tracking support
 
-Mautic supports contact tracking using Google Analytics and the Facebook pixel. Go to Mautic Configuration > Tracking Settings and set up:
+Mautic supports contact tracking using Google Analytics, Google Tag Manager and the Facebook pixel. Go to Mautic Configuration > Tracking Settings and set up:
 
 - [Google Analytics ID][Google Analytics ID]
-- [Google Tag Manager][Google Tag Manager]
+- [Google Tag Manager ID][Google Tag Manager ID]
 - [Facebook Pixel ID][Facebook Pixel ID]
 
 Tracking codes support also [Google Analytics USERID][Google Analytics USERID] and [Facebook Pixel Advanced Matching][Facebook Pixel Advanced Matching].
+
+If `Enabled on your externally tracked pages` options is enabled, tracking script will be enabled on external pages with Mautic tracking code.
+If `Enable on Mautic landing pages` options is enabled, tracking script will be enabled on all Mautic landing pages.
 
 #### Campaign action Send tracking event
 
@@ -325,7 +328,7 @@ If the tracking doesn't work, take a look at the [troubleshooting section][troub
 
 [Google Analytics ID]: <https://support.google.com/analytics/answer/1008080?hl=en#trackingID>
 [Facebook Pixel ID]: <https://www.facebook.com/business/help/952192354843755>
-[Google Tag Manager]: <https://support.google.com/tagmanager/answer/6103696?hl=en#install>
+[Google Tag Manager ID]: <https://support.google.com/tagmanager/answer/6103696?hl=en#install>
 [Google Analytics USERID]: <https://support.google.com/analytics/answer/3123662?hl=en>
 [Facebook Pixel Advanced Matching]: <https://developers.facebook.com/ads/blog/post/2016/05/31/advanced-matching-pixel/> 
 [Google Analytics]: <https://developers.google.com/analytics/devguides/collection/analyticsjs/events>
