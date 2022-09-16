@@ -79,7 +79,7 @@ As an example, let's override the first menu item "Dashboard" to "Banana" as tha
 
 The best way to search for the right translation key is in a text editor like VS Code that will allow you to search for a text in all files of Mautic's source code and filter those files by file extension `*.ini`. GitHub has also an option to search for strings in the repository but it's not particularly good search engine. We'll use it for this example. Try searching for "Dashboard menu" as there is special translation for the menu item and another for the page title. I know that because I looked in my text editor. GitHub won't find the right translation when you search for just "Dashboard". And then we can filter for only INI files. Here is the link to the search result:
 
-https://github.com/mautic/mautic/search?l=INI&q=Dashboard+menu
+[https://github.com/mautic/mautic/search?l=INI&q=Dashboard+menu](https://github.com/mautic/mautic/search?l=INI&q=Dashboard+menu)
 
 The first file it found is `app/bundles/DashboardBundle/Translations/en_US/messages.ini` and there is `mautic.dashboard.menu.index="Dashboard"` line in it which looks like what we want to change.
 
