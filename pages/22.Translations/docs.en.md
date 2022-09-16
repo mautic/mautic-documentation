@@ -66,3 +66,38 @@ If you have any questions about translations, join the community in the [Slack #
 [transifex]: <https://www.transifex.com/mautic/mautic/>
 [transifex-documentation]: <http://docs.transifex.com/tutorials/txeditor/>
 [slack-channel]: <https://mautic.slack.com/archives/C02HV79J2>
+
+## Translation overrides
+
+Mautic allows you to override the existing language translations without the need to hack the core files. That is good idea especially because a Mautic upgrade would remove your modifications. Here's how to change translations correctly:
+
+As an example, let's override the first menu item "Dashboard" to "Banana" as that's what everyone was thinking anyway.
+
+![Override Dashboard menu item](translations-dashboard.png "Override Dashboard menu item")
+
+### 1. Search for the translation key
+
+The best way to search for the right translation key is in a text editor like VS Code that will allow you to search for a text in all files of Mautic's source code and filter those files by file extension `*.ini`. GitHub has also an option to search for strings in the repository but it's not particulary good search engine. But let's use it for this example. I'm searching for "Dashboard menu" as there is special translation for the menu item and another for the page title. I know that because I looked in my text editor. GitHub won't find the right translation when you search for just "Dashboard". And then we can filter for only INI files. Here is the link to the search result:
+
+https://github.com/mautic/mautic/search?l=INI&q=Dashboard+menu
+
+The first file it found is `app/bundles/DashboardBundle/Translations/en_US/messages.ini` and there is `mautic.dashboard.menu.index="Dashboard"` line in it which looks like what we want to change.
+
+### 2. Override the translation
+
+The hard part is behind us. We know we have to override the `mautic.dashboard.menu.index` translation key. To do so, go to the folder `translations` in the root directory of the Mautic project. Create new folder in it called `overrides`. In this folder create the folder for the locale you want to override. In this case we'll override the default locale which is `en_US` but if you use different language then you'll see its locale as a folder in the `translations` folder so you'll know how to call the folder.
+
+In the `translations/overrides/en_US` folder create new file called `messages.ini`. Notice it's the same file name as the original. It must be the same. Some translations may be in `flashes.ini` or `validators.ini` and if you override a translation from those files then you have to create the correct file too and put the translation in it. But in our case it's `translations/overrides/en_US/messages.ini`.
+
+In this file we'll copy the line we want to override from the original `app/bundles/DashboardBundle/Translations/en_US/messages.ini` file and change the translation like so:
+
+`mautic.dashboard.menu.index="Banana"`
+
+Save the file and clear the cache with `bin/console cache:clear` command. Refresh the page and the administration is finally perfect:
+
+![Dashboard menu item overriden to Banana](translations-banana.png "Dashboard menu item overriden to Banana")
+
+
+
+
+
