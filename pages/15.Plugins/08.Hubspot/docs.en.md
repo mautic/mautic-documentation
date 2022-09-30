@@ -19,7 +19,7 @@ taxonomy:
 
 1. Create a [Hubspot CRM][Hubspot-crm] account if you don't have one already.
 
-2. Create a private app to [get credentials by following the Hubspot documentation][https://developers.hubspot.com/docs/api/private-apps]. You need to give to your private app the adapted rights for Webmecanik to handle contacts, companies, etc.
+2. Create a private app to [get credentials by following the Hubspot documentation][https://developers.hubspot.com/docs/api/private-apps]. You need to give to your private app the adapted rights for Mautic to handle contacts, companies, etc.
 
 ![Hubspot CRM Plugin app rights](hubspot-app-rights.png "Hubspot CRM Plugin app rights")
 
