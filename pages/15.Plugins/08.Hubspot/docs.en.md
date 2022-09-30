@@ -11,27 +11,27 @@ taxonomy:
 
 -------------------
 
-## Mautic - HubSpot CRM plugin
+## Mautic - Hubspot CRM plugin
 
-[Mautic][mautic] can push contacts to [HubSpot CRM][Hubspot-crm] based on [Contact actions][testing] or [Point Triggers][points].
+[Mautic][mautic] can push contacts to [Hubspot CRM][Hubspot-crm] based on [Contact actions][testing] or [Point Triggers][points].
 
-## HubSpot API key
+## Hubspot API key
 
-1. Create a [HubSpot CRM][Hubspot-crm] account if you don't have one already.
+1. Create a [Hubspot CRM][Hubspot-crm] account if you don't have one already.
 
 2. Create a private app to [get credentials by following the Hubspot documentation][https://developers.hubspot.com/docs/api/private-apps]. You need to give to your private app the adapted rights for Webmecanik to handle contacts, companies, etc.
 
 ![Hubspot CRM Plugin app rights](hubspot-app-rights.png "Hubspot CRM Plugin app rights")
 
 
-## Configure the HubSpot CRM plugin
+## Configure the Hubspot CRM plugin
 >   *Note* Do not publish the plugin until all steps are completed
 
-1. Open the HubSpot Plugin configuration
+1. Open the Hubspot Plugin configuration
 
-   - Paste the [API key][hubspot-keys] into the *HubSpot API key* input field.
+   - Paste the [API key][hubspot-keys] into the *Hubspot API key* input field.
 
-1. Configure the _Feature Specific Settings_ to determine whether Contacts, Companies or both should be synchronised from HubSpot.
+1. Configure the _Feature Specific Settings_ to determine whether Contacts, Companies or both should be synchronised from Hubspot.
 
 1. Save and close, then edit the plugin to configure the field mapping.
 
@@ -43,12 +43,11 @@ It is checked by default. If you uncheck it, the plugin will not push contacts t
 
    - If you want to use the plugin, set the *Publish* switch to *Yes*. Only do this when you have fully configured the plugin settings.
 
-    ![Hubspot CRM Plugin configuration](plugins-hubspot-crm-configuration.png "HubSpot CRM Plugin configuration")
+    ![Hubspot CRM Plugin configuration](plugins-hubspot-crm-configuration.png "Hubspot CRM Plugin configuration")
 
 1. Set up the [cron job][cron-job] if you have not already configured it.
 
 >>> Script to configure in your cron job: `php $PATH_TO_MAUTIC_DIRECTORY/bin/console mautic:integration:fetchleads --integration=Hubspot --fetch-all`
-
 
 ## Test the plugin
 
@@ -63,7 +62,7 @@ Note, despite `--fetch-all` flag, the Hubspot API endpoints used in Mautic prima
 - `/companies/v2/companies/recent/modified/`
 - `/contactslistseg/v1/lists/recently_updated/contacts/recent`
 
-If you intend to do a full sync of your hubspot contacts/leads, you will need to modify an attribute of each of them so that they appear in Hubspot's recent/modified endpoints. By default, these endpoints just pull contects that have been modified in the last 30 days resulting in an incomplete sync if you are connecting to a long living Hubspot instance. [source][hubspot-endpoint-docs]
+If you intend to do a full sync of your Hubspot contacts/leads, you will need to modify an attribute of each of them so that they appear in Hubspot's recent/modified endpoints. By default, these endpoints just pull contacts that have been modified in the last 30 days resulting in an incomplete sync if you are connecting to a long living Hubspot instance. [source][hubspot-endpoint-docs]
 
 ## Links
 
