@@ -45,7 +45,7 @@ It is checked by default. If you uncheck it, the plugin will not push contacts t
 1. Set up the [cron job][cron-job] if you have not already configured it.
 
 >>> Script to configure in your cron job: `php $PATH_TO_MAUTIC_DIRECTORY/bin/console mautic:integration:fetchleads --integration=Hubspot --fetch-all`
-  
+
 
 ## Test the plugin
 
@@ -62,9 +62,7 @@ Note, despite `--fetch-all` flag, the Hubspot API endpoints used in Mautic prima
 
 If you intend to do a full sync of your hubspot contacts/leads, you will need to modify an attribute of each of them so that they appear in Hubspot's recent/modified endpoints. By default, these endpoints just pull contects that have been modified in the last 30 days resulting in an incomplete sync if you are connecting to a long living Hubspot instance. [source][hubspot-endpoint-docs]
 
-## Credit
-
-This plugin had been developed by [@gpassarelli].
+## Links
 
 [mautic]: <https://mautic.org>
 [Hubspot-crm]: <https://www.hubspot.com/crm>
@@ -74,4 +72,3 @@ This plugin had been developed by [@gpassarelli].
 [field-mapping]: </plugins/plugin-resources/field-mapping>
 [cron-job]: </setup/cron-jobs>
 [hubspot-endpoint-docs]:<https://legacydocs.hubspot.com/docs/methods/companies/get_companies_modified>
-[@gpassarelli]: <https://github.com/gpassarelli>
