@@ -19,7 +19,8 @@ taxonomy:
 
 1. Create a [HubSpot CRM][Hubspot-crm] account if you don't have one already.
 
-1. Visit [https://app.hubspot.com/api-key][hubspot-keys] to generate your [HubSpot API key][hubspot-keys].
+2. Create a private app to [get credentials by following the Hubspot documentation][https://developers.hubspot.com/docs/api/private-apps].
+
 
 ## Configure the HubSpot CRM plugin
 >   *Note* Do not publish the plugin until all steps are completed
