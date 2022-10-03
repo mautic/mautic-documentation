@@ -85,7 +85,7 @@ The first file it found is `app/bundles/DashboardBundle/Translations/en_US/messa
 
 ### 2. Override the translation
 
-The hard part is behind us. We know we've to override the `mautic.dashboard.menu.index` translation key. To do so, go to the folder `translations` in the root directory of the Mautic project. Create new folder in it called `overrides`. In this folder create the folder for the locale you want to override. In this case we'll override the default locale which is `en_US` but if you use different language then you'll see its locale as a folder in the `translations` folder so you'll know how to call the folder.
+The hard part is behind us. We know we have to override the `mautic.dashboard.menu.index` translation key. To do so, go to the folder `translations` in the root directory of the Mautic project. Create new folder in it called `overrides`. In this folder create the folder for the locale you want to override. In this case we'll override the default locale which is `en_US` but if you use different language then you'll see its locale as a folder in the `translations` folder so you'll know how to call the folder.
 
 In the `translations/overrides/en_US` folder create new file called `messages.ini`. Notice it's the same filename as the original. It must be the same. Some translations may be in `flashes.ini` or `validators.ini` and if you override a translation from those files then you have to create the correct file too and put the translation in it. But in our case it's `translations/overrides/en_US/messages.ini`.
 
