@@ -69,7 +69,7 @@ If you have any questions about translations, join the community in the [Slack #
 
 Mautic allows you to override the existing language translations without the need to hack the core files. That's a good idea, especially because a Mautic upgrade would remove your modifications. Here's how to change translations correctly:
 
-As an example, to override the first menu item "Dashboard" and change it to "Banana", follow these steps:
+As an example, to override the first menu item "Dashboard" and change it to "Banana" follow these steps:
 
 ![Override Dashboard menu item](translations-dashboard.png "Override Dashboard menu item")
 
@@ -79,13 +79,16 @@ The best way to search for the right translation key is in a text editor like VS
 
 GitHub has also an option to search for strings in the repository - it's not particularly good search engine but for this example it works well enough.
 
-Try searching for 'Dashboard menu' within the Mautic/Mautic repository, as there is special translation for the menu item and another for the Page title. GitHub won't find the right translation when you search for just 'Dashboard' - it requires the full string. Next, use the filter to show only INI files. Here is the link to the search result:
+Try searching for 'Dashboard menu' within the Mautic/Mautic repository, as there is special translation for the menu item and another for the page title. GitHub won't find the right translation when you search for just 'Dashboard' - it requires the full string. Next, use the filter to show only INI files. Here is the link to the search result:
 
 [https://github.com/mautic/mautic/search?l=INI&q=Dashboard+menu][github-search]
 
 The first file found is `app/bundles/DashboardBundle/Translations/en_US/messages.ini` and there is the line `mautic.dashboard.menu.index="Dashboard"` within the file, which is text to override.
 
+.. vale off
 ### 2 Override the translation
+
+.. vale on
 
 The string to override is `mautic.dashboard.menu.index`. 
 
