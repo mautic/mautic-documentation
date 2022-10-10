@@ -11,93 +11,103 @@ taxonomy:
 
 ---------------
 
-Mautic is used by a world-wide community and therefore it can be localized to any language. If you cannot find your language yet, take a look to the section about how to translate Mautic.
+Being an international project with a world-wide community, many translations for Mautic exist. If you can't find your language yet, take a look to the section about how to [translate Mautic][translating-mautic].
 
 ## How to select a language in Mautic
 
-Language can be selected in 2 places.
+There are two places to select the language for the User Interface.
 
-### 1. Default language
+### Default language
 
-In the Mautic configuration the default language can be configured. It is pre-set to `English - United States` by default. Every user will see this language if she doesn't configure her language in her profile.
+The default language configuration happens first in the Mautic configuration. The default language is `English - United States`. Every User has this language if they don't set something different in their profile.
 
-1. Open the right admin menu by clicking on the cog icon in the top right corner.
+1. Open the configuration menu by clicking on the cog icon in the top right corner.
 2. Select the *Configuration* menu item.
 3. Select the default language.
 4. Save the configuration.
 
 ![Select the default language](translations-select-language.png "Select the default language")
 
-### 2. User language
+.. vale off
+### 2 User language
 
-A user can define her own language and override the default language. This lets a multilangual team work on the same Mautic instance.
+.. vale on
 
-1. Open the user menu by clicking on the user name in the top right corner.
+A User can define their preferred language and override the default language. This allows a multilingual team work on the same Mautic instance.
+
+1. Open the User Account menu by clicking on the User's name in the top right corner.
 2. Click on *Account* menu item.
-3. Select the user language.
-4. Save the user profile.
+3. Select the User language.
+4. Save the User profile.
 
-![Select the user language](translations-select-user-language.png "Select the user language")
+![Select the User language](translations-select-user-language.png "Select the user language")
 
 ## How to translate Mautic
 
-Mautic can be translated to any language. As Mautic is a community project, it can be translated by any community member to any language. Translations are made in the [Transifex][transifex] web app.
+It's possible to translate Mautic into any language. As Mautic is a community project, any community member can suggest and translate Mautic into any language. Mautic uses [Transifex][transifex] to crowd source translations.
 
 1. Create an account at [Transifex][transifex] if you don't have one already.
-2. Take a look at the [list of languages][transifex] which were created for the project already.
-3. Create a language if your language is missing or apply for an existing language.
+2. Take a look at the [list of languages][transifex] already existing.
+3. Create a language if your language is missing, or apply for an existing language.
 
-Take a look at official [Transifex Documentation][transifex-documentation]if you have any questions about the translation process.
+Take a look at official [Transifex Documentation][transifex-documentation] if you have any questions about the translation process.
 
 ## How to update a language
 
-A language is downloaded automatically every time the configuration is saved and the language hasn't been downloaded already. The tricky part is that Mautic won't download a language if it has been already downloaded. So to update a language:
+Mautic downloads language updates automatically when saving Mautic's Configuration, if language isn't already downloaded. To force an update of a language:
 
 1. Open the Mautic file system via SFTP or SSH.
 2. In the Mautic root folder you should see the folder called *translations*. Open it.
-3. In the *translations* folder are the languages stored. Remove the folder of the language you want to update.
-4. Go go Mautic configuration and save it with the language you've deleted.
+3. In the *translations* folder are the languages available in Mautic. Remove the folder of the language you want to update.
+4. Go to the Mautic Configuration and save it with the language you've deleted selected.
 
-The language should be downloaded again with the latest translations. The translations are generated from Transifex once a day.
+Mautic downloads the language again, with the latest translations. There is a daily process which generates the language packs from Transifex.
 
 If you have any questions about translations, join the community in the [Slack #Translations channel][slack-channel].
 
+## Translation overrides
+
+Mautic allows you to override the existing language translations without the need to hack the core files. That's a good idea, especially because a Mautic upgrade would remove your modifications. Here's how to change translations correctly:
+
+As an example, to override the first menu item "Dashboard" and change it to "Banana", follow these steps:
+
+![Override Dashboard menu item](translations-dashboard.png "Override Dashboard menu item")
+
+### 1 Search for the translation key
+
+The best way to search for the right translation key is in a text editor like VS Code that allows you to search for a text in all files of Mautic's source code and filter those files by file extension `*.ini`. 
+
+GitHub has also an option to search for strings in the repository - it's not particularly good search engine but for this example it works well enough.
+
+Try searching for 'Dashboard menu' within the Mautic/Mautic repository, as there is special translation for the menu item and another for the Page title. GitHub won't find the right translation when you search for just 'Dashboard' - it requires the full string. Next, use the filter to show only INI files. Here is the link to the search result:
+
+[https://github.com/mautic/mautic/search?l=INI&q=Dashboard+menu][github-search]
+
+The first file found is `app/bundles/DashboardBundle/Translations/en_US/messages.ini` and there is the line `mautic.dashboard.menu.index="Dashboard"` within the file, which is text to override.
+
+### 2 Override the translation
+
+The string to override is `mautic.dashboard.menu.index`. 
+
+To create the override:
+
+1. Go to the folder `translations` in the root directory of the Mautic project
+2. Create new folder in it called `overrides`
+3. In this folder, create the folder for the locale to override. In this example, the default locale is in use - `en_US` - but if you use different language then you'll see its locale as a folder in the `translations` folder - create a folder within the overrides folder using the exact name of the locale.
+4. In the `translations/overrides/en_US` folder - replace en_US with the locale you are overriding - create new file called `messages.ini`. Notice it's the same filename as the original. It must be exactly the same. Some translations may be in `flashes.ini` or `validators.ini` and if you override a translation from those files then you have to create the correct file too, and add the translation strings to be overridden in the file. 
+
+In this file, copy the line to override from the original `app/bundles/DashboardBundle/Translations/en_US/messages.ini` file and change the translation like so:
+
+`mautic.dashboard.menu.index="Banana"`
+
+Save the file and clear the cache with `bin/console cache:clear` command. Refresh your Mautic instance, and the administration is finally perfect:
+
+![Dashboard menu item overridden to Banana](translations-banana.png "Dashboard menu item overridden to Banana")
 
 [transifex]: <https://www.transifex.com/mautic/mautic/>
 [transifex-documentation]: <http://docs.transifex.com/tutorials/txeditor/>
 [slack-channel]: <https://mautic.slack.com/archives/C02HV79J2>
-
-## Translation overrides
-
-Mautic allows you to override the existing language translations without the need to hack the core files. That's good idea especially because a Mautic upgrade would remove your modifications. Here's how to change translations correctly:
-
-As an example, let's override the first menu item "Dashboard" to "Banana" as that's what everyone was thinking anyway.
-
-![Override Dashboard menu item](translations-dashboard.png "Override Dashboard menu item")
-
-### 1. Search for the translation key
-
-The best way to search for the right translation key is in a text editor like VS Code that will allow you to search for a text in all files of Mautic's source code and filter those files by file extension `*.ini`. GitHub has also an option to search for strings in the repository but it's not particularly good search engine. We'll use it for this example. Try searching for "Dashboard menu" as there is special translation for the menu item and another for the page title. I know that because I looked in my text editor. GitHub won't find the right translation when you search for just "Dashboard". And then we can filter for only INI files. Here is the link to the search result:
-
-[https://github.com/mautic/mautic/search?l=INI&q=Dashboard+menu](https://github.com/mautic/mautic/search?l=INI&q=Dashboard+menu)
-
-The first file it found is `app/bundles/DashboardBundle/Translations/en_US/messages.ini` and there is `mautic.dashboard.menu.index="Dashboard"` line in it which looks like what we want to change.
-
-### 2. Override the translation
-
-The hard part is behind us. We know we have to override the `mautic.dashboard.menu.index` translation key. To do so, go to the folder `translations` in the root directory of the Mautic project. Create new folder in it called `overrides`. In this folder create the folder for the locale you want to override. In this case we'll override the default locale which is `en_US` but if you use different language then you'll see its locale as a folder in the `translations` folder so you'll know how to call the folder.
-
-In the `translations/overrides/en_US` folder create new file called `messages.ini`. Notice it's the same filename as the original. It must be the same. Some translations may be in `flashes.ini` or `validators.ini` and if you override a translation from those files then you have to create the correct file too and put the translation in it. But in our case it's `translations/overrides/en_US/messages.ini`.
-
-In this file we'll copy the line we want to override from the original `app/bundles/DashboardBundle/Translations/en_US/messages.ini` file and change the translation like so:
-
-`mautic.dashboard.menu.index="Banana"`
-
-Save the file and clear the cache with `bin/console cache:clear` command. Refresh the page and the administration is finally perfect:
-
-![Dashboard menu item overridden to Banana](translations-banana.png "Dashboard menu item overridden to Banana")
-
-
-
+[translating-mautic]: <https://docs.mautic.org/en/translations#how-to-translate-mautic>
+[github-search]: <https://github.com/mautic/mautic/search?l=INI&q=Dashboard+menu>
 
 
