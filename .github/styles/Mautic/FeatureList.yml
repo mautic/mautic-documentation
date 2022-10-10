@@ -1,0 +1,63 @@
+extends: substitution
+message: "Is this referring to a Mautic feature? If so, use '%s' instead of '%s'."
+level: suggestion
+ignorecase: true
+action:
+  name: replace
+swap:
+  asset: Asset
+  assets: Assets
+  campaign: Campaign
+  campaigns: Campaigns
+  category: Category
+  categories: Categories
+  channel: Channel
+  channels: Channels
+  companies: Companies
+  company: Company
+  component: Component
+  components: Components
+  contact: Contact
+  contacts: Contacts
+  custom field: Custom Field
+  custom fields: Custom Fields
+  dwc: Dynamic Content
+  dynamic content: Dynamic Content
+  email: Email
+  emails: Emails
+  focus item: Focus Item
+  focus items: Focus Items
+  form: Form
+  form field: Form Field
+  form fields: Form Fields
+  forms: Forms
+  integration: Integration
+  integrations: Integrations
+  landing page: Landing Page
+  landing pages: Landing Pages
+  lead: Contact
+  leads: Contacts
+  marketing message: Marketing Message
+  marketing messages: Marketing Messages
+  mautic: Mautic
+  page: Landing Page
+  pages: Landing Pages
+  point actions: Point Actions
+  point triggers: Point Triggers
+  points: Points
+  plugin: Plugin
+  plugins: Plugins
+  report: Report
+  reports: Reports
+  role: Role
+  roles: Roles
+  segment: Segment
+  segments: Segments
+  stage: Stage
+  stages: Stages
+  theme: Theme
+  themes: Themes
+  user: User
+  users: Users
+  webhook: Webhook
+  webhooks: Webhooks
