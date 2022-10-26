@@ -80,6 +80,10 @@ So, Mautic will take care of duplicate contacts created by the event tracking. Y
 
 ![Setup operator for find duplications](contact-duplicates-operator-configuration.png "Setup operator for find duplications")
 
+## Contact's company management
+
+By default, Mautic allow assign multiple companies to contact.  You can disable it with option **Multiple companies for contact** in Configuration > Contact Settings. This allows assign just one company to contact.
+
 ## Batch Actions
 
 There are batch actions you can carry out from the user interface. A modal window will be displayed when you click on one of the actions, with more configuration details. You can use this feature to quickly update large volumes of contacts, but it might be better to use a campaign action (e.g. add all the users you need to update into a segment and use a campaign to trigger the change) if you need to change more than a few hundred contacts at a time.
