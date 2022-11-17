@@ -85,7 +85,6 @@ Your date will displayed as human reading format taken from  Configuration > Sys
 
 Token `{today}` display actual date time to the email. By default, you can use predefined formats after `|` symbol:
 
-
 - `{today}` same as `{today|datetime}`
 - `{today|date}`
 - `{today|time}`
@@ -95,14 +94,14 @@ Your date will display as human reading format taken from  Configuration > Syste
 - Default format for date only
 - Default Time Only Format
 
-Custom format 
+#### Custom format 
 
 Returns the formatted date string based on PHP https://www.php.net/manual/en/datetime.format.php
 
 - `{today|Y-m-d H:i:s}`
 - `{today|d. m. Y}` 
 
-Relative date
+#### Relative date
 
 You can use relative date after second `|` symbol:
 
