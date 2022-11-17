@@ -81,6 +81,34 @@ Your date will displayed as human reading format taken from  Configuration > Sys
 - Default format for date only  
 - Default Time Only Format 
 
+### Today token
+
+Token `{today}` display actual date time to the email. By default, you can use predefined formats after `|` symbol:
+
+
+- `{today}` same as `{today|datetime}`
+- `{today|date}`
+- `{today|time}`
+
+Your date will display as human reading format taken from  Configuration > System Settings
+
+- Default format for date only
+- Default Time Only Format
+
+Custom format 
+
+Returns the formatted date string based on PHP https://www.php.net/manual/en/datetime.format.php
+
+- `{today|Y-m-d H:i:s}`
+- `{today|d. m. Y}` 
+
+Relative date
+
+You can use relative date after second `|` symbol:
+
+- `{today|datetime|+1 month}`
+- `{today|d. m. Y|+1 day}`
+
 ## Tracking Pixel
 
 The tracking pixel image is usually appended to the email message, if enabled. If needed, one could insert the tracking pixel image with the special token `{tracking_pixel}` at any place other within the text body. Beware that it should not be inserted directly after the opening `<body>` because this prevents correct display of pre-header text on some MUAs.
