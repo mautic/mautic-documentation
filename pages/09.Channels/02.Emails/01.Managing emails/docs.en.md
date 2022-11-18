@@ -89,7 +89,7 @@ The token `{today}` displays the actual date and time in the email or landing pa
 - `{today|date}`
 - `{today|time}`
 
-Your date will display as human reading format taken from  Configuration > System Settings
+The date displays in a human readable format, taken from  Configuration > System Settings
 
 - Default format for date only
 - Default Time Only Format
