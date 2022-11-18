@@ -54,7 +54,7 @@ Since Mautic 2.7.0, the builder will let you drag the predefined content section
 
 ### Today token
 
-[Same like for emails][managing-emails].
+[Same as for emails][managing-emails].
 
 #### Code Mode
 
