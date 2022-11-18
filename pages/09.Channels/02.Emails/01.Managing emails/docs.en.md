@@ -83,7 +83,7 @@ Your date will displayed as human reading format taken from  Configuration > Sys
 
 ### Today token
 
-Token `{today}` display actual date time to the email. By default, you can use predefined formats after `|` symbol:
+The token `{today}` displays the actual date and time in the email or landing page. By default, you can use predefined formats after the `|` symbol:
 
 - `{today}` same as `{today|datetime}`
 - `{today|date}`
