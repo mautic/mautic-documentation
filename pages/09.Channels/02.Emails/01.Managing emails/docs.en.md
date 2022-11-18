@@ -103,7 +103,7 @@ Returns the formatted date string based on PHP datetime format supplied - see [d
 
 #### Relative date
 
-You can use relative date after second `|` symbol:
+You can use the Today token to show a relative date by using a second `|` symbol:
 
 - `{today|datetime|+1 month}`
 - `{today|d. m. Y|+1 day}`
