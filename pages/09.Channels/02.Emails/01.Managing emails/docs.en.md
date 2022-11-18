@@ -96,7 +96,7 @@ The date displays in a human readable format, taken from  Configuration > System
 
 #### Custom format 
 
-Returns the formatted date string based on PHP https://www.php.net/manual/en/datetime.format.php
+Returns the formatted date string based on PHP datetime format supplied - see [documentation][php-datetime]
 
 - `{today|Y-m-d H:i:s}`
 - `{today|d. m. Y}` 
