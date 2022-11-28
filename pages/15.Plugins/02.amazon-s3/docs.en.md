@@ -74,6 +74,13 @@ Now, when you upload an asset to your S3 bucket you can select it by creating a 
 
 > Note, there is currently a [bug preventing this from showing files when using PHP 7.2+][s3-bug].
 
+### Amazon S3 alternatives
+
+The Amazon S3 plugin can be used with other S3-compliant storage services like [DigitalOcean Spaces](https://www.digitalocean.com/products/spaces), [Minio](https://min.io/), [Backblaze B2](https://www.backblaze.com/b2/cloud-storage.html), etc.
+
+To configure storage other than Amazon S3, you need to enter the endpoint which can be found services website. The endpoint is usually in the format of `https://<region>.<provider>.com`.
+![Screenshot showing cloud provider checkbox selected](screenshot-local.mauticautomatedtests-2022.11.28-17_24_28.png)
+
 [assets]: </components/assets>
 [s3-pricing-tiers]: <http://aws.amazon.com/s3>
 [aws-signup]: <https://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html#sign-up-for-aws-gsg>
