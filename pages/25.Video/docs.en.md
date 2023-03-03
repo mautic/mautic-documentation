@@ -59,24 +59,24 @@ that opens to insert gated videos into your landing page.
 
 ![](gated-video-icon.png)
 
-## Disabled javascript support 
+## Disabled Javascript tracking support 
 
-The HTML5 video tag does not support external links, which means that YouTube and other external videos cannot be played using the video tag alone. However, if the Mautic script is disabled, YouTube/Vimeo videos will not play.
+The HTML5 video tag does not support external links, which means that YouTube and other external videos provider cannot be played using the video tag alone. In consequence, if the Mautic script is disabled, YouTube/Vimeo videos will not play.
 
 To add support for YouTube and other external videos, you can use the following code:
 
-Example for YouTube
+### Example for YouTube
 
 ```html
 <iframe data-form-id="1" data-gate-time="20" width="560" height="315" src="https://www.youtube.com/embed/QT6169rdMdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
-Example for Vimeo
+### )-Example for Vimeo
 
 ```html
 <iframe data-form-id="1" data-gate-time="20" src="https://player.vimeo.com/video/757366077?h=abd498e559" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 ```
-It's code from share embed feature from YouTube that the `data-form-id` and `data-gate-time` attributes are still required to use the video as a gated video. 
+This code is privded by from YouTube when using their embed feature. The `data-form-id` and `data-gate-time` attributes are still required to use the video as a Mautic gated video. 
 
 If the Mautic script is disabled, MediaElementPlayer can be used to play external videos. 
 
