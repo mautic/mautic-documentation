@@ -48,3 +48,7 @@ Here is a short example how you can do that:
 
     </body>
     </html>
+    
+### How do I pass UTM tags manually?
+
+You can pass UTM parameters manually with form submission by appending them in the query string of the form action. This is especially useful when you embed forms on websites on domains different than your mautic. Due to strict `Referer Policy` on many websites, including Webflow, Wix, etc. the UTM parameters don't get passed on automatically with the form request via `referer` header (they get filtered out). You will notice that if you embed your form, let's say on your Webflow page, the UTM parameters will not get recorded **even** if the form has the *Record UTM Tags* action on it. In those cases it's useful to pass the UTM parameters in the query string af the form action URL.
