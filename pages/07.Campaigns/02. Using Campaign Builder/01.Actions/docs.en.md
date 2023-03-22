@@ -27,7 +27,7 @@ The actions that Mautic offers in a Campaign include:
 | **Add Do Not Contact**|Adds the user to the Do Not Contact (DNC) list |
 | **Add to Company's score** |Adds or subtracts a designated number of Points to or from the score for all Companies associated with the Contact. |
 |**Add Company action**| Associates a Contact with a Company and sets the Company as the primary Company for the Contact.|
-|**Adjust contact points**| Adds or subtracts Points from the Contact’s Point total.|
+|**Adjust contact points**| Adds or subtracts Points from the Contact’s Point total or league.|
 |**Change campaigns**| Removes a Contact from the existing Campaign, moves them into another Campaign, restarts the current Campaign or a combination of these. You must remove a Contact from a Campaign before restarting the Campaign.|
 |**Change contact’s stage**| Moves a Contact to the specified Stage.|
 |**Delete contact**| Permanently deletes the Contact record along with all the information about that Contact, including the Campaign event log record about that Contact. See the [Segment docs][segments] about how to use this action to delete all Contacts in a Segment.|
