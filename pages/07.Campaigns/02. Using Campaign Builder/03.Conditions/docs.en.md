@@ -36,6 +36,7 @@ A condition has two paths that are denoted by the red and green points.
 |**Contact owner**| Checks if the selected user is assigned as the Contact’s owner|
 |**Contact segments**| Checks if the Contact is a member of selected Segments|
 |**Contact tags**|Checks if specified Tags are on the Contact record|
+|**Contact points**| Checks if the Contact has a certain number of points or a league score|
 |**Form field value**|Checks if values submitted for a selected field on a selected Form matches specified criteria|
 |**Has active notification**|Checks if an active web notification has been sent to the Contact|
 |**Has valid email address**|Checks if the Contact’s email address has a valid syntax, that is, name@example.com without spaces, other invalid characters or formats.|
