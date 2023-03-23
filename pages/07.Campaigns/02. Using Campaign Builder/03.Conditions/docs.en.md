@@ -28,18 +28,17 @@ A condition has two paths that are denoted by the red and green points.
 
  Here are the different conditions that Mautic offers in the Campaign Builder:
 
- | Condition                   |                                                               Description                                                                | 
-|:----------------------------|:----------------------------------------------------------------------------------------------------------------------------------------:|
-| **Contact campaigns**       |                                          Checks if the Contact is a member of another Campaign                                           |
-| **Contact device**          |                    Checks if the Contact has interacted with your Campaign from a specific device type, brand, or OS                     |
-| **Contact field value**     |        Checks if the information matches the selected criteria on the Contact record, the Contact’s primary Company, or UTM tags         |
-| **Contact owner**           |                                     Checks  if the selected user is assigned as the Contact’s owner                                      |
-| **Contact segments**        |                                          Checks if the Contact is a member of selected Segments                                          |
-| **Contact tags**            |                                            Checks if specified Tags are on the Contact record                                            |
-| **Contact points**          |                                  Checks if the Contact has a certain number of points or a league score                                  |
-| **Form field value**        |                      Checks if values submitted for a selected field on a selected Form matches specified criteria                       |
-| **Has active notification** |                                    Checks if an active web notification has been sent to the Contact                                     |
-| **Has valid email address** | Checks if the Contact’s email address has a valid syntax, that is, name@example.com without spaces, other invalid characters or formats. |
+ | Condition        | Description  | 
+| :------------- | :----------: |
+|**Contact campaigns**| Checks if the Contact is a member of another Campaign|
+|**Contact device**|Checks if the Contact has interacted with your Campaign from a specific device type, brand, or OS|
+|**Contact field value**| Checks if the information matches the selected criteria on the Contact record, the Contact’s primary Company, or UTM tags|
+|**Contact owner**| Checks if the selected user is assigned as the Contact’s owner|
+|**Contact segments**| Checks if the Contact is a member of selected Segments|
+|**Contact tags**|Checks if specified Tags are on the Contact record|
+|**Form field value**|Checks if values submitted for a selected field on a selected Form matches specified criteria|
+|**Has active notification**|Checks if an active web notification has been sent to the Contact|
+|**Has valid email address**|Checks if the Contact’s email address has a valid syntax, that is, name@example.com without spaces, other invalid characters or formats.|
 |
 >>> If you set a delay manually on the condition itself, this will be respected before passing down to a delay on any connected action.  For example, if you are coming from a negative path on 'Opens Email', you can set a condition of 'has active notification' with a relative date of 1 day, followed by 'Send Email' on the negative path with a relative date of 2 days. Mautic will check after 1 day if there is an active notification and if there is not, it will schedule the email to be sent two days later.
 
