@@ -44,6 +44,7 @@ Types of data sources available are as below -
    7. Segment Membership
    8. Do Not Contact
    9. UTM Codes
+   10. League score
 7. Companies
    1. Companies
 8. Mobile Notifications
