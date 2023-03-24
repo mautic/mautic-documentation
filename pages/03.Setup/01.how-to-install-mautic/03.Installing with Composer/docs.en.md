@@ -46,11 +46,11 @@ The composer create-project command passes ownership of all files to the created
 
 When installing the given composer.json the following occurs:
 
-* Install Mautic in the public-directory.
-* Autoloader uses the generated composer autoloader in vendor/autoload.php, instead of the one provided by Mautic in public/vendor/autoload.php.
-* Plugins - packages of type mautic-plugin - are in public/plugins/.
-* Themes - packages of type mautic-theme - are in public/themes/.
-* Creates public/media directory.
+* Install Mautic in the docroot-directory.
+* Autoloader uses the generated composer autoloader in vendor/autoload.php, instead of the one provided by Mautic in docroot/vendor/autoload.php.
+* Plugins - packages of type mautic-plugin - are in docroot/plugins/.
+* Themes - packages of type mautic-theme - are in docroot/themes/.
+* Creates docroot/media directory.
 * Creates environment variables based on your .env file. See .env.example.
 
 #### Updating Mautic Core
@@ -65,7 +65,7 @@ Follow the steps below to update your core files.
 
 1. Run `composer update mautic/core-lib --with-dependencies` to update Mautic Core and its dependencies.
 2. Run `git diff` in the folder  to determine if any of the scaffolding files have changed. Review the files for any changes and restore any customizations to .htaccess or others.
-3. Commit everything all together in a single commit, so the public remains in sync with the core when checking out branches or running git bisect.
+3. Commit everything all together in a single commit, so the docroot remains in sync with the core when checking out branches or running git bisect.
 4. In the event that there are non-trivial conflicts in step 2, you may wish to perform these steps on a branch, and use git merge to combine the updated core files with your customized files. This facilitates the use of a three-way merge tool such as [kdiff3][kdiff3]. This setup isn't necessary if your changes are simple; keeping all of your modifications at the beginning or end of the file is a good strategy to keep merges easy.
 5. Run the following commands to update your database with any changes from the release:
 
@@ -85,7 +85,7 @@ Once you have installed using Composer, log into Mautic, and in your global sett
 Composer recommends no. They provide [arguments against but also workarounds if a project decides to do it anyway][composer-workarounds].
 
 #### Should you commit the scaffolding files?
-The [Mautic Composer Scaffold][scaffold-plugin] plugin can download the scaffold files - for example index.php, .htaccess - to the public/ directory of your project. 
+The [Mautic Composer Scaffold][scaffold-plugin] plugin can download the scaffold files - for example index.php, .htaccess - to the docroot/ directory of your project. 
 
 If you haven't customized those files you could choose to not commit them in your version control system - for example, git. If that's the case for your project it might be convenient to automatically run the Mautic Scaffold plugin after every install or update of your project. 
 
@@ -131,6 +131,32 @@ To prevent this you can add this code to specify the PHP version you want to use
     }
 },
 ```
+### How do I use another folder than docroot as webroot
+
+By default the composer.json file is configures to put all Mautic core, plugin and theme files in the `docroot` folder.  
+It is possible to change this folder to your own needs.
+
+In following examples, we will change `docroot` into `public`.
+
+##### New installations
+
+* Run the `create-project` command without installing  
+  ```bash
+  composer create-project mautic/recommended-project:^4.0 some-dir --no-interaction --no-install
+  ```
+* Do a find and replace in the `composer.json` file to change `docroot/` into `public/`.
+* Review the changes in the `composer.json` file to ensure there are no unintentional replacements.
+* Run `composer install` to install all dependencies in the correct location.
+
+##### Existing installations
+
+* move the `docroot/` to `public/`
+  ```bash
+  mv docroot public
+  ```
+* Do a find and replace in the `composer.json` file to change `docroot/` into `public/`.
+* review the changes in the `composer.json` file to ensure there are no unintentional replacements.
+* run `composer update --lock` to ensure the autoloader is aware of the changed folder.
 
 
 [mautic-4]: <https://github.com/mautic/mautic/releases/tag/4.0>
