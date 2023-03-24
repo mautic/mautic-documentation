@@ -6,6 +6,8 @@
 
 ## Introduction
 
+## :warning: Please make new contributions against [https://github.com/mautic/user-documentation](https://github.com/mautic/user-documentation) as this repository will soon become deprecated
+
 This serves as the [documentation][mautic-docs] for [Mautic][mautic], the open source marketing automation system.
 
 Everyone is [welcome to contribute][CONTRIBUTING] to improve this information as needed.
