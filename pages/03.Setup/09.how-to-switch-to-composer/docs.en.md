@@ -38,7 +38,7 @@ Here's the steps to follow to switch to a Composer-based installation:
 1. Copy the following files and folders from `/var/www/html` to `/var/www/html-new`:
     - Configuration files - in most cases, located at `app/config/local.php` - move to `docroot/app/config/local.php`
     - The entire `plugins` directory - move to `docroot/plugins`
-    - Uploads - in most cases, located at `app/media/files` and `app/media/images` - move to `docroot/app/media/files` and `docroot/app/media/images` respectively
+    - Uploads - in most cases, located at `app/media/files` and `app/media/images` - move to `docroot/media/files` and `docroot/media/images` respectively
     - Custom dashboards from `app/media/dashboards` - move to `docroot/app/media/dashboards`
     - Any custom themes from `themes` - move to `/docroot/themes`     
     - Any translations from `translations` - move to `/docroot/translations`
