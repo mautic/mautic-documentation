@@ -72,7 +72,6 @@ Follow the steps below to update your core files.
 `bin/console cache:clear`
 `bin/console mautic:update:apply --finish`
 `bin/console doctrine:migration:migrate --no-interaction`
-`bin/console doctrine:schema:update --no-interaction --force`
 `bin/console cache:clear`
 
 #### Enabling the Mautic Marketplace
