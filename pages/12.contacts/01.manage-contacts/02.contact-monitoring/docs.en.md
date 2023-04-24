@@ -21,7 +21,7 @@ The act of monitoring the traffic and activity of contacts can sometimes be some
 
 Monitoring all traffic on a website can be done by loading a javascript file (since Mautic 1.4) or adding a tracking pixel to the website. It is important to note that traffic will not be monitored from logged-in Mautic users. To check that the JS/pixel is working, use an incognito or private browsing window or simply log-out of Mautic prior to testing.
 
-Note that by default, Mautic will not track traffic originating from the same [private network](https://en.wikipedia.org/wiki/Private_network) as itself, but this internal traffic can be configured to be tracked by setting the `track_private_ip_ranges` configuration option to `true` in `app/config/local.php` and then [clearing the symfony cache](https://developer.mautic.org/#cache).
+Note that by default, Mautic will not track traffic originating from the same [private network][private network] as itself, but this internal traffic can be configured to be tracked by setting the `track_private_ip_ranges` configuration option to `true` in `app/config/local.php` and then [clearing the symfony cache][clearing the symfony cache].
 
 ### Tracking Script (Javascript)
 
@@ -275,26 +275,38 @@ https://example.com/mtracking.gif?page_url=cart_screen&email=myemail@example.com
 
 Important: Make sure in your App, that the above HTTP request is using a cookie (if possible, re-use the cookie from the mautic.addcontact POST request prior) AND that you reuse this cookie from one request to the next. This is how Mautic (and other tracking software) knows that it's really the same user. If you can't do this, you may run into the (unlikely but possible) case where you have multiple contacts from the same IP address and Mautic will merge them all into a single contact as it can't tell who is who without a cookie.
 
-### Google Analytics and Facebook Pixel tracking support
+### Google Analytics, Google Tag Manager and Facebook Pixel tracking support
 
-Mautic supports contact tracking using Google Analytics and the Facebook pixel. Go to Mautic Configuration > Tracking Settings and set up:
+Mautic supports contact tracking using Google Analytics, Google Tag Manager and the Facebook pixel. Go to Mautic Configuration > Tracking Settings and set up:
 
 - [Google Analytics ID][Google Analytics ID]
+- [Google Tag Manager ID][Google Tag Manager ID]
 - [Facebook Pixel ID][Facebook Pixel ID]
 
 Tracking codes support also [Google Analytics USERID][Google Analytics USERID] and [Facebook Pixel Advanced Matching][Facebook Pixel Advanced Matching].
+
+If `Enabled on your externally tracked pages` options is enabled, tracking script will be enabled on external pages with Mautic tracking code.
+If `Enable on Mautic landing pages` options is enabled, tracking script will be enabled on all Mautic landing pages.
 
 #### Campaign action Send tracking event
 
 There is a campaign action which allows you to send a custom event to [Google Analytics][Google Analytics] or [Facebook Pixel][Facebook Pixel] - it depends on there being a 'Visits a page' decision immediately before it in the campaign workflow.
 
-##### How to test Google Analytics tracking code and campaign action
+##### How to test Google Analytics tracking code and Campaign action
 
-- Install [Tag Assistant][Tag assistant] and enable recording on your website 
+- Install [Tag Assistant][Tag assistant] and enable recording on your website
 - Create campaign with the 'Visits a page' decision and 'Send tracking event' action 
 - Test it and check in the Tag Assistant debug window that you see one Pageview request and one event
 
-![Google Tag Assistant](google-analytics-tag-assistent.png)
+![Google Tag Assistant][google-analytics-tag-assistent.png]
+
+##### How to test Google Tag Manager tracking code and Campaign action
+
+- Install [Tag assistant][Tag assistant] and enable recording on your website
+- Create a Campaign with `Visits a Page` decision and `Send tracking event` action
+- Test it and see Tag assistant debug window with one Pageview request and 1 event.
+
+![Google Tag Assistant][google-analytics-tag-assistent.png]
 
 ##### How to test Facebook Pixel tracking code and campaign action
 
@@ -302,7 +314,7 @@ There is a campaign action which allows you to send a custom event to [Google An
 - Create campaign with a 'Visits a page' decision and a 'Send tracking event' action 
 - Test it and check in the Facebook Pixel Helper debug window that you see one Pageview and one custom event action
 
-![Facebook Pixel Helper](facebook-pixel-helper.png)
+![Facebook Pixel Helper][facebook-pixel-helper.png]
 
 Events can be used for [Remarketing with Analytics][Remarketing with Analytics] and [Remarketing for Facebook Ads][Remarketing for Facebook Ads].
 
@@ -316,6 +328,7 @@ If the tracking doesn't work, take a look at the [troubleshooting section][troub
 
 [Google Analytics ID]: <https://support.google.com/analytics/answer/1008080?hl=en#trackingID>
 [Facebook Pixel ID]: <https://www.facebook.com/business/help/952192354843755>
+[Google Tag Manager ID]: <https://support.google.com/tagmanager/answer/6103696?hl=en#install>
 [Google Analytics USERID]: <https://support.google.com/analytics/answer/3123662?hl=en>
 [Facebook Pixel Advanced Matching]: <https://developers.facebook.com/ads/blog/post/2016/05/31/advanced-matching-pixel/> 
 [Google Analytics]: <https://developers.google.com/analytics/devguides/collection/analyticsjs/events>
@@ -324,6 +337,8 @@ If the tracking doesn't work, take a look at the [troubleshooting section][troub
 [Facebook Pixel Helper]: <https://chrome.google.com/webstore/detail/facebook-pixel-helper/fdgfkebogiimcoedlicjlajpkdmockpc>
 [Remarketing with Analytics]: <https://support.google.com/analytics/topic/2611283?hl=en&ref_topic=7185254>
 [Remarketing for Facebook Ads]: <https://www.facebook.com/business/a/online-sales/custom-audiences-website>
+[private network]: <https://en.wikipedia.org/wiki/Private_network>
+[clearing the symfony cache]: <https://developer.mautic.org/#cache>
 [troubleshooting section]: </troubleshooting>
 
 [Joomla!]: <https://github.com/mautic/mautic-joomla>
