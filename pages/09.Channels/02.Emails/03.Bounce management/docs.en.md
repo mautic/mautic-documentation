@@ -191,6 +191,25 @@ Mautic 2.2.0 supports the following webhooks: Message is Bounced, Message is Blo
 
 ![Save](sendgrid_webhook_3.png "Save")
 
+## Postal Webhook
+
+1. Login to your Postal setup, choose your organization and select your preferred Mail Server for Mautic
+
+![Mail Servers](postal_webhook_1.png "Postal mail servers")
+
+2. Open the Webhook configuration setting of the Mail Server and press the "Add another webhook" button
+
+![Webhooks](postal_webhook_2.png "Webhooks")
+
+3. Fill in the Name and Target URL as `https://mautic.example.com/mailer/postal/callback`, select "No, I'll choose which requests to send" and select the following events
+
+![Events](postal_webhook_3.png "Events")
+
+4. Press the "Create webhook" button
+
+![Save](postal_webhook_4.png "Save")
+
+
 [mautic-120]: <https://github.com/mautic/mautic/releases/tag/1.2.0>
 [elasticemail-help]: <https://www.elasticemail.com/support>
 [elasticemail-support]: <https://support.elasticemail.com/>
