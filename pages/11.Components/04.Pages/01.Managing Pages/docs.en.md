@@ -52,6 +52,10 @@ The page builder provides quick and convenient access to assets, other landing p
 
 Since Mautic 2.7.0, the builder will let you drag the predefined content sections from the right hand toolbar and drop them to the position you choose. It's possible to select from layout of 1, 2 or 3 columns. The existing sections can be re-ordered or removed.
 
+### Today token
+
+[Same as for emails][managing-emails].
+
 #### Code Mode
 
 [Go to the Code Mode docs][code-mode].
