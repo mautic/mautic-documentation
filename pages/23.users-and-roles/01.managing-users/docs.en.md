@@ -20,4 +20,6 @@ Create the user by completing all the mandatory fields, adding a signature if re
 
 It is also possible to set the default timezone and language for the new user, and to set the user to published (able to log in) or unpublished (unable to log in).
 
-You will then need to provide the login credentials to the user to allow them to log in - ensure you do so in a secure way!
+You need to provide the login credentials to the user so that they can log in - ensure you do so in a secure way.
+
+It is also possible to set the option *Generate random password and send an email with credentials to user*. If this is selected, a password is automatically generated, and the user receives an email with their credentials.
