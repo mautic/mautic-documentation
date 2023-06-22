@@ -93,6 +93,14 @@ See [Companies][companies] for more information.
 | Website (Company)                                  | `{contactfield=companywebsite}`             |
 | Zip Code (Company)                                 | `{contactfield=companyzipcode}`             |
 
+> **ProTip**
+>
+> Custom Company Fields
+>
+> The syntax for custom company fields is different than the core company field syntax. You must not add the word "company" in the variable, but instead treat it like a "contactfield":
+>
+> `Hi {contactfield=customfieldalias},`
+>
 ## Mautic Component tokens
 
 See [Components][components] and [Manage Pages][manage-pages] for more information.
