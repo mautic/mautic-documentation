@@ -96,3 +96,19 @@ Once an asset has been deleted, it cannot be retrieved, and statistics relating 
 Search engines crawl content of various files like PDF etc. If you don't want see your files in search results then enable option Not to index by search bots. 
 
 See  [URL Inspection Tool](https://support.google.com/webmasters/answer/9012289) to validate, refresh index or remove already cached files from search.
+
+### Display assets directly in the browser
+
+By default, Mautic supports the following file types for direct display in the browser:
+
+- gif
+- jpg
+- jpeg
+- mpg
+- mpeg
+- mp3
+- pdf
+- png
+- wav
+
+If you want to change this default behavior, you can modify the `local.php` file and set an array of extensions for the `streamed_extensions` parameter.
