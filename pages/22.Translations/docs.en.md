@@ -13,6 +13,8 @@ taxonomy:
 
 Being an international project with a world-wide community, many translations for Mautic exist. If you can't find your language yet, take a look to the section about how to [translate Mautic][translating-mautic].
 
+*If you are looking to translate emails, dynamic content or landing pages, this page is not for you. You can translate all content and it will be used according to the contacts "Preferred Locale" field or the browser settings. For more information, consult the respective pages for [mails][emails], [dynamic content][dynamic-content] and [landing pages][landing-pages].*
+
 ## How to select a language in Mautic
 
 There are two places to select the language for the User Interface.
@@ -107,6 +109,9 @@ Save the file and clear the cache with `bin/console cache:clear` command. Refres
 
 ![Dashboard menu item overridden to Banana](translations-banana.png "Dashboard menu item overridden to Banana")
 
+[emails]: </channels/emails/managing-emails>
+[dynamic-content]: </components/dynamic-web-content>
+[landing-pages]: </components/landing-pages/managing-pages>
 [transifex]: <https://www.transifex.com/mautic/mautic/>
 [transifex-documentation]: <http://docs.transifex.com/tutorials/txeditor/>
 [slack-channel]: <https://mautic.slack.com/archives/C02HV79J2>
